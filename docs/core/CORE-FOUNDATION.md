@@ -41,3 +41,19 @@ Integrity is not a declared attribute of a structure. It is revealed through the
 Higher layers derive from Core structures to express domain-specific implementations and behaviours.
 
 Core provides the structural conditions that allow meaning to become organized action while preserving continuity from semantic foundation to concrete expression.
+
+## Core Principles
+
+### Integrity
+
+Preserves coherence within structure.
+
+### Balance
+
+Maintains relationships between parts.
+
+### Scalability
+
+Enables growth while adapting the structure through metrics.
+
+Metrics provide feedback that allows the structure to evolve coherently according to scale.
