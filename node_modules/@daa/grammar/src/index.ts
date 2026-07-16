@@ -6,3 +6,4 @@ export type { Meaning } from './meaning/index.js';
 export type { Identity } from './identity/index.js';
 export type { Purpose } from './purpose/index.js';
 export type { Context } from './context/index.js';
+export type { Relationship } from './relationship/index.js';

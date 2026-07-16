@@ -1,0 +1,1 @@
+export type { Relationship } from './relationship.js';
