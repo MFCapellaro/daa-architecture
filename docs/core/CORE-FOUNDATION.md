@@ -1,10 +1,27 @@
 # Core Foundation
 
+## Generative Structure
+
+The Primary Triad is the minimal underlying structure that sustains evolutionary behavior.
+It emerges from the dynamic relationship between:
+
+- Sense
+- Coherence
+- Possibility
+
+Sense provides direction.
+
+Coherence preserves identity.
+
+Possibility enables evolution.
+
+Their dynamic balance allows systems to organize possibilities while maintaining coherence and meaning.
+
 ## Purpose
 
 Core is the structural layer of Digital Adaptive Architecture.
 
-It organizes the semantic concepts defined by Grammar into coherent structures that can be composed, extended, and expressed by higher layers.
+It organizes the semantic possibilities defined by Grammar into coherent structures that can be composed, extended, and expressed by higher layers.
 
 ## Guiding Question
 
@@ -30,11 +47,9 @@ Structural composition enables semantic elements to maintain coherence as they a
 
 ## Structural Integrity
 
-Integrity is a behavioural property of a structure that manifests through coherent action.
+Structural integrity is revealed through the coherence between meaning, relationships, and behavior.
 
-Core structures preserve semantic integrity by organizing meaning in ways that allow coherent behaviour to emerge.
-
-Integrity is not a declared attribute of a structure. It is revealed through the consistency between the meaning expressed, the structure created, and the actions produced.
+Core structures preserve semantic integrity by organizing meaning in ways that allow coherent behavior to emerge.
 
 ## Relationship with Higher Layers
 
@@ -46,14 +61,12 @@ Core provides the structural conditions that allow meaning to become organized a
 
 ### Integrity
 
-Preserves coherence within structure.
+Preserves coherence.
 
 ### Balance
 
-Maintains relationships between parts.
+Organizes relationships.
 
 ### Scalability
 
-Enables growth while adapting the structure through metrics.
-
-Metrics provide feedback that allows the structure to evolve coherently according to scale.
+Expands possibilities while preserving coherence.
