@@ -215,3 +215,9 @@ Interoperability emerges from meaning.
 Normalization is the first distillation of meaning.
 
 Each distillation reduces structural noise while preserving identity and increasing conceptual density.
+
+## Semantic Normalization Principle
+
+Business technologies describe their capabilities using different languages.
+
+DAA translates these expressions into a shared conceptual language, enabling relationships between heterogeneous systems and generating new configuration possibilities.

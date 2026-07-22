@@ -108,8 +108,7 @@ configuration:
   variables:
     - mission_type
     - payload_type
-    - liquid_capacity
-    - solid_capacity
+    - payload_capacity
     - mapping_requirement
     - battery_configuration
     - charging_system

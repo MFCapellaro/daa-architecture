@@ -100,8 +100,7 @@ configuration:
   variables:
     - mission_type
     - payload_type
-    - liquid_capacity
-    - solid_capacity
+    - payload_capacitynpm 
     - battery_configuration
     - charging_system
     - environmental_conditions

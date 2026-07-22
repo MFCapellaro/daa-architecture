@@ -90,8 +90,7 @@ operation:
 configuration:
   variables:
     - payload_type
-    - liquid_capacity
-    - solid_capacity
+    - payload_capacity
     - battery_configuration
     - charging_system
     - mission_type
