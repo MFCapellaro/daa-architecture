@@ -1,0 +1,112 @@
+# TopXGun FP600
+# Normalized DAA UAV Entity
+
+identity:
+  manufacturer: TopXGun
+  model: FP600
+  category: agricultural_uav
+
+architecture:
+  type: multirotor
+  configuration: operational_solution
+
+modules:
+  liquid_application:
+    manufacturer_term: Spraying System
+    daa_concept: liquid_payload
+    enabled: true
+
+  solid_application:
+    manufacturer_term: Spreading System
+    daa_concept: solid_payload
+    enabled: true
+
+  flight_control:
+    daa_concept: flight_control_system
+    status: pending_source_data
+
+dimensions:
+  transport:
+    status: pending_source_data
+
+  operation:
+    status: pending_source_data
+
+performance:
+  weight:
+    status: pending_source_data
+
+  max_takeoff_weight:
+    status: pending_source_data
+
+  environmental:
+    wind_resistance:
+      status: pending_source_data
+
+payload:
+  liquid:
+    daa_concept: liquid_payload
+    capacity_l:
+      value: 50
+      unit: L
+
+  solid:
+    daa_concept: solid_payload
+    capacity_l:
+      value: 76
+      unit: L
+
+energy:
+  battery:
+    type: intelligent_battery
+    status: pending_source_data
+
+  charging:
+    status: pending_source_data
+
+  generator:
+    type: field_energy_source
+    status: pending_source_data
+
+sensing:
+  positioning:
+    GNSS: true
+    RTK: true
+
+  perception:
+    radar: true
+    vision: true
+
+operation:
+  productivity:
+    concept: operational_efficiency
+    status: pending_source_data
+
+  mission_modes:
+    - spraying
+    - spreading
+    - orchard_operation
+    - night_operation
+
+environment:
+  field_conditions:
+    wind:
+      affects_application: true
+
+    weather:
+      affects_recommendations: true
+
+configuration:
+  variables:
+    - mission_type
+    - payload_type
+    - liquid_capacity
+    - solid_capacity
+    - battery_configuration
+    - charging_system
+    - environmental_conditions
+
+source:
+  manufacturer:
+    name: TopXGun
+    document: FP600 Specifications

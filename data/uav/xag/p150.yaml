@@ -1,0 +1,121 @@
+# XAG P150
+# Normalized DAA UAV Entity
+
+identity:
+  manufacturer: XAG
+  model: P150
+  category: agricultural_uav
+
+architecture:
+  type: multirotor
+  configuration: modular_platform
+
+  platform:
+    concept: agricultural_operation_platform
+
+modules:
+  flight_control:
+    manufacturer_term: SuperX 5 Pro
+    daa_concept: flight_control_system
+
+  liquid_application:
+    manufacturer_term: RevoSpray
+    daa_concept: liquid_payload
+    enabled: true
+
+  solid_application:
+    manufacturer_term: RevoCast
+    daa_concept: solid_payload
+    enabled: true
+
+  mapping:
+    manufacturer_term: RealTerra
+    daa_concept: mapping_payload
+    enabled: true
+
+dimensions:
+  transport:
+    status: pending_source_data
+
+  operation:
+    status: pending_source_data
+
+performance:
+  weight:
+    status: pending_source_data
+
+  max_takeoff_weight:
+    status: pending_source_data
+
+  environmental:
+    wind_resistance:
+      status: pending_source_data
+
+payload:
+  liquid:
+    module: RevoSpray
+    daa_concept: liquid_payload
+    capacity_l:
+      status: pending_source_data
+
+  solid:
+    module: RevoCast
+    daa_concept: solid_payload
+    capacity:
+      status: pending_source_data
+
+energy:
+  battery:
+    type: intelligent_battery
+    status: pending_source_data
+
+  charging:
+    system:
+      status: pending_source_data
+
+  generator:
+    type: field_energy_source
+    status: pending_source_data
+
+sensing:
+  positioning:
+    GNSS: true
+    RTK: true
+
+  perception:
+    radar: true
+    vision: true
+
+operation:
+  productivity:
+    concept: field_efficiency
+    status: pending_source_data
+
+  mission_modes:
+    - spraying
+    - spreading
+    - mapping
+
+environment:
+  field_conditions:
+    wind:
+      affects_application: true
+
+    weather:
+      affects_recommendations: true
+
+configuration:
+  variables:
+    - mission_type
+    - payload_type
+    - liquid_capacity
+    - solid_capacity
+    - mapping_requirement
+    - battery_configuration
+    - charging_system
+    - environmental_conditions
+
+source:
+  manufacturer:
+    name: XAG
+    document: P150 Specifications

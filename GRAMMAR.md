@@ -14,3 +14,25 @@ In DAA:
 - Domain consumes Core
 
 Grammar remains stable so the architecture can evolve while preserving semantic continuity.
+
+## Distillation
+
+The process of refining information into increasingly coherent meaning while preserving identity.
+
+---
+
+## Conceptual Normalization
+
+The identification of shared concepts across heterogeneous representations.
+
+---
+
+## Conceptual Convergence
+
+The emergence of common meaning from different structural expressions.
+
+---
+
+## Critical Mass of Coherence
+
+The structural threshold at which new principles emerge naturally from the relationships within a system.

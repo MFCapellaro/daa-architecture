@@ -1,0 +1,103 @@
+# DJI AGRAS T50
+# Normalized DAA UAV Entity
+
+identity:
+  manufacturer: DJI
+  model: AGRAS T50
+  category: agricultural_uav
+
+architecture:
+  type: multirotor
+  configuration: integrated_platform
+
+dimensions:
+  transport:
+    length_mm: 1115
+    width_mm: 750
+    height_mm: 900
+
+  operation:
+    length_mm: 2800
+    width_mm: 3085
+    height_mm: 820
+
+performance:
+  weight:
+    aircraft_kg: 39.9
+    with_battery_kg: 52
+
+  max_takeoff_weight:
+    spraying_kg: 92
+    spreading_kg: 103
+
+  flight_radius_m: 2000
+
+  environmental:
+    max_wind_resistance_ms: 6
+
+payload:
+  liquid:
+    enabled: true
+    capacity_l: 40
+    operational_payload_kg: 40
+    application:
+      type: spraying
+      technology: dual_atomizing
+
+  solid:
+    enabled: true
+    capacity_l: 75
+    operational_payload_kg: 50
+    material_range_mm:
+      min: 0.5
+      max: 5
+
+energy:
+  battery:
+    model: DB1560
+    capacity_mAh: 30000
+    voltage_v: 52.22
+    weight_kg: 12.1
+
+  charging:
+    fast_charge_time_min:
+      min: 9
+      max: 12
+
+  generator:
+    model: D12000iE
+    power_w: 12000
+    fuel: gasoline
+
+sensing:
+  positioning:
+    GNSS: true
+    RTK: true
+
+  obstacle_detection:
+    radar: true
+    vision: true
+
+operation:
+  spray:
+    width_m:
+      min: 4
+      max: 11
+
+  spreading:
+    width_m: 8
+
+configuration:
+  variables:
+    - payload_type
+    - liquid_capacity
+    - solid_capacity
+    - battery_configuration
+    - charging_system
+    - mission_type
+    - environmental_conditions
+
+source:
+  manufacturer:
+    name: DJI
+    document: AGRAS T50 Specifications
