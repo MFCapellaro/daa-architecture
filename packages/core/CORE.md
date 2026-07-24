@@ -2,13 +2,11 @@
 
 ## Purpose
 
-The Core preserves the identity of the system.
+The Core preserves the minimum generative structure that maintains the identity of the system.
 
 It does not accumulate experience.
 
 It does not evolve through experimentation.
-
-Its function is to preserve the minimum generative structure that allows coherent evolution.
 
 ---
 
@@ -20,7 +18,7 @@ Core preserves identity.
 
 Relationships generate evolution.
 
-Flows express behavior.
+Flows express emergent behavior.
 
 Legacy preserves validated understanding.
 
@@ -28,9 +26,9 @@ Legacy preserves validated understanding.
 
 ## Dynamic Axis
 
-The dynamic axis of the system resides in relationships.
+Relationships are the dynamic axis of the ecosystem.
 
-Relationships contain the complete evolutionary potential of the ecosystem.
+They transform variability into coherent evolution.
 
 ---
 
@@ -95,3 +93,46 @@ The Core is intentionally minimal.
 Nothing should be added unless it demonstrates improving coherent behavior.
 
 Nothing should remain if it no longer contributes to preserving identity.
+
+## Architectural Separation
+
+The Core distinguishes between **Primitives** and **Capabilities**.
+
+### Primitives
+
+Primitives define meaning.
+
+They describe invariant concepts that preserve the identity of the architecture.
+
+Primitives do not execute behavior.
+
+Examples:
+- Sense
+- Coherence
+- Identity
+- Possibility
+- Center of Gravity
+
+### Capabilities
+
+Capabilities execute behavior.
+
+They preserve, organize and transform primitives without redefining their meaning.
+
+Examples:
+- Coherence Guardian
+- Relationships
+- Flows
+- Continuity
+- Legacy
+
+Primitives define what is.
+Capabilities define what happens.
+
+---
+
+## Emergent Laws
+
+Meaning precedes behavior.
+
+Behavior preserves meaning.

@@ -16,6 +16,14 @@ Each node contributes specific capabilities while preserving its own identity.
 
 ---
 
+# Relational Principle
+
+Nodes are connected components.
+
+Their value emerges through relationships that enable coordinated movement within the ecosystem.
+
+A relationship defines how capabilities interact, complement each other, and generate new possibilities.
+
 # Node Model
 
 ```text
