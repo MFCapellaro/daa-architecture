@@ -5,7 +5,7 @@ describe("PrimaryTriad", () => {
   it("defines the minimum generative structure", () => {
     const triad: PrimaryTriad = {
       sense: { direction: "North" },
-      coherence: { reference: "North" },
+      coherence: { identity: "North" },
       possibility: { potential: "Evolution" },
     };
 

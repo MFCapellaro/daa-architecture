@@ -1,3 +1,5 @@
+// Coherence.ts
+
 export type Coherence = {
-  north: string
+  identity: string
 }
