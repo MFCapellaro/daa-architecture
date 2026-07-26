@@ -1,34 +1,45 @@
 /**
  * DAA Kernel
  * ------------------------------
- * Guardian: Coherence Guardian
+ * CoherenceGuardian
  *
- * Preserves identity coherence
- * across system evolution.
- *
- * Observes governing laws and
- * protects the concepts that define
- * system identity.
+ * Coordinates specialized guardians
+ * to preserve system coherence.
  */
 
-import type { KernelGuardian } from "../KernelGuardian.js";
+import type { Guardian } from "./Guardian.js";
 
-import { Identity } from "../concepts/Identity.js";
-import { StructureEmergence } from "../laws/StructureEmergence.js";
+export interface CoherenceGuardian {
 
-export const CoherenceGuardian: KernelGuardian = {
-  id: "coherence-guardian",
+  readonly name: string;
 
-  name: "Coherence Guardian",
+  evaluate<T>(
+    subject: T,
+    guardians: readonly Guardian<T>[]
+  ): boolean;
 
-  responsibility:
-    "Preserves identity coherence across change.",
+}
 
-  observes: [
-    StructureEmergence
-  ],
 
-  protects: [
-    Identity
-  ]
-};
+export const CoherenceGuardian = {
+  create(): CoherenceGuardian {
+
+    return {
+
+      name: "Coherence Guardian",
+
+      evaluate<T>(
+        subject: T,
+        guardians: readonly Guardian<T>[]
+      ): boolean {
+
+        return guardians.every(
+          guardian =>
+            guardian.preserve(subject)
+        );
+
+      }
+
+    };
+  }
+} as const;

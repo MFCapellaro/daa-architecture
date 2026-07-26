@@ -50,13 +50,16 @@ describe("DAA Kernel coherence", () => {
       .toContain(RelationshipStructure);
   });
 
+test("Coherence Guardian coordinates specialized guardians", () => {
 
-  test("Coherence Guardian protects Identity", () => {
-    expect(CoherenceGuardian.protects)
-      .toContain(Identity);
+  const guardian = CoherenceGuardian.create();
 
-    expect(CoherenceGuardian.observes)
-      .toContain(StructureEmergence);
-  });
+  expect(guardian.name)
+    .toBe("Coherence Guardian");
+
+  expect(guardian.evaluate)
+    .toBeDefined();
+
+});
 
 });

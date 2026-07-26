@@ -16,3 +16,7 @@ export * from "./relationships/RelationshipStructure.js";
 export * from "./laws/StructureEmergence.js";
 
 export * from "./guardians/CoherenceGuardian.js";
+export * from "./laws/MeaningPrecedesRelationship.js";
+export * from "./laws/IdentityPreservation.js";
+export * from "./laws/MeaningPrecedesRelationship.js";
+export * from "./laws/LawRegistry.js";
