@@ -8,6 +8,11 @@
  * reputation can emerge over time.
  */
 
+import type {
+  IdentityTrajectory,
+  TrajectoryEvent
+} from "../trajectory/Trajectory.js";
+
 
 export interface TrajectoryIdentity {
 
@@ -20,30 +25,6 @@ export interface TrajectoryIdentity {
   readonly interests: readonly string[];
 
   readonly startedAt: Date;
-
-}
-
-
-export interface TrajectoryEvent {
-
-  readonly timestamp: Date;
-
-  readonly type: string;
-
-  readonly context?: string;
-
-  readonly description?: string;
-
-  readonly outcome?: string;
-
-}
-
-
-export interface IdentityTrajectory {
-
-  readonly identityId: string;
-
-  readonly events: readonly TrajectoryEvent[];
 
 }
 
@@ -118,7 +99,9 @@ export function createTrajectoryRegistry():
       }
 
 
-      trajectory.events.push(event);
+      trajectory.events.push(
+        event
+      );
 
     },
 
