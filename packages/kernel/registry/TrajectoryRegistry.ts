@@ -14,19 +14,9 @@ import type {
 } from "../trajectory/Trajectory.js";
 
 
-export interface TrajectoryIdentity {
-
-  readonly id: string;
-
-  readonly origin?: string;
-
-  readonly roles: readonly string[];
-
-  readonly interests: readonly string[];
-
-  readonly startedAt: Date;
-
-}
+import type {
+  TrajectoryIdentity
+} from "../trajectory/TrajectoryIdentity.js";
 
 
 export interface TrajectoryRegistry {
