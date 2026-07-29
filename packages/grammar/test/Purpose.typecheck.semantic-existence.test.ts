@@ -1,4 +1,4 @@
-import type { Purpose } from './purpose.js';
+import type { Purpose } from '../src/purpose/Purpose.js';
 
 declare const semanticExistenceCheck: Purpose;
 

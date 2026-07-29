@@ -1,9 +1,23 @@
-// knowledge/observation/Observation.ts
+/**
+ * DAA Knowledge
+ * ------------------------------
+ * Observation
+ *
+ * Represents an observed signal
+ * emerging from an experience.
+ *
+ * Observation preserves relevant
+ * information before interpretation.
+ */
 
-import { Experience } from "../experience/Experience.js";
+import type { Experience } from "../experience/Experience.js";
 
 export interface Observation {
-  id: string;
-  source: Experience;
-  insight: string;
+
+  readonly id: string;
+
+  readonly source: Experience;
+
+  readonly signal: string;
+
 }

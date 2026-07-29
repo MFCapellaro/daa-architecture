@@ -1,4 +1,4 @@
-import type { Identity } from './identity.js';
+import type { Identity } from '../src/identity/Identity.js';
 
 declare const semanticExistenceCheck: Identity;
 

@@ -2,11 +2,15 @@
 
 ## Purpose
 
-The Coherence Guardian preserves the orientation
-that gives meaning to the evolutionary path.
+The Coherence Guardian coordinates coherent evolution.
 
-It maintains alignment between possibilities
-and system identity.
+It evaluates whether new possibilities remain aligned with the system identity preserved by lower architectural layers.
+
+---
+
+## Guiding Question
+
+**Can this possibility evolve without breaking coherence?**
 
 ---
 
@@ -14,34 +18,33 @@ and system identity.
 
 ### Alignment
 
-The Guardian evaluates possibilities
-against coherence conditions.
+The Guardian evaluates possibilities against coherence conditions.
 
-
-Aligned possibilities preserve identity.
+Aligned possibilities preserve coordinated evolution.
 
 Misaligned possibilities are rejected.
 
 ---
 
-## Evolutionary Path
-
-The Coherence Guardian evolves through accumulated experience.
-
-Future capabilities may emerge:
-
-- Learning
-- Prediction
-
-These capabilities depend on sufficient coherent history.
-
-
----
-
 ## Architectural Role
 
-The Coherence Guardian is a Capability.
+The Coherence Guardian is a Core capability.
 
 It does not define meaning.
 
-It preserves meaning through behavior.
+It does not redefine identity.
+
+It coordinates possibilities while preserving coherent operation.
+
+---
+
+## Future Evolution
+
+The Coherence Guardian may progressively incorporate higher-order capabilities such as:
+
+- Learning
+- Pattern recognition
+- Prediction
+- Adaptive guidance
+
+These capabilities emerge from accumulated coherent experience rather than from predefined rules.

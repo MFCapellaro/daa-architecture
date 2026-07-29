@@ -1,1 +1,1 @@
-export type { Purpose } from './purpose.js';
+export type { Purpose } from './Purpose.js';

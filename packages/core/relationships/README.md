@@ -2,49 +2,53 @@
 
 ## Purpose
 
-Relationships constitute the dynamic axis of DAA.
+Relationships are the dynamic axis of DAA.
 
-They do not preserve identity.
-
-They generate evolution.
+They transform potential into coordinated evolution.
 
 Through relationships, potential becomes behavior, behavior becomes understanding, and understanding becomes Legacy.
 
 ---
 
-# Guiding Question
+## Guiding Question
 
-> What can become connected?
+**What can become coherently connected?**
 
 ---
 
-# Architectural Role
+## Architectural Role
 
-Grammar gives meaning.
+Grammar defines meaning.
 
-Core preserves identity.
+Kernel organizes relationships.
 
-Relationships generate evolution.
+Coherence preserves integrity.
 
-Flows express behavior.
+Knowledge builds capability.
+
+Core coordinates coherent operation.
+
+Relationships enable evolution.
+
+Flows express coordinated behavior.
 
 Legacy preserves validated understanding.
 
 ---
 
-# Dynamic Principle
+## Dynamic Principle
 
 Potential resides in relationships.
 
 Actors do not originate the ecosystem.
 
-Potential relationships configure the ecosystem.
+Potential relationships configure ecosystems.
 
-The ecosystem reveals the actors capable of developing it.
+The ecosystem reveals the actors capable of developing them.
 
 ---
 
-# Relational Principles
+## Relational Principles
 
 Relationships precede components.
 
@@ -60,7 +64,7 @@ Relationships transform isolated potential into collective capability.
 
 ---
 
-# Trust
+## Trust
 
 Trust is not declared.
 
@@ -76,7 +80,7 @@ History reveals trust.
 
 ---
 
-# Collective Behavior
+## Collective Behavior
 
 Every collective interaction generates shared history.
 
@@ -86,7 +90,7 @@ The value of the ecosystem grows through accumulated coherent relationships.
 
 ---
 
-# Evolution
+## Evolution
 
 Relationships continuously explore new possibilities.
 
@@ -98,17 +102,15 @@ Legacy improves future relationships.
 
 ---
 
-# Economic Principle
+## Economic Principle
 
 Collective potential generates collective value.
 
-The greater the coherent participation,
-
-the greater the emergent capability of the ecosystem.
+The greater the coherent participation, the greater the emergent capability of the ecosystem.
 
 ---
 
-# Membership
+## Membership
 
 Membership begins with minimum friction.
 
@@ -120,15 +122,17 @@ The system collects only the information required for coherent evolution.
 
 ---
 
-# Relational Metrics
-
-# Relational Metrics
+## Relational Metrics
 
 Metrics observe relationships to improve coherence.
 
+They do not evaluate individuals.
+
+They evaluate the quality, continuity and contribution of relationships.
+
 ---
 
-# First Laws
+## First Laws
 
 Potential relationships configure ecosystems.
 
@@ -144,6 +148,6 @@ Collective capability generates Legacy.
 
 ---
 
-# Purpose
+## Design Principle
 
-Relationships transform potential into evolution.
+Relationships are the primary mechanism through which adaptive systems evolve while preserving coherence.

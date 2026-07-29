@@ -1,1 +1,1 @@
-export type { Identity } from './identity.js';
+export type { Identity } from './Identity.js';

@@ -1,4 +1,4 @@
-import type { Relationship } from './relationship.js';
+import type { Relationship } from '../src/relationship/Relationship.js';
 
 declare const semanticExistenceCheck: Relationship;
 

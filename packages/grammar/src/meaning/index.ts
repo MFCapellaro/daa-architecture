@@ -1,1 +1,1 @@
-export type { Meaning } from './meaning.js';
+export type { Meaning } from './Meaning.js';

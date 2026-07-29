@@ -1,4 +1,4 @@
-# Grammar Concept Template
+# GRAMMAR CONCEPT TEMPLATE
 
 ## Purpose
 

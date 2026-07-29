@@ -1,1 +1,1 @@
-export type { Relationship } from './relationship.js';
+export type { Relationship } from './Relationship.js';

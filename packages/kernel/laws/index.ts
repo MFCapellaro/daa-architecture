@@ -8,5 +8,21 @@
  */
 
 export {
+  GrammarEmergence
+} from "./GrammarEmergence.js";
+
+export {
+  MeaningPrecedesRelationship
+} from "./MeaningPrecedesRelationship.js";
+
+export {
   IdentityPreservation
 } from "./IdentityPreservation.js";
+
+export {
+  StructureEmergence
+} from "./StructureEmergence.js";
+
+export {
+  LawRegistry
+} from "./LawRegistry.js";

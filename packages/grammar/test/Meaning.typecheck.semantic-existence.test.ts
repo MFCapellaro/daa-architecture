@@ -1,4 +1,4 @@
-import type { Meaning } from './meaning.js';
+import type { Meaning } from '../src/meaning/Meaning.js';
 
 declare const semanticExistenceCheck: Meaning;
 

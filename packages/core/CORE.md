@@ -2,25 +2,27 @@
 
 ## Purpose
 
-The Core preserves the minimum generative structure that maintains the identity of the system.
+Core is the orchestration layer of DAA.
 
-It does not accumulate experience.
+It coordinates the architectural capabilities provided by Grammar, Kernel, Coherence and Knowledge into coherent system operation.
 
-It does not evolve through experimentation.
+Core introduces no new meaning.
+
+Core coordinates existing architectural capabilities.
 
 ---
 
-## Generative Structure
+## Generative Architecture
 
 Grammar gives meaning.
 
-Core preserves identity.
+Kernel establishes coherent structures through concepts, relationships, laws and guardians.
 
-Relationships generate evolution.
+Coherence preserves integrity.
 
-Flows express emergent behavior.
+Knowledge builds capability.
 
-Legacy preserves validated understanding.
+Core coordinates coherent operation.
 
 ---
 
@@ -50,11 +52,13 @@ The ecosystem reveals the actors capable of developing it.
 
 ## Evolutionary Principle
 
-The Core preserves identity.
+Kernel preserves architectural identity.
 
-Relationships drive evolution.
+Coherence preserves integrity.
 
-Legacy expands collective understanding.
+Knowledge expands adaptive capability.
+
+Core coordinates coherent evolution.
 
 ---
 
@@ -68,71 +72,32 @@ Synergy produces emergent properties.
 
 ---
 
+## Evolution Cycle
+
+```text
+Potential
+    ↓
+Possibility
+    ↓
+Relationship
+    ↓
+Flow
+    ↓
+Identity
+    ↓
+Continuity
+    ↓
+Legacy
+
+---
+
 ## Activation
 
+```text
 Condition
-
-↓
-
+    ↓
 Behavior
-
-↓
-
+    ↓
 Result
-
-Every coherent result may become part of the Legacy.
-
-The Core remains unchanged.
-
----
-
-## Identity
-
-The Core is intentionally minimal.
-
-Nothing should be added unless it demonstrates improving coherent behavior.
-
-Nothing should remain if it no longer contributes to preserving identity.
-
-## Architectural Separation
-
-The Core distinguishes between **Primitives** and **Capabilities**.
-
-### Primitives
-
-Primitives define meaning.
-
-They describe invariant concepts that preserve the identity of the architecture.
-
-Primitives do not execute behavior.
-
-Examples:
-- Sense
-- Coherence
-- Identity
-- Possibility
-- Center of Gravity
-
-### Capabilities
-
-Capabilities execute behavior.
-
-They preserve, organize and transform primitives without redefining their meaning.
-
-Examples:
-- Coherence Guardian
-- Relationships
-- Flows
-- Continuity
-- Legacy
-
-Primitives define what is.
-Capabilities define what happens.
-
----
-
-## Emergent Laws
-
-Meaning precedes behavior.
-
-Behavior preserves meaning.
+    ↓
+Legacy

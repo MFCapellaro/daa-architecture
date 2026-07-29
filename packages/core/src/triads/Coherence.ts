@@ -1,5 +1,15 @@
-// Coherence.ts
+/**
+ * DAA Core
+ * ------------------------------
+ * Coherence
+ *
+ * Represents the identity
+ * that must be preserved
+ * during coordinated operation.
+ */
 
-export type Coherence = {
-  identity: string
+export interface Coherence {
+
+  readonly identity: string;
+
 }

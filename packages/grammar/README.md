@@ -1,18 +1,36 @@
-# packages/grammar
+# Grammar
 
-`packages/grammar` is the semantic foundation of DAA.
+## Purpose
+
+Grammar is the semantic foundation of DAA.
 
 It defines the shared conceptual language from which every architectural layer derives its meaning.
 
-## Guiding Question
+---
 
-**What does it mean?**
+## Concepts
 
-## Responsibility
+Grammar defines foundational semantic primitives:
 
-- Define conceptual primitives.
-- Preserve semantic stability.
-- Establish shared meaning.
-- Prevent conceptual redefinition in higher layers.
+- Meaning
+- Identity
+- Purpose
+- Context
+- Relationship
 
-Grammar defines meaning. It does not define behavior.
+These concepts establish the vocabulary used by higher layers.
+
+---
+
+## Conceptual Flow
+
+```text
+Meaning
+    ↓
+Context
+    ↓
+Purpose
+    ↓
+Identity
+    ↓
+Relationship
