@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 
 import { KernelConstitution } from "../KernelConstitution.js";
+
 import { IdentityPreservation } from "../laws/IdentityPreservation.js";
 import { MeaningPrecedesRelationship } from "../laws/MeaningPrecedesRelationship.js";
+import { CoherenceTransformation } from "../laws/CoherenceTransformation.js";
 
 import type { KernelConcept } from "../KernelConcept.js";
 
@@ -39,6 +41,20 @@ describe("KernelConstitution", () => {
         "A structural connection between concepts."
     };
 
+    const variability: KernelConcept = {
+      id: "variability",
+      name: "Variability",
+      definition:
+        "Changing conditions that generate movement."
+    };
+
+    const movement: KernelConcept = {
+      id: "movement",
+      name: "Movement",
+      definition:
+        "Adaptive response under changing conditions."
+    };
+
 
     const identityLaw = IdentityPreservation(
       identity,
@@ -50,10 +66,18 @@ describe("KernelConstitution", () => {
       relationship
     );
 
+    const coherenceLaw = CoherenceTransformation(
+      coherence,
+      variability,
+      movement,
+      identity
+    );
+
 
     const constitution = KernelConstitution.define([
       identityLaw,
-      meaningLaw
+      meaningLaw,
+      coherenceLaw
     ]);
 
 
@@ -62,7 +86,7 @@ describe("KernelConstitution", () => {
 
 
     expect(constitution.laws)
-      .toHaveLength(2);
+      .toHaveLength(3);
 
 
     expect(
@@ -76,6 +100,13 @@ describe("KernelConstitution", () => {
       constitution.laws.map(law => law.id)
     ).toContain(
       "meaning-precedes-relationship"
+    );
+
+
+    expect(
+      constitution.laws.map(law => law.id)
+    ).toContain(
+      "coherence-transformation"
     );
 
   });

@@ -24,5 +24,9 @@ export {
 } from "./StructureEmergence.js";
 
 export {
+  CoherenceTransformation
+} from "./CoherenceTransformation.js";
+
+export {
   LawRegistry
 } from "./LawRegistry.js";

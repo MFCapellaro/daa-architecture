@@ -2,27 +2,32 @@
 
 ## Purpose
 
-Kernel is the architectural coordination layer of DAA.
+Kernel is the constitutional coordination layer of DAA.
 
-It transforms semantic concepts into coherent structures through relationships, laws, guardians and registries.
+It transforms semantic concepts into coherent architectural structures through relationships, laws, guardians and registries.
 
-Kernel preserves the conditions where coherent evolution can emerge.
+Kernel preserves the conditions from which coherent adaptive behavior can emerge.
 
-## Responsibilty
+---
 
-Kernel provides the mechanisms that connect meaning with structure.
+## Responsibility
+
+Kernel provides the mechanisms that connect meaning with structure and structure with adaptive behavior.
 
 It:
 
-transforms concepts into architectural relationships,
-defines laws that preserve system invariants,
-provides guardians that maintain coherence,
-preserves identity through transformation,
-records trajectories through time.
+- transforms concepts into architectural relationships,
+- defines laws that preserve system invariants,
+- provides guardians that observe and preserve coherence,
+- transforms coherent relationships into dynamic potency,
+- preserves identity through adaptation,
+- records trajectories through time.
 
 Kernel does not define domain behavior.
 
-It defines the conditions that allow coherent behavior to emerge.
+Kernel preserves the grammar from which coherent behavior emerges.
+
+---
 
 ## Concepts
 
@@ -32,11 +37,13 @@ Kernel consumes Grammar concepts and establishes architectural primitives.
 
 The fundamental concepts are:
 
-Identity
-Meaning
-Purpose
-Relationship
-Structure
+- Identity
+- Meaning
+- Purpose
+- Relationship
+- Structure
+
+---
 
 ## Relationships
 
@@ -45,82 +52,136 @@ Relationships define how concepts connect and generate structure.
 Fundamental relationships:
 
 Meaning
-   ↓ gives
-Purpose
-
+   ↓
+Relationship
 
 Relationship
-   ↓ creates
+   ↓
 Structure
 
 Structure is not imposed.
 
 Structure emerges from coherent relationships.
 
-## Laws
+---
 
-Laws define invariants that preserve coherence.
+## Precedence Laws
+
+Precedence Laws describe the conditions that enable new system capabilities to emerge.
+
+Meaning
+   ↓
+Relationship
+   ↓
+Potency
+   ↓
+Movement
 
 Fundamental laws:
 
-Meaning precedes Relationship.
+- Meaning precedes Relationship.
+- Relationships precede Potency.
+- Potency precedes Movement.
 
-Relationships generate Structure.
+---
 
-Identity is preserved through transformation.
+## Preservation Laws
 
-Laws describe stable patterns that remain valid during system evolution.
+Preservation Laws describe the conditions that preserve system continuity during change.
+
+Identity
+   ↓
+Coherence
+   ↓
+Adaptation
+
+Fundamental laws:
+
+- Identity is preserved through adaptation.
+- Coherence transforms relational potential into dynamic potency.
+
+Adaptive behavior preserves coherence.
+
+Emergent evolution is the long-term consequence of sustained coherent adaptation.
+
+---
 
 ## Guardians
 
-Guardians preserve coherence by validating concepts, relationships and laws.
+Guardians preserve coherence by continuously observing, interpreting and validating concepts, relationships and laws.
 
 Guardian
     ↓
-Preserves
+Observes
     ↓
-Coherence
+Measures
+    ↓
+Aligns
+    ↓
+Preserves Coherence
 
 Specialized guardians protect:
 
-Identity
-Meaning
-Relationships
-Constitution
-Evolution
+- Identity
+- Meaning
+- Relationships
+- Constitution
+- Adaptation
+
+Together, Guardians form the adaptive sensory system of DAA.
+
+---
 
 ## Trajectory
 
-Trajectory represents identity transformation through time.
+Trajectory represents coherent movement through time.
 
-Events
-   ↓
+Movement
+    ↓
+Measurement
+    ↓
+Alignment
+    ↓
 Trajectory
-   ↓
-Patterns
-   ↓
-Knowledge
 
-Trajectories preserve observable continuity from which coherence, trust and reputation can emerge.
+Trajectories preserve observable continuity from which knowledge, trust and adaptive patterns can emerge.
+
+---
 
 ## Architectural Flow
 
-Grammar 
-↓ 
-Concepts 
-↓ 
-Relationships 
-↓ 
-Laws 
-↓ 
-Guardians 
-↓ 
-Trajectory 
-↓ 
-Coherent Evolution
+Grammar
+↓
+Concepts
+↓
+Relationships
+↓
+Laws
+↓
+Guardians
+↓
+Movement
+↓
+Measurement
+↓
+Alignment
+↓
+Trajectory
 
-## Design Principle
+Emergent properties:
 
-Kernel does not control evolution.
+- Advance
+- Knowledge
+- Evolution
 
-Kernel preserves the conditions where coherent evolution can emerge.
+---
+
+## Design Principles
+
+Kernel does not execute behavior.
+
+Kernel preserves the grammar from which coherent behavior emerges.
+
+Coherence is the dynamic equilibrium of relationships that transforms potential into dynamic potency.
+
+Adaptive systems exist through coherent potential, act through aligned movement, and evolve through preserved identity.

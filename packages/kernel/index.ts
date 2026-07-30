@@ -24,6 +24,7 @@ export * from "./relationships/RelationshipStructure.js";
 export * from "./laws/GrammarEmergence.js";
 export * from "./laws/MeaningPrecedesRelationship.js";
 export * from "./laws/IdentityPreservation.js";
+export * from "./laws/CoherenceTransformation.js";
 export * from "./laws/StructureEmergence.js";
 export * from "./laws/LawRegistry.js";
 
@@ -48,3 +49,7 @@ export * from "./trajectory/TrajectoryPattern.js";
 
 // Registry
 export * from "./registry/TrajectoryRegistry.js";
+
+
+// Dynamics
+export * from "./dynamics/index.js";
