@@ -3,39 +3,26 @@
  * ------------------------------
  * ConstitutionGuardian
  *
- * Preserves the foundational laws
- * that define kernel coherence.
+ * Observes constitutional law coherence.
  */
 
 import type { Guardian } from "./Guardian.js";
 import type { KernelLaw } from "../KernelLaw.js";
 
 
-export interface ConstitutionGuardian
-  extends Guardian<KernelLaw> {
-}
+export const ConstitutionGuardian: Guardian<KernelLaw> = {
 
+  name: "Constitution Guardian",
 
-export const ConstitutionGuardian = {
-  create(): ConstitutionGuardian {
+  observe(
+    law: KernelLaw
+  ): boolean {
 
-    return {
+    return (
+      law.definition.length > 0 &&
+      law.relationships.length > 0
+    );
 
-      name: "Constitution Guardian",
-
-      preserve(
-        law: KernelLaw
-      ): boolean {
-
-        return (
-          law.id.length > 0 &&
-          law.name.length > 0 &&
-          law.definition.length > 0 &&
-          law.relationships.length > 0
-        );
-
-      }
-
-    };
   }
-} as const;
+
+};

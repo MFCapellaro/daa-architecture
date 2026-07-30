@@ -4,14 +4,17 @@
  * Guardian
  *
  * Generic contract for coherence
- * preservation mechanisms.
+ * observation mechanisms.
+ *
+ * Guardians observe system elements
+ * and provide coherence information.
  */
 
 export interface Guardian<T> {
 
   readonly name: string;
 
-  preserve(
+  observe(
     subject: T
   ): boolean;
 

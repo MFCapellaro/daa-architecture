@@ -20,7 +20,7 @@ describe("EvolutionGuardian", () => {
 
 
     expect(
-      guardian.preserve(possibility)
+      guardian.observe(possibility)
     ).toBe(true);
 
   });
@@ -39,7 +39,7 @@ describe("EvolutionGuardian", () => {
 
 
     expect(
-      guardian.preserve(possibility)
+      guardian.observe(possibility)
     ).toBe(false);
 
   });

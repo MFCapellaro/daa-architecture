@@ -20,7 +20,7 @@ describe("MeaningGuardian", () => {
 
 
     expect(
-      guardian.preserve(concept)
+      guardian.observe(concept)
     ).toBe(true);
 
   });
@@ -39,7 +39,7 @@ describe("MeaningGuardian", () => {
 
 
     expect(
-      guardian.preserve(concept)
+      guardian.observe(concept)
     ).toBe(false);
 
   });

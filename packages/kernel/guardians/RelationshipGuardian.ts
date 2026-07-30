@@ -23,9 +23,9 @@ export const RelationshipGuardian = {
 
       name: "Relationship Guardian",
 
-      preserve(
-        relationship: KernelRelationship
-      ): boolean {
+      observe(
+  relationship: KernelRelationship
+): boolean {
 
         return (
           relationship.source.definition.trim().length > 0 &&

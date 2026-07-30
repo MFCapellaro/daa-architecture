@@ -15,7 +15,7 @@ describe("GuardianRegistry", () => {
 
       name: "Test Guardian",
 
-      preserve() {
+      observe() {
         return true;
       }
 

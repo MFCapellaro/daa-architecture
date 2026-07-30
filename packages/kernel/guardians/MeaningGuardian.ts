@@ -23,9 +23,9 @@ export const MeaningGuardian = {
 
       name: "Meaning Guardian",
 
-      preserve(
-        concept: KernelConcept
-      ): boolean {
+      observe(
+  concept: KernelConcept
+): boolean {
 
         return (
           concept.definition.trim().length > 0

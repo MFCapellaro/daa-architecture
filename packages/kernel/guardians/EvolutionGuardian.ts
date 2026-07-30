@@ -23,9 +23,9 @@ export const EvolutionGuardian = {
 
       name: "Evolution Guardian",
 
-      preserve(
-        possibility: KernelConcept
-      ): boolean {
+      observe(
+  possibility: KernelConcept
+): boolean {
 
         return (
           possibility.definition.trim().length > 0

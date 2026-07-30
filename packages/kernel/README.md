@@ -20,6 +20,8 @@ It:
 - defines laws that preserve system invariants,
 - provides guardians that observe and preserve coherence,
 - transforms coherent relationships into dynamic potency,
+- enables coherent adaptation through dynamic cycles,
+- preserves identity through transformation,
 - preserves identity through adaptation,
 - records trajectories through time.
 
@@ -148,6 +150,31 @@ Trajectories preserve observable continuity from which knowledge, trust and adap
 
 ---
 
+## Dynamics
+
+Dynamics defines how systems transform while preserving coherence.
+
+It connects relational trajectories with adaptive responses.
+
+Trajectory
+    ↓
+Coherence Evaluation
+    ↓
+Assessment
+    ↓
+Adaptive Action
+    ↓
+Adaptive Cycle
+
+Dynamics enables systems to evolve by observing change,
+evaluating coherence and generating purposeful adaptation.
+
+Dynamics does not replace identity.
+
+It preserves identity through coherent transformation.
+
+---
+
 ## Architectural Flow
 
 Grammar
@@ -167,6 +194,12 @@ Measurement
 Alignment
 ↓
 Trajectory
+↓
+Dynamics
+↓
+Adaptive Response
+↓
+Evolution
 
 Emergent properties:
 

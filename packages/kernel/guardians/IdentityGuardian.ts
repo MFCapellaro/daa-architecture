@@ -3,41 +3,33 @@
  * ------------------------------
  * IdentityGuardian
  *
- * Preserves system identity
- * during transformation.
+ * Observes identity coherence.
  */
 
 import type { Guardian } from "./Guardian.js";
 import type { KernelConcept } from "../KernelConcept.js";
 
 
-export interface IdentityGuardian
-  extends Guardian<KernelConcept> {
-}
-/**
- * Creates an Identity Guardian.
- *
- * A valid identity requires
- * a defined semantic foundation.
- */
-
 export const IdentityGuardian = {
-  create(): IdentityGuardian {
+
+  create(): Guardian<KernelConcept> {
 
     return {
 
       name: "Identity Guardian",
 
-      preserve(
-        concept: KernelConcept
+      observe(
+        identity: KernelConcept
       ): boolean {
 
         return (
-          concept.definition.trim().length > 0
+          identity.definition.length > 0
         );
 
       }
 
     };
+
   }
+
 } as const;

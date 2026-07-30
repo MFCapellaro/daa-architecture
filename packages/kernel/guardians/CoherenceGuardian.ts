@@ -4,10 +4,14 @@
  * CoherenceGuardian
  *
  * Coordinates specialized guardians
- * to preserve system coherence.
+ * to evaluate system coherence.
  */
 
 import type { Guardian } from "./Guardian.js";
+import {
+  CoherenceAssessment
+} from "../dynamics/CoherenceAssessment.js";
+
 
 export interface CoherenceGuardian {
 
@@ -16,12 +20,13 @@ export interface CoherenceGuardian {
   evaluate<T>(
     subject: T,
     guardians: readonly Guardian<T>[]
-  ): boolean;
+  ): CoherenceAssessment;
 
 }
 
 
 export const CoherenceGuardian = {
+
   create(): CoherenceGuardian {
 
     return {
@@ -31,15 +36,49 @@ export const CoherenceGuardian = {
       evaluate<T>(
         subject: T,
         guardians: readonly Guardian<T>[]
-      ): boolean {
+      ): CoherenceAssessment {
 
-        return guardians.every(
-          guardian =>
-            guardian.preserve(subject)
+        const observations =
+          guardians.map(
+            guardian =>
+              guardian.observe(subject)
+          );
+
+
+        const coherent =
+          observations.every(
+            observation => observation
+          );
+
+
+        const score =
+          observations.length === 0
+            ? 0
+            : observations.filter(
+                observation => observation
+              ).length / observations.length;
+
+
+        return CoherenceAssessment.of(
+
+          coherent,
+
+          score,
+
+          coherent
+            ? [
+                "All guardians observe coherent conditions."
+              ]
+            : [
+                "One or more guardians detected incoherence."
+              ]
+
         );
 
       }
 
     };
+
   }
+
 } as const;

@@ -6,7 +6,7 @@ import type { KernelConcept } from "../KernelConcept.js";
 
 describe("IdentityGuardian", () => {
 
-  it("preserves identity with semantic definition", () => {
+  it("observes identity with semantic definition", () => {
 
     const identity: KernelConcept = {
       id: "identity",
@@ -20,7 +20,7 @@ describe("IdentityGuardian", () => {
 
 
     expect(
-      guardian.preserve(identity)
+      guardian.observe(identity)
     ).toBe(true);
 
   });
@@ -39,7 +39,7 @@ describe("IdentityGuardian", () => {
 
 
     expect(
-      guardian.preserve(identity)
+      guardian.observe(identity)
     ).toBe(false);
 
   });

@@ -37,7 +37,7 @@ describe("RelationshipGuardian", () => {
 
 
     expect(
-      guardian.preserve(relationship)
+      guardian.observe(relationship)
     ).toBe(true);
 
   });
@@ -70,7 +70,7 @@ describe("RelationshipGuardian", () => {
 
 
     expect(
-      guardian.preserve(relationship)
+      guardian.observe(relationship)
     ).toBe(false);
 
   });
