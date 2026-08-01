@@ -13,7 +13,7 @@ import { describe, expect, it } from "vitest";
 import type { Participant } from "../src/Participant.js";
 import type { Supplier } from "../src/Supplier.js";
 import type { PoolOffer } from "../src/PoolOffer.js";
-import type { PoolFormation } from "../src/PoolFormation.js";
+import type { PoolFormationIdentity } from "../src/PoolFormationIdentity.js";
 import type { Transaction } from "../src/Transaction.js";
 
 describe("UAS Pool Integration", () => {
@@ -55,7 +55,7 @@ describe("UAS Pool Integration", () => {
       ]
     };
 
-    const formation: PoolFormation = {
+    const formation: PoolFormationIdentity = {
       id: "formation-001",
       poolOfferId: offer.id,
       participantIds: participants.map(

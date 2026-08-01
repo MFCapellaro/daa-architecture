@@ -8,11 +8,11 @@
  */
 
 import { describe, expect, it } from "vitest";
-import type { PoolFormation } from "../src/PoolFormation.js";
+import type { PoolFormationIdentity } from "../src/PoolFormationIdentity.js";
 
 describe("PoolFormation", () => {
   it("should represent an initial collective formation", () => {
-    const formation: PoolFormation = {
+    const formation: PoolFormationIdentity = {
       id: "formation-001",
       poolOfferId: "offer-001",
       participantIds: [
@@ -31,7 +31,7 @@ describe("PoolFormation", () => {
   });
 
   it("should represent a formation in progress", () => {
-    const formation: PoolFormation = {
+    const formation: PoolFormationIdentity = {
       id: "formation-002",
       poolOfferId: "offer-002",
       participantIds: [

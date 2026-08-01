@@ -13,6 +13,6 @@ export type { Supplier } from "./src/Supplier.js";
 
 export type { PoolOffer } from "./src/PoolOffer.js";
 
-export type { PoolFormation } from "./src/PoolFormation.js";
+export type { PoolFormationIdentity } from "./src/PoolFormationIdentity.js";
 
 export type { Transaction } from "./src/Transaction.js";

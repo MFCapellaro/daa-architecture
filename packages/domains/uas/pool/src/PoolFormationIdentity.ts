@@ -11,7 +11,7 @@
  * distributed demand into collective capability.
  */
 
-export interface PoolFormation {
+export interface PoolFormationIdentity {
   id: string;
 
   poolOfferId: string;
