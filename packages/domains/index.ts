@@ -1,7 +1,10 @@
 /**
- * packages/domains
- * ----------------
+ * DAA Domains
+ * ------------------------------
  * Public API
+ *
+ * Exposes business domains built
+ * upon the DAA architecture.
  */
 
-export * from "./uas/src/index.js";
+export * from "./uas/index.js";
