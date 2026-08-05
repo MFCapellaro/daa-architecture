@@ -1,4 +1,4 @@
-// evolution/possibility/Possibility.ts
+// generation/possibility/Possibility.ts
 
 import { Potential } from "../potential/Potential.js";
 

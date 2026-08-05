@@ -7,8 +7,8 @@
  * expression of an Actor within the ecosystem.
  *
  * Identity remains stable.
- * Profile evolves through relationships
- * and context changes.
+ * Profile evolves through relationships,
+ * capabilities, services and context changes.
  */
 
 export interface ActorProfile {
@@ -28,13 +28,19 @@ export interface ActorProfile {
   description?: string;
 
   /**
-   * Current capabilities.
-   */
+ * Current observable capabilities.
+ *
+ * Capabilities describe the Actor's
+ * present expression within the ecosystem.
+ *
+ * They may evolve over time.
+ */
   capabilities?: string[];
 
   /**
-   * Services currently offered.
-   */
+ * Services currently offered
+ * by the Actor.
+ */
   services?: string[];
 
   /**

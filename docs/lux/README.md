@@ -2,7 +2,7 @@
 
 ## Purpose
 
-LUX is the transmitance of condensed coherence.
+LUX is the transmittance of condensed coherence.
 
 LUX enables coherent meaning to traverse contexts while preserving identity.
 
@@ -33,7 +33,7 @@ Concepts define the elements through which coherent transmission emerges.
 The fundamental concepts are:
 
 * Condensed Coherence
-* Transmitance
+* Transmittance
 * Attention
 * Understanding
 * Intention
@@ -50,9 +50,9 @@ Fundamental relationships:
 
 Condensed Coherence
 ↓
-Transmitance
+Transmittance
 
-Transmitance
+Transmittance
 ↓
 Understanding
 
@@ -86,13 +86,13 @@ These laws define the order through which coherence becomes observable and trans
 
 ---
 
-## Transmitance
+## Transmittance
 
-Transmitance is the property through which condensed coherence passes from one context to another while preserving meaning.
+Transmittance is the property through which condensed coherence passes from one context to another while preserving meaning.
 
 Condensed coherence is the source.
 
-Transmitance is the property.
+Transmittance is the property.
 
 Propagation is the emergent result.
 
@@ -104,7 +104,7 @@ Coherence
 ↓
 Condensed Coherence
 ↓
-Transmitance
+Transmittance
 ↓
 Attention
 ↓
@@ -140,7 +140,7 @@ LUX preserves coherence across contexts.
 
 LUX transforms attention into intention through understanding.
 
-LUX enables propagation through the transmitance of condensed coherence.
+LUX enables propagation through the transmittance of condensed coherence.
 
 Coherent systems become observable through their own coherence.
 

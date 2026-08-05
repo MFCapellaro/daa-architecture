@@ -1,3 +1,3 @@
 export * from "./Recognition.js";
-export * from "./Transmitance.js";
+export * from "./Transmittance.js";
 export * from "./Propagation.js";

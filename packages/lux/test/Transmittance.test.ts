@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 import { Meaning } from "../../kernel/concepts/Meaning.js";
 
 import { Recognition } from "../Recognition.js";
-import { Transmitance } from "../Transmitance.js";
+import { Transmittance } from "../Transmittance.js";
 
-describe("Transmitance", () => {
+describe("Transmittance", () => {
 
   it("preserves recognition across contexts", () => {
 
@@ -14,19 +14,19 @@ describe("Transmitance", () => {
       "kernel"
     );
 
-    const transmitance = Transmitance.of(
+    const transmittance = Transmittance.of(
       recognition,
       "kernel",
       "lux"
     );
 
-    expect(transmitance.recognition)
+    expect(transmittance.recognition)
       .toBe(recognition);
 
-    expect(transmitance.sourceContext)
+    expect(transmittance.sourceContext)
       .toBe("kernel");
 
-    expect(transmitance.targetContext)
+    expect(transmittance.targetContext)
       .toBe("lux");
 
   });

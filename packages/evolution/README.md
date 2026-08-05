@@ -2,9 +2,9 @@
 
 ## Purpose
 
-Evolution reveals adaptive capability emerging from coherent transformation.
+Evolution reveals expanded capability emerging from coherent adaptation.
 
-From coherent transformation emerges evolutionary capability.
+Evolution transforms coherent continuity into evolutionary capability.
 
 Evolution enables systems to increase capability while preserving identity.
 
@@ -18,7 +18,7 @@ It:
 
 * reveals potency contained in coherent transformation,
 * preserves identity while increasing capability
-* transforms adaptive continuity into evolutionary capacity,
+* transforms coherent adaptation into evolutionary capacity,
 * enables emergent capabilities to become observable.
 
 Evolution reveals the capability that emerges from coherent adaptation.
@@ -33,8 +33,9 @@ The fundamental concepts are:
 
 * Identity
 * Coherence
-* Adaptation
+* Experience
 * Discernment
+* Adaptation
 * Potency
 * Emergence
 * Capability
@@ -47,25 +48,21 @@ Relationships define how coherent transformation becomes evolutionary capability
 
 Fundamental relationships:
 
-Identity
-↓
-Coherence
+Generation
 
-Coherence
-↓
-Discernment
-
-Discernment
-↓
-Potency
-
-Potency
-↓
-Emergence
-
-Emergence
-↓
 Capability
+    ↓
+Experience
+
+Evolution
+
+Experience
+    ↓
+Discernment
+    ↓
+Adaptation
+    ↓
+Expanded Capability
 
 ---
 
@@ -75,9 +72,10 @@ Precedence Laws define the order of evolutionary capability emergence.
 
 Fundamental laws:
 
-* Identity precedes Adaptation.
+* Identity precedes Coherence.
 * Coherence precedes Discernment.
-* Discernment precedes Potency.
+* Discernment precedes Adaptation.
+* Adaptation precedes Potency.
 * Potency precedes Emergence.
 * Emergence precedes Capability.
 
@@ -91,7 +89,9 @@ Kernel preserves coherent structure.
 
 Dynamics enables coherent transformation.
 
-From coherent transformation emerges evolutionary capability.
+Generation reveals capability emergence.
+
+Evolution enables capability continuity.
 
 LUX enables coherent propagation.
 
@@ -105,9 +105,9 @@ Identity
 ↓
 Coherence
 ↓
-Adaptive Transformation
-↓
 Discernment
+↓
+Adaptive Transformation
 ↓
 Potency
 ↓
@@ -123,4 +123,4 @@ Evolution reveals capability through preserved coherence.
 
 Evolution emerges when adaptation maintains identity while increasing capability.
 
-Capability emerges from coherent transformation.
+Capability is preserved and expanded through coherent evolution.

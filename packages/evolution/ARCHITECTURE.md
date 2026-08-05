@@ -10,7 +10,7 @@ Evolution emerges from the continuous relationship between coherence, adaptation
 
 ## Architectural Role
 
-Evolution represents the capability through which coherent adaptation becomes emergent capability.
+Evolution represents the process through which coherent adaptation becomes expanded capability.
 
 It does not replace identity.
 

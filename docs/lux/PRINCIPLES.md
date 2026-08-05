@@ -2,7 +2,7 @@
 
 ## Identity
 
-LUX is the transmitance of condensed coherence.
+LUX is the transmittance of condensed coherence.
 
 ---
 
@@ -58,11 +58,11 @@ Together, precedence and emergence form a generative condition through which sys
 
 ---
 
-## Transmitance Principle
+## Transmittance Principle
 
 Condensed coherence is the substance.
 
-Transmitance is the property.
+Transmittance is the property.
 
 Propagation is the emergent expression.
 

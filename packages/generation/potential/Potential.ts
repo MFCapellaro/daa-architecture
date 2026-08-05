@@ -1,4 +1,4 @@
-// evolution/potential/Potential.ts
+// generation/potential/Potential.ts
 
 export interface Potential {
   id: string;

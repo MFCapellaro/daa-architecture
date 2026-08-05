@@ -123,7 +123,7 @@ Extends coherent meaning across contexts.
 ```text
 Condensed Coherence
     ↓
-Transmitance
+Transmittance
     ↓
 Propagation
 ```

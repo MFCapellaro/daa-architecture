@@ -1,10 +1,10 @@
-# Evolution Principles
+# Generation Principles
 
 ## Identity Preservation
 
 Identity is preserved through coherent transformation.
 
-Evolution increases capability while maintaining continuity.
+Generation increases capability while maintaining continuity.
 
 ---
 
@@ -28,7 +28,7 @@ Potency emerges when relationships reach coherent dynamic equilibrium.
 
 Capability emerges from coherent transformation.
 
-Evolution reveals the capabilities contained in sustained adaptive coherence.
+Generation reveals the capabilities contained in sustained adaptive coherence.
 
 ---
 
@@ -42,7 +42,7 @@ Together, precedence and emergence form a generative condition.
 
 ---
 
-## Evolutionary Flow
+## Generative Flow
 
 ```text
 Identity
@@ -51,9 +51,21 @@ Coherence
     ↓
 Discernment
     ↓
+Trajectory
+    ↓
+Potential
+    ↓
+Possibility
+    ↓
+Compatibility
+    ↓
+Interaction
+    ↓
 Potency
     ↓
 Emergence
     ↓
 Capability
+    ↓
+Knowledge
 ```

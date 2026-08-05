@@ -1,5 +1,15 @@
 # Capabilities
 
+Capability is the general architectural concept that defines what a system is able to achieve.
+
+Across the DAA lifecycle, capability may appear in different evolutionary states:
+
+* Emergent Capability
+* Reusable Capability
+* Expanded Capability
+
+These expressions represent different stages of the same architectural concept.
+
 ## Purpose
 
 Capabilities define what a system is able to accomplish independently of any specific implementation.

@@ -9,15 +9,15 @@
  */
 
 import type {
-  Transmitance
-} from "./Transmitance.js";
+  Transmittance
+} from "./Transmittance.js";
 
 export interface Propagation {
 
   /**
    * Transmitted coherent state.
    */
-  readonly transmitance: Transmitance;
+  readonly transmittance: Transmittance;
 
   /**
    * Context in which coherent
@@ -31,12 +31,12 @@ export interface Propagation {
 export const Propagation = {
 
   of(
-    transmitance: Transmitance,
+    transmittance: Transmittance,
     context: string
   ): Propagation {
 
     return {
-      transmitance,
+      transmittance,
       context
     };
 

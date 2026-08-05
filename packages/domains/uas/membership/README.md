@@ -1,68 +1,71 @@
-# DAA UAS Membership
+# Participant
 
-## Overview
+## Purpose
 
-The Membership domain represents the voluntary relationship between an ecosystem identity and DAA.
+A **Participant** represents an Actor that belongs to the DAA ecosystem.
 
-Membership does not create identity.
+Participation establishes belonging.
 
-Membership establishes belonging.
+It does not define evolution, capability, or potential.
 
-An Actor exists independently within the ecosystem.
-
-A Participant exists through a voluntary relationship with DAA.
-
----
-
-## Core Principle
-
-> Belonging emerges through voluntary coherent relationships.
-
-Participation cannot be imposed.
-
-Membership begins when an identity consciously accepts participating within DAA.
+Those emerge through coherent trajectories.
 
 ---
 
 ## Responsibility
 
-The Membership domain is responsible for:
+The responsibility of a Participant is to establish membership within DAA.
 
-* representing participation,
-* preserving membership status,
-* enabling trajectories,
-* connecting participants with DAA domains.
+A Participant:
 
-It does not recognize external entities.
+* belongs to the ecosystem,
+* preserves identity,
+* enables coherent participation,
+* becomes the origin of future trajectories.
 
-Recognition belongs to the Ecosystem domain.
+A Participant does **not**:
+
+* define capabilities,
+* express evolution,
+* reveal potential,
+* perform interactions.
+
+These responsibilities belong to subsequent architectural domains.
 
 ---
 
-## Relationship
+## Architectural Relationships
 
 ```text
-Ecosystem
-
-↓
-
 Actor
-
-↓
-
-Integration
-
-↓
-
+    ↓
 Participant
-
-↓
-
+    ↓
 Trajectory
 ```
 
+An Actor exists.
+
+A Participant belongs.
+
+A Trajectory expresses coherent evolution.
+
 ---
 
-## Guiding Statement
+## Architectural Principles
 
-> Membership transforms recognition into participation.
+* Identity precedes participation.
+* Participation establishes belonging.
+* Belonging enables coherent evolution.
+* Evolution reveals potential.
+* Potential precedes interaction.
+
+---
+
+## DAA Perspective
+
+Participation is not an activity.
+
+Participation is the architectural condition that allows an Actor to evolve coherently within DAA.
+
+A Participant establishes the foundation from which trajectories, interactions, and emergent value become possible.

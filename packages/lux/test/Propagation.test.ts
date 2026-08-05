@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { Meaning } from "../../kernel/concepts/Meaning.js";
 
 import { Recognition } from "../Recognition.js";
-import { Transmitance } from "../Transmitance.js";
+import { Transmittance } from "../Transmittance.js";
 import { Propagation } from "../Propagation.js";
 
 describe("Propagation", () => {
@@ -15,19 +15,19 @@ describe("Propagation", () => {
       "kernel"
     );
 
-    const transmitance = Transmitance.of(
+    const transmittance = Transmittance.of(
       recognition,
       "kernel",
       "lux"
     );
 
     const propagation = Propagation.of(
-      transmitance,
+      transmittance,
       "community"
     );
 
-    expect(propagation.transmitance)
-      .toBe(transmitance);
+    expect(propagation.transmittance)
+      .toBe(transmittance);
 
     expect(propagation.context)
       .toBe("community");

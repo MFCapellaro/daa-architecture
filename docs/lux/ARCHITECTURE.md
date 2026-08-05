@@ -97,7 +97,7 @@ LUX enables condensed coherence to cross contexts.
 ```text
 Condensed Coherence
     ↓
-Transmitance
+Transmittance
     ↓
 Recognition
     ↓
@@ -127,7 +127,7 @@ Evolution
     ↓
 Condensed Coherence
     ↓
-Transmitance
+Transmittance
     ↓
 Recognition
     ↓

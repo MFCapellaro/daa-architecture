@@ -1,240 +1,117 @@
-# DAA UAS Ecosystem Architecture
+# Ecosystem Architecture
 
-## Purpose
+## Architectural Role
 
-The Ecosystem domain represents the external reality surrounding DAA.
+The Ecosystem is responsible for recognizing existence.
 
-Its responsibility is to observe, recognize, preserve and contextualize existing relationships before any internal system participation is established.
+It represents the transition between external reality and DAA participation.
 
-DAA does not create actors.
-
-DAA recognizes existing actors and enables coherent participation.
+Its purpose is not to control entities, but to establish a coherent understanding of what exists and what relationships may become possible.
 
 ---
 
-# Fundamental Principle
-
-> The ecosystem precedes the system.
-
-A dynamic system begins by observing existing conditions and relationships before defining structures that transform them.
-
----
-
-# Evolutionary Flow
+## Structural Position
 
 ```text
 External Reality
 
-↓
+        ↓
 
-ExternalEntity
+Discovery
 
-↓
+        ↓
+
+Recognition
+
+        ↓
+
+Integration
+
+        ↓
+
+Membership
+
+        ↓
+
+Trajectory
+
+        ↓
+
+Potential
+
+        ↓
+
+Interaction
+```
+
+The Ecosystem is the origin point where DAA begins relating with reality.
+
+---
+
+## Core Relationships
+
+```text
+DiscoverySource
+
+    provides
 
 DiscoveryRecord
 
-↓
+
+DiscoveryRecord
+
+    recognizes
+
+ExternalEntity
+
+
+ExternalEntity
+
+    becomes through integration
 
 Actor
 
-↓
 
-ActorProfile
+Actor
 
-↓
-
-IntegrationRecord
-
-↓
+    establishes
 
 Participant
-
-↓
-
-Trajectory
 ```
 
-Each stage represents a different relationship with the system.
+Each transition preserves identity while increasing relationship coherence.
 
 ---
 
-# Core Concepts
+## Architectural Responsibility
 
-## ExternalEntity
+The Ecosystem:
 
-Represents an existing entity observed in the external environment.
+* identifies sources of information,
+* records observations,
+* recognizes external entities,
+* manages integration transitions.
 
-An ExternalEntity exists independently from DAA.
+It does not:
 
-It answers:
-
-> What exists?
-
----
-
-## DiscoveryRecord
-
-Represents the observation event.
-
-It preserves how knowledge about an entity entered the ecosystem.
-
-It answers:
-
-> How was it discovered?
+* create identity,
+* define belonging,
+* manage evolution,
+* generate potential,
+* produce emergent potency.
 
 ---
 
-## Actor
+## DAA Perspective
 
-Represents an identity recognized within the ecosystem.
+The Ecosystem is the first architectural expression of the Law of Precedence.
 
-An Actor exists independently from DAA participation.
+Reality precedes recognition.
 
-It answers:
+Recognition precedes relationship.
 
-> Who exists?
+Relationship precedes participation.
 
----
+Participation precedes evolution.
 
-## ActorProfile
-
-Represents the current expression of an Actor.
-
-Identity remains stable while capabilities, services and context may evolve.
-
-It answers:
-
-> How does this actor currently express itself?
-
----
-
-## IntegrationRecord
-
-Represents the voluntary relationship established between an Actor and DAA.
-
-Integration requires conscious acceptance.
-
-Recognition and participation are different relationships.
-
-It answers:
-
-> Has this identity chosen to relate with DAA?
-
----
-
-## Participant
-
-Represents an Actor or individual that has accepted participation within DAA.
-
-Participation enables internal trajectories and relationships.
-
-It answers:
-
-> Who belongs to the system?
-
----
-
-# Identity and Evolution
-
-DAA preserves identity through transformation.
-
-Actors may change:
-
-* capabilities,
-* services,
-* geographic presence,
-* relationships,
-
-while maintaining continuity of identity.
-
-```text
-Identity
-
-+
-
-Changing Expression
-
-=
-
-Evolution
-```
-
----
-
-# Ecosystem and DAA Relationship
-
-The relationship is bidirectional.
-
-```text
-Ecosystem
-
-      ⇅
-
-DAA
-```
-
-The ecosystem provides context.
-
-DAA increases coherence between relationships.
-
----
-
-# Voluntary Participation
-
-DAA participation cannot be imposed.
-
-The ecosystem may:
-
-* observe,
-* recognize,
-* invite,
-* suggest opportunities.
-
-But integration requires voluntary acceptance.
-
----
-
-# AI Role
-
-AI acts as an amplifier of ecosystem understanding.
-
-It increases the capacity to:
-
-* discover entities,
-* organize information,
-* identify patterns,
-* suggest relationships,
-* reveal opportunities.
-
-AI amplifies meaning.
-
-It does not replace human agency.
-
----
-
-# Future Emergence
-
-New capabilities emerge only when sufficient coherence is achieved.
-
-Examples:
-
-* collective representation,
-* regulatory dialogue,
-* interoperability,
-* ecosystem standards.
-
-These are not initial system responsibilities.
-
-They emerge from accumulated coherent relationships.
-
----
-
-# Guiding Principle
-
-> DAA creates conditions for existing relationships to express their potential.
-
-```
-Identity expands.
-Relationships express.
-Evolution emerges.
-```
+Through this sequence, DAA transforms observable reality into coherent system emergence.

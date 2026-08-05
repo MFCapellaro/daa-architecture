@@ -32,7 +32,7 @@ describe("Knowledge formation", () => {
     const knowledge: Knowledge = {
       id: "knowledge",
       learning: [learning],
-      capability: "design coherent systems"
+      reusableCapability: "design coherent systems"
     };
 
     expect(knowledge.learning[0])
@@ -44,7 +44,7 @@ describe("Knowledge formation", () => {
     expect(observation.source)
       .toBe(experience);
 
-    expect(knowledge.capability)
+    expect(knowledge.reusableCapability)
       .toBe("design coherent systems");
 
   });

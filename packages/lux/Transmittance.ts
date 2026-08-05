@@ -1,9 +1,9 @@
 /**
  * DAA LUX
  * ------------------------------
- * Transmitance
+ * Transmittance
  *
- * Transmitance represents the architectural
+ * Transmittance represents the architectural
  * property through which condensed coherence
  * traverses contexts while preserving identity.
  */
@@ -12,7 +12,7 @@ import type {
   Recognition
 } from "./Recognition.js";
 
-export interface Transmitance {
+export interface Transmittance {
 
   /**
    * Recognition emerging
@@ -33,13 +33,13 @@ export interface Transmitance {
 }
 
 
-export const Transmitance = {
+export const Transmittance = {
 
   of(
     recognition: Recognition,
     sourceContext: string,
     targetContext: string
-  ): Transmitance {
+  ): Transmittance {
 
     return {
       recognition,

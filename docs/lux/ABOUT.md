@@ -16,7 +16,7 @@ The purpose of LUX is to enable coherent systems to become observable through th
 
 When attention emerges, condensed coherence can traverse the context preserving meaning.
 
-Understanding emerges from transmitance.
+Understanding emerges from transmittance.
 
 Intention emerges from understanding.
 
@@ -28,7 +28,7 @@ Propagation emerges from intention.
 
 Attention precedes Intention.
 
-Propagation emerges through the transmitance of condensed coherence.
+Propagation emerges through the transmittance of condensed coherence.
 
 ---
 

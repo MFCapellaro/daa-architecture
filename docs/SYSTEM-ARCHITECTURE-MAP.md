@@ -80,7 +80,7 @@ It continuously evaluates whether change preserves architectural identity.
 
 How does the system learn?
 
-Knowledge transforms observation into accumulated capability.
+Knowledge transforms observation into reusable capability through integrated learning.
 
 Experience becomes learning.
 
@@ -172,7 +172,7 @@ Structure preserves identity.
 
 Identity enables coherent evolution.
 
-Knowledge expands adaptive capability.
+Knowledge integrates learning into reusable capability.
 
 Core coordinates capabilities.
 
@@ -202,9 +202,9 @@ Structure preserves coherence.
 
 Coherence enables learning.
 
-Learning expands capability.
+Learning becomes reusable capability through Knowledge.
 
-Capability enables evolution.
+Reusable Capability enables Evolution.
 
 Evolution generates configurations.
 

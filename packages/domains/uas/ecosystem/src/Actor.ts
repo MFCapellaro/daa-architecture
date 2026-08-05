@@ -3,12 +3,12 @@
  * ------------------------------
  * Domain: UAS Ecosystem
  *
- * Actor represents an existing participant
- * of the external ecosystem.
+ * Actor represents an existing entity
+ * within the external ecosystem.
  *
  * An Actor exists independently of DAA.
- * Participation in DAA is a later voluntary
- * relationship.
+ * Participation in DAA is established later
+ * through Membership.
  */
 
 export type ActorType =
@@ -55,20 +55,10 @@ export interface ActorContext {
   longitude?: number;
 }
 
-export interface ActorCapabilities {
-  /**
-   * Existing capabilities recognized
-   * within the ecosystem.
-   */
-  capabilities: string[];
-}
-
 export interface Actor {
   identity: ActorIdentity;
 
   context: ActorContext;
-
-  capabilities: ActorCapabilities;
 
   /**
    * Reference to discovery origin.
