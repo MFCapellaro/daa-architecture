@@ -142,7 +142,7 @@ Emergence also generates expanded potential, enabling future cycles of generatio
 
 Capability is the observable expression of coherent emergence.
 
-Capability generates Knowledge.
+Capability enables Experience.
 
 Knowledge completes the generative mechanism and becomes the foundation for Evolution.
 
@@ -168,7 +168,7 @@ Evolution belongs to the integrative process.
 
 Generation produces capability.
 
-Evolution preserves capability as expanded identity.
+Evolution integrates reusable capability into enriched identity.
 
 ```text
 Generation

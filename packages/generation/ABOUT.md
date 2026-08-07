@@ -2,7 +2,7 @@
 
 ## Identity
 
-Generation is the emergence of adaptive capability through preserved coherence.
+Generation is the emergence of capability through preserved coherence.
 
 Generation reveals the potency contained in coherent transformation.
 

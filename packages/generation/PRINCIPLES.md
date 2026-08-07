@@ -4,7 +4,7 @@
 
 Identity is preserved through coherent transformation.
 
-Generation increases capability while maintaining continuity.
+Generation reveals capability while maintaining continuity.
 
 ---
 

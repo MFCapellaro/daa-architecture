@@ -2,43 +2,38 @@
 
 ## Purpose
 
-Evolution reveals expanded capability emerging from coherent adaptation.
+Evolution integrates capability into identity.
 
-Evolution transforms coherent continuity into evolutionary capability.
+Evolution preserves identity through coherent adaptation.
 
-Evolution enables systems to increase capability while preserving identity.
+Evolution enables systems to continuously expand without losing coherence.
 
 ---
 
 ## Responsibility
 
-Evolution defines the conditions where coherent adaptation emerges as capability.
+Evolution defines the conditions through which capability becomes part of identity.
 
 It:
 
-* reveals potency contained in coherent transformation,
-* preserves identity while increasing capability
-* transforms coherent adaptation into evolutionary capacity,
-* enables emergent capabilities to become observable.
+* preserves identity during adaptation,
+* integrates capability into identity,
+* enables coherent adaptation,
+* reveals enriched identity through continuous integration.
 
-Evolution reveals the capability that emerges from coherent adaptation.
+Evolution preserves coherent continuity while identity expands.
 
 ---
 
 ## Concepts
 
-Concepts define the elements of evolutionary capability.
-
 The fundamental concepts are:
 
 * Identity
-* Coherence
-* Experience
+* Capability
 * Discernment
 * Adaptation
-* Potency
-* Emergence
-* Capability
+* Integration
 
 ---
 
@@ -51,33 +46,30 @@ Fundamental relationships:
 Generation
 
 Capability
-    ↓
-Experience
+        │
+        ▼
 
 Evolution
 
-Experience
-    ↓
 Discernment
-    ↓
+        ↓
 Adaptation
-    ↓
-Expanded Capability
+        ↓
+Integration
+        ↓
+Identity
 
 ---
 
 ## Precedence Laws
 
-Precedence Laws define the order of evolutionary capability emergence.
+## Precedence Laws
 
-Fundamental laws:
-
-* Identity precedes Coherence.
-* Coherence precedes Discernment.
+* Identity precedes Discernment.
+* Capability precedes Adaptation.
 * Discernment precedes Adaptation.
-* Adaptation precedes Potency.
-* Potency precedes Emergence.
-* Emergence precedes Capability.
+* Adaptation precedes Integration.
+* Integration preserves Identity.
 
 ---
 
@@ -85,42 +77,40 @@ Fundamental laws:
 
 Grammar establishes meaning.
 
-Kernel preserves coherent structure.
+Kernel preserves identity.
 
-Dynamics enables coherent transformation.
+Kernel Dynamics enables coherent transformation.
 
-Generation reveals capability emergence.
+Generation reveals capability.
 
-Evolution enables capability continuity.
+Evolution integrates capability into identity.
 
-LUX enables coherent propagation.
+Knowledge preserves integrated capability.
 
-Each layer preserves identity while enabling the emergence of the next condition.
+LUX propagates coherent knowledge.
 
 ---
 
 ## Evolutionary Flow
 
 Identity
-↓
-Coherence
-↓
-Discernment
-↓
-Adaptive Transformation
-↓
-Potency
-↓
-Emergence
-↓
+      │
 Capability
+      ↓
+Discernment
+      ↓
+Adaptation
+      ↓
+Integration
+      ▼
+Identity
 
 ---
 
 ## Design Principles
 
-Evolution reveals capability through preserved coherence.
+Evolution preserves identity through coherent adaptation.
 
-Evolution emerges when adaptation maintains identity while increasing capability.
+Capability enriches identity only through integration.
 
-Capability is preserved and expanded through coherent evolution.
+Identity expands without losing coherence.

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Evolution defines how coherent systems increase capability while preserving identity.
+Evolution defines how coherent systems enrich identity.
 
 Evolution emerges from the continuous relationship between coherence, adaptation and context.
 
@@ -10,11 +10,11 @@ Evolution emerges from the continuous relationship between coherence, adaptation
 
 ## Architectural Role
 
-Evolution represents the process through which coherent adaptation becomes expanded capability.
+Evolution represents the process through which coherent adaptation becomes enriched identity.
 
 It does not replace identity.
 
-It reveals new capability from preserved coherence.
+It integrate new capability from preserved coherence.
 
 ---
 
@@ -40,7 +40,7 @@ Adaptation maintains alignment through transformation.
 
 Emergence reveals new capability.
 
-Capability expresses evolutionary potential.
+Enriched identity expresses evolutionary potential.
 
 ---
 
@@ -100,7 +100,7 @@ Preservation maintains identity.
 
 Adaptation maintains alignment.
 
-Evolution increases capability.
+Evolution enriches identity.
 
 Transmission enables coherence to cross contexts.
 
@@ -174,4 +174,4 @@ Each layer preserves identity while enabling the emergence of the next capabilit
 
 ## Core Principle
 
-Evolution is increased capability emerging from preserved coherence.
+Evolution is enriched identity emerging from preserved coherence.

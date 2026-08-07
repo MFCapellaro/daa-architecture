@@ -300,7 +300,7 @@ Strengthened Formation
 
 9
 
-Expanded Capability
+Collective Capability
 ```
 
 These levels represent increasing collective organization.

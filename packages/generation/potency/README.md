@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Potency reveals the collective capability emerging from coherent interaction.
+Potency enables collective capability to emerge through coherent interaction.
 
 Potency is not an individual property.
 

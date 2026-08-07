@@ -87,7 +87,7 @@ Within the UAS Ecosystem:
 * DAA creates visibility and structure,
 * relationships generate value,
 * participants and suppliers develop trajectories,
-* knowledge becomes collective capability.
+* knowledge supports collective capability.
 
 ---
 

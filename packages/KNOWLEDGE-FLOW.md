@@ -4,7 +4,7 @@
 
 Knowledge Flow describes how distributed experience becomes collective knowledge within DAA.
 
-It explains how coherent relationships transform observation into capability, and capability into expanded identity.
+It explains how coherent relationships transform observation into reusable capability, and capability into expanded identity.
 
 Knowledge is not created in isolation.
 
@@ -20,9 +20,9 @@ Relationships reveal meaning.
 
 Coherence transforms meaning into knowledge.
 
-Knowledge enables capability.
+Knowledge preserves reusable capability.
 
-Capability expands identity.
+Evolution integrates reusable capability into expanded identity.
 
 ---
 
@@ -30,28 +30,30 @@ Capability expands identity.
 
 ```text
 Experience
-        ↓
+    ↓
 Observation
-        ↓
+    ↓
 Relationships
-        ↓
+    ↓
 Meaning
-        ↓
+    ↓
 Discernment
-        ↓
+    ↓
 Coherence
-        ↓
+    ↓
 Generation
-        ↓
+    ↓
 Capability
-        ↓
+    ↓
 Knowledge
-        ↓
+    ↓
+Reusable Capability
+    ↓
 Evolution
-        ↓
+    ↓
 Expanded Identity
-        ↓
-Propagation (LUX)
+    ↓
+LUX
 ```
 
 Each stage preserves the coherence of the previous one while enabling the next.

@@ -51,9 +51,9 @@ Emergence reveals collective capability.
 
 Capability becomes observable.
 
-Knowledge preserves capability through learning.
+Knowledge preserves capability as reusable capability.
 
-Evolution expands capability through coherent adaptation.
+Evolution integrates reusable capability into enriched identity.
 
 ---
 

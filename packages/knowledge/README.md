@@ -2,17 +2,11 @@
 
 ## Purpose
 
-Knowledge is the layer that preserves, integrates and organizes learning generated through coherent experience.
+Knowledge preserves coherent learning generated through experience.
 
-It transforms coherent learning into reusable capability.
+Knowledge integrates learning into coherent knowledge.
 
-Knowledge enables future generation through integrated evolutionary understanding.
-
-Knowledge preserves learning generated through coherent experience.
-
-It integrates learning into reusable capability.
-
-Knowledge enables future coherent generation.
+Knowledge enables future evolution through preserved understanding.
 
 ---
 
@@ -22,7 +16,7 @@ Knowledge:
 
 * preserves coherent learning,
 * integrates learning into reusable patterns,
-* enables capability reuse,
+* enables reusable capability,
 * supports future evolutionary adaptation.
 
 Knowledge does not define behavior.
@@ -38,11 +32,13 @@ Behaviors emerge in higher architectural layers.
 Experience represents a situated event within a specific context.
 
 ```text
-Observation
-↓
 Experience
-↓
+      ↓
+Observation
+      ↓
+Discernment
+      ↓
 Learning
-↓
+      ↓
 Knowledge
 ```

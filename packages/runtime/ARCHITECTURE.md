@@ -102,7 +102,7 @@ Adaptive Action
 
 ### Evolution
 
-Reveals adaptive capability.
+Integrates reusable capability.
 
 ```text
 Coherence

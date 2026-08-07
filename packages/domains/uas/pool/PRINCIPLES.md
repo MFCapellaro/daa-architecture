@@ -52,7 +52,7 @@ Relationship Depth
 
     ↓
 
-Expanded Capability
+Collective Capability
 
 Complexity is revealed when needed.
 

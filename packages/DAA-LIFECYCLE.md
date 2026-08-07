@@ -51,7 +51,7 @@ Deeper Meaning
 
 Every new generation begins with expanded knowledge and enriched identity.
 
-Each spiral preserves coherence while increasing evolutionary capability.
+Each spiral preserves coherence while enriching identity.
 
 ---
 
@@ -93,7 +93,7 @@ Learning transforms observation into reusable understanding.
 
 Knowledge preserves coherent learning.
 
-Knowledge enables future generations to begin from expanded capability.
+Knowledge enables future generations to begin from reusable capability.
 
 ---
 
@@ -107,7 +107,7 @@ It provides evolutionary direction.
 
 ### Adaptation
 
-Adaptation transforms capability while preserving identity.
+Adaptation transforms reusable capability while preserving identity.
 
 Transformation without coherence is not evolution.
 
@@ -115,7 +115,7 @@ Transformation without coherence is not evolution.
 
 ### Evolution
 
-Evolution expands capability through coherent adaptation.
+Evolution integrates reusable capability into enriched identity.
 
 Evolution preserves continuity while increasing evolutionary potential.
 

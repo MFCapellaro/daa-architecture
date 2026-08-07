@@ -4,12 +4,13 @@ import {
   Experience,
   Observation,
   Learning,
-  Knowledge
+  Knowledge,
+  ReusableCapability
 } from "../index.js";
 
 describe("Knowledge formation", () => {
 
-  test("emerges from integrated learning", () => {
+  test("integrates learning into reusable capability", () => {
 
     const experience: Experience = {
       id: "experience",
@@ -32,20 +33,37 @@ describe("Knowledge formation", () => {
     const knowledge: Knowledge = {
       id: "knowledge",
       learning: [learning],
-      reusableCapability: "design coherent systems"
+      reusableCapability: "coherent architectural composition"
     };
 
-    expect(knowledge.learning[0])
-      .toBe(learning);
-
-    expect(learning.observations[0])
-      .toBe(observation);
+    const reusableCapability: ReusableCapability = {
+      id: "reusable-capability",
+      knowledgeId: knowledge.id,
+      description: knowledge.reusableCapability,
+      validated: true,
+      coherent: true
+    };
 
     expect(observation.source)
       .toBe(experience);
 
-    expect(knowledge.reusableCapability)
-      .toBe("design coherent systems");
+    expect(learning.observations[0])
+      .toBe(observation);
+
+    expect(knowledge.learning[0])
+      .toBe(learning);
+
+    expect(reusableCapability.knowledgeId)
+      .toBe(knowledge.id);
+
+    expect(reusableCapability.description)
+      .toBe(knowledge.reusableCapability);
+
+    expect(reusableCapability.validated)
+      .toBe(true);
+
+    expect(reusableCapability.coherent)
+      .toBe(true);
 
   });
 

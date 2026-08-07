@@ -24,7 +24,7 @@ Kernel organizes relationships.
 
 Coherence preserves integrity.
 
-Knowledge builds capability.
+Knowledge preserves reusable capability.
 
 Core coordinates coherent operation.
 
@@ -144,7 +144,9 @@ Trust generates collaboration.
 
 Collaboration generates collective capability.
 
-Collective capability generates Legacy.
+Collective capability creates shared history.
+
+Legacy preserves that history.
 
 ---
 

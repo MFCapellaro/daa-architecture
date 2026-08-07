@@ -48,7 +48,7 @@ Kernel preserves identity.
 
 Dynamics enables adaptation.
 
-Evolution reveals capability.
+Evolution integrates reusable capability into identity.
 
 LUX enables propagation.
 

@@ -1,9 +1,11 @@
 // generation/emergence/Emergence.ts
 
-import { Potential } from "../potential/Potential.js";
-
 export interface Emergence {
-  id: string;
-  origin: string;
-  newPotential: Potential;
+
+  readonly id: string;
+
+  readonly potencyId: string;
+
+  readonly observable: boolean;
+
 }

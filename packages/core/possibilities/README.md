@@ -24,7 +24,7 @@ Kernel organizes relationships.
 
 Coherence preserves integrity.
 
-Knowledge builds capability.
+Knowledge preserves reusable capability.
 
 Core coordinates possibilities.
 

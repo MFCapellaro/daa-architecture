@@ -8,7 +8,7 @@ LUX preserves recognition across contexts while enabling coherent relationships 
 
 LUX does not create capability.
 
-LUX propagates capability that has emerged through coherent evolution.
+LUX propagates reusable knowledge and enriched identity that has emerged through coherent evolution.
 
 ---
 
@@ -92,7 +92,7 @@ Propagation
 
 Ecosystem
 ```
-LUX completes the evolutionary cycle by returning generated knowledge and capability to new contexts.
+LUX completes the evolutionary cycle by returning reusable knowledge and enriched identity to new contexts.
 
 ---
 

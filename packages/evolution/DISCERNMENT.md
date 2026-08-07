@@ -6,7 +6,7 @@ Discernment defines the coherent recognition through which systems identify mean
 
 Discernment does not create change.
 
-Discernment reveals which changes preserve identity and increase capability.
+Discernment reveals which changes preserve and enrich identity.
 
 ---
 
@@ -71,7 +71,7 @@ Adaptation
 
 Adaptation
 ↓
-Evolutionary Capability
+Expanded Capability
 
 ---
 

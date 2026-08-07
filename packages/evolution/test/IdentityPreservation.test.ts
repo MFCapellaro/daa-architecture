@@ -9,20 +9,22 @@ describe("Identity Preservation", () => {
       discernmentId: "discernment-001",
       identityId: "identity-001",
       previousCapabilityId: "capability-001",
-      expandedCapabilityId: "capability-expanded-001",
-      preservesIdentity: true,
+      reusableCapabilityId: "capability-expanded-001",
+      enrichedIdentityId: "identity-enriched-001",
       coherent: true,
     };
 
-    expect(adaptation.preservesIdentity).toBe(true);
+    expect(adaptation.enrichedIdentityId)
+      .toBe("identity-enriched-001");
 
-    expect(adaptation.identityId).toBe("identity-001");
+    expect(adaptation.identityId)
+      .toBe("identity-001");
 
-    expect(adaptation.previousCapabilityId).not.toBe(
-      adaptation.expandedCapabilityId
-    );
+    expect(adaptation.previousCapabilityId)
+      .not.toBe(adaptation.reusableCapabilityId);
 
-    expect(adaptation.coherent).toBe(true);
+    expect(adaptation.coherent)
+      .toBe(true);
   });
 
   it("should reject adaptation without identity preservation", () => {
@@ -31,12 +33,12 @@ describe("Identity Preservation", () => {
       discernmentId: "discernment-002",
       identityId: "identity-001",
       previousCapabilityId: "capability-001",
-      expandedCapabilityId: "capability-expanded-002",
-      preservesIdentity: false,
+      reusableCapabilityId: "capability-expanded-002",
+      enrichedIdentityId: "identity-enriched-002",
       coherent: false,
     };
 
-    expect(adaptation.preservesIdentity).toBe(false);
-    expect(adaptation.coherent).toBe(false);
+    expect(adaptation.coherent)
+      .toBe(false);
   });
 });

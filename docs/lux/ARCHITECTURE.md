@@ -142,7 +142,7 @@ Propagation
 
 DAA systems preserve identity through transformation and transmission.
 
-Evolution reveals coherent capability.
+Evolution integrates coherent capability into identity.
 
 LUX enables coherent propagation across contexts.
 

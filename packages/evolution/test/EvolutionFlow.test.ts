@@ -19,8 +19,8 @@ describe("Evolution Flow", () => {
       discernmentId: discernment.id,
       identityId: "identity-001",
       previousCapabilityId: "capability-001",
-      expandedCapabilityId: "capability-expanded-001",
-      preservesIdentity: true,
+      reusableCapabilityId: "capability-expanded-001",
+      enrichedIdentityId: "identity-enriched-001",
       coherent: true,
     };
 
@@ -28,11 +28,13 @@ describe("Evolution Flow", () => {
     expect(discernment.aligned).toBe(true);
 
     expect(adaptation.discernmentId).toBe(discernment.id);
-    expect(adaptation.previousCapabilityId).not.toBe(
-      adaptation.expandedCapabilityId
-    );
 
-    expect(adaptation.preservesIdentity).toBe(true);
+    expect(adaptation.reusableCapabilityId)
+      .toBe("capability-expanded-001");
+
+    expect(adaptation.enrichedIdentityId)
+      .toBe("identity-enriched-001");
+
     expect(adaptation.coherent).toBe(true);
   });
 });

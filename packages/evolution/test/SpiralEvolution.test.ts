@@ -47,8 +47,8 @@ describe("DAA Spiral Evolution", () => {
       discernmentId: discernment.id,
       identityId: "identity-001",
       previousCapabilityId: capability,
-      expandedCapabilityId: knowledge.reusableCapability,
-      preservesIdentity: true,
+      reusableCapabilityId: knowledge.reusableCapability,
+      enrichedIdentityId: "identity-enriched-001",
       coherent: true,
     };
 
@@ -61,13 +61,13 @@ describe("DAA Spiral Evolution", () => {
     expect(adaptation.discernmentId)
       .toBe(discernment.id);
 
-    expect(adaptation.preservesIdentity)
-      .toBe(true);
+    expect(adaptation.enrichedIdentityId)
+      .toBe("identity-enriched-001");
 
     expect(adaptation.coherent)
       .toBe(true);
 
-    expect(adaptation.expandedCapabilityId)
+    expect(adaptation.reusableCapabilityId)
       .not
       .toBe(adaptation.previousCapabilityId);
 

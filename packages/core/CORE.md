@@ -20,7 +20,7 @@ Kernel establishes coherent structures through concepts, relationships, laws and
 
 Coherence preserves integrity.
 
-Knowledge builds capability.
+Knowledge preserves reusable capability.
 
 Core coordinates coherent operation.
 
@@ -56,7 +56,9 @@ Kernel preserves architectural identity.
 
 Coherence preserves integrity.
 
-Knowledge expands adaptive capability.
+Knowledge preserves reusable capability.
+
+Evolution integrates it into identity.
 
 Core coordinates coherent evolution.
 

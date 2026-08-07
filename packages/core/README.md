@@ -58,7 +58,7 @@ Structure
     ↓
 Integrity
     ↓
-Capability
+Reusable Capability
     ↓
 Possibility
     ↓

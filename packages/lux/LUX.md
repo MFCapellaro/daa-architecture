@@ -16,7 +16,7 @@ LUX enables expanded identity to become recognizable beyond its original context
 
 It transforms internal coherence into external recognition.
 
-LUX completes the evolutionary cycle by allowing generated capability to enrich the ecosystem.
+LUX completes the evolutionary cycle by allowing enriched identity and reusable knowledge to propagate across the ecosystem.
 
 ---
 

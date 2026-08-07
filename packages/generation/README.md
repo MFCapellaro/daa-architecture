@@ -133,7 +133,7 @@ Capability becomes the experience that enables learning and future evolution.
 
 ## Relationship with Knowledge
 
-Generation produces capability.
+Generation reveals capability.
 
 Capability generates experience.
 
@@ -157,7 +157,7 @@ Knowledge preserves what generation reveals.
 
 ## Relationship with Evolution
 
-Generation creates emergent capability.
+Generation reveals emergent capability.
 
 Knowledge preserves generated learning.
 

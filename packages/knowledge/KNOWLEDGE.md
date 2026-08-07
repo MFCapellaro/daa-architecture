@@ -26,9 +26,9 @@ Learning expands knowledge.
 
 Knowledge enables future generation.
 
-Future generation expands capability.
+Future generation reveals new capability.
 
-Expanded capability enriches identity.
+Evolution enriches identity through reusable capability.
 
 
 Knowledge is the evolutionary memory of coherent systems.

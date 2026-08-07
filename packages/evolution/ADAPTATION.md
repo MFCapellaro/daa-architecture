@@ -6,7 +6,7 @@ Adaptation defines the coherent transformation through which systems integrate e
 
 Adaptation does not replace identity.
 
-Adaptation transforms existing capability into increased expanded capability.
+Adaptation prepares reusable capability for evolutionary integration.
 
 ---
 
@@ -19,7 +19,7 @@ It:
 * preserves identity during transformation,
 * integrates experience generated through emergence,
 * modifies behavior according to coherent conditions,
-* enables systems to increase capability through learning.
+* enables systems to integrate learning while preserving identity.
 
 Adaptation transforms experience into coherent evolution.
 
@@ -71,7 +71,7 @@ New Coherence
 
 New Coherence
 ↓
-Evolutionary Capability
+Expanded Identity
 
 ---
 
@@ -131,6 +131,6 @@ Adaptation provides the feedback mechanism through which generated capability in
 
 Adaptation preserves identity through coherent transformation.
 
-Adaptation converts experience into evolutionary capability.
+Adaptation integrates experience into enriched identity.
 
 A system evolves when it can transform without losing coherence.

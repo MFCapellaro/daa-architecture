@@ -26,4 +26,4 @@ Legacy improves future coordination.
 
 ## Purpose
 
-Legacy transforms coherent history into reusable capability.
+Legacy preserves the historical continuity that supports reusable capability.

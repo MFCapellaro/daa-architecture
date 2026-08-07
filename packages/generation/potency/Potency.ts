@@ -30,5 +30,5 @@ export interface Potency {
   /**
    * Description of the emergent collective capability.
    */
-  readonly capability?: string;
+  readonly collectivePotential?: string;
 }

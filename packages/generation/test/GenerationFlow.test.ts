@@ -28,9 +28,9 @@ describe("Generation Flow", () => {
 
     const emergence: Emergence = {
       id: "emergence-001",
-      origin: potency.id,
-      newPotential,
-    };
+      potencyId: potency.id,
+      observable: true,
+  };
 
     const capability: Capability = {
       id: "capability-001",
@@ -45,8 +45,8 @@ describe("Generation Flow", () => {
     expect(potency.emerged).toBe(true);
     expect(potency.relationships).toContain(interaction.id);
 
-    expect(emergence.origin).toBe(potency.id);
-    expect(emergence.newPotential.id).toBe(newPotential.id);
+    expect(emergence.potencyId).toBe(potency.id);
+    expect(emergence.observable).toBe(true);
 
     expect(capability.observable).toBe(true);
     expect(capability.potencyId).toBe(potency.id);

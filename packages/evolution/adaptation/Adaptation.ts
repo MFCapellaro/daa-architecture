@@ -33,12 +33,12 @@ export interface Adaptation {
   /**
    * Capability resulting from coherent transformation.
    */
-  readonly expandedCapabilityId: string;
+  readonly reusableCapabilityId: string;
 
   /**
    * Indicates whether identity was preserved.
    */
-  readonly preservesIdentity: boolean;
+  readonly enrichedIdentityId: string;
 
   /**
    * Indicates whether coherence was maintained.

@@ -144,7 +144,7 @@ Capability
 
 ## Capability precedes Knowledge
 
-Knowledge integrates manifested capability into system memory.
+Knowledge preserves manifested capability as reusable capability.
 
 ```text
 Capability
