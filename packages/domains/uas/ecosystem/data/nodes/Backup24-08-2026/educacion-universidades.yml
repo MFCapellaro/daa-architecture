@@ -1,0 +1,28 @@
+id: "educacion-universidades"
+name: "Educación / Universidades"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 241
+  section: "academia"
+  raw: "*Educación / Universidades"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "terramar-jv-9"
+name: "Terramar JV"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 38
+  section: "drones"
+  raw: "Terramar JV - Tres Arroyos - Av. Moreno 1111 - Rocío Moreno - rmoreno@terramarjv.com.ar - +54 298 3343740 / Martín Osinalde - mosinalde@terramarjv.com.ar - +54 298 3613714"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

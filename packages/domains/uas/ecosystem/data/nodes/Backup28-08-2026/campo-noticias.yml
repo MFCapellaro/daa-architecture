@@ -1,0 +1,44 @@
+id: "campo-noticias"
+name: "Campo Noticias"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Chubut"
+  country: "Argentina"
+  phone: "+54 11 56675788"
+  whatsapp: null
+  email: "camponoticiasweb@gmail.com"
+
+presence:
+  website: "https://camponoticias.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 220
+  section: "media"
+  raw: "Campo Noticias - Chubut 226 1 Piso of 5 - Pilar- Bs As- Argentina - +54 11 56675788 - camponoticiasweb@gmail.com - https://camponoticias.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

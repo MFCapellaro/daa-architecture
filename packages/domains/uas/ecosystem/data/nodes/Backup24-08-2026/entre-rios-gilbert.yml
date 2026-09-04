@@ -1,0 +1,28 @@
+id: "entre-rios-gilbert"
+name: "Entre Rios (Gilbert)"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 127
+  section: "academia"
+  raw: "Entre Rios (Gilbert) - Ruta Provincial 20 , Km 72 Entre Rios (Gilbert) - Teléfono +5493446580356"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "tesorero-2"
+name: "Tesorero"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 174
+  section: "public"
+  raw: "Tesorero - Martín Lahitte"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

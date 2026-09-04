@@ -1,0 +1,28 @@
+id: "radio-san-genaro-lt23-am-1550"
+name: "Radio San Genaro LT23 AM 1550"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://lt23.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 295
+  section: "media"
+  raw: "Radio San Genaro LT23 AM 1550 - Perito Moreno 470 - Tel. (03401) 493069 - San Genaro - Santa Fe, Argentina - https://lt23.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

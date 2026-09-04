@@ -1,0 +1,28 @@
+id: "alena-salto"
+name: "Alena Salto"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 62
+  section: "dealers"
+  raw: "Alena Salto - Marcelo Giménez Zapiola - Uruguay 469, B2741 Salto, Provincia de Buenos Aires - Tel: 1168889875"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

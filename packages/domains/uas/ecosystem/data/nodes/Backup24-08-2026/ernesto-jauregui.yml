@@ -1,0 +1,28 @@
+id: "ernesto-jauregui"
+name: "Ernesto Jauregui"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 182
+  section: "public"
+  raw: "Ernesto Jauregui - Subdirector Adjunto"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

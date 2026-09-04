@@ -1,0 +1,28 @@
+id: "lumadron"
+name: "Lumadron"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://lumadron.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 87
+  section: "dealers"
+  raw: "Lumadron - Buenos Aires - drones@lumadron.com - https://lumadron.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

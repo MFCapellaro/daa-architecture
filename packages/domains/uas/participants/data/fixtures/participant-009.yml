@@ -1,0 +1,10 @@
+id: participant-009
+actorId: actor-009
+status: suspended
+joinedAt: 2026-06-01
+
+progressiveEntry:
+  identity: true
+  profile: true
+  capabilities: true
+  interests: true

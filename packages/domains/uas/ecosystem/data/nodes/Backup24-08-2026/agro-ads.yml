@@ -1,0 +1,28 @@
+id: "agro-ads"
+name: "AGRO ADS"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.agroads.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 261
+  section: "media"
+  raw: "AGRO ADS - https://www.agroads.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

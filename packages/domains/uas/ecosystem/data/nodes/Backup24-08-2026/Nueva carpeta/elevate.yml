@@ -1,0 +1,28 @@
+id: "elevate"
+name: "Elevate"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.regarsuarez.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 80
+  section: "drones"
+  raw: "Elevate - Brown 1404, Coronel Suarez - Tel: +54 292 6544807 - https://www.regarsuarez.com.ar/ - Juan Silva"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

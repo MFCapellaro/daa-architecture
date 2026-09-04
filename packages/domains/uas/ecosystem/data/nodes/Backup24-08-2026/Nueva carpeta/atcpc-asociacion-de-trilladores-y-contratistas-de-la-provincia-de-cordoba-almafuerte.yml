@@ -1,0 +1,28 @@
+id: "atcpc-asociacion-de-trilladores-y-contratistas-de-la-provincia-de-cordoba-almafuerte"
+name: "ATCPC: Asociación de Trilladores y Contratistas de la Provincia de Córdoba (Almafuerte"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 232
+  section: "public"
+  raw: "ATCPC: Asociación de Trilladores y Contratistas de la Provincia de Córdoba (Almafuerte - Córdoba)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

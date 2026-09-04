@@ -1,0 +1,28 @@
+id: "drones-vip-6"
+name: "Drones VIP"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 130
+  section: "academia"
+  raw: "Drones VIP - Rio Negro - Gral. San Martín 569, Cipolletti, Río Negro - Teléfono +54 299 5961450"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

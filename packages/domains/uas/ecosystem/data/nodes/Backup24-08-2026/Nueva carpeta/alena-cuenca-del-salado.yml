@@ -1,0 +1,28 @@
+id: "alena-cuenca-del-salado"
+name: "Alena Cuenca del Salado"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 65
+  section: "drones"
+  raw: "Alena Cuenca del Salado - Chascomús, Provincia de Buenos Aires - Tel: +54 224 1509938 - Juan Urtea"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

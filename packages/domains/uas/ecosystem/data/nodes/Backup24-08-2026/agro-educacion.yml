@@ -1,0 +1,28 @@
+id: "agro-educacion"
+name: "AGRO Educación"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.agroeducacion.com/website/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 279
+  section: "media"
+  raw: "AGRO Educación - info@agroeducacion.com -  +54 341 559 4222 - https://www.agroeducacion.com/website/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

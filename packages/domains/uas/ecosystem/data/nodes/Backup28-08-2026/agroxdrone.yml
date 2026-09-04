@@ -1,0 +1,44 @@
+id: "agroxdrone"
+name: "AgroXDrone"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Tucumán"
+  country: "Argentina"
+  phone: "+54 381 6040794"
+  whatsapp: "+54 381 6040794"
+  email: "servicioagrodrone@gmail.com"
+
+presence:
+  website: "https://agrodroneservicios.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 116
+  section: "operators"
+  raw: "AgroXDrone - Tucumán - WhatsApp +54 381 6040794 - servicioagrodrone@gmail.com - https://agrodroneservicios.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

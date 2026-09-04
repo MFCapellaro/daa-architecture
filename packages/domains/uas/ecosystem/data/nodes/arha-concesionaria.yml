@@ -1,0 +1,45 @@
+id: "arha-concesionaria"
+name: "Arha Concesionaria"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Chubut"
+  country: "Argentina"
+  phone: "+54 280 4006486"
+  whatsapp: "+54 280 4006486"
+  email: null
+
+presence:
+  website: "https://www.arha.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 13
+  section: "drones"
+  raw: "Arha Concesionaria - Galo Lobato 2761 Parque Industrial - Trelew - Chubut - Drones WhatsApp +54 280 4006486 - https://www.arha.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

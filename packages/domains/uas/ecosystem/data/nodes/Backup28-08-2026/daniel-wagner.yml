@@ -1,0 +1,44 @@
+id: "daniel-wagner"
+name: "Daniel Wagner"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 11 67823535"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://danielwagner.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 139
+  section: "academia"
+  raw: "Daniel Wagner - + 54 11 67823535 - https://danielwagner.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

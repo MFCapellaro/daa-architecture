@@ -1,0 +1,28 @@
+id: "administrativa-general-2"
+name: "Administrativa General"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 200
+  section: "public"
+  raw: "Administrativa General - Daniela Moscatello - +54 341 6460228 - moscatello@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

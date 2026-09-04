@@ -1,0 +1,28 @@
+id: "junin"
+name: "Junín"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 44
+  section: "dealers"
+  raw: "Junín - Mariano Moreno 1145 - +54 9 236 4457197 - junin@sumidas.com.ar - Daniela Voda - Gerente de Sucursal - daniela.voda@sumidas.com.ar - Cel: +54 9 236 4685188 / Valeria Linares - Responsable Técnico Comercial - valeria.linares@sumidas.com.ar - Cel: +54 9 236 4521071 / Marcos Cirulli - Administración de Sucursal - marcos.cirulli@sumidas.com.ar - Cel: +54 9 236 4521069"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

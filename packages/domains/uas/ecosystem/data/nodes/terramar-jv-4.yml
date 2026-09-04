@@ -1,0 +1,45 @@
+id: "terramar-jv-4"
+name: "Terramar JV"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 226 1400060"
+  whatsapp: null
+  email: "lkressi@terramarjv.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 33
+  section: "drones"
+  raw: "Terramar JV - Lobería - Buenos Aires - Ruta 227 km 53,5 - lkressi@terramarjv.com.ar - +54 226 1400060"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

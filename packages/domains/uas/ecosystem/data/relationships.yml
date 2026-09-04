@@ -1,0 +1,1265 @@
+# DRONSAIR Ecosystem Relationships
+#
+# Relationships observed directly in the source corpus.
+#
+# This file does not establish semantic identity.
+# The brand remains contextual evidence.
+
+relationships:
+  - id: "maquinagro-s-a-represented-by-tekron"
+    source: "maquinagro-s-a"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 6
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "nor-semillas-represented-by-tekron"
+    source: "nor-semillas"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 7
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "roberto-chelala-srl-represented-by-tekron"
+    source: "roberto-chelala-srl"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 8
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "uaa-represented-by-tekron"
+    source: "uaa"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 9
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "detma-represented-by-tekron"
+    source: "detma"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 10
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "solanum-represented-by-tekron"
+    source: "solanum"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 11
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "kubota-mendoza-represented-by-tekron"
+    source: "kubota-mendoza"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 12
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "arha-concesionaria-represented-by-tekron"
+    source: "arha-concesionaria"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 13
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "aereal-patagonia-represented-by-tekron"
+    source: "aereal-patagonia"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 14
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "natalini-agro-srl-represented-by-tekron"
+    source: "natalini-agro-srl"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 15
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "green-drones-represented-by-tekron"
+    source: "green-drones"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 16
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "diesel-lange-represented-by-tekron"
+    source: "diesel-lange"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 17
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "diesel-lange-2-represented-by-tekron"
+    source: "diesel-lange-2"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 18
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "lombardi-maquinarias-represented-by-tekron"
+    source: "lombardi-maquinarias"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 19
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "cattaneo-hnos-represented-by-tekron"
+    source: "cattaneo-hnos"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 20
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "camptech-represented-by-tekron"
+    source: "camptech"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 21
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "camptech-2-represented-by-tekron"
+    source: "camptech-2"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 22
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "toldo-agroservicios-represented-by-tekron"
+    source: "toldo-agroservicios"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 23
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "san-diego-semillas-represented-by-tekron"
+    source: "san-diego-semillas"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 24
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "san-diego-semillas-2-represented-by-tekron"
+    source: "san-diego-semillas-2"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 25
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "san-diego-semillas-3-represented-by-tekron"
+    source: "san-diego-semillas-3"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 26
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "zuqueli-hnos-represented-by-tekron"
+    source: "zuqueli-hnos"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 27
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "folmer-represented-by-tekron"
+    source: "folmer"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 28
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "ser-agro-represented-by-tekron"
+    source: "ser-agro"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 29
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "terramar-jv-represented-by-tekron"
+    source: "terramar-jv"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 30
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "terramar-jv-2-represented-by-tekron"
+    source: "terramar-jv-2"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 31
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "terramar-jv-3-represented-by-tekron"
+    source: "terramar-jv-3"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 32
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "terramar-jv-4-represented-by-tekron"
+    source: "terramar-jv-4"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 33
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "terramar-jv-5-represented-by-tekron"
+    source: "terramar-jv-5"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 34
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "terramar-jv-6-represented-by-tekron"
+    source: "terramar-jv-6"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 35
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "terramar-jv-7-represented-by-tekron"
+    source: "terramar-jv-7"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 36
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "terramar-jv-8-represented-by-tekron"
+    source: "terramar-jv-8"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 37
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "terramar-jv-9-represented-by-tekron"
+    source: "terramar-jv-9"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 38
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "akron-represented-by-tekron"
+    source: "akron"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 39
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "akron-2-represented-by-tekron"
+    source: "akron-2"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 40
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "akron-3-represented-by-tekron"
+    source: "akron-3"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 41
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "tecno-drones-saladillo-represented-by-tekron"
+    source: "tecno-drones-saladillo"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 42
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sumidas-represented-by-tekron"
+    source: "sumidas"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 43
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sumidas-2-represented-by-tekron"
+    source: "sumidas-2"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 44
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sumidas-3-represented-by-tekron"
+    source: "sumidas-3"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 45
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sumidas-4-represented-by-tekron"
+    source: "sumidas-4"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 46
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sumidas-5-represented-by-tekron"
+    source: "sumidas-5"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 47
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sumidas-6-represented-by-tekron"
+    source: "sumidas-6"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 48
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sumidas-7-represented-by-tekron"
+    source: "sumidas-7"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 49
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sumidas-8-represented-by-tekron"
+    source: "sumidas-8"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 50
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sumidas-9-represented-by-tekron"
+    source: "sumidas-9"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 52
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "aldebaran-represented-by-tekron"
+    source: "aldebaran"
+    type: represented_by
+    target: "tekron"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 53
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "kallpatech-represented-by-bidcom-agro"
+    source: "kallpatech"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 56
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "tecnoplant-represented-by-bidcom-agro"
+    source: "tecnoplant"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 57
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "i-b-agro-san-salvador-represented-by-bidcom-agro"
+    source: "i-b-agro-san-salvador"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 58
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "i-b-agro-chajari-represented-by-bidcom-agro"
+    source: "i-b-agro-chajari"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 59
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "agro-la-nair-represented-by-bidcom-agro"
+    source: "agro-la-nair"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 60
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "agro-tecnologias-mauro-sanchez-represented-by-bidcom-agro"
+    source: "agro-tecnologias-mauro-sanchez"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 61
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sowing-represented-by-bidcom-agro"
+    source: "sowing"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 62
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "alena-sudeste-represented-by-bidcom-agro"
+    source: "alena-sudeste"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 63
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "alena-salto-represented-by-bidcom-agro"
+    source: "alena-salto"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 64
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "alena-cuenca-del-salado-represented-by-bidcom-agro"
+    source: "alena-cuenca-del-salado"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 65
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "agromelgas-sur-s-a-represented-by-bidcom-agro"
+    source: "agromelgas-sur-s-a"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 66
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "aike-drones-represented-by-bidcom-agro"
+    source: "aike-drones"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 67
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "alca-agrotech-s-a-represented-by-bidcom-agro"
+    source: "alca-agrotech-s-a"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 68
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "comercializadora-pauny-marcos-juarez-represented-by-bidcom-agro"
+    source: "comercializadora-pauny-marcos-juarez"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 69
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "comercializadora-pauny-rosario-represented-by-bidcom-agro"
+    source: "comercializadora-pauny-rosario"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 70
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "agronomia-pampa-s-r-l-represented-by-bidcom-agro"
+    source: "agronomia-pampa-s-r-l"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 71
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "casa-druetto-sa-represented-by-bidcom-agro"
+    source: "casa-druetto-sa"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 72
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "vuelagro-represented-by-bidcom-agro"
+    source: "vuelagro"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 73
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "vuelagro-alejo-ledesma-represented-by-bidcom-agro"
+    source: "vuelagro-alejo-ledesma"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 74
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "sensar-agricultura-de-precision-s-a-represented-by-bidcom-agro"
+    source: "sensar-agricultura-de-precision-s-a"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 75
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "azura-pico-represented-by-bidcom-agro"
+    source: "azura-pico"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 76
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "agro-drone-solutions-ads-represented-by-bidcom-agro"
+    source: "agro-drone-solutions-ads"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 77
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "mas-maiz-represented-by-bidcom-agro"
+    source: "mas-maiz"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 78
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "las-liebres-represented-by-bidcom-agro"
+    source: "las-liebres"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 79
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "elevate-represented-by-bidcom-agro"
+    source: "elevate"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 80
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "go-agrodrones-represented-by-bidcom-agro"
+    source: "go-agrodrones"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 81
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true
+
+  - id: "moray-represented-by-bidcom-agro"
+    source: "moray"
+    type: represented_by
+    target: "bidcom-agro"
+
+    context:
+      brand: "DJI Agriculture"
+
+    evidence:
+      source: "ecosystem-source.txt"
+      line: 82
+      section: "drones"
+
+    status:
+      verification: observed
+      reviewRequired: true

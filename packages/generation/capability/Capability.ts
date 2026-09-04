@@ -3,8 +3,7 @@
  *
  * Represents the observable expression of coherent emergence.
  *
- *Capability completes the generative mechanism and
- *enables coherent experience.
+ * Capability completes the generative mechanism and enables coherent experience.
  */
 export interface Capability {
   /**

@@ -1,0 +1,28 @@
+id: "software"
+name: "Software"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 247
+  section: "academia"
+  raw: "*Software"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

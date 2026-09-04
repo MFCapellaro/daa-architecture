@@ -1,0 +1,45 @@
+id: "nor-semillas"
+name: "Nor Semillas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Chaco"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.instagram.com/norsemillas/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 7
+  section: "drones"
+  raw: "Nor Semillas - Ruta 16 KM 262,4, Pampa del Infierno 3721 - Chaco - https://www.instagram.com/norsemillas/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

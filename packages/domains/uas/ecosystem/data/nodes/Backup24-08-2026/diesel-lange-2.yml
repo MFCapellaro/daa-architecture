@@ -1,0 +1,28 @@
+id: "diesel-lange-2"
+name: "Diesel Lange"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.diesellange.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 16
+  section: "dealers"
+  raw: "Diesel Lange - Ruta Nac. 5 Km. 445 - Trenque Lauquen - Buenos Aires - Tel: 0810-220-0060 - Whatsapp: 113191-4803 - https://www.diesellange.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

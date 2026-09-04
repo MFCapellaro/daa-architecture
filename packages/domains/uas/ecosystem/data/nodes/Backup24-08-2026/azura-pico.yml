@@ -1,0 +1,28 @@
+id: "azura-pico"
+name: "Azura Pico"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/azuradrones/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 74
+  section: "dealers"
+  raw: "Azura Pico - Emanuel Muñoz - General Pico - Tel: 2954648468 - https://www.instagram.com/azuradrones/ (sin web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

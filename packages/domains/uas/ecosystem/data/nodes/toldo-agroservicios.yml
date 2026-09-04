@@ -1,0 +1,45 @@
+id: "toldo-agroservicios"
+name: "Toldo Agroservicios"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Santa Fe"
+  country: "Argentina"
+  phone: "+54 349 3492162"
+  whatsapp: null
+  email: "lorena@toldoagroservicios.com.ar"
+
+presence:
+  website: "http://toldoagroservicios.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 23
+  section: "drones"
+  raw: "Toldo Agroservicios -  Simon de Iriondo 563, Tacural - Santa Fe - +54 349 3492162 -  lorena@toldoagroservicios.com.ar - http://toldoagroservicios.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

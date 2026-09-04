@@ -1,0 +1,45 @@
+id: "san-diego-semillas-2"
+name: "San Diego Semillas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 25
+  section: "drones"
+  raw: "San Diego Semillas - Tandil - Buenos Aires"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

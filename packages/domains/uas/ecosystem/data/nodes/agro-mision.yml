@@ -1,0 +1,44 @@
+id: "agro-mision"
+name: "Agro Misión"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: "Henderson"
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 108
+  section: "operators"
+  raw: "Agro Misión - Henderson, Buenos Aires"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

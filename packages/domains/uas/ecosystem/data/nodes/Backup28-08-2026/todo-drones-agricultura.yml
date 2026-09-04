@@ -1,0 +1,44 @@
+id: "todo-drones-agricultura"
+name: "TODO DRONES AGRICULTURA"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: "Showroom / Avenida Dardo Rocha 2934 Martínez"
+  city: "Buenos Aires - Punto Agro / Parque Agro Industrial Juan Hipólito Vieytes - San Antonio de Areco"
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 11 52630498"
+  whatsapp: "+54 11 25070076"
+  email: "info@tododrones.com.ar"
+
+presence:
+  website: "https://www.agro.tododrones.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 91
+  section: "drones"
+  raw: "TODO DRONES AGRICULTURA  - Showroom / Avenida Dardo Rocha 2934 Martínez, Buenos Aires - Punto Agro / Parque Agro Industrial Juan Hipólito Vieytes  - San Antonio de Areco, Buenos Aires - Teléfono: +54 11 52630498 - WhatsApp: +54 11 25070076 - info@tododrones.com.ar - https://www.agro.tododrones.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

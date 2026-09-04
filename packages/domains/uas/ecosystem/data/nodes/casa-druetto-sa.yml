@@ -1,0 +1,45 @@
+id: "casa-druetto-sa"
+name: "Casa Druetto SA"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: "Av. Jorge Newbery 247 bis"
+  city: "Gálvez"
+  province: "Santa FE"
+  country: "Argentina"
+  phone: "+54 340 4521246"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://casadruetto.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 72
+  section: "drones"
+  raw: "Casa Druetto SA - Av. Jorge Newbery 247 bis, Gálvez, Santa FE - Tel: +54 340 4521246 - https://casadruetto.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

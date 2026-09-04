@@ -1,0 +1,28 @@
+id: "ameghino"
+name: "Ameghino"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 46
+  section: "dealers"
+  raw: "Ameghino - Acceso Centenario S/Nº - +54 9 3388 471740 - ameghino@sumidas.com.ar - Jose Luis Sanchez - Gerente de Sucursal - jose.sanchez@sumidas.com.ar - Cel: +54 9 3388 670526 / Delfina Pillado - Responsable Técnico Comercial - delfina.pillado@sumidas.com.ar - Cel: +54 9 3388 567075 / Ariel Melian - Logística de Sucursal - ariel.melian@sumidas.com.ar - Cel: +54 9 3388 503876 / Pamela Pereda - Administración de Sucursal - pamela.pereda@sumidas.com.ar - Cel: +54 9 3388 676000"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

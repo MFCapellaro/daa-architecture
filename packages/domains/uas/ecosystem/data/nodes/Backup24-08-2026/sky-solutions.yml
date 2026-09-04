@@ -1,0 +1,28 @@
+id: "sky-solutions"
+name: "Sky Solutions"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+
+presence:
+  website: "https://skysolutions.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 118
+  section: "operators"
+  raw: "Sky Solutions - Sur de Córdoba - FOTOGRAMETRÍA - info@skysolutions.com.ar - https://skysolutions.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

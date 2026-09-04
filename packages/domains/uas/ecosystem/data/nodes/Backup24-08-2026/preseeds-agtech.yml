@@ -1,0 +1,28 @@
+id: "preseeds-agtech"
+name: "PreSeeds AgTech"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - technology
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/preseeds_agtech/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 234
+  section: "technology"
+  raw: "PreSeeds AgTech - Diagnóstico de suelos y predicción - https://www.instagram.com/preseeds_agtech/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

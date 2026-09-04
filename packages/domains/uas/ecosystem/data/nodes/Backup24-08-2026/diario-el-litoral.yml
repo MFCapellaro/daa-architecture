@@ -1,0 +1,28 @@
+id: "diario-el-litoral"
+name: "Diario El Litoral"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.ellitoral.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 300
+  section: "media"
+  raw: "Diario El Litoral - Rosario - https://www.ellitoral.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

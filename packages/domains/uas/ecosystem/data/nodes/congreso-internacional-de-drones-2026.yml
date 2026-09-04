@@ -1,0 +1,44 @@
+id: "congreso-internacional-de-drones-2026"
+name: "Congreso Internacional de Drones 2026"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Tucumán"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: "dronestuc.arg@gmail.com"
+
+presence:
+  website: "https://congresodronesarg.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 177
+  section: "events"
+  raw: "Congreso Internacional de Drones 2026 - Sociedad Rural de Tucumán - dronestuc.arg@gmail.com - https://congresodronesarg.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

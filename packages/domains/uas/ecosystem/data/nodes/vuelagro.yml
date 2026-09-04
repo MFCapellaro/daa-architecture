@@ -1,0 +1,45 @@
+id: "vuelagro"
+name: "Vuelagro"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 358 4430678"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.instagram.com/dji.vuelagro/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 73
+  section: "drones"
+  raw: "Vuelagro - Venado Tuerto - Av. 12 de Octubre 1995 - Tel: +54 358 4430678 - https://www.instagram.com/dji.vuelagro/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

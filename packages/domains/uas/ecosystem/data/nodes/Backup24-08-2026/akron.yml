@@ -1,0 +1,28 @@
+id: "akron"
+name: "Akron"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://dji.akron.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 37
+  section: "dealers"
+  raw: "Akron - Av. Rosario de Santa Fe 2256, San Francisco, Córdoba - ventas@akron.com.ar - 0800 333 8300 - https://dji.akron.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

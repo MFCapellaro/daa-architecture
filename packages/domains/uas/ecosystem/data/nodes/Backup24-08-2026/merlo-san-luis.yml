@@ -1,0 +1,28 @@
+id: "merlo-san-luis"
+name: "Merlo, San Luis"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 136
+  section: "academia"
+  raw: "Merlo, San Luis - Juana Azurduy 897, Merlo, San Luis - 02656409083 - 5492656409083 - ica.merlo@incasrl.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

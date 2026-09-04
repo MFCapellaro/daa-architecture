@@ -1,0 +1,28 @@
+id: "comunicacion"
+name: "Comunicación"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 269
+  section: "events"
+  raw: "Comunicación - Cecilia Gómez Ojeda - Kampu SRL"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

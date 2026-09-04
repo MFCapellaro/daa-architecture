@@ -1,0 +1,28 @@
+id: "hi-terra-agroteconologias"
+name: "Hi-Terra Agroteconologías"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - technology
+
+capabilities:
+
+presence:
+  website: "https://hi-terra.com.ar/hi-agricultura/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 236
+  section: "technology"
+  raw: "Hi-Terra Agroteconologías - Córdoba - Monitoreo Satelital y fotogrametría - https://hi-terra.com.ar/hi-agricultura/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

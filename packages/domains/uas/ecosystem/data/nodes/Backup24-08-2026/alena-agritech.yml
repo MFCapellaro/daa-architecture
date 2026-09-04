@@ -1,0 +1,28 @@
+id: "alena-agritech"
+name: "Alena Agritech"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 83
+  section: "dealers"
+  raw: "Alena Agritech - Buenos Aires NORTE - Uruguay 469, Salto -  Marcelo Giménez Zapiola - +54 9 11 68889875"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

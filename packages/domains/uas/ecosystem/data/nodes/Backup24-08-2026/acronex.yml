@@ -1,0 +1,28 @@
+id: "acronex"
+name: "Acronex"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - technology
+
+capabilities:
+
+presence:
+  website: "https://www.acronex.com/pulverizaciones"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 235
+  section: "technology"
+  raw: "Acronex - UNIMAP - Santa Fe - Las máquinas se equipan con sensores y una unidad central que registra y procesa los datos en tiempo real. - https://www.acronex.com/pulverizaciones"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

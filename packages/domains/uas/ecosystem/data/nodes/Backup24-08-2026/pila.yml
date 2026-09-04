@@ -1,0 +1,28 @@
+id: "pila"
+name: "Pila"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 33
+  section: "dealers"
+  raw: "Pila - Buenos Aires - Calle 2 entre 17 y 19 - Cristian Zucca - czucca@terramarjv.com.ar  +54 2235829791 / Ricardo De Berti - rdeberti@terramarjv.com.ar - +54 2235027140"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

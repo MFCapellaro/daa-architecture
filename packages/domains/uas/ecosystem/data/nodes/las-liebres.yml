@@ -1,0 +1,45 @@
+id: "las-liebres"
+name: "Las Liebres"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 351 5606964"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.instagram.com/agrop_lasliebres/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 79
+  section: "drones"
+  raw: "Las Liebres - Rio Tercero - Tel: +54 351 5606964 - https://www.instagram.com/agrop_lasliebres/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

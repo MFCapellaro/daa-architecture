@@ -1,0 +1,28 @@
+id: "droneando"
+name: "Droneando"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://droneando.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 263
+  section: "media"
+  raw: "Droneando - https://droneando.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

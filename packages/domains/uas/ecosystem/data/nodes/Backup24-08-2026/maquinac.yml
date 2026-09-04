@@ -1,0 +1,28 @@
+id: "maquinac"
+name: "MaquiNAC"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://maquinac.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 284
+  section: "media"
+  raw: "MaquiNAC - MDIRECTO SA - Córdoba (Argentina) - +54 9 351 3455074 - info@maquinac.com- https://maquinac.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

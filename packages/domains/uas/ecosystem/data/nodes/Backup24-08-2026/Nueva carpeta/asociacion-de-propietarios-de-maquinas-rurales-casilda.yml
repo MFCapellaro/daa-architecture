@@ -1,0 +1,28 @@
+id: "asociacion-de-propietarios-de-maquinas-rurales-casilda"
+name: "Asociación de Propietarios de Máquinas Rurales Casilda"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: "https://www.agrocontratistas.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 228
+  section: "public"
+  raw: "Asociación de Propietarios de Máquinas Rurales Casilda - Fray Luis Beltrán 1949 - 2170 Casilda - Santa Fe - +54 346 4422541 - info@agrocontratistas.com.ar - https://www.agrocontratistas.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

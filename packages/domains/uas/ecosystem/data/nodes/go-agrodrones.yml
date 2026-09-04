@@ -1,0 +1,45 @@
+id: "go-agrodrones"
+name: "GO Agrodrones"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 234 5664990"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.instagram.com/goagrodrones/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 81
+  section: "drones"
+  raw: "GO Agrodrones - RN205 km 181, Saladillo, Provincia de Buenos Aires - Tel: +54 234 5664990 - https://www.instagram.com/goagrodrones/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

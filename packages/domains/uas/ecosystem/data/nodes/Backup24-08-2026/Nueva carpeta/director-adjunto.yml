@@ -1,0 +1,28 @@
+id: "director-adjunto"
+name: "Director Adjunto"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 188
+  section: "public"
+  raw: "Director Adjunto - Daniel Cotoras"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

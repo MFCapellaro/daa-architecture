@@ -1,0 +1,45 @@
+id: "alca-agrotech-s-a"
+name: "Alca Agrotech S.A"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 351 5945189"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.instagram.com/alca.agrotech/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 68
+  section: "drones"
+  raw: "Alca Agrotech S.A - Pergamino, Provincia de Buenos Aires - Tel: +54 351 5945189 - https://www.instagram.com/alca.agrotech/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

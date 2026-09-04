@@ -1,0 +1,28 @@
+id: "chivilcoy"
+name: "Chivilcoy"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 42
+  section: "dealers"
+  raw: "Chivilcoy - Lisandro de La Torre 1580 - +54 9 2346 561037 - chivilcoy@sumidas.com.ar - Sebastián Falcone - Gerente de Sucursal - sebastian.falcone@sumidas.com.ar - Tel/Cel: +54 9 2346 561037 / Maria Caricato - Administración de Sucursal - maria.caricato@sumidas.com.ar - Tel/Cel: +54 9 2346 588433 / Ruben Lopez - Responsable Técnico Comercial - ruben.lopez@sumidas.com.ar - Tel/Cel: +54 9 2346 588334 / Jose Taverna - Responsable Técnico Comercial - jose.taverna@sumidas.com.ar - Tel/Cel: +54 9 2346 301772"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

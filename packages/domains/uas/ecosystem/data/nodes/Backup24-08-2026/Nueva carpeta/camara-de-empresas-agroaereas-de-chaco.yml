@@ -1,0 +1,28 @@
+id: "camara-de-empresas-agroaereas-de-chaco"
+name: "Cámara de Empresas Agroaéreas de Chaco"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 167
+  section: "public"
+  raw: "Cámara de Empresas Agroaéreas de Chaco"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

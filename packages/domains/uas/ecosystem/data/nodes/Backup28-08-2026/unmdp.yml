@@ -1,0 +1,44 @@
+id: "unmdp"
+name: "UNMDP"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://fca.mdp.edu.ar/drones-en-el-agro-mapeo-y-aplicacion-de-insumos/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 162
+  section: "academia"
+  raw: "UNMDP - Mar del Plata / Balcarce - https://fca.mdp.edu.ar/drones-en-el-agro-mapeo-y-aplicacion-de-insumos/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

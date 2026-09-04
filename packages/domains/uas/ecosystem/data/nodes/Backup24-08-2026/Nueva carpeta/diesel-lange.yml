@@ -1,0 +1,28 @@
+id: "diesel-lange"
+name: "Diesel Lange"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.diesellange.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 17
+  section: "drones"
+  raw: "Diesel Lange - Ruta 188 Km 479 y Ruta 35 - Realicó - La Pampa - Tel: 0810 220 0050 - Whatsapp: +54 230 2558669 - https://www.diesellange.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

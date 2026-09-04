@@ -1,0 +1,28 @@
+id: "buenos-aires-sudeste"
+name: "Buenos Aires SUDESTE"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 84
+  section: "dealers"
+  raw: "Buenos Aires SUDESTE - Av. Centenario 1055, Balcarce - Ernesto Barilati - +54 9 11 3009-4437"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "maria-augusta-gonzalez"
+name: "María Augusta González"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 196
+  section: "public"
+  raw: "María Augusta González - Directora Adjunta"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,45 @@
+id: "sumidas-2"
+name: "Sumidas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 234 6561037"
+  whatsapp: null
+  email: "chivilcoy@sumidas.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 44
+  section: "drones"
+  raw: "Sumidas - Chivilcoy - Lisandro de La Torre 1580 - +54 234 6561037 - chivilcoy@sumidas.com.ar / sebastian.falcone@sumidas.com.ar - Tel/Cel: +54 234 6561037 / maria.caricato@sumidas.com.ar - Tel/Cel: +54 234 6588433 / ruben.lopez@sumidas.com.ar - Tel/Cel: +54 234 6588334 / jose.taverna@sumidas.com.ar - Tel/Cel: +54 234 6301772"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

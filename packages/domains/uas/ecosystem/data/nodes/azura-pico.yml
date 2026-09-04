@@ -1,0 +1,45 @@
+id: "azura-pico"
+name: "Azura Pico"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 295 4648468"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.instagram.com/azuradrones/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 76
+  section: "drones"
+  raw: "Azura Pico - General Pico - Tel: +54 295 4648468 - https://www.instagram.com/azuradrones/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

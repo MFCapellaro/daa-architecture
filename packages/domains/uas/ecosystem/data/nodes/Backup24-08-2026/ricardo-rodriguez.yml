@@ -1,0 +1,28 @@
+id: "ricardo-rodriguez"
+name: "Ricardo Rodríguez"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 254
+  section: "events"
+  raw: "Ricardo Rodríguez - Comisión Científica - INTA"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

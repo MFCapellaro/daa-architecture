@@ -1,0 +1,28 @@
+id: "sistema-chacras"
+name: "Sistema Chacras"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 185
+  section: "public"
+  raw: "Sistema Chacras"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

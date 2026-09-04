@@ -1,0 +1,28 @@
+id: "liliana-fortini"
+name: "Liliana Fortini"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 245
+  section: "events"
+  raw: "Liliana Fortini - Vicepresidenta - INTA"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

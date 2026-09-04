@@ -1,0 +1,28 @@
+id: "horizonte-digital"
+name: "Horizonte Digital"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://horizonteadigital.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 293
+  section: "media"
+  raw: "Horizonte Digital - 11.3768.0560 - info@horizontea.com - Av. Santa Fe 4922 2° A (1425), CABA, Argentina - https://horizonteadigital.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

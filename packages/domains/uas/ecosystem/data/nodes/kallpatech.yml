@@ -1,0 +1,45 @@
+id: "kallpatech"
+name: "Kallpatech"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: "Calle 14"
+  city: "228 Colon"
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 247 7566670"
+  whatsapp: null
+  email: "jmorea@kallpatech.com.ar"
+
+presence:
+  website: "https://kallpatech.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 56
+  section: "drones"
+  raw: "Kallpatech - Calle 14, 228 Colon, Buenos Aires / jmorea@kallpatech.com.ar - +54 247 7566670 / fbetti@@kallpatech.com.ar - +54 247 3415487 - https://kallpatech.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

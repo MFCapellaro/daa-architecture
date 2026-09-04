@@ -1,0 +1,28 @@
+id: "ca-noa"
+name: "CA-NOA"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 165
+  section: "public"
+  raw: "CA-NOA - Cámara de Aeroaplicadores NOA"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

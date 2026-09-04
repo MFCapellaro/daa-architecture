@@ -1,0 +1,28 @@
+id: "san-diego-semillas-2"
+name: "San Diego Semillas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 23
+  section: "dealers"
+  raw: "San Diego Semillas - Tandil - Buenos Aires"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

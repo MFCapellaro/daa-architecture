@@ -1,0 +1,28 @@
+id: "i-b-agro-chajari"
+name: "I-B agro Chajari"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/ibagrochajari/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 57
+  section: "dealers"
+  raw: "I-B agro Chajari - Exequiel Morra - Ruta nacional 14 y Av. Belgrano. - Tel: +543456621268 - https://www.instagram.com/ibagrochajari/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

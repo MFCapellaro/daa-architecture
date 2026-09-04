@@ -1,0 +1,28 @@
+id: "tesorero-griffa-miguel-angel"
+name: "Tesorero Griffa, Miguel Angel"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 226
+  section: "public"
+  raw: "Tesorero Griffa, Miguel Angel"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

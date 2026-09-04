@@ -1,0 +1,45 @@
+id: "sumidas-5"
+name: "Sumidas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 235 2538315"
+  whatsapp: null
+  email: "chacabuco@sumidas.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 47
+  section: "drones"
+  raw: "Sumidas - Chacabuco - Ruta Nacional Nº 7 Km. 203.5 - +54 235 2538315 - chacabuco@sumidas.com.ar / carla.levato@sumidas.com.ar - Tel/Cel: +54 235 2524820 / facundo.zafatle@sumidas.com.ar - Tel/Cel: +54 235 2562646 / juan.bussetti@sumidas.com.ar - Tel/Cel: +54 235 2522270 / juan.rios@sumidas.com.ar - Tel/Cel: +54 235 2527290 / rocio.carosella@sumidas.com.ar - Tel/Cel: +54 235 2445918"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

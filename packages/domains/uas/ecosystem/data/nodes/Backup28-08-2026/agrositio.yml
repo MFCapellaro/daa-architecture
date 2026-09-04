@@ -1,0 +1,44 @@
+id: "agrositio"
+name: "AgroSitio"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: "info@agrositio.com"
+
+presence:
+  website: "https://www.agrositio.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 204
+  section: "media"
+  raw: "AgroSitio - info@agrositio.com - https://www.agrositio.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

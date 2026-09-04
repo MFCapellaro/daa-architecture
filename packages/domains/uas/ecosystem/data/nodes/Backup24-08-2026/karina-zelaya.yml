@@ -1,0 +1,28 @@
+id: "karina-zelaya"
+name: "Karina Zelaya"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 246
+  section: "events"
+  raw: "Karina Zelaya - Secretaria - INTA"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

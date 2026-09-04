@@ -1,0 +1,28 @@
+id: "certificaciones"
+name: "Certificaciones"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 170
+  section: "public"
+  raw: "Certificaciones"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

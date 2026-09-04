@@ -1,0 +1,28 @@
+id: "tesorera"
+name: "Tesorera"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 263
+  section: "events"
+  raw: "Tesorera - Claudia Rodríguez - SRT"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

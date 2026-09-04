@@ -1,0 +1,45 @@
+id: "terramar-jv-6"
+name: "Terramar JV"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 223 5829791"
+  whatsapp: null
+  email: "czucca@terramarjv.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 35
+  section: "drones"
+  raw: "Terramar JV - Pila - Buenos Aires - Calle 2 entre 17 y 19 - czucca@terramarjv.com.ar  +54 223 5829791 / rdeberti@terramarjv.com.ar - +54 223 5027140"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

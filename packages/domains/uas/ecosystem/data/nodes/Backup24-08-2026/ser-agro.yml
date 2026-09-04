@@ -1,0 +1,28 @@
+id: "ser-agro"
+name: "Ser Agro"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://seragro.gruposer.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 27
+  section: "dealers"
+  raw: "Ser Agro - Rosario - Santa Fe - Whatsapp +54 (93465) 432688 - ser.agro@gruposer.com.ar - https://seragro.gruposer.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

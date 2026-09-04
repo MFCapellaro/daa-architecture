@@ -1,0 +1,28 @@
+id: "sensar-agricultura-de-precision-s-a"
+name: "Sensar Agricultura de precisión S.A."
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/sensar_ap/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 73
+  section: "dealers"
+  raw: "Sensar Agricultura de precisión S.A. - Lucas González Mazzoni - Domingo F. Sarmiento 327, B8183 Darregueira, Provincia de Buenos Aires - Tel: 2923514256 - https://www.instagram.com/sensar_ap/ (sin web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

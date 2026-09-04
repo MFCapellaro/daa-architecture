@@ -1,0 +1,28 @@
+id: "terramar-jv-8"
+name: "Terramar JV"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 37
+  section: "drones"
+  raw: "Terramar JV - Balcarce - Av San Martín 3238 - Fernando Iacovelli - fiacovelli@terramarjv.com.ar - +54 226 6534960 / Hernán Cuccioli - hcuccioli@terramarjv.com.ar - +54 226 6440410 / Lucas Villate - lvillate@terramarjv.com.ar - +54 226 6535228"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

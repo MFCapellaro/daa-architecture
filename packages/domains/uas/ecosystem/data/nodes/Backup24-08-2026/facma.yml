@@ -1,0 +1,28 @@
+id: "facma"
+name: "FACMA"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: "https://www.facma.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 215
+  section: "public"
+  raw: "FACMA - Federación Argentina de Contratistas de Maquinaria Agrícola (publican precios de aplicación terrestre y aérea, sin drones aún) - https://www.facma.com.ar/  - Presidente Simone, Luis Alberto / Vicepresidente  Scoppa, Jorge Ernesto / Secretario Castelli, Hugo Antonio / Tesorero Griffa, Miguel Angel"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

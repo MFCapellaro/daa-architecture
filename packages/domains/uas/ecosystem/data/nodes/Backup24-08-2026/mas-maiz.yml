@@ -1,0 +1,28 @@
+id: "mas-maiz"
+name: "Más Maíz"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/maizmas.pioneer/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 76
+  section: "dealers"
+  raw: "Más Maíz - Daniel Taverna - Sur de Córdoba - Tel: 3584364757 - https://www.instagram.com/maizmas.pioneer/ (sin web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

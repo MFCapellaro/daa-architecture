@@ -1,0 +1,28 @@
+id: "gerente-de-programa-2"
+name: "Gerente de programa"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 186
+  section: "public"
+  raw: "Gerente de programa - Rodrigo Rosso - +54 341 3117005 - rosso@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

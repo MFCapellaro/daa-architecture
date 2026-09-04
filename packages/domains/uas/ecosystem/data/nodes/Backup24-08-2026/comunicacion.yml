@@ -1,0 +1,28 @@
+id: "comunicacion"
+name: "Comunicación"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 195
+  section: "public"
+  raw: "Comunicación"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

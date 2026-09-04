@@ -1,0 +1,28 @@
+id: "marketing-digital-y-gestion-web"
+name: "Marketing Digital y Gestión Web"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 161
+  section: "public"
+  raw: "Marketing Digital y Gestión Web - Berrondo Andrea"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,44 @@
+id: "radio-aire-federal"
+name: "Radio Aire Federal"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 223 6172000"
+  whatsapp: null
+  email: "airefederal@gmail.com"
+
+presence:
+  website: "https://airefederal.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 218
+  section: "media"
+  raw: "Radio Aire Federal - Balcarce - Buenos Aires - airefederal@gmail.com - +54 223 6172000 - https://airefederal.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

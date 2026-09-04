@@ -1,0 +1,28 @@
+id: "tres-arroyos"
+name: "Tres Arroyos"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 36
+  section: "dealers"
+  raw: "Tres Arroyos - Av. Moreno 1111 - Rocío Moreno - rmoreno@terramarjv.com.ar - +54 2983343740 / Martín Osinalde - mosinalde@terramarjv.com.ar - +54 2983613714"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

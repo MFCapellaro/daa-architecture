@@ -1,0 +1,724 @@
+{
+  "source": "data/raw/ecosystem-source.txt",
+  "nodesGenerated": 178,
+  "sections": [
+    "academia",
+    "drones",
+    "events",
+    "insurance",
+    "media",
+    "operators",
+    "public",
+    "suppliers",
+    "technology"
+  ],
+  "reviewRequired": 178,
+  "duplicatesByNormalizedName": [
+    "akron",
+    "camptech",
+    "diesel-lange",
+    "geosistemas",
+    "lumadron",
+    "san-diego-semillas",
+    "sumidas",
+    "terramar-jv"
+  ],
+  "ignoredInternalRecords": 18,
+  "ignoredStructuralHeadings": 0,
+  "ignoredHeadings": 0,
+  "websiteMatches": [
+    {
+      "line": 18,
+      "website": "https://www.diesellange.com.ar/",
+      "existingId": "diesel-lange",
+      "currentId": "diesel-lange-2"
+    },
+    {
+      "line": 97,
+      "website": "https://lumadron.com/",
+      "existingId": "lumadron",
+      "currentId": "lumadron-2"
+    },
+    {
+      "line": 105,
+      "website": "https://lumadron.com/",
+      "existingId": "lumadron",
+      "currentId": "lumadron-3"
+    },
+    {
+      "line": 171,
+      "website": "https://geosistemas.com.ar/",
+      "existingId": "geosistemas",
+      "currentId": "geosistemas-2"
+    }
+  ],
+  "dealerRelationships": [
+    {
+      "dealerId": "maquinagro-s-a",
+      "dealerName": "Maquinagro S.A.",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 6,
+      "section": "drones"
+    },
+    {
+      "dealerId": "nor-semillas",
+      "dealerName": "Nor Semillas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 7,
+      "section": "drones"
+    },
+    {
+      "dealerId": "roberto-chelala-srl",
+      "dealerName": "Roberto Chelala SRL",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 8,
+      "section": "drones"
+    },
+    {
+      "dealerId": "uaa",
+      "dealerName": "UAA",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 9,
+      "section": "drones"
+    },
+    {
+      "dealerId": "detma",
+      "dealerName": "Detma",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 10,
+      "section": "drones"
+    },
+    {
+      "dealerId": "solanum",
+      "dealerName": "Solanum",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 11,
+      "section": "drones"
+    },
+    {
+      "dealerId": "kubota-mendoza",
+      "dealerName": "Kubota Mendoza",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 12,
+      "section": "drones"
+    },
+    {
+      "dealerId": "arha-concesionaria",
+      "dealerName": "Arha Concesionaria",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 13,
+      "section": "drones"
+    },
+    {
+      "dealerId": "aereal-patagonia",
+      "dealerName": "Aereal Patagonia",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 14,
+      "section": "drones"
+    },
+    {
+      "dealerId": "natalini-agro-srl",
+      "dealerName": "Natalini Agro SRL",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 15,
+      "section": "drones"
+    },
+    {
+      "dealerId": "green-drones",
+      "dealerName": "Green Drones",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 16,
+      "section": "drones"
+    },
+    {
+      "dealerId": "diesel-lange",
+      "dealerName": "Diesel Lange",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 17,
+      "section": "drones"
+    },
+    {
+      "dealerId": "diesel-lange-2",
+      "dealerName": "Diesel Lange",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 18,
+      "section": "drones"
+    },
+    {
+      "dealerId": "lombardi-maquinarias",
+      "dealerName": "Lombardi Maquinarias",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 19,
+      "section": "drones"
+    },
+    {
+      "dealerId": "cattaneo-hnos",
+      "dealerName": "Cattaneo Hnos",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 20,
+      "section": "drones"
+    },
+    {
+      "dealerId": "camptech",
+      "dealerName": "Camptech",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 21,
+      "section": "drones"
+    },
+    {
+      "dealerId": "camptech-2",
+      "dealerName": "Camptech",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 22,
+      "section": "drones"
+    },
+    {
+      "dealerId": "toldo-agroservicios",
+      "dealerName": "Toldo Agroservicios",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 23,
+      "section": "drones"
+    },
+    {
+      "dealerId": "san-diego-semillas",
+      "dealerName": "San Diego Semillas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 24,
+      "section": "drones"
+    },
+    {
+      "dealerId": "san-diego-semillas-2",
+      "dealerName": "San Diego Semillas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 25,
+      "section": "drones"
+    },
+    {
+      "dealerId": "san-diego-semillas-3",
+      "dealerName": "San Diego Semillas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 26,
+      "section": "drones"
+    },
+    {
+      "dealerId": "zuqueli-hnos",
+      "dealerName": "Zuqueli Hnos",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 27,
+      "section": "drones"
+    },
+    {
+      "dealerId": "folmer",
+      "dealerName": "Folmer",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 28,
+      "section": "drones"
+    },
+    {
+      "dealerId": "ser-agro",
+      "dealerName": "Ser Agro",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 29,
+      "section": "drones"
+    },
+    {
+      "dealerId": "terramar-jv",
+      "dealerName": "Terramar JV",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 30,
+      "section": "drones"
+    },
+    {
+      "dealerId": "terramar-jv-2",
+      "dealerName": "Terramar JV",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 31,
+      "section": "drones"
+    },
+    {
+      "dealerId": "terramar-jv-3",
+      "dealerName": "Terramar JV",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 32,
+      "section": "drones"
+    },
+    {
+      "dealerId": "terramar-jv-4",
+      "dealerName": "Terramar JV",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 33,
+      "section": "drones"
+    },
+    {
+      "dealerId": "terramar-jv-5",
+      "dealerName": "Terramar JV",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 34,
+      "section": "drones"
+    },
+    {
+      "dealerId": "terramar-jv-6",
+      "dealerName": "Terramar JV",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 35,
+      "section": "drones"
+    },
+    {
+      "dealerId": "terramar-jv-7",
+      "dealerName": "Terramar JV",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 36,
+      "section": "drones"
+    },
+    {
+      "dealerId": "terramar-jv-8",
+      "dealerName": "Terramar JV",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 37,
+      "section": "drones"
+    },
+    {
+      "dealerId": "terramar-jv-9",
+      "dealerName": "Terramar JV",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 38,
+      "section": "drones"
+    },
+    {
+      "dealerId": "akron",
+      "dealerName": "Akron",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 39,
+      "section": "drones"
+    },
+    {
+      "dealerId": "akron-2",
+      "dealerName": "Akron",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 40,
+      "section": "drones"
+    },
+    {
+      "dealerId": "akron-3",
+      "dealerName": "Akron",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 41,
+      "section": "drones"
+    },
+    {
+      "dealerId": "tecno-drones-saladillo",
+      "dealerName": "Tecno Drones Saladillo",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 42,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sumidas",
+      "dealerName": "Sumidas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 43,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sumidas-2",
+      "dealerName": "Sumidas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 44,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sumidas-3",
+      "dealerName": "Sumidas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 45,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sumidas-4",
+      "dealerName": "Sumidas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 46,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sumidas-5",
+      "dealerName": "Sumidas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 47,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sumidas-6",
+      "dealerName": "Sumidas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 48,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sumidas-7",
+      "dealerName": "Sumidas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 49,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sumidas-8",
+      "dealerName": "Sumidas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 50,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sumidas-9",
+      "dealerName": "Sumidas",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 52,
+      "section": "drones"
+    },
+    {
+      "dealerId": "aldebaran",
+      "dealerName": "Aldebaran",
+      "representativeId": "tekron",
+      "representativeName": "Tekron",
+      "brand": "DJI Agriculture",
+      "sourceLine": 53,
+      "section": "drones"
+    },
+    {
+      "dealerId": "kallpatech",
+      "dealerName": "Kallpatech",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 56,
+      "section": "drones"
+    },
+    {
+      "dealerId": "tecnoplant",
+      "dealerName": "TECNOPLANT",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 57,
+      "section": "drones"
+    },
+    {
+      "dealerId": "i-b-agro-san-salvador",
+      "dealerName": "I+B Agro San Salvador",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 58,
+      "section": "drones"
+    },
+    {
+      "dealerId": "i-b-agro-chajari",
+      "dealerName": "I-B agro Chajari",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 59,
+      "section": "drones"
+    },
+    {
+      "dealerId": "agro-la-nair",
+      "dealerName": "Agro La Nair",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 60,
+      "section": "drones"
+    },
+    {
+      "dealerId": "agro-tecnologias-mauro-sanchez",
+      "dealerName": "Agro Tecnologías Mauro Sánchez",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 61,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sowing",
+      "dealerName": "Sowing",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 62,
+      "section": "drones"
+    },
+    {
+      "dealerId": "alena-sudeste",
+      "dealerName": "Alena Sudeste",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 63,
+      "section": "drones"
+    },
+    {
+      "dealerId": "alena-salto",
+      "dealerName": "Alena Salto",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 64,
+      "section": "drones"
+    },
+    {
+      "dealerId": "alena-cuenca-del-salado",
+      "dealerName": "Alena Cuenca del Salado",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 65,
+      "section": "drones"
+    },
+    {
+      "dealerId": "agromelgas-sur-s-a",
+      "dealerName": "Agromelgas Sur S.A.",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 66,
+      "section": "drones"
+    },
+    {
+      "dealerId": "aike-drones",
+      "dealerName": "Aike Drones",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 67,
+      "section": "drones"
+    },
+    {
+      "dealerId": "alca-agrotech-s-a",
+      "dealerName": "Alca Agrotech S.A",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 68,
+      "section": "drones"
+    },
+    {
+      "dealerId": "comercializadora-pauny-marcos-juarez",
+      "dealerName": "Comercializadora Pauny Marcos Juárez",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 69,
+      "section": "drones"
+    },
+    {
+      "dealerId": "comercializadora-pauny-rosario",
+      "dealerName": "Comercializadora Pauny Rosario",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 70,
+      "section": "drones"
+    },
+    {
+      "dealerId": "agronomia-pampa-s-r-l",
+      "dealerName": "Agronomía Pampa S.R.L",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 71,
+      "section": "drones"
+    },
+    {
+      "dealerId": "casa-druetto-sa",
+      "dealerName": "Casa Druetto SA",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 72,
+      "section": "drones"
+    },
+    {
+      "dealerId": "vuelagro",
+      "dealerName": "Vuelagro",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 73,
+      "section": "drones"
+    },
+    {
+      "dealerId": "vuelagro-alejo-ledesma",
+      "dealerName": "Vuelagro Alejo Ledesma",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 74,
+      "section": "drones"
+    },
+    {
+      "dealerId": "sensar-agricultura-de-precision-s-a",
+      "dealerName": "Sensar Agricultura de precisión S.A.",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 75,
+      "section": "drones"
+    },
+    {
+      "dealerId": "azura-pico",
+      "dealerName": "Azura Pico",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 76,
+      "section": "drones"
+    },
+    {
+      "dealerId": "agro-drone-solutions-ads",
+      "dealerName": "Agro Drone Solutions ADS",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 77,
+      "section": "drones"
+    },
+    {
+      "dealerId": "mas-maiz",
+      "dealerName": "Más Maíz",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 78,
+      "section": "drones"
+    },
+    {
+      "dealerId": "las-liebres",
+      "dealerName": "Las Liebres",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 79,
+      "section": "drones"
+    },
+    {
+      "dealerId": "elevate",
+      "dealerName": "Elevate",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 80,
+      "section": "drones"
+    },
+    {
+      "dealerId": "go-agrodrones",
+      "dealerName": "GO Agrodrones",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 81,
+      "section": "drones"
+    },
+    {
+      "dealerId": "moray",
+      "dealerName": "Moray",
+      "representativeId": "bidcom-agro",
+      "representativeName": "Bidcom Agro",
+      "brand": "DJI Agriculture",
+      "sourceLine": 82,
+      "section": "drones"
+    }
+  ],
+  "dealersGenerated": 74
+}

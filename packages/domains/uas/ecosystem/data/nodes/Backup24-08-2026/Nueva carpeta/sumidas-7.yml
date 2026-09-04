@@ -1,0 +1,28 @@
+id: "sumidas-7"
+name: "Sumidas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 49
+  section: "drones"
+  raw: "Sumidas - Alberdi - Avenida Libertad 693 - +54 235 4480699 - alberdi@sumidas.com.ar / José Bertamoni - Gerente de Sucursal - jose.bertamoni@sumidas.com.ar - Tel/Cel: +54 236 4412255 / Pablo Pastorino - Responsable Técnico Comercial - pablo.pastorino@sumidas.com.ar - Tel/Cel: +54 236 4414298 / Nicolas Andriola - Responsable Técnico Comercial - nicolas.andriola@sumidas.com.ar - Tel/Cel: +54 236 4329841 / Matías Di placido - Responsable Técnico Comercial - matias.diplacido@sumidas.com.ar - Tel/Cel: +54 236 4617506"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

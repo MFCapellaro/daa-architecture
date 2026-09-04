@@ -1,0 +1,28 @@
+id: "carla-biasutti"
+name: "Carla Biasutti"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 183
+  section: "public"
+  raw: "Carla Biasutti - Gerenta de Programa - (+54) 9 341-6181048 - biasutti@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

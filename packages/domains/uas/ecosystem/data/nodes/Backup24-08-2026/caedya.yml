@@ -1,0 +1,28 @@
+id: "caedya"
+name: "CAEDyA"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: "https://caedya.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 149
+  section: "public"
+  raw: "CAEDyA - Cámara Argentina de Empresas de Drones y Afines - https://caedya.com.ar/ - (No vi en la web mucha especialización en agro)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

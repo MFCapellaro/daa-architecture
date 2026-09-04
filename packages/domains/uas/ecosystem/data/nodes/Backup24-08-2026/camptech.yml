@@ -1,0 +1,28 @@
+id: "camptech"
+name: "Camptech"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/camptechsas/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 19
+  section: "dealers"
+  raw: "Camptech - Tancacha - Córdoba - +54 93564363386 - https://www.instagram.com/camptechsas/ (Sin Web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

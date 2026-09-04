@@ -1,0 +1,28 @@
+id: "slo-sas"
+name: "SLO SAS"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://xaglatam.mkt1.com.ar/-"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 96
+  section: "dealers"
+  raw: "SLO SAS -  H. Irigoyen 249 - C.P. 5800 – Río Cuarto, Córdoba, Argentina. - Tel: +54 9 3584188644 - WSP: +54 9 3584188644 - ventas@xaglatam.com - https://xaglatam.mkt1.com.ar/-"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

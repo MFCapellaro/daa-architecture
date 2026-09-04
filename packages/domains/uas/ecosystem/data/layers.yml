@@ -1,0 +1,10 @@
+layers:
+  - { id: dealers, label: Dealers, visibleByDefault: true }
+  - { id: service, label: Service, visibleByDefault: true }
+  - { id: operators, label: Aplicadores, visibleByDefault: true }
+  - { id: pools, label: Pools, visibleByDefault: false }
+  - { id: academia, label: Academia, visibleByDefault: false }
+  - { id: events, label: Eventos, visibleByDefault: false }
+  - { id: media, label: Medios, visibleByDefault: false }
+  - { id: technology, label: Tecnología, visibleByDefault: false }
+  - { id: public, label: Público, visibleByDefault: false }

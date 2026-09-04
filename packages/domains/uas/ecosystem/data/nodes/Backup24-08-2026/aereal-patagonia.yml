@@ -1,0 +1,28 @@
+id: "aereal-patagonia"
+name: "Aereal Patagonia"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.aerealpatagonia.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 12
+  section: "dealers"
+  raw: "Aereal Patagonia - Esteban Lagger - Tronador 140, Gral. Roca, RN.- administracion@aerealpatagonia.com - 1158853088 / 2995957872 - https://www.aerealpatagonia.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

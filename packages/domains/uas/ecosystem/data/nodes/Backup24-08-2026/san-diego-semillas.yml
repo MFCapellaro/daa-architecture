@@ -1,0 +1,28 @@
+id: "san-diego-semillas"
+name: "San Diego Semillas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.sandiego.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 22
+  section: "dealers"
+  raw: "San Diego Semillas - Lavalle 844 - Venado Tuerto - Santa Fe - +54 3462670044 - Ing Ag. Matias Rada / WhatsApp +54 93462693541 - Ing. Ag. Franco Gastón Lescano / WhatsApp +54 93462253145- https://www.sandiego.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

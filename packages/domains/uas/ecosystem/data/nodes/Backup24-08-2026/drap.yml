@@ -1,0 +1,28 @@
+id: "drap"
+name: "DRAP"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 86
+  section: "dealers"
+  raw: "DRAP - Finca La Lonja - Calle Hernando de Lerma s/n. Barrio San José. - Rosario de Lerma, Salta. - Whatsapp: +54 9 3874 56-3414  - drapdronaplicaciones@gmail.com - www.drapsas.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

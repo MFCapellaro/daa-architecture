@@ -1,0 +1,28 @@
+id: "balcarce"
+name: "Balcarce"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 35
+  section: "dealers"
+  raw: "Balcarce - Av San Martín 3238 - Fernando Iacovelli - fiacovelli@terramarjv.com.ar - +54 2266534960 / Hernán Cuccioli - hcuccioli@terramarjv.com.ar - +54 2266440410 / Lucas Villate - lvillate@terramarjv.com.ar - +54 2266535228"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

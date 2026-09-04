@@ -1,0 +1,28 @@
+id: "i-b-agro-san-salvador"
+name: "I+B Agro San Salvador"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 56
+  section: "dealers"
+  raw: "I+B Agro San Salvador - Exequiel Morra - Ruta nacional 18 y Acceso San Salvador - Tel: 2664008892 (Sin Web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "cordoba"
+name: "Córdoba"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 131
+  section: "academia"
+  raw: "Córdoba - Buenos Aires 563, Córdoba Capital - 0351 427 2834 - 5493515057963 - info@incasrl.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

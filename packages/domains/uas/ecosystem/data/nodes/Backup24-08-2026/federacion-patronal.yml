@@ -1,0 +1,28 @@
+id: "federacion-patronal"
+name: "Federación Patronal"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - insurance
+
+capabilities:
+
+presence:
+  website: "https://www.fedpat.com.ar/seguros/seguro-para-drones/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 226
+  section: "insurance"
+  raw: "Federación Patronal - https://www.fedpat.com.ar/seguros/seguro-para-drones/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,36 @@
+source:
+  id: anac-res-550-2025
+  organization: ANAC
+  title: "Resolución 550/2025"
+  source_type: regulation
+
+  origin:
+    url: "https://www.argentina.gob.ar/normativa/nacional/resolución-550-2025-416149"
+    official: true
+
+  publication:
+    sanctioned_at: "2025-08-07"
+    published_at: "2025-08-08"
+    official_gazette_number: "35724"
+    official_gazette_page: 14
+
+  retrieval:
+    retrieved_at: "2026-08-10"
+    update_frequency: monthly
+
+  status:
+    current: true
+    modified: true
+
+  relationships:
+    establishes:
+      - anac-raac-part-100
+      - anac-raac-part-101
+      - anac-raac-part-102
+    supersedes:
+      - anac-res-880-2019
+      - anac-res-885-2019
+      - anac-res-319-2025
+      - anac-res-334-2025
+    modified_by:
+      - anac-res-312-2026

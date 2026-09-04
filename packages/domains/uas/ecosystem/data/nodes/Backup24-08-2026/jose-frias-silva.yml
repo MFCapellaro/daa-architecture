@@ -1,0 +1,28 @@
+id: "jose-frias-silva"
+name: "José Frías Silva"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 244
+  section: "events"
+  raw: "José Frías Silva - Presidente - SRT (Sociedad Rural de Tucumán)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

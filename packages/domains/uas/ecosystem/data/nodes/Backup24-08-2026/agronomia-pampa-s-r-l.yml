@@ -1,0 +1,28 @@
+id: "agronomia-pampa-s-r-l"
+name: "Agronomía Pampa S.R.L"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://agronomiapampa.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 69
+  section: "dealers"
+  raw: "Agronomía Pampa S.R.L - Juan Acuña / Juan Pablo Santos - S3040 San Justo - Tel: 54 9 3498 46-2791 - https://agronomiapampa.com.ar/ (Sin drones en la web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

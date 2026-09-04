@@ -1,0 +1,28 @@
+id: "dye"
+name: "DYE"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 142
+  section: "academia"
+  raw: "DYE - mkoller@dyesa.com - +54 11 26603601"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

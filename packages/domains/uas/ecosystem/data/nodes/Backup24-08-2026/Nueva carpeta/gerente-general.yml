@@ -1,0 +1,28 @@
+id: "gerente-general"
+name: "Gerente General"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 175
+  section: "public"
+  raw: "Gerente General - Tomás Coyos - +54 341 6608956 - coyos@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

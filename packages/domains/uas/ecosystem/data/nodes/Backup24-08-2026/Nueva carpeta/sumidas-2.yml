@@ -1,0 +1,28 @@
+id: "sumidas-2"
+name: "Sumidas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 44
+  section: "drones"
+  raw: "Sumidas - Chivilcoy - Lisandro de La Torre 1580 - +54 234 6561037 - chivilcoy@sumidas.com.ar / Sebastián Falcone - Gerente de Sucursal - sebastian.falcone@sumidas.com.ar - Tel/Cel: +54 234 6561037 / María Caricato - Administración de Sucursal - maria.caricato@sumidas.com.ar - Tel/Cel: +54 234 6588433 / Rubén López - Responsable Técnico Comercial - ruben.lopez@sumidas.com.ar - Tel/Cel: +54 234 6588334 / José Taverna - Responsable Técnico Comercial - jose.taverna@sumidas.com.ar - Tel/Cel: +54 234 6301772"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

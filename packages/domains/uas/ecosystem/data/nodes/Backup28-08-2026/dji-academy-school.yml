@@ -1,0 +1,44 @@
+id: "dji-academy-school"
+name: "DJI Academy school"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 140
+  section: "academia"
+  raw: "DJI Academy school"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

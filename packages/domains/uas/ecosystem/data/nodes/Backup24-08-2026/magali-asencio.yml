@@ -1,0 +1,28 @@
+id: "magali-asencio"
+name: "Magalí Asencio"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 199
+  section: "public"
+  raw: "Magalí Asencio - Responsable de Diseño - (+54) 9 341-3771196 - asencio@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "directora-adjunta"
+name: "Directora Adjunta"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 181
+  section: "public"
+  raw: "Directora Adjunta - Lucrecia Salgado"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

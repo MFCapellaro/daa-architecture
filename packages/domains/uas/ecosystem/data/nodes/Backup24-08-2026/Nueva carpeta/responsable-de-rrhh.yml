@@ -1,0 +1,28 @@
+id: "responsable-de-rrhh"
+name: "Responsable de RRHH"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 214
+  section: "public"
+  raw: "Responsable de RRHH - Macarena Vallejos - +54 341 6927836 - vallejos@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

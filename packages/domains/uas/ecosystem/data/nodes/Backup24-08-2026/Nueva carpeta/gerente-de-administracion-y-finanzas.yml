@@ -1,0 +1,28 @@
+id: "gerente-de-administracion-y-finanzas"
+name: "Gerente de Administración y Finanzas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 198
+  section: "public"
+  raw: "Gerente de Administración y Finanzas - Cristian Verna - +54 247 7635954 - verna@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

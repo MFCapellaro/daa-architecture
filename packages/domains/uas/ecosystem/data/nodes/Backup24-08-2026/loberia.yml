@@ -1,0 +1,28 @@
+id: "loberia"
+name: "Lobería"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 31
+  section: "dealers"
+  raw: "Lobería - Buenos Aires - Ruta 227 km 53,5 - Lucas Kressi - lkressi@terramarjv.com.ar - +54 2261400060"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

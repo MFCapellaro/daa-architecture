@@ -1,0 +1,44 @@
+id: "inta-argentina-red-de-drones"
+name: "INTA Argentina Red de Drones"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: "visentini.emanuel@inta.gob.ar"
+
+presence:
+  website: "https://www.argentina.gob.ar/noticias/red-de-drones-del-inta-estrategia-datos-y-sinergias-para-el-agro-argentino"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 148
+  section: "public"
+  raw: "INTA Argentina Red de Drones - Emanuel Visentini - visentini.emanuel@inta.gob.ar - Gabriela Tallarico, Emanuel Visentini y Facundo Calderón - https://www.argentina.gob.ar/noticias/red-de-drones-del-inta-estrategia-datos-y-sinergias-para-el-agro-argentino"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "anac"
+name: "ANAC"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: "https://www.argentina.gob.ar/anac"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 147
+  section: "public"
+  raw: "ANAC - https://www.argentina.gob.ar/anac"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

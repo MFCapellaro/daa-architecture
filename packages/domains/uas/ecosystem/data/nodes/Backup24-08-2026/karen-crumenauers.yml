@@ -1,0 +1,28 @@
+id: "karen-crumenauers"
+name: "Karen Crumenauers"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 169
+  section: "public"
+  raw: "Karen Crumenauers - Secretaría y Relaciones Institucionales - (+54) 9 341-6151783 - crumenauers@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

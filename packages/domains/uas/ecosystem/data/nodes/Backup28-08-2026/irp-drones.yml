@@ -1,0 +1,44 @@
+id: "irp-drones"
+name: "IRP Drones"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: "Tel: - Bahía Blanca"
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 291 4163049"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://irpdrones.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 110
+  section: "operators"
+  raw: "IRP Drones - Tel: +54 291 4163049 - Bahía Blanca, Buenos Aires - https://irpdrones.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "cordoba-rosario"
+name: "Córdoba (Rosario)"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 126
+  section: "academia"
+  raw: "Córdoba (Rosario) - Pilar a 500 mts. de Av. Circunvalación, Au Córdoba - Rosario, Córdoba - Teléfono +5493512149099"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

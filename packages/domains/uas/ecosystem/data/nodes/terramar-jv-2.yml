@@ -1,0 +1,45 @@
+id: "terramar-jv-2"
+name: "Terramar JV"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 291 4400926"
+  whatsapp: null
+  email: "jmurra@terramarjv.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 31
+  section: "drones"
+  raw: "Terramar JV - Bahía Blanca - Buenos Aires - Ruta 51 km 729,5 - jmurra@terramarjv.com.ar - +54 291 4400926 / maurinabusto@terramarjv.com.ar - +54 291 4401149 / ferminurra@terramarjv.com.ar - +54 291 4401149"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

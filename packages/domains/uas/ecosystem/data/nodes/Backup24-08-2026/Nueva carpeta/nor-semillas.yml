@@ -1,0 +1,28 @@
+id: "nor-semillas"
+name: "Nor Semillas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/norsemillas/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 7
+  section: "drones"
+  raw: "Nor Semillas - Ruta 16 KM 262,4, Pampa del Infierno 3721 - Chaco - https://www.instagram.com/norsemillas/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "florencia-novau"
+name: "Florencia Novau"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 197
+  section: "public"
+  raw: "Florencia Novau - Gerenta de Comunicación - (+54) 9 341-3117009 - novau@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

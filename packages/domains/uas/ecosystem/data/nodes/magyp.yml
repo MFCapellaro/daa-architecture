@@ -1,0 +1,44 @@
+id: "magyp"
+name: "MAGyP"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.magyp.gob.ar/desarrollo-foresto-industrial/webinar-002.php"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 150
+  section: "public"
+  raw: "MAGyP - Metrya y Agrimensura del Norte SRL - https://www.magyp.gob.ar/desarrollo-foresto-industrial/webinar-002.php"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

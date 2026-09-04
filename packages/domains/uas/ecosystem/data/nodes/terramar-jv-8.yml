@@ -1,0 +1,45 @@
+id: "terramar-jv-8"
+name: "Terramar JV"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 226 6534960"
+  whatsapp: null
+  email: "fiacovelli@terramarjv.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 37
+  section: "drones"
+  raw: "Terramar JV - Balcarce - Av San Martín 3238 - fiacovelli@terramarjv.com.ar - +54 226 6534960 / hcuccioli@terramarjv.com.ar - +54 226 6440410 / lvillate@terramarjv.com.ar - +54 226 6535228"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

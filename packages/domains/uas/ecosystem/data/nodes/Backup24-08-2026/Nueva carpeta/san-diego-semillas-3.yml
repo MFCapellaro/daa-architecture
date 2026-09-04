@@ -1,0 +1,28 @@
+id: "san-diego-semillas-3"
+name: "San Diego Semillas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 26
+  section: "drones"
+  raw: "San Diego Semillas - General Alvear - Buenos Aires"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

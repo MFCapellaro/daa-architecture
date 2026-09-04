@@ -1,0 +1,44 @@
+id: "continental-am-590"
+name: "CONTINENTAL AM 590"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: "Argentina"
+  phone: "+54 11 70911000"
+  whatsapp: null
+  email: "contacto@continental.com.ar"
+
+presence:
+  website: "https://www.continental.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 195
+  section: "media"
+  raw: "CONTINENTAL AM 590 - +54 11 70911000 - Conde 51 - CABA - Argentina - contacto@continental.com.ar - https://www.continental.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

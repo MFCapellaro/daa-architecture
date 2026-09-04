@@ -1,0 +1,28 @@
+id: "florencia-lucero-heguy"
+name: "Florencia Lucero Heguy"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 153
+  section: "public"
+  raw: "Florencia Lucero Heguy - Directora Ejecutiva"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

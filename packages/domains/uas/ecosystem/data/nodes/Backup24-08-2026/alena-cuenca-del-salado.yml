@@ -1,0 +1,28 @@
+id: "alena-cuenca-del-salado"
+name: "Alena Cuenca del Salado"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 63
+  section: "dealers"
+  raw: "Alena Cuenca del Salado - Juan Urtea - F263+6P, Chascomús, Provincia de Buenos Aires - Tel: 2241509938"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

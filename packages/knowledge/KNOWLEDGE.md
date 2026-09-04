@@ -20,15 +20,17 @@ It preserves evolutionary continuity while enabling future capability.
 
 ## Core Principle
 
-Experience generates learning.
+Experience reveals learning.
 
-Learning expands knowledge.
+Learning becomes knowledge when it is coherently preserved.
 
-Knowledge enables future generation.
+Knowledge enables future discernment.
 
-Future generation reveals new capability.
+Future discernment improves adaptation.
 
-Evolution enriches identity through reusable capability.
+Adaptation enriches identity.
+
+Generation reveals new capability.
 
 
 Knowledge is the evolutionary memory of coherent systems.

@@ -1,0 +1,28 @@
+id: "sumidas-6"
+name: "Sumidas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 48
+  section: "drones"
+  raw: "Sumidas - Ameghino - Acceso Centenario S/Nº - +54 338 8471740 - ameghino@sumidas.com.ar - José Luis Sánchez - Gerente de Sucursal - jose.sanchez@sumidas.com.ar - Cel: +54 338 8670526 / Delfina Pillado - Responsable Técnico Comercial - delfina.pillado@sumidas.com.ar - Cel: +54 338 8567075 / Ariel Melian - Logística de Sucursal - ariel.melian@sumidas.com.ar - Cel: +54 338 8503876 / Pamela Pereda - Administración de Sucursal - pamela.pereda@sumidas.com.ar - Cel: +54 338 8676000"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

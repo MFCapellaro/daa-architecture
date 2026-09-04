@@ -1,0 +1,28 @@
+id: "sumidas-9"
+name: "Sumidas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 51
+  section: "drones"
+  raw: "Sumidas - Lincoln - Ruta 188 Km 219 - +54 235 5540002 - lincoln@sumidas.com.ar / Paula Jiménez - Responsable Técnico Comercial - paula.jimenez@sumidas.com.ar - Cel: +54 235 5402005 / Lucas Pivato - Responsable Técnico Comercial - lucas.pivato@sumidas.com.ar - Cel: +54 235 5407892 / Santiago Crespo - Administrador de Sucursal - santiago.crespo@sumidas.com.ar - Cel: +54 235 5402007"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

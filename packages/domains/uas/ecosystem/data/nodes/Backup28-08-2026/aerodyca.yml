@@ -1,0 +1,44 @@
+id: "aerodyca"
+name: "AERODYCA"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - technology
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 223 5438860"
+  whatsapp: null
+  email: "info@aerodyca.com.ar"
+
+presence:
+  website: "https://aerodyca.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 189
+  section: "technology"
+  raw: "AERODYCA - Fabricante de drones con una iniciativa en agro - Ruta 88 Km 6.5 - Mar del Plata - Buenos Aires - +54 223 5438860 / +54 223 5279399 - info@aerodyca.com.ar - https://aerodyca.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

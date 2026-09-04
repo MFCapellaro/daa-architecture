@@ -1,0 +1,45 @@
+id: "sensar-agricultura-de-precision-s-a"
+name: "Sensar Agricultura de precisión S.A."
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: "Domingo F. Sarmiento 327 - Darregueira"
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 292 3514256"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.instagram.com/sensar_ap/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 75
+  section: "drones"
+  raw: "Sensar Agricultura de precisión S.A. - Domingo F. Sarmiento 327 - Darregueira, Buenos Aires - Tel: +54 292 3514256 - https://www.instagram.com/sensar_ap/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

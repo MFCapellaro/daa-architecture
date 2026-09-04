@@ -1,0 +1,28 @@
+id: "cecilia-gomez-ojeda"
+name: "Cecilia Gómez Ojeda"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 253
+  section: "events"
+  raw: "Cecilia Gómez Ojeda - Comunicación - Kampu SRL"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,45 @@
+id: "mas-maiz"
+name: "Más Maíz"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 358 4364757"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.instagram.com/maizmas.pioneer/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 78
+  section: "drones"
+  raw: "Más Maíz - Sur de Córdoba - Tel: +54 358 4364757 - https://www.instagram.com/maizmas.pioneer/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

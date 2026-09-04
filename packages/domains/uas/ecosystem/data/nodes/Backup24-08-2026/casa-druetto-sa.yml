@@ -1,0 +1,28 @@
+id: "casa-druetto-sa"
+name: "Casa Druetto SA"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://casadruetto.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 70
+  section: "dealers"
+  raw: "Casa Druetto SA - Gabriel Gatti - Av. Jorge Newbery 247bis, Galvez, Santa FE - Tel: 5493404521246 - https://casadruetto.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

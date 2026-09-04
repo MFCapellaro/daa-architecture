@@ -1,0 +1,28 @@
+id: "fearca"
+name: "FEARCA"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: "https://fearca.org/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 150
+  section: "public"
+  raw: "FEARCA - RN 158 km 146,5 – Aeropuerto Regional Villa María – Córdoba, Argentina - +54 11 31745375 - florencialucero@pucarapress.com - https://fearca.org/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

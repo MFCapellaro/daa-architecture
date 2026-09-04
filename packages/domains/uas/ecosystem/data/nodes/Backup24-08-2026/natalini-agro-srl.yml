@@ -1,0 +1,28 @@
+id: "natalini-agro-srl"
+name: "Natalini Agro SRL"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.nataliniagro.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 13
+  section: "dealers"
+  raw: "Natalini Agro SRL - Ruta Nac. Nº 22 y Acc. Martin Fierro - Km 1201 Allen - Río Negro - Tel: (0298) 154509016 // (0298) 154401207 - Whatsapp: (0298) 154509016 - https://www.nataliniagro.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

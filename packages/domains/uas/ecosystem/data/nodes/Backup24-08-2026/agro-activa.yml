@@ -1,0 +1,28 @@
+id: "agro-activa"
+name: "Agro Activa"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: "https://agroactiva.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 242
+  section: "events"
+  raw: "Agro Activa - Oficina: Merced 1227, Pergamino, Buenos Aires. / Campo: Ruta Nacional 178 km 163.5 , Armstrong, Santa fe. - comercial@agroactiva.com - +54 2477-443259 - https://agroactiva.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

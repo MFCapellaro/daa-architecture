@@ -1,0 +1,45 @@
+id: "vuelagro-alejo-ledesma"
+name: "Vuelagro Alejo Ledesma"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 11 30278787"
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 74
+  section: "drones"
+  raw: "Vuelagro Alejo Ledesma - Venado Tuerto, Alejo Ledesma, La Carlota - Tel: +54 11 30278787"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

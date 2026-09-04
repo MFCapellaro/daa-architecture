@@ -1,0 +1,28 @@
+id: "expoagro"
+name: "Expoagro"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: "https://www.expoagro.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 241
+  section: "events"
+  raw: "Expoagro - Tel.: 54-11-3435-1111 - Av. Corrientes 1302 - 5 Piso (C1043ABN) Bs. As. - ventas@exponenciar.com.ar / prensa@exponenciar.com.ar - https://www.expoagro.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

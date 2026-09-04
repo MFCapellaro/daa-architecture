@@ -1,0 +1,28 @@
+id: "virginia-cerantola"
+name: "Virginia Cerantola"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 184
+  section: "public"
+  raw: "Virginia Cerantola - Coordinadora Regional Nodo Oeste - (+54) 9 341-2590588 - cerantola@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

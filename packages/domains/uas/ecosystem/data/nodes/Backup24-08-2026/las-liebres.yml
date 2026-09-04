@@ -1,0 +1,28 @@
+id: "las-liebres"
+name: "Las Liebres"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/agrop_lasliebres/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 77
+  section: "dealers"
+  raw: "Las Liebres - Juan de los Ríos - Rio Tercero - Tel: 3515606964 - https://www.instagram.com/agrop_lasliebres/ (sin web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

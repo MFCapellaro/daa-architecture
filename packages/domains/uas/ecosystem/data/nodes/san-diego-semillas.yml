@@ -1,0 +1,45 @@
+id: "san-diego-semillas"
+name: "San Diego Semillas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Santa Fe"
+  country: "Argentina"
+  phone: "+54 346 2670044"
+  whatsapp: "+54 9346 2693541"
+  email: null
+
+presence:
+  website: "https://www.sandiego.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 24
+  section: "drones"
+  raw: "San Diego Semillas - Lavalle 844 - Venado Tuerto - Santa Fe - +54 346 2670044 - WhatsApp +54 934 62693541 - WhatsApp +54 934 62253145- https://www.sandiego.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

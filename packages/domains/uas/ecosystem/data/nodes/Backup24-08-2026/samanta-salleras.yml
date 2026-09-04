@@ -1,0 +1,28 @@
+id: "samanta-salleras"
+name: "Samanta Salleras"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 194
+  section: "public"
+  raw: "Samanta Salleras - Administrativa General - (+54) 9 341-7230062 - aapresid@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

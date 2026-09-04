@@ -1,0 +1,28 @@
+id: "agrovuelos"
+name: "AgroVuelos"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+
+presence:
+  website: "https://www.agrovuelos.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 113
+  section: "operators"
+  raw: "AgroVuelos - +54 9 3854 41-4255 - info@agrovuelos.com - Norte Argentino · Tucumán · Salta · Jujuy - Santiago del Estero · Chaco · Formosa · Catamarca - https://www.agrovuelos.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

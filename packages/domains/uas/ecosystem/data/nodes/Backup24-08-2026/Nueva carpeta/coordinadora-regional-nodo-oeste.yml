@@ -1,0 +1,28 @@
+id: "coordinadora-regional-nodo-oeste"
+name: "Coordinadora Regional Nodo Oeste"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 191
+  section: "public"
+  raw: "Coordinadora Regional Nodo Oeste - Virginia Cerantola - +54 341 2590588 - cerantola@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

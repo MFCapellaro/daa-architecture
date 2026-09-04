@@ -1,0 +1,28 @@
+id: "fm-plus-93-1"
+name: "FM Plus 93.1"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.rosario3.com/radios/fmplus.html"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 285
+  section: "media"
+  raw: "FM Plus 93.1 - https://www.rosario3.com/radios/fmplus.html"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,45 @@
+id: "akron-3"
+name: "Akron"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 247 7311885"
+  whatsapp: null
+  email: "akronpergamino@akron.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 41
+  section: "drones"
+  raw: "Akron - Pergamino - Buenos Aires - Ruta Nacional N° 8 Km 234,7 - +54 247 7311885 - akronpergamino@akron.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

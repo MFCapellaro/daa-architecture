@@ -1,0 +1,28 @@
+id: "ceac"
+name: "CEAC"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 157
+  section: "public"
+  raw: "CEAC - Cámara de Empresas Agroaéreas Cordobesas"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

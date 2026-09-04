@@ -1,0 +1,28 @@
+id: "detma"
+name: "Detma"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://detma.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 8
+  section: "dealers"
+  raw: "Detma - Av. Alem 1602 Chajarí (03456) 420780 / Ruta Nac.14 Km331.5 Chajari-Entre Ríos 3456-438569 - ventas@detma.com.ar - https://detma.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

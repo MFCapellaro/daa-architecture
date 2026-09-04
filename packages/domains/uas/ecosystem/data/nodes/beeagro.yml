@@ -1,0 +1,44 @@
+id: "beeagro"
+name: "Beeagro"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: "Sinsacate"
+  city: "Córdoba"
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 352 5447540"
+  whatsapp: "+54 352 5447540"
+  email: "info@beeagro.com.ar"
+
+presence:
+  website: "https://beeagro.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 111
+  section: "operators"
+  raw: "Beeagro - Sinsacate, Córdoba, Argentina - WhatsApp +54 352 5447540 - info@beeagro.com.ar - https://beeagro.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

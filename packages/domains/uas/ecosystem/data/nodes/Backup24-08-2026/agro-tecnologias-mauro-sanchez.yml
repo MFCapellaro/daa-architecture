@@ -1,0 +1,28 @@
+id: "agro-tecnologias-mauro-sanchez"
+name: "Agro Tecnologías Mauro Sanchez"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/agro_tecnologias/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 59
+  section: "dealers"
+  raw: "Agro Tecnologías Mauro Sanchez - C. 15 1056, S3561AUU Avellaneda, Santa Fe - Tel: +54 9 3482 548375 - https://www.instagram.com/agro_tecnologias/ (sin web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

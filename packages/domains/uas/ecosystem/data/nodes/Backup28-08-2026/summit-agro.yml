@@ -1,0 +1,44 @@
+id: "summit-agro"
+name: "Summit Agro"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: "Carlos Pellegrini 719, Piso 8"
+  city: "CABA"
+  province: null
+  country: "Argentina"
+  phone: "+54 0810 3337866"
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 83
+  section: "drones"
+  raw: "Summit Agro - Carlos Pellegrini 719, Piso 8, CABA, Argentina - Tel: 0810 3337866"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

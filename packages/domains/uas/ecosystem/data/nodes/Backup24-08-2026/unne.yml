@@ -1,0 +1,28 @@
+id: "unne"
+name: "UNNE"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: "https://www.agr.unne.edu.ar/index.php?view=article&id=464:diplomatura-universitaria-en-drones-para-sistemas-productivos-del-nea&catid=11"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 231
+  section: "academia"
+  raw: "UNNE - Nordeste - https://www.agr.unne.edu.ar/index.php?view=article&id=464:diplomatura-universitaria-en-drones-para-sistemas-productivos-del-nea&catid=11"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

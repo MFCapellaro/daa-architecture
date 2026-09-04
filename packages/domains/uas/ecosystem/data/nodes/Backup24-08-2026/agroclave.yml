@@ -1,0 +1,28 @@
+id: "agroclave"
+name: "AgroClave"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.agroclave.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 273
+  section: "media"
+  raw: "AgroClave - Sarmiento 763, Rosario, CP 2000, Santa Fe. - Director : Gustavo Santiago Scaglione - https://www.agroclave.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

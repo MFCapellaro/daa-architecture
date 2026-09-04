@@ -1,0 +1,28 @@
+id: "alena-salto"
+name: "Alena Salto"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 64
+  section: "drones"
+  raw: "Alena Salto - Uruguay 469, Salto, Provincia de Buenos Aires - Tel: +54 11 68889875 - Marcelo Giménez Zapiola"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

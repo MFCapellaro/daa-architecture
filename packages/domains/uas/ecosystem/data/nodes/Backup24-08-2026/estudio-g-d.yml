@@ -1,0 +1,28 @@
+id: "estudio-g-d"
+name: "Estudio G&D"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+
+presence:
+  website: "https://estudiogyd.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 107
+  section: "operators"
+  raw: "Estudio G&D - Fotogrametría - RN226 km 163,4, B7000 Tandil, Buenos Aires - WApp +5492494697996 - info@estudiogyd.com.ar - https://estudiogyd.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "startups"
+name: "StartUps"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 281
+  section: "academia"
+  raw: "*StartUps"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

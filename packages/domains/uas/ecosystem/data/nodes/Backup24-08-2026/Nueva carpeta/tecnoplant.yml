@@ -1,0 +1,28 @@
+id: "tecnoplant"
+name: "TECNOPLANT"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://tecnoplantsrl.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 57
+  section: "drones"
+  raw: "TECNOPLANT - San Luis - Av. Lafinur 930, D5700 San Luis / Ing. Agr. Alfredo Castellone - https://tecnoplantsrl.com.ar/ (Sin drones en la web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "magyp"
+name: "MAGyP"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: "https://www.magyp.gob.ar/desarrollo-foresto-industrial/webinar-002.php"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 148
+  section: "public"
+  raw: "MAGyP - Santiago Cuevas – Metrya y Agrimensura del Norte SRL - https://www.magyp.gob.ar/desarrollo-foresto-industrial/webinar-002.php"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

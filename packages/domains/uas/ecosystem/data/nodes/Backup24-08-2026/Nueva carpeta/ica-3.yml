@@ -1,0 +1,28 @@
+id: "ica-3"
+name: "ICA"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 134
+  section: "academia"
+  raw: "ICA - Mendoza Capital - Arístedes Villanueva 430, Ciudad de Mendoza - +54 261 5559057 - anexomendoza@incasrl.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

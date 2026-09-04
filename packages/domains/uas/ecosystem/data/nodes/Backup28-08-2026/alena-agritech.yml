@@ -1,0 +1,44 @@
+id: "alena-agritech"
+name: "Alena Agritech"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 11 68889875"
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 85
+  section: "drones"
+  raw: "Alena Agritech - Buenos Aires NORTE - Uruguay 469, Salto -  Marcelo Giménez Zapiola - +54 11 68889875"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

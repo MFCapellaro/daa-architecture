@@ -1,0 +1,45 @@
+id: "sumidas-8"
+name: "Sumidas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 234 2486321"
+  whatsapp: null
+  email: "saladillo@sumidas.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 50
+  section: "drones"
+  raw: "Sumidas - Saladillo - Ruta 205 Km 187.5 - +54 234 2486321 - saladillo@sumidas.com.ar / huberto.machado@sumidas.com.ar - Tel/Cel: +54 234 4502110 / laura.fegan@sumidas.com.ar - Tel/Cel: +54 234 5400151 / marcelo.gonzalez@sumidas.com.ar - Tel/Cel: +54 234 2486321 / emiliano.verdini@sumidas.com.ar - Tel/Cel: +54 234 4410444 /"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

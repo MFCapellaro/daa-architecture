@@ -1,0 +1,28 @@
+id: "daniela-moscatello"
+name: "Daniela Moscatello"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 193
+  section: "public"
+  raw: "Daniela Moscatello - Administrativa General - (+54) 9 341-6460228 - moscatello@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

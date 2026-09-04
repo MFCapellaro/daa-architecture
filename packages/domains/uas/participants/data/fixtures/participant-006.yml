@@ -1,0 +1,10 @@
+id: participant-006
+actorId: actor-006
+status: inactive
+joinedAt: 2026-05-01
+
+progressiveEntry:
+  identity: true
+  profile: true
+  capabilities: true
+  interests: true

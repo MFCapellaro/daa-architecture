@@ -1,0 +1,28 @@
+id: "natalini-agro-srl"
+name: "Natalini Agro SRL"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.nataliniagro.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 15
+  section: "drones"
+  raw: "Natalini Agro SRL - Ruta Nac. Nº 22 y Acceso Martin Fierro - Km 1201 Allen - Río Negro - Tel: +54 298 4401207 - Whatsapp: +54 298 4509016 - https://www.nataliniagro.com.ar/ - Encargado: Esteban Lagger"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

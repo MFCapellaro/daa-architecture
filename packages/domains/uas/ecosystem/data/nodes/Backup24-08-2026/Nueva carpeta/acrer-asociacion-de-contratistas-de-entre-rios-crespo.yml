@@ -1,0 +1,28 @@
+id: "acrer-asociacion-de-contratistas-de-entre-rios-crespo"
+name: "ACRER: Asociación de Contratistas de Entre Ríos (Crespo"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 229
+  section: "public"
+  raw: "ACRER: Asociación de Contratistas de Entre Ríos (Crespo - Entre Ríos)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

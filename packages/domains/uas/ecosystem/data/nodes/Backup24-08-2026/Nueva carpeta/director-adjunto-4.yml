@@ -1,0 +1,28 @@
+id: "director-adjunto-4"
+name: "Director Adjunto"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 215
+  section: "public"
+  raw: "Director Adjunto - Tomás Oesterheld"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

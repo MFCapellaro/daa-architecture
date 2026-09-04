@@ -1,0 +1,28 @@
+id: "moray"
+name: "Moray"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "http://www.moray.com.ar/agricultura/"
+  websiteMentioned: true
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 80
+  section: "dealers"
+  raw: "Moray - Andrés Rocamura - Centro de Córdoba - Tel: 3534134708 - http://www.moray.com.ar/agricultura/ -  https://www.instagram.com/moray.agro/ (sin drones en la web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "i-b-agro-chajari"
+name: "I-B agro Chajari"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/ibagrochajari/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 59
+  section: "drones"
+  raw: "I-B agro Chajari - Ruta nacional 14 y Av. Belgrano. - Tel: +54 345 6621268 - https://www.instagram.com/ibagrochajari/ - Exequiel Morra"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

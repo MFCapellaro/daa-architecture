@@ -1,0 +1,28 @@
+id: "radio-2-am-1230"
+name: "Radio 2 AM 1230"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.rosario3.com/radios/radio2.html"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 288
+  section: "media"
+  raw: "Radio 2 AM 1230 - https://www.rosario3.com/radios/radio2.html"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

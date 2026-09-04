@@ -1,0 +1,28 @@
+id: "drones-vip-5"
+name: "Drones VIP"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 129
+  section: "academia"
+  raw: "Drones VIP - Entre Ríos (Gilbert) - Ruta Provincial 20 , Km 72 Entre Ríos (Gilbert) - Teléfono +54 344 6580356"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

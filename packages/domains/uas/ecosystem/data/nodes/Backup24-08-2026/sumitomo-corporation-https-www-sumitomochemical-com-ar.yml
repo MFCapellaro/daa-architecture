@@ -1,0 +1,28 @@
+id: "sumitomo-corporation-https-www-sumitomochemical-com-ar"
+name: "Sumitomo Corporation		https://www.sumitomochemical.com.ar/"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - suppliers
+
+capabilities:
+
+presence:
+  website: "https://www.sumitomochemical.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 257
+  section: "suppliers"
+  raw: "Sumitomo Corporation		https://www.sumitomochemical.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "gerenta-de-programa"
+name: "Gerenta de Programa"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 182
+  section: "public"
+  raw: "Gerenta de Programa - Mailen Saluzzio - +54 341 304043 - saluzzio@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

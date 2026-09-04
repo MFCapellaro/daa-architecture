@@ -1,0 +1,28 @@
+source:
+  id: anac-res-312-2026
+  organization: ANAC
+  title: "Resolución 312/2026"
+  source_type: regulation
+
+  origin:
+    url: "https://www.argentina.gob.ar/normativa/nacional/resolución-312-2026-426040"
+    official: true
+
+  publication:
+    sanctioned_at: "2026-05-21"
+    published_at: "2026-05-22"
+    official_gazette_number: "35915"
+    official_gazette_page: 19
+
+  retrieval:
+    retrieved_at: "2026-08-10"
+    update_frequency: monthly
+
+  status:
+    current: true
+    modified: false
+
+  relationships:
+    amends:
+      - anac-raac-part-100
+      - anac-res-550-2025

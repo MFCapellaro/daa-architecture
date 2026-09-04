@@ -1,0 +1,44 @@
+id: "ilac"
+name: "ILAC"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 11 24606968"
+  whatsapp: null
+  email: "contacto@ilac.com.ar"
+
+presence:
+  website: "https://ilac.com.ar/piloto-a-distancia-rpas/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 145
+  section: "academia"
+  raw: "ILAC - +54 11 24606968 - contacto@ilac.com.ar - https://ilac.com.ar/piloto-a-distancia-rpas/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

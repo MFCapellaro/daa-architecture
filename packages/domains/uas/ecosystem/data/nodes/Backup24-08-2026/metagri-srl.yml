@@ -1,0 +1,28 @@
+id: "metagri-srl"
+name: "METAGRI SRL"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 92
+  section: "dealers"
+  raw: "METAGRI SRL - México 224, Las Lajitas, Salta. - SIN WEB!!!"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

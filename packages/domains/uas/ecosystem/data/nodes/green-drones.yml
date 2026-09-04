@@ -1,0 +1,45 @@
+id: "green-drones"
+name: "Green Drones"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "San Luis"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: "greendrone.arg@gmail.com"
+
+presence:
+  website: "https://www.instagram.com/greendrone.arg/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 16
+  section: "drones"
+  raw: "Green Drones - Villa Mercedes - San Luis - greendrone.arg@gmail.com - https://www.instagram.com/greendrone.arg/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

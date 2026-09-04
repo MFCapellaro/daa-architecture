@@ -1,0 +1,28 @@
+id: "seguros"
+name: "Seguros"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 237
+  section: "academia"
+  raw: "*Seguros"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

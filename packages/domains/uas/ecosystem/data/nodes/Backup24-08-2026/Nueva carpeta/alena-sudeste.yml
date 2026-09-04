@@ -1,0 +1,28 @@
+id: "alena-sudeste"
+name: "Alena Sudeste"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://alenaagritech.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 63
+  section: "drones"
+  raw: "Alena Sudeste - Av. Centenario 1055, Balcarce, Provincia de Buenos Aires - Tel: +54 226 6536130 - https://alenaagritech.com/ - Mario Mutti"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

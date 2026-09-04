@@ -1,0 +1,28 @@
+id: "gestion-y-operaciones"
+name: "Gestión y Operaciones"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 268
+  section: "events"
+  raw: "Gestión y Operaciones - Alejandra Alfieri - SRT"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

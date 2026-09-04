@@ -1,0 +1,28 @@
+id: "cecoma-centro-de-contratistas-de-maquinas-agricolas-san-vicente"
+name: "CECOMA: Centro de Contratistas de Máquinas Agrícolas (San Vicente"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 235
+  section: "public"
+  raw: "CECOMA: Centro de Contratistas de Máquinas Agrícolas (San Vicente - Santa Fe)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

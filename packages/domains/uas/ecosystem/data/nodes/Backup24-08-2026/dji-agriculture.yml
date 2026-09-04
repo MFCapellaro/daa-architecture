@@ -1,0 +1,28 @@
+id: "dji-agriculture"
+name: "*DJI Agriculture"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - unknown
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 2
+  section: "unknown"
+  raw: "**DJI Agriculture"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

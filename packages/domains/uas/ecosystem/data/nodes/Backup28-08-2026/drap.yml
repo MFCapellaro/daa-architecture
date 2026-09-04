@@ -1,0 +1,44 @@
+id: "drap"
+name: "DRAP"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: "Finca La Lonja - Calle Hernando de Lerma s/n. Barrio San José. - Rosario de Lerma"
+  city: null
+  province: "Salta"
+  country: "Argentina"
+  phone: "+54 387 4563414"
+  whatsapp: "+54 387 4563414"
+  email: "drapdronaplicaciones@gmail.com"
+
+presence:
+  website: "https://www.drapsas.com.ar"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 88
+  section: "drones"
+  raw: "DRAP - Finca La Lonja - Calle Hernando de Lerma s/n. Barrio San José. - Rosario de Lerma, Salta. - WhatsApp: +54 387 4563414  - drapdronaplicaciones@gmail.com - https://www.drapsas.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

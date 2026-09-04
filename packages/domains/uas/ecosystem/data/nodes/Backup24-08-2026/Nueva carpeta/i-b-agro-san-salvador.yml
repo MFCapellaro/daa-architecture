@@ -1,0 +1,28 @@
+id: "i-b-agro-san-salvador"
+name: "I+B Agro San Salvador"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 58
+  section: "drones"
+  raw: "I+B Agro San Salvador - Ruta nacional 18 y Acceso San Salvador - Tel: +54 266 4008892 / Exequiel Morra (Sin Web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

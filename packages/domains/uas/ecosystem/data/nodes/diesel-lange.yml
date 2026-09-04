@@ -1,0 +1,45 @@
+id: "diesel-lange"
+name: "Diesel Lange"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "La Pampa"
+  country: "Argentina"
+  phone: "+54 0810 2200050"
+  whatsapp: "+54 230 2558669"
+  email: null
+
+presence:
+  website: "https://www.diesellange.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 17
+  section: "drones"
+  raw: "Diesel Lange - Ruta 188 Km 479 y Ruta 35 - Realicó - La Pampa - Tel: 0810 220 0050 - Whatsapp: +54 230 2558669 - https://www.diesellange.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

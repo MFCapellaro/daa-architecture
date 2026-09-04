@@ -1,0 +1,28 @@
+id: "aereal-patagonia"
+name: "Aereal Patagonia"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.aerealpatagonia.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 14
+  section: "drones"
+  raw: "Aereal Patagonia - Tronador 140, Gral. Roca, RN.- administracion@aerealpatagonia.com - +54 115 8853088 / +54 299 5957872 - https://www.aerealpatagonia.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "go-agrodrones"
+name: "GO Agrodrones"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/goagrodrones/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 79
+  section: "dealers"
+  raw: "GO Agrodrones - Martín Gaggiotti - RN205 km 181, B7260 Saladillo, Provincia de Buenos Aires - Tel: +54 9 2345 66-4990 - https://www.instagram.com/goagrodrones/ (sin web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

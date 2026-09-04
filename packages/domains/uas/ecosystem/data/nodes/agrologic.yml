@@ -1,0 +1,44 @@
+id: "agrologic"
+name: "Agrologic"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 345 4055079"
+  whatsapp: null
+  email: "info@agrologic.com.ar"
+
+presence:
+  website: "https://www.agrologic.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 112
+  section: "operators"
+  raw: "Agrologic - +54 345 4055079 - info@agrologic.com.ar - https://www.agrologic.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

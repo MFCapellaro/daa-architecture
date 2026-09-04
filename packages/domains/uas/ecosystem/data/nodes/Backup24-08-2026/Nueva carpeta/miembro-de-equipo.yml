@@ -1,0 +1,28 @@
+id: "miembro-de-equipo"
+name: "Miembro de equipo"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 183
+  section: "public"
+  raw: "Miembro de equipo - Federico Ulrich - +54 341 702969 - ulrich@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

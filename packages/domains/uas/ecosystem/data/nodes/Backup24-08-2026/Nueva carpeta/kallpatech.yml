@@ -1,0 +1,28 @@
+id: "kallpatech"
+name: "Kallpatech"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://kallpatech.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 56
+  section: "drones"
+  raw: "Kallpatech - Calle 14, 228 Colon, Buenos Aires / Juan Morea - jmorea@kallpatech.com.ar - +54 247 7566670 / Facundo Betti - fbetti@@kallpatech.com.ar - +54 247 3415487 - https://kallpatech.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

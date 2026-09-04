@@ -1,0 +1,28 @@
+id: "camptech-2"
+name: "Camptech"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 22
+  section: "drones"
+  raw: "Camptech - Justiniano Posse - Córdoba"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

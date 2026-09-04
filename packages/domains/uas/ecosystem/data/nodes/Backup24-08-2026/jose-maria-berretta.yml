@@ -1,0 +1,28 @@
+id: "jose-maria-berretta"
+name: "José María Berretta"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 187
+  section: "public"
+  raw: "José María Berretta - Subdirector Adjunto"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

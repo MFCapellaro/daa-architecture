@@ -1,0 +1,28 @@
+id: "responsable-de-web"
+name: "Responsable de Web"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 205
+  section: "public"
+  raw: "Responsable de Web - Matilde Gobbo - +54 341 2590586 - gobbo@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

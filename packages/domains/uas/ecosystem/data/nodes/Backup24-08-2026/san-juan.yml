@@ -1,0 +1,28 @@
+id: "san-juan"
+name: "San Juan"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 135
+  section: "academia"
+  raw: "San Juan - Av. Ignacio de la Rosa s/n, San Juan - 5492645158769 - ica.san.juan@incasrl.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

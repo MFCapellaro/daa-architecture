@@ -1,0 +1,28 @@
+id: "alena-agritech-2"
+name: "Alena Agritech"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 86
+  section: "drones"
+  raw: "Alena Agritech - Buenos Aires SUDESTE - Av. Centenario 1055, Balcarce - Ernesto Barilati - +54 11 30094437"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

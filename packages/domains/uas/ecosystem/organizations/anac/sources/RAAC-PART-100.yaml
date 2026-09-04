@@ -1,0 +1,27 @@
+source:
+  id: anac-raac-part-100
+  organization: ANAC
+  title: "RAAC Parte 100"
+  source_type: regulation
+
+  origin:
+    url: "https://www.argentina.gob.ar/anac/regulaciones-argentinas-de-aviacion-civil-raac"
+    official: true
+
+  publication:
+    established_by:
+      - anac-res-550-2025
+
+  retrieval:
+    retrieved_at: "2026-08-10"
+    update_frequency: monthly
+
+  status:
+    current: true
+    modified: true
+
+  relationships:
+    established_by:
+      - anac-res-550-2025
+    amended_by:
+      - anac-res-312-2026

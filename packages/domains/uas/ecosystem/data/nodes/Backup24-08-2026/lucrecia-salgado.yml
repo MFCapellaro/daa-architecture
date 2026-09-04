@@ -1,0 +1,28 @@
+id: "lucrecia-salgado"
+name: "Lucrecia Salgado"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 174
+  section: "public"
+  raw: "Lucrecia Salgado - Directora Adjunta"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

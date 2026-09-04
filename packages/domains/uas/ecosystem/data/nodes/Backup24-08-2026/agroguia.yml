@@ -1,0 +1,28 @@
+id: "agroguia"
+name: "AgroGuía"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://agroguia.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 303
+  section: "media"
+  raw: "AgroGuía - Córdoba - https://agroguia.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

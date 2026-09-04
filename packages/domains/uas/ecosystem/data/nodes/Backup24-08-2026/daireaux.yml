@@ -1,0 +1,28 @@
+id: "daireaux"
+name: "Daireaux"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 125
+  section: "academia"
+  raw: "Daireaux - San Martin 33, Daireaux CP 6555 Buenos Aires - Teléfono +5492314403804"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

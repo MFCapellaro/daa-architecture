@@ -1,0 +1,28 @@
+id: "asesor-de-estrategias-comerciales-y-financieras"
+name: "Asesor de Estrategias Comerciales y Financieras"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 219
+  section: "public"
+  raw: "Asesor de Estrategias Comerciales y Financieras - Leonardo Collová - +54 249 4475157 - collova@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,44 @@
+id: "uco-drone"
+name: "UCO Drone"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: "Argentina"
+  phone: "+54 261 5410845"
+  whatsapp: null
+  email: "ucodrone@outlook.com"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 122
+  section: "operators"
+  raw: "UCO Drone - Rafael Cubillos 2100 - Polo Tic - Godoy Cruz - Argentina - +54 261 5410845 - ucodrone@outlook.com"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

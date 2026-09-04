@@ -1,0 +1,28 @@
+id: "carolina-meiller"
+name: "Carolina Meiller"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 178
+  section: "public"
+  raw: "Carolina Meiller - Directora Adjunta"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

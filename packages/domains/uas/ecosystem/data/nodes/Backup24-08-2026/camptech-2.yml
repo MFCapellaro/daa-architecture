@@ -1,0 +1,28 @@
+id: "camptech-2"
+name: "Camptech"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 20
+  section: "dealers"
+  raw: "Camptech - Justiniano Posse - Córdoba"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,44 @@
+id: "agropix"
+name: "Agropix"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 353 7551316"
+  whatsapp: null
+  email: "info@agropix.com.ar"
+
+presence:
+  website: "https://agropix.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 118
+  section: "operators"
+  raw: "Agropix - Bell Ville - Córdoba - Argentina - +54 353 7551316 - info@agropix.com.ar - https://agropix.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

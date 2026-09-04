@@ -1,0 +1,28 @@
+id: "uaa"
+name: "UAA"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://uaa.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 9
+  section: "drones"
+  raw: "UAA - Av San Martin N° 768, Avellaneda, Santa Fe - +54 348 2481002 - info@uaa.com.ar - https://uaa.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

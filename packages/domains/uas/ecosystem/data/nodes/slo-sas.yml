@@ -1,0 +1,44 @@
+id: "slo-sas"
+name: "SLO SAS"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: "H. Irigoyen 249 - Río Cuarto"
+  city: "Córdoba"
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 358 4188644"
+  whatsapp: "+54 358 4188644"
+  email: "ventas@xaglatam.com"
+
+presence:
+  website: "https://xaglatam.mkt1.com.ar/-"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 98
+  section: "drones"
+  raw: "SLO SAS -  H. Irigoyen 249 - Río Cuarto, Córdoba, Argentina. - Tel: +54 358 4188644 - WhatsApp: +54 358 4188644 - ventas@xaglatam.com - https://xaglatam.mkt1.com.ar/-"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

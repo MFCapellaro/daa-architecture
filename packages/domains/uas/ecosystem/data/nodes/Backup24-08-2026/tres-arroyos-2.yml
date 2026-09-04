@@ -1,0 +1,28 @@
+id: "tres-arroyos-2"
+name: "Tres Arroyos"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 38
+  section: "dealers"
+  raw: "Tres Arroyos - Buenos Aires - Ruta Nac. 3 y Sargento Cabral - (WtApp) +54 9 2983 541473 - akrontresarroyos@akron.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,45 @@
+id: "lombardi-maquinarias"
+name: "Lombardi Maquinarias"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: "Ruta Provincial 5 km 20 - Santa Ana - Alta Gracia"
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 354 1555549"
+  whatsapp: null
+  email: "info@lombardimaquinarias.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 19
+  section: "drones"
+  raw: "Lombardi Maquinarias - Ruta Provincial 5 km 20 - Santa Ana - Alta Gracia, Córdoba - +54 354 1555549 / +54 354 1555553 - info@lombardimaquinarias.com.ar - Https://lombardimaquinarias.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

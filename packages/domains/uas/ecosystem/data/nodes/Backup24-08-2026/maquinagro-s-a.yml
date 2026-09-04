@@ -1,0 +1,28 @@
+id: "maquinagro-s-a"
+name: "Maquinagro S.A."
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.maquinagro.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 4
+  section: "dealers"
+  raw: "Maquinagro S.A. - Ruta 11 KM 1181 - (0370) 15 4289740 - info@maquinagro.com.ar - El Colorado - Formosa - https://www.maquinagro.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

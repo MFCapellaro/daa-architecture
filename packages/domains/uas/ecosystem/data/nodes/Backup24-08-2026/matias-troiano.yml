@@ -1,0 +1,28 @@
+id: "matias-troiano"
+name: "Matías Troiano"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 202
+  section: "public"
+  raw: "Matías Troiano - Gerente de Nexo - (+54) 9 341-6018111 - troiano@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

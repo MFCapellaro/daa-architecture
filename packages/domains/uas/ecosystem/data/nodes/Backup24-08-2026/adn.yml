@@ -1,0 +1,28 @@
+id: "adn"
+name: "ADN"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.youtube.com/@agroadn"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 302
+  section: "media"
+  raw: "ADN - Agro Difusión Noticias - Pergamino - https://www.youtube.com/@agroadn"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

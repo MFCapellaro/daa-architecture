@@ -1,0 +1,44 @@
+id: "aeroagro"
+name: "AeroAgro"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: "San Antonio de Areco"
+  city: "Provincia de Buenos Aires"
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 232 5651084"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://aeroagroargentina.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 114
+  section: "operators"
+  raw: "AeroAgro - San Antonio de Areco, Provincia de Buenos Aires, Argentina - +54 232 5651084 - https://aeroagroargentina.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

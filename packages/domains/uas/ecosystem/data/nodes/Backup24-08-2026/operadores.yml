@@ -1,0 +1,28 @@
+id: "operadores"
+name: "Operadores"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - unknown
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 107
+  section: "unknown"
+  raw: "*Operadores"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

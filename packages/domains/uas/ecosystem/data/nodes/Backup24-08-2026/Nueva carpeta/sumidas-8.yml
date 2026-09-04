@@ -1,0 +1,28 @@
+id: "sumidas-8"
+name: "Sumidas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 50
+  section: "drones"
+  raw: "Sumidas - Saladillo - Ruta 205 Km 187.5 - +54 234 2486321 - saladillo@sumidas.com.ar / Huberto Machado - Administración de Sucursal - huberto.machado@sumidas.com.ar - Tel/Cel: +54 234 4502110 / Laura Fegan - Administración de Sucursal - laura.fegan@sumidas.com.ar - Tel/Cel: +54 234 5400151 / Marcelo Gonzáles - Responsable Técnico Comercial - marcelo.gonzalez@sumidas.com.ar - Tel/Cel: +54 234 2486321 / Emiliano Verdini - Responsable Técnico Comercial - emiliano.verdini@sumidas.com.ar - Tel/Cel: +54 234 4410444 /"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

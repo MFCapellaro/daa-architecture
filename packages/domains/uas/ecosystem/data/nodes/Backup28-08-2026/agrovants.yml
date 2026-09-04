@@ -1,0 +1,44 @@
+id: "agrovants"
+name: "AgroVANTS"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Mendoza"
+  country: "Argentina"
+  phone: "+54 261 6508470"
+  whatsapp: null
+  email: "info@agrovants.com"
+
+presence:
+  website: "https://agrovants.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 121
+  section: "operators"
+  raw: "AgroVANTS - Francisco Moyano 3035 – Mendoza – Argentina - info@agrovants.com / ventas@agrovants.com / contacto@agrovants.com - +54 261 6508470 - https://agrovants.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

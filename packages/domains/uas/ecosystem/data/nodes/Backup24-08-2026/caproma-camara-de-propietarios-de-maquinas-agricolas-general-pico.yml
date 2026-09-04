@@ -1,0 +1,28 @@
+id: "caproma-camara-de-propietarios-de-maquinas-agricolas-general-pico"
+name: "CAPROMA: Cámara de Propietarios de Máquinas Agrícolas (General Pico"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 221
+  section: "public"
+  raw: "CAPROMA: Cámara de Propietarios de Máquinas Agrícolas (General Pico - La Pampa)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

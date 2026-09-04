@@ -1,0 +1,44 @@
+id: "rc-dos"
+name: "RC Dos"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 351 7738144"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://rc-dos.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 131
+  section: "academia"
+  raw: "RC Dos - Carnerillo 2275 - Córdoba - +54 351 7738144 - https://rc-dos.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

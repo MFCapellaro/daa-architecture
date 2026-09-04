@@ -1,0 +1,28 @@
+id: "agronorte"
+name: "Agronorte"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.agronortedrones.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 82
+  section: "dealers"
+  raw: "Agronorte - San Justo, Santa Fe - https://www.agronortedrones.com.ar/ - WhatsApp: +54 349 844 1048"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

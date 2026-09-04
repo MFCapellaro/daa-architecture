@@ -1,0 +1,28 @@
+id: "daniel-wagner"
+name: "Daniel Wagner"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: "https://danielwagner.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 137
+  section: "academia"
+  raw: "Daniel Wagner - + 54911-6782-3535 - https://danielwagner.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

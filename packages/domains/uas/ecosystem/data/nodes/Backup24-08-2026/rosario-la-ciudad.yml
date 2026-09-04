@@ -1,0 +1,28 @@
+id: "rosario-la-ciudad"
+name: "Rosario La Ciudad"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://rosariolaciudad.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 282
+  section: "media"
+  raw: "Rosario La Ciudad - 27 de Febrero 1090 - hola@rosariolaciudad.com.ar - Editora Responsable: Giselle Flores - Razón Social: COMUNICA - https://rosariolaciudad.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

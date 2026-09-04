@@ -1,0 +1,28 @@
+id: "comite-ejecutivo"
+name: "Comité Ejecutivo"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 163
+  section: "public"
+  raw: "Comité Ejecutivo"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

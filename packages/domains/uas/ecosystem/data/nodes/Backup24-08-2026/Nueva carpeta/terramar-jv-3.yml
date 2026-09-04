@@ -1,0 +1,28 @@
+id: "terramar-jv-3"
+name: "Terramar JV"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 32
+  section: "drones"
+  raw: "Terramar JV - Coronel Suarez - Buenos Aires - Alsina 650 - Juan Martín Pedelaborde - jmpedelaborde@terramarjv.com.ar / Daniel Fuhr - +54 292 3514028"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

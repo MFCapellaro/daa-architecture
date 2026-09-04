@@ -1,0 +1,44 @@
+id: "bichos-de-campo"
+name: "Bichos de Campo"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: "info@bichosdecampo.com"
+
+presence:
+  website: "https://bichosdecampo.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 199
+  section: "media"
+  raw: "Bichos de Campo - info@bichosdecampo.com - https://bichosdecampo.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

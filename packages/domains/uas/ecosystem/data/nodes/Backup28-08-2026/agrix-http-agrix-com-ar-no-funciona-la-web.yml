@@ -1,0 +1,41 @@
+id: "agrix-http-agrix-com-ar-no-funciona-la-web"
+name: "Agrix http://agrix.com.ar/ (No funciona la web)"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+location:
+  address: null
+  city: null
+  province: null
+  country: null
+  latitude: null
+  longitude: null
+  geocoded: false
+
+contact:
+  phone: null
+  email: null
+
+presence:
+  website: "http://agrix.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 93
+  section: "drones"
+  raw: "Agrix http://agrix.com.ar/ (No funciona la web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "la-radio-del-campo"
+name: "La Radio del Campo"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.laradiodelcampo.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 291
+  section: "media"
+  raw: "La Radio del Campo - Carlos Montarcé - carlosm@laradiodelcampo.com - (54) 9 11 3196 1922 - https://www.laradiodelcampo.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

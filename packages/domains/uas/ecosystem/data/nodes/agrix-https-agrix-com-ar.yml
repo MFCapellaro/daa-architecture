@@ -1,0 +1,44 @@
+id: "agrix-https-agrix-com-ar"
+name: "Agrix https://agrix.com.ar/"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://agrix.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 93
+  section: "drones"
+  raw: "Agrix https://agrix.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

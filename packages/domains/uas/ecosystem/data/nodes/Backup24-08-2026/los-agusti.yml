@@ -1,0 +1,28 @@
+id: "los-agusti"
+name: "Los Agusti"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://losagusti.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 278
+  section: "media"
+  raw: "Los Agusti - https://losagusti.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

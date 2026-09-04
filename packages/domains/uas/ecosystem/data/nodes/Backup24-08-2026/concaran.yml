@@ -1,0 +1,28 @@
+id: "concaran"
+name: "Concarán"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 50
+  section: "dealers"
+  raw: "Concarán - Autopista 55 S/Nº Km 898 - +54 9 2664 833862 - concaran@sumidas.com.ar - Eduardo Javier Farias - Responsable Técnico Comercial - eduardo@kennbal.com - Tel/Cel: +54 9 2664 251710"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

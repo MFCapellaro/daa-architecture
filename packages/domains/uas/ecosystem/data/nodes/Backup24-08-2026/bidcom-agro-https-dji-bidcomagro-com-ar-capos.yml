@@ -1,0 +1,28 @@
+id: "bidcom-agro-https-dji-bidcomagro-com-ar-capos"
+name: "Bidcom Agro	https://dji.bidcomagro.com.ar/ 	CAPOS!!!"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://dji.bidcomagro.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 52
+  section: "dealers"
+  raw: "Bidcom Agro	https://dji.bidcomagro.com.ar/ 	CAPOS!!!"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

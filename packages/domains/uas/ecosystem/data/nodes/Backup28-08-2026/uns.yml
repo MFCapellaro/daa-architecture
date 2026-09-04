@@ -1,0 +1,44 @@
+id: "uns"
+name: "UNS"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://repositoriodigital.uns.edu.ar/handle/123456789/7400"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 161
+  section: "academia"
+  raw: "UNS - Bahía Blanca - https://repositoriodigital.uns.edu.ar/handle/123456789/7400"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

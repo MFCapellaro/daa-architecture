@@ -1,0 +1,28 @@
+id: "aldebaran"
+name: "Aldebaran"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "http://www.aldebaranagro.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 53
+  section: "drones"
+  raw: "Aldebaran - Chacabuco - Buenos Aires - 2352 56-2880 - http://www.aldebaranagro.com.ar/ (No funciona la web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

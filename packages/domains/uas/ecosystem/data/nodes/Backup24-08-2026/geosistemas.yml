@@ -1,0 +1,28 @@
+id: "geosistemas"
+name: "GEOSISTEMAS"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://geosistemas.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 100
+  section: "dealers"
+  raw: "GEOSISTEMAS  - Venezuela 676, CP C1095AAN - Monserrat, Buenos Aires, Argentina - +54 (11) 4342 9398 // 0810 666 2118 - ventas@geosistemas.com.ar - https://geosistemas.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

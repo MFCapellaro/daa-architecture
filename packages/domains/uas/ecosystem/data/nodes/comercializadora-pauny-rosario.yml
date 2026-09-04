@@ -1,0 +1,45 @@
+id: "comercializadora-pauny-rosario"
+name: "Comercializadora Pauny Rosario"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: "Villa Gdor. Gálvez"
+  city: null
+  province: "Santa Fe"
+  country: "Argentina"
+  phone: "+54 341 7646000"
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 70
+  section: "drones"
+  raw: "Comercializadora Pauny Rosario - Villa Gdor. Gálvez, Santa Fe - Tel: +54 341 7646000"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

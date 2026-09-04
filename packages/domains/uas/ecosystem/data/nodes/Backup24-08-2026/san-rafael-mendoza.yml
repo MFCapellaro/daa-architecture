@@ -1,0 +1,28 @@
+id: "san-rafael-mendoza"
+name: "San Rafael, Mendoza"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 133
+  section: "academia"
+  raw: "San Rafael, Mendoza - Av. del Libertador 78, San Rafael, Mdz - 5492604692747 - ica.san.rafael@incasrl.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

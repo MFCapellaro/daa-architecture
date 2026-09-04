@@ -1,0 +1,28 @@
+id: "gerenta-de-programa-2"
+name: "Gerenta de Programa"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 190
+  section: "public"
+  raw: "Gerenta de Programa - Carla Biasutti - +54 341 6181048 - biasutti@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

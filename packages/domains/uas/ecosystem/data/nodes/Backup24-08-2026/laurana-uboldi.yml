@@ -1,0 +1,28 @@
+id: "laurana-uboldi"
+name: "Laurana Uboldi"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 204
+  section: "public"
+  raw: "Laurana Uboldi - Miembro de equipo - (+54) 9 341-803200 - uboldi@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

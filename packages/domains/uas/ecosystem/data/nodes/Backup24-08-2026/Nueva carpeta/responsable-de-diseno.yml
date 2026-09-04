@@ -1,0 +1,28 @@
+id: "responsable-de-diseno"
+name: "Responsable de Diseño"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 206
+  section: "public"
+  raw: "Responsable de Diseño - Magalí Asencio - +54 341 3771196 - asencio@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

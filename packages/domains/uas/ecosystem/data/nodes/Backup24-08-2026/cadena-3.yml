@@ -1,0 +1,28 @@
+id: "cadena-3"
+name: "CADENA 3"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.cadena3.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 268
+  section: "media"
+  raw: "CADENA 3 - Córdoba / Rosario - Noticias - https://www.cadena3.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

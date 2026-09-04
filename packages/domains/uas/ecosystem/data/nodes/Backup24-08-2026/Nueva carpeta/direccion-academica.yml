@@ -1,0 +1,28 @@
+id: "direccion-academica"
+name: "Dirección académica"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 195
+  section: "public"
+  raw: "Dirección académica - Ing. Agr. Rodolfo Gil - rodolfocgil@gmail.com"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

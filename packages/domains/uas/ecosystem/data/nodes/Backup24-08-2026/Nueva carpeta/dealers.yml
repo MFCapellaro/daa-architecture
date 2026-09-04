@@ -1,0 +1,28 @@
+id: "dealers"
+name: "Dealers"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 55
+  section: "drones"
+  raw: "Dealers"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

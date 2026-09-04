@@ -1,0 +1,45 @@
+id: "moray"
+name: "Moray"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 353 4134708"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "http://www.moray.com.ar/agricultura/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 82
+  section: "drones"
+  raw: "Moray - Centro de Córdoba - Tel: +54 353 4134708 - http://www.moray.com.ar/agricultura/ -  https://www.instagram.com/moray.agro/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

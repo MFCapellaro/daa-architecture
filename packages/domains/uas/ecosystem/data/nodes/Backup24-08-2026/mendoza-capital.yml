@@ -1,0 +1,28 @@
+id: "mendoza-capital"
+name: "Mendoza Capital"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 132
+  section: "academia"
+  raw: "Mendoza Capital - Arístedes Villanueva 430, Ciudad de Mendoza - 5492615559057 - anexomendoza@incasrl.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

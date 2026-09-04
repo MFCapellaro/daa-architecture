@@ -1,0 +1,10 @@
+id: participant-008
+actorId: actor-008
+status: active
+joinedAt: 2026-07-25
+
+progressiveEntry:
+  identity: true
+  profile: true
+  capabilities: false
+  interests: true

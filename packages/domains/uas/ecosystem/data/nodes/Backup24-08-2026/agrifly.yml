@@ -1,0 +1,28 @@
+id: "agrifly"
+name: "AgriFLY"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.agrifly.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 260
+  section: "media"
+  raw: "AgriFLY - https://www.agrifly.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

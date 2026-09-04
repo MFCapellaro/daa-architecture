@@ -1,0 +1,28 @@
+id: "agro-drone-solutions-ads"
+name: "Agro Drone Solutions ADS"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "http://instagram.com/agrodronesolutionsok/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 77
+  section: "drones"
+  raw: "Agro Drone Solutions ADS - Entre Rios - Tel: +54 11 34925645 - http://instagram.com/agrodronesolutionsok/ (sin web) - Fede Leber"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "mar-del-plata"
+name: "Mar del Plata"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 32
+  section: "dealers"
+  raw: "Mar del Plata - Buenos Aires - Ruta 88 km 3,5 - Walter Malarczuk - wmalarczuk@terramarjv.com.ar - +54 2235275762 / Daniel Ituarte - dituarte@terramarjv.com.ar - +54 223 5221975 / Juan Ignacio Satragni - jsatragni@terramarjv.com.ar - +54 223 5829799"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

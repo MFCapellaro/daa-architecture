@@ -1,0 +1,28 @@
+id: "kubota-mendoza"
+name: "Kubota Mendoza"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.kubota.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 10
+  section: "dealers"
+  raw: "Kubota Mendoza - Rodríguez Peña 5149 - Maipú - Mendoza - +549 2616335200 - mendoza@mojonuno.com.ar - https://www.kubota.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

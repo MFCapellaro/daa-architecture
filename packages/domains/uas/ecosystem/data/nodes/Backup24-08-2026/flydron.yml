@@ -1,0 +1,28 @@
+id: "flydron"
+name: "FlyDron"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+
+presence:
+  website: "https://flydron.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 111
+  section: "operators"
+  raw: "FlyDron - Matías Morillo - Córdoba - fflydron@gmail.com - 3547-641102 - https://flydron.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

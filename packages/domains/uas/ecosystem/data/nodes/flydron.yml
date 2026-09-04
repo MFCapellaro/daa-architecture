@@ -1,0 +1,44 @@
+id: "flydron"
+name: "FlyDron"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 354 7641102"
+  whatsapp: null
+  email: "fflydron@gmail.com"
+
+presence:
+  website: "https://flydron.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 113
+  section: "operators"
+  raw: "FlyDron - Córdoba - fflydron@gmail.com - +54 354 7641102 - https://flydron.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

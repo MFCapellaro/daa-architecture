@@ -1,0 +1,28 @@
+id: "hylio"
+name: "*Hylio"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - unknown
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 104
+  section: "unknown"
+  raw: "**Hylio"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

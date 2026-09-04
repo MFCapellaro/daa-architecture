@@ -1,0 +1,45 @@
+id: "solanum"
+name: "Solanum"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: "San Francisco del Monte 798 oeste"
+  city: "San Juan"
+  province: "San Juan"
+  country: "Argentina"
+  phone: "+54 264 4565402"
+  whatsapp: null
+  email: "info@solanum.com.ar"
+
+presence:
+  website: "https://www.instagram.com/solanumagricola/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 11
+  section: "drones"
+  raw: "Solanum - San Francisco del Monte 798 oeste, San Juan, San Juan - +54 264 4565402 - https://www.instagram.com/solanumagricola/ - info@solanum.com.ar - http://www.solanum.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "radiofonica"
+name: "RadioFónica"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://radiofonica.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 281
+  section: "media"
+  raw: "RadioFónica - Rosario, Santa Fe, Argentina. - Zeballos 610 - Tel: +5493415301007 - prensa@radiofonica.com.ar / contacto@radiofonica.com.ar - https://radiofonica.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

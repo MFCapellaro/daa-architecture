@@ -1,0 +1,28 @@
+id: "ser-agro"
+name: "Ser Agro"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://seragro.gruposer.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 29
+  section: "drones"
+  raw: "Ser Agro - Rosario - Santa Fe - WhatsApp +54 346 5432688 - ser.agro@gruposer.com.ar - https://seragro.gruposer.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

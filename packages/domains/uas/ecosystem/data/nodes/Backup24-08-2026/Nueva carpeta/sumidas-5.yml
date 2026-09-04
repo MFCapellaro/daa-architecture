@@ -1,0 +1,28 @@
+id: "sumidas-5"
+name: "Sumidas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 47
+  section: "drones"
+  raw: "Sumidas - Chacabuco - Ruta Nacional Nº 7 Km. 203.5 - +54 235 2538315 - chacabuco@sumidas.com.ar / Carla Levato - Administración de sucursal - carla.levato@sumidas.com.ar - Tel/Cel: +54 235 2524820 / Facundo Zafatle - Logística de Sucursal - facundo.zafatle@sumidas.com.ar - Tel/Cel: +54 235 2562646 / Juan Ignacio Bussetti - Responsable técnico Comercial - juan.bussetti@sumidas.com.ar - Tel/Cel: +54 235 2522270 / Juan Ríos Hudson - Responsable técnico Comercial - juan.rios@sumidas.com.ar - Tel/Cel: +54 235 2527290 / Rocío Carosella - Responsable técnico Comercial - rocio.carosella@sumidas.com.ar - Tel/Cel: +54 235 2445918"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

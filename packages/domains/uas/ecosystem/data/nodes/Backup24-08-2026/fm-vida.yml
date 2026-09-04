@@ -1,0 +1,28 @@
+id: "fm-vida"
+name: "FM Vida"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://fmvida.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 289
+  section: "media"
+  raw: "FM Vida - https://fmvida.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

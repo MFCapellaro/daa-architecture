@@ -1,0 +1,45 @@
+id: "maquinagro-s-a"
+name: "Maquinagro S.A."
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Formosa"
+  country: "Argentina"
+  phone: "+54 370 4289740"
+  whatsapp: null
+  email: "info@maquinagro.com.ar"
+
+presence:
+  website: "https://www.maquinagro.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 6
+  section: "drones"
+  raw: "Maquinagro S.A. - Ruta 11 KM 1181 - +54 370 4289740 - info@maquinagro.com.ar - El Colorado - Formosa - https://www.maquinagro.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

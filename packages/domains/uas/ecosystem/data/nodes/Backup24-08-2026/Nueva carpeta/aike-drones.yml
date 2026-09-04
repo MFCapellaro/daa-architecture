@@ -1,0 +1,28 @@
+id: "aike-drones"
+name: "Aike Drones"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.aikedrones.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 67
+  section: "drones"
+  raw: "Aike Drones - Av. Hijas de San José 447, Chivilcoy, Provincia de Buenos Aires - Tel: +54 234 6558515 - https://www.aikedrones.com.ar/ - Nicolás Gonzales Berges"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

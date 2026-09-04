@@ -1,0 +1,45 @@
+id: "agronomia-pampa-s-r-l"
+name: "Agronomía Pampa S.R.L"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 349 8462791"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://agronomiapampa.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 71
+  section: "drones"
+  raw: "Agronomía Pampa S.R.L - San Justo - Tel: +54 349 8462791 - https://agronomiapampa.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

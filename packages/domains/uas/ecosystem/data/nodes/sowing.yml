@@ -1,0 +1,45 @@
+id: "sowing"
+name: "Sowing"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: "Bienvenido Eloy Fernández 1052"
+  city: "X2434 Arroyito"
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 357 6475753"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.instagram.com/sowingsas/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 62
+  section: "drones"
+  raw: "Sowing - Bienvenido Eloy Fernández 1052, X2434 Arroyito, Córdoba - Tel: +54 357 6475753 - https://www.instagram.com/sowingsas/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

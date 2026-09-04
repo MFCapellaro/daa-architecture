@@ -1,0 +1,45 @@
+id: "sumidas-4"
+name: "Sumidas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 236 4457197"
+  whatsapp: null
+  email: "junin@sumidas.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 46
+  section: "drones"
+  raw: "Sumidas - Junín - Mariano Moreno 1145 - +54 236 4457197 - junin@sumidas.com.ar / daniela.voda@sumidas.com.ar - Cel: +54 236 4685188 / valeria.linares@sumidas.com.ar - Cel: +54 236 4521071 / marcos.cirulli@sumidas.com.ar - Cel: +54 236 4521069"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "agrofy"
+name: "AGROFY"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://news.agrofy.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 270
+  section: "media"
+  raw: "AGROFY - https://news.agrofy.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

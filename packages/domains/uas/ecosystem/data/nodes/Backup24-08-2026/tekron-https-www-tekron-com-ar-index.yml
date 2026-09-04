@@ -1,0 +1,28 @@
+id: "tekron-https-www-tekron-com-ar-index"
+name: "Tekron 	https://www.tekron.com.ar/index"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - unknown
+
+capabilities:
+
+presence:
+  website: "https://www.tekron.com.ar/index"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 2
+  section: "unknown"
+  raw: "Tekron 	https://www.tekron.com.ar/index - Parque Industrial, San Francisco, Cordoba, Argentina"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

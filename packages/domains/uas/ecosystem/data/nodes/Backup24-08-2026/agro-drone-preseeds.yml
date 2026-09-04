@@ -1,0 +1,28 @@
+id: "agro-drone-preseeds"
+name: "Agro Drone / Preseeds"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+
+presence:
+  website: "https://www.agrodrone.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 117
+  section: "operators"
+  raw: "Agro Drone / Preseeds - Puerto Norte – Rosario, Argentina - +54 9 3468541174 - info@preseeds.com.ar - https://www.agrodrone.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

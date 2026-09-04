@@ -1,0 +1,44 @@
+id: "grupo-caldo"
+name: "Grupo Caldo"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: "Huinca Renancó"
+  city: "Córdoba"
+  province: "Córdoba"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: "caldomaq@gmail.com"
+
+presence:
+  website: "https://caldomaq.com.ar"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 99
+  section: "drones"
+  raw: "Grupo Caldo - Huinca Renancó, Córdoba, Argentina - https://caldomaq.com.ar - +54 233 115411504 - caldomaq@gmail.com"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

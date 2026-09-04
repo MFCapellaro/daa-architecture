@@ -1,0 +1,28 @@
+id: "directora-adjunta-3"
+name: "Directora Adjunta"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 203
+  section: "public"
+  raw: "Directora Adjunta - María Augusta González"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

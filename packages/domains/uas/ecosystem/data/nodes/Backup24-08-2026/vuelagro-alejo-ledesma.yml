@@ -1,0 +1,28 @@
+id: "vuelagro-alejo-ledesma"
+name: "Vuelagro Alejo Ledesma"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 72
+  section: "dealers"
+  raw: "Vuelagro Alejo Ledesma - Santiago Mac Auliffe - Venado Tuerto, Alejo Ledesma, La Carlota - Tel: 1130278787"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

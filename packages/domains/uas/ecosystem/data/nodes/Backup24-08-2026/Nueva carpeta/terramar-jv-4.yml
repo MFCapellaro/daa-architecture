@@ -1,0 +1,28 @@
+id: "terramar-jv-4"
+name: "Terramar JV"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 33
+  section: "drones"
+  raw: "Terramar JV - Lobería - Buenos Aires - Ruta 227 km 53,5 - Lucas Kressi - lkressi@terramarjv.com.ar - +54 226 1400060"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,14 +1,10 @@
 /**
- * DAA Architecture
- * ------------------------------
- * Domain: UAS Ecosystem
- *
  * Actor represents an existing entity
  * within the external ecosystem.
  *
  * An Actor exists independently of DAA.
  * Participation in DAA is established later
- * through Membership.
+ * through Integration and Participant status.
  */
 
 export type ActorType =

@@ -1,0 +1,28 @@
+id: "zuqueli-hnos"
+name: "Zuqueli Hnos"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.zuqueli.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 25
+  section: "dealers"
+  raw: "Zuqueli Hnos - Santa fe - Santa Fe - WhatsApp +54 93424399207 - https://www.zuqueli.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

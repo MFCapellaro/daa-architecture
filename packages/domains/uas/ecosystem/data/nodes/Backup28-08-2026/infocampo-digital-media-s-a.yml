@@ -1,0 +1,44 @@
+id: "infocampo-digital-media-s-a"
+name: "INFOCAMPO DIGITAL MEDIA S.A."
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.infocampo.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 193
+  section: "media"
+  raw: "INFOCAMPO DIGITAL MEDIA S.A. - Av. Libertador 7790 7° A - CABA - Argentina - https://www.infocampo.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

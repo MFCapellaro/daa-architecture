@@ -1,0 +1,28 @@
+id: "roberto-chelala-srl"
+name: "Roberto Chelala SRL"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.robertochelala.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 8
+  section: "drones"
+  raw: "Roberto Chelala SRL - Dorrego 528, La Banda, Santiago del Estero - +54 385 4270063 - contacto@robertochelala.com.ar - https://www.robertochelala.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

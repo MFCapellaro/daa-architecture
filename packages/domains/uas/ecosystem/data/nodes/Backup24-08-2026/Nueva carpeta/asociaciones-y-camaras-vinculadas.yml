@@ -1,0 +1,28 @@
+id: "asociaciones-y-camaras-vinculadas"
+name: "Asociaciones y Cámaras vinculadas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 227
+  section: "public"
+  raw: "Asociaciones y Cámaras vinculadas"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

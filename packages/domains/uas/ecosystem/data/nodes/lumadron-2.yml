@@ -1,0 +1,44 @@
+id: "lumadron-2"
+name: "Lumadron"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: "drones@lumadron.com"
+
+presence:
+  website: "https://lumadron.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 97
+  section: "drones"
+  raw: "Lumadron - Buenos Aires - drones@lumadron.com - https://lumadron.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

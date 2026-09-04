@@ -1,0 +1,45 @@
+id: "detma"
+name: "Detma"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Entre Ríos"
+  country: "Argentina"
+  phone: "+54 345 6420780"
+  whatsapp: null
+  email: "ventas@detma.com.ar"
+
+presence:
+  website: "https://detma.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 10
+  section: "drones"
+  raw: "Detma - Av. Alem 1602 Chajarí +54 345 6420780 / Ruta Nac.14 Km331.5 Chajarí-Entre Ríos +54 345 6438569 - ventas@detma.com.ar - https://detma.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

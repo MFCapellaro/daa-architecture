@@ -1,0 +1,44 @@
+id: "noticias-de-campo"
+name: "Noticias de Campo"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.noticiasdecampo.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 207
+  section: "media"
+  raw: "Noticias de Campo - https://www.noticiasdecampo.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

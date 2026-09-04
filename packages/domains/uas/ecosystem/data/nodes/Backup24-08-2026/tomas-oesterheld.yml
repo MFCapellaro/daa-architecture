@@ -1,0 +1,28 @@
+id: "tomas-oesterheld"
+name: "Tomás Oesterheld"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 165
+  section: "public"
+  raw: "Tomás Oesterheld - Vicepresidente"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

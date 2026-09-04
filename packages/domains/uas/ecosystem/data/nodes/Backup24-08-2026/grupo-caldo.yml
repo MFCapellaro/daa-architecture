@@ -1,0 +1,28 @@
+id: "grupo-caldo"
+name: "Grupo Caldo"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 97
+  section: "dealers"
+  raw: "Grupo Caldo - Huinca Renancó, Córdoba, Argentina - caldomaq.com.ar - 02331 15-41-1504 - caldomaq@gmail.com"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "responsable-de-audiovisual"
+name: "Responsable de Audiovisual"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 207
+  section: "public"
+  raw: "Responsable de Audiovisual - Agustina Vacchina - +54 341 3637103 - vacchina@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

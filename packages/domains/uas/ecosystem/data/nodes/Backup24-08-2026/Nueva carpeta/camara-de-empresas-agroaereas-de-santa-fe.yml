@@ -1,0 +1,28 @@
+id: "camara-de-empresas-agroaereas-de-santa-fe"
+name: "Cámara de Empresas Agroaéreas de Santa Fe"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 168
+  section: "public"
+  raw: "Cámara de Empresas Agroaéreas de Santa Fe"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

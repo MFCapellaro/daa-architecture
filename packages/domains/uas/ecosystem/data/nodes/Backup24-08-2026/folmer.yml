@@ -1,0 +1,28 @@
+id: "folmer"
+name: "Folmer"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.folmer.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 26
+  section: "dealers"
+  raw: "Folmer - Humberto A. Seri 1372, Crespo - Entre Ríos - (+54) - (0343) 4951700 - https://www.folmer.com.ar/ (No hay drones en la web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

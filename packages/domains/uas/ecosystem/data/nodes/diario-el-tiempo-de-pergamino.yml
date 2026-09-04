@@ -1,0 +1,44 @@
+id: "diario-el-tiempo-de-pergamino"
+name: "Diario El Tiempo de Pergamino"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://eltiempodepergamino.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 223
+  section: "media"
+  raw: "Diario El Tiempo de Pergamino - https://eltiempodepergamino.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "kubota-mendoza"
+name: "Kubota Mendoza"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.kubota.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 12
+  section: "drones"
+  raw: "Kubota Mendoza - Rodríguez Peña 5149 - Maipú - Mendoza - +54 261 6335200 - mendoza@mojonuno.com.ar - https://www.kubota.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

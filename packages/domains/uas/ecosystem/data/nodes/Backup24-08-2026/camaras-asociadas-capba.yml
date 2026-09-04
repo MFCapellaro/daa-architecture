@@ -1,0 +1,28 @@
+id: "camaras-asociadas-capba"
+name: "Cámaras Asociadas		CAPBA"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 156
+  section: "public"
+  raw: "Cámaras Asociadas		CAPBA - Cámara de Aeraplicadores de la Provincia de Buenos Aires"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

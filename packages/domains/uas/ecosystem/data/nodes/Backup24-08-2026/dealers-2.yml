@@ -1,0 +1,28 @@
+id: "dealers-2"
+name: "Dealers"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - unknown
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 55
+  section: "unknown"
+  raw: "Dealers"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "rio-negro"
+name: "Rio Negro"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 128
+  section: "academia"
+  raw: "Rio Negro - Gral. San Martín 569, R8324 Cipolletti, Río Negro - Teléfono +5492995961450"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

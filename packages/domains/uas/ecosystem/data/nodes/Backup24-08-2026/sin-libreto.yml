@@ -1,0 +1,28 @@
+id: "sin-libreto"
+name: "Sin Libreto"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://sinlibretoproducciones.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 305
+  section: "media"
+  raw: "Sin Libreto - +54 358 - 431937 - pdevalle@sinlibretoproducciones.com - https://sinlibretoproducciones.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

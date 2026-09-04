@@ -1,0 +1,28 @@
+id: "autoridades-2"
+name: "Autoridades"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 222
+  section: "public"
+  raw: "Autoridades"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

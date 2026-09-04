@@ -1,0 +1,28 @@
+id: "agribio"
+name: "AgriBio"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.agribio.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 297
+  section: "media"
+  raw: "AgriBio - contacto@agroagencia.com - +54 9 341 658-1191 - https://www.agribio.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

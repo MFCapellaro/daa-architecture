@@ -1,0 +1,28 @@
+id: "ica"
+name: "ICA"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: "https://incasrl.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 130
+  section: "academia"
+  raw: "ICA - https://incasrl.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

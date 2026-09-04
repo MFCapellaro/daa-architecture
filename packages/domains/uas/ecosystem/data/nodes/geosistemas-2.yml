@@ -1,0 +1,44 @@
+id: "geosistemas-2"
+name: "Geosistemas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - technology
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 11 43429398"
+  whatsapp: null
+  email: "ventas@geosistemas.com.ar"
+
+presence:
+  website: "https://geosistemas.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 171
+  section: "technology"
+  raw: "Geosistemas - Fotogrametría - Venezuela 676 - Monserrat - Buenos Aires - +54 11 43429398 / 0810 666 2118 - ventas@geosistemas.com.ar - https://geosistemas.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

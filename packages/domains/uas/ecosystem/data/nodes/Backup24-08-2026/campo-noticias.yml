@@ -1,0 +1,28 @@
+id: "campo-noticias"
+name: "Campo Noticias"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://camponoticias.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 296
+  section: "media"
+  raw: "Campo Noticias - 11.15.5667.5788 - Chubut 226 1 Piso of 5 - Pilar- Bs As- Argentina - camponoticiasweb@gmail.com - https://camponoticias.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

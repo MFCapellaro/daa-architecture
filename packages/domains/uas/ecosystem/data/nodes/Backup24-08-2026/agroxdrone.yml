@@ -1,0 +1,28 @@
+id: "agroxdrone"
+name: "AgroXDrone"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+
+presence:
+  website: "https://agrodroneservicios.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 114
+  section: "operators"
+  raw: "AgroXDrone - Jujuy, Salta y Tucumán - WhatsApp 3816040794 - servicioagrodrone@gmail.com - https://agrodroneservicios.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

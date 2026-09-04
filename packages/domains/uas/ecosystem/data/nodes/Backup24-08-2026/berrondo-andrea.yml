@@ -1,0 +1,28 @@
+id: "berrondo-andrea"
+name: "Berrondo Andrea"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 155
+  section: "public"
+  raw: "Berrondo Andrea - Marketing Digital y Gestión Web"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

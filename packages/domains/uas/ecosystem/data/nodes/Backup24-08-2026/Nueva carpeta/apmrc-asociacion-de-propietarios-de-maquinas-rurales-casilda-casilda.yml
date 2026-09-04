@@ -1,0 +1,28 @@
+id: "apmrc-asociacion-de-propietarios-de-maquinas-rurales-casilda-casilda"
+name: "APMRC: Asociación de Propietarios de Máquinas Rurales Casilda ( Casilda"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 231
+  section: "public"
+  raw: "APMRC: Asociación de Propietarios de Máquinas Rurales Casilda ( Casilda - Santa Fe)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

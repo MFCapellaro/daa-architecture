@@ -1,0 +1,28 @@
+id: "administrativa-general-3"
+name: "Administrativa General"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 201
+  section: "public"
+  raw: "Administrativa General - Samanta Salleras - +54 341 7230062 - aapresid@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

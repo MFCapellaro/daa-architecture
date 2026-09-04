@@ -1,0 +1,28 @@
+id: "ilac"
+name: "ILAC"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: "https://ilac.com.ar/piloto-a-distancia-rpas/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 143
+  section: "academia"
+  raw: "ILAC - +54 9 11 2460 6968 - contacto@ilac.com.ar - https://ilac.com.ar/piloto-a-distancia-rpas/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

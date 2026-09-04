@@ -1,0 +1,28 @@
+id: "autoridades-3"
+name: "Autoridades"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 259
+  section: "events"
+  raw: "Autoridades"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

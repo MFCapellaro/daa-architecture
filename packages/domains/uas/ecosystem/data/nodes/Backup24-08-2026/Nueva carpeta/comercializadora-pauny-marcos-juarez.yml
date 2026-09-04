@@ -1,0 +1,28 @@
+id: "comercializadora-pauny-marcos-juarez"
+name: "Comercializadora Pauny Marcos Juárez"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.compauny.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 69
+  section: "drones"
+  raw: "Comercializadora Pauny Marcos Juárez - Marcos Juárez, Córdoba - Tel: +54 341 7646000 - https://www.compauny.com.ar/ (sin drones en la web) - María Eugenia Basso"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

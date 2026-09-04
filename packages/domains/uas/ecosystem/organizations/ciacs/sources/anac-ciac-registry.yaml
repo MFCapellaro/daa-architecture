@@ -1,0 +1,33 @@
+source:
+id: anac-ciac-registry
+organization: ANAC
+title: "CIACs habilitados"
+source_type: registry
+
+origin:
+url: "https://www.argentina.gob.ar/anac/ciacs-habilitados"
+official: true
+
+publication:
+continuously_updated: true
+
+retrieval:
+retrieved_at: "2026-08-11"
+update_frequency: monthly
+retrieval_method: public_web_source
+
+status:
+current: true
+dynamic: true
+
+relationships:
+governed_by:
+- anac-raac-part-141
+relevant_to:
+- anac-raac-part-61
+- anac-rpa-rpas-framework
+
+update_policy:
+compare_previous_snapshot: true
+preserve_history: true
+review_on_regulatory_change: true

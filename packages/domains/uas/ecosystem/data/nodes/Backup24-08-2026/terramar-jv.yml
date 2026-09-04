@@ -1,0 +1,28 @@
+id: "terramar-jv"
+name: "Terramar JV"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.terramarjv.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 28
+  section: "dealers"
+  raw: "Terramar JV - https://www.terramarjv.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

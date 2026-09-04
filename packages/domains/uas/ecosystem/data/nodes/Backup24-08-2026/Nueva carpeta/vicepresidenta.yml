@@ -1,0 +1,28 @@
+id: "vicepresidenta"
+name: "Vicepresidenta"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 261
+  section: "events"
+  raw: "Vicepresidenta - Liliana Fortini - INTA"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

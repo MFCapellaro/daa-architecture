@@ -1,0 +1,28 @@
+id: "cristian-verna"
+name: "Cristian Verna"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 191
+  section: "public"
+  raw: "Cristian Verna - Gerente de Administracion y Finanzas - (+54) 9 247-7635954 - verna@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "bichos-de-campo"
+name: "Bichos de Campo"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://bichosdecampo.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 275
+  section: "media"
+  raw: "Bichos de Campo - info@bichosdecampo.com - https://bichosdecampo.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

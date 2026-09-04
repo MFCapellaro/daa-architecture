@@ -1,0 +1,28 @@
+id: "buenos-aires"
+name: "Buenos Aires"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 124
+  section: "academia"
+  raw: "Buenos Aires - Tigre - Av. Agustín M. García 8852, B1670 Benavidez, Provincia de Buenos Aires - Teléfono +5491140484550"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

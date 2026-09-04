@@ -1,0 +1,28 @@
+id: "zuqueli-hnos"
+name: "Zuqueli Hnos"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.zuqueli.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 27
+  section: "drones"
+  raw: "Zuqueli Hnos - Santa fe - Santa Fe - WhatsApp +54 934 24399207 - https://www.zuqueli.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

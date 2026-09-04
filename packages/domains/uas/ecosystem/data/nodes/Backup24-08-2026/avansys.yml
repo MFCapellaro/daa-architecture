@@ -1,0 +1,28 @@
+id: "avansys"
+name: "AvanSys"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - technology
+
+capabilities:
+
+presence:
+  website: "https://avansys.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 238
+  section: "technology"
+  raw: "AvanSys - Plataforma de FOTOGRAMETRÍA - Corral de Bustos, Cordoba, Argentina - +54 346 861 7026 - jbonino@avansys.com.ar / ebravi@avansys.com.ar - https://avansys.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

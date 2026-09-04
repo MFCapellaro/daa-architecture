@@ -1,0 +1,28 @@
+id: "sowing"
+name: "Sowing"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/sowingsas/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 60
+  section: "dealers"
+  raw: "Sowing - Pablo Dassano Sowing - Bienvenido Eloy Fernandez 1052, X2434 Arroyito, Córdoba - Tel: +54 9 3576 47-5753 - https://www.instagram.com/sowingsas/ (sin Web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

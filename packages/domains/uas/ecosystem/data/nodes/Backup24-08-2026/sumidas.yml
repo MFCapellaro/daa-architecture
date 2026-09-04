@@ -1,0 +1,28 @@
+id: "sumidas"
+name: "Sumidas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://sumidas.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 41
+  section: "dealers"
+  raw: "Sumidas - https://sumidas.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

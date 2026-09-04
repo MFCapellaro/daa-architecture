@@ -1,0 +1,45 @@
+id: "sumidas-9"
+name: "Sumidas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 266 4833862"
+  whatsapp: null
+  email: "concaran@sumidas.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 52
+  section: "drones"
+  raw: "Sumidas - Concarán - Autopista 55 S/Nº Km 898 - +54 266 4833862 - concaran@sumidas.com.ar / eduardo@kennbal.com - Tel/Cel: +54 266 4251710"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

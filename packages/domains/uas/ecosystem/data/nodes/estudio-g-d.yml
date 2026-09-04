@@ -1,0 +1,44 @@
+id: "estudio-g-d"
+name: "Estudio G&D"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: "Fotogrametría - RN226 km 163,4"
+  city: "Tandil"
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 249 4697996"
+  whatsapp: "+54 249 4697996"
+  email: "info@estudiogyd.com.ar"
+
+presence:
+  website: "https://estudiogyd.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 109
+  section: "operators"
+  raw: "Estudio G&D - Fotogrametría - RN226 km 163,4, Tandil, Buenos Aires - WhatsApp +54 249 4697996 - info@estudiogyd.com.ar - https://estudiogyd.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

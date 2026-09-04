@@ -1,0 +1,45 @@
+id: "comercializadora-pauny-marcos-juarez"
+name: "Comercializadora Pauny Marcos Juárez"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: "Marcos Juárez"
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: "+54 341 7646000"
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.compauny.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 69
+  section: "drones"
+  raw: "Comercializadora Pauny Marcos Juárez - Marcos Juárez, Córdoba - Tel: +54 341 7646000 - https://www.compauny.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

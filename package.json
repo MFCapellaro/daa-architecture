@@ -8,11 +8,15 @@
     "packages/*"
   ],
   "scripts": {
-  "typecheck": "tsc --noEmit",
-  "test": "vitest",
-  "test:run": "vitest run"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "devDependencies": {
+    "@types/node": "^26.4.1",
     "vitest": "^4.1.10"
+  },
+  "dependencies": {
+    "yaml": "^2.9.0"
   }
 }

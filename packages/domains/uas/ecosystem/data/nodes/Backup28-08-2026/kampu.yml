@@ -1,0 +1,44 @@
+id: "kampu"
+name: "Kampu"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: "Av. Perón 2300 Yerba Buena"
+  city: null
+  province: "Tucumán"
+  country: "Argentina"
+  phone: "+54 381 6224166"
+  whatsapp: null
+  email: "info@kampu.com.ar"
+
+presence:
+  website: "https://kampu.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 92
+  section: "drones"
+  raw: "Kampu - Av. Perón 2300 Yerba Buena, Tucumán - +54 381 6224166 - Info@kampu.com.ar - https://kampu.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

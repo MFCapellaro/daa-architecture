@@ -1,0 +1,28 @@
+id: "akron-2"
+name: "Akron"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 40
+  section: "drones"
+  raw: "Akron - Tres Arroyos - Buenos Aires - Ruta Nac. 3 y Sargento Cabral - WhatsApp +54 298 3541473 - akrontresarroyos@akron.com.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

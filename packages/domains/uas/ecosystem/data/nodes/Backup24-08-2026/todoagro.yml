@@ -1,0 +1,28 @@
+id: "todoagro"
+name: "TodoAgro"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.todoagro.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 301
+  section: "media"
+  raw: "TodoAgro - La Rioja 619, Villa María, Córdoba, Argentina - +54 9 353 4196617 - contacto@todoagro.com.ar - https://www.todoagro.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

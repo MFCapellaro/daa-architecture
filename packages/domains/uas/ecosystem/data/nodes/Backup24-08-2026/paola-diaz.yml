@@ -1,0 +1,28 @@
+id: "paola-diaz"
+name: "Paola Díaz"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 166
+  section: "public"
+  raw: "Paola Díaz - Secretaria"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

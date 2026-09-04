@@ -1,0 +1,44 @@
+id: "agro-dronestl-srl"
+name: "AGRO DRONESTL SRL"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: "Ruta Nacional 5 y Acceso García Salinas"
+  city: "Trenque Lauquen"
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 239 2675544"
+  whatsapp: null
+  email: "admin.agrodrones@nova.net.ar"
+
+presence:
+  website: "https://agro-drones.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 90
+  section: "drones"
+  raw: "AGRO DRONESTL SRL - Ruta Nacional 5 y Acceso García Salinas, Trenque Lauquen, Buenos Aires - +54 239 2675544 - admin.agrodrones@nova.net.ar - https://agro-drones.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

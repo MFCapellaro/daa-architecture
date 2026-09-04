@@ -1,0 +1,28 @@
+id: "pro-tesorero"
+name: "Pro Tesorero"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 264
+  section: "events"
+  raw: "Pro Tesorero - Sergio Pérez Gómez - INTA"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

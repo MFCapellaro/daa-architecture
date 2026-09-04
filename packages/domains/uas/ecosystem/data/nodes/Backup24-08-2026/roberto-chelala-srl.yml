@@ -1,0 +1,28 @@
+id: "roberto-chelala-srl"
+name: "Roberto Chelala SRL"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.robertochelala.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 6
+  section: "dealers"
+  raw: "Roberto Chelala SRL - Dorrego 528, La Banda, Santiago del Estero - 385 427 0063 - contacto@robertochelala.com.ar - https://www.robertochelala.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

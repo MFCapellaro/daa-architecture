@@ -1,0 +1,28 @@
+id: "comercializadora-pauny-rosario"
+name: "Comercializadora Pauny Rosario"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 68
+  section: "dealers"
+  raw: "Comercializadora Pauny Rosario - María Eugenia Basso - W9H5+95 Villa Gdor. Galvez, Santa Fe - Tel: 3417646000"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "matilde-gobbo"
+name: "Matilde Gobbo"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 198
+  section: "public"
+  raw: "Matilde Gobbo - Responsable de Web - (+54) 9 341-2590586 - gobbo@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

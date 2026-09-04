@@ -1,0 +1,28 @@
+id: "solo-campo"
+name: "Solo Campo"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://solocampo.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 292
+  section: "media"
+  raw: "Solo Campo - info@solocampo.com - +54 340 1646746 - Perito Moreno 470 - 2146 San Genaro Santa Fe, Argentina - https://solocampo.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

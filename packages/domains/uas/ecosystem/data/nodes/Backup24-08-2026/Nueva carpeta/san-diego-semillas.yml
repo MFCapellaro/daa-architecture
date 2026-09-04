@@ -1,0 +1,28 @@
+id: "san-diego-semillas"
+name: "San Diego Semillas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.sandiego.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 24
+  section: "drones"
+  raw: "San Diego Semillas - Lavalle 844 - Venado Tuerto - Santa Fe - +54 346 2670044 - Ing Ag. Matias Rada / WhatsApp +54 934 62693541 - Ing. Ag. Franco Gastón Lescano / WhatsApp +54 934 62253145- https://www.sandiego.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "alena-sudeste"
+name: "Alena Sudeste"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://alenaagritech.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 61
+  section: "dealers"
+  raw: "Alena Sudeste - Mario Mutti - Av. Centenario 1055, B7620 Balcarce, Provincia de Buenos Aires - Tel: 2266536130 - https://alenaagritech.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

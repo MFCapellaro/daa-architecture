@@ -1,0 +1,28 @@
+id: "drones-vip-3"
+name: "Drones VIP"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 127
+  section: "academia"
+  raw: "Drones VIP - Daireaux - San Martin 33, Daireaux, Buenos Aires - Teléfono +54 231 4403804"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

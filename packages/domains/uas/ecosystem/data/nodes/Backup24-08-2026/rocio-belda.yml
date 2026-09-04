@@ -1,0 +1,28 @@
+id: "rocio-belda"
+name: "Rocío Belda"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 172
+  section: "public"
+  raw: "Rocío Belda - Gerente de Programa - (+54) 9 341-6180047 - belda@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

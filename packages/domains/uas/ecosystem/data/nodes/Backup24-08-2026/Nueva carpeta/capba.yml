@@ -1,0 +1,28 @@
+id: "capba"
+name: "CAPBA"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 163
+  section: "public"
+  raw: "CAPBA - Cámara de Aeroaplicadores de la Provincia de Buenos Aires"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

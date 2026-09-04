@@ -1,0 +1,28 @@
+id: "cattaneo-hnos"
+name: "Cattaneo Hnos"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.ypfcattaneo.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 20
+  section: "drones"
+  raw: "Cattaneo Hnos - Ruta 19 Km 313 - Montecristo - Córdoba - Ing. Agr. Bibiana Buteler - Tel.: +54 351 2358890 - bibianab@ypfcattaneo.com.ar / Ing. Agr. Marcos Paternoster - Tel.: +54 351 3832906 - marcosp@ypfcattaneo.com.ar / Asesor Comercial - Valentín Bernaldez - Tel.: 351 2358891 - valentinb@ypfcattaneo.com.ar / Tec. Agr. Pedro Kolomi - Tel.: 351 2358881 - pedrok@ypfcattaneo.com.ar - https://www.ypfcattaneo.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

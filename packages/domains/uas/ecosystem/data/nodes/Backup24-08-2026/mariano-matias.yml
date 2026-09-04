@@ -1,0 +1,28 @@
+id: "mariano-matias"
+name: "Mariano Matías"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 250
+  section: "events"
+  raw: "Mariano Matías - Ceremonial y Protocolo - INTA"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

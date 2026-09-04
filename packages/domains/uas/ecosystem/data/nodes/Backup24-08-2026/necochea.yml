@@ -1,0 +1,28 @@
+id: "necochea"
+name: "Necochea"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 34
+  section: "dealers"
+  raw: "Necochea - Ruta 228 y Av. Nº 59 - Lucas Montana - lmontana@terramarvj.com.ar - +54 2234386717 / Mariano Odriozola - modriozola@terramarjv.com.ar - +54 2262567382"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

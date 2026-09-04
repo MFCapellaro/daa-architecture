@@ -1,0 +1,45 @@
+id: "sumidas-7"
+name: "Sumidas"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 235 4480699"
+  whatsapp: null
+  email: "alberdi@sumidas.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 49
+  section: "drones"
+  raw: "Sumidas - Alberdi - Avenida Libertad 693 - +54 235 4480699 - alberdi@sumidas.com.ar / jose.bertamoni@sumidas.com.ar - Tel/Cel: +54 236 4412255 / pablo.pastorino@sumidas.com.ar - Tel/Cel: +54 236 4414298 / nicolas.andriola@sumidas.com.ar - Tel/Cel: +54 236 4329841 / matias.diplacido@sumidas.com.ar - Tel/Cel: +54 236 4617506"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

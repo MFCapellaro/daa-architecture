@@ -1,0 +1,45 @@
+id: "diesel-lange-2"
+name: "Diesel Lange"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 0810 2200060"
+  whatsapp: "+54 11 31914803"
+  email: null
+
+presence:
+  website: "https://www.diesellange.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 18
+  section: "drones"
+  raw: "Diesel Lange - Ruta Nac. 5 Km. 445 - Trenque Lauquen - Buenos Aires - Tel: 0810 220 0060 - Whatsapp: +54 113 1914803 - https://www.diesellange.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

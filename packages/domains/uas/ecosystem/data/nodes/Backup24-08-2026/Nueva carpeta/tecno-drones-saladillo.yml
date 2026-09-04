@@ -1,0 +1,28 @@
+id: "tecno-drones-saladillo"
+name: "Tecno Drones Saladillo"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://tecnodrones.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 42
+  section: "drones"
+  raw: "Tecno Drones Saladillo - Saladillo - Buenos Aires - FERNANDO CICARE / AUGUSTO CICARE / JOAQUIN CORDOBA / AGUSTIN BALSALOBRE / CARLOS ALAIN CÓRDOBA- https://tecnodrones.com.ar/ - https://www.instagram.com/tecno.drones/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

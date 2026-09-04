@@ -1,0 +1,28 @@
+id: "constanza-maria-tome"
+name: "Constanza María Tomé"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 251
+  section: "events"
+  raw: "Constanza María Tomé - Logística - SRT"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

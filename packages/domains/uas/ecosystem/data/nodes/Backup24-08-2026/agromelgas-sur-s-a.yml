@@ -1,0 +1,28 @@
+id: "agromelgas-sur-s-a"
+name: "Agromelgas Sur S.A."
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/agromelgas_sur/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 64
+  section: "dealers"
+  raw: "Agromelgas Sur S.A. - Emiliano Garcia - JPFV+4M9 Tres Arroyos, Provincia de Buenos Aires - Tel: 2983405342 - https://www.instagram.com/agromelgas_sur/ (sin Web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

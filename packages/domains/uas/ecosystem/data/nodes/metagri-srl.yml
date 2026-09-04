@@ -1,0 +1,44 @@
+id: "metagri-srl"
+name: "METAGRI SRL"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: "México 224"
+  city: "Las Lajitas"
+  province: "Salta"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 94
+  section: "drones"
+  raw: "METAGRI SRL - México 224, Las Lajitas, Salta"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,44 @@
+id: "agrovuelos"
+name: "AgroVuelos"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Santiago del Estero"
+  country: "Argentina"
+  phone: "+54 385 4414255"
+  whatsapp: null
+  email: "info@agrovuelos.com"
+
+presence:
+  website: "https://www.agrovuelos.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 115
+  section: "operators"
+  raw: "AgroVuelos - +54 385 4414255 - info@agrovuelos.com - Santiago del Estero - https://www.agrovuelos.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

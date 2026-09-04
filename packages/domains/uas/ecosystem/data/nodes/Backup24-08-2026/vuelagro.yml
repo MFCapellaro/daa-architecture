@@ -1,0 +1,28 @@
+id: "vuelagro"
+name: "Vuelagro"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/dji.vuelagro/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 71
+  section: "dealers"
+  raw: "Vuelagro - Venado Tuerto - Javier Bonadeo - Av. 12 de Octubre 1995 - Tel: 3584430678 - https://www.instagram.com/dji.vuelagro/ (sin web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

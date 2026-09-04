@@ -1,0 +1,44 @@
+id: "tekron"
+name: "Tekron"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.tekron.com.ar/index"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 3
+  section: "drones"
+  raw: "Tekron - Parque Industrial - San Francisco - Córdoba - https://www.tekron.com.ar/index"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

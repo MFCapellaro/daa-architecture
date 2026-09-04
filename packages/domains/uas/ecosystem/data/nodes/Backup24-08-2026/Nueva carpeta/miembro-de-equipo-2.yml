@@ -1,0 +1,28 @@
+id: "miembro-de-equipo-2"
+name: "Miembro de equipo"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 211
+  section: "public"
+  raw: "Miembro de equipo - Laurana Uboldi - +54 341 803200 - uboldi@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

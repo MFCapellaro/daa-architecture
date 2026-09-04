@@ -1,0 +1,28 @@
+id: "drones-vip-2"
+name: "Drones VIP"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 126
+  section: "academia"
+  raw: "Drones VIP - Buenos Aires - Tigre - Av. Agustín M. García 8852, Benavidez, Provincia de Buenos Aires - Teléfono +54 11 40484550"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

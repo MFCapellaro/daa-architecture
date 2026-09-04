@@ -1,0 +1,44 @@
+id: "unr"
+name: "UNR"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://unr.edu.ar/diplomatura-en-estudios-avanzados-en-drones-aplicados-a-las-ciencias-agropecuarias-y-ambientales/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 163
+  section: "academia"
+  raw: "UNR - Rosario - https://unr.edu.ar/diplomatura-en-estudios-avanzados-en-drones-aplicados-a-las-ciencias-agropecuarias-y-ambientales/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

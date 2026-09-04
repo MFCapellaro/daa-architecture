@@ -1,0 +1,28 @@
+id: "buenos-aires-oeste"
+name: "Buenos Aires OESTE"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 85
+  section: "dealers"
+  raw: "Buenos Aires OESTE -  Camino Provincial 039-02, Madariaga - Rodrigo Miguel - +54 9 2267 40-7251"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

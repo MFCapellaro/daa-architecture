@@ -1,0 +1,28 @@
+id: "acrrn-asociacion-contratistas-rurales-de-rio-negro-viedma"
+name: "ACRRN: Asociación Contratistas Rurales de Rio Negro (Viedma"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 230
+  section: "public"
+  raw: "ACRRN: Asociación Contratistas Rurales de Rio Negro (Viedma - Río Negro)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

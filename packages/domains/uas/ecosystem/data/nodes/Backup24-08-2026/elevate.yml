@@ -1,0 +1,28 @@
+id: "elevate"
+name: "Elevate"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 78
+  section: "dealers"
+  raw: "Elevate - Juan Silva - Coronel Suarez, Pringles, Guamini, Lamadrid, Laprida, Torquinst, Bahia Blanca - Tel: +5492926544807 - (sin web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

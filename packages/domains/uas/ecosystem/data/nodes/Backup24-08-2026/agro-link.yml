@@ -1,0 +1,28 @@
+id: "agro-link"
+name: "Agro Link"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://agrolink.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 276
+  section: "media"
+  raw: "Agro Link - https://agrolink.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

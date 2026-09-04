@@ -1,0 +1,28 @@
+id: "agro-mision"
+name: "Agro Misión"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 106
+  section: "operators"
+  raw: "Agro Misión - Ing. Agr. Juan José Patiño, Daniel Fernández y Leonardo Goitisolo - Henderson, Buenos Aires - Sin web!!!"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

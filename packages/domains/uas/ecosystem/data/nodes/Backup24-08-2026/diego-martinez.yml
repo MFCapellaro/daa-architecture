@@ -1,0 +1,28 @@
+id: "diego-martinez"
+name: "Diego Martínez"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 151
+  section: "public"
+  raw: "Diego Martínez - Presidente - camara: CEAC / Guillermo Valdes - vicePresidente - camara: CANOA / Juan Molina - secretario - camara: ENTRERÍOS / Alfonso Rodríguez - tesorero - camara: CAPBA"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

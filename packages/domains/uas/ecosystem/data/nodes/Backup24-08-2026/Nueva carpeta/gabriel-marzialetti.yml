@@ -1,0 +1,28 @@
+id: "gabriel-marzialetti"
+name: "Gabriel Marzialetti"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 178
+  section: "public"
+  raw: "Gabriel Marzialetti"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "chacabuco"
+name: "Chacabuco"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 45
+  section: "dealers"
+  raw: "Chacabuco - Ruta Nacional Nº 7 Km. 203.5 - +54 9 2352 538315 - chacabuco@sumidas.com.ar / Carla Levato - Administración de sucursal - carla.levato@sumidas.com.ar - Tel/Cel: +54 9 2352 524820 / Facundo Zafatle - Logística de Sucursal - facundo.zafatle@sumidas.com.ar - Tel/Cel: +54 9 2352 562646 / Juan Ignacio Bussetti - Responsable técnico Comercial - juan.bussetti@sumidas.com.ar - Tel/Cel: +54 9 2352 522270 / Juan Ríos Hudson - Responsable técnico Comercial - juan.rios@sumidas.com.ar - Tel/Cel: +54 9 2352 527290 / Rocio Carosella - Responsable técnico Comercial - rocio.carosella@sumidas.com.ar - Tel/Cel: +54 9 2352 44 5918"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

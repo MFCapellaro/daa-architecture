@@ -1,0 +1,28 @@
+id: "carlos-bermudez"
+name: "Carlos Bermúdez"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 249
+  section: "events"
+  raw: "Carlos Bermúdez - Sponsors y Alianzas"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

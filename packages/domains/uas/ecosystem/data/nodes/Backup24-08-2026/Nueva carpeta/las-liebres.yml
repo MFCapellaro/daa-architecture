@@ -1,0 +1,28 @@
+id: "las-liebres"
+name: "Las Liebres"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/agrop_lasliebres/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 79
+  section: "drones"
+  raw: "Las Liebres - Rio Tercero - Tel: +54 351 5606964 - https://www.instagram.com/agrop_lasliebres/ (sin web) - Juan de los Ríos"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

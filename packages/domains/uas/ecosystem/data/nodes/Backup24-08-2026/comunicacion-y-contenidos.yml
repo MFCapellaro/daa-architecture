@@ -1,0 +1,28 @@
+id: "comunicacion-y-contenidos"
+name: "Comunicación y Contenidos"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://comunicacionycontenidos.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 290
+  section: "media"
+  raw: "Comunicación y Contenidos - https://comunicacionycontenidos.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,45 @@
+id: "camptech-2"
+name: "Camptech"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 22
+  section: "drones"
+  raw: "Camptech - Justiniano Posse - Córdoba"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

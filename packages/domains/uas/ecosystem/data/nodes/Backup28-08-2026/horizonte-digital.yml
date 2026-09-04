@@ -1,0 +1,44 @@
+id: "horizonte-digital"
+name: "Horizonte Digital"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Santa Fe"
+  country: "Argentina"
+  phone: "+54 11 37680560"
+  whatsapp: null
+  email: "info@horizontea.com"
+
+presence:
+  website: "https://horizonteadigital.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 217
+  section: "media"
+  raw: "Horizonte Digital - Av. Santa Fe 4922 2° A - CABA - +54 11 3768 0560 - info@horizontea.com - https://horizonteadigital.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

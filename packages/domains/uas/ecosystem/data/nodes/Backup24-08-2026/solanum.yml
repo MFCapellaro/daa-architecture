@@ -1,0 +1,28 @@
+id: "solanum"
+name: "Solanum"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/solanumagricola/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 9
+  section: "dealers"
+  raw: "Solanum - San Francisco del Monte 798 oeste, San Juan, San Juan - +54 2644565402 - https://www.instagram.com/solanumagricola/ - info@solanum.com.ar - http://www.solanum.com.ar/ (la Web No Funciona!!!) -"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "terramar-jv-7"
+name: "Terramar JV"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 36
+  section: "drones"
+  raw: "Terramar JV - Necochea - Ruta 228 y Av. Nº 59 - Lucas Montana - lmontana@terramarvj.com.ar - +54 223 4386717 / Mariano Odriozola - modriozola@terramarjv.com.ar - +54 226 2567382"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

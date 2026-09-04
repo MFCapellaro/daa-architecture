@@ -1,0 +1,28 @@
+id: "tranquera-abierta"
+name: "Tranquera Abierta"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.tabierta.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 298
+  section: "media"
+  raw: "Tranquera Abierta - https://www.tabierta.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

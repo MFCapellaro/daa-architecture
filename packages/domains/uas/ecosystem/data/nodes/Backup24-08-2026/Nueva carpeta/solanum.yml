@@ -1,0 +1,28 @@
+id: "solanum"
+name: "Solanum"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/solanumagricola/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 11
+  section: "drones"
+  raw: "Solanum - San Francisco del Monte 798 oeste, San Juan, San Juan - +54 264 4565402 - https://www.instagram.com/solanumagricola/ - info@solanum.com.ar - http://www.solanum.com.ar/ (Web sin datos) -"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "alca-agrotech-s-a"
+name: "Alca Agrotech S.A"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/alca.agrotech/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 66
+  section: "dealers"
+  raw: "Alca Agrotech S.A - Juan Ignacio Catalán - 4CMP+CW Pergamino, Provincia de Buenos Aires - Tel: 3515945189 - https://www.instagram.com/alca.agrotech/ (sin web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "cbcr-camara-bonaerense-de-contratistas-rurales-chivilcoy"
+name: "CBCR: Cámara Bonaerense de Contratistas Rurales (Chivilcoy"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 234
+  section: "public"
+  raw: "CBCR: Cámara Bonaerense de Contratistas Rurales (Chivilcoy - Buenos Aires)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

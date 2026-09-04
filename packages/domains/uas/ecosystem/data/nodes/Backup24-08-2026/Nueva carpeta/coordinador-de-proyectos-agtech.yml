@@ -1,0 +1,28 @@
+id: "coordinador-de-proyectos-agtech"
+name: "Coordinador de Proyectos Agtech"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 220
+  section: "public"
+  raw: "Coordinador de Proyectos Agtech - Federico Mazzón - +54 342 612589 - mazzon@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

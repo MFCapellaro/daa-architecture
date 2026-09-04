@@ -1,0 +1,28 @@
+id: "saladillo"
+name: "Saladillo"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 48
+  section: "dealers"
+  raw: "Saladillo - Ruta 205 Km 187.5 - +54 9 2342 486321 - saladillo@sumidas.com.ar - Huberto Machado - Administración de Sucursal - huberto.machado@sumidas.com.ar - Tel/Cel: +54 9 2344 502110 / Laura Fegan - Administración de Sucursal - laura.fegan@sumidas.com.ar - Tel/Cel: +54 9 2345 400151 / Marcelo Gonzalez - Responsable Técnico Comercial - marcelo.gonzalez@sumidas.com.ar - Tel/Cel: +54 9 2342 486321 / Emiliano Verdini - Responsable Técnico Comercial - emiliano.verdini@sumidas.com.ar - Tel/Cel: +54 9 2344 410444 /"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

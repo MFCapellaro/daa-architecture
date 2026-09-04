@@ -1,0 +1,28 @@
+id: "aapresid"
+name: "Aapresid"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: "https://www.aapresid.org.ar/es"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 162
+  section: "public"
+  raw: "Aapresid - Asociación Argentina de Productores En Siembra Directa - https://www.aapresid.org.ar/es"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

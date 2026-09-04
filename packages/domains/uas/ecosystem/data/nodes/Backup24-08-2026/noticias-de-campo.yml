@@ -1,0 +1,28 @@
+id: "noticias-de-campo"
+name: "Noticias de Campo"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+
+presence:
+  website: "https://www.noticiasdecampo.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 283
+  section: "media"
+  raw: "Noticias de Campo - https://www.noticiasdecampo.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

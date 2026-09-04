@@ -1,0 +1,28 @@
+id: "agromelgas-sur-s-a"
+name: "Agromelgas Sur S.A."
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/agromelgas_sur/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 66
+  section: "drones"
+  raw: "Agromelgas Sur S.A. - Tres Arroyos, Provincia de Buenos Aires - Tel: +54 298 3405342 - https://www.instagram.com/agromelgas_sur/ (sin Web) - Emiliano Garcia"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

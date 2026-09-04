@@ -1,0 +1,28 @@
+id: "alberdi"
+name: "Alberdi"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 47
+  section: "dealers"
+  raw: "Alberdi - Avenida Libertad 693 - +54 9 2354 480699 - alberdi@sumidas.com.ar / Jose Bertamoni - Gerente de Sucursal - jose.bertamoni@sumidas.com.ar - Tel/Cel: +54 9 2364 412255 / Pablo Pastorino - Responsable Técnico Comercial - pablo.pastorino@sumidas.com.ar - Tel/Cel: +54 9 2364 414298 / Nicolas Andriola - Responsable Técnico Comercial - nicolas.andriola@sumidas.com.ar - Tel/Cel: +54 9 2364 329841 / Matias Di placido - Responsable Técnico Comercial - matias.diplacido@sumidas.com.ar - Tel/Cel: +54 9 2364 617506"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

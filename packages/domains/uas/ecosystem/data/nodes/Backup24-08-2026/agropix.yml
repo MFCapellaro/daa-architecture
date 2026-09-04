@@ -1,0 +1,28 @@
+id: "agropix"
+name: "Agropix"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - operators
+
+capabilities:
+
+presence:
+  website: "https://agropix.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 116
+  section: "operators"
+  raw: "Agropix - Bell Ville, Córdoba, Argentina - Guido Galetto / Nicolas Tobaldi / Ignacio Ramello - +54 9 3537 55-1316 - info@agropix.com.ar - https://agropix.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

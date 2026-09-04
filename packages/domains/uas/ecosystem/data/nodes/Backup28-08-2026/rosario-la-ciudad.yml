@@ -1,0 +1,44 @@
+id: "rosario-la-ciudad"
+name: "Rosario La Ciudad"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: null
+  whatsapp: null
+  email: "hola@rosariolaciudad.com.ar"
+
+presence:
+  website: "https://rosariolaciudad.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 206
+  section: "media"
+  raw: "Rosario La Ciudad - 27 de Febrero 1090 - hola@rosariolaciudad.com.ar - https://rosariolaciudad.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

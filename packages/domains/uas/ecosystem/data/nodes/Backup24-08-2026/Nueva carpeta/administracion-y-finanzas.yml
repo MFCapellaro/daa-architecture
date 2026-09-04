@@ -1,0 +1,28 @@
+id: "administracion-y-finanzas"
+name: "Administración y Finanzas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 197
+  section: "public"
+  raw: "Administración y Finanzas"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

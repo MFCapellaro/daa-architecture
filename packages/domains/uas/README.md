@@ -2,109 +2,120 @@
 
 ## Purpose
 
-The UAS domain represents unmanned aerial systems as operational expressions within DAA.
+The UAS Domain provides the operational environment where DAA principles become observable through the agricultural unmanned aerial systems ecosystem.
 
-It transforms coherent capabilities into real-world operational entities.
+It organizes knowledge, participants, products and collective opportunities into coherent operational relationships.
 
-UAS does not represent isolated machines.
+The domain does not create the ecosystem.
 
-It represents the interaction between autonomous systems, human participants, operational contexts and ecosystem trajectories.
-
----
-
-## Architectural Role
-
-UAS consumes capabilities defined by:
-
-- Configuration
-- Core
-- Knowledge
-
-It does not redefine their meaning.
-
-It provides a concrete operational environment where DAA principles become observable.
+It organizes the ecosystem so coherent capabilities can emerge.
 
 ---
 
-## Dependency Flow
+## Responsibility
+
+The UAS Domain:
+
+* organizes domain-specific knowledge,
+* represents the agricultural UAS ecosystem,
+* defines product identities,
+* enables collective opportunities through Pools,
+* integrates participant trajectories,
+* preserves operational coherence across the domain.
+
+The domain does not redefine concepts established by DAA.
+
+It applies them within the UAS ecosystem.
+
+---
+
+## Architectural Dependencies
+
+The UAS Domain consumes capabilities provided by:
+
+* Grammar
+* Kernel
+* Knowledge
+* Core
+* Configuration
+
+These layers establish the architectural foundation upon which the domain operates.
+
+---
+
+## Domain Structure
 
 ```text
-Grammar
-    ↓
-Kernel
-    ↓
-Coherence
-    ↓
 Knowledge
     ↓
-Core
+Ecosystem
     ↓
-Configuration
+Product Identity
     ↓
-UAS Domain
+Pools
     ↓
-Operational Systems
+Participants
+    ↓
+Trajectory
+    ↓
+Community
 ```
+
+Each layer prepares the conditions for the next.
+
+Community experience continuously enriches domain knowledge.
 
 ---
 
-## Adaptive Role
+## Operational Learning
 
-UAS participates in the DAA Meta Spiral.
-
-Operational behavior becomes a source of knowledge and refinement.
+The domain continuously evolves through observable experience.
 
 ```text
-Capability
-    ↓
-Operation
+Knowledge
     ↓
 Observation
     ↓
-Recognition
+Organization
     ↓
-Orientation
+Relationships
     ↓
-Improved Capability
+Operation
+    ↓
+Trajectory
+    ↓
+Knowledge
 ```
+
+Operational experience becomes coherent knowledge.
+
+Knowledge improves future operational capability.
 
 ---
 
 ## Ecosystem Perspective
 
-A UAS is not only a technical artifact.
+The domain represents relationships between:
 
-It is a participant within an ecosystem of:
+* manufacturers,
+* distributors,
+* operators,
+* producers,
+* institutions,
+* training,
+* regulations,
+* technologies,
+* product identities,
+* collective opportunities.
 
-operators,
-manufacturers,
-services,
-knowledge,
-missions,
-environmental contexts.
-
-Meaning emerges from coherent relationships between these elements.
-
----
-
-## Evolution Principle
-
-UAS systems evolve through the interaction between:
-
-Operational Evolution
-        ↕
-Nexus Coherence
-
-The operational system generates experience.
-
-Nexus transforms experience into guidance.
-
-Guidance enables future coherent evolution.
+Meaning emerges from the coherence of these relationships rather than from isolated entities.
 
 ---
 
-## Core Principle
+## Design Principle
 
-DAA does not create autonomous systems that simply perform actions.
+The UAS Domain does not begin with operations.
 
-It creates adaptive systems from which desirable operational behaviors emerge.
+It begins by organizing reality so coherent operations may emerge.
+
+Operational capability is an emergent property of an organized ecosystem.

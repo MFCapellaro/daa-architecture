@@ -1,0 +1,28 @@
+id: "vistaguay"
+name: "Vistaguay"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - technology
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/vistaguay/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 233
+  section: "technology"
+  raw: "Vistaguay - Córdoba -Plataforma de conexión de productores con pilotos - https://www.instagram.com/vistaguay/ - https://web.vistaguay.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

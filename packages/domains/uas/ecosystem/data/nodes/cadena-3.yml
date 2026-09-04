@@ -1,0 +1,44 @@
+id: "cadena-3"
+name: "CADENA 3"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Córdoba"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.cadena3.com/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 192
+  section: "media"
+  raw: "CADENA 3 - Córdoba / Rosario - Noticias - https://www.cadena3.com/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

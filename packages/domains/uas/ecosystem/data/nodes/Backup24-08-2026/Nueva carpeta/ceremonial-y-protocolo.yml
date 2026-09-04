@@ -1,0 +1,28 @@
+id: "ceremonial-y-protocolo"
+name: "Ceremonial y Protocolo"
+type: event
+
+identity:
+  status: active
+
+layers:
+  - events
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 266
+  section: "events"
+  raw: "Ceremonial y Protocolo - Mariano Matías - INTA"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

@@ -1,0 +1,28 @@
+id: "drones-vip-4"
+name: "Drones VIP"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 128
+  section: "academia"
+  raw: "Drones VIP - Córdoba (Rosario) - Pilar a 500 mts. de Av. Circunvalación, Au Córdoba - Rosario, Córdoba - Teléfono +54 351 2149099"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

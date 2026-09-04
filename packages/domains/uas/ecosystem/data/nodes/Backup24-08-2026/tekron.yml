@@ -1,0 +1,28 @@
+id: "tekron"
+name: "Tekron"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 139
+  section: "academia"
+  raw: "Tekron - dji@tekron.com.ar - +543564626694"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

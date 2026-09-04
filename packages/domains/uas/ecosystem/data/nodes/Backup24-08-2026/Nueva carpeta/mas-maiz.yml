@@ -1,0 +1,28 @@
+id: "mas-maiz"
+name: "Más Maíz"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/maizmas.pioneer/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 78
+  section: "drones"
+  raw: "Más Maíz - Sur de Córdoba - Tel: +54 358 4364757 - https://www.instagram.com/maizmas.pioneer/ (sin web) - Daniel Taverna"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

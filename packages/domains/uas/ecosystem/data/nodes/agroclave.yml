@@ -1,0 +1,44 @@
+id: "agroclave"
+name: "AgroClave"
+type: media
+
+identity:
+  status: active
+
+layers:
+  - media
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Santa Fe"
+  country: "Argentina"
+  phone: null
+  whatsapp: null
+  email: null
+
+presence:
+  website: "https://www.agroclave.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 197
+  section: "media"
+  raw: "AgroClave - Sarmiento 763 - Rosario - Santa Fe. - https://www.agroclave.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

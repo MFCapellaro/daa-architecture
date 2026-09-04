@@ -1,0 +1,28 @@
+id: "comercializadora-pauny-rosario"
+name: "Comercializadora Pauny Rosario"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 70
+  section: "drones"
+  raw: "Comercializadora Pauny Rosario - Villa Gdor. Gálvez, Santa Fe - Tel: +54 341 7646000 - María Eugenia Basso"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

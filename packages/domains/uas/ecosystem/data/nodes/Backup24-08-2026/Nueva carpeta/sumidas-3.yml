@@ -1,0 +1,28 @@
+id: "sumidas-3"
+name: "Sumidas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 45
+  section: "drones"
+  raw: "Sumidas - CABA - La pampa 1517 - 11º-B - +54 11 80243517 - caba@sumidas.com.ar / Matías Nisivoccia - Director Comercial - matias.nisivoccia@sumidas.com.ar / Ricardo Spina - Director Comercial - ricardo.spina@sumidas.com.ar - Tel: +54 11 80243517 / Omar Perea - Gerente de Administración y Finanzas - omar.perea@sumidas.com.ar - Cel: +54 11 22790338 / Guillermo Alcorta - Gerente de Sucursal - guillermo.alcorta@sumidas.com.ar - Cel: +54 11 55805250 / Gustavo Pollak - Responsable técnico Comercial - gustavo.pollak@sumidas.com.ar - Cel: +54 11 55881853 / Marjorie Rojas - Responsable técnico Comercial - marjorie.rojas@sumidas.com.ar - Cel: +54 11 50466915 -  / Martin Diaz - Administración de Sucursal - martin.diaz@sumidas.com.ar - Cel: +54 11 55803718"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

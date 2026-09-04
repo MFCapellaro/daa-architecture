@@ -1,0 +1,44 @@
+id: "avansys"
+name: "AvanSys"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - technology
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: null
+  country: null
+  phone: "+54 346 8617026"
+  whatsapp: null
+  email: "jbonino@avansys.com.ar"
+
+presence:
+  website: "https://avansys.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 172
+  section: "technology"
+  raw: "AvanSys - Plataforma de FOTOGRAMETRÍA - Corral de Bustos - Córdova - +54 346 8617026 - jbonino@avansys.com.ar / ebravi@avansys.com.ar - https://avansys.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

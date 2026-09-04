@@ -1,0 +1,28 @@
+id: "rus-agro"
+name: "RUS Agro"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - insurance
+
+capabilities:
+
+presence:
+  website: "https://www.rus.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 225
+  section: "insurance"
+  raw: "RUS Agro - https://www.rus.com.ar/ (No tiene sección para Agro o Aero en la web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

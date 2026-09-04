@@ -1,0 +1,28 @@
+id: "sumidas-10"
+name: "Sumidas"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 52
+  section: "drones"
+  raw: "Sumidas - Concarán - Autopista 55 S/Nº Km 898 - +54 266 4833862 - concaran@sumidas.com.ar / Eduardo Javier Farias - Responsable Técnico Comercial - eduardo@kennbal.com - Tel/Cel: +54 266 4251710"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

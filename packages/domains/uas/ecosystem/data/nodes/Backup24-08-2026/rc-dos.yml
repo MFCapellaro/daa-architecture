@@ -1,0 +1,28 @@
+id: "rc-dos"
+name: "RC Dos"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: "https://rc-dos.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 129
+  section: "academia"
+  raw: "RC Dos - Carnerillo 2275, X5006IXC Córdoba, Arg. - +54 9 3517 73‑8144 - https://rc-dos.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

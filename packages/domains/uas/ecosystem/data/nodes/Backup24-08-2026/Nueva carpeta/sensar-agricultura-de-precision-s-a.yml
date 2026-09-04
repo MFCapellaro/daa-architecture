@@ -1,0 +1,28 @@
+id: "sensar-agricultura-de-precision-s-a"
+name: "Sensar Agricultura de precisión S.A."
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - drones
+
+capabilities:
+
+presence:
+  website: "https://www.instagram.com/sensar_ap/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: true
+
+source:
+  file: "ecosystem-source.txt"
+  line: 75
+  section: "drones"
+  raw: "Sensar Agricultura de precisión S.A. - Domingo F. Sarmiento 327 - Darregueira, Buenos Aires - Tel: +54 292 3514256 - https://www.instagram.com/sensar_ap/ (sin web) - Lucas González Mazzoni"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

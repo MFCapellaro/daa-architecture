@@ -1,0 +1,45 @@
+id: "terramar-jv-5"
+name: "Terramar JV"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 223 5275762"
+  whatsapp: null
+  email: "wmalarczuk@terramarjv.com.ar"
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 34
+  section: "drones"
+  raw: "Terramar JV - Mar del Plata - Buenos Aires - Ruta 88 km 3,5 - wmalarczuk@terramarjv.com.ar - +54 223 5275762 / dituarte@terramarjv.com.ar - +54 223 5221975 / jsatragni@terramarjv.com.ar - +54 223 5829799"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

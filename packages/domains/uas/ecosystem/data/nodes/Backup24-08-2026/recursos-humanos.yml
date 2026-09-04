@@ -1,0 +1,28 @@
+id: "recursos-humanos"
+name: "Recursos Humanos"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 206
+  section: "public"
+  raw: "Recursos Humanos"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

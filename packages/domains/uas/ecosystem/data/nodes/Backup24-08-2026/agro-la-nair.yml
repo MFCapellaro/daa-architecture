@@ -1,0 +1,28 @@
+id: "agro-la-nair"
+name: "Agro La Nair"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - dealers
+
+capabilities:
+
+presence:
+  website: "https://lanairsrl.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 58
+  section: "dealers"
+  raw: "Agro La Nair - Jorge Jensen - RP86 5050, B7630 Necochea, Provincia de Buenos Aires - Tel: +54 9 2262 64-3995 - https://lanairsrl.com.ar/ (Faltan drones en la web)"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

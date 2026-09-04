@@ -1,0 +1,28 @@
+id: "drones-vip"
+name: "Drones VIP"
+type: institution
+
+identity:
+  status: active
+
+layers:
+  - academia
+
+capabilities:
+
+presence:
+  website: "https://dronesvip.com.ar/"
+  websiteMentioned: true
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 123
+  section: "academia"
+  raw: "Drones VIP - https://dronesvip.com.ar/"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

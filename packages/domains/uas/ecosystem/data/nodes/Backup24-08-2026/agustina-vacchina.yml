@@ -1,0 +1,28 @@
+id: "agustina-vacchina"
+name: "Agustina Vacchina"
+type: organization
+
+identity:
+  status: active
+
+layers:
+  - public
+
+capabilities:
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+source:
+  file: "ecosystem-source.txt"
+  line: 200
+  section: "public"
+  raw: "Agustina Vacchina - Responsable de Audiovisual - (+54) 9 341-3637103 - vacchina@aapresid.org.ar"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

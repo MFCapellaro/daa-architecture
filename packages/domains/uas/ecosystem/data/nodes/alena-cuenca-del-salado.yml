@@ -1,0 +1,45 @@
+id: "alena-cuenca-del-salado"
+name: "Alena Cuenca del Salado"
+type: company
+
+identity:
+  status: active
+
+layers:
+  - drones
+  - dealers
+
+capabilities:
+  []
+
+contact:
+  address: null
+  city: null
+  province: "Buenos Aires"
+  country: "Argentina"
+  phone: "+54 224 1509938"
+  whatsapp: null
+  email: null
+
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: null
+  websiteUnavailable: false
+
+geolocation:
+  latitude: null
+  longitude: null
+  precision: null
+  status: "pending"
+
+source:
+  file: "ecosystem-source.txt"
+  line: 65
+  section: "drones"
+  raw: "Alena Cuenca del Salado - Chascomús, Provincia de Buenos Aires - Tel: +54 224 1509938"
+
+status:
+  verification: partial
+  imported: true
+  reviewRequired: true

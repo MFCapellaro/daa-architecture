@@ -1,0 +1,19 @@
+id: preseeds
+name: PreSeeds AgTech
+type: company
+identity:
+  description: Operación profesional de drones aplicada al agro y soluciones de agricultura de precisión.
+  status: active
+location:
+  city: Rosario
+  province: Santa Fe
+  country: Argentina
+layers: [operators, service, technology]
+capabilities: [precision_agriculture, crop_monitoring, aerial_application, drone_operations, technology_development]
+presence:
+  website: https://preseeds.com.ar/
+  websiteMentionsDrones: true
+  socialMedia: true
+evidence:
+  - { source: institutional, type: institutional, verified: true }
+status: { verification: verified, lastChecked: 2026-08-23 }
