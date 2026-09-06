@@ -1,0 +1,133 @@
+BACKEND
+
+
+HOME
+	LANDING DE ESTADO DEL SISTEMA
+	Estado de Participantes / Directorio / Actividades / Pools / P&S / Stats
+
+MAPA
+	El mapa se alimenta de los datos de los participantes, directorio y actividades, no necesita un backend hasta que se incorporen datos de fotogrametría en un futuro, ahí si existirá un backend específico de los clientes de este servicio, hoy es futuro.
+
+PARTICIPANTES
+	LISTADO
+	Edición, búsqueda y filtros + visibilidad en el front y eliminar registro
+	TRAYECTORIAS
+	Vinculadas al ID del Participante, se va enriqueciendo la data a medida que interactúa, aquí cuando exista un corpus de trayectorias la IA podrá analizar potencialidades y sugerir vínculos coherentes.
+
+DIRECTORIO
+	LISTADO ORDENADO POR ACTORES DEL ECOSISTEMA
+	Lista de actores del ecosistema, editar, Hold / Wait / Public, eliminar, ampliar estructura
+
+ACTIVIDADES
+	LISTADO DE EVENTOS, EXPOS, CURSOS, ETC
+	Lista de actividades del ecosistema, estos registros tienen temporalidad, existen en una fracción de tiempo, luego pasa al registro histórico, editar, Hold / Publicación programada, eliminar registros defectuosos o eventos suspendidos,
+
+NORMATIVAS ANAC / TRAILERS / SEGUROS
+	Automatización de relevamiento de costos de los trámites
+
+COMPARATIVAS
+Especificaciones técnicas, capacidades y costos + sugerencias de pools
+	DRONES
+	EQUIPAMIENTO
+
+CONFIGURACIONES
+	TRES CONFIGURACIONES
+		PICKUP 4X4
+		Colección de componentes, cada uno tiene variables a elección del mercado con automatización de costos estimados individuales y en conjunto + sugerencias de pools
+		TRAILER I
+		Colección de componentes, cada uno tiene variables a elección del mercado con automatización de costos estimados individuales y en conjunto + sugerencias de pools
+		TRAILER II
+		Colección de componentes, cada uno tiene variables a elección del mercado con automatización de costos estimados individuales y en conjunto + sugerencias de pools
+
+POOLS
+	NDAs 
+	Lista de acuerdos firmados de los Dealers
+	LISTADO OFERTAS DEALERS
+	Status de los pools, triger de avisos de compleción
+	Testimonios / Seguimiento
+	Verificación de depósitos de Dealers
+
+P&S
+	PROBLEMAS Y SOLUCIONES
+	Estructura de listado y secciones / Administración del listado de los inputs / Aprobación de publicación 
+
+DONACIONES
+	REGISTRO
+	Ingresos por donaciones
+
+
+------------------------------------
+
+
+FRONTEND
+
+
+HOME
+	MAPA NODAL CAPEADO CON ZOOM SEMÁNTICO
+	Se pueden hacer visibles e invicibles las capas
+	Capas: Todos los actores del directorio por secciones / participantes / actividades
+
+REGISTRO
+	LOGIN SIMPLE
+	Entry page de Actores, Problemas, Soluciones, Consultas
+	LOGIN DEALER
+	Entry page de Actores, Problemas, Soluciones, Consultas + Entry page de polls
+
+DIRECTORIO
+	LISTADO ORDENADO POR ACTORES DEL ECOSISTEMA
+	ENTRY PAGE de participante registrado, datos a revisar y publicar desde el backend
+	Simple y de estructura extendida si hay información pública
+
+ACTIVIDADES
+	LISTADO DE EVENTOS, EXPOS, CURSOS, ETC
+	ENTRY PAGE de participante registrado, datos a revisar y publicar desde el backend
+
+NORMATIVAS ANAC / TRAILERS / SEGUROS
+	Actualización y costos
+
+COMPARATIVAS
+Especificaciones técnicas, capacidades y costos
+	DRONES
+		DJI
+		XAG
+		TopXGun
+		HYLIO
+	EQUIPAMIENTO
+		Trailers
+		Generadores
+		Mixers
+		Baterías
+		BIMs y Tanques
+		Meteorología
+		Starlink
+		Electricidad /Tableros
+		Accesorios
+		Tests
+
+CONFIGURACIONES
+	TRES CONFIGURACIONES
+		PICKUP 4X4
+		Selección de componentes con costos estimados
+		TRAILER I
+		Selección de componentes con costos estimados
+		TRAILER II
+		Selección de componentes con costos estimados
+
+POOLS
+	POOL ENTRY PAGE
+	OFERTAS DEALERS
+	Adhesión a pool, estado de completud
+	Testimonios / Seguimiento
+
+SERVICEs
+	Listado y recomendaciones
+P&S
+	PROBLEMAS Y SOLUCIONES
+	LISTADO POR SECCIONES
+	Búsqueda por geolocalización / cultivo / dron / marca / mezclas
+		ENTRY PAGE CONSULTAS
+		Precios / Servicio técnico / Instrumental / conexiones / Software / etc.
+		ENTRY PAGE PROBLEMAS
+		Mezclas, semillas, vientos, derivas, inversión térmica, altura, ancho de aplicación, errores del sistema, fotogrametría, software, etc.
+		ENTRY PAGE SOLUCIONES
+		Soluciones vinculadas a cada problema con diferencias geográficas, cultivos, semillas, etc.

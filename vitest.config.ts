@@ -3,7 +3,8 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     exclude: [
-      "**/*.typecheck.*"
+      "**/*.typecheck.*",
+      "**/node_modules/**"
     ]
   }
 });

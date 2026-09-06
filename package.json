@@ -10,10 +10,13 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "backend": "tsx apps/backend/src/server.ts",
+    "start": "tsx apps/backend/src/server.ts"
   },
   "devDependencies": {
     "@types/node": "^26.4.1",
+    "tsx": "^4.19.3",
     "vitest": "^4.1.10"
   },
   "dependencies": {
