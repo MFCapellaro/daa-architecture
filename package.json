@@ -17,12 +17,12 @@
     "start:production": "node dist/apps/backend/src/server.js"
   },
   "devDependencies": {
-    "@types/node": "^26.4.1",
-    "typescript": "^5.9.3",
     "tsx": "^4.19.3",
     "vitest": "^4.1.10"
   },
   "dependencies": {
+    "@types/node": "^26.4.1",
+    "typescript": "^5.9.3",
     "yaml": "^2.9.0"
   }
 }
