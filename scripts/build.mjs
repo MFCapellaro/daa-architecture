@@ -8,3 +8,5 @@ execFileSync(process.execPath, [compiler, "-p", "tsconfig.build.json"], { stdio:
 await mkdir("dist", { recursive: true });
 await cp("data", "dist/data", { recursive: true });
 await cp("apps/frontend", "dist/apps/frontend", { recursive: true });
+await cp("packages/domains/uas/participants/data", "dist/packages/domains/uas/participants/data", { recursive: true });
+await cp("packages/domains/uas/ecosystem/data", "dist/packages/domains/uas/ecosystem/data", { recursive: true });
