@@ -13,12 +13,12 @@ capabilities:
   []
 
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
+  address: "Tronador 140"
+  city: "Gral. Roca"
+  province: "Rio Negro"
+  country: "Argentina"
   phone: "+54 11 58853088"
-  whatsapp: null
+  whatsapp: "+54 299 5957872"
   email: "administracion@aerealpatagonia.com"
 
 presence:
@@ -28,9 +28,9 @@ presence:
   websiteUnavailable: false
 
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
+  latitude: "-39.0453024887735"
+  longitude: "-67.56971749014761"
+  precision: "alta"
   status: "pending"
 
 source:

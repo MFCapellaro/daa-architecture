@@ -12,11 +12,11 @@ capabilities:
   []
 
 contact:
-  address: Ruta Nacional 168, Parque Tecnológico Litoral Centro
-  city: Paraje El Pozo
+  address: "Ruta Nacional 168, Parque Tecnológico Litoral Centro"
+  city: "Paraje El Pozo"
   province: "Santa Fe"
   country: "Argentina"
-  phone: +54 342 4511546
+  phone: "+54 342 4511546"
   whatsapp: null
   email: null
 
@@ -27,9 +27,9 @@ presence:
   websiteUnavailable: false
 
 geolocation:
-  latitude: -31.639722
-  longitude: -60.672500
-  precision: media
+  latitude: "-31.639722"
+  longitude: "-60.672500"
+  precision: "media"
   status: "pending"
 
 source:

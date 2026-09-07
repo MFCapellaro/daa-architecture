@@ -12,13 +12,13 @@ capabilities:
   []
 
 contact:
-  address: Dorrego 1639 Piso 2º, Oficina A
-  city: Rosario
-  province: Santa Fe
+  address: "Dorrego 1639 Piso 2º, Oficina A"
+  city: "Rosario"
+  province: "Santa Fe"
   country: "Argentina"
-  phone: +54 (341) 4260745
-  whatsapp: +54 9 341 7230061
-  email: gines@aapresid.org.ar
+  phone: "+54 (341) 4260745"
+  whatsapp: "+54 9 341 7230061"
+  email: "gines@aapresid.org.ar"
 
 presence:
   website: "https://www.aapresid.org.ar/es"
@@ -27,9 +27,9 @@ presence:
   websiteUnavailable: false
 
 geolocation:
-  latitude: -32.9555
-  longitude: -60.6542
-  precision: alta
+  latitude: "-32.9555"
+  longitude: "-60.6542"
+  precision: "alta"
   status: "pending"
 
 source:
