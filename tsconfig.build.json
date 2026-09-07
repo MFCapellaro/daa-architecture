@@ -8,7 +8,13 @@
     "rootDir": "."
   },
   "include": [
-    "apps/backend/**/*.ts",
-    "packages/**/*.ts"
+    "apps/backend/src/**/*.ts"
+  ],
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.integration.test.ts",
+    "**/*.typecheck.*",
+    "node_modules",
+    "dist"
   ]
 }
