@@ -27,9 +27,9 @@ presence:
   websiteUnavailable: false
 
 geolocation:
-  latitude: "-31.639722"
-  longitude: "-60.672500"
-  precision: "media"
+  latitude: -31.639722
+  longitude: -60.672500
+  precision: media
   status: "pending"
 
 source:

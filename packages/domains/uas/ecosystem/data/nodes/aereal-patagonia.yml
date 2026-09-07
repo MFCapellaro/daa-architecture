@@ -28,9 +28,9 @@ presence:
   websiteUnavailable: false
 
 geolocation:
-  latitude: "-39.0453024887735"
-  longitude: "-67.56971749014761"
-  precision: "alta"
+  latitude: -39.0453024887735
+  longitude: -67.56971749014761
+  precision: alta
   status: "pending"
 
 source:
