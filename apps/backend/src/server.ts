@@ -97,10 +97,18 @@ export async function createApp() {
   });
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+async function startServer(): Promise<void> {
   const port = Number(process.env.PORT ?? 8787);
   const server = await createApp();
-  server.listen(port, () => console.log(`DAA UAS API listening on http://localhost:${port}`));
+  server.on("error", (error) => {
+    console.error("DAA UAS API failed to listen", error);
+    process.exitCode = 1;
+  });
+  server.listen(port, "0.0.0.0", () => console.log(`DAA UAS API listening on port ${port}`));
+}
+
+if (process.env.NODE_ENV !== "test") {
+  void startServer();
 }
 
 function adminSession(request: IncomingMessage): Session | undefined {
