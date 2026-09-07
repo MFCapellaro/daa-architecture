@@ -7,7 +7,7 @@ identity:
 
 layers:
   - drones
-  - dealers
+  - dealer
 
 capabilities:
   []
