@@ -17,6 +17,7 @@ export interface DirectoryEntry {
   capabilities: string[];
   location?: { address?: string; city?: string; province?: string; country?: string; coordinates?: { lat: number; lng: number }; geocoding?: { provider: string; status: "resolved" | "failed"; precision?: string; geocodedAt: string } };
 }
+  type DirectoryLocation = NonNullable<DirectoryEntry["location"]>;
 export interface Activity {
   id: string;
   title: string;
@@ -78,11 +79,11 @@ export async function loadDirectory(directory: string): Promise<DirectoryEntry[]
     const identity = (raw.identity ?? {}) as Record<string, unknown>;
     const context = (raw.context ?? raw.geolocation ?? {}) as Record<string, unknown>;
     const contact = (raw.contact ?? {}) as Record<string, unknown>;
-    const location = { address: String(context.address ?? raw.address ?? contact.address ?? "") || undefined, city: context.city as string | undefined, province: context.province as string | undefined, country: context.country as string | undefined };
+      const location: DirectoryLocation = { address: String(context.address ?? raw.address ?? contact.address ?? "") || undefined, city: context.city as string | undefined, province: context.province as string | undefined, country: context.country as string | undefined };
     const latitude = context.latitude as number | undefined;
     const longitude = context.longitude as number | undefined;
     if (typeof latitude === "number" && Number.isFinite(latitude) && typeof longitude === "number" && Number.isFinite(longitude)) location.coordinates = { lat: latitude, lng: longitude };
-    const geocoding = raw.geocoding as DirectoryEntry["location"]["geocoding"];
+      const geocoding = raw.geocoding as DirectoryLocation["geocoding"];
     return { id: String(raw.id ?? file.replace(/\.ya?ml$/, "")), name: String(raw.name ?? raw.id ?? file), type: String(raw.type ?? "other"), status: String(identity.status ?? "unknown"), layers: Array.isArray(raw.layers) ? raw.layers.map(String) : [], capabilities: Array.isArray(raw.capabilities) ? raw.capabilities.map(String) : [], location: { ...location, geocoding } };
   }));
 }
@@ -159,7 +160,7 @@ export async function geocodeDirectory(directory: string, apiKey: string, now = 
     }
     try {
       const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&region=ar&language=es&key=${encodeURIComponent(apiKey)}`);
-      const payload = await response.json() as { status?: string; results?: Array<{ geometry?: { location?: { lat?: number; lng?: number } }; geometry?: { location_type?: string } }> };
+        const payload = await response.json() as { status?: string; results?: Array<{ geometry?: { location?: { lat?: number; lng?: number }; location_type?: string } }> };
       const location = payload.results?.[0]?.geometry?.location;
       if (payload.status !== "OK" || typeof location?.lat !== "number" || typeof location.lng !== "number") {
         results.push({ id: entry.id, name: entry.name, address, status: "failed", error: payload.status ?? "geocoding_failed" });
