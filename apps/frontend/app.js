@@ -490,83 +490,96 @@ const GRID_LEVELS = {
   }
 };
 
-class DronsairGridOverlay
-  extends google.maps.OverlayView {
+/*
+ * IMPORTANTE:
+ *
+ * No se referencia google.maps aquí.
+ *
+ * La clase se crea únicamente después de que
+ * loadGoogleMaps() haya confirmado que Google Maps
+ * está disponible.
+ */
 
-  constructor() {
-    super();
+function createDronsairGridOverlayClass() {
 
-    this.container =
-      document.createElement('div');
+  return class DronsairGridOverlay
+    extends google.maps.OverlayView {
 
-    this.container.className =
-      'dronsair-grid-overlay';
+    constructor() {
+      super();
 
-    this.grid =
-      document.createElement('div');
+      this.container =
+        document.createElement('div');
 
-    this.grid.className =
-      'dronsair-grid';
+      this.container.className =
+        'dronsair-grid-overlay';
 
-    this.container.appendChild(
-      this.grid
-    );
-  }
+      this.grid =
+        document.createElement('div');
 
-  onAdd() {
-    this.getPanes()
-      .overlayLayer
-      .appendChild(
-        this.container
+      this.grid.className =
+        'dronsair-grid';
+
+      this.container.appendChild(
+        this.grid
+      );
+    }
+
+    onAdd() {
+      this.getPanes()
+        .overlayLayer
+        .appendChild(
+          this.container
+        );
+
+      this.update();
+    }
+
+    draw() {
+      this.update();
+    }
+
+    update() {
+      const map =
+        this.getMap();
+
+      if (!map) {
+        return;
+      }
+
+      const zoom =
+        map.getZoom() ?? 4;
+
+      let level =
+        GRID_LEVELS.territory;
+
+      if (
+        zoom >= GRID_LEVELS.detail.minZoom
+      ) {
+        level =
+          GRID_LEVELS.detail;
+      } else if (
+        zoom >= GRID_LEVELS.region.minZoom
+      ) {
+        level =
+          GRID_LEVELS.region;
+      }
+
+      this.grid.style.setProperty(
+        '--grid-diameter',
+        `${level.diameter}px`
       );
 
-    this.update();
-  }
-
-  draw() {
-    this.update();
-  }
-
-  update() {
-    const map =
-      this.getMap();
-
-    if (!map) {
-      return;
+      this.grid.style.setProperty(
+        '--grid-module',
+        `${level.module}px`
+      );
     }
 
-    const zoom =
-      map.getZoom() ?? 4;
-
-    let level =
-      GRID_LEVELS.territory;
-
-    if (
-      zoom >= GRID_LEVELS.detail.minZoom
-    ) {
-      level =
-        GRID_LEVELS.detail;
-    } else if (
-      zoom >= GRID_LEVELS.region.minZoom
-    ) {
-      level =
-        GRID_LEVELS.region;
+    onRemove() {
+      this.container.remove();
     }
-
-    this.grid.style.setProperty(
-      '--grid-diameter',
-      `${level.diameter}px`
-    );
-
-    this.grid.style.setProperty(
-      '--grid-module',
-      `${level.module}px`
-    );
-  }
-
-  onRemove() {
-    this.container.remove();
-  }
+  };
 }
 
 /* =========================================================
@@ -746,6 +759,13 @@ function renderGoogleMap() {
       /* =====================================================
          DRONSAIR GRID
          ===================================================== */
+
+      /*
+       * Google Maps ya está disponible aquí.
+       * Recién ahora se crea la clase OverlayView.
+       */
+      const DronsairGridOverlay =
+        createDronsairGridOverlayClass();
 
       const gridOverlay =
         new DronsairGridOverlay();
