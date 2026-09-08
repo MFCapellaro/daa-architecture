@@ -344,7 +344,7 @@ function setupLayerPanel() {
 
   const storageKey = 'daa-map-layers-open';
   const stored = localStorage.getItem(storageKey);
-  const initiallyOpen = stored !== 'false';
+  const initiallyOpen = stored !== 'true';
 
   const setOpen = (open) => {
     panel.classList.toggle(
