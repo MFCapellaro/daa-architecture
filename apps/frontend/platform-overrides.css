@@ -1,3 +1,87 @@
 .platform{display:block!important;min-height:100vh}.main{width:100%;min-width:0}.site-header{width:100%;box-sizing:border-box}.view{max-width:none;padding:0}.map-screen{width:100%;margin:0;height:calc(100vh - 92px);min-height:620px}
 @media(max-width:760px){.map-screen{height:calc(100vh - 132px);min-height:540px}}
 .google-map-screen .ecosystem-map{background:#17212b}.google-node{position:absolute;width:13px;height:13px;padding:0;border:2px solid rgba(255,255,255,.95);border-radius:50%;background:var(--node-color);box-shadow:0 0 7px 3px var(--node-color),0 0 22px 7px color-mix(in srgb,var(--node-color),transparent 72%);transform:translate(-50%,-50%);cursor:pointer;transition:transform .18s ease,opacity .18s ease}.google-node:hover{z-index:4;transform:translate(-50%,-50%) scale(1.65)}.google-node.is-hidden{display:none}.map-compact .google-node{width:9px;height:9px;box-shadow:0 0 5px 2px var(--node-color),0 0 12px 3px color-mix(in srgb,var(--node-color),transparent 75%)}
+.map-controls-toggle{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0;
+  border:0;
+  background:none;
+  color:#c9e86b;
+  font:11px 'DM Mono';
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+.map-controls-icon{
+  font-size:18px;
+  line-height:1;
+  font-weight:400;
+}
+
+.map-layer-list{
+  margin-top:14px;
+}
+
+.map-controls.is-collapsed .map-layer-list{
+  display:none;
+}
+
+.map-unavailable{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:10px;
+  padding:32px;
+  text-align:center;
+  color:#d8e5e1;
+  background:rgba(16,27,32,.72);
+}
+
+.map-unavailable .eyebrow{
+  margin:0;
+  color:#c9e86b;
+}
+
+.map-unavailable strong{
+  max-width:420px;
+  font-size:18px;
+}
+
+.map-unavailable span{
+  max-width:460px;
+  color:#91a5a5;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.map-detail{
+  transition:opacity .16s ease, transform .16s ease;
+}
+
+.map-detail.hidden{
+  pointer-events:none;
+}
+
+@media(max-width:760px){
+  .map-controls{
+    right:14px;
+    top:14px;
+    width:190px;
+  }
+
+  .map-detail{
+    left:14px;
+    right:14px;
+    bottom:14px;
+    width:auto;
+    max-height:38vh;
+    overflow:auto;
+  }
+}
