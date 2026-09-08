@@ -1,486 +1,552 @@
 .platform {
-  display: block !important;
-  min-height: 100vh;
+display: block !important;
+min-height: 100vh;
 }
 
 .main {
-  width: 100%;
-  min-width: 0;
+width: 100%;
+min-width: 0;
 }
 
 .site-header {
-  width: 100%;
-  box-sizing: border-box;
+width: 100%;
+box-sizing: border-box;
 }
 
 .view {
-  max-width: none;
-  padding: 0;
+max-width: none;
+padding: 0;
 }
 
 .map-screen {
-  width: 100%;
-  margin: 0;
-  height: calc(100vh - 92px);
-  min-height: 620px;
+position: relative;
+width: 100%;
+margin: 0;
+height: calc(100vh - 92px);
+min-height: 620px;
 }
 
 @media (max-width: 760px) {
-  .map-screen {
-    height: calc(100vh - 132px);
-    min-height: 540px;
-  }
+.map-screen {
+height: calc(100vh - 132px);
+min-height: 540px;
+}
 }
 
 /* =========================================================
-   GOOGLE MAP
-   ========================================================= */
+GOOGLE MAP
+========================================================= */
+
+.google-map-screen {
+position: relative;
+overflow: hidden;
+}
 
 .google-map-screen .ecosystem-map {
-  background: #17212b;
+position: absolute;
+inset: 0;
+
+background: #17212b;
 }
 
 /* =========================================================
-   DRONSAIR — SPATIAL GRID
-   =========================================================
-   El campo tiene 33% de opacidad.
-   Los círculos son perforaciones transparentes.
-   ========================================================= */
+DRONSAIR — SPATIAL GRID
+=======================
+
+Campo rectangular:
+opacity visual = 33%
+
+Perforaciones:
+totalmente transparentes
+
+Los tamaños son definidos dinámicamente por app.js:
+territory = 9 / 18
+region    = 21 / 42
+detail    = 27 / 54
+========================================================= */
 
 .dronsair-grid-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
+position: absolute;
+inset: 0;
 
-  --grid-diameter: 9px;
-  --grid-module: 18px;
-  --grid-color: rgba(122, 82, 180, 0.33);
+z-index: 1;
+
+width: 100%;
+height: 100%;
+
+pointer-events: none;
+
+overflow: hidden;
+
+--grid-diameter: 9px;
+--grid-module: 18px;
+--grid-color: rgba(122, 82, 180, 0.33);
 }
 
 .dronsair-grid {
-  position: absolute;
-  inset: 0;
+position: absolute;
+inset: 0;
 
-  background-color: var(--grid-color);
+width: 100%;
+height: 100%;
 
-  /*
-   * La máscara genera:
-   *
-   *   círculo transparente
-   *   +
-   *   espacio equivalente
-   *
-   * El diámetro del círculo es exactamente la mitad
-   * del módulo.
-   */
+background: var(--grid-color);
 
-  -webkit-mask-image:
-    radial-gradient(
-      circle,
-      transparent 0,
-      transparent calc(var(--grid-diameter) / 2),
-      #000 calc(var(--grid-diameter) / 2 + 0.1px),
-      #000 100%
-    );
+/*
 
-  mask-image:
-    radial-gradient(
-      circle,
-      transparent 0,
-      transparent calc(var(--grid-diameter) / 2),
-      #000 calc(var(--grid-diameter) / 2 + 0.1px),
-      #000 100%
-    );
+* La máscara se repite en módulos cuadrados.
+*
+* Centro:
+* transparente
+*
+* Exterior:
+* visible
+*
+* De esta manera el fondo violeta queda presente
+* únicamente entre las perforaciones.
+  */
 
-  -webkit-mask-size:
-    var(--grid-module) var(--grid-module);
+-webkit-mask-image: radial-gradient(
+circle at center,
+transparent 0,
+transparent calc(var(--grid-diameter) / 2),
+#000 calc(var(--grid-diameter) / 2 + 0.5px),
+#000 100%
+);
 
-  mask-size:
-    var(--grid-module) var(--grid-module);
+mask-image: radial-gradient(
+circle at center,
+transparent 0,
+transparent calc(var(--grid-diameter) / 2),
+#000 calc(var(--grid-diameter) / 2 + 0.5px),
+#000 100%
+);
 
-  -webkit-mask-position:
-    center center;
+-webkit-mask-size:
+var(--grid-module) var(--grid-module);
 
-  mask-position:
-    center center;
+mask-size:
+var(--grid-module) var(--grid-module);
 
-  transition:
-    -webkit-mask-size 0.35s ease,
-    mask-size 0.35s ease;
+-webkit-mask-repeat: repeat;
+mask-repeat: repeat;
+
+-webkit-mask-position: center center;
+mask-position: center center;
 }
 
 /* =========================================================
-   NODES
-   ========================================================= */
+NODES
+========================================================= */
 
 .google-node {
-  position: absolute;
+position: absolute;
 
-  width: 13px;
-  height: 13px;
+z-index: 2;
 
-  padding: 0;
+width: 13px;
+height: 13px;
 
-  border: 2px solid rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
+padding: 0;
 
-  background: var(--node-color);
+border: 2px solid rgba(255, 255, 255, 0.95);
+border-radius: 50%;
 
-  box-shadow:
-    0 0 7px 3px var(--node-color),
-    0 0 22px 7px
-      color-mix(
-        in srgb,
-        var(--node-color),
-        transparent 72%
-      );
+background: var(--node-color);
 
-  transform: translate(-50%, -50%);
+box-shadow:
+0 0 7px 3px var(--node-color),
+0 0 22px 7px
+color-mix(
+in srgb,
+var(--node-color),
+transparent 72%
+);
 
-  cursor: pointer;
+transform: translate(-50%, -50%);
 
-  transition:
-    transform 0.18s ease,
-    opacity 0.18s ease;
+cursor: pointer;
+
+transition:
+transform 0.18s ease,
+opacity 0.18s ease;
 }
 
 .google-node:hover {
-  z-index: 4;
+z-index: 4;
 
-  transform:
-    translate(-50%, -50%)
-    scale(1.65);
+transform:
+translate(-50%, -50%)
+scale(1.65);
 }
 
 .google-node.is-hidden {
-  display: none;
+display: none;
 }
 
 .map-compact .google-node {
-  width: 9px;
-  height: 9px;
+width: 9px;
+height: 9px;
 
-  box-shadow:
-    0 0 5px 2px var(--node-color),
-    0 0 12px 3px
-      color-mix(
-        in srgb,
-        var(--node-color),
-        transparent 75%
-      );
+box-shadow:
+0 0 5px 2px var(--node-color),
+0 0 12px 3px
+color-mix(
+in srgb,
+var(--node-color),
+transparent 75%
+);
 }
 
 /* =========================================================
-   NODE CONTEXTUAL DETAIL
-   ========================================================= */
+NODE CONTEXTUAL DETAIL
+========================================================= */
 
 .google-node-detail {
-  position: absolute;
+position: absolute;
 
-  z-index: 5;
+z-index: 10;
 
-  width: min(260px, 28vw);
-  max-width: 260px;
+width: min(260px, 28vw);
+max-width: 260px;
 
-  padding: 12px 14px;
+padding: 12px 14px;
 
-  border-radius: 7px;
+border-radius: 7px;
 
-  background: rgba(16, 27, 32, 0.88);
+background: rgba(16, 27, 32, 0.88);
 
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.28),
-    0 0 18px
-      color-mix(
-        in srgb,
-        var(--node-color),
-        transparent 82%
-      );
+box-shadow:
+0 8px 24px rgba(0, 0, 0, 0.28),
+0 0 18px
+color-mix(
+in srgb,
+var(--node-color),
+transparent 82%
+);
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
 
-  color: #d8e5e1;
+color: #d8e5e1;
 
-  pointer-events: auto;
+pointer-events: auto;
 
-  opacity: 1;
+opacity: 1;
 
-  transform:
-    translateY(0)
-    scale(1);
+transform:
+translateY(0)
+scale(1);
 
-  transform-origin: left center;
+transform-origin: left center;
 
-  transition:
-    opacity 0.14s ease,
-    transform 0.14s ease;
+transition:
+opacity 0.14s ease,
+transform 0.14s ease;
 }
 
 .google-node-detail.hidden {
-  display: none;
+display: none;
 }
 
 .google-node-detail::before {
-  content: "";
+content: "";
 
-  position: absolute;
+position: absolute;
 
-  left: -6px;
-  top: 15px;
+left: -6px;
+top: 15px;
 
-  width: 10px;
-  height: 10px;
+width: 10px;
+height: 10px;
 
-  background: rgba(16, 27, 32, 0.88);
+background: rgba(16, 27, 32, 0.88);
 
-  transform: rotate(45deg);
+transform: rotate(45deg);
 }
 
 .google-node-detail .eyebrow {
-  margin: 0 0 5px;
+margin: 0 0 5px;
 
-  color: var(--node-color, #c9e86b);
+color: var(--node-color, #c9e86b);
 
-  font: 9px "DM Mono";
+font: 9px "DM Mono";
 
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+text-transform: uppercase;
+letter-spacing: 0.08em;
 }
 
 .google-node-detail strong {
-  display: block;
+display: block;
 
-  margin-bottom: 6px;
+margin-bottom: 6px;
 
-  color: #f2f6f4;
+color: #f2f6f4;
 
-  font-size: 14px;
-  line-height: 1.25;
+font-size: 14px;
+line-height: 1.25;
 }
 
 .google-node-detail span {
-  display: block;
+display: block;
 
-  color: #aabbb8;
+color: #aabbb8;
 
-  font-size: 11px;
-  line-height: 1.45;
+font-size: 11px;
+line-height: 1.45;
 }
 
 /* =========================================================
-   LAYERS
-   ========================================================= */
+LAYERS — CAPAS
+==============
+
+Estado plegado:
+mínimo
+casi espacial
+poca superficie
+
+Estado expandido:
+fondo 46% opaco
+contenido legible
+
+Geometría:
+6px en tres esquinas
+esquina superior derecha abierta
+========================================================= */
 
 .map-controls {
-  right: 20px;
-  top: 20px;
+position: absolute;
 
-  width: auto;
-  min-width: 92px;
+right: 20px;
+top: 20px;
 
-  padding: 4px 9px 6px;
+z-index: 20;
 
-  background: rgba(16, 27, 32, 0.25);
+width: auto;
+min-width: 92px;
 
-  border: none;
+padding: 4px 9px 6px;
 
-  border-radius:
-    6px 0 6px 6px;
+background: rgba(16, 27, 32, 0.25);
 
-  box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.18);
+border: none;
 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+border-radius: 6px 0 6px 6px;
+
+box-shadow:
+0 8px 22px rgba(0, 0, 0, 0.18);
+
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+
+transition:
+background 0.18s ease,
+box-shadow 0.18s ease;
 }
 
 .map-controls:not(.is-collapsed) {
-  background: rgba(16, 27, 32, 0.46);
+background: rgba(16, 27, 32, 0.46);
+
+box-shadow:
+0 9px 24px rgba(0, 0, 0, 0.24);
 }
 
 .map-controls-toggle {
-  width: 100%;
+width: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+display: flex;
+align-items: center;
+justify-content: space-between;
 
-  gap: 12px;
+gap: 12px;
 
-  padding: 0;
+padding: 0;
 
-  border: 0;
+border: 0;
 
-  background: none;
+background: transparent;
 
-  color: #c9e86b;
+color: #c9e86b;
 
-  font: 10px "DM Mono";
+font: 10px "DM Mono";
 
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+text-transform: uppercase;
+letter-spacing: 0.08em;
 
-  cursor: pointer;
+cursor: pointer;
 }
 
 .map-controls-icon {
-  font-size: 14px;
-  line-height: 1;
-  font-weight: 400;
+font-size: 14px;
+line-height: 1;
+font-weight: 400;
 }
 
 .map-layer-list {
-  margin-top: 7px;
+margin-top: 7px;
 }
 
 .map-controls label {
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 
-  gap: 6px;
+gap: 6px;
 
-  padding: 4px 0;
+padding: 4px 0;
 
-  border-top:
-    1px solid rgba(255, 255, 255, 0.07);
+border-top:
+1px solid rgba(255, 255, 255, 0.07);
 
-  color: #c5d2d0;
+color: #c5d2d0;
 
-  font: 9px "DM Mono";
+font: 9px "DM Mono";
+
+cursor: pointer;
 }
 
 .map-controls label i {
-  width: 6px;
-  height: 6px;
+width: 6px;
+height: 6px;
 
-  flex: 0 0 6px;
+flex: 0 0 6px;
 
-  border-radius: 50%;
+border-radius: 50%;
 }
 
 .map-controls input {
-  width: 10px;
-  height: 10px;
+width: 10px;
+height: 10px;
 
-  margin: 0;
+margin: 0;
+
+cursor: pointer;
 }
 
 .map-controls.is-collapsed {
-  min-width: 0;
+min-width: 0;
 }
 
 .map-controls.is-collapsed .map-layer-list {
-  display: none;
+display: none;
 }
 
 /* =========================================================
-   MAP UNAVAILABLE
-   ========================================================= */
+MAP UNAVAILABLE
+========================================================= */
 
 .map-unavailable {
-  position: absolute;
+position: absolute;
 
-  inset: 0;
+inset: 0;
 
-  z-index: 3;
+z-index: 30;
 
-  display: flex;
+display: flex;
 
-  align-items: center;
-  justify-content: center;
+align-items: center;
+justify-content: center;
 
-  flex-direction: column;
+flex-direction: column;
 
-  gap: 10px;
+gap: 10px;
 
-  padding: 32px;
+padding: 32px;
 
-  text-align: center;
+text-align: center;
 
-  color: #d8e5e1;
+color: #d8e5e1;
 
-  background: rgba(16, 27, 32, 0.72);
+background: rgba(16, 27, 32, 0.72);
 }
 
 .map-unavailable .eyebrow {
-  margin: 0;
+margin: 0;
 
-  color: #c9e86b;
+color: #c9e86b;
 }
 
 .map-unavailable strong {
-  max-width: 420px;
+max-width: 420px;
 
-  font-size: 18px;
+font-size: 18px;
 }
 
 .map-unavailable span {
-  max-width: 460px;
+max-width: 460px;
 
-  color: #91a5a5;
+color: #91a5a5;
 
-  font-size: 12px;
-  line-height: 1.5;
+font-size: 12px;
+line-height: 1.5;
 }
 
 /* =========================================================
-   MOBILE
-   ========================================================= */
+MOBILE
+========================================================= */
 
 @media (max-width: 760px) {
 
-  .map-controls {
-    right: 10px;
-    top: 10px;
+.map-controls {
+right: 10px;
+top: 10px;
 
-    min-width: 0;
+```
+min-width: 0;
 
-    padding:
-      3px 7px 5px;
-  }
+padding:
+  3px 7px 5px;
+```
 
-  .map-controls-toggle {
-    gap: 8px;
+}
 
-    font-size: 9px;
-  }
+.map-controls-toggle {
+gap: 8px;
 
-  .map-controls-icon {
-    font-size: 13px;
-  }
+```
+font-size: 9px;
+```
 
-  .map-layer-list {
-    margin-top: 5px;
-  }
+}
 
-  .map-controls label {
-    gap: 5px;
+.map-controls-icon {
+font-size: 13px;
+}
 
-    padding: 3px 0;
+.map-layer-list {
+margin-top: 5px;
+}
 
-    font-size: 8px;
-  }
+.map-controls label {
+gap: 5px;
 
-  .map-controls input {
-    width: 9px;
-    height: 9px;
-  }
+```
+padding: 3px 0;
 
-  .google-node-detail {
-    width: min(230px, calc(100vw - 40px));
-    max-width: calc(100vw - 40px);
+font-size: 8px;
+```
 
-    padding: 10px 12px;
-  }
+}
 
-  .google-node-detail strong {
-    font-size: 13px;
-  }
+.map-controls input {
+width: 9px;
+height: 9px;
+}
 
-  .google-node-detail span {
-    font-size: 10px;
-  }
+.google-node-detail {
+width: min(230px, calc(100vw - 40px));
+max-width: calc(100vw - 40px);
+
+```
+padding: 10px 12px;
+```
+
+}
+
+.google-node-detail strong {
+font-size: 13px;
+}
+
+.google-node-detail span {
+font-size: 10px;
+}
 }
