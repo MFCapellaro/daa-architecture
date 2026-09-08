@@ -5,7 +5,8 @@ const state = {
   view: 'map'
 };
 
-const $ = (selector) => document.querySelector(selector);
+const $ = (selector) =>
+  document.querySelector(selector);
 
 const escapeHtml = (value = '') =>
   String(value).replace(
@@ -31,62 +32,94 @@ const accounts = {
     password: 'participante',
     role: 'participant'
   },
+
   'dealer@dronsair.ar': {
     password: 'dealer',
     role: 'dealer'
   }
 };
 
-let mapDetailHideTimer = null;
-
 async function api(path) {
   const response = await fetch(path);
 
   if (!response.ok) {
-    throw new Error('No se pudo cargar la plataforma');
+    throw new Error(
+      'No se pudo cargar la plataforma'
+    );
   }
 
   return response.json();
 }
 
 function validCoordinates(value) {
-  return Number.isFinite(Number(value?.lng)) &&
-    Number.isFinite(Number(value?.lat));
+  return (
+    Number.isFinite(Number(value?.lng)) &&
+    Number.isFinite(Number(value?.lat))
+  );
 }
 
 function activityCard(activity) {
-  const month = new Intl.DateTimeFormat('es-AR', {
-    month: 'short'
-  }).format(new Date(activity.startsAt));
+  const month =
+    new Intl.DateTimeFormat('es-AR', {
+      month: 'short'
+    }).format(
+      new Date(activity.startsAt)
+    );
 
   return `
     <article class="activity-row">
       <div class="activity-date">
-        <strong>${new Date(activity.startsAt).getDate()}</strong>
-        <span>${month.toUpperCase()}</span>
+        <strong>
+          ${new Date(activity.startsAt).getDate()}
+        </strong>
+
+        <span>
+          ${month.toUpperCase()}
+        </span>
       </div>
+
       <div>
-        <strong>${escapeHtml(activity.title)}</strong>
-        <span>${escapeHtml(activity.location)} · ${activity.type}</span>
+        <strong>
+          ${escapeHtml(activity.title)}
+        </strong>
+
+        <span>
+          ${escapeHtml(activity.location)}
+          ·
+          ${activity.type}
+        </span>
       </div>
+
       <b class="arrow">↗</b>
     </article>
   `;
 }
 
 function renderHome() {
-  $('#view-title').textContent = 'Inicio';
+  $('#view-title').textContent =
+    'Inicio';
 
   $('#view').innerHTML = `
     <section class="home-view">
+
       <div class="home-intro">
-        <p class="eyebrow">DRONSAIR / ECOSISTEMA</p>
-        <h1>Una red que<br /><em>aprende con vos.</em></h1>
+
+        <p class="eyebrow">
+          DRONSAIR / ECOSISTEMA
+        </p>
+
+        <h1>
+          Una red que<br />
+          <em>aprende con vos.</em>
+        </h1>
+
         <p>
           El ecosistema argentino de drones agrícolas,
           sus actores, capacidades y actividades.
         </p>
+
       </div>
+
     </section>
   `;
 }
@@ -136,16 +169,25 @@ function canonicalLayer(node) {
 
   const layer =
     node.layers?.find(
-      (item) => aliases[item] || knownLayers.includes(item)
+      (item) =>
+        aliases[item] ||
+        knownLayers.includes(item)
     ) || '';
 
   return (
     aliases[layer] ||
-    node.layers?.find((item) => knownLayers.includes(item)) ||
+    node.layers?.find(
+      (item) =>
+        knownLayers.includes(item)
+    ) ||
     aliases[node.type] ||
     'organization'
   );
 }
+
+/* =========================================================
+   MAP DATA
+   ========================================================= */
 
 function mapFeatures() {
   const layers = [
@@ -163,188 +205,186 @@ function mapFeatures() {
     'public'
   ];
 
-  const directoryFeatures = state.home.directory
-    .filter((node) => validCoordinates(node.location?.coordinates))
-    .map((node) => {
-      const layer = canonicalLayer(node);
+  /*
+   * IMPORTANTE:
+   * Solo entran al mapa registros que tengan
+   * coordenadas reales.
+   *
+   * No existe fallback geográfico.
+   */
 
-      const coordinates = [
-        Number(node.location.coordinates.lng),
-        Number(node.location.coordinates.lat)
-      ];
+  const directoryFeatures =
+    state.home.directory
+      .filter((node) =>
+        validCoordinates(
+          node.location?.coordinates
+        )
+      )
+      .map((node) => {
+        const layer =
+          canonicalLayer(node);
 
-      return {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates
-        },
-        properties: {
-          id: node.id,
-          name: node.name,
-          layer,
-          description: `${node.type} · ${node.status}`,
-          color: mapColor(layer),
-          provisional: false
-        }
-      };
-    });
+        const coordinates = [
+          Number(
+            node.location.coordinates.lng
+          ),
+          Number(
+            node.location.coordinates.lat
+          )
+        ];
 
-  const participantFeatures = state.home.participants
-    .filter((participant) =>
-      validCoordinates(participant.location?.coordinates)
-    )
-    .map((participant) => {
-      const coordinates = [
-        Number(participant.location.coordinates.lng),
-        Number(participant.location.coordinates.lat)
-      ];
+        return {
+          type: 'Feature',
 
-      return {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates
-        },
-        properties: {
-          id: participant.id,
-          name: participant.id,
-          layer: 'participants',
-          description: `Trayectoria ${participant.informationStatus}`,
-          color: mapColor('participants'),
-          provisional: false
-        }
-      };
-    });
+          geometry: {
+            type: 'Point',
+            coordinates
+          },
 
-  const activityFeatures = state.home.activities
-    .filter((activity) =>
-      validCoordinates(activity.location?.coordinates)
-    )
-    .map((activity) => {
-      const coordinates = [
-        Number(activity.location.coordinates.lng),
-        Number(activity.location.coordinates.lat)
-      ];
+          properties: {
+            id: node.id,
+            name: node.name,
+            layer,
+            description:
+              `${node.type} · ${node.status}`,
+            color: mapColor(layer),
+            provisional: false
+          }
+        };
+      });
 
-      return {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates
-        },
-        properties: {
-          id: activity.id,
-          name: activity.title,
-          layer: 'activities',
-          description:
-            `${activity.type} · ${activity.location.name || ''}`,
-          color: mapColor('activities'),
-          provisional: false
-        }
-      };
-    });
+  const participantFeatures =
+    state.home.participants
+      .filter((participant) =>
+        validCoordinates(
+          participant.location?.coordinates
+        )
+      )
+      .map((participant) => {
+        const coordinates = [
+          Number(
+            participant.location.coordinates.lng
+          ),
+          Number(
+            participant.location.coordinates.lat
+          )
+        ];
+
+        return {
+          type: 'Feature',
+
+          geometry: {
+            type: 'Point',
+            coordinates
+          },
+
+          properties: {
+            id: participant.id,
+            name: participant.id,
+            layer: 'participants',
+            description:
+              `Trayectoria ${participant.informationStatus}`,
+            color: mapColor('participants'),
+            provisional: false
+          }
+        };
+      });
+
+  const activityFeatures =
+    state.home.activities
+      .filter((activity) =>
+        validCoordinates(
+          activity.location?.coordinates
+        )
+      )
+      .map((activity) => {
+        const coordinates = [
+          Number(
+            activity.location.coordinates.lng
+          ),
+          Number(
+            activity.location.coordinates.lat
+          )
+        ];
+
+        return {
+          type: 'Feature',
+
+          geometry: {
+            type: 'Point',
+            coordinates
+          },
+
+          properties: {
+            id: activity.id,
+            name: activity.title,
+            layer: 'activities',
+            description:
+              `${activity.type} · ${
+                activity.location.name || ''
+              }`,
+            color: mapColor('activities'),
+            provisional: false
+          }
+        };
+      });
 
   return {
     type: 'FeatureCollection',
+
     features: [
       ...directoryFeatures,
       ...participantFeatures,
       ...activityFeatures
     ],
-    layers: [...layers, 'activities']
+
+    layers: [
+      ...layers,
+      'activities'
+    ]
   };
 }
 
-function hideMapDetail() {
-  window.clearTimeout(mapDetailHideTimer);
-
-  const detail = $('#map-detail');
-
-  if (detail) {
-    detail.classList.add('hidden');
-  }
-}
-
-function scheduleMapDetailHide() {
-  window.clearTimeout(mapDetailHideTimer);
-
-  mapDetailHideTimer = window.setTimeout(
-    hideMapDetail,
-    180
-  );
-}
-
-function showMapDetail(properties) {
-  window.clearTimeout(mapDetailHideTimer);
-
-  const detail = $('#map-detail');
-
-  if (!detail) {
-    return;
-  }
-
-  detail.classList.remove('hidden');
-
-  detail.innerHTML = `
-    <button
-      class="detail-close"
-      aria-label="Cerrar detalle"
-    >
-      ×
-    </button>
-
-    <p class="eyebrow">
-      ${escapeHtml(properties.layer)}
-    </p>
-
-    <h2>
-      ${escapeHtml(properties.name)}
-    </h2>
-
-    <p>
-      ${escapeHtml(properties.description)}
-    </p>
-
-    <small>
-      ${
-        properties.provisional
-          ? 'Ubicación provisional: falta georreferenciar la dirección.'
-          : 'Ubicación georreferenciada.'
-      }
-    </small>
-  `;
-
-  detail
-    .querySelector('.detail-close')
-    .addEventListener('click', (event) => {
-      event.stopPropagation();
-      hideMapDetail();
-    });
-}
+/* =========================================================
+   LAYER PANEL
+   ========================================================= */
 
 function setupLayerPanel() {
-  const panel = $('#map-controls-panel');
+  const panel =
+    $('#map-controls-panel');
 
   if (!panel) {
     return;
   }
 
-  const toggle = panel.querySelector(
-    '.map-controls-toggle'
-  );
+  const toggle =
+    panel.querySelector(
+      '.map-controls-toggle'
+    );
 
-  const content = panel.querySelector(
-    '.map-layer-list'
-  );
+  const content =
+    panel.querySelector(
+      '.map-layer-list'
+    );
 
   if (!toggle || !content) {
     return;
   }
 
-  const storageKey = 'daa-map-layers-open';
-  const stored = localStorage.getItem(storageKey);
-  const initiallyOpen = stored !== 'true';
+  const storageKey =
+    'daa-map-layers-open';
+
+  const stored =
+    localStorage.getItem(
+      storageKey
+    );
+
+  /*
+   * Si nunca se guardó un estado,
+   * CAPAS comienza cerrada.
+   */
+  const initiallyOpen =
+    stored === 'true';
 
   const setOpen = (open) => {
     panel.classList.toggle(
@@ -357,9 +397,15 @@ function setupLayerPanel() {
       String(open)
     );
 
-    toggle.querySelector(
-      '.map-controls-icon'
-    ).textContent = open ? '−' : '+';
+    const icon =
+      toggle.querySelector(
+        '.map-controls-icon'
+      );
+
+    if (icon) {
+      icon.textContent =
+        open ? '−' : '+';
+    }
 
     content.hidden = !open;
 
@@ -369,25 +415,37 @@ function setupLayerPanel() {
     );
   };
 
-  toggle.addEventListener('click', () => {
-    setOpen(
-      panel.classList.contains('is-collapsed')
-    );
-  });
+  toggle.addEventListener(
+    'click',
+    () => {
+      setOpen(
+        panel.classList.contains(
+          'is-collapsed'
+        )
+      );
+    }
+  );
 
   setOpen(initiallyOpen);
 }
 
+/* =========================================================
+   FALLBACK
+   ========================================================= */
+
 function renderFallbackNodes() {
-  const map = $('#ecosystem-map');
+  const map =
+    $('#ecosystem-map');
 
   if (!map) {
     return;
   }
 
-  const message = document.createElement('div');
+  const message =
+    document.createElement('div');
 
-  message.className = 'map-unavailable';
+  message.className =
+    'map-unavailable';
 
   message.innerHTML = `
     <p class="eyebrow">
@@ -395,321 +453,129 @@ function renderFallbackNodes() {
     </p>
 
     <strong>
-      La representación geográfica requiere un mapa activo.
+      La representación geográfica requiere
+      un mapa activo.
     </strong>
 
     <span>
-      Los registros sin georreferenciación permanecen
-      disponibles en el Directorio.
+      Los registros sin georreferenciación
+      permanecen disponibles en el Directorio.
     </span>
   `;
 
   map.appendChild(message);
 }
 
-function renderMap() {
-  $('#view-title').textContent = 'Mapa del ecosistema';
+/* =========================================================
+   DRONSAIR GRID
+   ========================================================= */
 
-  $('#view').innerHTML = `
-    <div class="map-screen">
+const GRID_LEVELS = {
+  territory: {
+    minZoom: 0,
+    diameter: 9,
+    module: 18
+  },
 
-      <div class="map-overlay map-copy">
-        <p class="eyebrow">
-          Capas nodales / zoom semántico
-        </p>
+  region: {
+    minZoom: 5,
+    diameter: 21,
+    module: 42
+  },
 
-        <h1>
-          El territorio<br />
-          <em>conectado.</em>
-        </h1>
+  detail: {
+    minZoom: 9,
+    diameter: 27,
+    module: 54
+  }
+};
 
-        <p>
-          Acercate para descubrir la red.
-        </p>
-      </div>
+class DronsairGridOverlay
+  extends google.maps.OverlayView {
 
-      <div
-        class="map-overlay map-controls"
-        id="map-controls-panel"
-      >
-        <button
-          class="map-controls-toggle"
-          type="button"
-          aria-expanded="true"
-          aria-controls="map-layer-controls"
-        >
-          <span>Capas</span>
-          <b class="map-controls-icon">−</b>
-        </button>
+  constructor() {
+    super();
 
-        <div
-          id="map-layer-controls"
-          class="map-layer-list"
-        ></div>
-      </div>
+    this.container =
+      document.createElement('div');
 
-      <div
-        id="ecosystem-map"
-        class="ecosystem-map"
-      ></div>
+    this.container.className =
+      'dronsair-grid-overlay';
 
-      <aside
-        id="map-detail"
-        class="map-detail hidden"
-      ></aside>
+    this.grid =
+      document.createElement('div');
 
-    </div>
-  `;
+    this.grid.className =
+      'dronsair-grid';
 
-  const data = mapFeatures();
-  const controls = $('#map-layer-controls');
+    this.container.appendChild(
+      this.grid
+    );
+  }
 
-  data.layers
-    .concat(['participants'])
-    .forEach((layer) => {
-      controls.insertAdjacentHTML(
-        'beforeend',
-        `
-          <label>
-            <input
-              type="checkbox"
-              checked
-              data-map-layer="${layer}"
-            />
-
-            <i
-              style="background:${mapColor(layer)}"
-            ></i>
-
-            ${layer}
-          </label>
-        `
+  onAdd() {
+    this.getPanes()
+      .overlayLayer
+      .appendChild(
+        this.container
       );
-    });
 
-  setupLayerPanel();
+    this.update();
+  }
 
-  const mapStyle = {
-    version: 8,
-    sources: {
-      osm: {
-        type: 'raster',
-        tiles: [
-          'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
-        ],
-        tileSize: 256,
-        attribution: '© OpenStreetMap contributors'
-      }
-    },
-    layers: [
-      {
-        id: 'background',
-        type: 'background',
-        paint: {
-          'background-color': '#101b20'
-        }
-      },
-      {
-        id: 'osm',
-        type: 'raster',
-        source: 'osm',
-        paint: {
-          'raster-opacity': 0.18,
-          'raster-saturation': -1,
-          'raster-contrast': 0.2
-        }
-      }
-    ]
-  };
+  draw() {
+    this.update();
+  }
 
-  const map = new maplibregl.Map({
-    container: 'ecosystem-map',
-    center: [-63.6, -35.5],
-    zoom: 3.1,
-    minZoom: 2.4,
-    maxZoom: 12,
-    style: mapStyle,
-    attributionControl: false
-  });
+  update() {
+    const map =
+      this.getMap();
 
-  window.setTimeout(() => {
-    if (!map.isStyleLoaded()) {
-      renderFallbackNodes();
+    if (!map) {
+      return;
     }
-  }, 1200);
 
-  map.addControl(
-    new maplibregl.NavigationControl(),
-    'bottom-right'
-  );
+    const zoom =
+      map.getZoom() ?? 4;
 
-  map.on('load', () => {
-    map.addSource('ecosystem', {
-      type: 'geojson',
-      data,
-      cluster: true,
-      clusterMaxZoom: 7,
-      clusterRadius: 48
-    });
+    let level =
+      GRID_LEVELS.territory;
 
-    map.addLayer({
-      id: 'clusters',
-      type: 'circle',
-      source: 'ecosystem',
-      filter: ['has', 'point_count'],
-      paint: {
-        'circle-color': '#7770d8',
-        'circle-opacity': 0.85,
-        'circle-radius': [
-          'step',
-          ['get', 'point_count'],
-          18,
-          20,
-          25,
-          80,
-          32
-        ],
-        'circle-stroke-color': '#c9e86b',
-        'circle-stroke-width': 1
-      }
-    });
+    if (
+      zoom >= GRID_LEVELS.detail.minZoom
+    ) {
+      level =
+        GRID_LEVELS.detail;
+    } else if (
+      zoom >= GRID_LEVELS.region.minZoom
+    ) {
+      level =
+        GRID_LEVELS.region;
+    }
 
-    map.addLayer({
-      id: 'cluster-count',
-      type: 'symbol',
-      source: 'ecosystem',
-      filter: ['has', 'point_count'],
-      layout: {
-        'text-field': '{point_count_abbreviated}',
-        'text-size': 11
-      },
-      paint: {
-        'text-color': '#ffffff'
-      }
-    });
-
-    map.addLayer({
-      id: 'nodes',
-      type: 'circle',
-      source: 'ecosystem',
-      filter: ['!', ['has', 'point_count']],
-      paint: {
-        'circle-color': ['get', 'color'],
-        'circle-radius': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          3,
-          4,
-          7,
-          7,
-          11,
-          10
-        ],
-        'circle-blur': 0.15,
-        'circle-opacity': 0.95,
-        'circle-stroke-color': '#ffffff',
-        'circle-stroke-width': 1
-      }
-    });
-
-    map.addLayer({
-      id: 'node-labels',
-      type: 'symbol',
-      source: 'ecosystem',
-      minzoom: 7,
-      filter: ['!', ['has', 'point_count']],
-      layout: {
-        'text-field': ['get', 'name'],
-        'text-size': 11,
-        'text-offset': [0, 1.4],
-        'text-anchor': 'top'
-      },
-      paint: {
-        'text-color': '#ffffff',
-        'text-halo-color': '#101b20',
-        'text-halo-width': 2
-      }
-    });
-
-    controls
-      .querySelectorAll('input')
-      .forEach((input) => {
-        input.addEventListener('change', () => {
-          const selected = [
-            ...controls.querySelectorAll(
-              'input:checked'
-            )
-          ].map(
-            (item) => item.dataset.mapLayer
-          );
-
-          const filter = [
-            'in',
-            ['get', 'layer'],
-            ['literal', selected]
-          ];
-
-          map.setFilter('nodes', filter);
-          map.setFilter(
-            'node-labels',
-            filter
-          );
-        });
-      });
-
-    map.on(
-      'mouseenter',
-      'nodes',
-      (event) => {
-        map.getCanvas().style.cursor = 'pointer';
-
-        if (event.features?.[0]) {
-          showMapDetail(
-            event.features[0].properties
-          );
-        }
-      }
+    this.grid.style.setProperty(
+      '--grid-diameter',
+      `${level.diameter}px`
     );
 
-    map.on(
-      'mouseleave',
-      'nodes',
-      () => {
-        map.getCanvas().style.cursor = '';
-        scheduleMapDetailHide();
-      }
+    this.grid.style.setProperty(
+      '--grid-module',
+      `${level.module}px`
     );
+  }
 
-    map.on(
-      'click',
-      'nodes',
-      (event) => {
-        if (event.features?.[0]) {
-          showMapDetail(
-            event.features[0].properties
-          );
-        }
-      }
-    );
-
-    map.on('click', () => {
-      const detail = $('#map-detail');
-
-      if (
-        detail &&
-        !detail.matches(':hover')
-      ) {
-        hideMapDetail();
-      }
-    });
-  });
+  onRemove() {
+    this.container.remove();
+  }
 }
 
+/* =========================================================
+   GOOGLE MAP
+   ========================================================= */
+
 async function loadGoogleMaps() {
-  const config = await api(
-    '/api/maps-config'
-  );
+  const config =
+    await api('/api/maps-config');
 
   if (!config.googleMapsApiKey) {
     return false;
@@ -719,29 +585,40 @@ async function loadGoogleMaps() {
     return true;
   }
 
-  await new Promise((resolve, reject) => {
-    const callback =
-      `daaGoogleMapsReady_${Date.now()}`;
+  await new Promise(
+    (resolve, reject) => {
+      const callback =
+        `daaGoogleMapsReady_${Date.now()}`;
 
-    window[callback] = resolve;
+      window[callback] =
+        resolve;
 
-    const script =
-      document.createElement('script');
+      const script =
+        document.createElement(
+          'script'
+        );
 
-    script.src =
-      'https://maps.googleapis.com/maps/api/js' +
-      `?key=${encodeURIComponent(config.googleMapsApiKey)}` +
-      '&libraries=geometry' +
-      `&callback=${callback}`;
+      script.src =
+        'https://maps.googleapis.com/maps/api/js' +
+        `?key=${encodeURIComponent(
+          config.googleMapsApiKey
+        )}` +
+        '&libraries=geometry' +
+        `&callback=${callback}`;
 
-    script.async = true;
-    script.defer = true;
-    script.onerror = reject;
+      script.async = true;
+      script.defer = true;
+      script.onerror = reject;
 
-    document.head.appendChild(script);
-  });
+      document.head.appendChild(
+        script
+      );
+    }
+  );
 
-  return Boolean(window.google?.maps);
+  return Boolean(
+    window.google?.maps
+  );
 }
 
 function renderGoogleMap() {
@@ -752,6 +629,7 @@ function renderGoogleMap() {
     <div class="map-screen google-map-screen">
 
       <div class="map-overlay map-copy">
+
         <p class="eyebrow">
           Capas nodales / zoom semántico
         </p>
@@ -764,26 +642,29 @@ function renderGoogleMap() {
         <p>
           Acercate para descubrir la red.
         </p>
+
       </div>
 
       <div
-        class="map-overlay map-controls"
+        class="map-overlay map-controls is-collapsed"
         id="map-controls-panel"
       >
+
         <button
           class="map-controls-toggle"
           type="button"
-          aria-expanded="true"
+          aria-expanded="false"
           aria-controls="map-layer-controls"
         >
           <span>Capas</span>
-          <b class="map-controls-icon">−</b>
+          <b class="map-controls-icon">+</b>
         </button>
 
         <div
           id="map-layer-controls"
           class="map-layer-list"
         ></div>
+
       </div>
 
       <div
@@ -791,16 +672,14 @@ function renderGoogleMap() {
         class="ecosystem-map"
       ></div>
 
-      <aside
-        id="map-detail"
-        class="map-detail hidden"
-      ></aside>
-
     </div>
   `;
 
-  const data = mapFeatures();
-  const controls = $('#map-layer-controls');
+  const data =
+    mapFeatures();
+
+  const controls =
+    $('#map-layer-controls');
 
   data.layers
     .concat(['participants'])
@@ -809,6 +688,7 @@ function renderGoogleMap() {
         'beforeend',
         `
           <label>
+
             <input
               type="checkbox"
               checked
@@ -820,6 +700,7 @@ function renderGoogleMap() {
             ></i>
 
             ${layer}
+
           </label>
         `
       );
@@ -829,83 +710,68 @@ function renderGoogleMap() {
 
   loadGoogleMaps()
     .then((available) => {
+
       if (!available) {
         renderFallbackNodes();
         return;
       }
 
-      const map = new google.maps.Map(
-        $('#ecosystem-map'),
-        {
-          center: {
-            lat: -35.5,
-            lng: -63.6
-          },
-          zoom: 4,
-          minZoom: 3,
-          maxZoom: 16,
-          mapTypeControl: false,
-          streetViewControl: false,
-          fullscreenControl: false,
-          clickableIcons: false,
+      const map =
+        new google.maps.Map(
+          $('#ecosystem-map'),
+          {
+            center: {
+              lat: -35.5,
+              lng: -63.6
+            },
 
-          styles: [
-            {
-              elementType: 'geometry',
-              stylers: [
-                {
-                  color: '#17212b'
-                }
-              ]
-            },
-            {
-              elementType: 'labels.text.stroke',
-              stylers: [
-                {
-                  color: '#17212b'
-                }
-              ]
-            },
-            {
-              elementType: 'labels.text.fill',
-              stylers: [
-                {
-                  color: '#9fb4c1'
-                }
-              ]
-            },
-            {
-              featureType:
-                'administrative.country',
-              elementType:
-                'geometry.stroke',
-              stylers: [
-                {
-                  color: '#637482'
-                }
-              ]
-            },
-            {
-              featureType: 'water',
-              elementType: 'geometry',
-              stylers: [
-                {
-                  color: '#0e2638'
-                }
-              ]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry',
-              stylers: [
-                {
-                  color: '#263744'
-                }
-              ]
-            }
-          ]
+            zoom: 4,
+
+            minZoom: 3,
+            maxZoom: 16,
+
+            /*
+             * Conservamos el relieve
+             * colorimétrico de Google.
+             */
+            mapTypeId: 'terrain',
+
+            mapTypeControl: false,
+            streetViewControl: false,
+            fullscreenControl: false,
+            clickableIcons: false
+          }
+        );
+
+      /* =====================================================
+         DRONSAIR GRID
+         ===================================================== */
+
+      const gridOverlay =
+        new DronsairGridOverlay();
+
+      gridOverlay.setMap(map);
+
+      map.addListener(
+        'zoom_changed',
+        () => {
+          gridOverlay.update();
+
+          const compact =
+            map.getZoom() < 5;
+
+          $('#ecosystem-map')
+            .classList
+            .toggle(
+              'map-compact',
+              compact
+            );
         }
       );
+
+      /* =====================================================
+         NODE OVERLAY
+         ===================================================== */
 
       class NodeOverlay
         extends google.maps.OverlayView {
@@ -913,13 +779,22 @@ function renderGoogleMap() {
         constructor(feature) {
           super();
 
-          this.feature = feature;
+          this.feature =
+            feature;
+
+          this.hideTimer =
+            null;
 
           this.node =
-            document.createElement('button');
+            document.createElement(
+              'button'
+            );
 
           this.node.className =
             'google-node';
+
+          this.node.type =
+            'button';
 
           this.node.dataset.layer =
             feature.properties.layer;
@@ -932,43 +807,171 @@ function renderGoogleMap() {
             feature.properties.color
           );
 
+          this.detail =
+            document.createElement(
+              'div'
+            );
+
+          this.detail.className =
+            'google-node-detail hidden';
+
+          this.detail.style.setProperty(
+            '--node-color',
+            feature.properties.color
+          );
+
+          this.detail.innerHTML = `
+            <p class="eyebrow">
+              ${escapeHtml(
+                feature.properties.layer
+              )}
+            </p>
+
+            <strong>
+              ${escapeHtml(
+                feature.properties.name
+              )}
+            </strong>
+
+            <span>
+              ${escapeHtml(
+                feature.properties.description
+              )}
+            </span>
+          `;
+
+          /*
+           * Desktop:
+           * entrar al nodo abre.
+           */
           this.node.addEventListener(
             'mouseenter',
             () => {
-              showMapDetail(
-                feature.properties
-              );
+              this.showDetail();
             }
           );
 
+          /*
+           * Salir del nodo no cierra
+           * inmediatamente.
+           *
+           * Esto permite pasar el cursor
+           * desde el nodo hacia el detalle.
+           */
           this.node.addEventListener(
             'mouseleave',
             () => {
-              scheduleMapDetailHide();
+              this.scheduleHide();
             }
           );
 
+          /*
+           * Mobile:
+           * tap abre/cierra.
+           */
           this.node.addEventListener(
             'click',
             (event) => {
               event.stopPropagation();
 
-              showMapDetail(
-                feature.properties
-              );
+              if (
+                this.detail.classList.contains(
+                  'hidden'
+                )
+              ) {
+                this.showDetail();
+              } else {
+                this.hideDetail();
+              }
             }
+          );
+
+          /*
+           * El detalle también forma parte
+           * de la zona activa.
+           */
+          this.detail.addEventListener(
+            'mouseenter',
+            () => {
+              this.showDetail();
+            }
+          );
+
+          this.detail.addEventListener(
+            'mouseleave',
+            () => {
+              this.scheduleHide();
+            }
+          );
+
+          /*
+           * El detalle no debe provocar
+           * interacción con el mapa.
+           */
+          google.maps.OverlayView
+            .preventMapHitsFrom(
+              this.detail
+            );
+        }
+
+        showDetail() {
+          window.clearTimeout(
+            this.hideTimer
+          );
+
+          this.detail.classList.remove(
+            'hidden'
           );
         }
 
+        hideDetail() {
+          window.clearTimeout(
+            this.hideTimer
+          );
+
+          this.detail.classList.add(
+            'hidden'
+          );
+        }
+
+        scheduleHide() {
+          window.clearTimeout(
+            this.hideTimer
+          );
+
+          this.hideTimer =
+            window.setTimeout(
+              () => {
+                this.hideDetail();
+              },
+              180
+            );
+        }
+
         onAdd() {
-          this.getPanes()
+          const panes =
+            this.getPanes();
+
+          panes
             .overlayMouseTarget
-            .appendChild(this.node);
+            .appendChild(
+              this.node
+            );
+
+          panes
+            .floatPane
+            .appendChild(
+              this.detail
+            );
         }
 
         draw() {
           const projection =
             this.getProjection();
+
+          if (!projection) {
+            return;
+          }
 
           const position =
             projection.fromLatLngToDivPixel(
@@ -983,82 +986,105 @@ function renderGoogleMap() {
 
           this.node.style.top =
             `${position.y}px`;
+
+          /*
+           * El detalle queda inmediatamente
+           * al lado del nodo.
+           */
+          this.detail.style.left =
+            `${position.x + 14}px`;
+
+          this.detail.style.top =
+            `${position.y - 12}px`;
         }
 
         onRemove() {
+          window.clearTimeout(
+            this.hideTimer
+          );
+
           this.node.remove();
+          this.detail.remove();
         }
       }
 
       const overlays =
-        data.features.map((feature) => {
-          const overlay =
-            new NodeOverlay(feature);
+        data.features.map(
+          (feature) => {
+            const overlay =
+              new NodeOverlay(
+                feature
+              );
 
-          overlay.setMap(map);
+            overlay.setMap(map);
 
-          return overlay;
-        });
+            return overlay;
+          }
+        );
 
-      const updateVisibility = () => {
-        const selected =
-          new Set(
-            [
-              ...controls.querySelectorAll(
-                'input:checked'
+      /* =====================================================
+         VISIBILITY
+         ===================================================== */
+
+      const updateVisibility =
+        () => {
+
+          const selected =
+            new Set(
+              [
+                ...controls.querySelectorAll(
+                  'input:checked'
+                )
+              ].map(
+                (input) =>
+                  input.dataset.mapLayer
               )
-            ].map(
-              (input) =>
-                input.dataset.mapLayer
-            )
-          );
+            );
 
-        overlays.forEach((overlay) => {
-          overlay.node.classList.toggle(
-            'is-hidden',
-            !selected.has(
-              overlay.node.dataset.layer
-            )
+          overlays.forEach(
+            (overlay) => {
+
+              const visible =
+                selected.has(
+                  overlay.node.dataset.layer
+                );
+
+              overlay.node.classList.toggle(
+                'is-hidden',
+                !visible
+              );
+
+              if (!visible) {
+                overlay.hideDetail();
+              }
+            }
           );
-        });
-      };
+        };
 
       controls
         .querySelectorAll('input')
-        .forEach((input) => {
-          input.addEventListener(
-            'change',
-            updateVisibility
-          );
-        });
+        .forEach(
+          (input) => {
 
-      map.addListener(
-        'zoom_changed',
-        () => {
-          const compact =
-            map.getZoom() < 5;
-
-          $('#ecosystem-map')
-            .classList
-            .toggle(
-              'map-compact',
-              compact
+            input.addEventListener(
+              'change',
+              updateVisibility
             );
-        }
-      );
+          }
+        );
+
+      /* =====================================================
+         CLICK OUTSIDE
+         ===================================================== */
 
       map.addListener(
         'click',
         () => {
-          const detail =
-            $('#map-detail');
-
-          if (
-            detail &&
-            !detail.matches(':hover')
-          ) {
-            hideMapDetail();
-          }
+          overlays.forEach(
+            (overlay) => {
+              overlay.hideDetail();
+            }
+          );
         }
       );
 
@@ -1068,35 +1094,62 @@ function renderGoogleMap() {
       mapScreen.addEventListener(
         'click',
         (event) => {
+
           if (
-            !event.target.closest(
+            event.target.closest(
               '.google-node'
-            ) &&
-            !event.target.closest(
-              '#map-detail'
-            ) &&
-            !event.target.closest(
+            ) ||
+            event.target.closest(
+              '.google-node-detail'
+            ) ||
+            event.target.closest(
               '#map-controls-panel'
             )
           ) {
-            hideMapDetail();
+            return;
           }
+
+          overlays.forEach(
+            (overlay) => {
+              overlay.hideDetail();
+            }
+          );
         }
       );
 
       updateVisibility();
+
+      /*
+       * Inicializamos la densidad
+       * correspondiente al zoom inicial.
+       */
+      gridOverlay.update();
+
+      $('#ecosystem-map')
+        .classList
+        .toggle(
+          'map-compact',
+          map.getZoom() < 5
+        );
     })
     .catch(() => {
       renderFallbackNodes();
     });
 }
 
+/* =========================================================
+   DIRECTORY
+   ========================================================= */
+
 function directoryCard(node) {
-  const layer = canonicalLayer(node);
+  const layer =
+    canonicalLayer(node);
 
   return `
     <article class="directory-card">
+
       <div>
+
         <span class="directory-layer">
           ${escapeHtml(layer)}
         </span>
@@ -1106,16 +1159,22 @@ function directoryCard(node) {
         </h3>
 
         <p>
-          ${escapeHtml(node.description || '')}
+          ${escapeHtml(
+            node.description || ''
+          )}
         </p>
+
       </div>
 
       <span
         class="directory-status"
         style="--node-color:${mapColor(layer)}"
       >
-        ${escapeHtml(node.status || '')}
+        ${escapeHtml(
+          node.status || ''
+        )}
       </span>
+
     </article>
   `;
 }
@@ -1123,22 +1182,28 @@ function directoryCard(node) {
 function filterDirectory() {
   const query =
     String(
-      $('#directory-search')?.value || ''
+      $('#directory-search')?.value ||
+      ''
     ).toLowerCase();
 
   document
-    .querySelectorAll('.directory-card')
-    .forEach((card) => {
-      const visible =
-        card.textContent
-          .toLowerCase()
-          .includes(query);
+    .querySelectorAll(
+      '.directory-card'
+    )
+    .forEach(
+      (card) => {
 
-      card.classList.toggle(
-        'is-hidden',
-        !visible
-      );
-    });
+        const visible =
+          card.textContent
+            .toLowerCase()
+            .includes(query);
+
+        card.classList.toggle(
+          'is-hidden',
+          !visible
+        );
+      }
+    );
 }
 
 function renderDirectory() {
@@ -1149,7 +1214,9 @@ function renderDirectory() {
     <section class="directory-view">
 
       <div class="directory-header">
+
         <div>
+
           <p class="eyebrow">
             Ecosistema / Directorio
           </p>
@@ -1157,22 +1224,28 @@ function renderDirectory() {
           <h1>
             Actores del ecosistema.
           </h1>
+
         </div>
 
         <label class="directory-search">
+
           <span>⌕</span>
 
           <input
             id="directory-search"
             placeholder="Buscar actor..."
           />
+
         </label>
+
       </div>
 
       <div class="directory-list">
+
         ${state.home.directory
           .map(directoryCard)
           .join('')}
+
       </div>
 
     </section>
@@ -1185,6 +1258,10 @@ function renderDirectory() {
     );
 }
 
+/* =========================================================
+   ACTIVITIES
+   ========================================================= */
+
 function renderActivities() {
   $('#view-title').textContent =
     'Actividades';
@@ -1193,6 +1270,7 @@ function renderActivities() {
     <section class="activities-view">
 
       <div class="activities-header">
+
         <p class="eyebrow">
           Ecosistema / Actividades
         </p>
@@ -1201,31 +1279,43 @@ function renderActivities() {
           Lo que está<br />
           <em>por suceder.</em>
         </h1>
+
       </div>
 
       <div class="activities-list">
+
         ${state.home.activities
           .map(activityCard)
           .join('')}
+
       </div>
 
     </section>
   `;
 }
 
-function renderView(view = state.view) {
+/* =========================================================
+   VIEW ROUTING
+   ========================================================= */
+
+function renderView(
+  view = state.view
+) {
   state.view = view;
 
   document
     .querySelectorAll(
       '.nav-item[data-view]'
     )
-    .forEach((item) => {
-      item.classList.toggle(
-        'active',
-        item.dataset.view === view
-      );
-    });
+    .forEach(
+      (item) => {
+
+        item.classList.toggle(
+          'active',
+          item.dataset.view === view
+        );
+      }
+    );
 
   ({
     home: renderHome,
@@ -1235,8 +1325,13 @@ function renderView(view = state.view) {
   }[view] || renderGoogleMap)();
 }
 
+/* =========================================================
+   PLATFORM
+   ========================================================= */
+
 async function loadPlatform() {
-  state.home = await api('/api/home');
+  state.home =
+    await api('/api/home');
 
   $('#login-view')
     .classList
@@ -1257,10 +1352,15 @@ async function loadPlatform() {
   renderView();
 }
 
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
 $('#login-form')
   .addEventListener(
     'submit',
     async (event) => {
+
       event.preventDefault();
 
       const form =
@@ -1269,7 +1369,9 @@ $('#login-form')
         );
 
       const email =
-        String(form.get('email'));
+        String(
+          form.get('email')
+        );
 
       const account =
         accounts[email];
@@ -1279,6 +1381,7 @@ $('#login-form')
         account.password !==
           form.get('password')
       ) {
+
         $('#login-error')
           .textContent =
           'Credenciales inválidas';
@@ -1310,9 +1413,14 @@ $('#login-form')
     }
   );
 
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
 document.addEventListener(
   'click',
   (event) => {
+
     const target =
       event.target.closest(
         '[data-view]'
@@ -1326,10 +1434,15 @@ document.addEventListener(
   }
 );
 
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
 $('#logout')
   .addEventListener(
     'click',
     () => {
+
       localStorage.removeItem(
         'daa-token'
       );
@@ -1342,13 +1455,22 @@ $('#logout')
     }
   );
 
+/* =========================================================
+   REFRESH
+   ========================================================= */
+
 $('#refresh')
   .addEventListener(
     'click',
     loadPlatform
   );
 
+/* =========================================================
+   RESTORE SESSION
+   ========================================================= */
+
 if (state.token) {
+
   state.account =
     JSON.parse(
       localStorage.getItem(
@@ -1359,6 +1481,7 @@ if (state.token) {
   if (state.account) {
     loadPlatform();
   } else {
+
     localStorage.removeItem(
       'daa-token'
     );
