@@ -17,12 +17,20 @@
     "start:production": "node dist/apps/backend/src/server.js"
   },
   "devDependencies": {
+    "@types/cookie": "^0.6.0",
     "tsx": "^4.19.3",
     "vitest": "^4.1.10"
   },
   "dependencies": {
     "@types/node": "^26.4.1",
+    "bcryptjs": "^3.0.3",
+    "cookie": "^2.0.1",
     "typescript": "^5.9.3",
     "yaml": "^2.9.0"
+  },
+  "allowScripts": {
+    "@types/cookie@0.6.0": true,
+    "bcryptjs@3.0.3": true,
+    "cookie@2.0.1": true
   }
 }

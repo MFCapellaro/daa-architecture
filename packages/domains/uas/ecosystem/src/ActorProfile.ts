@@ -55,6 +55,7 @@ export interface ActorProfile {
     website?: string;
     email?: string;
     phone?: string;
+    whatsapp?: string;
   };
 
   /**

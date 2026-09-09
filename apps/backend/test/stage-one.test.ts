@@ -2,7 +2,7 @@ import { mkdtemp, readFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { deleteDirectoryEntry, loadActivityDirectory, loadDirectory, loadParticipants, login, saveDirectoryEntry } from "../src/stage-one.js";
+import { deleteDirectoryEntry, loadActivityDirectory, loadDirectory, loadNodes, loadParticipants, login, saveDirectoryEntry } from "../src/stage-one.js";
 
 describe("DAA stage one", () => {
   it("supports the minimum participant and dealer login", () => {
@@ -34,5 +34,36 @@ describe("DAA stage one", () => {
     expect(await deleteDirectoryEntry(directory, "actor-test")).toBe(true);
     expect(await deleteDirectoryEntry(directory, "actor-test")).toBe(false);
   });
+
+  it("loads canonical ecosystem nodes before building the directory view", async () => {
+  const nodes = await loadNodes(
+    "packages/domains/uas/ecosystem/data/nodes"
+  );
+
+  expect(nodes.length).toBeGreaterThan(0);
+
+  const node = nodes.find(
+    (item) => item.id === "aereal-patagonia"
+  );
+
+  expect(node).toBeDefined();
+  expect(node?.name).toBe("Aereal Patagonia");
+  expect(node?.location?.coordinates?.lat).toBeCloseTo(-39.0453024887735);
+  expect(node?.location?.coordinates?.lng).toBeCloseTo(-67.56971749014761);
+
+  const directory = await loadDirectory(
+    "packages/domains/uas/ecosystem/data/nodes"
+  );
+
+  const entry = directory.find(
+    (item) => item.id === "aereal-patagonia"
+  );
+
+  expect(entry?.name).toBe("Aereal Patagonia");
+  expect(entry?.location?.coordinates).toEqual({
+    lat: -39.0453024887735,
+    lng: -67.56971749014761
+  });
+});
 
 });

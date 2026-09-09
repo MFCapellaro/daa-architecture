@@ -46,6 +46,8 @@ export interface ActorContext {
 
   locality?: string;
 
+  address?: string;
+
   latitude?: number;
 
   longitude?: number;
