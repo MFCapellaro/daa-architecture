@@ -747,7 +747,7 @@ function renderGoogleMap() {
              * Conservamos el relieve
              * colorimétrico de Google.
              */
-            mapTypeId: 'terrain',
+            mapTypeId: 'satellite',
 
             mapTypeControl: false,
             streetViewControl: false,

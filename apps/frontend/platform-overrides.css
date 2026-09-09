@@ -490,21 +490,17 @@ MOBILE
 right: 10px;
 top: 10px;
 
-```
 min-width: 0;
 
 padding:
   3px 7px 5px;
-```
 
 }
 
 .map-controls-toggle {
 gap: 8px;
 
-```
 font-size: 9px;
-```
 
 }
 
@@ -519,11 +515,9 @@ margin-top: 5px;
 .map-controls label {
 gap: 5px;
 
-```
 padding: 3px 0;
 
 font-size: 8px;
-```
 
 }
 
@@ -536,9 +530,7 @@ height: 9px;
 width: min(230px, calc(100vw - 40px));
 max-width: calc(100vw - 40px);
 
-```
 padding: 10px 12px;
-```
 
 }
 
