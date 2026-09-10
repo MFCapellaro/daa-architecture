@@ -1,17 +1,17 @@
 import { randomUUID } from "node:crypto";
+import * as bcrypt from "bcryptjs";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { parse, stringify } from "yaml";
-
 import type { ProgressiveEntry } from "../../../packages/domains/uas/participants/src/ProgressiveEntry.js";
 import { deriveParticipantInformationStatus } from "../../../packages/domains/uas/participants/src/ProgressiveEntry.js";
 import type { EcosystemNode } from "../../../packages/domains/uas/ecosystem/foundation/EcosystemNode.js";
 
-export type AccountRole = "admin";
+export type AccountRole = "admin" | "editor" | "reviewer";
 
 export interface Account {
   id: string;
-  email: string;
+  username: string;
   role: AccountRole;
   participantId?: string;
 }
@@ -19,6 +19,60 @@ export interface Account {
 export interface Session {
   token: string;
   account: Account;
+  expiresAt: number;
+}
+
+type StoredAccount = Account & { passwordHash: string };
+
+function getAccounts(): StoredAccount[] {
+  const username = process.env.ADMIN_USERNAME ?? "admin";
+  const passwordHash = process.env.ADMIN_PASSWORD_HASH ?? "";
+
+  return [
+    {
+      id: "account-admin-001",
+      username,
+      passwordHash,
+      role: "admin"
+    }
+  ];
+}
+
+export async function login(
+  username: string,
+  password: string
+): Promise<Session | undefined> {
+  const account = getAccounts().find(
+    (candidate) => candidate.username === username
+  );
+
+  if (!account || !account.passwordHash) return undefined;
+  if (!(await bcrypt.compare(password, account.passwordHash))) return undefined;
+
+  const { passwordHash: _passwordHash, ...publicAccount } = account;
+
+  return {
+    token: randomUUID(),
+    account: publicAccount,
+    expiresAt: Date.now() + 8 * 60 * 60 * 1000
+  };
+}
+
+export function findSession(
+  sessions: Map<string, Session>,
+  token: string | undefined
+): Session | undefined {
+  if (!token) return undefined;
+
+  const session = sessions.get(token);
+  if (!session) return undefined;
+
+  if (session.expiresAt <= Date.now()) {
+    sessions.delete(token);
+    return undefined;
+  }
+
+  return session;
 }
 
 export interface DirectoryEntry {
@@ -33,10 +87,7 @@ export interface DirectoryEntry {
     city?: string;
     province?: string;
     country?: string;
-    coordinates?: {
-      lat: number;
-      lng: number;
-    };
+    coordinates?: { lat: number; lng: number };
     geocoding?: {
       provider: string;
       status: "resolved" | "failed";
@@ -71,72 +122,22 @@ export interface ParticipantView {
   progressiveEntry: ProgressiveEntry;
 }
 
-const accounts: Array<Account & { password: string }> = [
-  {
-    id: "account-admin-001",
-    email: "admin@dronsair.ar",
-    password: "admin",
-    role: "admin"
-  }
-];
-
-export function login(
-  email: string,
-  password: string
-): Session | undefined {
-  const account = accounts.find(
-    (candidate) =>
-      candidate.email === email &&
-      candidate.password === password
-  );
-
-  if (!account) return undefined;
-
-  const { password: _password, ...publicAccount } = account;
-
-  return {
-    token: randomUUID(),
-    account: publicAccount
-  };
-}
-
-export function findSession(
-  sessions: Map<string, Session>,
-  token: string | undefined
-): Session | undefined {
-  return token ? sessions.get(token) : undefined;
-}
-
-export async function loadParticipants(
-  directory: string
-): Promise<ParticipantView[]> {
-  const files = (await readdir(directory)).filter(
-    (file) => file.endsWith(".yml") || file.endsWith(".yaml")
-  );
-
-  return Promise.all(
-    files.map(async (file) => {
-      const raw = parse(
-        await readFile(join(directory, file), "utf8")
-      ) as {
-        id: string;
-        actorId: string;
-        status: string;
-        joinedAt: string;
-        progressiveEntry: ProgressiveEntry;
-      };
-
-      return {
-        id: raw.id,
-        actorId: raw.actorId,
-        status: raw.status,
-        joinedAt: new Date(raw.joinedAt).toISOString(),
-        progressiveEntry: raw.progressiveEntry,
-        informationStatus:
-          deriveParticipantInformationStatus(raw.progressiveEntry)
-      };
-    })
-  );
+export async function loadParticipants(directory: string): Promise<ParticipantView[]> {
+  const files = (await readdir(directory)).filter((file) => /\.ya?ml$/.test(file));
+  return Promise.all(files.map(async (file) => {
+    const raw = parse(await readFile(join(directory, file), "utf8")) as {
+      id: string; actorId: string; status: string; joinedAt: string;
+      progressiveEntry: ProgressiveEntry;
+    };
+    return {
+      id: raw.id,
+      actorId: raw.actorId,
+      status: raw.status,
+      joinedAt: new Date(raw.joinedAt).toISOString(),
+      progressiveEntry: raw.progressiveEntry,
+      informationStatus: deriveParticipantInformationStatus(raw.progressiveEntry)
+    };
+  }));
 }
 
 export async function updateProgressiveEntry(
@@ -144,232 +145,84 @@ export async function updateProgressiveEntry(
   participantId: string,
   patch: Partial<ProgressiveEntry>
 ): Promise<ParticipantView | undefined> {
-  const participants = await loadParticipants(directory);
-  const participant = participants.find(
-    (item) => item.id === participantId
-  );
-
+  const participant = (await loadParticipants(directory)).find((item) => item.id === participantId);
   if (!participant) return undefined;
 
-  const updated = {
-    ...participant.progressiveEntry,
-    ...patch,
-    participantId
-  };
-
-  await writeFile(
-    join(directory, `${participantId}.yml`),
-    stringify({
-      id: participant.id,
-      actorId: participant.actorId,
-      status: participant.status,
-      joinedAt: participant.joinedAt.slice(0, 10),
-      progressiveEntry: updated
-    }),
-    "utf8"
-  );
+  const updated = { ...participant.progressiveEntry, ...patch, participantId };
+  await writeFile(join(directory, `${participantId}.yml`), stringify({
+    id: participant.id,
+    actorId: participant.actorId,
+    status: participant.status,
+    joinedAt: participant.joinedAt.slice(0, 10),
+    progressiveEntry: updated
+  }), "utf8");
 
   return {
     ...participant,
     progressiveEntry: updated,
-    informationStatus:
-      deriveParticipantInformationStatus(updated)
+    informationStatus: deriveParticipantInformationStatus(updated)
   };
 }
 
-/**
- * Adapt the generated ecosystem YAML representation
- * to the canonical EcosystemNode contract.
- *
- * The YAML remains the persisted source.
- * This is only the backend runtime representation.
- */
-export async function loadNodes(
-  directory: string
-): Promise<EcosystemNode[]> {
-  const files = (await readdir(directory)).filter(
-    (file) => file.endsWith(".yml") || file.endsWith(".yaml")
-  );
+export async function loadNodes(directory: string): Promise<EcosystemNode[]> {
+  const files = (await readdir(directory)).filter((file) => /\.ya?ml$/.test(file));
 
-  return Promise.all(
-    files.map(async (file) => {
-      const raw = parse(
-        await readFile(join(directory, file), "utf8")
-      ) as Record<string, unknown>;
+  return Promise.all(files.map(async (file) => {
+    const raw = parse(await readFile(join(directory, file), "utf8")) as Record<string, unknown>;
+    const identity = (raw.identity ?? {}) as Record<string, unknown>;
+    const contact = (raw.contact ?? {}) as Record<string, unknown>;
+    const geolocation = (raw.geolocation ?? {}) as Record<string, unknown>;
+    const presence = (raw.presence ?? {}) as Record<string, unknown>;
+    const rawStatus = (raw.status ?? {}) as Record<string, unknown>;
+    const latitude = geolocation.latitude;
+    const longitude = geolocation.longitude;
+    const hasCoordinates = typeof latitude === "number" && Number.isFinite(latitude) && typeof longitude === "number" && Number.isFinite(longitude);
 
-      const identity =
-        (raw.identity ?? {}) as Record<string, unknown>;
+    const location = typeof contact.country === "string" || hasCoordinates ? {
+      city: typeof contact.city === "string" ? contact.city : undefined,
+      province: typeof contact.province === "string" ? contact.province : undefined,
+      country: typeof contact.country === "string" ? contact.country : "",
+      ...(hasCoordinates ? { coordinates: { lat: latitude as number, lng: longitude as number } } : {})
+    } : undefined;
 
-      const contact =
-        (raw.contact ?? {}) as Record<string, unknown>;
+    const verification = rawStatus.verification === "verified" || rawStatus.verification === "partial" || rawStatus.verification === "unverified" ? rawStatus.verification : "unverified";
+    const type = raw.type === "company" || raw.type === "institution" || raw.type === "organization" || raw.type === "professional" || raw.type === "event" || raw.type === "media" || raw.type === "research" ? raw.type : "organization";
 
-      const geolocation =
-        (raw.geolocation ?? {}) as Record<string, unknown>;
-
-      const presence =
-        (raw.presence ?? {}) as Record<string, unknown>;
-
-      const rawStatus =
-        (raw.status ?? {}) as Record<string, unknown>;
-
-      const latitude = geolocation.latitude;
-      const longitude = geolocation.longitude;
-
-      const hasCoordinates =
-        typeof latitude === "number" &&
-        Number.isFinite(latitude) &&
-        typeof longitude === "number" &&
-        Number.isFinite(longitude);
-
-      const location =
-        typeof contact.country === "string" ||
-        hasCoordinates
-          ? {
-              city:
-                typeof contact.city === "string"
-                  ? contact.city
-                  : undefined,
-
-              province:
-                typeof contact.province === "string"
-                  ? contact.province
-                  : undefined,
-
-              country:
-                typeof contact.country === "string"
-                  ? contact.country
-                  : "",
-
-              ...(hasCoordinates
-                ? {
-                    coordinates: {
-                      lat: latitude as number,
-                      lng: longitude as number
-                    }
-                  }
-                : {})
-            }
-          : undefined;
-
-      const verification =
-        rawStatus.verification === "verified" ||
-        rawStatus.verification === "partial" ||
-        rawStatus.verification === "unverified"
-          ? rawStatus.verification
-          : "unverified";
-
-      const type =
-        raw.type === "company" ||
-        raw.type === "institution" ||
-        raw.type === "organization" ||
-        raw.type === "professional" ||
-        raw.type === "event" ||
-        raw.type === "media" ||
-        raw.type === "research"
-          ? raw.type
-          : "organization";
-
-      return {
-        id: String(
-          raw.id ??
-          file.replace(/\.ya?ml$/, "")
-        ),
-
-        name: String(
-          raw.name ??
-          raw.id ??
-          file.replace(/\.ya?ml$/, "")
-        ),
-
-        type,
-
-        identity: {
-          description:
-            typeof identity.description === "string"
-              ? identity.description
-              : undefined,
-
-          status:
-            identity.status === "active" ||
-            identity.status === "inactive" ||
-            identity.status === "unknown"
-              ? identity.status
-              : undefined
-        },
-
-        location,
-
-        layers:
-          Array.isArray(raw.layers)
-            ? raw.layers.map(String)
-            : [],
-
-        capabilities:
-          Array.isArray(raw.capabilities)
-            ? raw.capabilities.map(String)
-            : [],
-
-        brands:
-          Array.isArray(raw.brands)
-            ? raw.brands.map(String)
-            : undefined,
-
-        presence:
-          Object.keys(presence).length > 0
-            ? {
-                website:
-                  typeof presence.website === "string"
-                    ? presence.website
-                    : undefined,
-
-                websiteMentionsDrones:
-                  typeof presence.websiteMentionsDrones === "boolean"
-                    ? presence.websiteMentionsDrones
-                    : typeof presence.websiteMentioned === "boolean"
-                      ? presence.websiteMentioned
-                      : undefined,
-
-                socialMedia:
-                  typeof presence.socialMedia === "boolean"
-                    ? presence.socialMedia
-                    : undefined
-              }
-            : undefined,
-
-        evidence:
-          Array.isArray(raw.evidence)
-            ? raw.evidence as EcosystemNode["evidence"]
-            : [],
-
-        status: {
-          verification,
-
-          lastChecked:
-            typeof rawStatus.lastChecked === "string"
-              ? rawStatus.lastChecked
-              : undefined
-        }
-      };
-    })
-  );
+    return {
+      id: String(raw.id ?? file.replace(/\.ya?ml$/, "")),
+      name: String(raw.name ?? raw.id ?? file.replace(/\.ya?ml$/, "")),
+      type,
+      identity: {
+        description: typeof identity.description === "string" ? identity.description : undefined,
+        status: identity.status === "active" || identity.status === "inactive" || identity.status === "unknown" ? identity.status : undefined
+      },
+      location,
+      layers: Array.isArray(raw.layers) ? raw.layers.map(String) : [],
+      capabilities: Array.isArray(raw.capabilities) ? raw.capabilities.map(String) : [],
+      brands: Array.isArray(raw.brands) ? raw.brands.map(String) : undefined,
+      presence: Object.keys(presence).length > 0 ? {
+        website: typeof presence.website === "string" ? presence.website : undefined,
+        websiteMentionsDrones: typeof presence.websiteMentionsDrones === "boolean" ? presence.websiteMentionsDrones : typeof presence.websiteMentioned === "boolean" ? presence.websiteMentioned : undefined,
+        socialMedia: typeof presence.socialMedia === "boolean" ? presence.socialMedia : undefined
+      } : undefined,
+      evidence: Array.isArray(raw.evidence) ? raw.evidence as EcosystemNode["evidence"] : [],
+      status: {
+        verification,
+        lastChecked: typeof rawStatus.lastChecked === "string" ? rawStatus.lastChecked : undefined
+      }
+    };
+  }));
 }
 
-export async function loadDirectory(
-  directory: string
-): Promise<DirectoryEntry[]> {
+export async function loadDirectory(directory: string): Promise<DirectoryEntry[]> {
   const nodes = await loadNodes(directory);
-
   return nodes.map((node) => {
     const location: DirectoryLocation = {
       city: node.location?.city,
       province: node.location?.province,
       country: node.location?.country
     };
-
-    if (node.location?.coordinates) {
-      location.coordinates = node.location.coordinates;
-    }
-
+    if (node.location?.coordinates) location.coordinates = node.location.coordinates;
     return {
       id: node.id,
       name: node.name,
@@ -382,100 +235,59 @@ export async function loadDirectory(
   });
 }
 
-export async function loadActivities(
-  path: string,
-  now = new Date()
-): Promise<Activity[]> {
-  const raw = parse(
-    await readFile(path, "utf8")
-  ) as {
-    activities?: Activity[];
-  };
-
+export async function loadActivities(path: string, now = new Date()): Promise<Activity[]> {
+  const raw = parse(await readFile(path, "utf8")) as { activities?: Activity[] };
   return (raw.activities ?? []).map((activity) => ({
     ...activity,
-    status:
-      new Date(activity.publicationEndsAt).getTime() <
-      now.getTime()
-        ? "historical"
-        : new Date(activity.publicationStartsAt).getTime() >
-            now.getTime()
-          ? "scheduled"
-          : "published"
+    status: new Date(activity.publicationEndsAt).getTime() < now.getTime() ? "historical" : new Date(activity.publicationStartsAt).getTime() > now.getTime() ? "scheduled" : "published"
   }));
 }
 
-export async function loadActivityDirectory(
-  directory: string,
-  now = new Date()
-): Promise<Activity[]> {
-  const files = (await readdir(directory)).filter(
-    (file) => file.endsWith(".yml") || file.endsWith(".yaml")
-  );
-
-  const activities = await Promise.all(
-    files.map(async (file) =>
-      parse(
-        await readFile(join(directory, file), "utf8")
-      ) as Activity
-    )
-  );
-
+export async function loadActivityDirectory(directory: string, now = new Date()): Promise<Activity[]> {
+  const files = (await readdir(directory)).filter((file) => /\.ya?ml$/.test(file));
+  const activities = await Promise.all(files.map(async (file) => parse(await readFile(join(directory, file), "utf8")) as Activity));
   return activities.map((activity) => ({
     ...activity,
-    status:
-      new Date(activity.publicationEndsAt).getTime() <
-      now.getTime()
-        ? "historical"
-        : new Date(activity.publicationStartsAt).getTime() >
-            now.getTime()
-          ? "scheduled"
-          : "published"
+    status: new Date(activity.publicationEndsAt).getTime() < now.getTime() ? "historical" : new Date(activity.publicationStartsAt).getTime() > now.getTime() ? "scheduled" : "published"
   }));
 }
 
-export async function saveDirectoryEntry(
-  directory: string,
-  entry: DirectoryEntry
-): Promise<DirectoryEntry> {
-  const fileName =
-    `${entry.id.replace(/[^a-z0-9-]/gi, "-")}.yml`;
+export async function saveDirectoryEntry(directory: string, entry: DirectoryEntry): Promise<DirectoryEntry> {
+  const fileName = `${entry.id}.yml`;
+  const filePath = join(directory, fileName);
+  const current = parse(await readFile(filePath, "utf8").catch(() => "{}")) as Record<string, any>;
+  const previousIdentity = (current.identity ?? {}) as Record<string, unknown>;
+  const previousContact = (current.contact ?? {}) as Record<string, unknown>;
+  const previousGeolocation = (current.geolocation ?? {}) as Record<string, unknown>;
+  const coordinates = entry.location?.coordinates;
 
-  await writeFile(
-    join(directory, fileName),
-    stringify({
-      id: entry.id,
-      name: entry.name,
-      type: entry.type,
-      identity: {
-        status: entry.status
-      },
-      layers: entry.layers,
-      capabilities: entry.capabilities,
-      context: entry.location,
-      geocoding: entry.location?.geocoding
-    }),
-    "utf8"
-  );
+  const updatedEntry = {
+    ...current,
+    id: entry.id,
+    name: entry.name,
+    type: entry.type,
+    identity: { ...previousIdentity, status: entry.status },
+    layers: entry.layers,
+    capabilities: entry.capabilities,
+    contact: {
+      ...previousContact,
+      address: entry.location?.address,
+      city: entry.location?.city,
+      province: entry.location?.province,
+      country: entry.location?.country
+    },
+    geolocation: coordinates ? { ...previousGeolocation, latitude: coordinates.lat, longitude: coordinates.lng } : previousGeolocation
+  };
 
+  await writeFile(filePath, stringify(updatedEntry), "utf8");
   return entry;
 }
 
-export async function deleteDirectoryEntry(
-  directory: string,
-  id: string
-): Promise<boolean> {
-  const files = (await readdir(directory)).filter(
-    (file) =>
-      file.replace(/\.ya?ml$/, "") === id
-  );
-
+export async function deleteDirectoryEntry(directory: string, id: string): Promise<boolean> {
+  const files = (await readdir(directory)).filter((file) => file.replace(/\.ya?ml$/, "") === id);
   if (!files.length) return false;
-
   const { unlink } = await import("node:fs/promises");
-
   await unlink(join(directory, files[0]));
-
   return true;
 }
 
@@ -485,85 +297,27 @@ export interface GeocodingResult {
   address?: string;
   status: "resolved" | "failed" | "skipped";
   precision?: string;
-  coordinates?: {
-    lat: number;
-    lng: number;
-  };
+  coordinates?: { lat: number; lng: number };
   error?: string;
 }
 
-export async function geocodeDirectory(
-  directory: string,
-  apiKey: string,
-  now = new Date()
-): Promise<GeocodingResult[]> {
+export async function geocodeDirectory(directory: string, apiKey: string, now = new Date()): Promise<GeocodingResult[]> {
   const entries = await loadDirectory(directory);
   const results: GeocodingResult[] = [];
 
   for (const entry of entries) {
-    const address =
-      entry.location?.address ||
-      [
-        entry.location?.city,
-        entry.location?.province,
-        entry.location?.country
-      ]
-        .filter(Boolean)
-        .join(", ");
-
+    const address = entry.location?.address || [entry.location?.city, entry.location?.province, entry.location?.country].filter(Boolean).join(", ");
     if (!address || entry.location?.coordinates) {
-      results.push({
-        id: entry.id,
-        name: entry.name,
-        address,
-        status: entry.location?.coordinates
-          ? "skipped"
-          : "failed",
-        error: entry.location?.coordinates
-          ? "already_geocoded"
-          : "missing_address"
-      });
-
+      results.push({ id: entry.id, name: entry.name, address, status: entry.location?.coordinates ? "skipped" : "failed", error: entry.location?.coordinates ? "already_geocoded" : "missing_address" });
       continue;
     }
 
     try {
-      const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&region=ar&language=es&key=${encodeURIComponent(apiKey)}`
-      );
-
-      const payload =
-        await response.json() as {
-          status?: string;
-          results?: Array<{
-            geometry?: {
-              location?: {
-                lat?: number;
-                lng?: number;
-              };
-              location_type?: string;
-            };
-          }>;
-        };
-
-      const location =
-        payload.results?.[0]?.geometry?.location;
-
-      if (
-        payload.status !== "OK" ||
-        typeof location?.lat !== "number" ||
-        typeof location.lng !== "number"
-      ) {
-        results.push({
-          id: entry.id,
-          name: entry.name,
-          address,
-          status: "failed",
-          error:
-            payload.status ??
-            "geocoding_failed"
-        });
-
+      const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&region=ar&language=es&key=${encodeURIComponent(apiKey)}`);
+      const payload = await response.json() as { status?: string; results?: Array<{ geometry?: { location?: { lat?: number; lng?: number }; location_type?: string } }> };
+      const location = payload.results?.[0]?.geometry?.location;
+      if (payload.status !== "OK" || typeof location?.lat !== "number" || typeof location.lng !== "number") {
+        results.push({ id: entry.id, name: entry.name, address, status: "failed", error: payload.status ?? "geocoding_failed" });
         continue;
       }
 
@@ -572,45 +326,15 @@ export async function geocodeDirectory(
         location: {
           ...entry.location,
           address,
-          coordinates: {
-            lat: location.lat,
-            lng: location.lng
-          },
-          geocoding: {
-            provider: "google",
-            status: "resolved",
-            precision:
-              payload.results?.[0]?.geometry?.location_type,
-            geocodedAt: now.toISOString()
-          }
+          coordinates: { lat: location.lat, lng: location.lng },
+          geocoding: { provider: "google", status: "resolved", precision: payload.results?.[0]?.geometry?.location_type, geocodedAt: now.toISOString() }
         }
       };
-
       await saveDirectoryEntry(directory, updated);
-
-      results.push({
-        id: entry.id,
-        name: entry.name,
-        address,
-        status: "resolved",
-        precision:
-          updated.location?.geocoding?.precision,
-        coordinates:
-          updated.location?.coordinates
-      });
+      results.push({ id: entry.id, name: entry.name, address, status: "resolved", precision: updated.location?.geocoding?.precision, coordinates: updated.location?.coordinates });
     } catch (error) {
-      results.push({
-        id: entry.id,
-        name: entry.name,
-        address,
-        status: "failed",
-        error:
-          error instanceof Error
-            ? error.message
-            : "geocoding_failed"
-      });
+      results.push({ id: entry.id, name: entry.name, address, status: "failed", error: error instanceof Error ? error.message : "geocoding_failed" });
     }
   }
-
   return results;
 }
