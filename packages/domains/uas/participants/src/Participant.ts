@@ -25,11 +25,6 @@ export interface Participant {
   id: string;
 
   /**
-   * Related ecosystem Actor.
-   */
-  actorId: string;
-
-  /**
    * Current participation status.
    */
   status: ParticipantStatus;
