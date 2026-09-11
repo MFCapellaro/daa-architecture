@@ -15,6 +15,15 @@ const activitiesData = join(appDirectory, "../../../data/activities");
 const sessions = new Map<string, Session>();
 const SESSION_COOKIE = "daa_session";
 const SESSION_MAX_AGE = 8 * 60 * 60;
+const configuredUsername = (process.env.ADMIN_USERNAME ?? "").trim();
+const configuredHash = (process.env.ADMIN_PASSWORD_HASH ?? "").trim();
+
+console.log({
+  adminUsername: configuredUsername,
+  hashConfigured: configuredHash.length > 0,
+  hashLength: configuredHash.length,
+  looksLikeBcrypt: /^\$2[aby]\$\d{2}\$/.test(configuredHash),
+});
 
 function send(response: ServerResponse, status: number, body?: unknown): void { response.writeHead(status, { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" }); response.end(status === 204 ? undefined : JSON.stringify(body)); }
 async function readBody(request: IncomingMessage): Promise<string> { const chunks: Buffer[] = []; for await (const chunk of request) chunks.push(Buffer.from(chunk)); return Buffer.concat(chunks).toString("utf8"); }
