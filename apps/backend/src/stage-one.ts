@@ -22,6 +22,15 @@ export function hasPermission(role: AccountRole, permission: Permission): boolea
 
 function getAccounts(): StoredAccount[] {
   const configured = process.env.ADMIN_ACCOUNTS_JSON;
+
+  console.log("[auth diagnostics]", {
+  adminUsername: process.env.ADMIN_USERNAME,
+  passwordHashPresent: Boolean(process.env.ADMIN_PASSWORD_HASH),
+  passwordHashLength: process.env.ADMIN_PASSWORD_HASH?.length,
+  accountsJsonPresent: Boolean(process.env.ADMIN_ACCOUNTS_JSON),
+  accountsJsonLength: process.env.ADMIN_ACCOUNTS_JSON?.length,
+});
+
   if (configured) { try { const accounts = JSON.parse(configured) as StoredAccount[]; if (Array.isArray(accounts) && accounts.length > 0) return accounts; } catch { console.warn("ADMIN_ACCOUNTS_JSON no contiene JSON válido"); } }
   return [{ id: "account-admin-001", username: process.env.ADMIN_USERNAME ?? "admin", passwordHash: process.env.ADMIN_PASSWORD_HASH ?? "", role: "admin" }];
 }
