@@ -116,6 +116,27 @@ export async function createApp() {
 
       if (request.method === "POST" && url.pathname === "/api/auth/login") {
         const body = parseJsonBody<{ username?: string; password?: string }>(await readBody(request));
+        const safeBody = body ?? {};
+
+const username = String(safeBody.username ?? "").trim();
+const password = String(safeBody.password ?? "");
+
+const configuredUsername = String(
+  process.env.ADMIN_USERNAME ?? ""
+).trim();
+
+const configuredHash = String(
+  process.env.ADMIN_PASSWORD_HASH ?? ""
+).trim();
+
+console.log({
+  bodyKeys: Object.keys(safeBody),
+  usernameMatches: username === configuredUsername,
+  passwordReceived: password.length > 0,
+  hashConfigured: configuredHash.length > 0,
+  hashLength: configuredHash.length,
+  looksLikeBcrypt: /^\$2[aby]\$\d{2}\$/.test(configuredHash),
+});
         if (!body?.username || !body.password) return send(response, 422, { error: "username y password son obligatorios" });
         const session = await login(body.username, body.password);
         if (!session) return send(response, 401, { error: "Credenciales inválidas" });
