@@ -1,4 +1,5 @@
-model: gemini/gemini-2.0-flash
-editor-model: gemini/gemini-2.0-flash
-weak-model: gemini/gemini-2.0-flash
+model: gemini/gemini-3.6-flash
+editor-model: gemini/gemini-3.6-flash
+weak-model: gemini/gemini-3.6-flash
 map-tokens: 2048
+env-file: .env
