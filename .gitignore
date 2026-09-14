@@ -7,6 +7,7 @@ build/
 
 # Test artifacts
 coverage/
+*.log
 
 # Tool caches
 .vite/
@@ -15,6 +16,7 @@ coverage/
 # Environment files
 .env
 .env.*
+*.env.local
 
 # IDE
 .vscode/
@@ -22,3 +24,9 @@ coverage/
 # OS
 .DS_Store
 Thumbs.db
+.aider*
+!.aider.conf.yml
+
+# Entornos virtuales de Python / Aider
+.venv/
+.venv-aider/
