@@ -51,6 +51,7 @@ import type {
   PublicationInput,
   PublicationResult,
 } from "../publication/Publication.js"
+import type { SecurityContext } from "../../../../../security/src/SecurityContext.js"
 
 export type OrchestrationStatus =
   | "hold"
@@ -67,6 +68,7 @@ export type IdentityOutcome =
 export interface OrchestrationContext {
   source?: string
   actor?: string
+  security?: SecurityContext
 }
 
 export interface OrchestrationInput<T> {
