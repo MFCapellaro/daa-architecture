@@ -1,8 +1,10 @@
+import type { SecurityContext } from "./SecurityContext.js";
 import type { ActorProfile } from "../../domains/uas/ecosystem/src/ActorProfile.js";
 import type { ParticipantActorRole, ParticipantActorRelationStatus } from "../../domains/uas/participants/src/ParticipantActorRelation.js";
 
 export interface PublicActorDTO {
   readonly id: string;
+  readonly name: string;
   readonly actorId: string;
   readonly description?: string;
   readonly capabilities?: readonly string[];
@@ -21,4 +23,10 @@ export interface ParticipantActorMapping {
 export interface DnaAgreementRequirement {
   readonly actorId: string;
   readonly hasActiveAgreement: boolean;
+}
+
+export interface ActorSecurityContext extends SecurityContext {
+  actorId: string;
+  roles: string[];
+  permissions?: string[];
 }

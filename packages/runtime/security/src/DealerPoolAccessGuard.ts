@@ -2,6 +2,7 @@ import type { SecurityContext } from "../../../security/src/SecurityContext.js";
 import type { AuthGuard } from "./AuthGuard.js";
 import type { ParticipantActorGuard } from "./ParticipantActorGuard.js";
 import type { DnaAgreementGuard } from "./DnaAgreementGuard.js";
+import type { ActorSecurityContext } from "@security/ActorSecurity.js";
 
 export class DealerPoolAccessGuard {
   constructor(
@@ -22,5 +23,17 @@ export class DealerPoolAccessGuard {
     if (!hasDna) {
       throw new Error(`Forbidden: Actor ${actorId} does not have an active DNA Agreement`);
     }
+  }
+
+  canCreate(context: ActorSecurityContext): boolean {
+    return context.roles.includes("DEALER");
+  }
+
+  canEdit(context: ActorSecurityContext, pool: unknown): boolean {
+    return context.roles.includes("DEALER");
+  }
+
+  canRead(context: ActorSecurityContext, pool: unknown): boolean {
+    return true;
   }
 }

@@ -23,7 +23,7 @@ export interface Participant {
    * Participant identifier.
    */
   id: string;
-
+  actorId: string;
   /**
    * Current participation status.
    */

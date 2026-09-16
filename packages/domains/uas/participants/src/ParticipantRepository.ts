@@ -17,6 +17,8 @@
 import type { Participant } from "./Participant.js";
 
 export interface ParticipantRepository {
+  findByEmail?(email: string): Promise<any | null>;
+  findById?(id: string): Promise<any | null>;
   save(participant: Participant): Promise<void>;
   delete(id: string): Promise<void>;
 }

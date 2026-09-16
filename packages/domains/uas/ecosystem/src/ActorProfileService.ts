@@ -1,8 +1,7 @@
 import type { ActorProfile } from "./ActorProfile.js";
-import type { PublicActorDTO } from "../../../../security/src/ActorSecurity.js";
-import type { SecurityContext } from "../../../../security/src/SecurityContext.js";
-import { PublicActorMapper } from "../../../../runtime/security/src/PublicActorMapper.js";
-import type { AuthGuard } from "../../../../runtime/security/src/AuthGuard.js";
+import type { PublicActorDTO, ActorSecurityContext } from "@security/ActorSecurity.js";
+import type { AuthGuard } from "@runtime/security/src/AuthGuard.js";
+import { PublicActorMapper } from "@runtime/security/src/PublicActorMapper.js";
 
 export interface ActorProfileRepository {
   findByActorId(actorId: string): Promise<ActorProfile | null>;
@@ -16,6 +15,7 @@ export class ActorProfileService {
 
   async getPublicProfile(actorId: string): Promise<PublicActorDTO> {
     const profile = await this.repository.findByActorId(actorId);
+
     if (!profile) {
       throw new Error(`Profile not found for actor ${actorId}`);
     }
@@ -23,10 +23,11 @@ export class ActorProfileService {
     return PublicActorMapper.toPublicActorDTO(profile);
   }
 
-  async getFullProfile(actorId: string, context: SecurityContext): Promise<ActorProfile> {
+  async getFullProfile(actorId: string, context: ActorSecurityContext): Promise<ActorProfile> {
     this.authGuard.assertAuthenticated(context);
 
     const profile = await this.repository.findByActorId(actorId);
+
     if (!profile) {
       throw new Error(`Profile not found for actor ${actorId}`);
     }

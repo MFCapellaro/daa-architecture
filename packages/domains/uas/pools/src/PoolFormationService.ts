@@ -1,6 +1,6 @@
 import type { PoolFormationIdentity } from "./PoolFormationIdentity.js";
-import type { DealerPoolAccessGuard } from "../../../../runtime/security/src/DealerPoolAccessGuard.js";
-import type { SecurityContext } from "../../../../security/src/SecurityContext.js";
+import type { ActorSecurityContext } from "@security/ActorSecurity.js";
+import type { DealerPoolAccessGuard } from "@runtime/security/src/DealerPoolAccessGuard.js";
 
 export interface PoolFormationRepository {
   findById(id: string): Promise<PoolFormationIdentity | null>;
@@ -8,6 +8,7 @@ export interface PoolFormationRepository {
 }
 
 export interface CreatePoolParams {
+  id?: string;
   poolOfferId: string;
   targetUnits: number;
   participantIds?: string[];
@@ -15,79 +16,74 @@ export interface CreatePoolParams {
 
 export interface EditPoolParams {
   targetUnits?: number;
-  currentUnits?: number;
-  status?: "forming" | "completed" | "expired";
+  participantIds?: string[];
 }
 
 export class PoolFormationService {
   constructor(
     private readonly repository: PoolFormationRepository,
-    private readonly dealerPoolAccessGuard: DealerPoolAccessGuard
+    private readonly accessGuard: DealerPoolAccessGuard
   ) {}
 
   async createPool(
-    context: SecurityContext,
-    actorId: string,
-    params: CreatePoolParams
+    params: CreatePoolParams,
+    context: ActorSecurityContext
   ): Promise<PoolFormationIdentity> {
-    await this.dealerPoolAccessGuard.authorizePoolEdit(context, actorId);
+    if (!this.accessGuard.canCreate(context)) {
+      throw new Error("Unauthorized to create pool");
+    }
 
-    const pool: PoolFormationIdentity = {
-      id: crypto.randomUUID(),
+    const newPool: PoolFormationIdentity = {
+      id: params.id ?? params.poolOfferId,
       poolOfferId: params.poolOfferId,
-      participantIds: params.participantIds ?? [],
       targetUnits: params.targetUnits,
       currentUnits: 0,
       status: "forming",
+      participantIds: params.participantIds ?? [],
     };
+
+    await this.repository.save(newPool);
+    return newPool;
+  }
+
+  async editPool(
+    id: string,
+    params: EditPoolParams,
+    context: ActorSecurityContext
+  ): Promise<PoolFormationIdentity> {
+    const pool = await this.repository.findById(id);
+
+    if (!pool) {
+      throw new Error(`Pool formation identity not found with id ${id}`);
+    }
+
+    if (!this.accessGuard.canEdit(context, pool)) {
+      throw new Error("Unauthorized to edit pool");
+    }
+
+    if (params.targetUnits !== undefined) {
+      pool.targetUnits = params.targetUnits;
+    }
+
+    if (params.participantIds !== undefined) {
+      pool.participantIds = params.participantIds;
+    }
 
     await this.repository.save(pool);
     return pool;
   }
 
-  async editPool(
-    context: SecurityContext,
-    actorId: string,
-    poolId: string,
-    params: EditPoolParams
-  ): Promise<PoolFormationIdentity> {
-    await this.dealerPoolAccessGuard.authorizePoolEdit(context, actorId);
+  async getPool(id: string, context: ActorSecurityContext): Promise<PoolFormationIdentity> {
+    const pool = await this.repository.findById(id);
 
-    const pool = await this.repository.findById(poolId);
     if (!pool) {
-      throw new Error(`Pool formation ${poolId} not found`);
+      throw new Error(`Pool formation identity not found with id ${id}`);
     }
 
-    const updatedPool: PoolFormationIdentity = {
-      ...pool,
-      targetUnits: params.targetUnits ?? pool.targetUnits,
-      currentUnits: params.currentUnits ?? pool.currentUnits,
-      status: params.status ?? pool.status,
-    };
-
-    await this.repository.save(updatedPool);
-    return updatedPool;
-  }
-
-  async manageOffer(
-    context: SecurityContext,
-    actorId: string,
-    poolId: string,
-    poolOfferId: string
-  ): Promise<PoolFormationIdentity> {
-    await this.dealerPoolAccessGuard.authorizePoolEdit(context, actorId);
-
-    const pool = await this.repository.findById(poolId);
-    if (!pool) {
-      throw new Error(`Pool formation ${poolId} not found`);
+    if (!this.accessGuard.canRead(context, pool)) {
+      throw new Error("Unauthorized to read pool");
     }
 
-    const updatedPool: PoolFormationIdentity = {
-      ...pool,
-      poolOfferId,
-    };
-
-    await this.repository.save(updatedPool);
-    return updatedPool;
+    return pool;
   }
 }

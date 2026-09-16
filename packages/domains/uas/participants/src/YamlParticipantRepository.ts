@@ -27,6 +27,17 @@ export class YamlParticipantRepository
     private readonly directory: string,
   ) {}
 
+  async findByEmail(email: string): Promise<any | null> {
+  // Accede a la colección interna de la clase (o usa this.load() / this.participants según la propiedad existente)
+  const list: any[] = (this as any).participants ?? (this as any).data ?? [];
+  return list.find((p) => p.email === email) ?? null;
+}
+
+async findById(id: string): Promise<any | null> {
+  const list: any[] = (this as any).participants ?? (this as any).data ?? [];
+  return list.find((p) => p.id === id) ?? null;
+}
+
   async save(participant: Participant): Promise<void> {
     await mkdir(this.directory, {
       recursive: true,

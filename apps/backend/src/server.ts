@@ -5,6 +5,18 @@ import { readFile } from "node:fs/promises";
 import { loadCatalog, recommend } from "./catalog.js";
 import type { Mission } from "../../../packages/configuration/entities/Mission.js";
 import { deleteActivity, deleteDirectoryEntry, donationConfigFromEnv, findSession, geocodeDirectory, hasPermission, loadActivityDirectory, loadDirectory, loadParticipants, login, saveActivity, saveDirectoryEntry, updateProgressiveEntry, type Activity, type DirectoryEntry, type Permission, type Session } from "./stage-one.js";
+import express from "express";
+import { createAuthMiddleware } from "./middleware/authMiddleware.js";
+import { requireAuth } from "./middleware/requireAuth.js";
+import { AuthController } from "./controllers/AuthController.js";
+import { DirectoryController } from "./controllers/DirectoryController.js";
+import { YamlParticipantRepository } from "@domains/uas/participants/src/YamlParticipantRepository.js";
+import { YamlDirectoryRepository } from "@domains/uas/ecosystem/backend/directory/YamlDirectoryRepository.js";
+import path from "path";
+import { GeocodingService } from "../geocoding/GeocodingService.js";
+
+const participantsDir = path.join(process.cwd(), "data/participants");
+const participantRepo = new YamlParticipantRepository(participantsDir);
 
 const appDirectory = dirname(fileURLToPath(import.meta.url));
 const dataDirectory = join(appDirectory, "../../../data/uav");
@@ -17,6 +29,66 @@ const SESSION_COOKIE = "daa_session";
 const SESSION_MAX_AGE = 8 * 60 * 60;
 const configuredUsername = (process.env.ADMIN_USERNAME ?? "").trim();
 const configuredHash = (process.env.ADMIN_PASSWORD_HASH ?? "").trim();
+const app = express();
+const port = process.env.PORT || 3001;
+const jwtSecret = process.env.JWT_SECRET || "default_dev_secret_key";
+
+// 1. Configuración Express
+app.use(express.json());
+
+// 2. Instanciación de Repositorios (Simulación de DB)
+
+const directoryRepo = new YamlDirectoryRepository([
+  // Muestra de datos para pruebas locales
+  {
+    id: "DIR-001",
+    name: "AgroDrones Delta",
+    type: "operator",
+    layers: ["drones"],
+    capabilities: ["fumigacion", "mapeo"],
+    contactAvailable: true,
+    geoAvailable: true,
+    presenceAvailable: true,
+    status: "WAIT",
+    isHold: false,
+    isWait: true,
+    isPublic: false,
+    phone: "+542231234567",
+    whatsapp: "+542231234567",
+    email: "contacto@agrodrones.com",
+    geolocation: {
+      address: "Ruta 226 Km 15",
+      city: "Mar del Plata",
+      province: "Buenos Aires",
+      latitude: -37.9,
+      longitude: -57.6,
+      status: "RESOLVED"
+    },
+    website: "https://agrodrones.com",
+    websiteStatus: true,
+    socialNetworks: true,
+    semanticNotes: "Requiere revisión de póliza de seguro aeronáutico."
+  }
+]);
+const googleApiKey = process.env.API_KEY_Server_Geocoding || "";
+const geocodingService = new GeocodingService(googleApiKey);
+
+// 3. Instanciación de Controladores
+const authController = new AuthController(participantRepo, jwtSecret);
+const directoryController = new DirectoryController(directoryRepo, geocodingService);
+
+// 4. Middlewares globales
+app.use(createAuthMiddleware(jwtSecret));
+
+// 5. Rutas Públicas (Auth)
+app.use("/api/auth", authController.router);
+
+// 6. Rutas Protegidas (Requieren JWT válido)
+app.use("/api/directory", directoryController.router);
+
+app.listen(port, () => {
+  console.log(`🚀 UAS Backend corriendo en http://localhost:${port}`);
+});
 
 console.log({
   adminUsername: configuredUsername,

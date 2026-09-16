@@ -6,7 +6,14 @@
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "types": ["node"]
+    "types": ["node"],
+      "paths": {
+      "@security/*": ["./packages/security/src/*"],
+      "@runtime/*": ["./packages/runtime/*"],
+      "@domains/*": ["./packages/domains/*"],
+      "@domains/uas/directory": ["./packages/domains/uas/backend/directory/index.ts"],
+      "@domains/uas/directory/*": ["./packages/domains/uas/backend/directory/*"]
+    }
   },
   "include": [
     "packages/**/*.ts",
