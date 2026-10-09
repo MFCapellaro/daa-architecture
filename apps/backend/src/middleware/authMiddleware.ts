@@ -1,44 +1,30 @@
-import { Request, Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
-import { SecurityContextFactory } from "@runtime/security/src/SecurityContextFactory.js";
-import type { ActorSecurityContext } from "@security/ActorSecurity.js";
+import { Request, Response, NextFunction } from 'express';
+import jwt from 'jsonwebtoken';
 
-declare global {
-  namespace Express {
-    interface Request {
-      securityContext?: ActorSecurityContext;
-    }
-  }
+const JWT_SECRET = process.env.JWT_SECRET || 'clave_secreta_desarrollo';
+
+export interface AuthRequest extends Request {
+  user?: {
+    id: string;
+    email: string;
+    role: 'admin' | 'dealer' | 'participante';
+  };
 }
 
-export const createAuthMiddleware = (jwtSecret: string) => {
-  return (req: Request, res: Response, next: NextFunction) => {
-    const authHeader = req.headers.authorization;
+export const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction) => {
+  const authHeader = req.headers.authorization;
 
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
-      req.securityContext = SecurityContextFactory.createAnonymous();
-      return next();
-    }
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ message: 'Token de acceso no proporcionado' });
+  }
 
-    const token = authHeader.split(" ")[1];
+  const token = authHeader.split(' ')[1];
 
-    try {
-      const decoded = jwt.verify(token, jwtSecret) as {
-        participantId: string;
-        roles?: string[];
-        permissions?: string[];
-      };
-
-      req.securityContext = SecurityContextFactory.createFromPayload({
-        actorId: decoded.participantId,
-        roles: decoded.roles,
-        permissions: decoded.permissions,
-        isAuthenticated: true,
-      });
-
-      next();
-    } catch {
-      return res.status(401).json({ error: "Token inválido o expirado" });
-    }
-  };
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET) as AuthRequest['user'];
+    req.user = decoded;
+    next();
+  } catch (error) {
+    return res.status(401).json({ message: 'Token inválido o expirado' });
+  }
 };

@@ -1,44 +1,16 @@
-id: "agro-link"
-name: "Agro Link"
-type: media
-
+id: agro-link
+name: Agro Link
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://agrolink.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Sánchez de Bustamante 2134
+  city: CABA
+  province: Buenos Aires
+  phone: +54 11 23072521
+  email: aglauber@agrolink.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 200
-  section: "media"
-  raw: "Agro Link - https://agrolink.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.5876586
+  longitude: -58.40621840000001

@@ -1,44 +1,16 @@
-id: "facma"
-name: "FACMA"
-type: organization
-
+id: facma
+name: FACMA
+type: company
 identity:
   status: active
-
 layers:
   - public
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: "Argentina"
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.facma.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Fray Luis Beltrán 1949
+  city: Casilda
+  province: Santa Fe
+  phone: +54 3464 422541
+  email: facma@agrocontratistas.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 154
-  section: "public"
-  raw: "FACMA - Federación Argentina de Contratistas de Maquinaria Agrícola - https://www.facma.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -33.0418212
+  longitude: -61.16572719999999

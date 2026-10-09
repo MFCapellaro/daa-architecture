@@ -1,45 +1,16 @@
-id: "aldebaran"
-name: "Aldebaran"
+id: aldebaran
+name: Aldebaran
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Buenos Aires"
-  country: "Argentina"
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "http://www.aldebaranagro.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Av E Román 1348 PB
+  city: Chacabuco
+  province: Buenos Aires
+  phone: +54 2352 418088
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 53
-  section: "drones"
-  raw: "Aldebaran - Chacabuco - Buenos Aires - 2352 56-2880 - http://www.aldebaranagro.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.6229999
+  longitude: -60.48573870000001

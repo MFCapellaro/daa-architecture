@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "add": "^2.0.9",
+    "cors": "^2.8.6",
+    "pnpm": "^12.4.2",
+    "y": "^0.3.2"
+  }
+}

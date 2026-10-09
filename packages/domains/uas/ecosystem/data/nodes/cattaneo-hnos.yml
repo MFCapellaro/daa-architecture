@@ -1,45 +1,16 @@
-id: "cattaneo-hnos"
-name: "Cattaneo Hnos"
+id: cattaneo-hnos
+name: Cattaneo Hnos
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Córdoba"
-  country: "Argentina"
-  phone: "+54 351 2358890"
-  whatsapp: null
-  email: "bibianab@ypfcattaneo.com.ar"
-
-presence:
-  website: "https://www.ypfcattaneo.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Ruta Nacional 19, Km 316
+  city: Mi Granja
+  province: Córdoba
+  phone: +54 351 271 4999
+  email: info@ypfcattaneo.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 20
-  section: "drones"
-  raw: "Cattaneo Hnos - Ruta 19 Km 313 - Montecristo - Córdoba - Tel.: +54 351 2358890 - bibianab@ypfcattaneo.com.ar / Tel.: +54 351 3832906 - marcosp@ypfcattaneo.com.ar / Tel.: 351 2358891 - valentinb@ypfcattaneo.com.ar / Tel.: 351 2358881 - pedrok@ypfcattaneo.com.ar - https://www.ypfcattaneo.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -31.4060508
+  longitude: -62.4473666

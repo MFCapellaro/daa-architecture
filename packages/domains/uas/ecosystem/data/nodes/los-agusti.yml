@@ -1,44 +1,16 @@
-id: "los-agusti"
-name: "Los Agusti"
-type: media
-
+id: los-agusti
+name: Los Agusti
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://losagusti.com/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: 25 de Mayo 464
+  city: Marcos Juárez
+  province: Córdoba
+  phone: +54 3472 554549
+  email: losagusti@gmail.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 202
-  section: "media"
-  raw: "Los Agusti - https://losagusti.com/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.6936151
+  longitude: -62.1034021

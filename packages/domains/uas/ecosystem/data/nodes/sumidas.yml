@@ -1,45 +1,16 @@
-id: "sumidas"
-name: "Sumidas"
+id: sumidas
+name: Sumidas
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://sumidas.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Ruta 188 Km 219
+  city: Lincoln
+  province: Buenos Aires
+  phone: ''
+  email: lincoln@sumidas.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 43
-  section: "drones"
-  raw: "Sumidas - https://sumidas.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.8408535
+  longitude: -61.5147086

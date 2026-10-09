@@ -1,45 +1,16 @@
-id: "natalini-agro-srl"
-name: "Natalini Agro SRL"
+id: natalini-agro-srl
+name: Natalini Agro SRL
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Río Negro"
-  country: "Argentina"
-  phone: "+54 298 4401207"
-  whatsapp: "+54 298 4509016"
-  email: null
-
-presence:
-  website: "https://www.nataliniagro.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Ruta Nac. Nº 22 y Acceso Martín Fierro - Km 1201
+  city: Allen
+  province: Río Negro
+  phone: +54 298 4401207
+  email: ventas@nataliniagro.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 15
-  section: "drones"
-  raw: "Natalini Agro SRL - Ruta Nac. Nº 22 y Acceso Martin Fierro - Km 1201 Allen - Río Negro - Tel: +54 298 4401207 - Whatsapp: +54 298 4509016 - https://www.nataliniagro.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -39.0035766
+  longitude: -67.8468848

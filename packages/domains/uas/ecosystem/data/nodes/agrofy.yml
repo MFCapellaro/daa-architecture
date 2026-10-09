@@ -1,44 +1,16 @@
-id: "agrofy"
-name: "AGROFY"
-type: media
-
+id: agrofy
+name: AGROFY
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://news.agrofy.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Av. Madres de Plaza de 25 de Mayo 3020, Piso 5°
+  city: Rosario
+  province: Santa Fe
+  phone: +54 341 6570120
+  email: info@agrofy.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 194
-  section: "media"
-  raw: "AGROFY - https://news.agrofy.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -33.0378936
+  longitude: -60.65581749999999

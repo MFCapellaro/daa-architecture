@@ -1,45 +1,16 @@
-id: "camptech"
-name: "Camptech"
+id: camptech
+name: Camptech
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Córdoba"
-  country: "Argentina"
-  phone: "+54 356 4363386"
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.instagram.com/camptechsas/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Parque Industrial, Juan Venier 3000
+  city: San Francisco
+  province: Córdoba
+  phone: +54 356 4363386
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 21
-  section: "drones"
-  raw: "Camptech - Tancacha - Córdoba - +54 356 4363386 - https://www.instagram.com/camptechsas/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -31.4364508
+  longitude: -62.1237989

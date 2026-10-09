@@ -1,44 +1,16 @@
-id: "unmdp"
-name: "UNMDP"
-type: institution
-
+id: unmdp
+name: UNMDP
+type: company
 identity:
   status: active
-
 layers:
   - academia
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://fca.mdp.edu.ar/drones-en-el-agro-mapeo-y-aplicacion-de-insumos/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Ruta Nacional 226, km 73,5
+  city: Balcarce
+  province: Buenos Aires
+  phone: +54 2266 431856
+  email: ingrefca@mdp.edu.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 162
-  section: "academia"
-  raw: "UNMDP - Mar del Plata / Balcarce - https://fca.mdp.edu.ar/drones-en-el-agro-mapeo-y-aplicacion-de-insumos/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -37.8232264
+  longitude: -58.2132596

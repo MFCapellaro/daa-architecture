@@ -1,44 +1,16 @@
-id: "preseeds-agtech"
-name: "PreSeeds AgTech"
+id: preseeds-agtech
+name: PreSeeds AgTech
 type: company
-
 identity:
   status: active
-
 layers:
   - technology
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.instagram.com/preseeds_agtech/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Puerto Norte
+  city: Rosario
+  province: Santa Fe
+  phone: +54 3468 541174
+  email: info@preseeds.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 168
-  section: "technology"
-  raw: "PreSeeds AgTech - Diagnóstico de suelos y predicción - https://www.instagram.com/preseeds_agtech/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.9230719
+  longitude: -60.66353529999999

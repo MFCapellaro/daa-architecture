@@ -1,44 +1,16 @@
-id: "fm-plus-93-1"
-name: "FM Plus 93.1"
-type: media
-
+id: fm-plus-93-1
+name: FM Plus 93.1
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.rosario3.com/radios/fmplus.html"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Av. Presidente Perón 8101
+  city: Rosario
+  province: Santa Fe
+  phone: +54 341 4581300
+  email: comercial@rosario3.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 209
-  section: "media"
-  raw: "FM Plus 93.1 - https://www.rosario3.com/radios/fmplus.html"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.9774133
+  longitude: -60.7277784

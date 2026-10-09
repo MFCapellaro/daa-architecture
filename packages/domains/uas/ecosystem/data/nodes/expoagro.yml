@@ -1,44 +1,16 @@
-id: "expoagro"
-name: "Expoagro"
-type: event
-
+id: expoagro
+name: Expoagro
+type: company
 identity:
   status: active
-
 layers:
   - events
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Corrientes"
-  country: "Argentina"
-  phone: "+54 11 34351111"
-  whatsapp: null
-  email: "ventas@exponenciar.com.ar"
-
-presence:
-  website: "https://www.expoagro.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Av. Corrientes 1302 – 5° Piso
+  city: CABA
+  province: Buenos Aires
+  phone: +54 11 34351111
+  email: ventas@exponenciar.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 175
-  section: "events"
-  raw: "Expoagro - Tel.: +54 11 34351111 - Av. Corrientes 1302 5 Piso - Bs. As. - ventas@exponenciar.com.ar / prensa@exponenciar.com.ar - https://www.expoagro.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.6040847
+  longitude: -58.38520369999999

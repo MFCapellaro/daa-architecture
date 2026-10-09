@@ -1,44 +1,16 @@
-id: "lt8"
-name: "LT8"
-type: media
-
+id: lt8
+name: LT8
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.lt8.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Sarmiento 763
+  city: Rosario
+  province: Santa Fe
+  phone: +54 341 5100830
+  email: contacto@lt8.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 198
-  section: "media"
-  raw: "LT8 - https://www.lt8.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.9459742
+  longitude: -60.63794170000001

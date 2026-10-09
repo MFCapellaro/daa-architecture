@@ -1,44 +1,16 @@
-id: "federacion-patronal"
-name: "Federación Patronal"
+id: federacion-patronal
+name: Federación Patronal
 type: company
-
 identity:
   status: active
-
 layers:
   - insurance
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.fedpat.com.ar/seguros/seguro-para-drones/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Av. 51 N° 770
+  city: La Plata
+  province: Buenos Aires
+  phone: 0810 222 5588
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 158
-  section: "insurance"
-  raw: "Federación Patronal - https://www.fedpat.com.ar/seguros/seguro-para-drones/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.9186353
+  longitude: -57.9521495

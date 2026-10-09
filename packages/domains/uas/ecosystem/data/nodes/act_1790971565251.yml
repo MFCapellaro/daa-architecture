@@ -1,0 +1,16 @@
+id: act_1790971565251
+name: DJI Academy Bidcom
+type: company
+identity:
+  status: active
+layers:
+  - dealer
+contact:
+  address: ''
+  city: CABA
+  province: Buenos Aires
+  phone: +54 11 6886 1962
+  email: djiacademy@djistore-academy.com
+geolocation:
+  latitude: -34.6036739
+  longitude: -58.3821215

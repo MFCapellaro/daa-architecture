@@ -1,44 +1,16 @@
-id: "agrositio"
-name: "AgroSitio"
-type: media
-
+id: agrositio
+name: AgroSitio
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: "info@agrositio.com"
-
-presence:
-  website: "https://www.agrositio.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Tucumán 359 - Piso 6°
+  city: CABA
+  province: Buenos Aires
+  phone: +54 11 2153 2470
+  email: info@agrositio.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 204
-  section: "media"
-  raw: "AgroSitio - info@agrositio.com - https://www.agrositio.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.6007618
+  longitude: -58.37210940000001

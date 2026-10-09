@@ -1,45 +1,16 @@
-id: "terramar-jv-9"
-name: "Terramar JV"
+id: terramar-jv-9
+name: Terramar JV
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: "+54 298 3343740"
-  whatsapp: null
-  email: "rmoreno@terramarjv.com.ar"
-
-presence:
-  website: null
-  websiteMentioned: false
-  websiteMentionsDrones: null
-  websiteUnavailable: false
-
+  address: Av. Moreno 1111
+  city: Tres Arroyos
+  province: Buenos Aires
+  phone: +54 298 3343740
+  email: rmoreno@terramarjv.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 38
-  section: "drones"
-  raw: "Terramar JV - Tres Arroyos - Av. Moreno 1111 - rmoreno@terramarjv.com.ar - +54 298 3343740 / mosinalde@terramarjv.com.ar - +54 298 3613714"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -38.3855463
+  longitude: -60.2648818

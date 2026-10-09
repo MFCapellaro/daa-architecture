@@ -3,6 +3,45 @@ import { requireAuth } from "../middleware/requireAuth.js";
 import type { DirectoryRepository } from "@domains/uas/ecosystem/backend/directory/DirectoryRepository.js";
 import type { DirectoryNodeStatus } from "@domains/uas/ecosystem/backend/directory/DirectoryTypes.js";
 import { GeocodingService } from "../../geocoding/GeocodingService.js";
+
+// Datos simulados (Mock) mientras se configura la Base de Datos
+const MOCK_ACTORS = [
+  {
+    id: '1',
+    name: 'Dealer Central',
+    email: 'contacto@dealercentral.com',
+    role: 'dealer',
+    location: { lat: -34.6037, lng: -58.3816 }, // Buenos Aires
+    status: 'activo',
+  },
+  {
+    id: '2',
+    name: 'Juan Pérez',
+    email: 'juan.perez@ejemplo.com',
+    role: 'participante',
+    location: { lat: -31.4201, lng: -64.1888 }, // Córdoba
+    status: 'activo',
+  },
+  {
+    id: '3',
+    name: 'Admin General',
+    email: 'admin@empresa.com',
+    role: 'admin',
+    location: { lat: -31.4501, lng: -64.6888 }, // Córdoba
+    status: 'activo',
+  },
+];
+
+export const getActors = async (req: Request, res: Response) => {
+  try {
+    // Retorna datos mock en lugar de consultar la BD
+    return res.status(200).json(MOCK_ACTORS);
+  } catch (error) {
+    console.error('Error al obtener actores:', error);
+    return res.status(500).json({ message: 'Error interno en el servidor' });
+  }
+};
+
 export class DirectoryController {
   public router: Router;
 

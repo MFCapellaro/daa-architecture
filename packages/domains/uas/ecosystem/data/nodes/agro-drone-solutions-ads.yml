@@ -1,45 +1,16 @@
-id: "agro-drone-solutions-ads"
-name: "Agro Drone Solutions ADS"
+id: agro-drone-solutions-ads
+name: Agro Drone Solutions ADS
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: "+54 11 34925645"
-  whatsapp: null
-  email: null
-
-presence:
-  website: "http://instagram.com/agrodronesolutionsok/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: ''
+  city: Gualeguay
+  province: Entre Ríos
+  phone: +54 3444 497437
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 77
-  section: "drones"
-  raw: "Agro Drone Solutions ADS - Entre Rios - Tel: +54 11 34925645 - http://instagram.com/agrodronesolutionsok/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -33.1503285
+  longitude: -59.31046849999999

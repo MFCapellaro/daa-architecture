@@ -1,45 +1,16 @@
-id: "zuqueli-hnos"
-name: "Zuqueli Hnos"
+id: zuqueli-hnos
+name: Zuqueli Hnos
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Santa fe"
-  country: "Argentina"
-  phone: "+54 9342 4399207"
-  whatsapp: "+54 9342 4399207"
-  email: null
-
-presence:
-  website: "https://www.zuqueli.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Blas Parera 5408
+  city: Santa Fe de la Vera Cruz
+  province: Santa fe
+  phone: +54 9342 4399207
+  email: repuestos@zuqueli.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 27
-  section: "drones"
-  raw: "Zuqueli Hnos - Santa fe - Santa Fe - WhatsApp +54 934 24399207 - https://www.zuqueli.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -31.6141936
+  longitude: -60.71760709999999

@@ -1,45 +1,16 @@
-id: "agronomia-pampa-s-r-l"
-name: "Agronomía Pampa S.R.L"
+id: agronomia-pampa-s-r-l
+name: Agronomía Pampa S.R.L
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: "+54 349 8462791"
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://agronomiapampa.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Ruta 11 N° 1522
+  city: San Justo
+  province: Santa Fe
+  phone: +54 349 8462791
+  email: administracion@agronomiapampa.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 71
-  section: "drones"
-  raw: "Agronomía Pampa S.R.L - San Justo - Tel: +54 349 8462791 - https://agronomiapampa.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -30.7789883
+  longitude: -60.59401159999999

@@ -1,44 +1,16 @@
-id: "news-digitales"
-name: "News Digitales"
-type: media
-
+id: news-digitales
+name: News Digitales
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: "info@newsdigitales.com"
-
-presence:
-  website: "https://www.newsdigitales.com/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Av. del Libertador 6350
+  city: CABA
+  province: Buenos Aires
+  phone: +54 11 25300283
+  email: info@newsdigitales.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 228
-  section: "media"
-  raw: "News Digitales - info@newsdigitales.com - https://www.newsdigitales.com/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.5535728
+  longitude: -58.4507219

@@ -1,44 +1,16 @@
-id: "radio-aire-federal"
-name: "Radio Aire Federal"
-type: media
-
+id: radio-aire-federal
+name: Radio Aire Federal
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Buenos Aires"
-  country: "Argentina"
-  phone: "+54 223 6172000"
-  whatsapp: null
-  email: "airefederal@gmail.com"
-
-presence:
-  website: "https://airefederal.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Hipólito Yrigoyen 2641
+  city: Mar del Plata
+  province: Buenos Aires
+  phone: +54 223 6172000
+  email: airefederal@gmail.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 218
-  section: "media"
-  raw: "Radio Aire Federal - Balcarce - Buenos Aires - airefederal@gmail.com - +54 223 6172000 - https://airefederal.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -38.0055035
+  longitude: -57.55615029999999

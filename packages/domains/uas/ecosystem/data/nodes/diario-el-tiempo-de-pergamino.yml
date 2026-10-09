@@ -1,44 +1,16 @@
-id: "diario-el-tiempo-de-pergamino"
-name: "Diario El Tiempo de Pergamino"
-type: media
-
+id: diario-el-tiempo-de-pergamino
+name: Diario El Tiempo de Pergamino
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://eltiempodepergamino.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Catamarca 475
+  city: Pergamino
+  province: Buenos Aires
+  phone: ''
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 223
-  section: "media"
-  raw: "Diario El Tiempo de Pergamino - https://eltiempodepergamino.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -33.894981
+  longitude: -60.5606702

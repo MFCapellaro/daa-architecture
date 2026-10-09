@@ -1,44 +1,16 @@
-id: "agro-educacion"
-name: "AGRO Educación"
-type: media
-
+id: agro-educacion
+name: AGRO Educación
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: "+54 341 5594222"
-  whatsapp: null
-  email: "info@agroeducacion.com"
-
-presence:
-  website: "https://www.agroeducacion.com/website/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Córdoba 1452, Piso 5, Oficina D
+  city: Rosario
+  province: Santa Fe
+  phone: +54 341 5594222
+  email: info@agroeducacion.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 203
-  section: "media"
-  raw: "AGRO Educación - info@agroeducacion.com -  +54 341 5594222 - https://www.agroeducacion.com/website/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.94536
+  longitude: -60.643114

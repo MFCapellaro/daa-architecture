@@ -1,44 +1,16 @@
-id: "maquinac"
-name: "MaquiNAC"
-type: media
-
+id: maquinac
+name: MaquiNAC
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Córdoba"
-  country: "Argentina"
-  phone: "+54 351 3455074"
-  whatsapp: null
-  email: "info@maquinac.com"
-
-presence:
-  website: "https://maquinac.com/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Obispo Oro 479, 1º Piso
+  city: Nueva Córdoba
+  province: Córdoba
+  phone: +54 351 3455074
+  email: info@maquinac.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 208
-  section: "media"
-  raw: "MaquiNAC - MDIRECTO SA - Córdoba - Argentina - +54 351 3455074 - info@maquinac.com- https://maquinac.com/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -31.4261731
+  longitude: -64.18113629999999

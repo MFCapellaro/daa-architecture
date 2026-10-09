@@ -1,44 +1,16 @@
-id: "fm-vida"
-name: "FM Vida"
-type: media
-
+id: fm-vida
+name: FM Vida
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://fmvida.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Avenida Presidente Perón 8101
+  city: Rosario
+  province: Santa Fe
+  phone: +54 341 3403200
+  email: fmvida@rosario3.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 213
-  section: "media"
-  raw: "FM Vida - https://fmvida.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.9774133
+  longitude: -60.7277784

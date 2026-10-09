@@ -1,45 +1,16 @@
-id: "i-b-agro-chajari"
-name: "I-B agro Chajari"
+id: i-b-agro-chajari
+name: I+B Agro Chajarí
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: "+54 345 6621268"
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.instagram.com/ibagrochajari/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Ruta Nacional 14 y Avenida Belgrano
+  city: Chajarí
+  province: Entre Ríos
+  phone: +54 341 606 9080
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 59
-  section: "drones"
-  raw: "I-B agro Chajari - Ruta nacional 14 y Av. Belgrano. - Tel: +54 345 6621268 - https://www.instagram.com/ibagrochajari/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -30.744996
+  longitude: -57.9955786

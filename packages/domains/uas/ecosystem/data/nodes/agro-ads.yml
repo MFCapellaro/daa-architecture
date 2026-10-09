@@ -1,44 +1,16 @@
-id: "agro-ads"
-name: "AGRO ADS"
-type: media
-
+id: agro-ads
+name: AGRO ADS
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.agroads.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Bv. Pte. Roca 185, Piso 3, Departamento C
+  city: Rafaela
+  province: Santa Fe
+  phone: ''
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 184
-  section: "media"
-  raw: "AGRO ADS - https://www.agroads.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -31.2525148
+  longitude: -61.49372779999999

@@ -1,45 +1,16 @@
-id: "folmer"
-name: "Folmer"
+id: folmer
+name: Folmer
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Entre Ríos"
-  country: "Argentina"
-  phone: "+54 343 4951700"
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.folmer.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Ruta 12 y 131
+  city: Crespo
+  province: Entre Ríos
+  phone: +54 343 4951700
+  email: maquinarias@folmer.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 28
-  section: "drones"
-  raw: "Folmer - Humberto A. Seri 1372, Crespo - Entre Ríos - +54 343 4951700 - https://www.folmer.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.0308896
+  longitude: -60.3071844

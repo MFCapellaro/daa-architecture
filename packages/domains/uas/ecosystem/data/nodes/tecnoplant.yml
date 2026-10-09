@@ -1,45 +1,16 @@
-id: "tecnoplant"
-name: "TECNOPLANT"
+id: tecnoplant
+name: TECNOPLANT
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "San Luis"
-  country: "Argentina"
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://tecnoplantsrl.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Av. Lafinur 930
+  city: San Luis
+  province: San Luis
+  phone: +54 0266 4446328
+  email: info@tecnoplantsrl.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 57
-  section: "drones"
-  raw: "TECNOPLANT - San Luis - Av. Lafinur 930, D5700 San Luis - https://tecnoplantsrl.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -33.3009521
+  longitude: -66.346931

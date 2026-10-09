@@ -1,0 +1,12 @@
+packages:
+  - 'apps/*'
+
+allowBuilds:
+  bcrypt: false
+  esbuild: false
+  pnpm: false
+minimumReleaseAgeExclude:
+  - '@types/node@22.20.3'
+  - react-router-dom@7.18.4
+  - react-router@7.18.4
+  

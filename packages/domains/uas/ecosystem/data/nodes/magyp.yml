@@ -1,44 +1,16 @@
-id: "magyp"
-name: "MAGyP"
-type: organization
-
+id: magyp
+name: MAGyP
+type: company
 identity:
   status: active
-
 layers:
   - public
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.magyp.gob.ar/desarrollo-foresto-industrial/webinar-002.php"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Av. Paseo Colón 982
+  city: CABA
+  province: Buenos Aires
+  phone: 0800 333 62497
+  email: informacion@magyp.gob.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 150
-  section: "public"
-  raw: "MAGyP - Metrya y Agrimensura del Norte SRL - https://www.magyp.gob.ar/desarrollo-foresto-industrial/webinar-002.php"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.61862929999999
+  longitude: -58.3683451

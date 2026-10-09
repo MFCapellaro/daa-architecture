@@ -1,44 +1,16 @@
-id: "fearca"
-name: "FEARCA"
-type: organization
-
+id: fearca
+name: FEARCA
+type: company
 identity:
   status: active
-
 layers:
   - public
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Córdoba"
-  country: "Argentina"
-  phone: "+54 11 31745375"
-  whatsapp: null
-  email: "florencialucero@pucarapress.com"
-
-presence:
-  website: "https://fearca.org/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: RN 158 km 146,5 – Aeropuerto Regional Villa María
+  city: Villa María
+  province: Córdoba
+  phone: +54 11 31745375
+  email: info@fearca.org
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 152
-  section: "public"
-  raw: "FEARCA - RN 158 km 146,5 – Aeropuerto Regional Villa María – Córdoba - +54 11 31745375 - florencialucero@pucarapress.com - https://fearca.org/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.32733109999999
+  longitude: -63.23097600000001

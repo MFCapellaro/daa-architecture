@@ -1,44 +1,16 @@
-id: "sumitomo-corporation"
-name: "Sumitomo Corporation"
+id: sumitomo-corporation
+name: Sumitomo Corporation
 type: company
-
 identity:
   status: active
-
 layers:
   - suppliers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.sumitomochemical.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: 25 de Mayo 516, Piso 9
+  city: CABA
+  province: Buenos Aires
+  phone: +54 1152 743040
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 180
-  section: "suppliers"
-  raw: "Sumitomo Corporation - https://www.sumitomochemical.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.6018707
+  longitude: -58.37137360000001

@@ -1,44 +1,16 @@
-id: "dji-academy-school"
-name: "DJI Academy school"
-type: institution
-
+id: dji-academy-school
+name: DJI Academy RC Online
+type: company
 identity:
   status: active
-
 layers:
   - academia
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: null
-  websiteMentioned: false
-  websiteMentionsDrones: null
-  websiteUnavailable: false
-
+  address: Armenia 1539
+  city: CABA
+  province: Buenos Aires
+  phone: +54 11 2730 6460
+  email: djiacademy@rconline.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 140
-  section: "academia"
-  raw: "DJI Academy school"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.5904767
+  longitude: -58.4287311

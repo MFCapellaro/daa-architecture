@@ -1,44 +1,16 @@
-id: "rus-agro"
-name: "RUS Agro"
+id: rus-agro
+name: RUS Agro
 type: company
-
 identity:
   status: active
-
 layers:
   - insurance
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.rus.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Congreso de Tucumán 21
+  city: Concepción del Uruguay
+  province: Entre Ríos
+  phone: 0800 888 7787
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 157
-  section: "insurance"
-  raw: "RUS Agro - https://www.rus.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.4848148
+  longitude: -58.2348298

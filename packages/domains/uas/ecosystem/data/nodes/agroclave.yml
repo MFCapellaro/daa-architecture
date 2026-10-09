@@ -1,44 +1,16 @@
-id: "agroclave"
-name: "AgroClave"
-type: media
-
+id: agroclave
+name: AgroClave
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Santa Fe"
-  country: "Argentina"
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.agroclave.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Sarmiento 763
+  city: Rosario
+  province: Santa Fe
+  phone: +54 341 2521606
+  email: pmartino@lacapital.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 197
-  section: "media"
-  raw: "AgroClave - Sarmiento 763 - Rosario - Santa Fe. - https://www.agroclave.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.9459742
+  longitude: -60.63794170000001

@@ -1,44 +1,16 @@
-id: "agroguia"
-name: "AgroGuía"
-type: media
-
+id: agroguia
+name: AgroGuía
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Córdoba"
-  country: "Argentina"
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://agroguia.com/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Gregorio Gavier 2013
+  city: Córdoba
+  province: Córdoba
+  phone: +54 351 8660300
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 227
-  section: "media"
-  raw: "AgroGuía - Córdoba - https://agroguia.com/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -31.3682711
+  longitude: -64.2353997

@@ -1,44 +1,16 @@
-id: "uns"
-name: "UNS"
-type: institution
-
+id: uns
+name: UNS
+type: company
 identity:
   status: active
-
 layers:
-  - academia
-
-capabilities:
-  []
-
+  - escuela
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://repositoriodigital.uns.edu.ar/handle/123456789/7400"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Avenida Alberto Cabrera 3300
+  city: Bahía Blanca
+  province: Buenos Aires
+  phone: +54 0291 4595329
+  email: agricu@uns.edu.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 161
-  section: "academia"
-  raw: "UNS - Bahía Blanca - https://repositoriodigital.uns.edu.ar/handle/123456789/7400"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -38.6929524
+  longitude: -62.2365623

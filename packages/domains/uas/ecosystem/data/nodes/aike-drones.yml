@@ -1,45 +1,16 @@
-id: "aike-drones"
-name: "Aike Drones"
+id: aike-drones
+name: Aike Drones
 type: company
-
 identity:
   status: active
-
 layers:
   - drones
-  - dealers
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Buenos Aires"
-  country: "Argentina"
-  phone: "+54 234 6558515"
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.aikedrones.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Av. Hijas de San José 447
+  city: Chivilcoy
+  province: Buenos Aires
+  phone: +54 234 6558515
+  email: aikedrones@gmail.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 67
-  section: "drones"
-  raw: "Aike Drones - Av. Hijas de San José 447, Chivilcoy, Provincia de Buenos Aires - Tel: +54 234 6558515 - https://www.aikedrones.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.9174009
+  longitude: -60.0429013

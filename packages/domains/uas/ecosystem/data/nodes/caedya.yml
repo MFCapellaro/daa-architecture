@@ -1,44 +1,16 @@
-id: "caedya"
-name: "CAEDyA"
-type: organization
-
+id: caedya
+name: CAEDyA
+type: company
 identity:
   status: active
-
 layers:
   - public
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: "Argentina"
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://caedya.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Hipólito Yrigoyen 785, Piso 3° "I"
+  city: CABA
+  province: Buenos Aires
+  phone: +54 11 6634 7783
+  email: secretaria@caedya.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 151
-  section: "public"
-  raw: "CAEDyA - Cámara Argentina de Empresas de Drones y Afines - https://caedya.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.6093224
+  longitude: -58.377494

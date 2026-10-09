@@ -1,44 +1,16 @@
-id: "tranquera-abierta"
-name: "Tranquera Abierta"
-type: media
-
+id: tranquera-abierta
+name: Tranquera Abierta
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.tabierta.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Islas Malvinas 580
+  city: Venado Tuerto
+  province: Santa Fe
+  phone: +54 3462 425080
+  email: ''
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 222
-  section: "media"
-  raw: "Tranquera Abierta - https://www.tabierta.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -33.740624
+  longitude: -61.9506988

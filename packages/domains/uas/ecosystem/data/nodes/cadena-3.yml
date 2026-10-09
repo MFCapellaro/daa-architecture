@@ -1,44 +1,16 @@
-id: "cadena-3"
-name: "CADENA 3"
-type: media
-
+id: cadena-3
+name: CADENA 3
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Córdoba"
-  country: "Argentina"
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.cadena3.com/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Alvear 139
+  city: Córdoba Capital
+  province: Córdoba
+  phone: 0810-810-4444
+  email: comercial@cadena3.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 192
-  section: "media"
-  raw: "CADENA 3 - Córdoba / Rosario - Noticias - https://www.cadena3.com/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -31.4151536
+  longitude: -64.18087229999999

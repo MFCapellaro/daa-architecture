@@ -1,44 +1,16 @@
-id: "solo-campo"
-name: "Solo Campo"
-type: media
-
+id: solo-campo
+name: Solo Campo
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: "Santa Fe"
-  country: "Argentina"
-  phone: "+54 340 1646746"
-  whatsapp: null
-  email: "info@solocampo.com"
-
-presence:
-  website: "https://solocampo.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Perito Moreno 470
+  city: San Genaro
+  province: Santa Fe
+  phone: +54 340 1646746
+  email: info@solocampo.com
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 216
-  section: "media"
-  raw: "Solo Campo - info@solocampo.com - +54 340 1646746 - Perito Moreno 470 - San Genaro - Santa Fe - https://solocampo.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -32.365224
+  longitude: -61.34774900000001

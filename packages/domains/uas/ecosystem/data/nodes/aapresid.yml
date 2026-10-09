@@ -1,44 +1,16 @@
-id: "aapresid"
-name: "Aapresid"
-type: organization
-
+id: aapresid
+name: Aapresid
+type: company
 identity:
   status: active
-
 layers:
   - public
-
-capabilities:
-  []
-
 contact:
-  address: "Dorrego 1639 Piso 2º, Oficina A"
-  city: "Rosario"
-  province: "Santa Fe"
-  country: "Argentina"
-  phone: "+54 (341) 4260745"
-  whatsapp: "+54 9 341 7230061"
-  email: "gines@aapresid.org.ar"
-
-presence:
-  website: "https://www.aapresid.org.ar/es"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Dorrego 1639 Piso 2º, Oficina A
+  city: Rosario
+  province: Santa Fe
+  phone: +54 (341) 4260745
+  email: gines@aapresid.org.ar
 geolocation:
   latitude: -32.9555
   longitude: -60.6542
-  precision: alta
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 153
-  section: "public"
-  raw: "Aapresid - Asociación Argentina de Productores En Siembra Directa - https://www.aapresid.org.ar/es"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true

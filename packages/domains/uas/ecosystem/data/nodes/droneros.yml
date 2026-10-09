@@ -1,44 +1,16 @@
-id: "droneros"
-name: "Droneros"
-type: media
-
+id: droneros
+name: Droneros
+type: company
 identity:
   status: active
-
 layers:
   - media
-
-capabilities:
-  []
-
 contact:
-  address: null
-  city: null
-  province: null
-  country: null
-  phone: null
-  whatsapp: null
-  email: null
-
-presence:
-  website: "https://www.droneros.com.ar/"
-  websiteMentioned: true
-  websiteMentionsDrones: true
-  websiteUnavailable: false
-
+  address: Aristóbulo del Valle 1301
+  city: CABA
+  province: Buenos Aires
+  phone: +54 11 49370569
+  email: info@droneros.com.ar
 geolocation:
-  latitude: null
-  longitude: null
-  precision: null
-  status: "pending"
-
-source:
-  file: "ecosystem-source.txt"
-  line: 185
-  section: "media"
-  raw: "Droneros - https://www.droneros.com.ar/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  latitude: -34.6353022
+  longitude: -58.37119989999999
