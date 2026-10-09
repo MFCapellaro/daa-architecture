@@ -13,6 +13,7 @@ interface AuthContextType {
   user: User | null;
   token: string | null;
   isAuthenticated: boolean;
+  loading: boolean;
   login: (token: string, user: User) => void;
   logout: () => void;
 }
@@ -22,19 +23,25 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const savedToken = localStorage.getItem('daa_token');
-    const savedUser = localStorage.getItem('daa_user');
+    try {
+      const savedToken = localStorage.getItem('daa_token');
+      const savedUser = localStorage.getItem('daa_user');
 
-    if (savedToken && savedUser) {
-      try {
-        setToken(savedToken);
-        setUser(JSON.parse(savedUser));
-      } catch (error) {
-        localStorage.removeItem('daa_token');
-        localStorage.removeItem('daa_user');
+      if (savedToken && savedUser) {
+        try {
+          setToken(savedToken);
+          setUser(JSON.parse(savedUser));
+        } catch (error) {
+          console.error('No se pudo restaurar la sesión guardada.', error);
+          localStorage.removeItem('daa_token');
+          localStorage.removeItem('daa_user');
+        }
       }
+    } finally {
+      setLoading(false);
     }
   }, []);
 
@@ -58,6 +65,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         user,
         token,
         isAuthenticated: !!token && !!user,
+        loading,
         login,
         logout,
       }}
