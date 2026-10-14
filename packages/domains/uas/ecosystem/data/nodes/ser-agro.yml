@@ -1,16 +1,47 @@
 id: ser-agro
 name: Ser Agro
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Omar Carrasco 2776
   city: Rosario
   province: Santa Fe
   phone: +54 346 5432688
   email: ser.agro@gruposer.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -32.9651436
   longitude: -60.6688737
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Omar Carrasco 2776
+  city: Rosario
+  province: Santa Fe
+  country: Argentina
+  coordinates:
+    latitude: -32.9651436
+    longitude: -60.6688737
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

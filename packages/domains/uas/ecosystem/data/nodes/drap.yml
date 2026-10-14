@@ -4,15 +4,44 @@ type: company
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
-  address: >-
-    Finca La Lonja - Calle Hernando de Lerma s/n. Barrio San José. - Rosario de
-    Lerma
-  city: ''
+  address: Finca La Lonja - Calle Hernando de Lerma s/n. Barrio San José
+  city: Rosario de Lerma
   province: Salta
   phone: +54 387 4563414
   email: drapdronaplicaciones@gmail.com
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -24.9968558
   longitude: -65.5852341
+typeLabel: Empresas
+primaryCategory: dealers
+categoryLabel: Distribuidores y Dealers
+translatedLayers:
+  - Distribuidores y Dealers
+  - dji
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Finca La Lonja - Calle Hernando de Lerma s/n. Barrio San José
+  city: Rosario de Lerma
+  province: Salta
+  country: Argentina
+  coordinates:
+    latitude: -24.9968558
+    longitude: -65.5852341
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

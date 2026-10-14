@@ -1,16 +1,49 @@
 id: san-diego-semillas
 name: San Diego Semillas
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Lavalle 844
   city: Venado Tuerto
   province: Santa Fe
   phone: +54 346 2670044
   email: consultas@sandiegosemillas.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -33.7472247
   longitude: -61.9705828
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Lavalle 844
+  city: Venado Tuerto
+  province: Santa Fe
+  country: Argentina
+  coordinates:
+    latitude: -33.7472247
+    longitude: -61.9705828
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: san-diego-semillas-3
+    type: child_of
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

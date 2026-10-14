@@ -1,0 +1,33 @@
+id: dronap-1791924597936
+name: DRONAP
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: xag-atlas-1791917284493
+    type: parent_of
+  - targetId: xag-atlas-1791917284493
+    type: represents
+contact:
+  address: null
+  city: Las Varillas
+  province: Córdoba
+  country: Argentina
+  phone: +54 341 411 7524
+  whatsapp: +54 341 411 7524
+  email: null
+presence:
+  website: https://www.dronap.tech
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.872298
+  longitude: -62.721367
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,30 @@
+id: dye-s-a-1791917700947
+name: DyE S.A.
+type: company
+identity: {}
+layers:
+  - dji
+  - dealer
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Av. De Las Colonias 1610
+  city: Marcos Juárez
+  province: Córdoba
+  country: Argentina
+  phone: +54 3472 59 3132
+  whatsapp: +54 3472 59 3132
+  email: dji@dyesa.com
+presence:
+  website: https://dyesa.com
+  websiteMentioned: false
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.679786
+  longitude: -62.100752
+source: {}
+status:
+  imported: false
+  reviewRequired: false

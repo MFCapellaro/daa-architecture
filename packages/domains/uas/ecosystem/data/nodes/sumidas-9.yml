@@ -1,16 +1,49 @@
 id: sumidas-9
 name: Sumidas
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Autopista 55 S/Nº Km 898
   city: Concaran
   province: San Luis
   phone: +54 266 4833862
   email: concaran@sumidas.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -32.5594627
   longitude: -65.2440415
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Autopista 55 S/Nº Km 898
+  city: Concaran
+  province: San Luis
+  country: Argentina
+  coordinates:
+    latitude: -32.5594627
+    longitude: -65.2440415
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+  - targetId: sumidas-3
+    type: child_of
+capabilities: []
+source: {}

@@ -1,16 +1,47 @@
 id: maquinagro-s-a
 name: Maquinagro S.A.
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: San Juan 884
   city: El Colorado
   province: Formosa
   phone: +54 370 4289740
   email: info@maquinagro.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -26.3115439
   longitude: -59.36915999999999
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: San Juan 884
+  city: El Colorado
+  province: Formosa
+  country: Argentina
+  coordinates:
+    latitude: -26.3115439
+    longitude: -59.36915999999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

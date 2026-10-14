@@ -1,16 +1,47 @@
 id: comercializadora-pauny-marcos-juarez
 name: Comercializadora Pauny Marcos Juárez
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Colectora Sur KM 435
   city: Marcos Juárez
   province: Córdoba
   phone: +54 3472 620741
   email: ventasmj@compauny.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -32.6656968
   longitude: -62.0906767
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Colectora Sur KM 435
+  city: Marcos Juárez
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -32.6656968
+    longitude: -62.0906767
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

@@ -1,16 +1,47 @@
 id: kampu
 name: Kampu
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
-  address: Av. Perón 2300 Yerba Buena
-  city: ''
+  address: Av. Perón 2300
+  city: Yerba Buena
   province: Tucumán
   phone: +54 381 6224166
   email: info@kampu.com.ar
+  country: Argentina
+  whatsapp: +54 381 6224166
 geolocation:
   latitude: -26.7998928
   longitude: -65.3025471
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av. Perón 2300
+  city: Yerba Buena
+  province: Tucumán
+  country: Argentina
+  coordinates:
+    latitude: -26.7998928
+    longitude: -65.3025471
+presence:
+  website: https://kampu.com.ar/marcas/dji/
+  websiteMentioned: false
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+relationships:
+  - targetId: dye-s-a-1791917700947
+    type: represents
+  - targetId: dye-s-a-1791917700947
+    type: parent_of
+capabilities: []
+source: {}

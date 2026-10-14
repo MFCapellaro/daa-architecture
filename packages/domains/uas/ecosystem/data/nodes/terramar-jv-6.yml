@@ -1,16 +1,48 @@
 id: terramar-jv-6
 name: Terramar JV
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Calle 2 Entre 17 y 19
   city: Pila
   province: Buenos Aires
   phone: +54 223 5829791
   email: czucca@terramarjv.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -35.999892
   longitude: -58.1456885
+typeLabel: Empresas
+primaryCategory: drones
+categoryLabel: Drones y Hardware
+translatedLayers:
+  - Drones y Hardware
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Calle 2 Entre 17 y 19
+  city: Pila
+  province: Buenos Aires
+  country: null
+  coordinates:
+    latitude: -35.999892
+    longitude: -58.1456885
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: terramar-jv-5
+    type: child_of
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

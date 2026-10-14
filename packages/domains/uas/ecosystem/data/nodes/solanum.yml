@@ -4,13 +4,44 @@ type: company
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: San Francisco del Monte 798 oeste
   city: San Juan
   province: San Juan
   phone: +54 264 4565402
   email: info@solanum.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -31.5539841
   longitude: -68.5351148
+typeLabel: Empresas
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: San Francisco del Monte 798 oeste
+  city: San Juan
+  province: San Juan
+  country: Argentina
+  coordinates:
+    latitude: -31.5539841
+    longitude: -68.5351148
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

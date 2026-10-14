@@ -1,16 +1,49 @@
 id: terramar-jv-8
 name: Terramar JV
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Av. San Martín 3238
   city: Balcarce
   province: Buenos Aires
   phone: +54 226 6534960
   email: fiacovelli@terramarjv.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -37.8351246
   longitude: -58.2423076
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av. San Martín 3238
+  city: Balcarce
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -37.8351246
+    longitude: -58.2423076
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: terramar-jv-5
+    type: child_of
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

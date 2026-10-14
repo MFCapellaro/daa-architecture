@@ -1,0 +1,58 @@
+.actor-map-marker {
+  position: relative;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  transform: scale(var(--zoom-scale, 1));
+  transition: transform 160ms ease, scale 160ms ease;
+  cursor: pointer;
+}
+
+.actor-map-marker:hover {
+  scale: 1.2;
+}
+
+.actor-map-marker__pulse,
+.actor-map-marker__dot {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+}
+
+.actor-map-marker__pulse {
+  inset: 3px;
+  border: 2px solid var(--marker-color);
+  animation: actor-marker-pulse 1.8s ease-out infinite;
+}
+
+.actor-map-marker__dot {
+  width: 12px;
+  height: 12px;
+  background: var(--marker-color);
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px var(--marker-color);
+}
+
+@keyframes actor-marker-pulse {
+  0% {
+    transform: scale(0.55);
+    opacity: 0.9;
+  }
+
+  80%,
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .actor-map-marker__pulse {
+    animation: none;
+  }
+
+  .actor-map-marker {
+    transition: none;
+  }
+}

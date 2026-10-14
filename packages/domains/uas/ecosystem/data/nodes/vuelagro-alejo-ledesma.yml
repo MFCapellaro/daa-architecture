@@ -1,16 +1,47 @@
 id: vuelagro-alejo-ledesma
 name: Vuelagro Alejo Ledesma
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
-  address: ''
+  address: null
   city: Alejo Ledesma
   province: Córdoba
   phone: +54 11 30278787
-  email: ''
+  email: null
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -33.6063675
   longitude: -62.6241285
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: false
+status: ACTIVE
+location:
+  address: null
+  city: Alejo Ledesma
+  province: Córdoba
+  country: null
+  coordinates:
+    latitude: -33.6063675
+    longitude: -62.6241285
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

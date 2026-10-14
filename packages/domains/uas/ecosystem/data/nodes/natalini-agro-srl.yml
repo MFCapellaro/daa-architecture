@@ -1,16 +1,47 @@
 id: natalini-agro-srl
 name: Natalini Agro SRL
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta Nac. Nº 22 y Acceso Martín Fierro - Km 1201
   city: Allen
   province: Río Negro
   phone: +54 298 4401207
   email: ventas@nataliniagro.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -39.0035766
   longitude: -67.8468848
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta Nac. Nº 22 y Acceso Martín Fierro - Km 1201
+  city: Allen
+  province: Río Negro
+  country: Argentina
+  coordinates:
+    latitude: -39.0035766
+    longitude: -67.8468848
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

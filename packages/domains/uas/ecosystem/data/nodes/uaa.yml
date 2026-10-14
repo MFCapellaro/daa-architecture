@@ -1,16 +1,42 @@
 id: uaa
 name: UAA
-type: company
+type: institution
 identity:
   status: active
 layers:
-  - drones
+  - public
 contact:
   address: Av San Martin N° 768
   city: Avellaneda
   province: Santa Fe
   phone: +54 348 2481002
   email: info@uaa.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -29.1154805
   longitude: -59.6742224
+typeLabel: Empresas
+primaryCategory: drones
+categoryLabel: Drones y Hardware
+translatedLayers:
+  - Drones y Hardware
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av San Martin N° 768
+  city: Avellaneda
+  province: Santa Fe
+  country: null
+  coordinates:
+    latitude: -29.1154805
+    longitude: -59.6742224
+presence:
+  website: https://uaa.com.ar
+  websiteMentioned: true
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

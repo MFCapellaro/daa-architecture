@@ -1,16 +1,47 @@
 id: tecnoplant
 name: TECNOPLANT
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Av. Lafinur 930
   city: San Luis
   province: San Luis
   phone: +54 0266 4446328
   email: info@tecnoplantsrl.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -33.3009521
   longitude: -66.346931
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av. Lafinur 930
+  city: San Luis
+  province: San Luis
+  country: Argentina
+  coordinates:
+    latitude: -33.3009521
+    longitude: -66.346931
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

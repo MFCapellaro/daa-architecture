@@ -1,16 +1,47 @@
 id: alena-sudeste
 name: Alena Sudeste
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Av. San Martín 3249
   city: Balcarce
   province: Buenos Aires
   phone: +54 226 6536130
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -37.8354497
   longitude: -58.24157469999999
+isPublic: true
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+status: ACTIVE
+location:
+  address: Av. San Martín 3249
+  city: Balcarce
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -37.8354497
+    longitude: -58.24157469999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

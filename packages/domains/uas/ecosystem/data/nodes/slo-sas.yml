@@ -1,16 +1,43 @@
 id: slo-sas
 name: SLO SAS
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - xag
 contact:
-  address: H. Irigoyen 249 - Río Cuarto
-  city: Córdoba
+  address: H. Irigoyen 249
+  city: Río Cuarto
   province: Córdoba
   phone: +54 358 4188644
   email: ventas@xaglatam.com
+  country: Argentina
+  whatsapp: +54 358 4188644
 geolocation:
   latitude: -33.119949
-  longitude: -64.3449158
+  longitude: -64.344916
+typeLabel: Distribuidores y Dealers
+primaryCategory: dealers
+categoryLabel: Distribuidores y Dealers
+translatedLayers:
+  - Distribuidores y Dealers
+  - xag
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: H. Irigoyen 249 - Río Cuarto
+  city: Córdoba
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -33.119949
+    longitude: -64.3449158
+presence:
+  website: https://xaglatam.mkt1.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

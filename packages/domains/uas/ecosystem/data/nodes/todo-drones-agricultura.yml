@@ -1,18 +1,47 @@
 id: todo-drones-agricultura
 name: TODO DRONES AGRICULTURA
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Showroom / Avenida Dardo Rocha 2934 Martínez
-  city: >-
-    Buenos Aires - Punto Agro / Parque Agro Industrial Juan Hipólito Vieytes -
-    San Antonio de Areco
+  city: Buenos Aires - Punto Agro / Parque Agro Industrial Juan Hipólito Vieytes - San Antonio de Areco
   province: Buenos Aires
   phone: +54 11 52630498
   email: info@tododrones.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
-  latitude: -34.2438009
-  longitude: -59.4735948
+  latitude: -34.243801
+  longitude: -59.473595
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Showroom / Avenida Dardo Rocha 2934 Martínez
+  city: Buenos Aires - Punto Agro / Parque Agro Industrial Juan Hipólito Vieytes - San Antonio de Areco
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -34.243801
+    longitude: -59.473595
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

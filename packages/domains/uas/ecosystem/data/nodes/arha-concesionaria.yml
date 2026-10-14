@@ -1,16 +1,47 @@
 id: arha-concesionaria
 name: Arha Concesionaria
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Galo Lobato 2761
   city: Trelew
   province: Chubut
   phone: +54 280 4006486
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -43.2552658
   longitude: -65.3542508
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: false
+status: ACTIVE
+location:
+  address: Galo Lobato 2761
+  city: Trelew
+  province: Chubut
+  country: Argentina
+  coordinates:
+    latitude: -43.2552658
+    longitude: -65.3542508
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

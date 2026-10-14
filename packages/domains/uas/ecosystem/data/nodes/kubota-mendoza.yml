@@ -1,16 +1,47 @@
 id: kubota-mendoza
 name: Kubota Mendoza
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Rodríguez Peña 5149
   city: Maipú
   province: Mendoza
   phone: +54 261 6335200
   email: mendoza@mojonuno.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -32.9437592
   longitude: -68.7520972
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Rodríguez Peña 5149
+  city: Maipú
+  province: Mendoza
+  country: Argentina
+  coordinates:
+    latitude: -32.9437592
+    longitude: -68.7520972
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

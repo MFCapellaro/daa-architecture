@@ -1,16 +1,48 @@
 id: terramar-jv-3
 name: Terramar JV
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Av. Alsina 650
   city: Coronel Suárez
   province: Buenos Aires
   phone: +54 292 3514028
   email: jmpedelaborde@terramarjv.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -37.4534914
   longitude: -61.93322149999999
+typeLabel: Empresas
+primaryCategory: drones
+categoryLabel: Drones y Hardware
+translatedLayers:
+  - Drones y Hardware
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av. Alsina 650
+  city: Coronel Suárez
+  province: Buenos Aires
+  country: null
+  coordinates:
+    latitude: -37.4534914
+    longitude: -61.93322149999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: terramar-jv-5
+    type: child_of
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

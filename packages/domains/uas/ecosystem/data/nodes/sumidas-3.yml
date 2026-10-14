@@ -1,16 +1,47 @@
 id: sumidas-3
-name: Sumidas
+name: Sumidas Casa Central
 type: company
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: La Pampa 1517 - 11º-B
   city: CABA
   province: Buenos Aires
   phone: +54 11 80243517
   email: caba@sumidas.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -34.5599105
   longitude: -58.4455561
+typeLabel: Empresas
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: La Pampa 1517 - 11º-B
+  city: CABA
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -34.5599105
+    longitude: -58.4455561
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

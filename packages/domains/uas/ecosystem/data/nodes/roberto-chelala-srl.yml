@@ -1,16 +1,47 @@
 id: roberto-chelala-srl
 name: Roberto Chelala SRL
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Dorrego 528
   city: La Banda
   province: Santiago del Estero
   phone: +54 385 4270063
   email: contacto@robertochelala.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -27.7299964
   longitude: -64.23215309999999
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Dorrego 528
+  city: La Banda
+  province: Santiago del Estero
+  country: Argentina
+  coordinates:
+    latitude: -27.7299964
+    longitude: -64.23215309999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

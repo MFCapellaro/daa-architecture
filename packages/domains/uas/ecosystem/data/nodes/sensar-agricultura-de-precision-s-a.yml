@@ -1,16 +1,45 @@
 id: sensar-agricultura-de-precision-s-a
 name: Sensar Agricultura de precisión S.A.
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
-  address: Domingo F. Sarmiento 327 - Darregueira
-  city: ''
+  address: Domingo F. Sarmiento 327
+  city: Darregueira
   province: Buenos Aires
   phone: +54 292 3514256
   email: apsensar@gmail.com
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -37.6884553
   longitude: -63.1554295
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Domingo F. Sarmiento 327
+  city: Darregueira
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -37.6884553
+    longitude: -63.1554295
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+capabilities: []
+source: {}

@@ -1,16 +1,47 @@
 id: tecno-drones-saladillo
 name: Tecno Drones Saladillo
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Colectora Eva Duarte de Perón 2344
   city: Saladillo
   province: Buenos Aires
   phone: +54 2344 541200
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -35.6261551
   longitude: -59.7790827
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Colectora Eva Duarte de Perón 2344
+  city: Saladillo
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -35.6261551
+    longitude: -59.7790827
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

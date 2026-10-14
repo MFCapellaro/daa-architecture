@@ -17,6 +17,7 @@ Configure the subdomain `dronsair.3cdesign.com.ar` as the application domain and
 Use two keys:
 
 - `GOOGLE_MAPS_BROWSER_KEY`: restricted by HTTP referrer to `https://dronsair.3cdesign.com.ar/*`, with Maps JavaScript API enabled.
+- `VITE_GOOGLE_MAP_ID`: a Map ID created in the same Google Cloud project, exposed to the frontend build; the frontend falls back to Google's `DEMO_MAP_ID` when it is not set.
 - `GOOGLE_MAPS_SERVER_KEY`: restricted to the Hostinger server IP, with Geocoding API enabled.
 
 ## Batch geocoding

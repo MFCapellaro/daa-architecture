@@ -1,16 +1,49 @@
 id: akron-2
 name: Akron
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: José Ingenieros & Sgto Cabral
   city: Tres Arroyos
   province: Buenos Aires
   phone: +54 298 3541473
   email: akrontresarroyos@akron.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -38.3625767
   longitude: -60.28855060000001
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: José Ingenieros & Sgto Cabral
+  city: Tres Arroyos
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -38.3625767
+    longitude: -60.28855060000001
+presence:
+  website: https://dji.akron.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: akron
+    type: child_of
+  - targetId: tekron
+    type: represents
+  - targetId: tekron
+    type: parent_of
+capabilities: []
+source: {}

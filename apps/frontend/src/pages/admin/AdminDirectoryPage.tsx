@@ -621,7 +621,7 @@ export const AdminDirectoryPage: React.FC = () => {
                 {filteredActors.map((actor) => (
                   <tr key={actor.id} style={{ background: form?.id === actor.id ? '#eff6ff' : '#fff', borderTop: '1px solid #e2e8f0' }}>
                     <td style={{ padding: 9 }}>
-                      <button type="button" onClick={() => { setForm(toForm(actor)); setEditing(false); }} style={{ border: 0, background: 'none', textAlign: 'left', cursor: 'pointer' }}>
+                      <button type="button" onClick={() => { setForm(toForm(actor)); setEditing(false); }} style={{ border: 0, background: '#c9e86b', textAlign: 'left', cursor: 'pointer' }}>
                         <strong>{actor.name}</strong><br /><small>{actor.id}</small>
                       </button>
                     </td>

@@ -1,16 +1,47 @@
 id: grupo-caldo
 name: Grupo Caldo
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - xag
 contact:
   address: Córdoba 442
   city: Huinca Renancó
   province: Córdoba
   phone: +54 2331 411504
   email: caldomaq@gmail.com
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -34.8396249
   longitude: -64.37731889999999
+typeLabel: Distribuidores y Dealers
+primaryCategory: dealers
+categoryLabel: Distribuidores y Dealers
+translatedLayers:
+  - Distribuidores y Dealers
+  - xag
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Córdoba 442
+  city: Huinca Renancó
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -34.8396249
+    longitude: -64.37731889999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: xag-atlas-1791917284493
+    type: represents
+  - targetId: xag-atlas-1791917284493
+    type: parent_of
+capabilities: []
+source: {}

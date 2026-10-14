@@ -1,16 +1,42 @@
 id: geosistemas
 name: GEOSISTEMAS
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - topxgun
 contact:
   address: Venezuela 676
   city: Monserrat
   province: Buenos Aires
   phone: +54 11 43429398
   email: ventas@geosistemas.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -34.6139416
   longitude: -58.3756873
+typeLabel: Empresas
+primaryCategory: drones
+categoryLabel: Drones y Hardware
+translatedLayers:
+  - Drones y Hardware
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Venezuela 676
+  city: Monserrat
+  province: Buenos Aires
+  country: null
+  coordinates:
+    latitude: -34.6139416
+    longitude: -58.3756873
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

@@ -1,16 +1,47 @@
 id: alena-salto
 name: Alena Salto
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Uruguay 469
   city: Salto
   province: Buenos Aires
   phone: +54 11 68889875
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -34.3066884
   longitude: -60.2576043
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Uruguay 469
+  city: Salto
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -34.3066884
+    longitude: -60.2576043
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

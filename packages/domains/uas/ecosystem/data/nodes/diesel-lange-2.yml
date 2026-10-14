@@ -1,16 +1,49 @@
 id: diesel-lange-2
 name: Diesel Lange
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta 1 y Calle 24
   city: General Pico
   province: La Pampa
   phone: +54 0810 2200060
   email: diesellange@diesellange.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -35.6526171
   longitude: -63.7579644
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta 1 y Calle 24
+  city: General Pico
+  province: La Pampa
+  country: Argentina
+  coordinates:
+    latitude: -35.6526171
+    longitude: -63.7579644
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+  - targetId: diesel-lange
+    type: child_of
+capabilities: []
+source: {}

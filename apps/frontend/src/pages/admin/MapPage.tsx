@@ -36,6 +36,7 @@ export interface Actor {
 }
 
 const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_BROWSER_KEY || '';
+const MAP_ID = import.meta.env.VITE_GOOGLE_MAP_ID || 'DEMO_MAP_ID';
 
 const extractCoordinates = (actor: Actor): { lat: number; lng: number } | null => {
   const rawLat = actor.geolocation?.latitude ?? actor.location?.coordinates?.latitude;
@@ -54,8 +55,7 @@ const extractCoordinates = (actor: Actor): { lat: number; lng: number } | null =
 export const MapPage: React.FC = () => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<google.maps.Map | null>(null);
-  const markersRef = useRef<google.maps.Marker[]>([]);
-  const relationshipsRef = useRef<google.maps.Polyline[]>([]);
+  const markerLibraryRef = useRef<typeof google.maps.marker.AdvancedMarkerElement | null>(null);
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
 
   const [actors, setActors] = useState<Actor[]>([]);
@@ -74,51 +74,56 @@ export const MapPage: React.FC = () => {
 
   // 1. Cargar el SDK de Google Maps
   useEffect(() => {
-    const initMap = () => {
+    let isActive = true;
+    let script: HTMLScriptElement | null = null;
+
+    const initMap = async () => {
       if (!mapContainerRef.current || !window.google || !window.google.maps) return;
 
       try {
-        if (!mapInstanceRef.current) {
-          const map = new google.maps.Map(mapContainerRef.current, {
-            center: { lat: -38.416097, lng: -63.616672 },
-            zoom: 4,
-            mapTypeId: google.maps.MapTypeId.SATELLITE,
-            disableDefaultUI: true,
-            zoomControl: true,
-          });
+        const { AdvancedMarkerElement } = await google.maps.importLibrary('marker') as google.maps.MarkerLibrary;
+        if (!isActive || !mapContainerRef.current || mapInstanceRef.current) return;
 
-          mapInstanceRef.current = map;
-          infoWindowRef.current = new google.maps.InfoWindow();
-          setIsMapLoaded(true);
-        }
+        const map = new google.maps.Map(mapContainerRef.current, {
+          center: { lat: -38.416097, lng: -63.616672 },
+          zoom: 4,
+          mapId: MAP_ID,
+          mapTypeId: google.maps.MapTypeId.SATELLITE,
+          disableDefaultUI: true,
+          zoomControl: true,
+        });
+
+        markerLibraryRef.current = AdvancedMarkerElement;
+        mapInstanceRef.current = map;
+        infoWindowRef.current = new google.maps.InfoWindow();
+        setIsMapLoaded(true);
       } catch (e) {
         console.error('Error al inicializar el mapa:', e);
-        setApiError('No se pudo inicializar la instancia del mapa.');
+        if (isActive) setApiError('No se pudo inicializar la instancia del mapa.');
       }
     };
 
     if (window.google && window.google.maps) {
-      initMap();
-      return;
+      void initMap();
+    } else {
+      const scriptId = 'google-maps-js-sdk';
+      script = document.getElementById(scriptId) as HTMLScriptElement | null;
+
+      if (!script) {
+        script = document.createElement('script');
+        script.id = scriptId;
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+      }
+
+      script.addEventListener('load', initMap);
     }
-
-    const scriptId = 'google-maps-js-sdk';
-    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
-
-    if (!script) {
-      script = document.createElement('script');
-      script.id = scriptId;
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
-    }
-
-    const handleLoad = () => initMap();
-    script.addEventListener('load', handleLoad);
 
     return () => {
-      if (script) script.removeEventListener('load', handleLoad);
+      isActive = false;
+      script?.removeEventListener('load', initMap);
     };
   }, []);
 
@@ -180,14 +185,13 @@ export const MapPage: React.FC = () => {
 
   // 4. Actualizar marcadores
   useEffect(() => {
-    if (!isMapLoaded || !mapInstanceRef.current || !window.google) return;
-
-    markersRef.current.forEach((marker) => marker.setMap(null));
-    markersRef.current = [];
-    relationshipsRef.current.forEach((relationship) => relationship.setMap(null));
-    relationshipsRef.current = [];
+    if (!isMapLoaded || !mapInstanceRef.current || !markerLibraryRef.current || !window.google) return;
 
     const map = mapInstanceRef.current;
+    const AdvancedMarkerElement = markerLibraryRef.current;
+    const markers: google.maps.marker.AdvancedMarkerElement[] = [];
+    const markerContents: HTMLDivElement[] = [];
+    const relationships: google.maps.Polyline[] = [];
     const bounds = new google.maps.LatLngBounds();
     const visibleById = new Map(visibleActors.map(({ actor, coords }) => [actor.id, { actor, coords }]));
 
@@ -197,23 +201,27 @@ export const MapPage: React.FC = () => {
         actor.layers?.includes(category.id)
       )?.color ?? '#4ade80';
 
-      const markerIcon: google.maps.Icon = {
-        url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="8" fill="${markerColor}" fill-opacity="0.3" />
-            <circle cx="12" cy="12" r="5" fill="${markerColor}" stroke="#ffffff" stroke-width="1.5" />
-          </svg>
-        `),
-        scaledSize: new google.maps.Size(20, 20),
-        anchor: new google.maps.Point(10, 10),
-      };
+      const markerContent = document.createElement('div');
+      markerContent.className = 'actor-map-marker';
+      markerContent.style.setProperty('--marker-color', markerColor);
+      const pulse = document.createElement('span');
+      pulse.className = 'actor-map-marker__pulse';
+      const dot = document.createElement('span');
+      dot.className = 'actor-map-marker__dot';
+      markerContent.append(pulse, dot);
 
-      const marker = new google.maps.Marker({
+      const marker = new AdvancedMarkerElement({
         position: coords,
         map,
         title: actor.name,
-        icon: markerIcon,
+        gmpClickable: true,
+        zIndex: 2,
+        anchorLeft: '-50%',
+        anchorTop: '-50%',
       });
+      marker.append(markerContent);
+      markers.push(marker);
+      markerContents.push(markerContent);
 
       const cityStr = actor.location?.city || actor.contact?.city || '';
       const provStr = actor.location?.province || actor.contact?.province || '';
@@ -230,15 +238,21 @@ export const MapPage: React.FC = () => {
         </div>
       `;
 
-      marker.addListener('click', () => {
+      marker.addEventListener('gmp-click', () => {
         if (infoWindowRef.current) {
           infoWindowRef.current.setContent(popupContent);
-          infoWindowRef.current.open(map, marker);
+          infoWindowRef.current.open({ map, anchor: marker });
         }
       });
-
-      markersRef.current.push(marker);
     });
+
+    const updateMarkerScale = () => {
+      const zoom = map.getZoom() ?? 4;
+      const scale = Math.min(1.65, Math.max(0.75, 0.8 + (zoom - 4) * 0.1));
+      markerContents.forEach((content) => content.style.setProperty('--zoom-scale', String(scale)));
+    };
+    const zoomListener = map.addListener('zoom_changed', updateMarkerScale);
+    updateMarkerScale();
 
     const drawnRelationships = new Set<string>();
     visibleActors.forEach(({ actor }) => {
@@ -264,13 +278,19 @@ export const MapPage: React.FC = () => {
           strokeWeight: 2,
           zIndex: 1,
         });
-        relationshipsRef.current.push(line);
+        relationships.push(line);
       }
     });
 
     if (visibleActors.length > 0 && !bounds.isEmpty()) {
       map.fitBounds(bounds);
     }
+
+    return () => {
+      zoomListener.remove();
+      markers.forEach((marker) => { marker.map = null; });
+      relationships.forEach((relationship) => relationship.setMap(null));
+    };
   }, [categories, isMapLoaded, visibleActors]);
 
   const toggleLayer = (layer: string) => {

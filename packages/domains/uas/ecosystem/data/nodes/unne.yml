@@ -1,16 +1,42 @@
 id: unne
 name: UNNE
-type: company
+type: institution
 identity:
   status: active
 layers:
-  - academia
+  - escuela
 contact:
   address: Juan Bautista Cabral 2131
   city: Corrientes Capital
   province: Corrientes
   phone: +54 0379 4427589
   email: academica-fca@agr.unne.edu.ar
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -27.4591157
   longitude: -58.8232387
+typeLabel: Empresas
+primaryCategory: academia
+categoryLabel: academia
+translatedLayers:
+  - academia
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Juan Bautista Cabral 2131
+  city: Corrientes Capital
+  province: Corrientes
+  country: null
+  coordinates:
+    latitude: -27.4591157
+    longitude: -58.8232387
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

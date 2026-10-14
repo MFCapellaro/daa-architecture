@@ -1,16 +1,47 @@
 id: i-b-agro-chajari
 name: I+B Agro Chajarí
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta Nacional 14 y Avenida Belgrano
   city: Chajarí
   province: Entre Ríos
   phone: +54 341 606 9080
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -30.744996
   longitude: -57.9955786
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta Nacional 14 y Avenida Belgrano
+  city: Chajarí
+  province: Entre Ríos
+  country: null
+  coordinates:
+    latitude: -30.744996
+    longitude: -57.9955786
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

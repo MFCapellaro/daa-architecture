@@ -1,0 +1,46 @@
+id: comercializadora-pauny-rio-segundo-1791565440551
+name: Comercializadora Pauny Rio Segundo
+type: dealer
+identity: {}
+layers:
+  - dji
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: bidcom-agro
+    type: represents
+  - targetId: bidcom-agro
+    type: parent_of
+contact:
+  address: null
+  city: Pilar, Rio Segundo
+  province: Córdoba
+  country: Argentina
+  phone: +54 9 3417 64-6000
+  whatsapp: +54 9 3417 64-6000
+  email: null
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.678161
+  longitude: -63.878646
+source: {}
+status: ACTIVE
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+location:
+  address: null
+  city: Pilar, Rio Segundo
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -31.678161
+    longitude: -63.878646

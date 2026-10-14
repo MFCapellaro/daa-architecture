@@ -1,16 +1,47 @@
 id: sowing
 name: Sowing
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Bienvenido Eloy Fernández 1052
   city: X2434 Arroyito
   province: Córdoba
   phone: +54 357 6475753
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -31.4192155
   longitude: -63.0508598
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Bienvenido Eloy Fernández 1052
+  city: X2434 Arroyito
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -31.4192155
+    longitude: -63.0508598
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

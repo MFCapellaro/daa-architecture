@@ -1,16 +1,47 @@
 id: cattaneo-hnos
 name: Cattaneo Hnos
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta Nacional 19, Km 316
   city: Mi Granja
   province: Córdoba
   phone: +54 351 271 4999
   email: info@ypfcattaneo.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -31.4060508
   longitude: -62.4473666
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta Nacional 19, Km 316
+  city: Mi Granja
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -31.4060508
+    longitude: -62.4473666
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

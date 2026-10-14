@@ -11,6 +11,32 @@ contact:
   province: Santa Fe
   phone: +54 (341) 4260745
   email: gines@aapresid.org.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -32.9555
   longitude: -60.6542
+typeLabel: Empresas
+primaryCategory: public
+categoryLabel: public
+translatedLayers:
+  - public
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Dorrego 1639 Piso 2º, Oficina A
+  city: Rosario
+  province: Santa Fe
+  country: null
+  coordinates:
+    latitude: -32.9555
+    longitude: -60.6542
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

@@ -1,16 +1,47 @@
 id: agronomia-pampa-s-r-l
 name: Agronomía Pampa S.R.L
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta 11 N° 1522
   city: San Justo
   province: Santa Fe
   phone: +54 349 8462791
   email: administracion@agronomiapampa.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -30.7789883
   longitude: -60.59401159999999
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta 11 N° 1522
+  city: San Justo
+  province: Santa Fe
+  country: Argentina
+  coordinates:
+    latitude: -30.7789883
+    longitude: -60.59401159999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

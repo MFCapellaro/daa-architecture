@@ -1,6 +1,6 @@
 id: ilac
 name: ILAC
-type: company
+type: institution
 identity:
   status: active
 layers:
@@ -11,6 +11,32 @@ contact:
   province: Buenos Aires
   phone: +54 11 24606968
   email: contacto@ilac.com.ar
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -34.6013304
   longitude: -58.39305599999999
+typeLabel: Empresas
+primaryCategory: academia
+categoryLabel: academia
+translatedLayers:
+  - academia
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: ' Av. Callao 660'
+  city: CABA
+  province: Buenos Aires
+  country: null
+  coordinates:
+    latitude: -34.6013304
+    longitude: -58.39305599999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

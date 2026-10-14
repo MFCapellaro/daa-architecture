@@ -1,16 +1,47 @@
 id: azura-pico
 name: Azura Pico
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Calle 310 N.º 1190
   city: General Pico
   province: La Pampa
   phone: +54 295 4648468
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -35.6399375
   longitude: -63.7846889
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Calle 310 N.º 1190
+  city: General Pico
+  province: La Pampa
+  country: Argentina
+  coordinates:
+    latitude: -35.6399375
+    longitude: -63.7846889
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

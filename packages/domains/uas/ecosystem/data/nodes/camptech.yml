@@ -1,16 +1,47 @@
 id: camptech
 name: Camptech
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Parque Industrial, Juan Venier 3000
   city: San Francisco
   province: Córdoba
   phone: +54 356 4363386
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -31.4364508
   longitude: -62.1237989
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Parque Industrial, Juan Venier 3000
+  city: San Francisco
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -31.4364508
+    longitude: -62.1237989
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

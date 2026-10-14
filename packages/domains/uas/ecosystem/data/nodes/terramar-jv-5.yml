@@ -1,16 +1,47 @@
 id: terramar-jv-5
-name: Terramar JV
-type: company
+name: Terramar JV Casa Central
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta 88 KM 3,5
   city: Mar del Plata
   province: Buenos Aires
   phone: +54 223 5275762
   email: wmalarczuk@terramarjv.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -38.0112453
   longitude: -57.6333809
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta 88 KM 3,5
+  city: Mar del Plata
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -38.0112453
+    longitude: -57.6333809
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

@@ -1,16 +1,42 @@
 id: unmdp
 name: UNMDP
-type: company
+type: institution
 identity:
   status: active
 layers:
-  - academia
+  - escuela
 contact:
   address: Ruta Nacional 226, km 73,5
   city: Balcarce
   province: Buenos Aires
   phone: +54 2266 431856
   email: ingrefca@mdp.edu.ar
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -37.8232264
   longitude: -58.2132596
+typeLabel: Empresas
+primaryCategory: academia
+categoryLabel: academia
+translatedLayers:
+  - academia
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta Nacional 226, km 73,5
+  city: Balcarce
+  province: Buenos Aires
+  country: null
+  coordinates:
+    latitude: -37.8232264
+    longitude: -58.2132596
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

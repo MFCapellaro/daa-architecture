@@ -4,13 +4,46 @@ type: company
 identity:
   status: active
 layers:
-  - drones
+  - operators
+  - dji
 contact:
-  address: ''
+  address: null
   city: Gualeguay
   province: Entre Ríos
   phone: +54 3444 497437
-  email: ''
+  email: null
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -33.1503285
   longitude: -59.31046849999999
+typeLabel: Empresas
+primaryCategory: operators
+categoryLabel: operators
+translatedLayers:
+  - operators
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: null
+  city: Gualeguay
+  province: Entre Ríos
+  country: null
+  coordinates:
+    latitude: -33.1503285
+    longitude: -59.31046849999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

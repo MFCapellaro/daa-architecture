@@ -1,16 +1,47 @@
 id: toldo-agroservicios
 name: Toldo Agroservicios
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ramón Cuerdo 506
   city: Tacural
   province: Santa Fe
   phone: +54 349 3492162
   email: lorena@toldoagroservicios.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -30.8438854
   longitude: -61.59702559999999
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ramón Cuerdo 506
+  city: Tacural
+  province: Santa Fe
+  country: Argentina
+  coordinates:
+    latitude: -30.8438854
+    longitude: -61.59702559999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

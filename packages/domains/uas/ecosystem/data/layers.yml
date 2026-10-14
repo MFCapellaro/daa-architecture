@@ -1,10 +1,54 @@
 layers:
-  - { id: dealers, label: Dealers, visibleByDefault: true }
-  - { id: service, label: Service, visibleByDefault: true }
-  - { id: operators, label: Aplicadores, visibleByDefault: true }
-  - { id: pools, label: Pools, visibleByDefault: false }
-  - { id: academia, label: Academia, visibleByDefault: false }
-  - { id: events, label: Eventos, visibleByDefault: false }
-  - { id: media, label: Medios, visibleByDefault: false }
-  - { id: technology, label: Tecnología, visibleByDefault: false }
-  - { id: public, label: Público, visibleByDefault: false }
+    label: Service
+    visibleByDefault: true
+    color: '#ff0000'
+  - id: operators
+    label: Aplicadores
+    visibleByDefault: true
+    color: '#00ffaa'
+  - id: pools
+    label: Pools
+    visibleByDefault: false
+    color: '#ffdd00'
+  - id: academia
+    label: Academia
+    visibleByDefault: false
+  - id: events
+    label: Eventos
+    visibleByDefault: false
+    color: '#ffea00'
+  - id: media
+    label: Medios
+    visibleByDefault: false
+  - id: technology
+    label: Tecnología
+    visibleByDefault: false
+    color: '#0a0a0a'
+  - id: public
+    label: Instituciones Públicas
+    visibleByDefault: false
+    color: '#70acff'
+  - id: dji
+    label: DJI
+    color: '#f54d05'
+    visibleByDefault: true
+  - id: xag
+    label: XAG
+    color: '#0c8104'
+    visibleByDefault: true
+  - id: dealer
+    label: Representante
+    color: '#64748b'
+    visibleByDefault: true
+  - id: escuela
+    label: Universidades
+    color: '#003580'
+    visibleByDefault: true
+  - id: hylio
+    label: HYLIO
+    color: '#7e239f'
+    visibleByDefault: true
+  - id: topxgun
+    label: TopXGun
+    color: '#01329d'
+    visibleByDefault: true

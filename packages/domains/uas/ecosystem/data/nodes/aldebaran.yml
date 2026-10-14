@@ -1,16 +1,47 @@
 id: aldebaran
 name: Aldebaran
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Av E Román 1348 PB
   city: Chacabuco
   province: Buenos Aires
   phone: +54 2352 418088
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -34.6229999
   longitude: -60.48573870000001
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av E Román 1348 PB
+  city: Chacabuco
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -34.6229999
+    longitude: -60.48573870000001
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

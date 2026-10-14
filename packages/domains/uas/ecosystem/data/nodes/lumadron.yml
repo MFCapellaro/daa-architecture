@@ -1,44 +1,57 @@
-id: "lumadron"
-name: "Lumadron"
-type: company
-
+id: lumadron
+name: Lumadron
+type: dealer
 identity:
   status: active
-
 layers:
-  - drones
-
-capabilities:
-  []
-
+  - dji
+  - xag
+  - hylio
+  - topxgun
+capabilities: []
 contact:
   address: null
   city: null
-  province: "Buenos Aires"
-  country: "Argentina"
+  province: Buenos Aires
+  country: Argentina
   phone: null
   whatsapp: null
-  email: "drones@lumadron.com"
-
+  email: drones@lumadron.com
 presence:
-  website: "https://lumadron.com/"
+  website: https://lumadron.com/
   websiteMentioned: true
   websiteMentionsDrones: true
   websiteUnavailable: false
-
 geolocation:
   latitude: null
   longitude: null
   precision: null
-  status: "pending"
-
+  status: pending
 source:
-  file: "ecosystem-source.txt"
+  file: ecosystem-source.txt
   line: 89
-  section: "drones"
-  raw: "Lumadron - Buenos Aires - drones@lumadron.com - https://lumadron.com/"
-
-status:
-  verification: partial
-  imported: true
-  reviewRequired: true
+  section: drones
+  raw: Lumadron - Buenos Aires - drones@lumadron.com - https://lumadron.com/
+status: ACTIVE
+typeLabel: Empresas
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - xag
+  - Distribuidores y Dealers
+  - hylio
+  - topxgun
+description: Lumadron - Buenos Aires - drones@lumadron.com - https://lumadron.com/
+isPublic: true
+location:
+  address: null
+  city: null
+  province: Buenos Aires
+  country: Argentina
+  coordinates: {}
+relationships:
+  - targetId: bidcom-agro
+    type: represents
+  - targetId: bidcom-agro
+    type: parent_of

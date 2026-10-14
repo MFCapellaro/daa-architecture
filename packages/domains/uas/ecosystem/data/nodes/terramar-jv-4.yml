@@ -1,16 +1,49 @@
 id: terramar-jv-4
 name: Terramar JV
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta 227 KM 53,5
   city: Lobería
   province: Buenos Aires
   phone: +54 226 1400060
   email: lkressi@terramarjv.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -38.1655428
   longitude: -58.7636512
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta 227 KM 53,5
+  city: Lobería
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -38.1655428
+    longitude: -58.7636512
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+  - targetId: terramar-jv-5
+    type: child_of
+capabilities: []
+source: {}

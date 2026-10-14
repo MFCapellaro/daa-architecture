@@ -1,16 +1,47 @@
 id: summit-agro
 name: Summit Agro
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Carlos Pellegrini 719, Piso 8
   city: CABA
   province: Buenos Aires
   phone: +54 0810 3337866
   email: org@summit-agro.com
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -34.5999631
   longitude: -58.3810684
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Carlos Pellegrini 719, Piso 8
+  city: CABA
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -34.5999631
+    longitude: -58.3810684
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

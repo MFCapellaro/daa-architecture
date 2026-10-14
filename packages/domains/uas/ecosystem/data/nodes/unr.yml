@@ -1,16 +1,42 @@
 id: unr
 name: UNR
-type: company
+type: institution
 identity:
   status: active
 layers:
-  - academia
+  - escuela
 contact:
   address: Campo Experimental Villarino
   city: Zavalla
   province: Santa fe
   phone: +54 0341 5288940
   email: agro@unr.edu.ar
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -33.0201454
   longitude: -60.879206
+typeLabel: Empresas
+primaryCategory: academia
+categoryLabel: academia
+translatedLayers:
+  - academia
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Campo Experimental Villarino
+  city: Zavalla
+  province: Santa fe
+  country: null
+  coordinates:
+    latitude: -33.0201454
+    longitude: -60.879206
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

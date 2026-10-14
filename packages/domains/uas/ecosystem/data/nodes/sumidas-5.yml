@@ -1,16 +1,49 @@
 id: sumidas-5
 name: Sumidas
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta Nacional Nº 7 km 203,5
   city: Chacabuco
   province: Buenos Aires
   phone: +54 235 2538315
   email: chacabuco@sumidas.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -34.6408955
   longitude: -60.47104179999999
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta Nacional Nº 7 km 203,5
+  city: Chacabuco
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -34.6408955
+    longitude: -60.47104179999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+  - targetId: sumidas-3
+    type: child_of
+capabilities: []
+source: {}

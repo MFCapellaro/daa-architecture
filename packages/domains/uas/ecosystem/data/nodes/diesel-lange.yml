@@ -1,16 +1,47 @@
 id: diesel-lange
-name: Diesel Lange
-type: company
+name: Diesel Lange Casa Central
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta 188 Km 479 y Ruta 35
   city: Realicó
   province: La Pampa
   phone: +54 0810 2200050
   email: diesellange@diesellange.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -35.0462266
   longitude: -63.9330134
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta 188 Km 479 y Ruta 35
+  city: Realicó
+  province: La Pampa
+  country: Argentina
+  coordinates:
+    latitude: -35.0462266
+    longitude: -63.9330134
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

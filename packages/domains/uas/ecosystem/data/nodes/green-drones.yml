@@ -1,16 +1,47 @@
 id: green-drones
 name: Green Drones
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Av. Maipú 975
   city: Villa Mercedes
   province: San Luis
   phone: +54 2657 719499
   email: greendrone.arg@gmail.com
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -33.6790157
   longitude: -65.4421966
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av. Maipú 975
+  city: Villa Mercedes
+  province: San Luis
+  country: Argentina
+  coordinates:
+    latitude: -33.6790157
+    longitude: -65.4421966
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

@@ -1,16 +1,47 @@
 id: metagri-srl
 name: METAGRI SRL
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: México 224
   city: Las Lajitas
   province: Salta
-  phone: ''
-  email: ''
+  phone: null
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -24.7273378
   longitude: -64.1956854
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: México 224
+  city: Las Lajitas
+  province: Salta
+  country: Argentina
+  coordinates:
+    latitude: -24.7273378
+    longitude: -64.1956854
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

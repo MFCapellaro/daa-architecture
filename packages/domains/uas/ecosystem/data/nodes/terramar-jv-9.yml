@@ -1,16 +1,49 @@
 id: terramar-jv-9
 name: Terramar JV
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Av. Moreno 1111
   city: Tres Arroyos
   province: Buenos Aires
   phone: +54 298 3343740
   email: rmoreno@terramarjv.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -38.3855463
   longitude: -60.2648818
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av. Moreno 1111
+  city: Tres Arroyos
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -38.3855463
+    longitude: -60.2648818
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+  - targetId: terramar-jv-5
+    type: child_of
+capabilities: []
+source: {}

@@ -1,16 +1,47 @@
 id: mas-maiz
 name: Más Maíz
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Colectora Oeste 2874
   city: Río Cuarto
   province: Córdoba
   phone: +54 358 4364757
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -33.1405689
   longitude: -64.384453
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Colectora Oeste 2874
+  city: Río Cuarto
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -33.1405689
+    longitude: -64.384453
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

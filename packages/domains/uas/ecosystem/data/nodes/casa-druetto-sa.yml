@@ -1,16 +1,47 @@
 id: casa-druetto-sa
 name: Casa Druetto SA
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Av. Jorge Newbery 247 bis
   city: Gálvez
   province: Santa FE
   phone: +54 340 4521246
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -32.0356468
   longitude: -61.2150946
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av. Jorge Newbery 247 bis
+  city: Gálvez
+  province: Santa FE
+  country: Argentina
+  coordinates:
+    latitude: -32.0356468
+    longitude: -61.2150946
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

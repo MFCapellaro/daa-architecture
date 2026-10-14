@@ -1,16 +1,47 @@
 id: i-b-agro-san-salvador
 name: I+B Agro San Salvador
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Acceso San Salvador y Ruta Nacional 18
   city: San Salvador
   province: Entre Ríos
   phone: +54 3456 621268
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -31.6042972
   longitude: -58.5199872
+typeLabel: Empresas
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Acceso San Salvador y Ruta Nacional 18
+  city: San Salvador
+  province: Entre Ríos
+  country: Argentina
+  coordinates:
+    latitude: -31.6042972
+    longitude: -58.5199872
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

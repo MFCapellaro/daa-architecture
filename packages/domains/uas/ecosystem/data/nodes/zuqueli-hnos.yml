@@ -4,13 +4,44 @@ type: company
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Blas Parera 5408
   city: Santa Fe de la Vera Cruz
   province: Santa fe
   phone: +54 9342 4399207
   email: repuestos@zuqueli.com
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -31.6141936
   longitude: -60.71760709999999
+typeLabel: Empresas
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Blas Parera 5408
+  city: Santa Fe de la Vera Cruz
+  province: Santa fe
+  country: null
+  coordinates:
+    latitude: -31.6141936
+    longitude: -60.71760709999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

@@ -1,16 +1,47 @@
 id: folmer
 name: Folmer
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta 12 y 131
   city: Crespo
   province: Entre Ríos
   phone: +54 343 4951700
   email: maquinarias@folmer.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -32.0308896
   longitude: -60.3071844
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta 12 y 131
+  city: Crespo
+  province: Entre Ríos
+  country: Argentina
+  coordinates:
+    latitude: -32.0308896
+    longitude: -60.3071844
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

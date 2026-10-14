@@ -1,16 +1,47 @@
 id: akron
-name: Akron
-type: company
+name: Akron Casa Central
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Av. Rosario de Santa Fe 2256
   city: San Francisco
   province: Córdoba
   phone: +54 0800 3338300
   email: ventas@akron.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -31.4154589
   longitude: -62.0883997
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av. Rosario de Santa Fe 2256
+  city: San Francisco
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -31.4154589
+    longitude: -62.0883997
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: represents
+  - targetId: tekron
+    type: parent_of
+capabilities: []
+source: {}

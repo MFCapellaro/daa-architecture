@@ -1,16 +1,49 @@
 id: san-diego-semillas-2
 name: San Diego Semillas
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta 226 Km. 10,5 (Camino Hernán Gheiner Km. 2,2), Santa Paula
   city: Mar del Plata
   province: Buenos Aires
   phone: +54 223 4563125
   email: info@semilleriasandiego.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -37.92940249999999
   longitude: -57.6832326
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta 226 Km. 10,5 (Camino Hernán Gheiner Km. 2,2), Santa Paula
+  city: Mar del Plata
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -37.92940249999999
+    longitude: -57.6832326
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+  - targetId: san-diego-semillas-3
+    type: child_of
+capabilities: []
+source: {}

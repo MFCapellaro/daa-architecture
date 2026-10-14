@@ -1,16 +1,45 @@
 id: act_1790971266612
 name: DJI Academy Tekron (Grupo Akron)
-type: company
+type: training
 identity:
   status: active
 layers:
-  - dealer
+  - academia
+  - dji
 contact:
   address: M.A. Carra 2050
   city: San Francisco
   province: Córdoba
   phone: +54 3564 626694
   email: groatta@tekron.com.ar
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -31.4413714
   longitude: -62.1219466
+typeLabel: Capacitación y Cursos
+primaryCategory: academia
+categoryLabel: academia
+translatedLayers:
+  - academia
+  - Drones y Hardware
+  - dji
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: M.A. Carra 2050
+  city: San Francisco
+  province: Córdoba
+  country: null
+  coordinates:
+    latitude: -31.4413714
+    longitude: -62.1219466
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

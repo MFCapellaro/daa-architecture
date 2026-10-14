@@ -1,16 +1,47 @@
 id: nor-semillas
 name: Nor Semillas
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
-  address: ''
+  address: null
   city: Pampa del Infierno
   province: Chaco
   phone: +54 364 4610263
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -26.5079857
   longitude: -61.17573549999999
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: null
+  city: Pampa del Infierno
+  province: Chaco
+  country: Argentina
+  coordinates:
+    latitude: -26.5079857
+    longitude: -61.17573549999999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

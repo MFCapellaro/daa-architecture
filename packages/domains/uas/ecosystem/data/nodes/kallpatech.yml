@@ -1,16 +1,47 @@
 id: kallpatech
 name: Kallpatech
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Calle 14, 228
   city: Colon
   province: Buenos Aires
   phone: +54 247 7566670
   email: jmorea@kallpatech.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -33.8919583
   longitude: -61.1114164
+typeLabel: Empresas
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Calle 14, 228
+  city: Colon
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -33.8919583
+    longitude: -61.1114164
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

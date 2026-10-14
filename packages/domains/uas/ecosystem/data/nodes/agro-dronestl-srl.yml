@@ -4,13 +4,40 @@ type: company
 identity:
   status: active
 layers:
-  - drones
+  - dji
+  - dealer
 contact:
   address: Ruta Nacional 5 y Acceso García Salinas
   city: Trenque Lauquen
   province: Buenos Aires
   phone: +54 239 2675544
   email: admin.agrodrones@nova.net.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -35.7206744
   longitude: -61.6514796
+typeLabel: Empresas
+primaryCategory: drones
+categoryLabel: Drones y Hardware
+translatedLayers:
+  - Drones y Hardware
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta Nacional 5 y Acceso García Salinas
+  city: Trenque Lauquen
+  province: Buenos Aires
+  country: null
+  coordinates:
+    latitude: -35.7206744
+    longitude: -61.6514796
+presence:
+  website: https://agro-drones.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

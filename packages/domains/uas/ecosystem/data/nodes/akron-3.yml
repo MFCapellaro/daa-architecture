@@ -1,16 +1,49 @@
 id: akron-3
 name: Akron
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta Nacional N° 8, Kilómetro 234,7
   city: Pergamino
   province: Buenos Aires
   phone: +54 247 7311885
   email: akronpergamino@akron.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -33.8912831
   longitude: -60.5745999
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta Nacional N° 8, Kilómetro 234,7
+  city: Pergamino
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -33.8912831
+    longitude: -60.5745999
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: represents
+  - targetId: tekron
+    type: parent_of
+  - targetId: akron
+    type: child_of
+capabilities: []
+source: {}

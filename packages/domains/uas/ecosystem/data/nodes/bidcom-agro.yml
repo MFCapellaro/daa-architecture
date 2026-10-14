@@ -4,13 +4,42 @@ type: company
 identity:
   status: active
 layers:
-  - drones
+  - dji
+  - dealer
 contact:
   address: Caldas 1551, Villa Ortúzar
   city: CABA
   province: Buenos Aires
   phone: +54 11 6865 2233
-  email: ''
+  email: null
+  country: null
+  whatsapp: +54 11 6865 2233
 geolocation:
   latitude: -34.58537
   longitude: -58.46670959999999
+typeLabel: Empresas
+primaryCategory: drones
+categoryLabel: Drones y Hardware
+translatedLayers:
+  - Drones y Hardware
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Caldas 1551, Villa Ortúzar
+  city: CABA
+  province: Buenos Aires
+  country: null
+  coordinates:
+    latitude: -34.58537
+    longitude: -58.46670959999999
+presence:
+  website: https://dji.bidcomagro.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

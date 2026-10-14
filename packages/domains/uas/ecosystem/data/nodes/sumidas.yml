@@ -1,16 +1,49 @@
 id: sumidas
 name: Sumidas
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta 188 Km 219
   city: Lincoln
   province: Buenos Aires
-  phone: ''
+  phone: null
   email: lincoln@sumidas.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -34.8408535
   longitude: -61.5147086
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta 188 Km 219
+  city: Lincoln
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -34.8408535
+    longitude: -61.5147086
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: sumidas-3
+    type: child_of
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

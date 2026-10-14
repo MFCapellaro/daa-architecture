@@ -1,16 +1,49 @@
 id: sumidas-6
 name: Sumidas
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Acceso Centenario S/Nº
   city: Ameghino
   province: Buenos Aires
   phone: +54 338 8471740
   email: ameghino@sumidas.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -34.6036739
   longitude: -58.3821215
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Acceso Centenario S/Nº
+  city: Ameghino
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -34.6036739
+    longitude: -58.3821215
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: sumidas-3
+    type: child_of
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

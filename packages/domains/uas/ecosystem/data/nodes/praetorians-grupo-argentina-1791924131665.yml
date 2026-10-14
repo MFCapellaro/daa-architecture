@@ -1,0 +1,30 @@
+id: praetorians-grupo-argentina-1791924131665
+name: Praetorians Grupo Argentina
+type: company
+identity: {}
+layers:
+  - hylio
+  - dealer
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: null
+  city: CABA
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 9 11 5834-8468
+  whatsapp: +54 9 11 5834-8468
+  email: null
+presence:
+  website: https://praetoriansgrupoargentina.com
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.603674
+  longitude: -58.382121
+source: {}
+status:
+  imported: false
+  reviewRequired: false

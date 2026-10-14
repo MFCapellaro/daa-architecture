@@ -1,16 +1,47 @@
 id: elevate
 name: Elevate
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Mitre, 1361, PB
   city: Coronel Suárez
   province: Buenos Aires
   phone: +54 292 6544807
-  email: ''
+  email: null
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -37.4586253
   longitude: -61.9356548
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Mitre, 1361, PB
+  city: Coronel Suárez
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -37.4586253
+    longitude: -61.9356548
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: bidcom-agro
+    type: parent_of
+  - targetId: bidcom-agro
+    type: represents
+capabilities: []
+source: {}

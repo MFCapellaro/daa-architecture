@@ -1,16 +1,45 @@
 id: act_1790971386995
 name: DJI Academy DYE (DYE S.A.)
-type: company
+type: training
 identity:
   status: active
 layers:
-  - dealer
+  - academia
+  - dji
 contact:
   address: Av. De Las Colonias 1610
   city: Marcos Juárez
   province: Córdoba
   phone: +54 3472 59 3132
   email: dji@dyesa.com
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -32.6797865
   longitude: -62.1007515
+typeLabel: Capacitación y Cursos
+primaryCategory: academia
+categoryLabel: academia
+translatedLayers:
+  - academia
+  - Drones y Hardware
+  - dji
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Av. De Las Colonias 1610
+  city: Marcos Juárez
+  province: Córdoba
+  country: null
+  coordinates:
+    latitude: -32.6797865
+    longitude: -62.1007515
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}

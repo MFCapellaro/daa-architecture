@@ -1,16 +1,49 @@
 id: terramar-jv-7
 name: Terramar JV
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta 228 y Av. N° 59
   city: Necochea
   province: Buenos Aires
   phone: +54 223 4386717
   email: lmontana@terramarvj.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -38.5325783
   longitude: -58.7684569
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta 228 y Av. N° 59
+  city: Necochea
+  province: Buenos Aires
+  country: Argentina
+  coordinates:
+    latitude: -38.5325783
+    longitude: -58.7684569
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+  - targetId: terramar-jv-5
+    type: child_of
+capabilities: []
+source: {}

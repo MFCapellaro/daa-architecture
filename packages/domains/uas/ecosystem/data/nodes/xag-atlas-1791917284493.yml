@@ -1,0 +1,30 @@
+id: xag-atlas-1791917284493
+name: XAG ATLAS
+type: company
+identity: {}
+layers:
+  - dealer
+  - xag
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: km 169, RN 34
+  city: San Vicente
+  province: Santa Fe
+  country: Argentina
+  phone: null
+  whatsapp: null
+  email: null
+presence:
+  website: https://xagatlas.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.706604
+  longitude: -61.556165
+source: {}
+status:
+  imported: false
+  reviewRequired: false

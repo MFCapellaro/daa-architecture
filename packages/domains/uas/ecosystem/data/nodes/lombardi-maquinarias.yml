@@ -1,16 +1,47 @@
 id: lombardi-maquinarias
 name: Lombardi Maquinarias
-type: company
+type: dealer
 identity:
   status: active
 layers:
-  - drones
+  - dji
 contact:
   address: Ruta Provincial 5 km 20
   city: Alta Gracia
   province: Córdoba
   phone: +54 354 1555549
   email: info@lombardimaquinarias.com.ar
+  country: Argentina
+  whatsapp: null
 geolocation:
   latitude: -31.6361515
   longitude: -64.4027569
+typeLabel: Distribuidores y Dealers
+primaryCategory: dji
+categoryLabel: dji
+translatedLayers:
+  - dji
+  - Distribuidores y Dealers
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta Provincial 5 km 20
+  city: Alta Gracia
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -31.6361515
+    longitude: -64.4027569
+presence:
+  website: https://lombardimaquinarias.com.ar
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships:
+  - targetId: tekron
+    type: parent_of
+  - targetId: tekron
+    type: represents
+capabilities: []
+source: {}

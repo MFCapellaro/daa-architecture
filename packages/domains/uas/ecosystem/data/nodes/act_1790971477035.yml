@@ -1,16 +1,45 @@
 id: act_1790971477035
 name: DJI Academy Agronorte
-type: company
+type: training
 identity:
   status: active
 layers:
-  - dealer
+  - academia
+  - dji
 contact:
   address: Ruta Nacional 11 y Jorge Neme
   city: San Justo
   province: Santa Fe
   phone: +54 3498 45 3472
   email: vignattijulian@agronorte.com.ar
+  country: null
+  whatsapp: null
 geolocation:
   latitude: -30.7972561
   longitude: -60.6068619
+typeLabel: Capacitación y Cursos
+primaryCategory: academia
+categoryLabel: academia
+translatedLayers:
+  - academia
+  - Drones y Hardware
+  - dji
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Ruta Nacional 11 y Jorge Neme
+  city: San Justo
+  province: Santa Fe
+  country: null
+  coordinates:
+    latitude: -30.7972561
+    longitude: -60.6068619
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}
