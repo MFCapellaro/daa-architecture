@@ -1,4 +1,5 @@
 layers:
+  - id: service
     label: Service
     visibleByDefault: true
     color: '#ff0000'

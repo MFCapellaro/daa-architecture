@@ -5,12 +5,41 @@ identity:
   status: active
 layers:
   - operators
+  - dji
+  - xag
+  - service
 contact:
   address: Skua 2381
   city: Bahía Blanca
   province: Buenos Aires
   phone: +54 291 4163049
   email: irpdrones@gmail.com
+  country: Argentina
+  whatsapp: +54 9 2916 49-5162
 geolocation:
   latitude: -38.7188036
   longitude: -62.21472490000001
+typeLabel: Empresas
+primaryCategory: operators
+categoryLabel: operators
+translatedLayers:
+  - operators
+description: ''
+isPublic: true
+status: ACTIVE
+location:
+  address: Skua 2381
+  city: Bahía Blanca
+  province: Buenos Aires
+  country: null
+  coordinates:
+    latitude: -38.7188036
+    longitude: -62.21472490000001
+presence:
+  website: https://instagram.com/irpdrones_agricultura
+  websiteMentioned: false
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+relationships: []
+capabilities: []
+source: {}
