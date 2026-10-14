@@ -11,7 +11,7 @@ layers:
 capabilities: []
 contact:
   address: null
-  city: null
+  city: CABA
   province: Buenos Aires
   country: Argentina
   phone: null
@@ -33,13 +33,12 @@ source:
   section: drones
   raw: Lumadron - Buenos Aires - drones@lumadron.com - https://lumadron.com/
 status: ACTIVE
-typeLabel: Empresas
+typeLabel: Distribuidores y Dealers
 primaryCategory: dji
 categoryLabel: dji
 translatedLayers:
   - dji
   - xag
-  - Distribuidores y Dealers
   - hylio
   - topxgun
 description: Lumadron - Buenos Aires - drones@lumadron.com - https://lumadron.com/

@@ -69,3 +69,27 @@ Participation is not an activity.
 Participation is the architectural condition that allows an Actor to evolve coherently within DAA.
 
 A Participant establishes the foundation from which trajectories, interactions, and emergent value become possible.
+
+## Backend participant accounts
+
+Registered participant accounts are stored as individual YAML files in
+`packages/domains/uas/participants/data/fixtures/`. Existing domain fixture YAML
+records remain unchanged and are not treated as login accounts; only records
+explicitly marked as registered accounts are exposed by the participant
+administration API.
+
+The backend provides:
+
+* `POST /api/auth/register` and `POST /api/auth/login` for participant sessions.
+* `GET /api/auth/me` for the authenticated session user.
+* `GET` and `PATCH /api/participants/me` for a participant's own name and
+  progressive profile.
+* `POST /api/participants/me/dealer` to add the dealer role. This does not
+  accept or approve a dealer agreement.
+* Admin-only `GET /api/admin/participants`,
+  `PATCH /api/admin/participants/:id`, and
+  `DELETE /api/admin/participants/:id`.
+
+Admin authentication is configured independently with `ADMIN_EMAIL` and
+`ADMIN_PASSWORD` (or `ADMIN_PASSWORD_HASH`). There is no public admin
+registration endpoint.

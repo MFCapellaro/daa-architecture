@@ -31,7 +31,7 @@ layers:
     color: '#70acff'
   - id: dji
     label: DJI
-    color: '#f54d05'
+    color: '#f2f2f2'
     visibleByDefault: true
   - id: xag
     label: XAG

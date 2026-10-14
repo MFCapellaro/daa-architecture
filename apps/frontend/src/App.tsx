@@ -48,6 +48,7 @@ export function App() {
           <Route path="/mapa" element={<MapPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/admin/login" element={<LoginPage />} />
+          <Route path="/register" element={<LoginPage />} />
 
           {/* ========================================== */}
           {/* 2. RUTA PARTICIPANTE / DEALER              */}

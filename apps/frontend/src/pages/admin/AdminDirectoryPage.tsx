@@ -755,7 +755,6 @@ export const AdminDirectoryPage: React.FC = () => {
                 <label>Sección<input value={form.source.section} onChange={(event) => updateForm({ source: { ...form.source, section: event.target.value } })} style={textInputStyle} /></label>
                 <label>Verificación<input value={form.status.verification} onChange={(event) => updateForm({ status: { ...form.status, verification: event.target.value } })} style={textInputStyle} /></label>
               </div>
-              <label>Texto de origen<textarea value={form.source.raw} onChange={(event) => updateForm({ source: { ...form.source, raw: event.target.value } })} style={textInputStyle} rows={3} /></label>
               <label style={checkboxStyle}><input type="checkbox" checked={form.status.imported} onChange={(event) => updateForm({ status: { ...form.status, imported: event.target.checked } })} /> Importado</label>
               <label style={checkboxStyle}><input type="checkbox" checked={form.status.reviewRequired} onChange={(event) => updateForm({ status: { ...form.status, reviewRequired: event.target.checked } })} /> Requiere revisión</label>
             </fieldset>

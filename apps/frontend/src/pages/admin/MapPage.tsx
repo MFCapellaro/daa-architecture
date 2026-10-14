@@ -16,14 +16,19 @@ export interface Actor {
   relationships?: ActorRelationship[];
   description?: string;
   contact?: {
-    email: string | null;
-    phone: string | null;
-    city: string | null;
-    province: string | null;
+    email?: string | null;
+    phone?: string | null;
+    whatsapp?: string | null;
+    address?: string | null;
+    city?: string | null;
+    province?: string | null;
+    country?: string | null;
   };
   location?: {
-    city: string | null;
-    province: string | null;
+    address?: string | null;
+    city?: string | null;
+    province?: string | null;
+    country?: string | null;
     coordinates?: {
       latitude: number | string | null;
       longitude: number | string | null;
@@ -32,6 +37,9 @@ export interface Actor {
   geolocation?: {
     latitude: number | string | null;
     longitude: number | string | null;
+  };
+  presence?: {
+    website?: string | null;
   };
 }
 
@@ -52,11 +60,130 @@ const extractCoordinates = (actor: Actor): { lat: number; lng: number } | null =
   return { lat, lng };
 };
 
+const makePopupLink = (href: string, label: string, external = false): HTMLAnchorElement => {
+  const link = document.createElement('a');
+  link.href = href;
+  link.textContent = label;
+  if (external) {
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  }
+  return link;
+};
+
+const createActorPopup = (
+  actor: Actor,
+  categories: Category[],
+  onClose: () => void,
+): HTMLDivElement => {
+  const content = document.createElement('div');
+  content.className = 'map-actor-popup';
+
+  const header = document.createElement('div');
+  header.className = 'map-actor-popup__header';
+  const categoryList = document.createElement('div');
+  categoryList.className = 'map-actor-popup__categories';
+  const categoryIds = actor.layers?.length ? actor.layers : actor.categoryLabel ? [actor.categoryLabel] : [];
+  const categoryNames = [...new Set(categoryIds)].map((id) =>
+    categories.find((category) => category.id === id)?.name ?? id
+  );
+  if (!categoryNames.length) categoryNames.push('Entidad');
+  categoryNames.forEach((name) => {
+    const badge = document.createElement('span');
+    badge.className = 'map-actor-popup__category';
+    badge.textContent = name;
+    categoryList.append(badge);
+  });
+  const closeButton = document.createElement('button');
+  closeButton.className = 'map-actor-popup__close';
+  closeButton.type = 'button';
+  closeButton.setAttribute('aria-label', 'Cerrar ficha');
+  closeButton.textContent = '×';
+  closeButton.addEventListener('click', onClose);
+  header.append(categoryList, closeButton);
+
+  const title = document.createElement('h2');
+  title.className = 'map-actor-popup__title';
+  title.textContent = actor.name;
+  content.append(header, title);
+
+  const address = [
+    actor.location?.address ?? actor.contact?.address,
+    actor.location?.city ?? actor.contact?.city,
+    actor.location?.province ?? actor.contact?.province,
+    actor.location?.country ?? actor.contact?.country,
+  ].filter(Boolean).join(', ');
+  if (address) {
+    const addressLine = document.createElement('p');
+    addressLine.className = 'map-actor-popup__address';
+    addressLine.textContent = `📍 ${address}`;
+    content.append(addressLine);
+  }
+
+  const contact = document.createElement('div');
+  contact.className = 'map-actor-popup__links';
+  if (actor.contact?.email) {
+    contact.append(makePopupLink(`mailto:${actor.contact.email}`, `✉ ${actor.contact.email}`));
+  }
+  if (actor.contact?.phone) {
+    const phone = actor.contact.phone.replace(/[^\d+]/g, '');
+    if (phone) contact.append(makePopupLink(`tel:${phone}`, `☎ ${actor.contact.phone}`));
+  }
+  if (actor.contact?.whatsapp) {
+    const whatsapp = actor.contact.whatsapp.replace(/\D/g, '');
+    if (whatsapp) {
+      const whatsappLink = makePopupLink(`https://wa.me/${whatsapp}`, `WhatsApp ${actor.contact.whatsapp}`, true);
+      whatsappLink.classList.add('map-actor-popup__whatsapp');
+      contact.append(whatsappLink);
+    }
+  }
+  if (actor.presence?.website) {
+    const rawWebsite = actor.presence.website.trim();
+    const website = /^[a-z][a-z\d+.-]*:/i.test(rawWebsite) ? rawWebsite : `https://${rawWebsite}`;
+    try {
+      if (['http:', 'https:'].includes(new URL(website).protocol)) {
+        contact.append(makePopupLink(website, `↗ ${rawWebsite}`, true));
+      }
+    } catch {
+      console.error(`URL de sitio web inválida para el actor "${actor.id}".`);
+    }
+  }
+  if (contact.childElementCount) content.append(contact);
+
+  const directoryLink = makePopupLink(`/directory?actor=${encodeURIComponent(actor.id)}`, 'Ver en el directorio');
+  directoryLink.className = 'map-actor-popup__directory';
+  directoryLink.textContent = '';
+  const directoryIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  directoryIcon.setAttribute('aria-hidden', 'true');
+  directoryIcon.setAttribute('viewBox', '0 0 24 24');
+  directoryIcon.setAttribute('width', '15');
+  directoryIcon.setAttribute('height', '15');
+  directoryIcon.setAttribute('fill', 'none');
+  directoryIcon.setAttribute('stroke', 'currentColor');
+  directoryIcon.setAttribute('stroke-width', '1.8');
+  directoryIcon.setAttribute('stroke-linecap', 'round');
+  directoryIcon.setAttribute('stroke-linejoin', 'round');
+  const directoryIconPaths = [
+    'M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 1 4 17.5z',
+    'M4 17.5A2.5 2.5 0 0 1 6.5 15H20M8 6h8M8 9h8',
+  ];
+  directoryIconPaths.forEach((d) => {
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    directoryIcon.append(path);
+  });
+  directoryLink.append(directoryIcon, document.createTextNode('Ver en el directorio'));
+  content.append(directoryLink);
+  return content;
+};
+
 export const MapPage: React.FC = () => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<google.maps.Map | null>(null);
   const markerLibraryRef = useRef<typeof google.maps.marker.AdvancedMarkerElement | null>(null);
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
+  const hasAppliedLocationQueryRef = useRef<boolean>(false);
+  const markersByActorIdRef = useRef<Map<string, google.maps.marker.AdvancedMarkerElement>>(new Map());
 
   const [actors, setActors] = useState<Actor[]>([]);
   const [categories, setCategories] = useState<Category[]>(DEFAULT_CATEGORIES);
@@ -64,6 +191,19 @@ export const MapPage: React.FC = () => {
   const [loadingData, setLoadingData] = useState<boolean>(true);
   const [apiError, setApiError] = useState<string | null>(null);
   const [selectedLayers, setSelectedLayers] = useState<Record<string, boolean>>({});
+  const [actorSearch, setActorSearch] = useState('');
+  const [isLayersPanelOpen, setIsLayersPanelOpen] = useState(true);
+  const locationQuery = new URLSearchParams(window.location.search);
+  const rawFocusLat = locationQuery.get('lat');
+  const rawFocusLng = locationQuery.get('lng');
+  const focusLat = rawFocusLat === null ? NaN : Number(rawFocusLat);
+  const focusLng = rawFocusLng === null ? NaN : Number(rawFocusLng);
+  const focusAddress = locationQuery.get('q')?.trim() ?? '';
+  const hasCoordinateFocus = Number.isFinite(focusLat)
+    && Number.isFinite(focusLng)
+    && Math.abs(focusLat) <= 90
+    && Math.abs(focusLng) <= 180;
+  const hasLocationQuery = hasCoordinateFocus || Boolean(focusAddress);
 
   // Capturar errores de autenticación de Google Maps a nivel global
   useEffect(() => {
@@ -143,8 +283,21 @@ export const MapPage: React.FC = () => {
         ]);
         setActors(data);
         setCategories(loadedCategories);
+        const visibleLayerIds = new Set(locationQuery.getAll('layer'));
+        for (const layerId of [...visibleLayerIds]) {
+          let category = loadedCategories.find((entry) => entry.id === layerId);
+          const visited = new Set<string>();
+          while (category?.parentId && !visited.has(category.id)) {
+            visited.add(category.id);
+            visibleLayerIds.add(category.parentId);
+            category = loadedCategories.find((entry) => entry.id === category?.parentId);
+          }
+        }
         setSelectedLayers(Object.fromEntries(
-          loadedCategories.map((category) => [category.id, category.visibleByDefault !== false])
+          loadedCategories.map((category) => [
+            category.id,
+            visibleLayerIds.has(category.id) || category.visibleByDefault !== false,
+          ])
         ));
       } catch (err) {
         console.error('Error al cargar actores:', err);
@@ -194,6 +347,7 @@ export const MapPage: React.FC = () => {
     const relationships: google.maps.Polyline[] = [];
     const bounds = new google.maps.LatLngBounds();
     const visibleById = new Map(visibleActors.map(({ actor, coords }) => [actor.id, { actor, coords }]));
+    markersByActorIdRef.current.clear();
 
     visibleActors.forEach(({ actor, coords }) => {
       bounds.extend(coords);
@@ -222,24 +376,15 @@ export const MapPage: React.FC = () => {
       marker.append(markerContent);
       markers.push(marker);
       markerContents.push(markerContent);
-
-      const cityStr = actor.location?.city || actor.contact?.city || '';
-      const provStr = actor.location?.province || actor.contact?.province || '';
-
-      const popupContent = `
-        <div style="font-family: system-ui, sans-serif; padding: 8px; max-width: 240px; color: #0f172a;">
-          <span style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: #2563eb; background: #eff6ff; padding: 2px 6px; border-radius: 4px;">
-            ${actor.categoryLabel || 'Entidad'}
-          </span>
-          <h4 style="margin: 6px 0 4px 0; font-size: 14px; font-weight: 700;">${actor.name}</h4>
-          ${provStr ? `<p style="margin: 0; font-size: 12px; color: #64748b;">📍 ${cityStr ? cityStr + ', ' : ''}${provStr}</p>` : ''}
-          ${actor.contact?.phone ? `<p style="margin: 4px 0 0 0; font-size: 12px;">📞 ${actor.contact.phone}</p>` : ''}
-          ${actor.contact?.email ? `<p style="margin: 2px 0 0 0; font-size: 12px;">✉️ ${actor.contact.email}</p>` : ''}
-        </div>
-      `;
+      markersByActorIdRef.current.set(actor.id, marker);
 
       marker.addEventListener('gmp-click', () => {
         if (infoWindowRef.current) {
+          const popupContent = createActorPopup(actor, categories, () => infoWindowRef.current?.close());
+          infoWindowRef.current.setOptions({
+            headerDisabled: true,
+            pixelOffset: new google.maps.Size(0, -12),
+          });
           infoWindowRef.current.setContent(popupContent);
           infoWindowRef.current.open({ map, anchor: marker });
         }
@@ -253,6 +398,25 @@ export const MapPage: React.FC = () => {
     };
     const zoomListener = map.addListener('zoom_changed', updateMarkerScale);
     updateMarkerScale();
+
+    if (hasLocationQuery && !hasAppliedLocationQueryRef.current) {
+      hasAppliedLocationQueryRef.current = true;
+      if (hasCoordinateFocus) {
+        map.setCenter({ lat: focusLat, lng: focusLng });
+        map.setZoom(13);
+      } else {
+        new google.maps.Geocoder().geocode({ address: focusAddress }, (results, status) => {
+          const location = results?.[0]?.geometry.location;
+          if (status === 'OK' && location) {
+            map.setCenter(location);
+            map.setZoom(13);
+            return;
+          }
+          console.error(`No se pudo ubicar "${focusAddress}" en el mapa (${status}).`);
+          setApiError(`No se pudo ubicar la dirección en el mapa (${status}).`);
+        });
+      }
+    }
 
     const drawnRelationships = new Set<string>();
     visibleActors.forEach(({ actor }) => {
@@ -282,16 +446,38 @@ export const MapPage: React.FC = () => {
       }
     });
 
-    if (visibleActors.length > 0 && !bounds.isEmpty()) {
+    if (!hasLocationQuery && visibleActors.length > 0 && !bounds.isEmpty()) {
       map.fitBounds(bounds);
     }
 
     return () => {
       zoomListener.remove();
       markers.forEach((marker) => { marker.map = null; });
+      markersByActorIdRef.current.clear();
       relationships.forEach((relationship) => relationship.setMap(null));
     };
   }, [categories, isMapLoaded, visibleActors]);
+
+  const matchingActors = useMemo(() => {
+    const query = actorSearch.trim().toLocaleLowerCase();
+    if (!query) return [];
+    return visibleActors
+      .filter(({ actor }) => actor.name.toLocaleLowerCase().includes(query))
+      .slice(0, 8);
+  }, [actorSearch, visibleActors]);
+
+  const focusActorOnMap = (actorId: string) => {
+    const marker = markersByActorIdRef.current.get(actorId);
+    const map = mapInstanceRef.current;
+    if (!marker || !map || !marker.position) return;
+    const position = marker.position instanceof google.maps.LatLng
+      ? marker.position
+      : new google.maps.LatLng(marker.position);
+    map.panTo(position);
+    map.setZoom(Math.max(map.getZoom() ?? 4, 12));
+    marker.dispatchEvent(new Event('gmp-click'));
+    setActorSearch('');
+  };
 
   const toggleLayer = (layer: string) => {
     setSelectedLayers((prev) => ({ ...prev, [layer]: !prev[layer] }));
@@ -311,32 +497,80 @@ export const MapPage: React.FC = () => {
         <p style={{ fontSize: '14px', color: '#cbd5e1', marginTop: '12px' }}>
           Acercate para descubrir la red.
         </p>
+        <div className="map-search">
+          <label className="map-actor-search">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-4-4" />
+            </svg>
+            <input
+              type="search"
+              value={actorSearch}
+              onChange={(event) => setActorSearch(event.target.value)}
+              placeholder="Buscar actor en el mapa"
+              aria-label="Buscar actor en el mapa"
+            />
+          </label>
+          {actorSearch.trim() && (
+            <div className="map-actor-search-results">
+              {matchingActors.length ? matchingActors.map(({ actor }) => (
+                <button key={actor.id} type="button" onClick={() => focusActorOnMap(actor.id)}>
+                  {actor.name}
+                </button>
+              )) : <p>No hay actores visibles con ese nombre.</p>}
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Panel CAPAS */}
-      <div style={{
-        position: 'absolute', top: '20px', right: '20px', zIndex: 10,
-        backgroundColor: 'rgba(13, 17, 29, 0.85)', backdropFilter: 'blur(8px)',
-        border: '1px solid #1e293b', borderRadius: '6px', padding: '16px', width: '160px', color: '#ffffff'
-      }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', borderBottom: '1px solid #334155', paddingBottom: '6px' }}>
-          <span style={{ fontSize: '12px', fontWeight: '700', letterSpacing: '1px' }}>CAPAS</span>
-          <span style={{ fontSize: '10px', color: '#64748b' }}>—</span>
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', maxHeight: '70vh', overflowY: 'auto' }}>
-          {categories.map((category) => (
-            <label key={category.id} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: '#cbd5e1', cursor: 'pointer' }}>
-              <input
-                type="checkbox"
-                checked={selectedLayers[category.id] ?? category.visibleByDefault !== false}
-                onChange={() => toggleLayer(category.id)}
-                style={{ accentColor: '#22c55e', cursor: 'pointer' }}
-              />
-              {category.name}
-            </label>
-          ))}
-        </div>
+      {/* Control de capas */}
+      <div className={`map-overlay map-controls${isLayersPanelOpen ? '' : ' is-collapsed'}`}>
+        <button
+          type="button"
+          className="map-controls-toggle"
+          aria-expanded={isLayersPanelOpen}
+          onClick={() => setIsLayersPanelOpen((open) => !open)}
+        >
+          <span>Capas <small>{categories.length}</small></span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            {isLayersPanelOpen
+              ? <><path d="m6 9 6 6 6-6" /></>
+              : <><path d="m9 18 6-6-6-6" /></>}
+          </svg>
+        </button>
+        {isLayersPanelOpen && (
+          <div className="map-layer-list">
+            {categories.map((category) => {
+              const isVisible = selectedLayers[category.id] ?? category.visibleByDefault !== false;
+              return (
+                <div key={category.id} className={`map-layer-row${isVisible ? ' is-visible' : ''}`}>
+                  <button
+                    type="button"
+                    className="map-layer-visibility"
+                    aria-label={`${isVisible ? 'Ocultar' : 'Mostrar'} capa ${category.name}`}
+                    aria-pressed={isVisible}
+                    title={`${isVisible ? 'Ocultar' : 'Mostrar'} ${category.name}`}
+                    onClick={() => toggleLayer(category.id)}
+                  >
+                    {isVisible ? (
+                      <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    ) : (
+                      <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m3 3 18 18M10.6 5.1A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a16 16 0 0 1-3 3.9M6.2 6.3C3.5 8.1 2 12 2 12s3.6 7 10 7c1.3 0 2.5-.3 3.5-.7" />
+                        <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+                      </svg>
+                    )}
+                  </button>
+                  <span className="map-layer-color" style={{ backgroundColor: category.color }} />
+                  <span className="map-layer-name">{category.name}</span>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       {/* Contenedor del Mapa */}

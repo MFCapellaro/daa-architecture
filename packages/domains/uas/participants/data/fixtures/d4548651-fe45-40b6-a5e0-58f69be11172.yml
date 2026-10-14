@@ -1,0 +1,19 @@
+id: d4548651-fe45-40b6-a5e0-58f69be11172
+actorId: d4548651-fe45-40b6-a5e0-58f69be11172
+name: Marcelo Capellaro
+email: marcelo@3cdesign.com.ar
+role: dealer
+status: active
+joinedAt: 2026-10-14T17:23:07.666Z
+passwordHash: $2b$12$d4zbSg9lJnEqfwrX4REg9.MCBoT7i8PWdwZW8wMClQCqql7MfJWpO
+accountType: registered
+profile:
+  organization: 3CDesign
+progressiveEntry:
+  identity: true
+  profile: true
+  capabilities: false
+  interests: false
+dealerAgreement:
+  approved: false
+  accepted: false

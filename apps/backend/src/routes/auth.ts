@@ -1,10 +1,16 @@
-import { Router } from 'express';
-import { login, getMe } from '../controllers/AuthController.js';
-import { authMiddleware } from '../middleware/authMiddleware.js';
+import { Router } from "express";
+import { createAuthController } from "../controllers/AuthController.js";
+import { createAuthMiddleware } from "../middleware/authMiddleware.js";
+import { ParticipantAccountStore } from "../services/ParticipantAccountStore.js";
 
-const router = Router();
+export function createAuthRouter(store: ParticipantAccountStore) {
+  const router = Router();
+  const controller = createAuthController(store);
+  const authenticate = createAuthMiddleware(store);
 
-router.post('/login', login);
-router.get('/me', authMiddleware, getMe);
+  router.post("/api/auth/register", controller.register);
+  router.post("/api/auth/login", controller.login);
+  router.get("/api/auth/me", authenticate, controller.getMe);
 
-export { router as authRouter };
+  return router;
+}

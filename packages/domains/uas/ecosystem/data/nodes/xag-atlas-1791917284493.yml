@@ -3,7 +3,6 @@ name: XAG ATLAS
 type: company
 identity: {}
 layers:
-  - dealer
   - xag
 capabilities: []
 isPublic: true
@@ -19,12 +18,25 @@ contact:
 presence:
   website: https://xagatlas.com/
   websiteMentioned: false
-  websiteMentionsDrones: false
+  websiteMentionsDrones: true
   websiteUnavailable: false
 geolocation:
   latitude: -31.706604
   longitude: -61.556165
 source: {}
-status:
-  imported: false
-  reviewRequired: false
+status: ACTIVE
+typeLabel: Empresas
+primaryCategory: dealer
+categoryLabel: Distribuidores y Dealers
+translatedLayers:
+  - Distribuidores y Dealers
+  - xag
+description: ''
+location:
+  address: km 169, RN 34
+  city: San Vicente
+  province: Santa Fe
+  country: Argentina
+  coordinates:
+    latitude: -31.706604
+    longitude: -61.556165

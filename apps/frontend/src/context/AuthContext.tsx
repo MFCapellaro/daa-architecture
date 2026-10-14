@@ -15,6 +15,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   loading: boolean;
   login: (token: string, user: User) => void;
+  updateUser: (user: User) => void;
   logout: () => void;
 }
 
@@ -52,6 +53,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem('daa_user', JSON.stringify(newUser));
   };
 
+  const updateUser = (updatedUser: User) => {
+    setUser(updatedUser);
+    localStorage.setItem('daa_user', JSON.stringify(updatedUser));
+  };
+
   const logout = () => {
     setToken(null);
     setUser(null);
@@ -67,6 +73,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         isAuthenticated: !!token && !!user,
         loading,
         login,
+        updateUser,
         logout,
       }}
     >
