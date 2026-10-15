@@ -1,0 +1,15 @@
+id: 2cb8c5e9-8c48-448e-9554-e620e82b6423
+actorId: 2cb8c5e9-8c48-448e-9554-e620e82b6423
+name: Info
+email: info@3cdesign.com.ar
+role: participante
+status: active
+joinedAt: 2026-10-15T16:51:50.215Z
+passwordHash: $2b$12$FagCGljyBuuaXh8tr1VhPenudIOEKotvOKXDCk.Tc5fE0lYWdh/0q
+accountType: registered
+profile: {}
+progressiveEntry:
+  identity: true
+  profile: true
+  capabilities: false
+  interests: false

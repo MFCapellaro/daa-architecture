@@ -6,7 +6,7 @@ identity:
 layers:
   - technology
 contact:
-  address: Ruta 88 Km 6
+  address: Ruta 88 Km 6,5
   city: Mar del Plata
   province: Buenos Aires
   phone: +54 223 5438860
@@ -14,8 +14,8 @@ contact:
   country: Argentina
   whatsapp: null
 geolocation:
-  latitude: -38.01298636842656
-  longitude: -57.65000787700006
+  latitude: -38.01344873382079
+  longitude: -57.649664729076086
 typeLabel: Empresas
 primaryCategory: technology
 categoryLabel: technology
@@ -28,10 +28,10 @@ location:
   address: Ruta 88 Km 6
   city: Mar del Plata
   province: Buenos Aires
-  country: null
+  country: Argentina
   coordinates:
-    latitude: -38.0021739
-    longitude: -57.6668286
+    latitude: -38.01298636842656
+    longitude: -57.65000787700006
 presence:
   website: https://aerodyca.com.ar
   websiteMentioned: false
