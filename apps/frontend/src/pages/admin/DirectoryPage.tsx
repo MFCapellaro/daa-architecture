@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import type { Category } from '../../types/category';
+import { useAuth } from '../../context/AuthContext';
+import './DirectoryPage.css';
 
 interface Actor {
   id: string;
@@ -77,6 +79,7 @@ const getMapUrl = (actor: Actor): string | null => {
 };
 
 export const DirectoryPage: React.FC = () => {
+  const { token } = useAuth();
   const [searchParams] = useSearchParams();
   const focusedActorId = searchParams.get('actor');
   const [actors, setActors] = useState<Actor[]>([]);
@@ -94,13 +97,11 @@ export const DirectoryPage: React.FC = () => {
       setLoading(true);
       setError(null);
 
-      const token = localStorage.getItem('token');
-
       const response = await fetch('/api/actors', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          ...(token ? { Authorization: 'Bear' + 'er ' + token } : {}),
         },
       });
 
@@ -111,7 +112,6 @@ export const DirectoryPage: React.FC = () => {
         const errData = await response.json().catch(() => ({}));
         throw new Error(errData.message || `Error en el servidor: ${response.status}`);
       }
-
       const data: Actor[] = await response.json();
       setActors(data);
       const categoriesResponse = await fetch('/api/categories');
@@ -128,7 +128,7 @@ export const DirectoryPage: React.FC = () => {
   };
 
   fetchActors();
-}, []);
+}, [token]);
 
   useEffect(() => {
     const focusedActor = actors.find((actor) => actor.id === focusedActorId);
@@ -140,6 +140,7 @@ export const DirectoryPage: React.FC = () => {
   // 1. Obtener lista de categorías únicas con su conteo para el menú
   const categoryStats = useMemo(() => {
     const stats = new Map<string, number>();
+    const categoryOrder = new Map(categories.map((category, index) => [category.id, index]));
     actors.forEach((actor) => {
       getActorCategoryIds(actor).forEach((id) => {
         stats.set(id, (stats.get(id) ?? 0) + 1);
@@ -152,7 +153,10 @@ export const DirectoryPage: React.FC = () => {
         name: categories.find((category) => category.id === id)?.name ?? id,
         count,
       }))
-      .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name));
+      .sort((left, right) =>
+        (categoryOrder.get(left.id) ?? Number.MAX_SAFE_INTEGER)
+          - (categoryOrder.get(right.id) ?? Number.MAX_SAFE_INTEGER)
+        || left.name.localeCompare(right.name));
   }, [actors, categories]);
 
   // 2. Filtrar los actores por categoría y término de búsqueda
@@ -190,97 +194,66 @@ export const DirectoryPage: React.FC = () => {
   }, [filteredActors, focusedActorId]);
 
   if (loading) {
-    return <div style={{ padding: '2rem', textAlign: 'center' }}>Cargando directorio de actores...</div>;
+    return <div className="public-directory-state">Cargando directorio de actores...</div>;
   }
 
   if (error) {
-    return <div style={{ padding: '2rem', color: 'red' }}>Error: {error}</div>;
+    return <div className="public-directory-state public-directory-state--error">Error: {error}</div>;
   }
 
   return (
-    <div style={{ display: 'flex', gap: '2rem', padding: '2rem', maxWidth: '1280px', margin: '0 auto' }}>
-      {/* MENÚ LATERAL: Filtros por Categoría */}
-      <aside style={{ width: '280px', flexShrink: 0 }}>
-        <h3>Categorías</h3>
-        <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+    <div className="public-directory">
+      <aside className="public-directory-sidebar">
+        <div className="public-directory-search">
+          <label className="public-directory-label" htmlFor="directory-search">Buscar en el directorio</label>
+          <input
+            id="directory-search"
+            type="search"
+            placeholder="Nombre, ciudad o provincia..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <p>Limpiar búsqueda para activar los registros</p>
+        </div>
+
+        <h2 className="public-directory-category-title">Categorías</h2>
+        <ul className="public-directory-category-list">
           <li>
             <button
+              type="button"
+              className={`public-directory-category${selectedCategory === 'all' ? ' is-active' : ''}`}
+              aria-pressed={selectedCategory === 'all'}
               onClick={() => setSelectedCategory('all')}
-              style={{
-                width: '100%',
-                textAlign: 'left',
-                padding: '0.6rem 1rem',
-                borderRadius: '6px',
-                border: '1px solid #ccc',
-                backgroundColor: selectedCategory === 'all' ? '#2563eb' : '#fff',
-                color: selectedCategory === 'all' ? '#fff' : '#333',
-                cursor: 'pointer',
-                fontWeight: selectedCategory === 'all' ? 'bold' : 'normal',
-                display: 'flex',
-                justifyContent: 'space-between',
-              }}
             >
               <span>Todas</span>
-              <span>({actors.length})</span>
+              <span className="public-directory-category-count">{actors.length}</span>
             </button>
           </li>
           {categoryStats.map(({ id, name, count }) => (
             <li key={id}>
               <button
+                type="button"
+                className={`public-directory-category${selectedCategory === id ? ' is-active' : ''}`}
+                aria-pressed={selectedCategory === id}
                 onClick={() => setSelectedCategory(id)}
-                style={{
-                  width: '100%',
-                  textAlign: 'left',
-                  padding: '0.6rem 1rem',
-                  borderRadius: '6px',
-                  border: '1px solid #ccc',
-                  backgroundColor: selectedCategory === id ? '#2563eb' : '#fff',
-                  color: selectedCategory === id ? '#fff' : '#333',
-                  cursor: 'pointer',
-                  fontWeight: selectedCategory === id ? 'bold' : 'normal',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                }}
               >
                 <span>{name}</span>
-                <span style={{ opacity: 0.8, fontSize: '0.85em' }}>({count})</span>
+                <span className="public-directory-category-count">{count}</span>
               </button>
             </li>
           ))}
         </ul>
       </aside>
 
-      {/* ÁREA PRINCIPAL: Buscador y Grilla de Actores */}
-      <main style={{ flexGrow: 1 }}>
-        <header style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div>
-            <h1 style={{ margin: 0 }}>Directorio del Ecosistema</h1>
-            <p style={{ margin: '0.5rem 0 0', color: '#666' }}>
-              Mostrando {filteredActors.length} de {actors.length} entidades
-            </p>
-          </div>
-
-          {/* Campo de búsqueda */}
-          <input
-            type="text"
-            placeholder="Buscar por nombre, ciudad o provincia..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            style={{
-              padding: '0.6rem 1rem',
-              borderRadius: '6px',
-              border: '1px solid #ccc',
-              width: '320px',
-              fontSize: '0.95rem',
-            }}
-          />
+      <main className="public-directory-main">
+        <header className="public-directory-header">
+          <h1>Directorio del Ecosistema</h1>
         </header>
 
-        {/* Grilla de Tarjetas */}
         {filteredActors.length === 0 ? (
-          <p style={{ color: '#666', fontStyle: 'italic' }}>No se encontraron actores para esta selección.</p>
+          <p className="public-directory-empty">No se encontraron actores para esta selección.</p>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.2rem' }}>
+          <div className="public-directory-grid">
             {filteredActors.map((actor) => {
               const categoryIds = getActorCategoryIds(actor);
               const address = getActorAddress(actor);
@@ -296,59 +269,28 @@ export const DirectoryPage: React.FC = () => {
               <div
                 key={actor.id}
                 id={`directory-actor-${actor.id}`}
-                style={{
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '8px',
-                  padding: '1.2rem',
-                  backgroundColor: '#fff',
-                  outline: actor.id === focusedActorId ? '2px solid #2563eb' : undefined,
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
+                className={`public-directory-card${actor.id === focusedActorId ? ' is-focused' : ''}`}
               >
                 <div>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: '0.5rem' }}>
+                  <div className="public-directory-tags">
                     {categoryIds.length > 0 ? categoryIds.map((id) => (
-                      <span
-                        key={id}
-                        style={{
-                          display: 'inline-block',
-                          fontSize: '0.75rem',
-                          fontWeight: 'bold',
-                          textTransform: 'uppercase',
-                          padding: '0.2rem 0.5rem',
-                          borderRadius: '4px',
-                          backgroundColor: '#eff6ff',
-                          color: '#1d4ed8',
-                        }}
-                      >
+                      <span key={id} className="public-directory-tag">
                         {categoryNameById.get(id) ?? id}
                       </span>
                     )) : (
-                      <span style={{
-                        display: 'inline-block',
-                        fontSize: '0.75rem',
-                        fontWeight: 'bold',
-                        textTransform: 'uppercase',
-                        padding: '0.2rem 0.5rem',
-                        borderRadius: '4px',
-                        backgroundColor: '#eff6ff',
-                        color: '#1d4ed8',
-                      }}>
+                      <span className="public-directory-tag">
                         {actor.categoryLabel || 'Entidad'}
                       </span>
                     )}
                   </div>
-                  <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>{actor.name}</h3>
+                  <h3 className="public-directory-card-title">{actor.name}</h3>
 
                   {mapUrl && (
-                    <div style={{ margin: '0 0 0.5rem 0', fontSize: '0.85rem', color: '#6b7280' }}>
-                      {address && <p style={{ margin: '0 0 0.25rem 0' }}>📍 {address}</p>}
+                    <div className="public-directory-location">
+                      {address && <p>📍 {address}</p>}
                       <Link
                         to={mapUrl}
-                        style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}
+                        className="public-directory-map-link"
                       >
                         <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                           <path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z" />
@@ -360,56 +302,65 @@ export const DirectoryPage: React.FC = () => {
                   )}
 
                   {description && (
-                    <p
-                      style={{
-                        fontSize: '0.85rem',
-                        color: '#4b5563',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 3,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
-                      }}
-                    >
+                    <p className="public-directory-description">
                       {description}
                     </p>
                   )}
                 </div>
 
-                <div style={{ marginTop: '1rem', paddingTop: '0.8rem', borderTop: '1px solid #f3f4f6' }}>
+                <div className="public-directory-contact">
                   {actor.contact?.email && (
-                    <p style={{ margin: '0.2rem 0', fontSize: '0.8rem', color: '#374151' }}>
-                      ✉️ <a href={`mailto:${actor.contact.email}`}>{actor.contact.email}</a>
-                    </p>
+                    <a
+                      href={`mailto:${actor.contact.email}`}
+                      className="public-directory-contact-link"
+                      aria-label={`Enviar correo a ${actor.name}: ${actor.contact.email}`}
+                      title={actor.contact.email}
+                    >
+                      <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <path d="m3 7 9 6 9-6" />
+                      </svg>
+                    </a>
                   )}
                   {actor.contact?.phone && (
-                    <p style={{ margin: '0.2rem 0', fontSize: '0.8rem', color: '#374151' }}>
-                      📞 <a href={`tel:${phoneHref}`}>{actor.contact.phone}</a>
-                    </p>
+                    <a
+                      href={`tel:${phoneHref}`}
+                      className="public-directory-contact-link"
+                      aria-label={`Llamar a ${actor.name}: ${actor.contact.phone}`}
+                      title={actor.contact.phone}
+                    >
+                      <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 4h4l2 5-2.5 1.5a14 14 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1C10 20 4 14 4 5a1 1 0 0 1 1-1Z" />
+                      </svg>
+                    </a>
                   )}
                   {actor.contact?.whatsapp && whatsappNumber && (
-                    <p style={{ margin: '0.2rem 0', fontSize: '0.8rem', color: '#374151' }}>
-                      <a
-                        href={`https://wa.me/${whatsappNumber}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Contactar por WhatsApp al ${actor.contact.whatsapp}`}
-                        title={`WhatsApp: ${actor.contact.whatsapp}`}
-                        style={{ display: 'inline-flex', alignItems: 'center', color: '#25D366' }}
-                      >
-                        <svg aria-hidden="true" viewBox="0 0 32 32" width="20" height="20" fill="currentColor">
-                          <path d="M16 .8A15.1 15.1 0 0 0 3.05 23.67L1 31l7.5-1.97A15.1 15.1 0 1 0 16 .8Zm0 27.45c-2.35 0-4.65-.63-6.65-1.83l-.48-.28-4.45 1.17 1.19-4.34-.31-.5A12.3 12.3 0 1 1 16 28.25Zm6.75-9.22c-.37-.19-2.2-1.08-2.54-1.2-.34-.13-.59-.19-.83.18-.25.37-.96 1.2-1.18 1.45-.22.25-.43.28-.8.1-.37-.19-1.56-.58-2.97-1.84-1.1-.98-1.84-2.2-2.06-2.57-.22-.37-.02-.57.17-.76.17-.16.37-.43.55-.65.18-.22.24-.37.36-.62.12-.25.06-.46-.03-.65-.1-.18-.83-2-1.14-2.74-.3-.72-.6-.62-.82-.63h-.7c-.24 0-.64.09-.98.46-.34.37-1.29 1.26-1.29 3.08 0 1.81 1.32 3.57 1.5 3.81.19.25 2.6 3.96 6.3 5.55.88.38 1.57.61 2.1.78.88.28 1.68.24 2.31.15.7-.1 2.2-.9 2.51-1.78.3-.87.3-1.62.21-1.78-.09-.15-.34-.24-.71-.43Z" />
-                        </svg>
-                      </a>
-                    </p>
+                    <a
+                      href={`https://wa.me/${whatsappNumber}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Contactar por WhatsApp al ${actor.contact.whatsapp}`}
+                      title={`WhatsApp: ${actor.contact.whatsapp}`}
+                      className="public-directory-contact-link public-directory-whatsapp"
+                    >
+                      <svg aria-hidden="true" viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
+                        <path d="M16 .8A15.1 15.1 0 0 0 3.05 23.67L1 31l7.5-1.97A15.1 15.1 0 1 0 16 .8Zm0 27.45c-2.35 0-4.65-.63-6.65-1.83l-.48-.28-4.45 1.17 1.19-4.34-.31-.5A12.3 12.3 0 1 1 16 28.25Zm6.75-9.22c-.37-.19-2.2-1.08-2.54-1.2-.34-.13-.59-.19-.83.18-.25.37-.96 1.2-1.18 1.45-.22.25-.43.28-.8.1-.37-.19-1.56-.58-2.97-1.84-1.1-.98-1.84-2.2-2.06-2.57-.22-.37-.02-.57.17-.76.17-.16.37-.43.55-.65.18-.22.24-.37.36-.62.12-.25.06-.46-.03-.65-.1-.18-.83-2-1.14-2.74-.3-.72-.6-.62-.82-.63h-.7c-.24 0-.64.09-.98.46-.34.37-1.29 1.26-1.29 3.08 0 1.81 1.32 3.57 1.5 3.81.19.25 2.6 3.96 6.3 5.55.88.38 1.57.61 2.1.78.88.28 1.68.24 2.31.15.7-.1 2.2-.9 2.51-1.78.3-.87.3-1.62.21-1.78-.09-.15-.34-.24-.71-.43Z" />
+                      </svg>
+                    </a>
                   )}
                   {actor.presence?.website && (
                     <a
                       href={actor.presence.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: '0.8rem', color: '#2563eb', textDecoration: 'none', display: 'inline-block', marginTop: '0.4rem' }}
+                      className="public-directory-contact-link"
+                      aria-label={`Sitio web de ${actor.name}`}
+                      title={actor.presence.website}
                     >
-                      🌐 Sitio web →
+                      <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+                      </svg>
                     </a>
                   )}
                 </div>

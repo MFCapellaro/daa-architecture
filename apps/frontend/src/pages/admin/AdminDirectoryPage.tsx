@@ -1,7 +1,10 @@
-import React, { useEffect, useMemo, useState, type FormEvent } from 'react';
+import React, { useCallback, useEffect, useMemo, useState, type FormEvent } from 'react';
 import { CategoryManagerModal } from '../../components/CategoryManagerModal';
-import { buildCategoryTree, DEFAULT_CATEGORIES, type Category } from '../../types/category';
+import { DEFAULT_CATEGORIES, type Category } from '../../types/category';
 import type { Actor as EcosystemActor, ActorType } from '../../../../../packages/domains/uas/ecosystem/src/Actor';
+import { loadGoogleMaps } from '../../lib/googleMaps';
+import './AdminDirectoryPage.css';
+import { useAuth } from '../../context/AuthContext';
 
 const ACTOR_TYPES = [
   'company',
@@ -380,7 +383,33 @@ const textInputStyle: React.CSSProperties = {
   padding: '8px 9px',
 };
 
+const VisibilityIcon: React.FC<{ visible: boolean }> = ({ visible }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {visible ? (
+      <>
+        <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z" />
+        <circle cx="12" cy="12" r="3" />
+      </>
+    ) : (
+      <>
+        <path d="m3 3 18 18" />
+        <path d="M10.6 5.1A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15.8 15.8 0 0 1-3.1 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7c1.1 0 2.1-.2 3-.5" />
+        <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+      </>
+    )}
+  </svg>
+);
+
+const DeleteIcon: React.FC = () => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 6h18" />
+    <path d="M8 6V4h8v2m3 0-1 14H6L5 6" />
+    <path d="M10 11v5m4-5v5" />
+  </svg>
+);
+
 export const AdminDirectoryPage: React.FC = () => {
+  const { token } = useAuth();
   const [actors, setActors] = useState<ActorRecord[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [form, setForm] = useState<ActorForm | null>(null);
@@ -394,12 +423,14 @@ export const AdminDirectoryPage: React.FC = () => {
   const [geocoding, setGeocoding] = useState(false);
   const [relationshipSearch, setRelationshipSearch] = useState('');
 
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
       const [rawActors, loadedCategories] = await Promise.all([
-        request<unknown[]>('/api/actors'),
+        request<unknown[]>('/api/actors', {
+          headers: token ? { Authorization: 'Bear' + 'er ' + token } : {},
+        }),
         request<Category[]>('/api/categories'),
       ]);
       const normalized = rawActors.map(toActorRecord).filter((actor): actor is ActorRecord => actor !== null);
@@ -415,11 +446,11 @@ export const AdminDirectoryPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [token]);
 
   useEffect(() => {
     void loadData();
-  }, []);
+  }, [loadData]);
 
   const filteredActors = useMemo(() => actors.filter((actor) => {
     const matchesCategory = !filterCategory || actor.layers.includes(filterCategory);
@@ -431,7 +462,7 @@ export const AdminDirectoryPage: React.FC = () => {
     );
   }), [actors, filterCategory, search]);
 
-  const categoriesForActors = useMemo(() => buildCategoryTree(categories), [categories]);
+  const categoriesForActors = categories;
 
   const updateForm = (updates: Partial<ActorForm>) => {
     setForm((current) => current ? { ...current, ...updates } : current);
@@ -528,6 +559,15 @@ export const AdminDirectoryPage: React.FC = () => {
     setCategories(await request<Category[]>('/api/categories'));
   };
 
+  const reorderCategories = async (categoryIds: string[]) => {
+    const reordered = await request<Category[]>('/api/categories/order', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ categoryIds }),
+    });
+    setCategories(reordered);
+  };
+
   const setRelationship = (
     targetId: string,
     type: RelationshipType,
@@ -540,7 +580,7 @@ export const AdminDirectoryPage: React.FC = () => {
     updateForm({ relationships: current });
   };
 
-  const geocode = () => {
+  const geocode = async () => {
     if (!form) return;
     const query = [
       form.contact.address,
@@ -552,18 +592,11 @@ export const AdminDirectoryPage: React.FC = () => {
       setError('Completa dirección, ciudad, provincia o país antes de geocodificar.');
       return;
     }
-    if (!window.google?.maps?.Geocoder) {
-      setError('El geocodificador de Google Maps no está disponible.');
-      return;
-    }
-
     setGeocoding(true);
-    new window.google.maps.Geocoder().geocode({ address: query }, (results, status) => {
-      setGeocoding(false);
-      if (status !== 'OK' || !results?.[0]) {
-        setError(`No se pudieron obtener coordenadas (${status}).`);
-        return;
-      }
+    try {
+      const { geocoding } = await loadGoogleMaps();
+      const { results } = await new geocoding.Geocoder().geocode({ address: query });
+      if (!results[0]) throw new Error('No se encontraron coordenadas para esta dirección.');
       const location = results[0].geometry.location;
       setForm((current) => current ? {
         ...current,
@@ -573,80 +606,94 @@ export const AdminDirectoryPage: React.FC = () => {
           longitude: location.lng().toFixed(6),
         },
       } : current);
-    });
+      setError(null);
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'No se pudieron obtener coordenadas.');
+    } finally {
+      setGeocoding(false);
+    }
   };
 
   return (
-    <main style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) minmax(360px, 1.2fr)', gap: 20, padding: 20, height: 'calc(100vh - 64px)', boxSizing: 'border-box', background: '#f1f5f9' }}>
+    <main className="admin-directory-page">
       <section style={{ minWidth: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <header style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'center' }}>
+        <header className="directory-header">
           <div>
             <h1 style={{ margin: 0, fontSize: 20 }}>Directorio de actores</h1>
             <span style={{ color: '#64748b', fontSize: 13 }}>{filteredActors.length} registros</span>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <button type="button" onClick={() => setCategoryModalOpen(true)}>Categorías</button>
-            <button type="button" onClick={startNewActor}>+ Nuevo actor</button>
+          <div className="directory-toolbar-actions">
+            <button className="directory-button directory-button--secondary" type="button" onClick={() => setCategoryModalOpen(true)}>Categorías</button>
+            <button className="directory-button directory-button--primary" type="button" onClick={startNewActor}>+ Nuevo actor</button>
           </div>
         </header>
 
-        {error && <div role="alert" style={{ color: '#991b1b', background: '#fee2e2', padding: 10, borderRadius: 5 }}>{error}</div>}
+        {error && <div className="directory-error" role="alert">{error}</div>}
 
-        <div style={{ display: 'flex', gap: 8 }}>
+        <div className="directory-filters">
           <input
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Buscar actor"
             aria-label="Buscar actor"
-            style={textInputStyle}
+            className="directory-control"
           />
-          <select value={filterCategory} onChange={(event) => setFilterCategory(event.target.value)}>
+          <select className="directory-control directory-category-filter" value={filterCategory} onChange={(event) => setFilterCategory(event.target.value)}>
             <option value="">Todas las categorías</option>
             {categoriesForActors.map((category) => <option key={category.id} value={category.id}>{category.name}</option>)}
           </select>
         </div>
 
-        <div style={{ flex: 1, overflow: 'auto', background: '#fff', border: '1px solid #e2e8f0', borderRadius: 7 }}>
+        <div className="directory-table-container">
           {loading ? <p style={{ padding: 16 }}>Cargando directorio…</p> : (
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+            <table className="directory-table">
               <thead>
                 <tr>
-                  <th style={{ textAlign: 'left', padding: 9 }}>Actor</th>
-                  <th style={{ textAlign: 'left', padding: 9 }}>Categorías</th>
-                  <th style={{ padding: 9 }}>Public (mapa)</th>
-                  <th style={{ padding: 9 }}>Acciones</th>
+                  <th>Actor</th>
+                  <th>Categorías</th>
+                  <th>Mapa</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredActors.map((actor) => (
-                  <tr key={actor.id} style={{ background: form?.id === actor.id ? '#eff6ff' : '#fff', borderTop: '1px solid #e2e8f0' }}>
-                    <td style={{ padding: 9 }}>
-                      <button type="button" onClick={() => { setForm(toForm(actor)); setEditing(false); }} style={{ border: 0, background: '#c9e86b', textAlign: 'left', cursor: 'pointer' }}>
-                        <strong>{actor.name}</strong><br /><small>{actor.id}</small>
+                  <tr key={actor.id} className={form?.id === actor.id ? 'directory-row directory-row--selected' : 'directory-row'}>
+                    <td>
+                      <button type="button" onClick={() => { setForm(toForm(actor)); setEditing(false); }} className="directory-actor-link">
+                        <strong>{actor.name}</strong><small>{actor.id}</small>
                       </button>
                     </td>
-                    <td style={{ padding: 9 }}>{actor.layers.map((id) => categories.find((category) => category.id === id)?.name ?? id).join(', ') || '—'}</td>
-                    <td style={{ padding: 9, textAlign: 'center' }}>
-                      <button type="button" aria-pressed={actor.isPublic} onClick={() => void togglePublic(actor)}>
-                        {actor.isPublic ? 'Visible' : 'Oculto'}
+                    <td>{actor.layers.map((id) => categories.find((category) => category.id === id)?.name ?? id).join(', ') || '—'}</td>
+                    <td className="directory-icon-cell">
+                      <button
+                        type="button"
+                        className={`directory-icon-button${actor.isPublic ? '' : ' directory-icon-button--muted'}`}
+                        aria-label={actor.isPublic ? `Ocultar ${actor.name} del mapa` : `Mostrar ${actor.name} en el mapa`}
+                        title={actor.isPublic ? 'Visible en el mapa' : 'Oculto del mapa'}
+                        aria-pressed={actor.isPublic}
+                        onClick={() => void togglePublic(actor)}
+                      >
+                        <VisibilityIcon visible={actor.isPublic} />
                       </button>
                     </td>
-                    <td style={{ padding: 9, textAlign: 'center' }}>
-                      <button type="button" onClick={() => void deleteActor(actor)} aria-label={`Eliminar ${actor.name}`}>Borrar</button>
+                    <td className="directory-icon-cell">
+                      <button className="directory-icon-button directory-icon-button--danger" type="button" onClick={() => void deleteActor(actor)} aria-label={`Eliminar ${actor.name}`} title={`Eliminar ${actor.name}`}>
+                        <DeleteIcon />
+                      </button>
                     </td>
                   </tr>
                 ))}
-                {!filteredActors.length && <tr><td colSpan={4} style={{ padding: 16 }}>No hay actores para mostrar.</td></tr>}
+                {!filteredActors.length && <tr><td colSpan={4} className="directory-empty">No hay actores para mostrar.</td></tr>}
               </tbody>
             </table>
           )}
         </div>
       </section>
 
-      <section style={{ minWidth: 0, overflow: 'auto', background: '#fff', border: '1px solid #e2e8f0', borderRadius: 7, padding: 18 }}>
-        <h2 style={{ marginTop: 0 }}>{editing ? (form?.id ? 'Editar ficha' : 'Nuevo actor') : form ? form.name : 'Selecciona un actor'}</h2>
+      <section className="directory-detail-panel">
+        <h2 className="directory-detail-title">{editing ? (form?.id ? 'Editar ficha' : 'Nuevo actor') : form ? form.name : 'Selecciona un actor'}</h2>
         {form && (editing ? (
-          <form onSubmit={(event) => void saveActor(event)} style={{ display: 'grid', gap: 12 }}>
+          <form onSubmit={(event) => void saveActor(event)} className="directory-edit-form">
             <fieldset style={fieldsetStyle}>
               <legend>Identidad y categorías</legend>
               <label>Nombre<input required value={form.name} onChange={(event) => updateForm({ name: event.target.value })} style={textInputStyle} /></label>
@@ -656,10 +703,23 @@ export const AdminDirectoryPage: React.FC = () => {
                 </select>
               </label>
               <label>Estado de identidad<input value={form.identityStatus} onChange={(event) => updateForm({ identityStatus: event.target.value })} style={textInputStyle} /></label>
-              <fieldset style={fieldsetStyle}>
+              <fieldset
+                className="directory-category-options"
+                style={{
+                  ...fieldsetStyle,
+                  gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+                  columnGap: 15,
+                  rowGap: 5,
+                  padding: 6,
+                }}
+              >
                 <legend>Categorías (selección múltiple)</legend>
                 {categoriesForActors.map((category) => (
-                  <label key={category.id} style={{ display: 'block', marginLeft: categoryDepth(category, categoriesForActors) * 16 }}>
+                  <label
+                    key={category.id}
+                    className="directory-category-option"
+                    style={{ display: 'flex', alignItems: 'center', gap: 9, margin: 0 }}
+                  >
                     <input
                       type="checkbox"
                       checked={form.layers.includes(category.id)}
@@ -677,7 +737,7 @@ export const AdminDirectoryPage: React.FC = () => {
               <label style={checkboxStyle}><input type="checkbox" checked={form.isPublic} onChange={(event) => updateForm({ isPublic: event.target.checked })} /> Publicar en mapa</label>
             </fieldset>
 
-            <fieldset style={fieldsetStyle}>
+            <fieldset className="directory-relationships" style={fieldsetStyle}>
               <legend>Relaciones con otros nodos</legend>
                 <input
                   value={relationshipSearch}
@@ -687,14 +747,18 @@ export const AdminDirectoryPage: React.FC = () => {
                   style={textInputStyle}
                 />
                 {actors.filter((actor) => actor.id !== form.id && actor.name.toLowerCase().includes(relationshipSearch.toLowerCase())).map((actor) => (
-                <div key={actor.id} style={{ display: 'grid', gridTemplateColumns: 'minmax(110px, 1fr) repeat(3, minmax(85px, auto))', alignItems: 'center', gap: 8, padding: '5px 0', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{actor.name}</span>
+                <div key={actor.id} className="directory-relationship-row">
+                  <span className="directory-relationship-name">{actor.name}</span>
                   {([
                     ['child_of', 'Es sucursal de'],
                     ['parent_of', 'Es sucursal'],
                     ['represents', 'Representa marca'],
                   ] as const).map(([type, label]) => (
-                    <label key={type} style={{ fontSize: 11 }}>
+                    <label
+                      key={type}
+                      className="directory-relationship-option"
+                      style={{ display: 'flex', alignItems: 'center', gap: 6 }}
+                    >
                       <input
                         type="checkbox"
                         checked={form.relationships.some((relationship) => relationship.targetId === actor.id && relationship.type === type)}
@@ -760,12 +824,12 @@ export const AdminDirectoryPage: React.FC = () => {
             </fieldset>
 
             <div style={{ display: 'flex', gap: 8 }}>
-              <button type="submit" disabled={saving}>{saving ? 'Guardando…' : 'Guardar actor'}</button>
-              <button type="button" onClick={cancelEditing}>Cancelar</button>
+              <button className="directory-button directory-button--primary" type="submit" disabled={saving}>{saving ? 'Guardando…' : 'Guardar actor'}</button>
+              <button className="directory-button directory-button--secondary" type="button" onClick={cancelEditing}>Cancelar</button>
             </div>
           </form>
         ) : form ? (
-          <div style={{ display: 'grid', gap: 8, fontSize: 14 }}>
+          <div className="directory-summary">
             <div><strong>Tipo:</strong> {form.type}</div>
             <div><strong>Categorías:</strong> {form.layers.map((id) => categories.find((category) => category.id === id)?.name ?? id).join(', ') || '—'}</div>
             <div><strong>Contacto:</strong> {[form.contact.email, form.contact.phone, form.contact.whatsapp].filter(Boolean).join(' · ') || '—'}</div>
@@ -774,7 +838,7 @@ export const AdminDirectoryPage: React.FC = () => {
             <div><strong>Coordenadas:</strong> {[form.geolocation.latitude, form.geolocation.longitude].filter(Boolean).join(', ') || '—'}</div>
             <div><strong>Publicar en mapa:</strong> {form.isPublic ? 'Sí' : 'No'}</div>
             <div><strong>Relaciones:</strong> {form.relationships.length}</div>
-            <button type="button" onClick={() => setEditing(true)}>Editar ficha completa</button>
+            <button className="directory-button directory-button--primary" type="button" onClick={() => setEditing(true)}>Editar ficha completa</button>
           </div>
         ) : (
           <p>Selecciona un actor de la lista o crea uno nuevo.</p>
@@ -787,6 +851,7 @@ export const AdminDirectoryPage: React.FC = () => {
           onClose={() => setCategoryModalOpen(false)}
           onSave={saveCategory}
           onDelete={deleteCategory}
+          onReorder={reorderCategories}
         />
       )}
     </main>

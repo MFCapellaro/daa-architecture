@@ -1,0 +1,231 @@
+.category-modal-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgb(0 0 0 / 72%);
+}
+
+.category-modal {
+  box-sizing: border-box;
+  width: min(640px, 100%);
+  max-height: 85vh;
+  max-height: 85dvh;
+  overflow-y: auto;
+  padding: 20px;
+  color: #dce4e9;
+  background: #111a20;
+  border: 1px solid #2b3942;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 45%);
+}
+
+.category-modal-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #293740;
+}
+
+.category-modal-header h2 {
+  margin: 0;
+  color: #f1f5f7;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.category-modal-header p {
+  margin: 5px 0 0;
+  color: #9eabb4;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.category-modal button {
+  box-sizing: border-box;
+  width: auto;
+  margin: 0;
+  padding: 5px 8px;
+  color: #c3cdd3;
+  background: #1b272f;
+  border: 1px solid #34424b;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+}
+
+.category-modal button:hover:not(:disabled) {
+  color: #f5f7f8;
+  background: #26343d;
+}
+
+.category-modal button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.category-modal .category-modal-close {
+  align-self: flex-start;
+  padding: 4px 7px;
+  color: #9eabb4;
+  background: transparent;
+  border-color: transparent;
+  font-size: 16px;
+}
+
+.category-modal-error {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  color: #fca5a5;
+  background: #2c1b20;
+  border: 1px solid #63343b;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.category-modal-list {
+  display: grid;
+  gap: 2px;
+  max-height: 34vh;
+  overflow-y: auto;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.category-modal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+  padding-top: 3px;
+  padding-right: 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #26333b;
+}
+
+.category-modal-name {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  color: #d5dde2;
+  font-size: 12px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.category-modal-color {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+}
+
+.category-modal-actions,
+.category-modal-form-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+}
+
+.category-modal .category-modal-icon-button {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  font-size: 14px;
+}
+
+.category-modal .category-modal-action--danger {
+  color: #f3a5a5;
+}
+
+.category-modal-form {
+  display: grid;
+  gap: 9px;
+  padding-top: 14px;
+  border-top: 1px solid #293740;
+}
+
+.category-modal-form h3 {
+  margin: 0;
+  color: #e7edf0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.category-modal-form label {
+  display: grid;
+  gap: 4px;
+  color: #aebbc3;
+  font-size: 11px;
+}
+
+.category-modal-form input:not([type="color"]),
+.category-modal-form select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 7px 8px;
+  color: #e5ebee;
+  background: #172229;
+  border: 1px solid #35444d;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 12px;
+}
+
+.category-modal-form input[type="color"] {
+  width: 100%;
+  height: 32px;
+  padding: 3px;
+  background: #172229;
+  border: 1px solid #35444d;
+  border-radius: 3px;
+}
+
+.category-modal-form select option {
+  color: #e5ebee;
+  background: #172229;
+}
+
+.category-modal-form input:focus,
+.category-modal-form select:focus {
+  border-color: #789397;
+  outline: 2px solid rgb(120 147 151 / 22%);
+  outline-offset: 1px;
+}
+
+.category-modal-form-row {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.category-modal .category-modal-submit {
+  color: #f1f5f7;
+  background: #293941;
+  border-color: #41535d;
+}
+
+@media (max-width: 520px) {
+  .category-modal {
+    padding: 15px;
+  }
+
+  .category-modal-item {
+    gap: 6px;
+  }
+
+  .category-modal-actions {
+    gap: 2px;
+  }
+}

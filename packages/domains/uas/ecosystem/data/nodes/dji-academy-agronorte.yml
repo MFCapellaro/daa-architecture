@@ -1,4 +1,4 @@
-id: act_1790971477035
+id: dji-academy-agronorte
 name: DJI Academy Agronorte
 type: training
 identity:
@@ -12,7 +12,7 @@ contact:
   province: Santa Fe
   phone: +54 3498 45 3472
   email: vignattijulian@agronorte.com.ar
-  country: null
+  country: Argentina
   whatsapp: null
 geolocation:
   latitude: -30.7972561
@@ -22,7 +22,6 @@ primaryCategory: academia
 categoryLabel: academia
 translatedLayers:
   - academia
-  - Drones y Hardware
   - dji
 description: ''
 isPublic: true

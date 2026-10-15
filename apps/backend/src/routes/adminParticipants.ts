@@ -3,6 +3,7 @@ import type { Response } from "express";
 import { createAuthMiddleware, type AuthRequest } from "../middleware/authMiddleware.js";
 import { requireAuth } from "../middleware/requireAuth.js";
 import {
+  PROFILE_FIELDS,
   normalizeEmail,
   ParticipantAccountStore,
   toPublicParticipant,
@@ -13,17 +14,7 @@ const EDITABLE_FIELDS = new Set(["name", "email", "role", "status", "profile"]);
 
 function validProfile(value: unknown): value is Record<string, string | string[]> {
   if (!value || typeof value !== "object" || Array.isArray(value)) return false;
-  const allowed = new Set([
-    "organization",
-    "phone",
-    "city",
-    "province",
-    "country",
-    "website",
-    "bio",
-    "capabilities",
-    "interests",
-  ]);
+  const allowed = new Set<string>(PROFILE_FIELDS);
   return Object.entries(value).every(
     ([key, field]) =>
       allowed.has(key) &&
@@ -79,7 +70,10 @@ export function createAdminParticipantsRouter(store: ParticipantAccountStore) {
       const current = await store.findById(req.params.id);
       if (!current) return res.status(404).json({ message: "Participant not found" });
 
-      if (typeof body.email === "string") {
+      if (
+        typeof body.email === "string" &&
+        normalizeEmail(body.email) !== normalizeEmail(current.email)
+      ) {
         const normalizedEmail = normalizeEmail(body.email as string);
         const adminEmail = process.env.ADMIN_EMAIL;
         const existingEmail = await store.findByEmail(normalizedEmail);

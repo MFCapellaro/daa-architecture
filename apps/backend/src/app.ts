@@ -1,6 +1,6 @@
 import cors from "cors";
 import express from "express";
-import { directoryRouter } from "./routes/directory.js";
+import { createDirectoryRouter } from "./routes/directory.js";
 import { createAdminParticipantsRouter } from "./routes/adminParticipants.js";
 import { createAuthRouter } from "./routes/auth.js";
 import { createParticipantsRouter } from "./routes/participants.js";
@@ -8,6 +8,7 @@ import { ParticipantAccountStore } from "./services/ParticipantAccountStore.js";
 
 export function createApp(accountStore = new ParticipantAccountStore()) {
   const app = express();
+  const directoryRouter = createDirectoryRouter(accountStore);
   app.use(cors());
   app.use(express.json());
 

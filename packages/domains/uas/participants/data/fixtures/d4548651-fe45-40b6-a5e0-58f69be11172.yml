@@ -9,6 +9,13 @@ passwordHash: $2b$12$d4zbSg9lJnEqfwrX4REg9.MCBoT7i8PWdwZW8wMClQCqql7MfJWpO
 accountType: registered
 profile:
   organization: 3CDesign
+  phone: +54 223 5295976
+  address: Rawson 2689
+  latitude: "-38.007010"
+  longitude: "-57.554163"
+  city: Mar del Plata
+  country: Argentina
+  province: Buenos Aires
 progressiveEntry:
   identity: true
   profile: true

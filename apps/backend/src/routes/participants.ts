@@ -44,6 +44,70 @@ export function createParticipantsRouter(store: ParticipantAccountStore) {
     },
   );
 
+  router.get(
+    "/api/participants/map",
+    (req, res, next) => req.headers.authorization
+      ? authenticate(req, res, next)
+      : next(),
+    async (req: AuthRequest, res: Response) => {
+      const participants = (await store.list()).flatMap((account) => {
+        if (account.status !== "active") return [];
+
+        const rawLatitude = account.profile.latitude;
+        const rawLongitude = account.profile.longitude;
+        if (
+          typeof rawLatitude !== "string" ||
+          !rawLatitude.trim() ||
+          typeof rawLongitude !== "string" ||
+          !rawLongitude.trim()
+        ) {
+          return [];
+        }
+        const latitude = Number(rawLatitude);
+        const longitude = Number(rawLongitude);
+        if (
+          !Number.isFinite(latitude) ||
+          !Number.isFinite(longitude) ||
+          Math.abs(latitude) > 90 ||
+          Math.abs(longitude) > 180
+        ) {
+          return [];
+        }
+
+        const contact = {
+          address: account.profile.address ?? null,
+          city: account.profile.city ?? null,
+          province: account.profile.province ?? null,
+          country: account.profile.country ?? null,
+          ...(req.user ? {
+            email: account.email,
+            phone: account.profile.phone ?? null,
+          } : {}),
+        };
+
+        return [{
+          id: `participant-${account.id}`,
+          name: account.name,
+          categoryLabel: "Participantes",
+          layers: ["participantes"],
+          isPublic: true,
+          contact,
+          ...(req.user ? { presence: { website: account.profile.website ?? null } } : {}),
+          location: {
+            address: contact.address,
+            city: contact.city,
+            province: contact.province,
+            country: contact.country,
+            coordinates: { latitude, longitude },
+          },
+          geolocation: { latitude, longitude },
+        }];
+      });
+
+      return res.json(participants);
+    },
+  );
+
   router.patch(
     "/api/participants/me",
     authenticate,

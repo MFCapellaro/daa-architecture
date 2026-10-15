@@ -178,16 +178,21 @@
   gap: 0;
   width: max-content;
   max-width: 100%;
-  max-height: min(52vh, 480px);
+  max-height: min(calc(100dvh - 130px), 620px);
   overflow: auto;
   margin: 2px 0 0;
   padding: 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
 }
 
 .map-layer-list::-webkit-scrollbar {
-  display: none;
+  width: 5px;
+}
+
+.map-layer-list::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.45);
+  border-radius: 5px;
 }
 
 .map-layer-row {
@@ -382,6 +387,6 @@
   }
 
   .map-layer-list {
-    max-height: min(42vh, 340px);
+    max-height: min(calc(100dvh - 120px), 420px);
   }
 }

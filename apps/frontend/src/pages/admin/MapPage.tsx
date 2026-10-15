@@ -1,6 +1,8 @@
 /// <reference types="google.maps" />
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { DEFAULT_CATEGORIES, type Category } from '../../types/category';
+import { loadGoogleMaps } from '../../lib/googleMaps';
+import { useAuth } from '../../context/AuthContext';
 
 interface ActorRelationship {
   targetId: string;
@@ -43,7 +45,6 @@ export interface Actor {
   };
 }
 
-const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_BROWSER_KEY || '';
 const MAP_ID = import.meta.env.VITE_GOOGLE_MAP_ID || 'DEMO_MAP_ID';
 
 const extractCoordinates = (actor: Actor): { lat: number; lng: number } | null => {
@@ -178,12 +179,13 @@ const createActorPopup = (
 };
 
 export const MapPage: React.FC = () => {
+  const { token } = useAuth();
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<google.maps.Map | null>(null);
   const markerLibraryRef = useRef<typeof google.maps.marker.AdvancedMarkerElement | null>(null);
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
   const hasAppliedLocationQueryRef = useRef<boolean>(false);
-  const markersByActorIdRef = useRef<Map<string, google.maps.marker.AdvancedMarkerElement>>(new Map());
+  const markersByActorIdRef = useRef<Map<string, google.maps.marker.AdvancedMarkerElement | google.maps.Marker>>(new Map());
 
   const [actors, setActors] = useState<Actor[]>([]);
   const [categories, setCategories] = useState<Category[]>(DEFAULT_CATEGORIES);
@@ -215,55 +217,38 @@ export const MapPage: React.FC = () => {
   // 1. Cargar el SDK de Google Maps
   useEffect(() => {
     let isActive = true;
-    let script: HTMLScriptElement | null = null;
-
     const initMap = async () => {
-      if (!mapContainerRef.current || !window.google || !window.google.maps) return;
+      if (!mapContainerRef.current) return;
 
       try {
-        const { AdvancedMarkerElement } = await google.maps.importLibrary('marker') as google.maps.MarkerLibrary;
+        const { maps, marker } = await loadGoogleMaps();
         if (!isActive || !mapContainerRef.current || mapInstanceRef.current) return;
 
-        const map = new google.maps.Map(mapContainerRef.current, {
+        const map = new maps.Map(mapContainerRef.current, {
           center: { lat: -38.416097, lng: -63.616672 },
           zoom: 4,
           mapId: MAP_ID,
-          mapTypeId: google.maps.MapTypeId.SATELLITE,
+          mapTypeId: 'satellite',
           disableDefaultUI: true,
           zoomControl: true,
         });
 
-        markerLibraryRef.current = AdvancedMarkerElement;
+        markerLibraryRef.current = marker.AdvancedMarkerElement;
         mapInstanceRef.current = map;
-        infoWindowRef.current = new google.maps.InfoWindow();
+        infoWindowRef.current = new maps.InfoWindow();
         setIsMapLoaded(true);
       } catch (e) {
         console.error('Error al inicializar el mapa:', e);
-        if (isActive) setApiError('No se pudo inicializar la instancia del mapa.');
+        if (isActive) {
+          setApiError(e instanceof Error ? e.message : 'No se pudo inicializar la instancia del mapa.');
+        }
       }
     };
 
-    if (window.google && window.google.maps) {
-      void initMap();
-    } else {
-      const scriptId = 'google-maps-js-sdk';
-      script = document.getElementById(scriptId) as HTMLScriptElement | null;
-
-      if (!script) {
-        script = document.createElement('script');
-        script.id = scriptId;
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
-        script.async = true;
-        script.defer = true;
-        document.head.appendChild(script);
-      }
-
-      script.addEventListener('load', initMap);
-    }
+    void initMap();
 
     return () => {
       isActive = false;
-      script?.removeEventListener('load', initMap);
     };
   }, []);
 
@@ -271,17 +256,24 @@ export const MapPage: React.FC = () => {
   useEffect(() => {
     const fetchActors = async () => {
       try {
-        const [actorsResponse, categoriesResponse] = await Promise.all([
-          fetch('/api/actors'),
+        const [actorsResponse, categoriesResponse, participantsResponse] = await Promise.all([
+          fetch('/api/actors', {
+            headers: token ? { Authorization: 'Bear' + 'er ' + token } : {},
+          }),
           fetch('/api/categories'),
+          fetch('/api/participants/map', {
+            headers: token ? { Authorization: 'Bear' + 'er ' + token } : {},
+          }),
         ]);
         if (!actorsResponse.ok) throw new Error(`No se pudieron cargar los actores (HTTP ${actorsResponse.status}).`);
         if (!categoriesResponse.ok) throw new Error(`No se pudieron cargar las categorías (HTTP ${categoriesResponse.status}).`);
-        const [data, loadedCategories]: [Actor[], Category[]] = await Promise.all([
+        if (!participantsResponse.ok) throw new Error(`No se pudieron cargar los participantes para el mapa (HTTP ${participantsResponse.status}).`);
+        const [data, loadedCategories, mapParticipants]: [Actor[], Category[], Actor[]] = await Promise.all([
           actorsResponse.json(),
           categoriesResponse.json(),
+          participantsResponse.json(),
         ]);
-        setActors(data);
+        setActors([...data, ...mapParticipants]);
         setCategories(loadedCategories);
         const visibleLayerIds = new Set(locationQuery.getAll('layer'));
         for (const layerId of [...visibleLayerIds]) {
@@ -307,7 +299,7 @@ export const MapPage: React.FC = () => {
       }
     };
     fetchActors();
-  }, []);
+  }, [token]);
 
   // 3. Filtrar actores geolocalizados
   const geolocatedActors = useMemo(() => {
@@ -342,9 +334,13 @@ export const MapPage: React.FC = () => {
 
     const map = mapInstanceRef.current;
     const AdvancedMarkerElement = markerLibraryRef.current;
-    const markers: google.maps.marker.AdvancedMarkerElement[] = [];
+    const markers: Array<google.maps.marker.AdvancedMarkerElement | google.maps.Marker> = [];
     const markerContents: HTMLDivElement[] = [];
-    const relationships: google.maps.Polyline[] = [];
+    const relationships: Array<{
+      line: google.maps.Polyline;
+      nodeIds: [string, string];
+      hoverOnly: boolean;
+    }> = [];
     const bounds = new google.maps.LatLngBounds();
     const visibleById = new Map(visibleActors.map(({ actor, coords }) => [actor.id, { actor, coords }]));
     markersByActorIdRef.current.clear();
@@ -364,21 +360,59 @@ export const MapPage: React.FC = () => {
       dot.className = 'actor-map-marker__dot';
       markerContent.append(pulse, dot);
 
-      const marker = new AdvancedMarkerElement({
-        position: coords,
-        map,
-        title: actor.name,
-        gmpClickable: true,
-        zIndex: 2,
-        anchorLeft: '-50%',
-        anchorTop: '-50%',
-      });
-      marker.append(markerContent);
+      const marker = AdvancedMarkerElement
+        ? new AdvancedMarkerElement({
+            position: coords,
+            map,
+            title: actor.name,
+            gmpClickable: true,
+            zIndex: 2,
+            anchorLeft: '-50%',
+            anchorTop: '-50%',
+          })
+        : new google.maps.Marker({
+            position: coords,
+            map,
+            title: actor.name,
+            zIndex: 2,
+            icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              fillColor: markerColor,
+              fillOpacity: 1,
+              strokeColor: '#ffffff',
+              strokeWeight: 2,
+              scale: 7,
+            },
+          });
+      if (marker instanceof google.maps.Marker) {
+        marker.addListener('mouseover', () => {
+          relationships.forEach(({ line, nodeIds, hoverOnly }) => {
+            if (hoverOnly && nodeIds.includes(actor.id)) line.setMap(map);
+          });
+        });
+        marker.addListener('mouseout', () => {
+          relationships.forEach(({ line, nodeIds, hoverOnly }) => {
+            if (hoverOnly && nodeIds.includes(actor.id)) line.setMap(null);
+          });
+        });
+      } else {
+        marker.append(markerContent);
+        markerContent.addEventListener('mouseenter', () => {
+          relationships.forEach(({ line, nodeIds, hoverOnly }) => {
+            if (hoverOnly && nodeIds.includes(actor.id)) line.setMap(map);
+          });
+        });
+        markerContent.addEventListener('mouseleave', () => {
+          relationships.forEach(({ line, nodeIds, hoverOnly }) => {
+            if (hoverOnly && nodeIds.includes(actor.id)) line.setMap(null);
+          });
+        });
+      }
       markers.push(marker);
       markerContents.push(markerContent);
       markersByActorIdRef.current.set(actor.id, marker);
 
-      marker.addEventListener('gmp-click', () => {
+      const showActorPopup = () => {
         if (infoWindowRef.current) {
           const popupContent = createActorPopup(actor, categories, () => infoWindowRef.current?.close());
           infoWindowRef.current.setOptions({
@@ -388,7 +422,9 @@ export const MapPage: React.FC = () => {
           infoWindowRef.current.setContent(popupContent);
           infoWindowRef.current.open({ map, anchor: marker });
         }
-      });
+      };
+      if (marker instanceof google.maps.Marker) marker.addListener('click', showActorPopup);
+      else marker.addEventListener('gmp-click', showActorPopup);
     });
 
     const updateMarkerScale = () => {
@@ -433,8 +469,9 @@ export const MapPage: React.FC = () => {
         if (drawnRelationships.has(key)) continue;
         drawnRelationships.add(key);
 
+        const hoverOnly = ['parent_of', 'child_of', 'represents'].includes(relationship.type);
         const line = new google.maps.Polyline({
-          map,
+          map: hoverOnly ? null : map,
           path: [start.coords, end.coords],
           geodesic: true,
           strokeColor: relationship.type === 'represents' ? '#f59e0b' : '#38bdf8',
@@ -442,7 +479,11 @@ export const MapPage: React.FC = () => {
           strokeWeight: 2,
           zIndex: 1,
         });
-        relationships.push(line);
+        relationships.push({
+          line,
+          nodeIds: [start.actor.id, end.actor.id],
+          hoverOnly,
+        });
       }
     });
 
@@ -452,9 +493,12 @@ export const MapPage: React.FC = () => {
 
     return () => {
       zoomListener.remove();
-      markers.forEach((marker) => { marker.map = null; });
+      markers.forEach((marker) => {
+        if (marker instanceof google.maps.Marker) marker.setMap(null);
+        else marker.map = null;
+      });
       markersByActorIdRef.current.clear();
-      relationships.forEach((relationship) => relationship.setMap(null));
+      relationships.forEach(({ line }) => line.setMap(null));
     };
   }, [categories, isMapLoaded, visibleActors]);
 
@@ -469,13 +513,18 @@ export const MapPage: React.FC = () => {
   const focusActorOnMap = (actorId: string) => {
     const marker = markersByActorIdRef.current.get(actorId);
     const map = mapInstanceRef.current;
-    if (!marker || !map || !marker.position) return;
-    const position = marker.position instanceof google.maps.LatLng
-      ? marker.position
-      : new google.maps.LatLng(marker.position);
+    if (!marker || !map) return;
+    const markerPosition = marker instanceof google.maps.Marker
+      ? marker.getPosition()
+      : marker.position;
+    if (!markerPosition) return;
+    const position = markerPosition instanceof google.maps.LatLng
+      ? markerPosition
+      : new google.maps.LatLng(markerPosition);
     map.panTo(position);
     map.setZoom(Math.max(map.getZoom() ?? 4, 12));
-    marker.dispatchEvent(new Event('gmp-click'));
+    if (marker instanceof google.maps.Marker) google.maps.event.trigger(marker, 'click');
+    else marker.dispatchEvent(new Event('gmp-click'));
     setActorSearch('');
   };
 

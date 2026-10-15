@@ -1,6 +1,6 @@
 id: aapresid
 name: Aapresid
-type: company
+type: institution
 identity:
   status: active
 layers:
@@ -28,7 +28,7 @@ location:
   address: Dorrego 1639 Piso 2º, Oficina A
   city: Rosario
   province: Santa Fe
-  country: null
+  country: Argentina
   coordinates:
     latitude: -32.9555
     longitude: -60.6542

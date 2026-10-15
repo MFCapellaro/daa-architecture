@@ -11,9 +11,12 @@ export type AccountStatus = "active" | "suspended";
 export const PROFILE_FIELDS = [
   "organization",
   "phone",
+  "address",
   "city",
   "province",
   "country",
+  "latitude",
+  "longitude",
   "website",
   "bio",
   "capabilities",

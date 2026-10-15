@@ -53,3 +53,29 @@ layers:
     label: TopXGun
     color: '#01329d'
     visibleByDefault: true
+  - id: suppliers
+    label: Suppliers
+    color: '#f97316'
+    visibleByDefault: true
+  - id: participantes
+    label: Participantes
+    color: '#8401c1'
+    visibleByDefault: true
+categoryOrder:
+  - dji
+  - xag
+  - topxgun
+  - hylio
+  - dealer
+  - academia
+  - operators
+  - service
+  - technology
+  - events
+  - media
+  - public
+  - escuela
+  - insurance
+  - pools
+  - suppliers
+  - participantes

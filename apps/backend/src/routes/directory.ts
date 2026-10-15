@@ -3,8 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dump, load } from 'js-yaml';
-
-export const directoryRouter = Router();
+import { createAuthMiddleware, type AuthRequest } from '../middleware/authMiddleware.js';
+import { ParticipantAccountStore } from '../services/ParticipantAccountStore.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -56,6 +56,7 @@ interface CategoryRecord extends Record<string, unknown> {
 
 interface CategoryDocument extends Record<string, unknown> {
   layers: CategoryRecord[];
+  categoryOrder?: string[];
 }
 
 const yamlFiles = (): string[] => fs.existsSync(ACTORS_DIR)
@@ -119,12 +120,64 @@ const readActor = (file: string): ActorNode | undefined => {
         ? { latitude: geolocation.latitude, longitude: geolocation.longitude }
         : asRecord(location.coordinates),
     },
-    presence: asRecord(parsed.presence),
+    presence: {
+      ...asRecord(parsed.presence),
+      website: asRecord(parsed.presence).website
+        ?? contact.website
+        ?? parsed.website
+        ?? null,
+    },
     geolocation: Object.keys(geolocation).length ? geolocation : {
       latitude: parsed.latitude ?? asRecord(asRecord(location).coordinates).latitude,
       longitude: parsed.longitude ?? asRecord(asRecord(location).coordinates).longitude,
     },
     relationships: Array.isArray(parsed.relationships) ? parsed.relationships : [],
+  };
+};
+
+const toPublicActor = (actor: ActorNode): ActorNode => {
+  const source = asRecord(actor.source);
+  const location = asRecord(actor.location);
+  const contact = asRecord(actor.contact);
+  const coordinates = asRecord(location.coordinates);
+  const geolocation = asRecord(actor.geolocation);
+  const description = actor.description === source.raw
+    ? undefined
+    : actor.description;
+
+  return {
+    id: actor.id,
+    name: actor.name,
+    type: actor.type,
+    typeLabel: actor.typeLabel,
+    primaryCategory: actor.primaryCategory,
+    categoryLabel: actor.categoryLabel,
+    layers: actor.layers,
+    translatedLayers: actor.translatedLayers,
+    description,
+    isPublic: actor.isPublic,
+    status: actor.status,
+    contact: {
+      address: contact.address ?? null,
+      city: contact.city ?? null,
+      province: contact.province ?? null,
+      country: contact.country ?? null,
+    },
+    location: {
+      address: location.address ?? contact.address ?? null,
+      city: location.city ?? contact.city ?? null,
+      province: location.province ?? contact.province ?? null,
+      country: location.country ?? contact.country ?? null,
+      coordinates: {
+        latitude: coordinates.latitude,
+        longitude: coordinates.longitude,
+      },
+    },
+    geolocation: {
+      latitude: geolocation.latitude,
+      longitude: geolocation.longitude,
+    },
+    relationships: actor.relationships,
   };
 };
 
@@ -202,8 +255,9 @@ const writeCategoryDocument = (document: CategoryDocument) => {
 };
 
 const getCategories = (): CategoryRecord[] => {
+  const document = readCategoryDocument();
   const categories = new Map<string, CategoryRecord>();
-  for (const item of readCategoryDocument().layers) {
+  for (const item of document.layers) {
     if (item && typeof item.id === 'string' && typeof item.label === 'string') {
       categories.set(item.id, {
         ...item,
@@ -224,7 +278,14 @@ const getCategories = (): CategoryRecord[] => {
       });
     }
   }
-  return [...categories.values()];
+  const order = new Map((document.categoryOrder ?? []).map((id, index) => [id, index]));
+  return [...categories.values()]
+    .map((category, index) => ({ category, index }))
+    .sort((left, right) =>
+      (order.get(left.category.id) ?? Number.MAX_SAFE_INTEGER)
+        - (order.get(right.category.id) ?? Number.MAX_SAFE_INTEGER)
+      || left.index - right.index)
+    .map(({ category }) => category);
 };
 
 const assertAcyclicActorHierarchy = (actorId: string, relationships: unknown) => {
@@ -308,10 +369,19 @@ const saveActor = (actorId: string, value: unknown): string => {
   return targetPath;
 };
 
-directoryRouter.get('/api/actors', (req: Request, res: Response) => {
+export const createDirectoryRouter = (store: ParticipantAccountStore) => {
+const directoryRouter = Router();
+const authenticateDirectoryRequest = createAuthMiddleware(store);
+const optionalDirectoryAuth = (req: AuthRequest, res: Response, next: import('express').NextFunction) => {
+  if (!req.headers.authorization) return next();
+  return authenticateDirectoryRequest(req, res, next);
+};
+
+directoryRouter.get('/api/actors', optionalDirectoryAuth, (req: AuthRequest, res: Response) => {
   try {
     let actors = readAllActors();
     if (req.query.publicOnly === 'true') actors = actors.filter((actor) => actor.isPublic !== false);
+    if (!req.user) actors = actors.map(toPublicActor);
     return res.json(actors);
   } catch (error) {
     console.error('Error al cargar el directorio:', error);
@@ -325,6 +395,28 @@ directoryRouter.get('/api/categories', (_req: Request, res: Response) => {
   } catch (error) {
     console.error('Error al cargar las categorías:', error);
     return res.status(500).json({ error: 'No se pudieron cargar las categorías.' });
+  }
+});
+
+directoryRouter.put('/api/categories/order', (req: Request, res: Response) => {
+  try {
+    const categoryIds: unknown = req.body?.categoryIds;
+    const knownIds = getCategories().map((category) => category.id);
+    if (!Array.isArray(categoryIds)
+      || !categoryIds.every((id): id is string => typeof id === 'string')
+      || new Set(categoryIds).size !== knownIds.length
+      || categoryIds.length !== knownIds.length
+      || knownIds.some((id) => !categoryIds.includes(id))) {
+      return res.status(400).json({ error: 'El orden debe incluir cada categoría una sola vez.' });
+    }
+
+    const document = readCategoryDocument();
+    document.categoryOrder = categoryIds;
+    writeCategoryDocument(document);
+    return res.json(getCategories().map(serializeCategory));
+  } catch (error) {
+    console.error('Error al ordenar categorías:', error);
+    return res.status(500).json({ error: 'No se pudo guardar el orden de las categorías.' });
   }
 });
 
@@ -397,6 +489,7 @@ directoryRouter.delete('/api/categories/:id', (req, res) => {
       return res.status(409).json({ error: 'La categoría está asignada a uno o más actores.' });
     }
     document.layers = document.layers.filter((entry) => entry.id !== category.id);
+    document.categoryOrder = document.categoryOrder?.filter((id) => id !== category.id);
     writeCategoryDocument(document);
     return res.status(204).end();
   } catch (error) {
@@ -459,3 +552,6 @@ directoryRouter.delete('/api/actors/:id', (req: Request, res: Response) => {
     return res.status(500).json({ error: 'No se pudo eliminar el actor.' });
   }
 });
+
+return directoryRouter;
+};
