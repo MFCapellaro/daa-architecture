@@ -6,17 +6,21 @@ import { createDirectoryRouter } from "./routes/directory.js";
 import { createAdminParticipantsRouter } from "./routes/adminParticipants.js";
 import { createAuthRouter } from "./routes/auth.js";
 import { createParticipantsRouter } from "./routes/participants.js";
+import type { PasswordResetMailer } from "./services/PasswordResetMailer.js";
 import { ParticipantAccountStore } from "./services/ParticipantAccountStore.js";
 
 const frontendDirectory = fileURLToPath(new URL("../../frontend", import.meta.url));
 
-export function createApp(accountStore = new ParticipantAccountStore()) {
+export function createApp(
+  accountStore = new ParticipantAccountStore(),
+  passwordResetMailer?: PasswordResetMailer,
+) {
   const app = express();
   const directoryRouter = createDirectoryRouter(accountStore);
   app.use(cors());
   app.use(express.json());
 
-  app.use(createAuthRouter(accountStore));
+  app.use(createAuthRouter(accountStore, passwordResetMailer));
   app.use(createParticipantsRouter(accountStore));
   app.use(createAdminParticipantsRouter(accountStore));
 

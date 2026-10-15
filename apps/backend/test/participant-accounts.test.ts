@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
@@ -10,6 +11,8 @@ describe("participant account API", () => {
   let baseUrl: string;
   let originalAdminEmail: string | undefined;
   let originalAdminPassword: string | undefined;
+  let originalAppBaseUrl: string | undefined;
+  let sentResetUrls: string[];
 
   beforeEach(async () => {
     directory = await mkdtemp(
@@ -17,10 +20,19 @@ describe("participant account API", () => {
     );
     originalAdminEmail = process.env.ADMIN_EMAIL;
     originalAdminPassword = process.env.ADMIN_PASSWORD;
+    originalAppBaseUrl = process.env.APP_BASE_URL;
+    sentResetUrls = [];
     process.env.ADMIN_EMAIL = "admin@example.test";
     process.env.ADMIN_PASSWORD = "admin-secret";
+    process.env.APP_BASE_URL = "https://example.test";
 
-    const app = createApp(new ParticipantAccountStore(directory));
+    const mailer = {
+      assertConfigured: () => {},
+      sendPasswordResetEmail: async (_email: string, _name: string, resetUrl: string) => {
+        sentResetUrls.push(resetUrl);
+      },
+    };
+    const app = createApp(new ParticipantAccountStore(directory), mailer);
     server = app.listen(0);
     await new Promise<void>((resolve) => server.once("listening", resolve));
     const address = server.address();
@@ -37,6 +49,102 @@ describe("participant account API", () => {
     else process.env.ADMIN_EMAIL = originalAdminEmail;
     if (originalAdminPassword === undefined) delete process.env.ADMIN_PASSWORD;
     else process.env.ADMIN_PASSWORD = originalAdminPassword;
+    if (originalAppBaseUrl === undefined) delete process.env.APP_BASE_URL;
+    else process.env.APP_BASE_URL = originalAppBaseUrl;
+  });
+
+  it("sends one-time participant password reset links and changes the password", async () => {
+    const registration = await fetch(`${baseUrl}/api/auth/register`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        name: "Ada Participant",
+        email: "ada@example.test",
+        password: "participant-secret",
+      }),
+    });
+    expect(registration.status).toBe(201);
+    const registeredAccount = await registration.json() as { user: { id: string } };
+
+    const unknownAccount = await fetch(`${baseUrl}/api/auth/password-reset/request`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: "unknown@example.test" }),
+    });
+    expect(unknownAccount.status).toBe(200);
+    const unknownResult = await unknownAccount.json();
+    const adminRecovery = await fetch(`${baseUrl}/api/auth/password-reset/request`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: "admin@example.test" }),
+    });
+    expect(adminRecovery.status).toBe(200);
+    expect(await adminRecovery.json()).toEqual(unknownResult);
+    expect(sentResetUrls).toHaveLength(0);
+
+    const request = await fetch(`${baseUrl}/api/auth/password-reset/request`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: "ADA@example.test" }),
+    });
+    expect(request.status).toBe(200);
+    expect(sentResetUrls).toHaveLength(1);
+
+    const resetUrl = new URL(sentResetUrls[0]);
+    expect(resetUrl.origin).toBe("https://example.test");
+    expect(resetUrl.pathname).toBe("/reset-password");
+    const token = resetUrl.searchParams.get("token");
+    expect(token).toMatch(/^[a-f0-9]{64}$/);
+
+    const reset = await fetch(`${baseUrl}/api/auth/password-reset/confirm`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ token, password: "updated-secret" }),
+    });
+    expect(reset.status).toBe(200);
+
+    const oldPasswordLogin = await fetch(`${baseUrl}/api/auth/login`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: "ada@example.test", password: "participant-secret" }),
+    });
+    expect(oldPasswordLogin.status).toBe(401);
+
+    const newPasswordLogin = await fetch(`${baseUrl}/api/auth/login`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: "ada@example.test", password: "updated-secret" }),
+    });
+    expect(newPasswordLogin.status).toBe(200);
+
+    const reusedToken = await fetch(`${baseUrl}/api/auth/password-reset/confirm`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ token, password: "another-secret" }),
+    });
+    expect(reusedToken.status).toBe(400);
+
+    const expiredToken = "a".repeat(64);
+    const store = new ParticipantAccountStore(directory);
+    await store.setPasswordResetToken(
+      registeredAccount.user.id,
+      createHash("sha256").update(expiredToken).digest("hex"),
+      new Date(Date.now() - 1000).toISOString(),
+    );
+    const expiredReset = await fetch(`${baseUrl}/api/auth/password-reset/confirm`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ token: expiredToken, password: "another-secret" }),
+    });
+    expect(expiredReset.status).toBe(400);
+    await store.clearPasswordResetToken(registeredAccount.user.id);
+
+    const account = await readFile(
+      join(directory, `${registeredAccount.user.id}.yml`),
+      "utf8",
+    );
+    expect(account).not.toContain(token);
+    expect(account).not.toContain("passwordResetTokenHash");
   });
 
   it("registers accounts, manages profiles and enforces admin suspension/deletion", async () => {

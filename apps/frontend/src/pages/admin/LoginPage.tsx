@@ -106,6 +106,11 @@ export const LoginPage: React.FC = () => {
               style={{ width: '100%', boxSizing: 'border-box', padding: '10px 12px', marginTop: 6, borderRadius: '6px', border: '1px solid #cbd5e1' }}
             />
           </label>
+          {!isRegistration && (
+            <p style={{ margin: '-14px 0 20px', textAlign: 'right', fontSize: '13px' }}>
+              <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
+            </p>
+          )}
           <button
             type="submit"
             disabled={loading}

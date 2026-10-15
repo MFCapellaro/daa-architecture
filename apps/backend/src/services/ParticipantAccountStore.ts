@@ -36,6 +36,8 @@ export interface ParticipantAccount {
   status: AccountStatus;
   joinedAt: string;
   passwordHash: string;
+  passwordResetTokenHash?: string;
+  passwordResetExpiresAt?: string;
   profile: ParticipantProfile;
   progressiveEntry: Record<string, boolean>;
   accountType: "registered";
@@ -206,6 +208,57 @@ export class ParticipantAccountStore {
     };
     await this.write(updated);
     return updated;
+  }
+
+  async setPasswordResetToken(
+    id: string,
+    tokenHash: string,
+    expiresAt: string,
+  ): Promise<boolean> {
+    const account = await this.findById(id);
+    if (!account) return false;
+    await this.write({
+      ...account,
+      passwordResetTokenHash: tokenHash,
+      passwordResetExpiresAt: expiresAt,
+    });
+    return true;
+  }
+
+  async resetPassword(
+    tokenHash: string,
+    passwordHash: string,
+    now = new Date(),
+  ): Promise<boolean> {
+    const account = (await this.list()).find(
+      (candidate) => candidate.passwordResetTokenHash === tokenHash,
+    );
+    if (
+      !account ||
+      !account.passwordResetExpiresAt ||
+      new Date(account.passwordResetExpiresAt).getTime() <= now.getTime()
+    ) {
+      return false;
+    }
+
+    const {
+      passwordResetTokenHash: _tokenHash,
+      passwordResetExpiresAt: _expiresAt,
+      ...accountWithoutResetToken
+    } = account;
+    await this.write({ ...accountWithoutResetToken, passwordHash });
+    return true;
+  }
+
+  async clearPasswordResetToken(id: string): Promise<void> {
+    const account = await this.findById(id);
+    if (!account) return;
+    const {
+      passwordResetTokenHash: _tokenHash,
+      passwordResetExpiresAt: _expiresAt,
+      ...accountWithoutResetToken
+    } = account;
+    await this.write(accountWithoutResetToken);
   }
 
   async delete(id: string): Promise<boolean> {

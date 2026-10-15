@@ -1,8 +1,9 @@
-import { createHash, timingSafeEqual } from "node:crypto";
+import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 import type { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import type { AuthRequest } from "../middleware/authMiddleware.js";
+import type { PasswordResetMailer } from "../services/PasswordResetMailer.js";
 import {
   normalizeEmail,
   ParticipantAccountStore,
@@ -47,7 +48,10 @@ export function signToken(user: { id: string; email: string; role: UserRole }): 
   return jwt.sign(user, JWT_SECRET, { expiresIn: "24h" });
 }
 
-export function createAuthController(store: ParticipantAccountStore) {
+export function createAuthController(
+  store: ParticipantAccountStore,
+  passwordResetMailer: PasswordResetMailer,
+) {
   const register = async (req: Request, res: Response) => {
     const { name, email, password } = req.body ?? {};
     if (
@@ -149,6 +153,99 @@ export function createAuthController(store: ParticipantAccountStore) {
     }
   };
 
+  const requestPasswordReset = async (req: Request, res: Response) => {
+    const { email } = req.body ?? {};
+    if (typeof email !== "string" || !EMAIL_PATTERN.test(email.trim())) {
+      return res.status(400).json({ message: "A valid email address is required" });
+    }
+
+    let baseUrl: URL;
+    try {
+      passwordResetMailer.assertConfigured();
+      const configuredBaseUrl = process.env.APP_BASE_URL;
+      if (!configuredBaseUrl) throw new Error("APP_BASE_URL is required");
+      baseUrl = new URL(configuredBaseUrl);
+      if (
+        (baseUrl.protocol !== "https:" &&
+          !(baseUrl.protocol === "http:" &&
+            ["localhost", "127.0.0.1"].includes(baseUrl.hostname))) ||
+        baseUrl.username ||
+        baseUrl.password
+      ) {
+        throw new Error("APP_BASE_URL must use HTTPS or local HTTP and contain no credentials");
+      }
+    } catch (error) {
+      console.error("Password reset email is not configured:", error);
+      return res.status(503).json({ message: "Password recovery is not configured" });
+    }
+
+    try {
+      const normalizedEmail = normalizeEmail(email);
+      const admin = getAdminCredentials();
+      const account = admin?.email === normalizedEmail
+        ? undefined
+        : await store.findByEmail(normalizedEmail);
+      if (!account || account.status !== "active") {
+        return res.json({
+          message: "Si la cuenta existe, recibirás un enlace para recuperar la contraseña.",
+        });
+      }
+
+      const token = randomBytes(32).toString("hex");
+      const tokenHash = createHash("sha256").update(token).digest("hex");
+      const expiresAt = new Date(Date.now() + 30 * 60 * 1000).toISOString();
+      await store.setPasswordResetToken(account.id, tokenHash, expiresAt);
+      const resetUrl = new URL("/reset-password", baseUrl);
+      resetUrl.searchParams.set("token", token);
+
+      try {
+        await passwordResetMailer.sendPasswordResetEmail(
+          account.email,
+          account.name,
+          resetUrl.toString(),
+        );
+      } catch (error) {
+        await store.clearPasswordResetToken(account.id);
+        console.error("Could not send participant password reset email:", error);
+        return res.status(503).json({ message: "No se pudo enviar el correo. Intenta nuevamente más tarde." });
+      }
+
+      return res.json({
+        message: "Si la cuenta existe, recibirás un enlace para recuperar la contraseña.",
+      });
+    } catch (error) {
+      console.error("Error requesting participant password reset:", error);
+      return res.status(500).json({ message: "No se pudo procesar la solicitud." });
+    }
+  };
+
+  const resetPassword = async (req: Request, res: Response) => {
+    const { token, password } = req.body ?? {};
+    if (
+      typeof token !== "string" ||
+      !/^[a-f0-9]{64}$/i.test(token) ||
+      typeof password !== "string" ||
+      password.length < 8
+    ) {
+      return res.status(400).json({
+        message: "A valid recovery link and a password of at least 8 characters are required",
+      });
+    }
+
+    try {
+      const tokenHash = createHash("sha256").update(token).digest("hex");
+      const passwordHash = await bcrypt.hash(password, 12);
+      const updated = await store.resetPassword(tokenHash, passwordHash);
+      if (!updated) {
+        return res.status(400).json({ message: "El enlace no es válido o ya venció." });
+      }
+      return res.json({ message: "La contraseña fue actualizada. Ya puedes iniciar sesión." });
+    } catch (error) {
+      console.error("Error resetting participant password:", error);
+      return res.status(500).json({ message: "No se pudo actualizar la contraseña." });
+    }
+  };
+
   const getMe = async (req: AuthRequest, res: Response) => {
     if (!req.user) return res.status(401).json({ message: "Not authenticated" });
     if (req.user.role === "admin") {
@@ -176,5 +273,5 @@ export function createAuthController(store: ParticipantAccountStore) {
     });
   };
 
-  return { register, login, getMe };
+  return { register, login, requestPasswordReset, resetPassword, getMe };
 }

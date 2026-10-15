@@ -13,6 +13,7 @@ import { PublicPage } from './pages/PublicPage';
 import { UserDashboard } from './pages/UserDashboard';
 import { AdminBackoffice } from './pages/AdminBackoffice';
 import { UserPortalPage } from './pages/portal/UserPortalPage';
+import { PasswordRecoveryPage } from './pages/PasswordRecoveryPage';
 
 export const AppRoutes = () => {
   const { user, isAuthenticated } = useAuth();
@@ -49,6 +50,8 @@ export function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/admin/login" element={<LoginPage />} />
           <Route path="/register" element={<LoginPage />} />
+          <Route path="/forgot-password" element={<PasswordRecoveryPage />} />
+          <Route path="/reset-password" element={<PasswordRecoveryPage />} />
 
           {/* ========================================== */}
           {/* 2. RUTA PARTICIPANTE / DEALER              */}
