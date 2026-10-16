@@ -26,20 +26,21 @@ export const Header: React.FC = () => {
       color: '#ffffff',
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
     }}>
-      <div className="brand" style={{ display: 'flex', alignItems: 'center', minWidth: 0 }}>
+      <div className="brand" style={{ display: 'flex', flex: '0 0 auto', alignItems: 'center', justifyContent: 'center' }}>
         <Link
           to="/directory"
           aria-label="DronsAir Ecosistema"
-          style={{ display: 'flex', alignItems: 'center', minWidth: 0 }}
+          style={{ display: 'flex', flex: '0 0 auto', alignItems: 'center', justifyContent: 'center' }}
         >
           <img
             src={logoUrl}
             alt="DronsAir"
             style={{
               display: 'block',
-              height: '46px',
+              flex: '0 0 auto',
+              height: '55px',
               width: 'auto',
-              maxWidth: '100%',
+              maxWidth: 'min(100%, 360px)',
               objectFit: 'contain',
             }}
           />
