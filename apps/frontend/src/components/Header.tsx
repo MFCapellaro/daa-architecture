@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import logoUrl from '../../../logo/LogoWeb.png';
 
 export const Header: React.FC = () => {
   const { user, isAuthenticated, logout } = useAuth();
@@ -25,10 +26,23 @@ export const Header: React.FC = () => {
       color: '#ffffff',
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
     }}>
-      {/* Marca / Logo */}
-      <div className="brand" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <Link to="/directory" style={{ color: '#ffffff', textDecoration: 'none', fontWeight: 700, fontSize: '18px', letterSpacing: '0.5px' }}>
-          🚁 DronsAir <span style={{ fontSize: '12px', fontWeight: 400, color: '#38bdf8', marginLeft: '6px' }}>Ecosistema</span>
+      <div className="brand" style={{ display: 'flex', alignItems: 'center', minWidth: 0 }}>
+        <Link
+          to="/directory"
+          aria-label="DronsAir Ecosistema"
+          style={{ display: 'flex', alignItems: 'center', minWidth: 0 }}
+        >
+          <img
+            src={logoUrl}
+            alt="DronsAir"
+            style={{
+              display: 'block',
+              height: '46px',
+              width: 'auto',
+              maxWidth: '100%',
+              objectFit: 'contain',
+            }}
+          />
         </Link>
       </div>
 
