@@ -13,6 +13,10 @@ width: 100%;
 box-sizing: border-box;
 }
 
+.site-header .brand {
+padding: 0;
+}
+
 .view {
 max-width: none;
 padding: 0;
