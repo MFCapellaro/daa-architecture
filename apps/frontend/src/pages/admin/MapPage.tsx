@@ -228,6 +228,8 @@ export const MapPage: React.FC = () => {
   // 1. Cargar el SDK de Google Maps
   useEffect(() => {
     let isActive = true;
+    let gridOverlay: google.maps.OverlayView | null = null;
+    let gridZoomListener: google.maps.MapsEventListener | null = null;
     const initMap = async () => {
       if (!mapContainerRef.current) return;
 
@@ -254,37 +256,26 @@ export const MapPage: React.FC = () => {
         gridImage.setAttribute('aria-hidden', 'true');
         Object.assign(gridImage.style, {
           position: 'absolute',
-          opacity: '0.45',
+          left: '0',
+          top: '0',
+          width: '100%',
+          height: '100%',
+          opacity: '0.3',
           pointerEvents: 'none',
           userSelect: 'none',
         });
-        const gridOverlay = new maps.OverlayView();
+        gridOverlay = new maps.OverlayView();
         gridOverlay.onAdd = () => {
-          gridOverlay.getPanes()?.overlayLayer.append(gridImage);
+          gridOverlay?.getPanes()?.overlayLayer.append(gridImage);
         };
         gridOverlay.draw = () => {
-          const bounds = map.getBounds();
-          if (!bounds) return;
-          const projection = gridOverlay.getProjection();
-          const northEast = bounds.getNorthEast();
-          const southWest = bounds.getSouthWest();
-          const topLeft = projection.fromLatLngToDivPixel(
-            new maps.LatLng(northEast.lat(), southWest.lng()),
-          );
-          const bottomRight = projection.fromLatLngToDivPixel(
-            new maps.LatLng(southWest.lat(), northEast.lng()),
-          );
-          if (!topLeft || !bottomRight) return;
-          Object.assign(gridImage.style, {
-            left: `${topLeft.x}px`,
-            top: `${topLeft.y}px`,
-            width: `${bottomRight.x - topLeft.x}px`,
-            height: `${bottomRight.y - topLeft.y}px`,
-          });
+          const { clientWidth, clientHeight } = map.getDiv();
+          gridImage.style.width = `${clientWidth}px`;
+          gridImage.style.height = `${clientHeight}px`;
         };
         gridOverlay.onRemove = () => gridImage.remove();
         gridOverlay.setMap(map);
-        map.addListener('zoom_changed', () => {
+        gridZoomListener = map.addListener('zoom_changed', () => {
           gridImage.src = getGridImageForZoom(map.getZoom() ?? 4);
         });
 
@@ -301,6 +292,11 @@ export const MapPage: React.FC = () => {
 
     return () => {
       isActive = false;
+      gridZoomListener?.remove();
+      gridOverlay?.setMap(null);
+      mapInstanceRef.current = null;
+      markerLibraryRef.current = null;
+      infoWindowRef.current = null;
     };
   }, []);
 
