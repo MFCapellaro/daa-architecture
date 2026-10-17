@@ -215,6 +215,26 @@ describe("participant account API", () => {
       },
     });
 
+    const avatarUpdate = await fetch(`${baseUrl}/api/participants/me`, {
+      method: "PATCH",
+      headers: {
+        authorization: `Bearer ${participantToken}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ profile: { avatar: "data:image/jpeg;base64,AA==" } }),
+    });
+    expect((await avatarUpdate.json()).user.profile.avatar).toBe("data:image/jpeg;base64,AA==");
+
+    const invalidAvatarUpdate = await fetch(`${baseUrl}/api/participants/me`, {
+      method: "PATCH",
+      headers: {
+        authorization: `Bearer ${participantToken}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ profile: { avatar: "data:image/svg+xml;base64,PHN2Zz4=" } }),
+    });
+    expect(invalidAvatarUpdate.status).toBe(400);
+
     const forbiddenSelfEdit = await fetch(`${baseUrl}/api/participants/me`, {
       method: "PATCH",
       headers: {

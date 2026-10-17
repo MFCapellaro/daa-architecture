@@ -16,7 +16,12 @@ function validProfile(value: unknown): value is Record<string, string | string[]
     ([key, field]) =>
       PROFILE_FIELDS.includes(key as (typeof PROFILE_FIELDS)[number]) &&
       (typeof field === "string" ||
-        (Array.isArray(field) && field.every((item) => typeof item === "string"))),
+        (Array.isArray(field) && field.every((item) => typeof item === "string"))) &&
+      (key !== "avatar" ||
+        field === "" ||
+        (typeof field === "string" &&
+          field.length <= 80_000 &&
+          /^data:image\/jpeg;base64,[A-Za-z0-9+/]+=*$/.test(field))),
   );
 }
 

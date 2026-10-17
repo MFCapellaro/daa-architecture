@@ -1,6 +1,7 @@
-import React, { useEffect, useState, type FormEvent } from 'react';
+import React, { useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth, type User } from '../../context/AuthContext';
+import './UserPortalPage.css';
 
 interface ParticipantProfile {
   organization?: string;
@@ -12,6 +13,7 @@ interface ParticipantProfile {
   bio?: string;
   capabilities?: string;
   interests?: string;
+  avatar?: string;
 }
 
 interface ParticipantMe {
@@ -28,7 +30,7 @@ const fieldStyle: React.CSSProperties = {
   boxSizing: 'border-box',
   marginTop: 5,
   padding: '9px 10px',
-  border: '1px solid #cbd5e1',
+  border: '1px solid #343840',
   borderRadius: 6,
   font: 'inherit',
 };
@@ -37,6 +39,59 @@ const getToken = (): string => {
   const token = localStorage.getItem('daa_token');
   if (!token) throw new Error('Tu sesión expiró. Inicia sesión nuevamente.');
   return token;
+};
+
+const makeAvatarDataUrl = async (file: File): Promise<string> => {
+  if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
+    throw new Error('Selecciona una imagen JPG, PNG o WebP.');
+  }
+  if (file.size > 10 * 1024 * 1024) {
+    throw new Error('La imagen debe pesar menos de 10 MB.');
+  }
+
+  const imageUrl = URL.createObjectURL(file);
+  const image = new Image();
+  try {
+    await new Promise<void>((resolve, reject) => {
+      image.onload = () => resolve();
+      image.onerror = () => reject(new Error('No se pudo leer la imagen seleccionada.'));
+      image.src = imageUrl;
+    });
+  } finally {
+    URL.revokeObjectURL(imageUrl);
+  }
+
+  const scale = Math.min(1, 480 / Math.max(image.naturalWidth, image.naturalHeight));
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+  canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+  const context = canvas.getContext('2d');
+  if (!context) throw new Error('No se pudo procesar la imagen.');
+
+  let quality = 0.82;
+  const render = () => {
+    context.fillStyle = '#ffffff';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    return canvas.toDataURL('image/jpeg', quality);
+  };
+  let avatar = render();
+  while (avatar.length > 70_000) {
+    if (quality > 0.52) {
+      quality = Math.max(0.5, quality - 0.1);
+    } else {
+      const nextSize = Math.round(Math.max(canvas.width, canvas.height) * 0.8);
+      if (nextSize < 96) {
+        throw new Error('No se pudo reducir la imagen lo suficiente. Prueba con otra foto.');
+      }
+      const resize = nextSize / Math.max(canvas.width, canvas.height);
+      canvas.width = Math.max(1, Math.round(canvas.width * resize));
+      canvas.height = Math.max(1, Math.round(canvas.height * resize));
+      quality = 0.82;
+    }
+    avatar = render();
+  }
+  return avatar;
 };
 
 export const UserPortalPage: React.FC = () => {
@@ -58,6 +113,13 @@ export const UserPortalPage: React.FC = () => {
     const result = await response.json() as ParticipantMe & { message?: string };
     if (!response.ok) throw new Error(result.message || `No se pudo cargar el perfil (${response.status}).`);
     setProfile(result);
+    updateUser({
+      id: result.id,
+      name: result.name,
+      email: result.email,
+      role: result.role,
+      profile: { avatar: result.profile?.avatar },
+    });
   };
 
   useEffect(() => {
@@ -70,7 +132,16 @@ export const UserPortalPage: React.FC = () => {
         });
         const result = await response.json() as ParticipantMe & { message?: string };
         if (!response.ok) throw new Error(result.message || `No se pudo cargar el perfil (${response.status}).`);
-        if (active) setProfile(result);
+        if (active) {
+          setProfile(result);
+          updateUser({
+            id: result.id,
+            name: result.name,
+            email: result.email,
+            role: result.role,
+            profile: { avatar: result.profile?.avatar },
+          });
+        }
       } catch (cause) {
         if (active) setError(cause instanceof Error ? cause.message : 'No se pudo cargar el perfil.');
       } finally {
@@ -105,6 +176,60 @@ export const UserPortalPage: React.FC = () => {
     }
   };
 
+  const uploadAvatar = async (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.currentTarget.files?.[0];
+    event.currentTarget.value = '';
+    if (!file || !profile) return;
+
+    setSaving(true);
+    setError(null);
+    setNotice(null);
+    try {
+      const avatar = await makeAvatarDataUrl(file);
+      const response = await fetch('/api/participants/me', {
+        method: 'PATCH',
+        headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ profile: { avatar } }),
+      });
+      const result = await response.json() as { user?: User; message?: string };
+      if (!response.ok) throw new Error(result.message || `No se pudo guardar la foto (${response.status}).`);
+      if (result.user) updateUser(result.user);
+      setProfile((current) => current
+        ? { ...current, profile: { ...current.profile, avatar } }
+        : current);
+      setNotice('Foto de perfil actualizada.');
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'No se pudo guardar la foto.');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const removeAvatar = async () => {
+    if (!profile) return;
+    setSaving(true);
+    setError(null);
+    setNotice(null);
+    try {
+      const response = await fetch('/api/participants/me', {
+        method: 'PATCH',
+        headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ profile: { avatar: '' } }),
+      });
+      const result = await response.json() as { user?: User; message?: string };
+      if (!response.ok) throw new Error(result.message || `No se pudo eliminar la foto (${response.status}).`);
+      if (result.user) updateUser(result.user);
+      setProfile((current) => current
+        ? { ...current, profile: { ...current.profile, avatar: '' } }
+        : current);
+      setNotice('Foto de perfil eliminada.');
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'No se pudo eliminar la foto.');
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const requestDealerAccess = async () => {
     setSaving(true);
     setError(null);
@@ -126,22 +251,22 @@ export const UserPortalPage: React.FC = () => {
     }
   };
 
-  if (loading) return <p style={{ padding: 32 }}>Cargando perfil…</p>;
+  if (loading) return <main className="user-portal"><p className="user-portal__copy">Cargando perfil…</p></main>;
 
   return (
-    <main style={{ maxWidth: 1000, margin: '0 auto', padding: 32 }}>
-      <section style={{ padding: 24, borderRadius: 12, background: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,.08)' }}>
-        <h1 style={{ margin: '0 0 8px', color: '#0f172a' }}>Portal de {user?.role === 'dealer' ? 'Dealer' : 'Participante'}</h1>
-        <p style={{ margin: '0 0 16px', color: '#64748b' }}>
+    <main className="user-portal">
+      <section className="user-portal__card">
+        <h1 className="user-portal__title">Mi Perfil</h1>
+        <p className="user-portal__intro">
           Completa y amplía tu perfil a medida que participas en la plataforma.
         </p>
 
-        {error && <p role="alert" style={{ padding: 10, color: '#991b1b', background: '#fee2e2', borderRadius: 6 }}>{error}</p>}
-        {notice && <p role="status" style={{ padding: 10, color: '#166534', background: '#dcfce7', borderRadius: 6 }}>{notice}</p>}
+        {error && <p role="alert" className="user-portal__message user-portal__message--error">{error}</p>}
+        {notice && <p role="status" className="user-portal__message user-portal__message--success">{notice}</p>}
 
         {user?.role === 'dealer' && (
-          <nav style={{ display: 'flex', flexWrap: 'wrap', gap: 12, margin: '16px 0', paddingBottom: 16, borderBottom: '1px solid #e2e8f0' }}>
-            <Link to="/portal">Mi perfil</Link>
+          <nav className="user-portal__nav">
+            <Link to="/portal">Mi Perfil</Link>
             <Link to="/portal/pools">Publicación de pools</Link>
             <Link to="/portal/acuerdos">Acuerdos Dealer</Link>
           </nav>
@@ -149,19 +274,19 @@ export const UserPortalPage: React.FC = () => {
 
         {isAgreementPage ? (
           <section aria-labelledby="dealer-agreement-title">
-            <h2 id="dealer-agreement-title">Acuerdos para Dealers</h2>
-            <p style={{ color: '#475569', lineHeight: 1.6 }}>
+            <h2 className="user-portal__section-title" id="dealer-agreement-title">Acuerdos para Dealers</h2>
+            <p className="user-portal__copy">
               El texto aprobado del acuerdo previo al uso y publicación todavía no está configurado.
               Por este motivo no se puede aceptar el acuerdo ni habilitar la publicación de pools.
             </p>
-            <p role="status" style={{ padding: 12, borderRadius: 6, background: '#fff7ed', color: '#9a3412' }}>
+            <p role="status" className="user-portal__message user-portal__message--warning">
               Publicación bloqueada hasta integrar el texto aprobado.
             </p>
             <Link to="/portal/pools">Ir a publicación de pools</Link>
           </section>
         ) : isPoolPage ? (
           <section aria-labelledby="pool-publication-title">
-            <h2 id="pool-publication-title">Publicación de pools</h2>
+            <h2 className="user-portal__section-title" id="pool-publication-title">Publicación de pools</h2>
             {user?.role !== 'dealer' ? (
               <>
                 <p>La publicación de pools está disponible para cuentas Dealer.</p>
@@ -171,12 +296,12 @@ export const UserPortalPage: React.FC = () => {
               </>
             ) : (
               <>
-                <p style={{ color: '#475569' }}>Antes de usar la plataforma o publicar pools, debes revisar el acuerdo Dealer.</p>
-                <p role="status" style={{ padding: 12, borderRadius: 6, background: '#fff7ed', color: '#9a3412' }}>
+                <p className="user-portal__copy">Antes de usar la plataforma o publicar pools, debes revisar el acuerdo Dealer.</p>
+                <p role="status" className="user-portal__message user-portal__message--warning">
                   Publicación deshabilitada: falta integrar el texto aprobado del acuerdo.
                 </p>
                 <Link to="/portal/acuerdos">Consultar estado del acuerdo</Link>
-                <fieldset disabled style={{ marginTop: 18, padding: 16, border: '1px solid #cbd5e1', borderRadius: 8 }}>
+                <fieldset disabled className="user-portal__fieldset">
                   <legend>Nuevo pool (bloqueado)</legend>
                   <label>Nombre<input disabled placeholder="Disponible después de aprobar el acuerdo" style={fieldStyle} /></label>
                   <label>Descripción<textarea disabled rows={3} style={fieldStyle} /></label>
@@ -188,10 +313,39 @@ export const UserPortalPage: React.FC = () => {
         ) : (
           <>
             {profile && (
-              <form onSubmit={(event) => void saveProfile(event)} style={{ display: 'grid', gap: 14, maxWidth: 680 }}>
-                <h2 style={{ margin: '4px 0' }}>Mi perfil</h2>
+              <form onSubmit={(event) => void saveProfile(event)} className="user-portal__form">
+                <div className="user-portal__photo">
+                  {profile.profile?.avatar
+                    ? <img className="user-portal__avatar" src={profile.profile.avatar} alt={`Foto de ${profile.name}`} />
+                    : <div className="user-portal__avatar user-portal__avatar--empty" aria-label="Sin foto de perfil">
+                        {profile.name.trim().charAt(0).toUpperCase()}
+                      </div>}
+                  <div className="user-portal__photo-actions">
+                    <label className="user-portal__upload">
+                      {saving ? 'Guardando…' : 'Cambiar foto'}
+                      <input
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                        onChange={(event) => void uploadAvatar(event)}
+                        disabled={saving}
+                        aria-label="Subir foto de perfil"
+                      />
+                    </label>
+                    {profile.profile?.avatar && (
+                      <button
+                        className="user-portal__text-button"
+                        type="button"
+                        onClick={() => void removeAvatar()}
+                        disabled={saving}
+                      >
+                        Eliminar foto
+                      </button>
+                    )}
+                    <span>JPG, PNG o WebP</span>
+                  </div>
+                </div>
                 <label>Nombre<input required value={profile.name} onChange={(event) => setProfile({ ...profile, name: event.target.value })} style={fieldStyle} /></label>
-                <label>Email<input readOnly value={profile.email} style={{ ...fieldStyle, background: '#f8fafc' }} /></label>
+                <label>Email<input readOnly value={profile.email} style={{ ...fieldStyle, background: '#202329' }} /></label>
                 {([
                   ['organization', 'Organización'],
                   ['phone', 'Teléfono'],
@@ -217,15 +371,15 @@ export const UserPortalPage: React.FC = () => {
                   ...profile,
                   profile: { ...profile.profile, bio: event.target.value },
                 })} style={fieldStyle} /></label>
-                <button type="submit" disabled={saving}>{saving ? 'Guardando…' : 'Guardar perfil'}</button>
+                <button className="user-portal__submit" type="submit" disabled={saving}>{saving ? 'Guardando…' : 'Guardar perfil'}</button>
               </form>
             )}
 
             {user?.role === 'participante' && (
-              <section style={{ marginTop: 24, paddingTop: 16, borderTop: '1px solid #e2e8f0' }}>
-                <h2 style={{ fontSize: 18 }}>¿Eres Dealer?</h2>
-                <p style={{ color: '#64748b' }}>Puedes extender tu perfil para solicitar acceso a la publicación de pools.</p>
-                <button type="button" disabled={saving} onClick={() => void requestDealerAccess()}>
+              <section className="user-portal__dealer">
+                <h2 className="user-portal__section-title">¿Eres Dealer?</h2>
+                <p className="user-portal__copy">Puedes extender tu perfil para solicitar acceso a la publicación de pools.</p>
+                <button className="user-portal__submit" type="button" disabled={saving} onClick={() => void requestDealerAccess()}>
                   {saving ? 'Procesando…' : 'Extender mi perfil a Dealer'}
                 </button>
               </section>

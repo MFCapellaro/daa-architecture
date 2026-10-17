@@ -21,6 +21,7 @@ export const PROFILE_FIELDS = [
   "bio",
   "capabilities",
   "interests",
+  "avatar",
 ] as const;
 
 export type ParticipantProfile = Partial<
