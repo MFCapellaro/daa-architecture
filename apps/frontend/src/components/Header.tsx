@@ -47,6 +47,14 @@ export const Header: React.FC = () => {
         </Link>
       </div>
 
+      {(isActive('/map') || isActive('/mapa')) && (
+        <div
+          id="map-header-search-slot"
+          className="map-header-search-slot"
+          style={{ position: 'relative', flex: '1 1 280px', minWidth: '160px', maxWidth: '360px', margin: '0 20px' }}
+        />
+      )}
+
       {/* Navegación por Perfil */}
       <nav style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
         {/* Vista Pública */}

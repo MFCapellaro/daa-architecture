@@ -83,6 +83,21 @@
   pointer-events: auto;
 }
 
+.map-header-search-slot .map-search {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.map-header-search-slot .map-actor-search-results {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .map-search .map-actor-search {
   display: flex;
   align-items: center;

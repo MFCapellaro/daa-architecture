@@ -203,6 +203,7 @@ export const MapPage: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>(DEFAULT_CATEGORIES);
   const [isMapLoaded, setIsMapLoaded] = useState<boolean>(false);
   const [mapOverlayRoot, setMapOverlayRoot] = useState<HTMLDivElement | null>(null);
+  const [headerSearchRoot, setHeaderSearchRoot] = useState<HTMLElement | null>(null);
   const [loadingData, setLoadingData] = useState<boolean>(true);
   const [apiError, setApiError] = useState<string | null>(null);
   const [selectedLayers, setSelectedLayers] = useState<Record<string, boolean>>({});
@@ -219,6 +220,10 @@ export const MapPage: React.FC = () => {
     && Math.abs(focusLat) <= 90
     && Math.abs(focusLng) <= 180;
   const hasLocationQuery = hasCoordinateFocus || Boolean(focusAddress);
+
+  useEffect(() => {
+    setHeaderSearchRoot(document.getElementById('map-header-search-slot'));
+  }, []);
 
   // Capturar errores de autenticación de Google Maps a nivel global
   useEffect(() => {
@@ -622,33 +627,39 @@ export const MapPage: React.FC = () => {
           <p style={{ fontSize: '14px', color: '#cbd5e1', marginTop: '12px' }}>
             Acercate para descubrir la red.
           </p>
-          <div className="map-search">
-            <label className="map-actor-search">
-              <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <circle cx="11" cy="11" r="7" />
-                <path d="m20 20-4-4" />
-              </svg>
-              <input
-                type="search"
-                value={actorSearch}
-                onChange={(event) => setActorSearch(event.target.value)}
-                placeholder="Buscar actor en el mapa"
-                aria-label="Buscar actor en el mapa"
-              />
-            </label>
-            {actorSearch.trim() && (
-              <div className="map-actor-search-results">
-                {matchingActors.length ? matchingActors.map(({ actor }) => (
-                  <button key={actor.id} type="button" onClick={() => focusActorOnMap(actor.id)}>
-                    {actor.name}
-                  </button>
-                )) : <p>No hay actores visibles con ese nombre.</p>}
-              </div>
-            )}
-          </div>
         </div>,
         mapOverlayRoot,
       ) : null}
+      {headerSearchRoot && createPortal(
+        <div className="map-search">
+          <label className="map-actor-search" htmlFor="map-actor-search-input">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-4-4" />
+            </svg>
+            <input
+              id="map-actor-search-input"
+              name="actor-search"
+              type="search"
+              autoComplete="off"
+              value={actorSearch}
+              onChange={(event) => setActorSearch(event.target.value)}
+              placeholder="Buscar actor en el mapa"
+              aria-label="Buscar actor en el mapa"
+            />
+          </label>
+          {actorSearch.trim() && (
+            <div className="map-actor-search-results">
+              {matchingActors.length ? matchingActors.map(({ actor }) => (
+                <button key={actor.id} type="button" onClick={() => focusActorOnMap(actor.id)}>
+                  {actor.name}
+                </button>
+              )) : <p>No hay actores visibles con ese nombre.</p>}
+            </div>
+          )}
+        </div>,
+        headerSearchRoot,
+      )}
 
       {/* Control de capas */}
       <div className={`map-overlay map-controls${isLayersPanelOpen ? '' : ' is-collapsed'}`}>
