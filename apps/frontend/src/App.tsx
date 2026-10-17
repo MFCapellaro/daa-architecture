@@ -43,7 +43,7 @@ export function App() {
           {/* ========================================== */}
           {/* 1. RUTAS PÚBLICAS (Lectura / Mapa / Login) */}
           {/* ========================================== */}
-          <Route path="/" element={<Navigate to="/directory" replace />} />
+          <Route path="/" element={<Navigate to="/map" replace />} />
           <Route path="/directory" element={<DirectoryPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/mapa" element={<MapPage />} />
@@ -98,7 +98,7 @@ export function App() {
             path="*"
             element={
               <Navigate
-                to={user?.role === 'admin' ? '/admin/directory' : '/directory'}
+                to={user?.role === 'admin' ? '/admin/directory' : '/map'}
                 replace
               />
             }

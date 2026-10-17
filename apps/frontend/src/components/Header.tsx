@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
     }}>
       <div className="brand" style={{ display: 'flex', flex: '0 0 auto', alignItems: 'center', justifyContent: 'center' }}>
         <Link
-          to="/directory"
+          to="/map"
           aria-label="DronsAir Ecosistema"
           style={{ display: 'flex', flex: '0 0 auto', alignItems: 'center', justifyContent: 'center' }}
         >

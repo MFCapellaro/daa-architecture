@@ -3,6 +3,9 @@ import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { DEFAULT_CATEGORIES, type Category } from '../../types/category';
 import { loadGoogleMaps } from '../../lib/googleMaps';
 import { useAuth } from '../../context/AuthContext';
+import gridInitialUrl from '../../../../grillas/9-Transp.png';
+import gridRegionalUrl from '../../../../grillas/21-Transp.png';
+import gridDetailUrl from '../../../../grillas/27-Transp.png';
 
 interface ActorRelationship {
   targetId: string;
@@ -46,6 +49,14 @@ export interface Actor {
 }
 
 const MAP_ID = import.meta.env.VITE_GOOGLE_MAP_ID || 'DEMO_MAP_ID';
+const GRID_REGIONAL_ZOOM = 7;
+const GRID_DETAIL_ZOOM = 11;
+
+const getGridImageForZoom = (zoom: number): string => {
+  if (zoom >= GRID_DETAIL_ZOOM) return gridDetailUrl;
+  if (zoom >= GRID_REGIONAL_ZOOM) return gridRegionalUrl;
+  return gridInitialUrl;
+};
 
 const extractCoordinates = (actor: Actor): { lat: number; lng: number } | null => {
   const rawLat = actor.geolocation?.latitude ?? actor.location?.coordinates?.latitude;
@@ -236,6 +247,47 @@ export const MapPage: React.FC = () => {
         markerLibraryRef.current = marker.AdvancedMarkerElement;
         mapInstanceRef.current = map;
         infoWindowRef.current = new maps.InfoWindow();
+
+        const gridImage = document.createElement('img');
+        gridImage.src = gridInitialUrl;
+        gridImage.alt = '';
+        gridImage.setAttribute('aria-hidden', 'true');
+        Object.assign(gridImage.style, {
+          position: 'absolute',
+          opacity: '0.45',
+          pointerEvents: 'none',
+          userSelect: 'none',
+        });
+        const gridOverlay = new maps.OverlayView();
+        gridOverlay.onAdd = () => {
+          gridOverlay.getPanes()?.overlayLayer.append(gridImage);
+        };
+        gridOverlay.draw = () => {
+          const bounds = map.getBounds();
+          if (!bounds) return;
+          const projection = gridOverlay.getProjection();
+          const northEast = bounds.getNorthEast();
+          const southWest = bounds.getSouthWest();
+          const topLeft = projection.fromLatLngToDivPixel(
+            new maps.LatLng(northEast.lat(), southWest.lng()),
+          );
+          const bottomRight = projection.fromLatLngToDivPixel(
+            new maps.LatLng(southWest.lat(), northEast.lng()),
+          );
+          if (!topLeft || !bottomRight) return;
+          Object.assign(gridImage.style, {
+            left: `${topLeft.x}px`,
+            top: `${topLeft.y}px`,
+            width: `${bottomRight.x - topLeft.x}px`,
+            height: `${bottomRight.y - topLeft.y}px`,
+          });
+        };
+        gridOverlay.onRemove = () => gridImage.remove();
+        gridOverlay.setMap(map);
+        map.addListener('zoom_changed', () => {
+          gridImage.src = getGridImageForZoom(map.getZoom() ?? 4);
+        });
+
         setIsMapLoaded(true);
       } catch (e) {
         console.error('Error al inicializar el mapa:', e);
@@ -366,7 +418,7 @@ export const MapPage: React.FC = () => {
             map,
             title: actor.name,
             gmpClickable: true,
-            zIndex: 2,
+            zIndex: 1000,
             anchorLeft: '-50%',
             anchorTop: '-50%',
           })
@@ -374,7 +426,7 @@ export const MapPage: React.FC = () => {
             position: coords,
             map,
             title: actor.name,
-            zIndex: 2,
+            zIndex: 1000,
             icon: {
               path: google.maps.SymbolPath.CIRCLE,
               fillColor: markerColor,
@@ -533,10 +585,10 @@ export const MapPage: React.FC = () => {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: 'calc(100vh - 60px)', backgroundColor: '#090d16', fontFamily: 'sans-serif', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', width: '100%', height: 'calc(100vh - 64px)', backgroundColor: '#090d16', fontFamily: 'sans-serif', overflow: 'hidden' }}>
       
       {/* Overlay Título */}
-      <div style={{ position: 'absolute', top: '40px', left: '40px', zIndex: 10, color: '#ffffff', pointerEvents: 'none' }}>
+    <div style={{ position: 'absolute', top: '40px', left: '40px', zIndex: 1, color: '#ffffff', pointerEvents: 'none' }}>
         <p style={{ fontSize: '11px', letterSpacing: '2px', color: '#94a3b8', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
           CAPAS NODALES / ZOOM SEMÁNTICO
         </p>
