@@ -1,4 +1,4 @@
-import React, { useEffect, useState, type FormEvent } from 'react';
+import React, { useEffect, useMemo, useState, type FormEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { loadGoogleMaps } from '../../lib/googleMaps';
@@ -36,8 +36,8 @@ const fieldStyle: React.CSSProperties = {
   width: '100%',
   boxSizing: 'border-box',
   padding: '9px 10px',
-  border: '1px solid #cbd5e1',
-  borderRadius: 6,
+  border: '1px solid #34434c',
+  borderRadius: 4,
   font: 'inherit',
 };
 
@@ -100,6 +100,9 @@ export const AdminParticipantsPage: React.FC = () => {
   const location = useLocation();
   const [participants, setParticipants] = useState<Participant[]>([]);
   const [selected, setSelected] = useState<Participant | null>(null);
+  const [editing, setEditing] = useState(false);
+  const [search, setSearch] = useState('');
+  const [roleFilter, setRoleFilter] = useState<'all' | ParticipantRole>('all');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [geocoding, setGeocoding] = useState(false);
@@ -129,7 +132,9 @@ export const AdminParticipantsPage: React.FC = () => {
       }
       const data = await response.json() as Participant[];
       setParticipants(data);
-      setSelected((current) => current ? data.find((participant) => participant.id === current.id) ?? null : null);
+      setSelected((current) => current
+        ? data.find((participant) => participant.id === current.id) ?? data[0] ?? null
+        : data[0] ?? null);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'No se pudieron cargar los participantes.');
     } finally {
@@ -140,6 +145,26 @@ export const AdminParticipantsPage: React.FC = () => {
   useEffect(() => {
     void loadParticipants();
   }, []);
+
+  const filteredParticipants = useMemo(() => {
+    const terms = search.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    return participants.filter((participant) => {
+      if (roleFilter !== 'all' && participant.role !== roleFilter) return false;
+      const searchable = `${participant.name} ${participant.email}`.toLocaleLowerCase();
+      return terms.every((term) => searchable.includes(term));
+    });
+  }, [participants, roleFilter, search]);
+
+  useEffect(() => {
+    if (filteredParticipants.length && !filteredParticipants.some((participant) => participant.id === selected?.id)) {
+      setSelected(filteredParticipants[0]);
+      setEditing(false);
+      setGeoMessage(null);
+    } else if (!filteredParticipants.length && selected) {
+      setSelected(null);
+      setEditing(false);
+    }
+  }, [filteredParticipants, selected]);
 
   const updateSelected = (updates: Partial<Participant>) => {
     setSelected((current) => current ? { ...current, ...updates } : current);
@@ -209,6 +234,7 @@ export const AdminParticipantsPage: React.FC = () => {
         throw new Error(result.message || `No se pudo guardar (${response.status}).`);
       }
       await loadParticipants();
+      setEditing(false);
       if (profile.address?.trim() && (!profile.latitude || !profile.longitude)) {
         setGeoMessage('Participante guardado, pero no se obtuvieron coordenadas. Revisa la dirección o la configuración de Google Maps.');
       }
@@ -259,6 +285,7 @@ export const AdminParticipantsPage: React.FC = () => {
         throw new Error(result.message || `No se pudo eliminar (${response.status}).`);
       }
       setSelected((current) => current?.id === participant.id ? null : current);
+      setEditing(false);
       await loadParticipants();
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'No se pudo eliminar la cuenta.');
@@ -266,41 +293,80 @@ export const AdminParticipantsPage: React.FC = () => {
   };
 
   return (
-    <main className="admin-participants" style={{ padding: 24, maxWidth: 1440, margin: '0 auto' }}>
-      <header style={{ marginBottom: 20 }}>
-        <h1 style={{ margin: 0, fontSize: 22 }}>Participantes y Dealers</h1>
-        <p style={{ color: '#64748b', fontSize: 14, margin: '4px 0 0' }}>
+    <main className="admin-participants">
+      <header className="participants-header">
+        <div>
+          <h1>Participantes y Dealers</h1>
+          <p>
           Cuentas creadas mediante el registro del ecosistema.
-        </p>
+          </p>
+        </div>
+        <span>{filteredParticipants.length} de {participants.length} cuentas</span>
       </header>
 
-      {error && <p role="alert" style={{ padding: 12, borderRadius: 6, color: '#991b1b', background: '#fee2e2' }}>{error}</p>}
+      {error && <p role="alert" className="participants-error">{error}</p>}
 
-      <div className={`participants-layout${selected ? ' participants-layout--editing' : ''}`}>
-        <section style={{ overflowX: 'auto', background: '#fff', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,.1)' }}>
-          {loading ? <p style={{ padding: 16 }}>Cargando participantes…</p> : (
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: 14 }}>
+      <div className="participants-layout">
+        <section className="participants-list">
+          <div className="participants-toolbar">
+            <label className="participants-search">
+              <span className="visually-hidden">Buscar por nombre o correo</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-4-4" />
+              </svg>
+              <input
+                type="search"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="Buscar por nombre o correo"
+              />
+            </label>
+            <label className="participants-role-filter">
+              <span className="visually-hidden">Filtrar por rol</span>
+              <select value={roleFilter} onChange={(event) => setRoleFilter(event.target.value as 'all' | ParticipantRole)}>
+                <option value="all">Todos los roles</option>
+                <option value="participante">Participante</option>
+                <option value="dealer">Dealer</option>
+              </select>
+            </label>
+          </div>
+          {loading ? <p className="participants-empty">Cargando participantes…</p> : (
+            <div className="participants-table-container">
+            <table className="participants-table">
               <thead>
-                <tr style={{ background: '#f8fafc', color: '#475569' }}>
-                  <th style={{ padding: '12px 16px' }}>Nombre</th>
-                  <th style={{ padding: '12px 16px' }}>Correo</th>
-                  <th style={{ padding: '12px 16px' }}>Rol</th>
-                  <th style={{ padding: '12px 16px' }}>Acceso</th>
-                  <th style={{ padding: '12px 16px' }}>Acciones</th>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Correo</th>
+                  <th>Rol</th>
+                  <th>Acceso</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                {participants.map((participant) => (
-                  <tr key={participant.id} style={{ borderTop: '1px solid #e2e8f0', background: selected?.id === participant.id ? '#eff6ff' : '#fff' }}>
-                    <td style={{ padding: '12px 16px' }}>{participant.name}</td>
-                    <td style={{ padding: '12px 16px', color: '#64748b' }}>{participant.email}</td>
-                    <td style={{ padding: '12px 16px', textTransform: 'capitalize' }}>{participant.role}</td>
-                    <td style={{ padding: '12px 16px', color: participant.status === 'active' ? '#15803d' : '#b91c1c' }}>
-                      {participant.status === 'active' ? 'Activo' : 'Suspendido'}
+                {filteredParticipants.map((participant) => (
+                  <tr key={participant.id} className={`participant-row${selected?.id === participant.id ? ' participant-row--selected' : ''}`}>
+                    <td>
+                      <button className="participant-name" type="button" onClick={() => {
+                        setSelected(participant);
+                        setEditing(false);
+                        setGeoMessage(null);
+                      }}>
+                        <strong>{participant.name}</strong>
+                        <small>{participant.profile.organization || ''}</small>
+                      </button>
+                    </td>
+                    <td className="participant-email">{participant.email}</td>
+                    <td><span className="participant-role">{participant.role === 'dealer' ? 'Dealer' : 'Participante'}</span></td>
+                    <td>
+                      <span className={`participant-status${participant.status === 'active' ? ' participant-status--active' : ' participant-status--suspended'}`}>
+                        {participant.status === 'active' ? 'Activo' : 'Suspendido'}
+                      </span>
                     </td>
                     <td className="participant-actions">
                       <ActionButton icon="edit" label={`Editar ${participant.name}`} onClick={() => {
                         setSelected({ ...participant, profile: { ...participant.profile } });
+                        setEditing(true);
                         setGeoMessage(null);
                       }} />
                       <ActionButton
@@ -312,17 +378,33 @@ export const AdminParticipantsPage: React.FC = () => {
                     </td>
                   </tr>
                 ))}
-                {!participants.length && !loading && (
-                  <tr><td colSpan={5} style={{ padding: 20, color: '#64748b' }}>Todavía no hay cuentas registradas.</td></tr>
+                {!filteredParticipants.length && !loading && (
+                  <tr><td className="participants-empty" colSpan={5}>
+                    {participants.length ? 'No hay participantes que coincidan con la búsqueda.' : 'Todavía no hay cuentas registradas.'}
+                  </td></tr>
                 )}
               </tbody>
             </table>
+            </div>
           )}
         </section>
 
         {selected && (
-          <form onSubmit={(event) => void saveParticipant(event)} className="participant-editor">
-            <h2 style={{ margin: 0, fontSize: 18 }}>Editar participante</h2>
+          <section className="participant-editor">
+            <header className="participant-detail-header">
+              <div>
+                <h2>{editing ? 'Editar participante' : selected.name}</h2>
+                {!editing && <p>{selected.email}</p>}
+              </div>
+              {!editing && (
+                <ActionButton icon="edit" label={`Editar ${selected.name}`} onClick={() => {
+                  setSelected({ ...selected, profile: { ...selected.profile } });
+                  setEditing(true);
+                  setGeoMessage(null);
+                }} />
+              )}
+            </header>
+            {editing ? <form onSubmit={(event) => void saveParticipant(event)} className="participant-edit-form">
             <label>Nombre<input required value={selected.name} onChange={(event) => updateSelected({ name: event.target.value })} style={fieldStyle} /></label>
             <label>Email<input type="email" required value={selected.email} onChange={(event) => updateSelected({ email: event.target.value })} style={fieldStyle} /></label>
             <label>Rol
@@ -372,9 +454,43 @@ export const AdminParticipantsPage: React.FC = () => {
                 </a>
               </section>
             )}
-            <button type="submit" disabled={saving}>{saving ? 'Guardando…' : 'Guardar cambios'}</button>
-            <button type="button" onClick={() => setSelected(null)}>Cancelar</button>
-          </form>
+            <div className="participant-form-actions">
+              <button className="participant-button participant-button--primary" type="submit" disabled={saving}>{saving ? 'Guardando…' : 'Guardar cambios'}</button>
+              <button className="participant-button participant-button--secondary" type="button" onClick={() => {
+                setSelected(participants.find((participant) => participant.id === selected.id) ?? selected);
+                setEditing(false);
+                setGeoMessage(null);
+              }}>Cancelar</button>
+            </div>
+            </form> : (
+              <div className="participant-summary">
+                <div><strong>Rol:</strong> {selected.role === 'dealer' ? 'Dealer' : 'Participante'}</div>
+                <div><strong>Acceso:</strong> {selected.status === 'active' ? 'Activo' : 'Suspendido'}</div>
+                <div><strong>Organización:</strong> {selected.profile.organization || '—'}</div>
+                <div><strong>Teléfono:</strong> {selected.profile.phone || '—'}</div>
+                <div><strong>Ubicación:</strong> {[selected.profile.address, selected.profile.city, selected.profile.province, selected.profile.country].filter(Boolean).join(', ') || '—'}</div>
+                <div><strong>Web:</strong> {selected.profile.website || '—'}</div>
+                <div><strong>Acerca de:</strong> {selected.profile.bio || '—'}</div>
+                <div><strong>Capacidades:</strong> {selected.profile.capabilities || '—'}</div>
+                <div><strong>Intereses:</strong> {selected.profile.interests || '—'}</div>
+                <div><strong>Alta:</strong> {new Date(selected.joinedAt).toLocaleDateString()}</div>
+                {selected.profile.latitude && selected.profile.longitude && (
+                  <section className="participant-map" aria-label="Ubicación del participante">
+                    <p>Coordenadas: {selected.profile.latitude}, {selected.profile.longitude}</p>
+                    <iframe
+                      title={`Mapa de ubicación de ${selected.name}`}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      src={`https://maps.google.com/maps?q=${encodeURIComponent(`${selected.profile.latitude},${selected.profile.longitude}`)}&z=14&output=embed`}
+                    />
+                    <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${selected.profile.latitude},${selected.profile.longitude}`)}`} target="_blank" rel="noreferrer">
+                      Abrir en Google Maps
+                    </a>
+                  </section>
+                )}
+              </div>
+            )}
+          </section>
         )}
       </div>
     </main>
