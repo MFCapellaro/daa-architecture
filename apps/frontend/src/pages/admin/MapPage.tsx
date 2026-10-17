@@ -1,5 +1,6 @@
 /// <reference types="google.maps" />
 import React, { useEffect, useState, useRef, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import { DEFAULT_CATEGORIES, type Category } from '../../types/category';
 import { loadGoogleMaps } from '../../lib/googleMaps';
 import { useAuth } from '../../context/AuthContext';
@@ -201,6 +202,7 @@ export const MapPage: React.FC = () => {
   const [actors, setActors] = useState<Actor[]>([]);
   const [categories, setCategories] = useState<Category[]>(DEFAULT_CATEGORIES);
   const [isMapLoaded, setIsMapLoaded] = useState<boolean>(false);
+  const [mapOverlayRoot, setMapOverlayRoot] = useState<HTMLDivElement | null>(null);
   const [loadingData, setLoadingData] = useState<boolean>(true);
   const [apiError, setApiError] = useState<string | null>(null);
   const [selectedLayers, setSelectedLayers] = useState<Record<string, boolean>>({});
@@ -230,6 +232,8 @@ export const MapPage: React.FC = () => {
     let isActive = true;
     let gridOverlay: google.maps.OverlayView | null = null;
     let gridZoomListener: google.maps.MapsEventListener | null = null;
+    let gridOverlayRoot: HTMLDivElement | null = null;
+    let gridImage: HTMLImageElement | null = null;
     const initMap = async () => {
       if (!mapContainerRef.current) return;
 
@@ -250,7 +254,7 @@ export const MapPage: React.FC = () => {
         mapInstanceRef.current = map;
         infoWindowRef.current = new maps.InfoWindow();
 
-        const gridImage = document.createElement('img');
+        gridImage = document.createElement('img');
         gridImage.src = gridInitialUrl;
         gridImage.alt = '';
         gridImage.setAttribute('aria-hidden', 'true');
@@ -264,19 +268,44 @@ export const MapPage: React.FC = () => {
           pointerEvents: 'none',
           userSelect: 'none',
         });
+        gridOverlayRoot = document.createElement('div');
+        Object.assign(gridOverlayRoot.style, {
+          position: 'absolute',
+          pointerEvents: 'none',
+          overflow: 'visible',
+        });
         gridOverlay = new maps.OverlayView();
         gridOverlay.onAdd = () => {
-          gridOverlay?.getPanes()?.overlayLayer.append(gridImage);
+          const overlayLayer = gridOverlay?.getPanes()?.overlayLayer;
+          if (!overlayLayer || !gridOverlayRoot || !gridImage) return;
+          gridOverlayRoot.append(gridImage);
+          overlayLayer.append(gridOverlayRoot);
+          setMapOverlayRoot(gridOverlayRoot);
         };
         gridOverlay.draw = () => {
+          if (!gridOverlayRoot) return;
           const { clientWidth, clientHeight } = map.getDiv();
-          gridImage.style.width = `${clientWidth}px`;
-          gridImage.style.height = `${clientHeight}px`;
+          const center = map.getCenter();
+          const centerPixel = center
+            ? gridOverlay?.getProjection()?.fromLatLngToDivPixel(center)
+            : null;
+          if (!centerPixel) return;
+          Object.assign(gridOverlayRoot.style, {
+            left: `${centerPixel.x - clientWidth / 2}px`,
+            top: `${centerPixel.y - clientHeight / 2}px`,
+            width: `${clientWidth}px`,
+            height: `${clientHeight}px`,
+          });
         };
-        gridOverlay.onRemove = () => gridImage.remove();
+        gridOverlay.onRemove = () => {
+          gridOverlayRoot?.remove();
+          gridOverlayRoot = null;
+          gridImage = null;
+          setMapOverlayRoot(null);
+        };
         gridOverlay.setMap(map);
         gridZoomListener = map.addListener('zoom_changed', () => {
-          gridImage.src = getGridImageForZoom(map.getZoom() ?? 4);
+          if (gridImage) gridImage.src = getGridImageForZoom(map.getZoom() ?? 4);
         });
 
         setIsMapLoaded(true);
@@ -582,43 +611,44 @@ export const MapPage: React.FC = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%', height: 'calc(100vh - 64px)', backgroundColor: '#090d16', fontFamily: 'sans-serif', overflow: 'hidden' }}>
-      
-      {/* Overlay Título */}
-    <div style={{ position: 'absolute', top: '40px', left: '40px', zIndex: 1, color: '#ffffff', pointerEvents: 'none' }}>
-        <p style={{ fontSize: '11px', letterSpacing: '2px', color: '#94a3b8', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
-          CAPAS NODALES / ZOOM SEMÁNTICO
-        </p>
-        <h1 style={{ fontSize: '48px', fontWeight: '800', margin: 0, lineHeight: 1.1 }}>
-          El territorio<br />conectado.
-        </h1>
-        <p style={{ fontSize: '14px', color: '#cbd5e1', marginTop: '12px' }}>
-          Acercate para descubrir la red.
-        </p>
-        <div className="map-search">
-          <label className="map-actor-search">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <circle cx="11" cy="11" r="7" />
-              <path d="m20 20-4-4" />
-            </svg>
-            <input
-              type="search"
-              value={actorSearch}
-              onChange={(event) => setActorSearch(event.target.value)}
-              placeholder="Buscar actor en el mapa"
-              aria-label="Buscar actor en el mapa"
-            />
-          </label>
-          {actorSearch.trim() && (
-            <div className="map-actor-search-results">
-              {matchingActors.length ? matchingActors.map(({ actor }) => (
-                <button key={actor.id} type="button" onClick={() => focusActorOnMap(actor.id)}>
-                  {actor.name}
-                </button>
-              )) : <p>No hay actores visibles con ese nombre.</p>}
-            </div>
-          )}
-        </div>
-      </div>
+      {mapOverlayRoot ? createPortal(
+        <div style={{ position: 'absolute', top: '40px', left: '40px', color: '#ffffff', pointerEvents: 'none' }}>
+          <p style={{ fontSize: '11px', letterSpacing: '2px', color: '#94a3b8', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+            CAPAS NODALES / ZOOM SEMÁNTICO
+          </p>
+          <h1 style={{ fontSize: '48px', fontWeight: '800', margin: 0, lineHeight: 1.1 }}>
+            El territorio<br />conectado.
+          </h1>
+          <p style={{ fontSize: '14px', color: '#cbd5e1', marginTop: '12px' }}>
+            Acercate para descubrir la red.
+          </p>
+          <div className="map-search">
+            <label className="map-actor-search">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-4-4" />
+              </svg>
+              <input
+                type="search"
+                value={actorSearch}
+                onChange={(event) => setActorSearch(event.target.value)}
+                placeholder="Buscar actor en el mapa"
+                aria-label="Buscar actor en el mapa"
+              />
+            </label>
+            {actorSearch.trim() && (
+              <div className="map-actor-search-results">
+                {matchingActors.length ? matchingActors.map(({ actor }) => (
+                  <button key={actor.id} type="button" onClick={() => focusActorOnMap(actor.id)}>
+                    {actor.name}
+                  </button>
+                )) : <p>No hay actores visibles con ese nombre.</p>}
+              </div>
+            )}
+          </div>
+        </div>,
+        mapOverlayRoot,
+      ) : null}
 
       {/* Control de capas */}
       <div className={`map-overlay map-controls${isLayersPanelOpen ? '' : ' is-collapsed'}`}>
