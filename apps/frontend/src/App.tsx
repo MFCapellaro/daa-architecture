@@ -14,6 +14,8 @@ import { UserDashboard } from './pages/UserDashboard';
 import { AdminBackoffice } from './pages/AdminBackoffice';
 import { UserPortalPage } from './pages/portal/UserPortalPage';
 import { PasswordRecoveryPage } from './pages/PasswordRecoveryPage';
+import { ActivitiesPage } from './pages/ActivitiesPage';
+import { ActivitySubmissionPage } from './pages/portal/ActivitySubmissionPage';
 
 export const AppRoutes = () => {
   const { user, isAuthenticated } = useAuth();
@@ -45,6 +47,7 @@ export function App() {
           {/* ========================================== */}
           <Route path="/" element={<Navigate to="/map" replace />} />
           <Route path="/directory" element={<DirectoryPage />} />
+          <Route path="/activities" element={<ActivitiesPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/mapa" element={<MapPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -56,6 +59,14 @@ export function App() {
           {/* ========================================== */}
           {/* 2. RUTA PARTICIPANTE / DEALER              */}
           {/* ========================================== */}
+          <Route
+            path="/portal/actividades"
+            element={
+              <ProtectedRoute allowedRoles={['participante', 'dealer']}>
+                <ActivitySubmissionPage />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/portal/*"
             element={

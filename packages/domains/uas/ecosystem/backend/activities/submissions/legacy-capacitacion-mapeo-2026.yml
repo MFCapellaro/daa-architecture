@@ -1,0 +1,26 @@
+id: legacy-capacitacion-mapeo-2026
+title: Capacitacion inicial en mapeo agricola
+kind: course
+description: Introduccion a la planificacion de relevamientos con UAS.
+startsAt: 2026-09-28T18:00:00-03:00
+endsAt: 2026-10-05T20:00:00-03:00
+locationKind: virtual
+location: Online
+onlineUrl: ""
+contactName: ""
+contactEmail: ""
+contactPhone: ""
+registrationUrl: ""
+linkedEntities:
+  - Comunidad DAA
+flyer: ""
+featured: false
+visible: false
+reviewed: true
+source:
+  id: legacy-corpus
+  name: Repositorio de actividades
+  email: ""
+  role: admin
+createdAt: 2026-10-18T23:29:33.642Z
+updatedAt: 2026-10-18T23:29:33.642Z

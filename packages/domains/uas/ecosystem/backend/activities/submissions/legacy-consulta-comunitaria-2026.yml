@@ -1,0 +1,26 @@
+id: legacy-consulta-comunitaria-2026
+title: Consulta comunitaria sobre necesidades de campo
+kind: event
+description: Relevamiento participativo de problemas y oportunidades.
+startsAt: 2026-09-22T18:00:00-03:00
+endsAt: 2026-09-22T20:00:00-03:00
+locationKind: virtual
+location: Online
+onlineUrl: ""
+contactName: ""
+contactEmail: ""
+contactPhone: ""
+registrationUrl: ""
+linkedEntities:
+  - Comunidad DAA
+flyer: ""
+featured: false
+visible: false
+reviewed: true
+source:
+  id: legacy-corpus
+  name: Repositorio de actividades
+  email: ""
+  role: admin
+createdAt: 2026-10-18T23:29:33.642Z
+updatedAt: 2026-10-18T23:29:33.642Z

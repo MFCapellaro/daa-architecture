@@ -6,22 +6,26 @@ import { createDirectoryRouter } from "./routes/directory.js";
 import { createAdminParticipantsRouter } from "./routes/adminParticipants.js";
 import { createAuthRouter } from "./routes/auth.js";
 import { createParticipantsRouter } from "./routes/participants.js";
+import { createActivitiesRouter } from "./routes/activities.js";
 import type { PasswordResetMailer } from "./services/PasswordResetMailer.js";
 import { ParticipantAccountStore } from "./services/ParticipantAccountStore.js";
+import { ActivityStore } from "./services/ActivityStore.js";
 
 const frontendDirectory = fileURLToPath(new URL("../../frontend", import.meta.url));
 
 export function createApp(
   accountStore = new ParticipantAccountStore(),
   passwordResetMailer?: PasswordResetMailer,
+  activityStore = new ActivityStore(),
 ) {
   const app = express();
   const directoryRouter = createDirectoryRouter(accountStore);
   app.use(cors());
-  app.use(express.json());
+  app.use(express.json({ limit: "2mb" }));
 
   app.use(createAuthRouter(accountStore, passwordResetMailer));
   app.use(createParticipantsRouter(accountStore));
+  app.use(createActivitiesRouter(accountStore, activityStore));
   app.use(createAdminParticipantsRouter(accountStore));
 
   // Keep existing directory APIs mounted as before.

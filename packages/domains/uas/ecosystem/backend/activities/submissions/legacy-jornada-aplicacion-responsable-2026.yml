@@ -1,0 +1,26 @@
+id: legacy-jornada-aplicacion-responsable-2026
+title: Jornada de aplicacion responsable
+kind: event
+description: Intercambio tecnico sobre deriva, clima y buenas practicas.
+startsAt: 2026-06-18T09:00:00-03:00
+endsAt: 2026-06-18T16:00:00-03:00
+locationKind: in-person
+location: Venado Tuerto, Santa Fe
+onlineUrl: ""
+contactName: ""
+contactEmail: ""
+contactPhone: ""
+registrationUrl: ""
+linkedEntities:
+  - Comunidad DAA
+flyer: ""
+featured: false
+visible: false
+reviewed: true
+source:
+  id: legacy-corpus
+  name: Repositorio de actividades
+  email: ""
+  role: admin
+createdAt: 2026-10-18T23:29:33.642Z
+updatedAt: 2026-10-18T23:29:33.642Z

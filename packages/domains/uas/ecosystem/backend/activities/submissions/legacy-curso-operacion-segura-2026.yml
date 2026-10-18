@@ -1,0 +1,26 @@
+id: legacy-curso-operacion-segura-2026
+title: Curso de operacion segura de UAS agricolas
+kind: course
+description: Formacion introductoria para operadores y equipos de trabajo.
+startsAt: 2026-11-04T18:00:00-03:00
+endsAt: 2026-11-25T20:00:00-03:00
+locationKind: virtual
+location: Online
+onlineUrl: ""
+contactName: ""
+contactEmail: ""
+contactPhone: ""
+registrationUrl: ""
+linkedEntities:
+  - Comunidad DAA
+flyer: ""
+featured: false
+visible: true
+reviewed: true
+source:
+  id: legacy-corpus
+  name: Repositorio de actividades
+  email: ""
+  role: admin
+createdAt: 2026-10-18T23:29:33.642Z
+updatedAt: 2026-10-18T23:29:33.642Z

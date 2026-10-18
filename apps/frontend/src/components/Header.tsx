@@ -76,6 +76,9 @@ export const Header: React.FC = () => {
             Mapa Satelital
           </span>
         </Link>
+        <Link to="/activities" style={{ color: isActive('/activities') ? '#38bdf8' : '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
+          Actividades
+        </Link>
 
         {/* Portal Participante / Dealer */}
         {isAuthenticated && (user?.role === 'participante' || user?.role === 'dealer') && (

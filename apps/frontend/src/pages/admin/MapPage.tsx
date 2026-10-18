@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import { DEFAULT_CATEGORIES, type Category } from '../../types/category';
 import { loadGoogleMaps } from '../../lib/googleMaps';
 import { useAuth } from '../../context/AuthContext';
+import { ActivityMapPanel } from '../../components/ActivityMapPanel';
 import gridInitialUrl from '../../../../grillas/9-Transp.png';
 import gridRegionalUrl from '../../../../grillas/21-Transp.png';
 import gridDetailUrl from '../../../../grillas/27-Transp.png';
@@ -713,6 +714,7 @@ export const MapPage: React.FC = () => {
 
       {/* Contenedor del Mapa */}
       <div ref={mapContainerRef} style={{ width: '100%', height: '100%' }} />
+      <ActivityMapPanel />
 
       {/* Indicador de Errores o Carga */}
       {apiError ? (

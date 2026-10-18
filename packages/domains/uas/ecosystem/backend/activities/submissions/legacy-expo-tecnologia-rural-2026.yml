@@ -1,0 +1,26 @@
+id: legacy-expo-tecnologia-rural-2026
+title: Expo Tecnologia Rural y Agricultura de Precision
+kind: expo
+description: Exposicion de tecnologias aplicadas al trabajo agricola.
+startsAt: 2026-12-03T10:00:00-03:00
+endsAt: 2026-12-05T18:00:00-03:00
+locationKind: in-person
+location: San Nicolas, Buenos Aires
+onlineUrl: ""
+contactName: ""
+contactEmail: ""
+contactPhone: ""
+registrationUrl: ""
+linkedEntities:
+  - DAA
+flyer: ""
+featured: false
+visible: true
+reviewed: true
+source:
+  id: legacy-corpus
+  name: Repositorio de actividades
+  email: ""
+  role: admin
+createdAt: 2026-10-18T23:29:33.642Z
+updatedAt: 2026-10-18T23:29:33.642Z

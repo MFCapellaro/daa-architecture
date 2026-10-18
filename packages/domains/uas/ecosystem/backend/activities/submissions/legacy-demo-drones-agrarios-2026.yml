@@ -1,0 +1,26 @@
+id: legacy-demo-drones-agrarios-2026
+title: Demostracion de drones agrarios
+kind: event
+description: Demostracion abierta de plataformas y operaciones de campo.
+startsAt: 2026-08-22T10:00:00-03:00
+endsAt: 2026-08-22T15:00:00-03:00
+locationKind: in-person
+location: Rafaela, Santa Fe
+onlineUrl: ""
+contactName: ""
+contactEmail: ""
+contactPhone: ""
+registrationUrl: ""
+linkedEntities:
+  - DAA
+flyer: ""
+featured: false
+visible: false
+reviewed: true
+source:
+  id: legacy-corpus
+  name: Repositorio de actividades
+  email: ""
+  role: admin
+createdAt: 2026-10-18T23:29:33.642Z
+updatedAt: 2026-10-18T23:29:33.642Z

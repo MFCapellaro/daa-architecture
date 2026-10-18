@@ -378,6 +378,32 @@ Relationships allow activities to become part of the broader ecosystem rather th
 
 ---
 
+## Application Workflow
+
+The application stores submitted activities in `submissions/` as YAML records. Each record preserves the submitting account (`participante` or `dealer`), event details, linked entities, flyer, timestamps, review state, and publication visibility. On first read, legacy records from `data/` are imported once with their existing publication window and kept manageable alongside new submissions.
+
+New submissions are hidden by default. They appear in the BackOffice pending-review count and are published only when an administrator makes them visible. The submitter receives an on-screen confirmation that review and publication are expected within 24–48 hours.
+
+The BackOffice separates activities by occurrence date:
+
+* **Activas**: the end date and time have not passed.
+* **Históricas**: the activity's end date and time have passed.
+
+This temporal classification does not change publication visibility. Public calendar and map views include visible records only; historical activities remain discoverable.
+
+Application endpoints:
+
+* `GET /api/activities`: visible records for public calendar/map views.
+* `POST /api/activities`: authenticated participant/Dealer submission.
+* `GET /api/admin/activities`: administrator activity list and provenance.
+* `POST /api/admin/activities`: administrator-created record, hidden by default.
+* `PATCH /api/admin/activities/:id`: edit or review visibility.
+* `DELETE /api/admin/activities/:id`: remove a record.
+
+Flyers are accepted as JPG, PNG, or WebP images, optimized by the frontend, and stored with the activity record.
+
+---
+
 ## Progressive Semantic Layer
 
 The system supports progressive enrichment.

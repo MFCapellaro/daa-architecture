@@ -1,0 +1,280 @@
+.activities-page {
+  min-height: calc(100vh - 64px);
+  padding: 32px 22px 72px;
+  color: #dce4e9;
+  background: #0f171c;
+}
+
+.activities-page__inner {
+  width: min(1060px, 100%);
+  margin: 0 auto;
+}
+
+.activities-page__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #293740;
+}
+
+.activities-page__eyebrow {
+  margin: 0 0 7px;
+  color: #77b8c1;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.activities-page__header h1 {
+  margin: 0;
+  color: #e1e8ec;
+  font-size: clamp(25px, 4vw, 34px);
+  letter-spacing: -.03em;
+}
+
+.activities-page__header p:last-child {
+  margin: 8px 0 0;
+  color: #9eabb4;
+  font-size: 13px;
+}
+
+.activities-page__header > a {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  color: #edf2f4;
+  background: #293941;
+  border: 1px solid #40515a;
+  border-radius: 4px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.activities-page__header > a:hover {
+  background: #344750;
+}
+
+.activities-calendar {
+  overflow: hidden;
+  background: #111a20;
+  border: 1px solid #293740;
+  border-radius: 5px;
+}
+
+.activities-calendar__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  background: #141e24;
+  border-bottom: 1px solid #293740;
+}
+
+.activities-calendar__toolbar h2 {
+  margin: 0;
+  color: #e1e8ec;
+  font-size: 17px;
+  text-transform: capitalize;
+}
+
+.activities-calendar__month-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.activities-calendar__month-controls button {
+  width: 30px;
+  height: 30px;
+  color: #bdc8ce;
+  background: #172229;
+  border: 1px solid #34434c;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.activities-calendar__month-controls input,
+.activities-calendar__empty select {
+  padding: 7px 8px;
+  color: #dce4e9;
+  background: #172229;
+  border: 1px solid #34434c;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 12px;
+}
+
+.activities-calendar__list {
+  display: grid;
+}
+
+.activity-card {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) minmax(140px, 220px);
+  gap: 16px;
+  padding: 18px;
+  border-bottom: 1px solid #26333b;
+}
+
+.activity-card:last-child {
+  border-bottom: 0;
+}
+
+.activity-card__date {
+  display: flex;
+  width: 48px;
+  height: 56px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #dce4e9;
+  background: #18262d;
+  border: 1px solid #34434c;
+  border-radius: 4px;
+}
+
+.activity-card__date span {
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.activity-card__date small {
+  margin-top: 4px;
+  color: #8ca1aa;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.activity-card__content {
+  min-width: 0;
+}
+
+.activity-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.activity-card__meta span {
+  color: #8ec9ce;
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.activity-card__meta .activity-card__featured {
+  color: #e4bd80;
+}
+
+.activity-card h3 {
+  margin: 0;
+  color: #e1e8ec;
+  font-size: 16px;
+}
+
+.activity-card__date-line,
+.activity-card__location,
+.activity-card__description,
+.activity-card__entities {
+  margin: 6px 0 0;
+  color: #9eabb4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.activity-card__location {
+  color: #c0cbd1;
+}
+
+.activity-card__entities {
+  color: #84969e;
+}
+
+.activity-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.activity-card__actions a {
+  color: #9acbd1;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.activity-card__actions a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.activity-card__flyer {
+  width: 100%;
+  max-height: 150px;
+  border: 1px solid #293740;
+  border-radius: 4px;
+  object-fit: contain;
+  object-position: center;
+  background: #0d1418;
+}
+
+.activities-calendar__empty,
+.activities-calendar__error {
+  margin: 0;
+  padding: 30px 18px;
+  color: #9eabb4;
+  font-size: 13px;
+  text-align: center;
+}
+
+.activities-calendar__empty label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.activities-calendar__error {
+  color: #f3aaaa;
+}
+
+@media (max-width: 700px) {
+  .activities-page {
+    padding: 22px 12px 48px;
+  }
+
+  .activities-page__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .activity-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px 12px;
+  }
+
+  .activity-card__date {
+    width: 42px;
+    height: 52px;
+  }
+
+  .activity-card__flyer {
+    grid-column: 2;
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 450px) {
+  .activities-calendar__toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

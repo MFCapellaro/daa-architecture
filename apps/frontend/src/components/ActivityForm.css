@@ -1,0 +1,145 @@
+.activity-form {
+  display: grid;
+  gap: 11px;
+}
+
+.activity-form label {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  color: #bdc8ce;
+  font-size: 12px;
+}
+
+.activity-form input:not([type="checkbox"]):not([type="file"]),
+.activity-form select,
+.activity-form textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 8px 9px;
+  color: #dce4e9;
+  background: #172229;
+  border: 1px solid #34434c;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 13px;
+}
+
+.activity-form select option {
+  color: #dce4e9;
+  background: #172229;
+}
+
+.activity-form textarea {
+  resize: vertical;
+}
+
+.activity-form input:focus,
+.activity-form select:focus,
+.activity-form textarea:focus {
+  outline: 2px solid #536870;
+  outline-offset: 1px;
+}
+
+.activity-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.activity-form fieldset {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #34434c;
+  border-radius: 4px;
+}
+
+.activity-form legend {
+  padding: 0 4px;
+  color: #aebbc3;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.activity-form__flyer-label input[type="file"] {
+  width: 100%;
+  color: #bdc8ce;
+  font: inherit;
+  font-size: 12px;
+}
+
+.activity-form__flyer-label small {
+  color: #8797a0;
+  font-size: 11px;
+}
+
+.activity-form__flyer-preview {
+  display: block;
+  max-width: min(100%, 340px);
+  max-height: 220px;
+  border: 1px solid #34434c;
+  border-radius: 4px;
+  object-fit: contain;
+  object-position: left;
+}
+
+.activity-form .activity-form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activity-form__checkbox input {
+  margin: 0;
+  accent-color: #71b9c1;
+}
+
+.activity-form__error {
+  margin: 0;
+  color: #f3aaaa;
+  font-size: 12px;
+}
+
+.activity-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.activity-form__actions button {
+  min-height: 34px;
+  padding: 7px 11px;
+  color: #edf2f4;
+  background: #293941;
+  border: 1px solid #40515a;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.activity-form__actions button:hover:not(:disabled) {
+  background: #344750;
+}
+
+.activity-form__actions button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.activity-form__actions .activity-form__cancel {
+  color: #cbd5db;
+  background: #172229;
+  border-color: #34434c;
+}
+
+@media (max-width: 560px) {
+  .activity-form__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

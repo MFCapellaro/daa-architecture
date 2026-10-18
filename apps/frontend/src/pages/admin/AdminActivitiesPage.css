@@ -1,0 +1,472 @@
+.admin-activities {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+  gap: 12px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 64px);
+  min-height: calc(100dvh - 64px);
+  padding: 16px;
+  color: #dce4e9;
+  background: #0f171c;
+}
+
+.activities-header,
+.activities-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.activities-header h1 {
+  margin: 0;
+  color: #e1e8ec;
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -.02em;
+}
+
+.activities-header p {
+  margin: 4px 0 0;
+  color: #9eabb4;
+  font-size: 12px;
+}
+
+.activities-notification {
+  padding: 0;
+  color: #f1cb8a;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.activities-notification:hover {
+  color: #ffe2a8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.activities-notification span {
+  color: #efa75b;
+  font-size: 9px;
+  vertical-align: 1px;
+}
+
+.activities-button {
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid #34434c;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.activities-button--primary {
+  color: #edf2f4;
+  background: #293941;
+  border-color: #40515a;
+}
+
+.activities-button--primary:hover {
+  background: #344750;
+}
+
+.activities-button--secondary {
+  color: #cbd5db;
+  background: #172229;
+}
+
+.activities-button--secondary:hover {
+  background: #23313a;
+}
+
+.activities-message {
+  margin: 0;
+  padding: 9px 12px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.activities-message--error {
+  color: #f3aaaa;
+  background: #2a1b20;
+  border-color: #583139;
+}
+
+.activities-message--notice {
+  color: #b7d5dc;
+  background: #17272e;
+  border-color: #2f4a53;
+}
+
+.activities-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #293740;
+}
+
+.activities-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 35px;
+  padding: 0 12px;
+  color: #9eabb4;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.activities-tabs button.is-active {
+  color: #e1e8ec;
+  border-bottom-color: #77b8c1;
+}
+
+.activities-tabs span {
+  min-width: 18px;
+  padding: 1px 4px;
+  color: #aebbc3;
+  background: #202d34;
+  border-radius: 10px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.activities-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(290px, 3fr);
+  gap: 14px;
+  min-height: 0;
+  align-items: start;
+}
+
+.activities-list {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.activities-toolbar {
+  display: flex;
+  gap: 8px;
+}
+
+.activities-search,
+.activities-toolbar > label {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  color: #8797a0;
+  background: #151f25;
+  border: 1px solid #2d3b44;
+  border-radius: 4px;
+}
+
+.activities-search {
+  flex: 1;
+}
+
+.activities-search input,
+.activities-toolbar select {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 0;
+  color: #dce4e9;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 12px;
+}
+
+.activities-search input::placeholder {
+  color: #82919a;
+}
+
+.activities-toolbar select {
+  width: auto;
+  min-width: 140px;
+  cursor: pointer;
+}
+
+.activities-toolbar option {
+  color: #dce4e9;
+  background: #172229;
+}
+
+.activities-search:focus-within,
+.activities-toolbar > label:focus-within {
+  outline: 2px solid #536870;
+  outline-offset: 1px;
+}
+
+.activities-table-wrap {
+  min-width: 0;
+  overflow: auto;
+  background: #111a20;
+  border: 1px solid #293740;
+  border-radius: 5px;
+}
+
+.activities-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: left;
+}
+
+.activities-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 8px 9px;
+  color: #9eabb4;
+  background: #172229;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.activities-table td {
+  padding: 6px 9px;
+  color: #bdc8ce;
+  vertical-align: middle;
+}
+
+.activities-table tr {
+  border-top: 1px solid #26333b;
+  background: #111a20;
+}
+
+.activities-table tr.is-selected {
+  background: #1b2931;
+}
+
+.activities-name {
+  display: grid;
+  gap: 2px;
+  padding: 0;
+  color: #e1e8ec;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.activities-name strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.activities-name small,
+.activities-source__name {
+  display: block;
+  color: #8797a0;
+  font-size: 10px;
+}
+
+.activities-source {
+  color: #bdc8ce;
+  text-transform: capitalize;
+}
+
+.activities-visibility {
+  display: inline-block;
+  padding: 3px 6px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+.activities-visibility.is-visible {
+  color: #a8d4b6;
+  background: #17271f;
+  border-color: #2c4c39;
+}
+
+.activities-visibility.is-hidden {
+  color: #f1cb8a;
+  background: #29251c;
+  border-color: #625238;
+}
+
+.activities-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.activities-row-actions button {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  color: #9eabb4;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.activities-row-actions button:hover {
+  color: #edf2f4;
+  background: #26343c;
+  border-color: #3b4a53;
+}
+
+.activities-row-actions button.is-danger:hover {
+  color: #f3aaaa;
+  background: #301d22;
+  border-color: #63343b;
+}
+
+.activities-empty {
+  margin: 0;
+  padding: 18px !important;
+  color: #9eabb4 !important;
+  text-align: center;
+}
+
+.activity-detail {
+  position: sticky;
+  top: 12px;
+  min-width: 0;
+  max-height: calc(100dvh - 158px);
+  overflow-y: auto;
+  padding: 13px;
+  background: #111a20;
+  border: 1px solid #293740;
+  border-radius: 5px;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.activity-detail__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.activity-detail__header h2 {
+  margin: 0;
+  color: #e1e8ec;
+  font-size: 15px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.activity-detail__header p {
+  margin: 4px 0 0;
+  color: #9eabb4;
+  font-size: 11px;
+}
+
+.activity-detail__summary {
+  display: grid;
+  gap: 8px;
+  color: #bdc8ce;
+  font-size: 11px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.activity-detail__summary img {
+  width: 100%;
+  max-height: 220px;
+  border: 1px solid #293740;
+  border-radius: 4px;
+  object-fit: contain;
+  object-position: left;
+}
+
+.activity-detail__summary p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.activity-detail__summary strong {
+  color: #e1e8ec;
+  font-weight: 600;
+}
+
+.activity-detail__summary .activities-button {
+  justify-self: start;
+  margin-top: 4px;
+}
+
+.admin-activities .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 980px) {
+  .admin-activities {
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .activities-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .activity-detail {
+    position: static;
+    max-height: 70vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-activities {
+    padding: 12px;
+  }
+
+  .activities-header,
+  .activities-header__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .activities-header__actions {
+    width: 100%;
+  }
+
+  .activities-toolbar {
+    flex-direction: column;
+  }
+
+  .activities-toolbar select {
+    width: 100%;
+  }
+
+  .activities-table {
+    min-width: 730px;
+  }
+
+  .activities-tabs button {
+    padding: 0 8px;
+  }
+}
