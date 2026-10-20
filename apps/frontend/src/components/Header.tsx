@@ -79,6 +79,9 @@ export const Header: React.FC = () => {
         <Link to="/activities" style={{ color: isActive('/activities') ? '#38bdf8' : '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
           Actividades
         </Link>
+        <Link to="/pools" style={{ color: isActive('/pools') ? '#38bdf8' : '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
+          Pools
+        </Link>
 
         {/* Portal Participante / Dealer */}
         {isAuthenticated && (user?.role === 'participante' || user?.role === 'dealer') && (
@@ -99,6 +102,9 @@ export const Header: React.FC = () => {
             </Link>
             <Link to="/admin/activities" style={{ color: isActive('/admin/activities') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
               📋 Actividades
+            </Link>
+            <Link to="/admin/pools" style={{ color: isActive('/admin/pools') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
+              Pools
             </Link>
           </div>
         )}

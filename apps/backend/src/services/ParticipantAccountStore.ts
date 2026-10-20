@@ -7,6 +7,16 @@ import { parse, stringify } from "yaml";
 export type ParticipantRole = "participante" | "dealer";
 export type AccountRole = ParticipantRole | "admin";
 export type AccountStatus = "active" | "suspended";
+export const DEALER_AGREEMENT_VERSION = "1.1";
+
+export interface DealerAgreementAcceptance {
+  acceptedAt: string;
+  version: string;
+  acceptanceId: string;
+  legalName: string;
+  taxId: string;
+  representative: string;
+}
 
 export const PROFILE_FIELDS = [
   "organization",
@@ -42,7 +52,7 @@ export interface ParticipantAccount {
   profile: ParticipantProfile;
   progressiveEntry: Record<string, boolean>;
   accountType: "registered";
-  dealerAgreement?: { approved: false; accepted: false };
+  dealerAgreement?: DealerAgreementAcceptance;
 }
 
 export interface PublicParticipant {
@@ -190,8 +200,8 @@ export class ParticipantAccountStore {
     const updated: ParticipantAccount = {
       ...account,
       ...patch,
-      ...(patch.role === "dealer"
-        ? { dealerAgreement: { approved: false, accepted: false } as const }
+      ...(patch.role === "dealer" && account.role !== "dealer"
+        ? { dealerAgreement: undefined }
         : {}),
       email: patch.email ? normalizeEmail(patch.email) : account.email,
       profile: patch.profile ? { ...account.profile, ...patch.profile } : account.profile,
@@ -206,6 +216,25 @@ export class ParticipantAccountStore {
               account.progressiveEntry.interests || Boolean(patch.profile.interests),
           }
         : account.progressiveEntry,
+    };
+    await this.write(updated);
+    return updated;
+  }
+
+  async acceptDealerAgreement(
+    id: string,
+    details: Pick<DealerAgreementAcceptance, "legalName" | "taxId" | "representative">,
+  ): Promise<ParticipantAccount | undefined> {
+    const account = await this.findById(id);
+    if (!account || account.role !== "dealer" || account.status !== "active") return undefined;
+    const updated: ParticipantAccount = {
+      ...account,
+      dealerAgreement: {
+        ...details,
+        acceptedAt: new Date().toISOString(),
+        version: DEALER_AGREEMENT_VERSION,
+        acceptanceId: randomUUID(),
+      },
     };
     await this.write(updated);
     return updated;

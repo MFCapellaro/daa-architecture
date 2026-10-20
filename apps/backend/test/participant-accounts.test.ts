@@ -265,8 +265,7 @@ describe("participant account API", () => {
       join(directory, `${registration.user.id}.yml`),
       "utf8",
     );
-    expect(yamlAccount).toContain("approved: false");
-    expect(yamlAccount).toContain("accepted: false");
+    expect(yamlAccount).not.toContain("dealerAgreement");
 
     const adminLogin = await fetch(`${baseUrl}/api/auth/login`, {
       method: "POST",

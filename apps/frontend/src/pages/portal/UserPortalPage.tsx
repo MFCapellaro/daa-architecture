@@ -1,5 +1,5 @@
 import React, { useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth, type User } from '../../context/AuthContext';
 import './UserPortalPage.css';
 
@@ -22,7 +22,6 @@ interface ParticipantMe {
   email: string;
   role: 'participante' | 'dealer';
   profile: ParticipantProfile;
-  dealerAgreementAccepted?: boolean;
 }
 
 const fieldStyle: React.CSSProperties = {
@@ -96,15 +95,11 @@ const makeAvatarDataUrl = async (file: File): Promise<string> => {
 
 export const UserPortalPage: React.FC = () => {
   const { user, login, updateUser } = useAuth();
-  const location = useLocation();
   const [profile, setProfile] = useState<ParticipantMe | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
-
-  const isPoolPage = location.pathname === '/portal/pools';
-  const isAgreementPage = location.pathname === '/portal/acuerdos';
 
   const loadProfile = async () => {
     const response = await fetch('/api/participants/me', {
@@ -243,7 +238,7 @@ export const UserPortalPage: React.FC = () => {
       if (!response.ok) throw new Error(result.message || `No se pudo solicitar el rol Dealer (${response.status}).`);
       if (result.token && result.user) login(result.token, result.user);
       await loadProfile();
-      setNotice('Tu cuenta ya tiene el perfil Dealer. La publicación queda pendiente del acuerdo aprobado.');
+      setNotice('Tu cuenta ya tiene el perfil Dealer. Acepta el acuerdo vigente para habilitar la publicación de Pools.');
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'No se pudo solicitar el rol Dealer.');
     } finally {
@@ -267,7 +262,7 @@ export const UserPortalPage: React.FC = () => {
         {user?.role === 'dealer' && (
           <nav className="user-portal__nav">
             <Link to="/portal">Mi Perfil</Link>
-            <Link to="/portal/pools">Publicación de pools</Link>
+            <Link to="/portal/pools">Mis Pools</Link>
             <Link to="/portal/acuerdos">Acuerdos Dealer</Link>
           </nav>
         )}
@@ -277,47 +272,8 @@ export const UserPortalPage: React.FC = () => {
           </nav>
         )}
 
-        {isAgreementPage ? (
-          <section aria-labelledby="dealer-agreement-title">
-            <h2 className="user-portal__section-title" id="dealer-agreement-title">Acuerdos para Dealers</h2>
-            <p className="user-portal__copy">
-              El texto aprobado del acuerdo previo al uso y publicación todavía no está configurado.
-              Por este motivo no se puede aceptar el acuerdo ni habilitar la publicación de pools.
-            </p>
-            <p role="status" className="user-portal__message user-portal__message--warning">
-              Publicación bloqueada hasta integrar el texto aprobado.
-            </p>
-            <Link to="/portal/pools">Ir a publicación de pools</Link>
-          </section>
-        ) : isPoolPage ? (
-          <section aria-labelledby="pool-publication-title">
-            <h2 className="user-portal__section-title" id="pool-publication-title">Publicación de pools</h2>
-            {user?.role !== 'dealer' ? (
-              <>
-                <p>La publicación de pools está disponible para cuentas Dealer.</p>
-                <button type="button" disabled={saving} onClick={() => void requestDealerAccess()}>
-                  {saving ? 'Procesando…' : 'Extender mi cuenta a Dealer'}
-                </button>
-              </>
-            ) : (
-              <>
-                <p className="user-portal__copy">Antes de usar la plataforma o publicar pools, debes revisar el acuerdo Dealer.</p>
-                <p role="status" className="user-portal__message user-portal__message--warning">
-                  Publicación deshabilitada: falta integrar el texto aprobado del acuerdo.
-                </p>
-                <Link to="/portal/acuerdos">Consultar estado del acuerdo</Link>
-                <fieldset disabled className="user-portal__fieldset">
-                  <legend>Nuevo pool (bloqueado)</legend>
-                  <label>Nombre<input disabled placeholder="Disponible después de aprobar el acuerdo" style={fieldStyle} /></label>
-                  <label>Descripción<textarea disabled rows={3} style={fieldStyle} /></label>
-                  <button type="button" disabled>Publicar pool</button>
-                </fieldset>
-              </>
-            )}
-          </section>
-        ) : (
-          <>
-            {profile && (
+        <>
+          {profile && (
               <form onSubmit={(event) => void saveProfile(event)} className="user-portal__form">
                 <div className="user-portal__photo">
                   {profile.profile?.avatar
@@ -380,7 +336,7 @@ export const UserPortalPage: React.FC = () => {
               </form>
             )}
 
-            {user?.role === 'participante' && (
+          {user?.role === 'participante' && (
               <section className="user-portal__dealer">
                 <h2 className="user-portal__section-title">¿Eres Dealer?</h2>
                 <p className="user-portal__copy">Puedes extender tu perfil para solicitar acceso a la publicación de pools.</p>
@@ -389,8 +345,7 @@ export const UserPortalPage: React.FC = () => {
                 </button>
               </section>
             )}
-          </>
-        )}
+        </>
       </section>
     </main>
   );

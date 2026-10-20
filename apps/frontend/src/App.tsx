@@ -16,6 +16,10 @@ import { UserPortalPage } from './pages/portal/UserPortalPage';
 import { PasswordRecoveryPage } from './pages/PasswordRecoveryPage';
 import { ActivitiesPage } from './pages/ActivitiesPage';
 import { ActivitySubmissionPage } from './pages/portal/ActivitySubmissionPage';
+import { DealerPoolsPage } from './pages/portal/DealerPoolsPage';
+import { DealerAgreementPage } from './pages/portal/DealerAgreementPage';
+import { AdminPoolsPage } from './pages/admin/AdminPoolsPage';
+import { PoolsPage } from './pages/PoolsPage';
 
 export const AppRoutes = () => {
   const { user, isAuthenticated } = useAuth();
@@ -48,6 +52,7 @@ export function App() {
           <Route path="/" element={<Navigate to="/map" replace />} />
           <Route path="/directory" element={<DirectoryPage />} />
           <Route path="/activities" element={<ActivitiesPage />} />
+          <Route path="/pools" element={<PoolsPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/mapa" element={<MapPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -64,6 +69,22 @@ export function App() {
             element={
               <ProtectedRoute allowedRoles={['participante', 'dealer']}>
                 <ActivitySubmissionPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/portal/pools"
+            element={
+              <ProtectedRoute allowedRoles={['dealer']}>
+                <DealerPoolsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/portal/acuerdos"
+            element={
+              <ProtectedRoute allowedRoles={['dealer']}>
+                <DealerAgreementPage />
               </ProtectedRoute>
             }
           />
@@ -100,6 +121,14 @@ export function App() {
             element={
               <ProtectedRoute allowedRoles={['admin']}>
                 <AdminActivitiesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/pools"
+            element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <AdminPoolsPage />
               </ProtectedRoute>
             }
           />

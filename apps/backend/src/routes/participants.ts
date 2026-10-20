@@ -4,6 +4,7 @@ import { signToken } from "../controllers/AuthController.js";
 import { createAuthMiddleware, type AuthRequest } from "../middleware/authMiddleware.js";
 import { requireAuth } from "../middleware/requireAuth.js";
 import {
+  DEALER_AGREEMENT_VERSION,
   PROFILE_FIELDS,
   ParticipantAccountStore,
   toPublicParticipant,
@@ -45,6 +46,7 @@ export function createParticipantsRouter(store: ParticipantAccountStore) {
         email: participant.email,
         role: participant.role,
         profile: participant.profile,
+        dealerAgreement: account.dealerAgreement ?? null,
       });
     },
   );
@@ -182,6 +184,34 @@ export function createParticipantsRouter(store: ParticipantAccountStore) {
         token: signToken({ id: user.id, email: user.email, role: user.role }),
         user,
       });
+    },
+  );
+
+  router.post(
+    "/api/participants/me/dealer-agreement",
+    authenticate,
+    requireAuth(["dealer"]),
+    async (req: AuthRequest, res: Response) => {
+      const body = req.body as Record<string, unknown> | undefined;
+      if (!body || typeof body !== "object" || Array.isArray(body)
+        || body.accepted !== true
+        || body.version !== DEALER_AGREEMENT_VERSION
+        || typeof body.legalName !== "string"
+        || !body.legalName.trim()
+        || body.legalName.length > 160
+        || typeof body.taxId !== "string"
+        || !/^\d{2}-?\d{8}-?\d$/.test(body.taxId.trim())
+        || (body.representative !== undefined
+          && (typeof body.representative !== "string" || body.representative.length > 160))) {
+        return res.status(400).json({ message: "Completa una razón social, CUIT válido y la aceptación expresa de la versión vigente." });
+      }
+      const account = req.user && await store.acceptDealerAgreement(req.user.id, {
+        legalName: body.legalName.trim(),
+        taxId: body.taxId.trim(),
+        representative: typeof body.representative === "string" ? body.representative.trim() : "",
+      });
+      if (!account) return res.status(404).json({ message: "La cuenta Dealer no está disponible." });
+      return res.json({ dealerAgreement: account.dealerAgreement });
     },
   );
 

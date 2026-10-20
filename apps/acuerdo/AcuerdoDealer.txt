@@ -1,0 +1,146 @@
+Acuerdo de Integración del Dealer
+Condiciones de participación, publicación de Pools y desarrollo de trayectorias
+Versión: 1.1
+Fecha de vigencia del acuerdo: Inicio [día y hora (time stamp) de completar el acuerdo] válido por un año.
+1. Objeto del acuerdo
+El presente Acuerdo de Integración del Dealer establece las condiciones bajo las cuales un proveedor, distribuidor o representante comercial de drones, equipamiento y servicios relacionados podrá participar en DRONSAIR y publicar oportunidades de compra colectiva denominadas Pools.
+DRONSAIR es una plataforma de orientación, vinculación y organización de información del ecosistema de drones. Su propósito es estructurar oportunidades de adquisición, facilitar relaciones entre actores y preservar la trayectoria de las interacciones que se desarrollen a partir de ellas.
+El Pool constituye una unidad de oportunidad comercial con una cantidad definida de productos y un ciclo de vida propio. Una vez completado y cerrado, las relaciones originadas en esa oportunidad podrán continuar mediante nuevas acciones registradas en las trayectorias de los actores involucrados.
+La aceptación de este acuerdo es condición previa para acceder a las funcionalidades de publicación y gestión de Pools.
+2. Naturaleza de la relación entre las partes
+La participación del Dealer en DRONSAIR no implica la comercialización de la plataforma ni convierte a DRONSAIR en vendedor, comprador, distribuidor o revendedor de los productos ofrecidos.
+DRONSAIR facilita la publicación de oportunidades, la vinculación entre actores y la emisión de notificaciones relacionadas con los Pools. La negociación, contratación, facturación, pago, entrega y demás condiciones de la compraventa se acuerdan directamente entre el Dealer y los compradores, fuera de la plataforma.
+El Dealer conserva la responsabilidad sobre sus ofertas, precios, disponibilidad, garantías, entregas, servicio técnico y obligaciones comerciales y regulatorias.
+La plataforma no garantiza que un Pool se complete ni que una operación se concrete.
+La relación entre el Dealer y DRONSAIR se limita a las condiciones de integración, publicación, vinculación, seguimiento y comisión previstas en este acuerdo, sin perjuicio de las obligaciones que legalmente correspondan a cada parte.
+3. Publicación y configuración de los Pools
+Cada Pool representa una oportunidad específica de compra colectiva y deberá tener una cantidad objetivo definida desde su publicación.
+Las configuraciones habituales serán de 3, 6 o 9 unidades, aunque podrán establecerse otras cantidades cuando las características de la operación así lo requieran.
+Cada publicación deberá identificar, como mínimo:
+Marca, modelo y descripción del producto.
+Cantidad objetivo de unidades del Pool.
+Precio y condiciones comerciales aplicables.
+Vigencia de la oportunidad.
+Disponibilidad y plazo estimado de entrega.
+Condiciones de pago, garantías y servicio posventa.
+Requisitos y restricciones particulares.
+Criterios para considerar completa la oportunidad.
+La cantidad objetivo determina cuándo se considera completo el Pool. No implica que DRONSAIR reciba pedidos, cobre anticipos, reserve unidades ni garantice la disponibilidad del producto.
+Los interesados deberán concretar sus operaciones directamente con el Dealer, de acuerdo con las condiciones comerciales de cada caso.
+Cada Pool tendrá una identificación única que permitirá relacionar la oportunidad publicada con las notificaciones, las partes vinculadas y las trayectorias que se generen posteriormente.
+4. Vinculación y notificaciones simultáneas
+Durante la vigencia del Pool, DRONSAIR facilitará la vinculación de los actores interesados mediante las funcionalidades de comunicación y notificación disponibles.
+Cuando se alcance la cantidad objetivo establecida, el Pool pasará al estado COMPLETO y la plataforma notificará simultáneamente a las partes vinculadas a esa oportunidad.
+La notificación informará que se ha alcanzado el objetivo de la convocatoria y que el Pool ha completado su ciclo de conformación.
+La condición de Pool completo no constituye por sí misma una confirmación de pago, una adjudicación definitiva ni una compraventa perfeccionada. Esos hechos dependerán de las operaciones efectivamente acordadas entre el Dealer y los compradores.
+Cuando corresponda, las partes deberán confirmar la adjudicación y el estado comercial de sus respectivas operaciones.
+Si una operación no se concreta o una unidad queda disponible posteriormente, no se reabrirá el Pool cerrado. La disponibilidad deberá gestionarse mediante una nueva oportunidad o mediante el procedimiento específico que DRONSAIR habilite para esos casos.
+5. Cierre del Pool y apertura de una nueva oportunidad
+Al alcanzar su cantidad objetivo, el Pool dejará de admitir nuevas incorporaciones y pasará a un estado cerrado para nuevas vinculaciones comerciales.
+El cierre preservará la identidad y los antecedentes de la oportunidad, incluyendo su cantidad objetivo, los actores vinculados, las notificaciones emitidas y los resultados que hayan sido declarados o verificados.
+Un Pool cerrado no se elimina ni se reutiliza como una nueva oportunidad. Su registro permanece como antecedente del ecosistema.
+Cuando el Dealer desee ofrecer nuevas unidades, deberá crear un nuevo Pool, con identificador propio, cantidad objetivo, vigencia y condiciones comerciales actualizadas.
+Esta separación permite distinguir cada oportunidad y mantener la trazabilidad de sus respectivas relaciones, sin confundir operaciones de diferentes períodos o convocatorias.
+6. Comisión de integración por operaciones atribuibles a Pools
+El Dealer acepta una comisión del uno por ciento (1 %) sobre el importe de las operaciones comerciales efectivamente concretadas y atribuibles a Pools publicados en DRONSAIR.
+La comisión remunera la integración del Dealer al sistema de publicación y vinculación de oportunidades, y será aplicable aunque la negociación y la venta se realicen íntegramente fuera de la plataforma.
+Se considerará atribuible a un Pool una operación cuya relación con la oportunidad publicada pueda identificarse razonablemente mediante sus registros, comunicaciones u otros antecedentes pertinentes.
+La base de cálculo será el importe neto de los productos efectivamente vendidos, excluyendo el IVA u otros impuestos discriminados y los gastos de terceros que no constituyan ingreso por la venta, salvo que las partes acuerden expresamente otra base por escrito.
+Las operaciones parciales y las ventas de unidades a distintos compradores estarán sujetas a la comisión cuando deriven de la oportunidad publicada y cumplan los criterios de atribución establecidos.
+Las cancelaciones, devoluciones y reversiones se ajustarán proporcionalmente al importe efectivamente conservado por el Dealer.
+7. Liquidación y pago
+El Dealer informará las operaciones concretadas que resulten atribuibles a sus Pools y facilitará la información necesaria para calcular la comisión correspondiente.
+El pago se efectuará dentro de los cinco (5) días hábiles posteriores a la percepción efectiva del importe de la operación por parte del Dealer, salvo que las condiciones particulares establezcan por escrito otro plazo.
+En operaciones cobradas en cuotas, las partes podrán acordar la liquidación proporcional de la comisión a medida que se perciban los importes.
+La transferencia se realizará a la cuenta bancaria que DRONSAIR comunique formalmente:
+Titular: [completar].
+CUIT/CUIL: [completar].
+Entidad bancaria: [completar].
+CBU o alias: [completar].
+DRONSAIR emitirá la documentación fiscal que corresponda por los importes percibidos.
+El Dealer conservará registros razonables que permitan conciliar las operaciones declaradas con los Pools de origen.
+8. El cierre del Pool como inicio de las trayectorias
+El cierre de un Pool constituye el inicio de una nueva etapa en la relación entre los actores vinculados a esa oportunidad.
+La compra colectiva no representa únicamente una operación comercial: puede originar relaciones posteriores entre compradores, Dealers, fabricantes, importadores, operadores, instructores, prestadores de servicios técnicos, aseguradoras y otros actores del ecosistema.
+DRONSAIR permitirá relacionar esas interacciones con las trayectorias de los actores correspondientes, de acuerdo con las funcionalidades disponibles, las autorizaciones necesarias y las reglas de registro de la plataforma.
+Las trayectorias podrán incorporar, según corresponda:
+Adjudicación y entrega de equipos.
+Identificación del equipo y su número de serie.
+Registro ante la autoridad aeronáutica ANAC.
+Información sobre seguros y vigencias.
+Capacitación y cursos de formación de pilotos.
+Formación relacionada con la aplicación de productos y otras operaciones especializadas.
+Mantenimiento preventivo y correctivo.
+Servicio técnico, reparaciones y repuestos.
+Garantías, asistencia y soporte posventa.
+Cumplimiento de compromisos y resolución de incidencias.
+Nuevas relaciones, actividades y servicios que los actores decidan incorporar.
+Estos registros no se generan automáticamente por el solo hecho de completar un Pool. Se incorporarán a medida que las acciones ocurran y sean declaradas, documentadas o verificadas según corresponda.
+La información regulatoria, comercial y técnica se registrará respetando las autorizaciones, la privacidad y las restricciones de acceso aplicables.
+9. Trazabilidad y reputación de los actores
+La trayectoria es el registro acumulativo de las relaciones y acciones atribuibles a cada actor dentro del ecosistema.
+Un mismo Pool podrá originar múltiples trayectorias relacionadas entre sí. Por ejemplo, la adquisición de un dron agrícola podrá vincular la trayectoria del comprador con la del Dealer, el equipo adquirido, el servicio técnico, las instancias de capacitación y otros actores que intervengan posteriormente.
+De este modo, la relación no queda limitada a la operación inicial: puede extenderse durante la vida útil del equipo y a través de nuevas actividades y servicios.
+La acumulación de antecedentes pertinentes permitirá desarrollar indicadores de reputación y confianza basados en las relaciones efectivamente registradas.
+Los registros podrán distinguir entre:
+Declarados: información aportada por un actor.
+Documentados: información respaldada por documentación o evidencia pertinente.
+Verificados: información cuya comprobación se haya realizado mediante un procedimiento definido.
+La participación en un Pool no otorga automáticamente una reputación positiva. Los indicadores deberán basarse en criterios transparentes, antecedentes pertinentes y mecanismos adecuados de rectificación.
+La trayectoria no sustituye los registros oficiales ni constituye por sí misma una certificación de cumplimiento normativo, calidad técnica o solvencia comercial.
+10. Responsabilidades del Dealer
+El Dealer se compromete a:
+1. Proporcionar información veraz y actualizada sobre los productos y las condiciones de sus Pools.
+2. Contar con las autorizaciones necesarias para ofrecer los productos publicados.
+3. Atender las consultas y comunicarse profesionalmente con los interesados.
+4. Informar los cambios relevantes en precios, disponibilidad y condiciones.
+5. Cumplir sus obligaciones comerciales, fiscales, regulatorias y de garantía.
+6. Declarar las operaciones atribuibles a los Pools y abonar las comisiones correspondientes.
+7. No alterar, manipular ni atribuirse indebidamente registros de trayectoria.
+8. Respetar la privacidad de los actores y el uso autorizado de su información.
+9. Facilitar, cuando corresponda, información pertinente sobre entrega, garantía y servicio posventa.
+10. No utilizar la plataforma para difundir información engañosa o perjudicar deliberadamente a otros actores.
+11. Responsabilidades y límites de DRONSAIR
+DRONSAIR proporcionará las funcionalidades de publicación, notificación, vinculación y registro de trayectorias que se encuentren habilitadas.
+La plataforma no garantiza el cierre de un Pool, el cumplimiento de una compraventa, la disponibilidad de productos ni la prestación de servicios por terceros.
+Salvo acuerdo expreso, DRONSAIR no interviene en la negociación comercial, no recibe el precio de los productos y no asume las obligaciones propias del vendedor, comprador, fabricante, importador, asegurador o prestador de servicios.
+Estas delimitaciones no excluyen las responsabilidades que legalmente correspondan.
+12. Privacidad y tratamiento de la información
+Los datos personales, comerciales, técnicos y regulatorios se tratarán de acuerdo con las finalidades legítimas de la plataforma, las políticas aplicables y la legislación vigente.
+El acceso a la información se organizará según su naturaleza y los permisos correspondientes. No toda información incorporada a una trayectoria será necesariamente pública.
+La incorporación y publicación de información de terceros, documentos comerciales, datos personales o registros sensibles requerirá las autorizaciones o bases legítimas que correspondan.
+Los actores podrán solicitar la corrección de información inexacta mediante los mecanismos que DRONSAIR establezca, preservando cuando resulte necesario el historial de modificaciones.
+13. Vigencia, suspensión y finalización
+El acuerdo entrará en vigencia mediante su aceptación electrónica y permanecerá vigente hasta su finalización.
+DRONSAIR podrá suspender la publicación de nuevos Pools ante incumplimientos, información engañosa, falta de pago de comisiones vencidas o riesgos relevantes para los participantes.
+La suspensión o finalización no extinguirá las comisiones devengadas ni las obligaciones pendientes derivadas de operaciones anteriores.
+Los Pools cerrados y los registros de trayectoria se conservarán conforme a las políticas de retención, privacidad y obligaciones legales aplicables.
+14. Modificaciones
+Las modificaciones sustanciales del acuerdo deberán comunicarse al Dealer y, cuando corresponda, requerirán una nueva aceptación antes de habilitar las funcionalidades sujetas a las nuevas condiciones.
+Las condiciones particulares de cada Pool identificarán la oportunidad concreta y no modificarán automáticamente las condiciones generales de este acuerdo.
+15. Resolución de diferencias
+Las partes procurarán resolver de buena fe cualquier diferencia relacionada con la atribución de operaciones, la liquidación de comisiones, la publicación de Pools o el tratamiento de registros.
+Si no fuera posible alcanzar una solución, se aplicarán la legislación y la jurisdicción que correspondan conforme al marco jurídico aplicable y a las condiciones contractuales válidamente acordadas.
+Domicilio legal de DRONSAIR: [completar].
+Domicilio legal del Dealer: [completar].
+Jurisdicción, cuando legalmente proceda: [completar].
+16. Aceptación expresa
+El Dealer declara que ha leído y comprendido este acuerdo y acepta expresamente sus condiciones.
+En particular, reconoce que:
+DRONSAIR no comercializa los productos ni interviene como vendedor en las compraventas.
+Cada Pool tiene una cantidad objetivo y un ciclo de vida definidos.
+Al completarse la cantidad objetivo, las partes vinculadas serán notificadas simultáneamente.
+El Pool completo se cerrará para nuevas incorporaciones y conservará sus antecedentes.
+Las operaciones comerciales se realizarán directamente entre el Dealer y los compradores.
+Las operaciones atribuibles a los Pools estarán sujetas a la comisión del uno por ciento (1 %), según las condiciones establecidas.
+El cierre del Pool podrá dar origen a trayectorias vinculadas con la adquisición, uso, capacitación, mantenimiento y servicios posteriores.
+Las trayectorias podrán contribuir a la construcción de reputación y confianza mediante registros declarados, documentados o verificados.
+La publicación de nuevos Pools requerirá la creación de nuevas oportunidades identificables.
+La aceptación expresa de este acuerdo es requisito indispensable para habilitar el acceso a la página de publicación y gestión de Pools.
+Datos del acuerdo aceptado
+Razón social o nombre comercial: ______________________
+CUIT: ______________________
+Representante autorizado, si corresponde: ______________________
+Fecha y hora de aceptación: ______________________
+Versión del acuerdo: ______________________
+Identificador electrónico de aceptación: ______________________
