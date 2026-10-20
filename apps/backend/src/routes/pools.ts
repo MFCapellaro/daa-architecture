@@ -7,6 +7,7 @@ import {
   ParticipantAccountStore,
 } from "../services/ParticipantAccountStore.js";
 import { PoolStore, type PoolInput, type PoolRecord } from "../services/PoolStore.js";
+import { SystemNotificationStore } from "../services/SystemNotificationStore.js";
 
 const IMAGE_DATA_URL = /^data:image\/jpeg;base64,[A-Za-z0-9+/]+=*$/;
 const IMAGE_LIMIT = 450_000;
@@ -112,6 +113,7 @@ function similarPools(pool: PoolRecord, pools: PoolRecord[], profile: Record<str
 export function createPoolsRouter(
   accountStore = new ParticipantAccountStore(),
   poolStore = new PoolStore(),
+  notifications = new SystemNotificationStore(),
 ) {
   const router = Router();
   const authenticate = createAuthMiddleware(accountStore);
@@ -161,6 +163,14 @@ export function createPoolsRouter(
       const account = req.user && await accountStore.findById(req.user.id);
       if (!account) return res.status(401).json({ message: "La cuenta Dealer no está disponible." });
       const pool = await poolStore.create(input, { id: account.id, name: account.name, email: account.email });
+      await notifications.create({
+        recipientId: "admin",
+        category: "pool",
+        title: "Nuevo Pool para revisar",
+        message: `${account.name} publicó el Pool "${pool.brand} ${pool.product}".`,
+        href: "/admin/pools",
+        entityId: pool.id,
+      });
       return res.status(201).json(pool);
     },
   );
@@ -226,6 +236,27 @@ export function createPoolsRouter(
         const [status, message] = errors[result.error];
         return res.status(status).json({ message });
       }
+      if (result.pool.status === "complete") {
+        const message = `El Pool "${result.pool.product}" alcanzó la cantidad objetivo y se cerró.`;
+        await Promise.all([
+          notifications.create({
+            recipientId: result.pool.dealer.id,
+            category: "pool",
+            title: "Pool completado",
+            message,
+            href: "/portal/pools",
+            entityId: result.pool.id,
+          }),
+          ...result.pool.members.map((member) => notifications.create({
+            recipientId: member.participantId,
+            category: "pool" as const,
+            title: "Pool completado",
+            message,
+            href: "/pools",
+            entityId: result.pool.id,
+          })),
+        ]);
+      }
       return res.json({
         pool: poolSummary(result.pool),
         message: result.pool.status === "complete"
@@ -243,7 +274,7 @@ export function createPoolsRouter(
       const account = req.user && await accountStore.findById(req.user.id);
       if (!account) return res.status(401).json({ message: "La cuenta no está disponible." });
       const pools = await poolStore.list();
-      const notifications = pools.flatMap((pool) => {
+      const poolNotifications = pools.flatMap((pool) => {
         const isDealer = pool.dealer.id === account.id;
         const member = pool.members.find((entry) => entry.participantId === account.id);
         if (!isDealer && !member) return [];
@@ -260,7 +291,7 @@ export function createPoolsRouter(
           similarPools: pool.status === "expired" && !isDealer ? similarPools(pool, pools, account.profile) : [],
         }];
       });
-      return res.json(notifications);
+      return res.json(poolNotifications);
     },
   );
 
@@ -283,6 +314,14 @@ export function createPoolsRouter(
         id: req.user.id,
         name: "Administración",
         email: req.user.email,
+      });
+      await notifications.create({
+        recipientId: "admin",
+        category: "pool",
+        title: "Nuevo Pool administrativo",
+        message: `Se creó el Pool "${pool.brand} ${pool.product}".`,
+        href: "/admin/pools",
+        entityId: pool.id,
       });
       return res.status(201).json(pool);
     },
@@ -307,6 +346,16 @@ export function createPoolsRouter(
           return res.status(409).json({ message: "La cantidad objetivo no puede ser menor a las unidades comprometidas." });
         }
         if (!updated) return res.status(404).json({ message: "Pool no encontrado." });
+        if (req.body.visible === true && !current.visible) {
+          await notifications.create({
+            recipientId: current.dealer.id,
+            category: "pool",
+            title: "Pool aprobado",
+            message: `El Pool "${current.brand} ${current.product}" fue aprobado y ya está visible.`,
+            href: "/portal/pools",
+            entityId: current.id,
+          });
+        }
         return res.json(updated);
       }
       const input = validatePoolInput({ ...current, ...req.body });

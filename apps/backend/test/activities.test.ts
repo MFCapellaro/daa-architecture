@@ -5,6 +5,7 @@ import { stringify } from "yaml";
 import { createApp } from "../src/app.js";
 import { ActivityStore, type ActivityInput } from "../src/services/ActivityStore.js";
 import { ParticipantAccountStore } from "../src/services/ParticipantAccountStore.js";
+import { SystemNotificationStore } from "../src/services/SystemNotificationStore.js";
 
 describe("activity publication API", () => {
   let directory: string;
@@ -25,6 +26,8 @@ describe("activity publication API", () => {
       new ParticipantAccountStore(join(directory, "accounts")),
       undefined,
       activityStore,
+      undefined,
+      new SystemNotificationStore(join(directory, "notifications")),
     );
     server = app.listen(0);
     await new Promise<void>((resolve) => server.once("listening", resolve));

@@ -269,6 +269,7 @@ export const UserPortalPage: React.FC = () => {
         {(user?.role === 'participante' || user?.role === 'dealer') && (
           <nav className="user-portal__nav" aria-label="Actividades">
             <Link to="/portal/actividades">Publicar una actividad</Link>
+            <Link to="/portal/actores">Publicar un actor del ecosistema</Link>
           </nav>
         )}
 

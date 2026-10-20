@@ -1,12 +1,53 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import logoUrl from '../../../logo/LogoWeb.png';
 
+interface SystemNotification {
+  id: string;
+  category: 'actor' | 'pool' | 'activity';
+  title: string;
+  message: string;
+  href: string;
+  createdAt: string;
+  readAt?: string;
+}
+
 export const Header: React.FC = () => {
-  const { user, isAuthenticated, logout } = useAuth();
+  const { user, token, isAuthenticated, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
+  const [notifications, setNotifications] = useState<SystemNotification[]>([]);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [notificationError, setNotificationError] = useState<string | null>(null);
+
+  const loadNotifications = useCallback(async () => {
+    if (!token) return;
+    try {
+      const response = await fetch('/api/notifications', {
+        headers: { Authorization: 'Bearer ' + token },
+      });
+      const result = await response.json() as SystemNotification[] | { message?: string };
+      if (!response.ok) {
+        throw new Error(!Array.isArray(result) ? result.message || 'No se pudieron cargar las notificaciones.' : 'No se pudieron cargar las notificaciones.');
+      }
+      if (!Array.isArray(result)) throw new Error('La respuesta de notificaciones no es válida.');
+      setNotifications(result);
+      setNotificationError(null);
+    } catch (cause) {
+      setNotificationError(cause instanceof Error ? cause.message : 'No se pudieron cargar las notificaciones.');
+    }
+  }, [token]);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setNotifications([]);
+      return;
+    }
+    void loadNotifications();
+    const timer = window.setInterval(() => void loadNotifications(), 60_000);
+    return () => window.clearInterval(timer);
+  }, [isAuthenticated, loadNotifications]);
 
   const handleLogout = () => {
     logout();
@@ -83,13 +124,6 @@ export const Header: React.FC = () => {
           Pools
         </Link>
 
-        {/* Portal Participante / Dealer */}
-        {isAuthenticated && (user?.role === 'participante' || user?.role === 'dealer') && (
-          <Link to="/portal" style={{ color: isActive('/portal') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '14px', fontWeight: 600 }}>
-            Mi Perfil
-          </Link>
-        )}
-
         {/* Backoffice Exclusivo Admin */}
         {isAuthenticated && user?.role === 'admin' && (
           <div style={{ display: 'flex', gap: '18px', borderLeft: '1px solid #334155', paddingLeft: '18px', alignItems: 'center' }}>
@@ -106,6 +140,12 @@ export const Header: React.FC = () => {
             <Link to="/admin/pools" style={{ color: isActive('/admin/pools') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
               Pools
             </Link>
+            <Link to="/admin/actors/submissions" style={{ color: isActive('/admin/actors/submissions') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
+              Actores
+            </Link>
+            <Link to="/admin/notifications" style={{ color: isActive('/admin/notifications') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
+              Notificaciones
+            </Link>
           </div>
         )}
       </nav>
@@ -114,17 +154,78 @@ export const Header: React.FC = () => {
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         {isAuthenticated ? (
           <>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4 }}>
-              {user?.profile?.avatar && (
-                <img
-                  src={user.profile.avatar}
-                  alt=""
-                  aria-hidden="true"
-                  style={{ width: 26, height: 26, borderRadius: '50%', objectFit: 'cover' }}
-                />
+            <div style={{ position: 'relative' }}>
+              <button
+                type="button"
+                aria-label="Notificaciones"
+                title="Notificaciones"
+                onClick={() => {
+                  const opening = !notificationsOpen;
+                  setNotificationsOpen(opening);
+                  if (opening) void loadNotifications();
+                }}
+                style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #334155', borderRadius: '50%', padding: 8, color: '#cbd5e1', background: 'transparent', cursor: 'pointer' }}
+              >
+                <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" />
+                </svg>
+                {notifications.some((notification) => !notification.readAt) && (
+                  <span aria-label="Notificaciones sin leer" style={{ position: 'absolute', top: -3, right: -3, width: 9, height: 9, borderRadius: '50%', background: '#38bdf8', border: '2px solid #0f172a' }} />
+                )}
+              </button>
+              {notificationsOpen && (
+                <div style={{ position: 'absolute', zIndex: 30, top: 'calc(100% + 12px)', right: 0, width: 340, maxHeight: 420, overflowY: 'auto', padding: 12, border: '1px solid #334155', borderRadius: 10, background: '#111827', boxShadow: '0 16px 36px rgba(0,0,0,.35)' }}>
+                  <strong style={{ display: 'block', margin: '2px 4px 10px', fontSize: 14 }}>Notificaciones</strong>
+                  {notificationError && <p role="alert" style={{ color: '#fca5a5', fontSize: 12 }}>{notificationError}</p>}
+                  {!notificationError && notifications.length === 0 && <p style={{ color: '#94a3b8', fontSize: 13 }}>No tienes notificaciones.</p>}
+                  {notifications.map((notification) => (
+                    <button
+                      key={notification.id}
+                      type="button"
+                      onClick={async () => {
+                        if (!notification.readAt && token) {
+                          try {
+                            const response = await fetch(`/api/notifications/${encodeURIComponent(notification.id)}/read`, {
+                              method: 'PATCH',
+                              headers: { Authorization: 'Bearer ' + token },
+                            });
+                            if (!response.ok) throw new Error(`No se pudo marcar la notificación como leída (${response.status}).`);
+                          } catch (cause) {
+                            setNotificationError(cause instanceof Error ? cause.message : 'No se pudo marcar la notificación como leída.');
+                            return;
+                          }
+                        }
+                        setNotifications((current) => current.map((item) => item.id === notification.id
+                          ? { ...item, readAt: item.readAt || new Date().toISOString() }
+                          : item));
+                        setNotificationsOpen(false);
+                        navigate(notification.href);
+                      }}
+                      style={{ display: 'block', width: '100%', padding: '10px 8px', border: 0, borderTop: '1px solid #263244', color: '#e2e8f0', background: notification.readAt ? 'transparent' : '#17263a', textAlign: 'left', cursor: 'pointer' }}
+                    >
+                      <span style={{ display: 'flex', justifyContent: 'space-between', gap: 8, fontSize: 12, fontWeight: 700 }}>
+                        {notification.title}
+                        <span style={{ color: '#94a3b8', fontWeight: 400 }}>{notification.category}</span>
+                      </span>
+                      <span style={{ display: 'block', marginTop: 4, color: '#aeb9c9', fontSize: 12, lineHeight: 1.4 }}>{notification.message}</span>
+                    </button>
+                  ))}
+                  <Link to="/admin/notifications" onClick={() => setNotificationsOpen(false)} style={{ display: user?.role === 'admin' ? 'block' : 'none', padding: '10px 8px', color: '#7dd3fc', fontSize: 12 }}>
+                    Ver todas
+                  </Link>
+                </div>
               )}
-              <div style={{ fontSize: '13px', fontWeight: 600, color: '#f8fafc' }}>{user?.name}</div>
             </div>
+            {(user?.role === 'participante' || user?.role === 'dealer') ? (
+              <Link to="/portal" aria-label="Mi Perfil" title="Mi Perfil" style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#f8fafc', textDecoration: 'none' }}>
+                {user.profile?.avatar
+                  ? <img src={user.profile.avatar} alt="" aria-hidden="true" style={{ width: 30, height: 30, borderRadius: '50%', objectFit: 'cover' }} />
+                  : <span aria-hidden="true" style={{ display: 'grid', width: 30, height: 30, placeItems: 'center', borderRadius: '50%', background: '#334155', fontSize: 12 }}>{user?.name?.charAt(0).toUpperCase()}</span>}
+                <span style={{ fontSize: 13, fontWeight: 600 }}>{user?.name}</span>
+              </Link>
+            ) : (
+              <div style={{ fontSize: '13px', fontWeight: 600, color: '#f8fafc' }}>{user?.name}</div>
+            )}
             <button
               onClick={handleLogout}
               type="button"

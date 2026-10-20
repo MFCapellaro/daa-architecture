@@ -12,6 +12,10 @@ import { ParticipantAccountStore } from "./services/ParticipantAccountStore.js";
 import { ActivityStore } from "./services/ActivityStore.js";
 import { PoolStore } from "./services/PoolStore.js";
 import { createPoolsRouter } from "./routes/pools.js";
+import { createActorSubmissionsRouter } from "./routes/actorSubmissions.js";
+import { createSystemNotificationsRouter } from "./routes/systemNotifications.js";
+import { SystemNotificationStore } from "./services/SystemNotificationStore.js";
+import { ActorSubmissionStore } from "./services/ActorSubmissionStore.js";
 
 const frontendDirectory = fileURLToPath(new URL("../../frontend", import.meta.url));
 
@@ -20,6 +24,8 @@ export function createApp(
   passwordResetMailer?: PasswordResetMailer,
   activityStore = new ActivityStore(),
   poolStore = new PoolStore(),
+  notificationStore = new SystemNotificationStore(),
+  actorSubmissionStore = new ActorSubmissionStore(),
 ) {
   const app = express();
   const directoryRouter = createDirectoryRouter(accountStore);
@@ -28,8 +34,10 @@ export function createApp(
 
   app.use(createAuthRouter(accountStore, passwordResetMailer));
   app.use(createParticipantsRouter(accountStore));
-  app.use(createActivitiesRouter(accountStore, activityStore));
-  app.use(createPoolsRouter(accountStore, poolStore));
+  app.use(createActivitiesRouter(accountStore, activityStore, notificationStore));
+  app.use(createPoolsRouter(accountStore, poolStore, notificationStore));
+  app.use(createActorSubmissionsRouter(accountStore, actorSubmissionStore, notificationStore));
+  app.use(createSystemNotificationsRouter(accountStore, notificationStore, poolStore));
   app.use(createAdminParticipantsRouter(accountStore));
 
   // Keep existing directory APIs mounted as before.

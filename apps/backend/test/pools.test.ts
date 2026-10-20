@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { createApp } from "../src/app.js";
 import { PoolStore, type PoolInput } from "../src/services/PoolStore.js";
 import { ParticipantAccountStore } from "../src/services/ParticipantAccountStore.js";
+import { SystemNotificationStore } from "../src/services/SystemNotificationStore.js";
 
 describe("dealer agreement and pool lifecycle API", () => {
   let directory: string;
@@ -55,7 +56,13 @@ describe("dealer agreement and pool lifecycle API", () => {
     process.env.ADMIN_PASSWORD = "pool-admin-secret";
     accountStore = new ParticipantAccountStore(join(directory, "accounts"));
     poolStore = new PoolStore(join(directory, "pools"));
-    const app = createApp(accountStore, undefined, undefined, poolStore);
+    const app = createApp(
+      accountStore,
+      undefined,
+      undefined,
+      poolStore,
+      new SystemNotificationStore(join(directory, "notifications")),
+    );
     server = app.listen(0);
     await new Promise<void>((resolve) => server.once("listening", resolve));
     const address = server.address();

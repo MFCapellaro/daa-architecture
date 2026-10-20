@@ -4,6 +4,7 @@ import { createAuthMiddleware, type AuthRequest } from "../middleware/authMiddle
 import { requireAuth } from "../middleware/requireAuth.js";
 import { ActivityStore, type ActivityInput, type ActivityKind, type ActivityLocationKind } from "../services/ActivityStore.js";
 import { ParticipantAccountStore } from "../services/ParticipantAccountStore.js";
+import { SystemNotificationStore } from "../services/SystemNotificationStore.js";
 
 const ACTIVITY_KINDS: ActivityKind[] = ["training", "course", "expo", "field-application", "event", "other"];
 const LOCATION_KINDS: ActivityLocationKind[] = ["in-person", "virtual"];
@@ -116,6 +117,7 @@ const publicActivity = (activity: Awaited<ReturnType<ActivityStore["list"]>>[num
 export function createActivitiesRouter(
   accountStore = new ParticipantAccountStore(),
   activityStore = new ActivityStore(),
+  notifications = new SystemNotificationStore(),
 ) {
   const router = Router();
   const authenticate = createAuthMiddleware(accountStore);
@@ -143,6 +145,14 @@ export function createActivitiesRouter(
         name: account.name,
         email: account.email,
         role: account.role,
+      });
+      await notifications.create({
+        recipientId: "admin",
+        category: "activity",
+        title: "Nueva actividad para revisar",
+        message: `${account.name} publicó la actividad "${activity.title}".`,
+        href: "/admin/activities",
+        entityId: activity.id,
       });
       return res.status(201).json({
         activity: { id: activity.id, title: activity.title, visible: activity.visible },
@@ -213,6 +223,18 @@ export function createActivitiesRouter(
           ...(body.visible !== undefined ? { reviewed: true } : {}),
         });
         if (!updated) return res.status(404).json({ message: "Actividad no encontrada." });
+        if (body.visible !== undefined && body.visible !== current.visible && current.source.role !== "admin") {
+          await notifications.create({
+            recipientId: current.source.id,
+            category: "activity",
+            title: body.visible ? "Actividad aprobada" : "Actividad ocultada",
+            message: body.visible
+              ? `La actividad "${updated.title}" fue aprobada y ya está publicada.`
+              : `La actividad "${updated.title}" fue ocultada por el equipo de revisión.`,
+            href: "/portal/actividades",
+            entityId: updated.id,
+          });
+        }
         return res.json(updated);
       }
       const input = validateActivityInput({
@@ -229,6 +251,18 @@ export function createActivitiesRouter(
         ...(body.visible !== undefined ? { reviewed: true } : {}),
       });
       if (!updated) return res.status(404).json({ message: "Actividad no encontrada." });
+      if (body.visible !== undefined && body.visible !== current.visible && current.source.role !== "admin") {
+        await notifications.create({
+          recipientId: current.source.id,
+          category: "activity",
+          title: body.visible ? "Actividad aprobada" : "Actividad ocultada",
+          message: body.visible
+            ? `La actividad "${updated.title}" fue aprobada y ya está publicada.`
+            : `La actividad "${updated.title}" fue ocultada por el equipo de revisión.`,
+          href: "/portal/actividades",
+          entityId: updated.id,
+        });
+      }
       return res.json(updated);
     },
   );

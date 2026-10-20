@@ -20,6 +20,9 @@ import { DealerPoolsPage } from './pages/portal/DealerPoolsPage';
 import { DealerAgreementPage } from './pages/portal/DealerAgreementPage';
 import { AdminPoolsPage } from './pages/admin/AdminPoolsPage';
 import { PoolsPage } from './pages/PoolsPage';
+import { ActorSubmissionPage } from './pages/portal/ActorSubmissionPage';
+import { AdminActorSubmissionsPage } from './pages/admin/AdminActorSubmissionsPage';
+import { AdminSystemNotificationsPage } from './pages/admin/AdminSystemNotificationsPage';
 
 export const AppRoutes = () => {
   const { user, isAuthenticated } = useAuth();
@@ -69,6 +72,14 @@ export function App() {
             element={
               <ProtectedRoute allowedRoles={['participante', 'dealer']}>
                 <ActivitySubmissionPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/portal/actores"
+            element={
+              <ProtectedRoute allowedRoles={['participante', 'dealer']}>
+                <ActorSubmissionPage />
               </ProtectedRoute>
             }
           />
@@ -129,6 +140,22 @@ export function App() {
             element={
               <ProtectedRoute allowedRoles={['admin']}>
                 <AdminPoolsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/actors/submissions"
+            element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <AdminActorSubmissionsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/notifications"
+            element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <AdminSystemNotificationsPage />
               </ProtectedRoute>
             }
           />
