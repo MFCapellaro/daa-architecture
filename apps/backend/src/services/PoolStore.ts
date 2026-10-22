@@ -1,7 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { mkdir, readdir, readFile, unlink, writeFile } from "node:fs/promises";
-import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join, resolve } from "node:path";
 import { parse, stringify } from "yaml";
 
 export type PoolStatus = "active" | "complete" | "expired";
@@ -46,8 +45,8 @@ export interface PoolRecord extends PoolInput {
 }
 
 const DEFAULT_DIRECTORY = resolve(
-  dirname(fileURLToPath(import.meta.url)),
-  "../../../../packages/domains/uas/ecosystem/backend/pools/submissions",
+  process.cwd(),
+  "packages/domains/uas/ecosystem/backend/pools/submissions",
 );
 
 export class PoolStore {

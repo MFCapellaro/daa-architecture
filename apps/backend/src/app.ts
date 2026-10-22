@@ -33,12 +33,12 @@ export function createApp(
   app.use(express.json({ limit: "3mb" }));
 
   app.use(createAuthRouter(accountStore, passwordResetMailer));
-  app.use(createParticipantsRouter(accountStore));
+  app.use(createParticipantsRouter(accountStore, notificationStore));
   app.use(createActivitiesRouter(accountStore, activityStore, notificationStore));
   app.use(createPoolsRouter(accountStore, poolStore, notificationStore));
   app.use(createActorSubmissionsRouter(accountStore, actorSubmissionStore, notificationStore));
   app.use(createSystemNotificationsRouter(accountStore, notificationStore, poolStore));
-  app.use(createAdminParticipantsRouter(accountStore));
+  app.use(createAdminParticipantsRouter(accountStore, notificationStore));
 
   // Keep existing directory APIs mounted as before.
   app.use(directoryRouter);

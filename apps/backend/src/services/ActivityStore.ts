@@ -1,7 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { mkdir, readFile, readdir, unlink, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import { parse, stringify } from "yaml";
 
 export type ActivityKind = "training" | "course" | "expo" | "field-application" | "event" | "other";
@@ -41,10 +40,12 @@ export interface ActivityRecord extends ActivityInput {
 }
 
 const DEFAULT_DIRECTORY = resolve(
-  fileURLToPath(new URL("../../../../packages/domains/uas/ecosystem/backend/activities/submissions", import.meta.url)),
+  process.cwd(),
+  "packages/domains/uas/ecosystem/backend/activities/submissions",
 );
 const LEGACY_DIRECTORY = resolve(
-  fileURLToPath(new URL("../../../../packages/domains/uas/ecosystem/backend/activities/data", import.meta.url)),
+  process.cwd(),
+  "packages/domains/uas/ecosystem/backend/activities/data",
 );
 
 export class ActivityStore {
@@ -53,7 +54,9 @@ export class ActivityStore {
   private legacyImport: Promise<void> | null = null;
 
   constructor(directory?: string, legacyDirectory?: string) {
-    this.directory = directory ?? DEFAULT_DIRECTORY;
+    this.directory = directory ?? (process.env.ACTIVITY_SUBMISSIONS_DIRECTORY
+      ? resolve(process.env.ACTIVITY_SUBMISSIONS_DIRECTORY)
+      : DEFAULT_DIRECTORY);
     this.legacyDirectory = legacyDirectory ?? (directory ? undefined : LEGACY_DIRECTORY);
   }
 

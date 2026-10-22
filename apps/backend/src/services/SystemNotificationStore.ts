@@ -1,7 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join, resolve } from "node:path";
 import { parse, stringify } from "yaml";
 
 export type SystemNotificationCategory = "actor" | "pool" | "activity";
@@ -19,8 +18,8 @@ export interface SystemNotification {
 }
 
 const DEFAULT_DIRECTORY = resolve(
-  dirname(fileURLToPath(import.meta.url)),
-  "../../../../packages/domains/uas/ecosystem/backend/notifications",
+  process.cwd(),
+  "packages/domains/uas/ecosystem/backend/notifications",
 );
 
 export class SystemNotificationStore {

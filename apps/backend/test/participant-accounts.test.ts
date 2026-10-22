@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { createApp } from "../src/app.js";
 import { ParticipantAccountStore } from "../src/services/ParticipantAccountStore.js";
+import { SystemNotificationStore } from "../src/services/SystemNotificationStore.js";
 
 describe("participant account API", () => {
   let directory: string;
@@ -32,7 +33,13 @@ describe("participant account API", () => {
         sentResetUrls.push(resetUrl);
       },
     };
-    const app = createApp(new ParticipantAccountStore(directory), mailer);
+    const app = createApp(
+      new ParticipantAccountStore(directory),
+      mailer,
+      undefined,
+      undefined,
+      new SystemNotificationStore(join(directory, "notifications")),
+    );
     server = app.listen(0);
     await new Promise<void>((resolve) => server.once("listening", resolve));
     const address = server.address();

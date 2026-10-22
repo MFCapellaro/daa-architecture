@@ -107,6 +107,19 @@ interface ActorRecord {
   relationships: ActorRelationship[];
 }
 
+interface ActorSubmission {
+  id: string;
+  name: string;
+  type: string;
+  description: string;
+  layers: string[];
+  contact: Record<string, string>;
+  source: { name: string; email: string; role: string };
+  status: 'pending' | 'approved' | 'rejected';
+  reviewMessage?: string;
+  createdAt: string;
+}
+
 interface ActorForm {
   raw: ActorYamlSchema;
   id: string;
@@ -411,6 +424,9 @@ const DeleteIcon: React.FC = () => (
 export const AdminDirectoryPage: React.FC = () => {
   const { token } = useAuth();
   const [actors, setActors] = useState<ActorRecord[]>([]);
+  const [submissions, setSubmissions] = useState<ActorSubmission[]>([]);
+  const [reviewMessages, setReviewMessages] = useState<Record<string, string>>({});
+  const [reviewingId, setReviewingId] = useState<string | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
   const [form, setForm] = useState<ActorForm | null>(null);
   const [editing, setEditing] = useState(false);
@@ -427,14 +443,18 @@ export const AdminDirectoryPage: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const [rawActors, loadedCategories] = await Promise.all([
+      const [rawActors, loadedCategories, actorSubmissions] = await Promise.all([
         request<unknown[]>('/api/actors', {
           headers: token ? { Authorization: 'Bear' + 'er ' + token } : {},
         }),
         request<Category[]>('/api/categories'),
+        request<ActorSubmission[]>('/api/admin/actors/submissions', {
+          headers: token ? { Authorization: 'Bearer ' + token } : {},
+        }),
       ]);
       const normalized = rawActors.map(toActorRecord).filter((actor): actor is ActorRecord => actor !== null);
       setActors(normalized);
+      setSubmissions(actorSubmissions);
       setCategories(loadedCategories.length ? loadedCategories : DEFAULT_CATEGORIES);
       setForm((current) => {
         if (!current) return normalized[0] ? toForm(normalized[0]) : null;
@@ -501,6 +521,36 @@ export const AdminDirectoryPage: React.FC = () => {
       setError(cause instanceof Error ? cause.message : 'No se pudo guardar el actor.');
     } finally {
       setSaving(false);
+    }
+  };
+
+  const reviewSubmission = async (submission: ActorSubmission, status: 'approved' | 'rejected') => {
+    if (!token) {
+      setError('La sesión administrativa expiró. Inicia sesión nuevamente.');
+      return;
+    }
+    setReviewingId(submission.id);
+    setError(null);
+    try {
+      const response = await fetch(`/api/admin/actors/submissions/${encodeURIComponent(submission.id)}`, {
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Bearer ' + token,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status, message: reviewMessages[submission.id] || '' }),
+      });
+      const result = await response.json() as ActorSubmission | { message?: string };
+      if (!response.ok) {
+        throw new Error(!('status' in result) ? result.message || 'No se pudo revisar la propuesta.' : 'No se pudo revisar la propuesta.');
+      }
+      if (!('status' in result)) throw new Error('La respuesta de revisión no es válida.');
+      setSubmissions((current) => current.map((item) => item.id === result.id ? result : item));
+      if (status === 'approved') await loadData();
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'No se pudo revisar la propuesta.');
+    } finally {
+      setReviewingId(null);
     }
   };
 
@@ -617,6 +667,44 @@ export const AdminDirectoryPage: React.FC = () => {
   return (
     <main className="admin-directory-page">
       <section style={{ minWidth: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
+        {submissions.some((submission) => submission.status === 'pending') && (
+          <section style={{ display: 'grid', gap: 12, padding: 16, border: '1px solid #b7791f', borderRadius: 8, background: '#fffbeb' }}>
+            <header>
+              <h2 style={{ margin: 0, color: '#78350f', fontSize: 17 }}>Actores propuestos para revisión</h2>
+              <span style={{ color: '#92400e', fontSize: 13 }}>
+                {submissions.filter((submission) => submission.status === 'pending').length} pendientes
+              </span>
+            </header>
+            {submissions.filter((submission) => submission.status === 'pending').map((submission) => (
+              <article key={submission.id} style={{ padding: 14, border: '1px solid #f3d79a', borderRadius: 7, background: '#fff' }}>
+                <strong style={{ color: '#1f2937' }}>{submission.name}</strong>
+                <span style={{ marginLeft: 8, color: '#6b7280', fontSize: 12 }}>{submission.type}</span>
+                <p style={{ margin: '6px 0', color: '#4b5563', fontSize: 13 }}>
+                  Enviado por {submission.source.name} ({submission.source.role}) · {new Date(submission.createdAt).toLocaleString('es-AR')}
+                </p>
+                {submission.description && <p style={{ margin: '6px 0', color: '#4b5563', fontSize: 13 }}>{submission.description}</p>}
+                <p style={{ margin: '6px 0', color: '#4b5563', fontSize: 12 }}>
+                  {Object.entries(submission.contact).filter(([, value]) => value).map(([key, value]) => `${key}: ${value}`).join(' · ')}
+                </p>
+                {submission.layers.length > 0 && <p style={{ margin: '6px 0', color: '#4b5563', fontSize: 12 }}>Categorías: {submission.layers.join(', ')}</p>}
+                <label style={{ display: 'block', marginTop: 8, color: '#4b5563', fontSize: 12 }}>
+                  Mensaje para quien propuso el actor
+                  <textarea
+                    rows={2}
+                    maxLength={600}
+                    value={reviewMessages[submission.id] || ''}
+                    onChange={(event) => setReviewMessages((current) => ({ ...current, [submission.id]: event.target.value }))}
+                    style={{ ...textInputStyle, display: 'block', marginTop: 4 }}
+                  />
+                </label>
+                <div style={{ display: 'flex', gap: 8, marginTop: 10 }}>
+                  <button className="directory-button directory-button--primary" type="button" disabled={reviewingId === submission.id} onClick={() => void reviewSubmission(submission, 'approved')}>Aprobar y agregar al directorio</button>
+                  <button className="directory-button directory-button--secondary" type="button" disabled={reviewingId === submission.id} onClick={() => void reviewSubmission(submission, 'rejected')}>Rechazar</button>
+                </div>
+              </article>
+            ))}
+          </section>
+        )}
         <header className="directory-header">
           <div>
             <h1 style={{ margin: 0, fontSize: 20 }}>Directorio de actores</h1>

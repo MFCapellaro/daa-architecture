@@ -8,6 +8,7 @@ import {
   ParticipantAccountStore,
   toPublicParticipant,
 } from "../services/ParticipantAccountStore.js";
+import { SystemNotificationStore } from "../services/SystemNotificationStore.js";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const EDITABLE_FIELDS = new Set(["name", "email", "role", "status", "profile"]);
@@ -23,7 +24,10 @@ function validProfile(value: unknown): value is Record<string, string | string[]
   );
 }
 
-export function createAdminParticipantsRouter(store: ParticipantAccountStore) {
+export function createAdminParticipantsRouter(
+  store: ParticipantAccountStore,
+  notifications = new SystemNotificationStore(),
+) {
   const router = Router();
   const authenticate = createAuthMiddleware(store);
   const adminOnly = [authenticate, requireAuth(["admin"])] as const;
@@ -102,6 +106,16 @@ export function createAdminParticipantsRouter(store: ParticipantAccountStore) {
       };
       const updated = await store.update(current.id, patch);
       if (!updated) return res.status(404).json({ message: "Participant not found" });
+      if (body.role !== undefined && updated.role !== current.role) {
+        await notifications.create({
+          recipientId: updated.id,
+          category: "actor",
+          title: "Cambio de rol realizado",
+          message: `Tu rol cambió de ${current.role} a ${updated.role}.`,
+          href: "/portal",
+          entityId: updated.id,
+        });
+      }
       return res.json(toPublicParticipant(updated));
     },
   );

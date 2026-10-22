@@ -1,7 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { mkdir, readdir, readFile, unlink, writeFile } from "node:fs/promises";
-import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join, resolve } from "node:path";
 import { parse, stringify } from "yaml";
 
 export type SubmittedActorType =
@@ -35,12 +34,12 @@ export interface ActorSubmission extends ActorSubmissionInput {
 }
 
 const DEFAULT_SUBMISSIONS = resolve(
-  dirname(fileURLToPath(import.meta.url)),
-  "../../../../packages/domains/uas/ecosystem/backend/actors/submissions",
+  process.cwd(),
+  "packages/domains/uas/ecosystem/backend/actors/submissions",
 );
 const DEFAULT_NODES = resolve(
-  dirname(fileURLToPath(import.meta.url)),
-  "../../../../packages/domains/uas/ecosystem/data/nodes",
+  process.cwd(),
+  "packages/domains/uas/ecosystem/data/nodes",
 );
 
 export class ActorSubmissionStore {

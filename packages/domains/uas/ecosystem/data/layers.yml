@@ -61,11 +61,16 @@ layers:
     label: Participantes
     color: '#8401c1'
     visibleByDefault: true
+  - id: vector-agr
+    label: Vector AGR
+    color: '#00ff88'
+    visibleByDefault: true
 categoryOrder:
   - dji
   - xag
   - topxgun
   - hylio
+  - vector-agr
   - dealer
   - academia
   - operators

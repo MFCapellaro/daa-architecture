@@ -9,6 +9,7 @@ import {
   ParticipantAccountStore,
   toPublicParticipant,
 } from "../services/ParticipantAccountStore.js";
+import { SystemNotificationStore } from "../services/SystemNotificationStore.js";
 
 function validProfile(value: unknown): value is Record<string, string | string[]> {
   if (!value || typeof value !== "object" || Array.isArray(value)) return false;
@@ -26,7 +27,10 @@ function validProfile(value: unknown): value is Record<string, string | string[]
   );
 }
 
-export function createParticipantsRouter(store: ParticipantAccountStore) {
+export function createParticipantsRouter(
+  store: ParticipantAccountStore,
+  notifications = new SystemNotificationStore(),
+) {
   const router = Router();
   const authenticate = createAuthMiddleware(store);
 
@@ -168,6 +172,24 @@ export function createParticipantsRouter(store: ParticipantAccountStore) {
       }
       const updated = await store.update(account.id, { role: "dealer" });
       if (!updated) return res.status(404).json({ message: "Participant not found" });
+      await Promise.all([
+        notifications.create({
+          recipientId: "admin",
+          category: "actor",
+          title: "Cambio de rol para revisar",
+          message: `${account.name} solicitó ampliar su cuenta al rol Dealer.`,
+          href: "/admin/participants",
+          entityId: account.id,
+        }),
+        notifications.create({
+          recipientId: account.id,
+          category: "actor",
+          title: "Rol Dealer activado",
+          message: "Tu cuenta ya tiene el rol Dealer. Acepta el acuerdo vigente para habilitar la publicación de Pools.",
+          href: "/portal",
+          entityId: account.id,
+        }),
+      ]);
       const user = {
         id: updated.id,
         name: updated.name,

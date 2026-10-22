@@ -166,6 +166,11 @@ describe("dealer agreement and pool lifecycle API", () => {
       body: JSON.stringify({ name: "Participante Tres", email: "participant-three@example.test", password: "participant-secret" }),
     });
     expect(thirdRegistration.response.status).toBe(201);
+    const observerRegistration = await request<{ token: string }>("/api/auth/register", undefined, {
+      method: "POST",
+      body: JSON.stringify({ name: "Participante Observador", email: "pool-observer@example.test", password: "participant-secret" }),
+    });
+    expect(observerRegistration.response.status).toBe(201);
     const completed = await request<{ pool: { status: string; joinedQuantity: number } }>(
       `/api/pools/${pool.body.id}/join`,
       thirdRegistration.body.token,
@@ -188,6 +193,31 @@ describe("dealer agreement and pool lifecycle API", () => {
       members: expect.arrayContaining([expect.objectContaining({ name: "Participante Dos" })]),
       status: "complete",
     }]);
+    const adminNotifications = await request<Array<{ category: string; entityId: string; title: string }>>(
+      "/api/notifications",
+      adminToken,
+    );
+    expect(adminNotifications.body).toContainEqual(expect.objectContaining({
+      category: "pool",
+      entityId: pool.body.id,
+      title: "Pool completado",
+    }));
+    const memberNotifications = await request<Array<{ entityId: string; title: string }>>(
+      "/api/notifications",
+      secondRegistration.body.token,
+    );
+    expect(memberNotifications.body).toContainEqual(expect.objectContaining({
+      entityId: pool.body.id,
+      title: "Pool completado",
+    }));
+    const observerNotifications = await request<Array<{ entityId: string; title: string }>>(
+      "/api/notifications",
+      observerRegistration.body.token,
+    );
+    expect(observerNotifications.body).toContainEqual(expect.objectContaining({
+      entityId: pool.body.id,
+      title: "Pool completado",
+    }));
     const protectedDelete = await request<{ message: string }>(`/api/admin/pools/${pool.body.id}`, adminToken, { method: "DELETE" });
     expect(protectedDelete.response.status).toBe(409);
   });
@@ -238,6 +268,23 @@ describe("dealer agreement and pool lifecycle API", () => {
     expect(joined.response.status).toBe(200);
 
     await poolStore.list(new Date(Date.now() + 2 * 60_000));
+    const adminNotices = await request<Array<{ category: string; entityId: string; title: string }>>(
+      "/api/notifications",
+      adminToken,
+    );
+    expect(adminNotices.body).toContainEqual(expect.objectContaining({
+      category: "pool",
+      entityId: expiredPool.body.id,
+      title: "Pool vencido",
+    }));
+    const participantNotices = await request<Array<{ entityId: string; message: string }>>(
+      "/api/notifications",
+      participant.body.token,
+    );
+    expect(participantNotices.body).toContainEqual(expect.objectContaining({
+      entityId: expiredPool.body.id,
+      message: expect.stringContaining("Dron agrícola modelo nuevo"),
+    }));
     const notifications = await request<Array<{ status: string; similarPools: Array<{ id: string }> }>>(
       "/api/pools/me/notifications",
       participant.body.token,

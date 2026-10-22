@@ -87,7 +87,7 @@ export function createActorSubmissionsRouter(
       category: "actor",
       title: "Nuevo actor para revisar",
       message: `${account.name} propuso incorporar "${submission.name}" al directorio.`,
-      href: "/admin/actors/submissions",
+      href: "/admin/directory",
       entityId: submission.id,
     });
     return res.status(201).json({

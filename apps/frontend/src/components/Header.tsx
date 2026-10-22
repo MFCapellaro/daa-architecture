@@ -13,6 +13,25 @@ interface SystemNotification {
   readAt?: string;
 }
 
+type HeaderIconName = 'book' | 'compass' | 'calendar' | 'pool' | 'directory' | 'users'
+  | 'activity' | 'bell' | 'power' | 'login' | 'user';
+
+const HeaderIcon: React.FC<{ name: HeaderIconName }> = ({ name }) => (
+  <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {name === 'book' && <><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5z" /><path d="M4 17.5A2.5 2.5 0 0 1 6.5 15H20M8 7h8M8 10h8" /></>}
+    {name === 'compass' && <><circle cx="12" cy="12" r="9" /><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8z" /></>}
+    {name === 'calendar' && <><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 10h18M8 14h2M14 14h2M8 17h2" /></>}
+    {name === 'pool' && <><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="m3 12 9 5 9-5M3 16l9 5 9-5" /></>}
+    {name === 'directory' && <><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="M6 16c.7-2 5.3-2 6 0M14 9h4M14 13h4M14 17h4" /></>}
+    {name === 'users' && <><circle cx="9" cy="8" r="3" /><path d="M3 20c0-4 2-6 6-6s6 2 6 6M16 5a3 3 0 0 1 0 6M18 14c2 .5 3 2.5 3 6" /></>}
+    {name === 'activity' && <><path d="M4 5h16M4 9h16M4 13h9M4 17h9" /><path d="m17 16 2 2 4-5" /></>}
+    {name === 'bell' && <><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></>}
+    {name === 'power' && <><path d="M12 2v10" /><path d="M6.2 5.8a8 8 0 1 0 11.6 0" /></>}
+    {name === 'login' && <><path d="M10 17l5-5-5-5M15 12H3" /><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6" /></>}
+    {name === 'user' && <><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4 3-7 8-7s8 3 8 7" /></>}
+  </svg>
+);
+
 export const Header: React.FC = () => {
   const { user, token, isAuthenticated, logout } = useAuth();
   const location = useLocation();
@@ -54,7 +73,18 @@ export const Header: React.FC = () => {
     navigate('/login');
   };
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === path || location.pathname.startsWith(path + '/');
+  const navLinkStyle = (active: boolean): React.CSSProperties => ({
+    display: 'inline-flex',
+    width: 36,
+    height: 36,
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: '1px solid ' + (active ? '#155e75' : '#334155'),
+    borderRadius: 9,
+    color: active ? '#38bdf8' : '#cbd5e1',
+    textDecoration: 'none',
+  });
 
   return (
     <header className="site-header" style={{
@@ -97,54 +127,35 @@ export const Header: React.FC = () => {
       )}
 
       {/* Navegación por Perfil */}
-      <nav style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+      <nav aria-label="Navegación principal" style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
         {/* Vista Pública */}
-        <Link to="/directory" style={{ color: isActive('/directory') ? '#38bdf8' : '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7 }}>
-            <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5z" />
-              <path d="M4 17.5A2.5 2.5 0 0 1 6.5 15H20M8 7h8M8 10h8" />
-            </svg>
-            Directorio
-          </span>
+        <Link to="/directory" aria-label="Directorio" title="Directorio" style={navLinkStyle(isActive('/directory'))}>
+          <HeaderIcon name="book" />
         </Link>
-        <Link to="/map" style={{ color: isActive('/map') || isActive('/mapa') ? '#38bdf8' : '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7 }}>
-            <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="9" />
-              <path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8z" />
-            </svg>
-            Mapa Satelital
-          </span>
+        <Link to="/map" aria-label="Mapa Satelital" title="Mapa Satelital" style={navLinkStyle(isActive('/map') || isActive('/mapa'))}>
+          <HeaderIcon name="compass" />
         </Link>
-        <Link to="/activities" style={{ color: isActive('/activities') ? '#38bdf8' : '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
-          Actividades
+        <Link to="/activities" aria-label="Actividades" title="Actividades" style={navLinkStyle(isActive('/activities'))}>
+          <HeaderIcon name="calendar" />
         </Link>
-        <Link to="/pools" style={{ color: isActive('/pools') ? '#38bdf8' : '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
-          Pools
+        <Link to="/pools" aria-label="Pools" title="Pools" style={navLinkStyle(isActive('/pools'))}>
+          <HeaderIcon name="pool" />
         </Link>
 
         {/* Backoffice Exclusivo Admin */}
         {isAuthenticated && user?.role === 'admin' && (
-          <div style={{ display: 'flex', gap: '18px', borderLeft: '1px solid #334155', paddingLeft: '18px', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', textTransform: 'uppercase', color: '#f59e0b', fontWeight: 700, letterSpacing: '0.5px' }}>Backoffice:</span>
-            <Link to="/admin/directory" style={{ color: isActive('/admin/directory') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
-              ⚙️ ABM Directorio
+          <div aria-label="BackOffice" style={{ display: 'flex', gap: 8, borderLeft: '1px solid #334155', paddingLeft: 12, alignItems: 'center' }}>
+            <Link to="/admin/directory" aria-label="ABM Directorio" title="ABM Directorio" style={navLinkStyle(isActive('/admin/directory'))}>
+              <HeaderIcon name="directory" />
             </Link>
-            <Link to="/admin/participants" style={{ color: isActive('/admin/participants') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
-              👥 Participantes
+            <Link to="/admin/participants" aria-label="Participantes y Dealers" title="Participantes y Dealers" style={navLinkStyle(isActive('/admin/participants'))}>
+              <HeaderIcon name="users" />
             </Link>
-            <Link to="/admin/activities" style={{ color: isActive('/admin/activities') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
-              📋 Actividades
+            <Link to="/admin/activities" aria-label="Actividades" title="Actividades" style={navLinkStyle(isActive('/admin/activities'))}>
+              <HeaderIcon name="activity" />
             </Link>
-            <Link to="/admin/pools" style={{ color: isActive('/admin/pools') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
-              Pools
-            </Link>
-            <Link to="/admin/actors/submissions" style={{ color: isActive('/admin/actors/submissions') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
-              Actores
-            </Link>
-            <Link to="/admin/notifications" style={{ color: isActive('/admin/notifications') ? '#38bdf8' : '#cbd5e1', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
-              Notificaciones
+            <Link to="/admin/pools" aria-label="Pools" title="Pools" style={navLinkStyle(isActive('/admin/pools'))}>
+              <HeaderIcon name="pool" />
             </Link>
           </div>
         )}
@@ -166,9 +177,7 @@ export const Header: React.FC = () => {
                 }}
                 style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #334155', borderRadius: '50%', padding: 8, color: '#cbd5e1', background: 'transparent', cursor: 'pointer' }}
               >
-                <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" />
-                </svg>
+                <HeaderIcon name="bell" />
                 {notifications.some((notification) => !notification.readAt) && (
                   <span aria-label="Notificaciones sin leer" style={{ position: 'absolute', top: -3, right: -3, width: 9, height: 9, borderRadius: '50%', background: '#38bdf8', border: '2px solid #0f172a' }} />
                 )}
@@ -210,21 +219,17 @@ export const Header: React.FC = () => {
                       <span style={{ display: 'block', marginTop: 4, color: '#aeb9c9', fontSize: 12, lineHeight: 1.4 }}>{notification.message}</span>
                     </button>
                   ))}
-                  <Link to="/admin/notifications" onClick={() => setNotificationsOpen(false)} style={{ display: user?.role === 'admin' ? 'block' : 'none', padding: '10px 8px', color: '#7dd3fc', fontSize: 12 }}>
-                    Ver todas
-                  </Link>
                 </div>
               )}
             </div>
             {(user?.role === 'participante' || user?.role === 'dealer') ? (
-              <Link to="/portal" aria-label="Mi Perfil" title="Mi Perfil" style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#f8fafc', textDecoration: 'none' }}>
+              <Link to="/portal" aria-label="Mi Perfil" title="Mi Perfil" style={{ display: 'flex', alignItems: 'center', color: '#f8fafc', textDecoration: 'none' }}>
                 {user.profile?.avatar
                   ? <img src={user.profile.avatar} alt="" aria-hidden="true" style={{ width: 30, height: 30, borderRadius: '50%', objectFit: 'cover' }} />
                   : <span aria-hidden="true" style={{ display: 'grid', width: 30, height: 30, placeItems: 'center', borderRadius: '50%', background: '#334155', fontSize: 12 }}>{user?.name?.charAt(0).toUpperCase()}</span>}
-                <span style={{ fontSize: 13, fontWeight: 600 }}>{user?.name}</span>
               </Link>
             ) : (
-              <div style={{ fontSize: '13px', fontWeight: 600, color: '#f8fafc' }}>{user?.name}</div>
+              <span title={user?.name} aria-label={user?.name} style={{ display: 'inline-flex', color: '#cbd5e1' }}><HeaderIcon name="user" /></span>
             )}
             <button
               onClick={handleLogout}
@@ -243,26 +248,30 @@ export const Header: React.FC = () => {
                 cursor: 'pointer',
               }}
             >
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2v10" />
-                <path d="M6.2 5.8a8 8 0 1 0 11.6 0" />
-              </svg>
+              <HeaderIcon name="power" />
             </button>
           </>
         ) : (
           <Link
             to="/login"
+            aria-label="Iniciar sesión"
+            title="Iniciar sesión"
             style={{
               backgroundColor: '#2563eb',
               color: '#fff',
-              padding: '8px 16px',
-              borderRadius: '6px',
+              width: 36,
+              height: 36,
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 0,
+              borderRadius: '50%',
               textDecoration: 'none',
               fontSize: '13px',
               fontWeight: 600
             }}
           >
-            Iniciar Sesión
+            <HeaderIcon name="login" />
           </Link>
         )}
       </div>

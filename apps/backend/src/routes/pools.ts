@@ -8,6 +8,7 @@ import {
 } from "../services/ParticipantAccountStore.js";
 import { PoolStore, type PoolInput, type PoolRecord } from "../services/PoolStore.js";
 import { SystemNotificationStore } from "../services/SystemNotificationStore.js";
+import { notifyPoolLifecycle } from "../services/PoolLifecycleNotifications.js";
 
 const IMAGE_DATA_URL = /^data:image\/jpeg;base64,[A-Za-z0-9+/]+=*$/;
 const IMAGE_LIMIT = 450_000;
@@ -237,25 +238,8 @@ export function createPoolsRouter(
         return res.status(status).json({ message });
       }
       if (result.pool.status === "complete") {
-        const message = `El Pool "${result.pool.product}" alcanzó la cantidad objetivo y se cerró.`;
-        await Promise.all([
-          notifications.create({
-            recipientId: result.pool.dealer.id,
-            category: "pool",
-            title: "Pool completado",
-            message,
-            href: "/portal/pools",
-            entityId: result.pool.id,
-          }),
-          ...result.pool.members.map((member) => notifications.create({
-            recipientId: member.participantId,
-            category: "pool" as const,
-            title: "Pool completado",
-            message,
-            href: "/pools",
-            entityId: result.pool.id,
-          })),
-        ]);
+        const pools = await poolStore.list();
+        await notifyPoolLifecycle(result.pool, pools, accountStore, notifications);
       }
       return res.json({
         pool: poolSummary(result.pool),
