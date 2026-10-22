@@ -1,0 +1,29 @@
+id: grafin-agro-1792683594109
+name: Grafin Agro
+type: dealer
+identity: {}
+layers:
+  - vector-agr
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Dr. Silvestre Remonda 364
+  city: Córdoba
+  province: Córdoba
+  country: Argentina
+  phone: '+5493513893946'
+  whatsapp: '+5493513893946'
+  email: null
+presence:
+  website: https://grafinagro.com/
+  websiteMentioned: false
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.403897
+  longitude: -64.209475
+source: {}
+status:
+  imported: false
+  reviewRequired: false

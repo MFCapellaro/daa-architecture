@@ -1,0 +1,30 @@
+id: demeter-agro-1792686372196
+name: Demeter Agro
+type: company
+identity: {}
+layers:
+  - technology
+capabilities:
+  - Gestión y Fotogrametría
+isPublic: true
+relationships: []
+contact:
+  address: null
+  city: Rosario
+  province: Santa Fe
+  country: Argentina
+  phone: null
+  whatsapp: null
+  email: null
+presence:
+  website: https://www.demeteragro.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.958702
+  longitude: -60.693042
+source: {}
+status:
+  imported: false
+  reviewRequired: false

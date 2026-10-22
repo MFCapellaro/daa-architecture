@@ -1,0 +1,30 @@
+id: rissen-1792684624829
+name: Rissen
+type: company
+identity: {}
+layers:
+  - vector-agr
+  - dealer
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: null
+  city: null
+  province: Santa Fe
+  country: Argentina
+  phone: +54 342 5907575
+  whatsapp: +54 342 5907575
+  email: ventas@rissen.ar
+presence:
+  website: https://www.rissen.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.610658
+  longitude: -60.697294
+source: {}
+status:
+  imported: false
+  reviewRequired: false

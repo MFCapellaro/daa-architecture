@@ -1,0 +1,33 @@
+id: vector-agro-1792684218015
+name: Vector Agro
+type: company
+identity: {}
+layers:
+  - vector-agr
+  - dji
+  - service
+  - operators
+  - technology
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Newbery 1098
+  city: Río Cuarto
+  province: Córdoba
+  country: Argentina
+  phone: '+543584875222'
+  whatsapp: '+543584832345'
+  email: vectoragro3@gmail.com
+presence:
+  website: https://www.instagram.com/vector.agro/
+  websiteMentioned: false
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.129652
+  longitude: -64.341816
+source: {}
+status:
+  imported: false
+  reviewRequired: false
