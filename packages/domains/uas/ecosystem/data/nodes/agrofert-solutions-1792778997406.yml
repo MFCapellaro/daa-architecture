@@ -1,0 +1,30 @@
+id: agrofert-solutions-1792778997406
+name: AgroFert Solutions
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Meteorología
+isPublic: true
+relationships: []
+contact:
+  address: null
+  city: CABA
+  province: Buenos Aires
+  country: Argentina
+  phone: '+541128424504'
+  whatsapp: '+5491128424504'
+  email: agrofert.solutions@gmail.com
+presence:
+  website: https://agrofertsolutions.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.603674
+  longitude: -58.382121
+source: {}
+status:
+  imported: false
+  reviewRequired: false

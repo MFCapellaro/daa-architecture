@@ -1,0 +1,30 @@
+id: don-osvaldo-1792792893718
+name: Don Osvaldo
+type: supplier
+identity:
+  status: Trailer
+layers:
+  - suppliers
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Calle España N°533
+  city: Lobería
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 9 2262 651304
+  whatsapp: +54 9 2262 651304
+  email: donosvaldomaquinarias@gmail.com
+presence:
+  website: https://www.donosvaldo.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -38.166412
+  longitude: -58.776738
+source: {}
+status:
+  imported: false
+  reviewRequired: false

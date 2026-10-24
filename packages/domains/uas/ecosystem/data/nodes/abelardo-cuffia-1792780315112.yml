@@ -1,0 +1,31 @@
+id: abelardo-cuffia-1792780315112
+name: Abelardo Cuffia
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Meteorología
+  - instrumentos de medición
+isPublic: true
+relationships: []
+contact:
+  address: Ruta Nacional 9 Km 443
+  city: Marcos Juárez
+  province: Córdoba
+  country: Argentina
+  phone: +54 3472 424696
+  whatsapp: '+5493472498766'
+  email: Info@abelardocuffia.com
+presence:
+  website: https://abelardocuffia.com
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.68747
+  longitude: -62.101925
+source: {}
+status:
+  imported: false
+  reviewRequired: false

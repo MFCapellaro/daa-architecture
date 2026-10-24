@@ -1,0 +1,30 @@
+id: tecmes-1792772818034
+name: TECMES
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Meteorología
+isPublic: true
+relationships: []
+contact:
+  address: Av. Belgrano 1380
+  city: CABA
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 11 5272 5104
+  whatsapp: '+5491162005909'
+  email: tecmes@tecmes.com
+presence:
+  website: https://tecmes.com/estaciones-meteorologicas/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.613533
+  longitude: -58.385719
+source: {}
+status:
+  imported: false
+  reviewRequired: false

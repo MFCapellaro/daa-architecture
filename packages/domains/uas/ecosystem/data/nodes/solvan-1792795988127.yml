@@ -1,0 +1,31 @@
+id: solvan-1792795988127
+name: SOLVAN
+type: supplier
+identity: {}
+layers:
+  - dji
+  - suppliers
+capabilities:
+  - Repuestos DJI
+isPublic: true
+relationships: []
+contact:
+  address: CELSO BARRIOS 3609
+  city: Córdoba
+  province: Córdoba
+  country: Argentina
+  phone: +54 9 351 803-0459
+  whatsapp: +54 9 351 803-0459
+  email: solvansoluciones@gmail.com
+presence:
+  website: https://solvan.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.4528
+  longitude: -64.149048
+source: {}
+status:
+  imported: false
+  reviewRequired: false

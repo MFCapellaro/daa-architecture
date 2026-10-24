@@ -1,0 +1,30 @@
+id: epa-elementos-para-agronomos-1792783805453
+name: EPA - Elementos Para Agrónomos
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Instrumentos de medición
+isPublic: true
+relationships: []
+contact:
+  address: null
+  city: Villa María
+  province: Córdoba
+  country: Argentina
+  phone: '+543534209842'
+  whatsapp: '+5493534209842'
+  email: elementosparaagronomos@gmail.com
+presence:
+  website: https://elementosparaagronomos.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.40813174888293
+  longitude: -63.274260337528155
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,30 @@
+id: grupo-alemor-1792777857621
+name: Grupo Alemor
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Mixers
+isPublic: true
+relationships: []
+contact:
+  address: Calle 12 N° 469
+  city: Las Parejas
+  province: Santa Fe
+  country: Argentina
+  phone: +54 3471 563 105
+  whatsapp: null
+  email: info@grupoalemor.com
+presence:
+  website: https://grupoalemor.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.6876
+  longitude: -61.52111
+source: {}
+status:
+  imported: false
+  reviewRequired: false

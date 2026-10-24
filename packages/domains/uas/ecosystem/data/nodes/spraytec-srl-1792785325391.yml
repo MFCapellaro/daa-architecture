@@ -1,0 +1,30 @@
+id: spraytec-srl-1792785325391
+name: SPRAYtec SRL
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Mixers
+isPublic: true
+relationships: []
+contact:
+  address: Blvd. Seguí 6740
+  city: Rosario
+  province: Santa Fe
+  country: Argentina
+  phone: +54 341 4598300
+  whatsapp: null
+  email: ventas@spraytec.com.ar
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.97070368034712
+  longitude: -60.71201504232831
+source: {}
+status:
+  imported: false
+  reviewRequired: false

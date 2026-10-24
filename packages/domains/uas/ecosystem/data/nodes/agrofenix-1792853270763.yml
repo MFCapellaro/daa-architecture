@@ -1,0 +1,30 @@
+id: agrofenix-1792853270763
+name: AgroFenix
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Trailers
+isPublic: true
+relationships: []
+contact:
+  address: RN 9 km 399
+  city: Armstrong
+  province: Santa Fe
+  country: Argentina
+  phone: +54 347 1524357
+  whatsapp: +54 9347 1524357
+  email: info@agrofenix.com.ar
+presence:
+  website: https://agrofenix.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.768925585418394
+  longitude: -61.63112418650755
+source: {}
+status:
+  imported: false
+  reviewRequired: false
