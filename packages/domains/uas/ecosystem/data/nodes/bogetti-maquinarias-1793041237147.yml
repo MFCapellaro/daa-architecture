@@ -1,0 +1,33 @@
+id: bogetti-maquinarias-1793041237147
+name: Bogetti Maquinarias
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Calle 9 Nº 1135 Oeste
+  city: General Pico
+  province: La Pampa
+  country: Argentina
+  phone: +54 2302 436845
+  whatsapp: null
+  email: ventas@bogettimaquinarias.com.ar
+presence:
+  website: http://www.bogettimaquinarias.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.656126
+  longitude: -63.754568
+source: {}
+status:
+  imported: false
+  reviewRequired: false

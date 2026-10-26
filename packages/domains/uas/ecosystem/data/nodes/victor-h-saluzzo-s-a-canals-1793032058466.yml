@@ -1,0 +1,33 @@
+id: victor-h-saluzzo-s-a-canals-1793032058466
+name: VÍCTOR H. SALUZZO S.A.- Canals
+type: dealer
+identity: {}
+layers:
+  - xag
+  - suppliers
+capabilities:
+  - Mixers
+isPublic: true
+relationships:
+  - targetId: victor-h-saluzzo-s-a-1793031460944
+    type: child_of
+contact:
+  address: Maipú 846
+  city: Canals
+  province: Córdoba
+  country: Argentina
+  phone: +54 3462 602679
+  whatsapp: +54 3462 279876
+  email: admsaluzzo@gmail.com
+presence:
+  website: https://victorhsaluzzosa.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.556334924882634
+  longitude: -62.87556191534338
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,29 @@
+id: agrometal-1793018020091
+name: Agrometal
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Misiones 1974
+  city: Monte Maíz
+  province: Córdoba
+  country: Argentina
+  phone: +54 9 3468 471311
+  whatsapp: +54 9 3468 471311
+  email: info@agrometal.com.ar
+presence:
+  website: https://www.agrometal.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.211139
+  longitude: -62.600009
+source: {}
+status:
+  imported: false
+  reviewRequired: false

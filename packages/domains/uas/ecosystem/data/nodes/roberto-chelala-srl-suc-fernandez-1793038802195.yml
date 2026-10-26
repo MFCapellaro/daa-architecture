@@ -1,0 +1,32 @@
+id: roberto-chelala-srl-suc-fernandez-1793038802195
+name: Roberto Chelala SRL - Suc. Fernández
+type: dealer
+identity: {}
+layers:
+  - xag
+  - dji
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: roberto-chelala-srl
+    type: child_of
+contact:
+  address: Av. San Martín 628
+  city: La Banda
+  province: Santiago del Estero
+  country: Argentina
+  phone: '+543854911269'
+  whatsapp: +54 385 5047171
+  email: ventas@robertochelala.com.ar
+presence:
+  website: https://www.robertochelala.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -27.794854
+  longitude: -64.266649
+source: {}
+status:
+  imported: false
+  reviewRequired: false

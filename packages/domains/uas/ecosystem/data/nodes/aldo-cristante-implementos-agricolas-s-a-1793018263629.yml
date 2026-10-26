@@ -1,0 +1,33 @@
+id: aldo-cristante-implementos-agricolas-s-a-1793018263629
+name: ALDO CRISTANTE IMPLEMENTOS AGRICOLAS S. A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: represents
+  - targetId: agrometal-1793018020091
+    type: parent_of
+contact:
+  address: Ruta 9 Km 756
+  city: Sinsacate
+  province: Córdoba
+  country: Argentina
+  phone: +54 3525-480180
+  whatsapp: +54 9 3525 55-333
+  email: ccristante@aldocristante.com.ar
+presence:
+  website: https://aldocristante.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -30.95418
+  longitude: -64.079433
+source: {}
+status:
+  imported: false
+  reviewRequired: false

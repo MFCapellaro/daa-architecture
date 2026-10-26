@@ -1,0 +1,33 @@
+id: rogelio-y-oscar-morelli-s-r-l-1793033580016
+name: ROGELIO Y OSCAR MORELLI S.R.L.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Nacional 33 y Boulevard 9 de Julio
+  city: Casilda
+  province: Santa Fe
+  country: Argentina
+  phone: +54 3464 426046
+  whatsapp: +54 3467 587916
+  email: ryomorellisrlcasilda@hotmail.com
+presence:
+  website: https://ryomorelli.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.04817
+  longitude: -61.148261
+source: {}
+status:
+  imported: false
+  reviewRequired: false

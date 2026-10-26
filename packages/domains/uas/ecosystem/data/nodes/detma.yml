@@ -5,6 +5,7 @@ identity:
   status: active
 layers:
   - dji
+  - xag
 contact:
   address: Av. Alem 1602
   city: Chajarí
@@ -21,7 +22,6 @@ primaryCategory: dji
 categoryLabel: dji
 translatedLayers:
   - dji
-  - Distribuidores y Dealers
 description: ''
 isPublic: true
 status: ACTIVE
@@ -43,5 +43,9 @@ relationships:
     type: parent_of
   - targetId: tekron
     type: represents
+  - targetId: agrometal-1793018020091
+    type: represents
+  - targetId: agrometal-1793018020091
+    type: parent_of
 capabilities: []
 source: {}

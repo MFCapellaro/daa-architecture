@@ -1,0 +1,31 @@
+id: bogetti-maquinarias-agencia-canals-1793041591923
+name: Bogetti Maquinarias - Agencia Canals
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: bogetti-maquinarias-1793041237147
+    type: child_of
+contact:
+  address: Ruta Nacional 35 Km. 406
+  city: General Pico
+  province: La Pampa
+  country: Argentina
+  phone: +54 2302 613950
+  whatsapp: null
+  email: agenciacanals@gmail.com
+presence:
+  website: https://www.bogettimaquinarias.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.948291
+  longitude: -64.271726
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,31 @@
+id: rogelio-y-oscar-morelli-s-r-l-pampa-del-infierno-1793034088937
+name: ROGELIO Y OSCAR MORELLI S.R.L. - Pampa del Infierno
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: rogelio-y-oscar-morelli-s-r-l-1793033580016
+    type: child_of
+contact:
+  address: Ruta Nacional 16 Km. 258
+  city: Pampa del Infierno
+  province: Chaco
+  country: Argentina
+  phone: +54 364 4222053
+  whatsapp: +54 3467 587916
+  email: ryomorellipampa@hotmail.com
+presence:
+  website: https://ryomorelli.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -26.510875
+  longitude: -61.177015
+source: {}
+status:
+  imported: false
+  reviewRequired: false

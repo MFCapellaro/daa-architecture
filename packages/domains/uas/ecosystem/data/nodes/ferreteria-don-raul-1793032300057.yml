@@ -1,0 +1,33 @@
+id: ferreteria-don-raul-1793032300057
+name: FERRETERÍA DON RAÚL
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: CARLOS PELLEGRINI 201
+  city: GENERAL LEVALLE
+  province: CORDOBA
+  country: Argentina
+  phone: +54 3385-480290
+  whatsapp: +54 9 3385-480290
+  email: implementos@ferreteriadonraul.com.ar
+presence:
+  website: https://ferreteriadonraul.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.011919
+  longitude: -63.924534
+source: {}
+status:
+  imported: false
+  reviewRequired: false

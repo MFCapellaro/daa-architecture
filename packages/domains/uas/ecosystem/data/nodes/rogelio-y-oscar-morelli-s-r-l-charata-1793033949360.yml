@@ -1,0 +1,31 @@
+id: rogelio-y-oscar-morelli-s-r-l-charata-1793033949360
+name: ROGELIO Y OSCAR MORELLI S.R.L. - Charata
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: rogelio-y-oscar-morelli-s-r-l-1793033580016
+    type: child_of
+contact:
+  address: Ruta Nacional 89 Km. 249
+  city: Charata
+  province: Chaco
+  country: Argentina
+  phone: +54 3731 427059
+  whatsapp: +54 3467 587916
+  email: ryomorellisrl@hotmail.com
+presence:
+  website: https://ryomorelli.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -27.23917
+  longitude: -61.187508
+source: {}
+status:
+  imported: false
+  reviewRequired: false

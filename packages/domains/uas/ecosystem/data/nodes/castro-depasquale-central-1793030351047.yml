@@ -1,0 +1,31 @@
+id: castro-depasquale-central-1793030351047
+name: CASTRO & DEPASQUALE - La Carlota
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: castro-depasquale-1793021645201
+    type: child_of
+contact:
+  address: Ruta Nacional N° 8 Km 500
+  city: La Carlota
+  province: Córdoba
+  country: Argentinaa
+  phone: +54 3584 42-0674
+  whatsapp: +54 3584 42-2518
+  email: infolacarlota@castroydepasquale.com.ar
+presence:
+  website: https://castroydepasquale.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.417943
+  longitude: -63.296949
+source: {}
+status:
+  imported: false
+  reviewRequired: false

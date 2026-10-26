@@ -1,0 +1,29 @@
+id: cornejo-rovaletti-s-r-l-las-lajitas-1793032905826
+name: CORNEJO ROVALETTI S.R.L. - Las Lajitas
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: cornejo-rovaletti-s-r-l-1793033047945
+    type: child_of
+contact:
+  address: AVDA. FERRER ESQ. AVDA. ESQUIU
+  city: LAS LAJITAS
+  province: SALTA
+  country: Argentina
+  phone: +54 3875128000
+  whatsapp: +54 9 3875128000
+  email: cornejorovaletti.adm@gmail.com
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation: {}
+source: {}
+status:
+  imported: false
+  reviewRequired: false

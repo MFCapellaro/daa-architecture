@@ -1,0 +1,33 @@
+id: victor-y-carlos-d-risio-s-r-l-1793021453714
+name: VICTOR Y CARLOS D. RISIO S.R.L.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Av. Godoy Cruz 650
+  city: Río Cuarto
+  province: Córdoba
+  country: Argentina
+  phone: +54 358 4621376
+  whatsapp: +54 9 3584 288577
+  email: comprasrisio@gmail.com
+presence:
+  website: https://risiomaquinarias.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.15719233481701
+  longitude: -64.36971490000002
+source: {}
+status:
+  imported: false
+  reviewRequired: false

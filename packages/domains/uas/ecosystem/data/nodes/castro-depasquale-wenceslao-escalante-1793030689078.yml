@@ -1,0 +1,31 @@
+id: castro-depasquale-wenceslao-escalante-1793030689078
+name: CASTRO & DEPASQUALE - Wenceslao Escalante
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: castro-depasquale-central-1793030351047
+    type: child_of
+contact:
+  address: 'Ruta Provincial N° 11, '
+  city: Wenceslao Escalante
+  province: Córdoba
+  country: Argentina
+  phone: +54 3468 60-4255
+  whatsapp: null
+  email: null
+presence:
+  website: https://castroydepasquale.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.170951
+  longitude: -62.770455
+source: {}
+status:
+  imported: false
+  reviewRequired: false

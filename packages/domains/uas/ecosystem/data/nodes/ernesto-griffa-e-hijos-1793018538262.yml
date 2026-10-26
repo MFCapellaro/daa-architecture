@@ -1,0 +1,33 @@
+id: ernesto-griffa-e-hijos-1793018538262
+name: ERNESTO GRIFFA E HIJOS
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Boulevard Belgrano 451
+  city: 'Balnearia '
+  province: Córdoba
+  country: Argentina
+  phone: +54 3563-414738
+  whatsapp: null
+  email: administracion@griffasa.com.ar
+presence:
+  website: https://griffasa.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.010253
+  longitude: -62.672324
+source: {}
+status:
+  imported: false
+  reviewRequired: false

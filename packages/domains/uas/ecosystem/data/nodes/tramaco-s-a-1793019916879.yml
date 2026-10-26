@@ -1,0 +1,33 @@
+id: tramaco-s-a-1793019916879
+name: TRAMACO S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: represents
+  - targetId: agrometal-1793018020091
+    type: parent_of
+contact:
+  address: RUTA NACIONAL N°13 KM 121.1
+  city: LAS VARILLAS
+  province: CORDOBA
+  country: Argentina
+  phone: +54 3533684872
+  whatsapp: null
+  email: ventas@tramaco.com.ar
+presence:
+  website: https://tramaco.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: true
+geolocation:
+  latitude: -31.872298
+  longitude: -62.721367
+source: {}
+status:
+  imported: false
+  reviewRequired: false

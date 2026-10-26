@@ -1,0 +1,33 @@
+id: terracero-1793020253960
+name: TERRACERO
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Paula Albarracín s/ n - tránsito pesado
+  city: Rio Tercero
+  province: Córdoba
+  country: Argentina
+  phone: +54 9 3571 53-5787
+  whatsapp: +54 9 3571 53-5787
+  email: null
+presence:
+  website: https://www.instagram.com/terracero.rio3/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.194375540358436
+  longitude: -64.13504989527596
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,31 @@
+id: oscar-j-perusia-s-r-l-sucursal-san-francisco-1793019614031
+name: Oscar J. Perusia S.R.L. Sucursal San Francisco
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: oscar-j-perusia-s-r-l-1793019422837
+    type: child_of
+contact:
+  address: Av. Urquiza 1563
+  city: San Francisco
+  province: Córdoba
+  country: Argentina
+  phone: +54 3564-572073
+  whatsapp: null
+  email: gerardom@oscarperusia.com.ar
+presence:
+  website: https://oscarperusia.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.41352
+  longitude: -62.093998
+source: {}
+status:
+  imported: false
+  reviewRequired: false

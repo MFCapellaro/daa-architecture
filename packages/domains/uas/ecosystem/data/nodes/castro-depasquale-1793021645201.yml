@@ -1,0 +1,45 @@
+id: castro-depasquale-1793021645201
+name: CASTRO & DEPASQUALE - Central
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: RUTA PROV N°11 Acceso Oeste / Acceso Este
+  city: Monte Maíz
+  province: CORDOBA
+  country: Argentina
+  phone: +54 3468-471852
+  whatsapp: +54 9 3468-417243
+  email: ventas@castroydepasquale.com.ar
+presence:
+  website: https://castroydepasquale.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.204866
+  longitude: -62.600703
+source: {}
+status: ACTIVE
+typeLabel: Distribuidores y Dealers
+primaryCategory: xag
+categoryLabel: xag
+translatedLayers:
+  - xag
+description: ''
+location:
+  address: RUTA PROV N°11
+  city: WENCESLAO ESCALANTE
+  province: CORDOBA
+  country: Argentina
+  coordinates:
+    latitude: -33.39247079483213
+    longitude: -63.30608881480745

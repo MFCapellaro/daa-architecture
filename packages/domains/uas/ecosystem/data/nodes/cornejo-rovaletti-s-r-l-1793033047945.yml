@@ -1,0 +1,33 @@
+id: cornejo-rovaletti-s-r-l-1793033047945
+name: CORNEJO ROVALETTI S.R.L.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: AVDA. CHILE 1650
+  city: SALTA
+  province: 'SALTA '
+  country: Argentina
+  phone: +54 387-4233753
+  whatsapp: +54 9 387-4233753
+  email: cornejorovaletti@gmail.com
+presence:
+  website: https://www.instagram.com/cornejorovaletti/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -24.811274
+  longitude: -65.420732
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,30 @@
+id: industrias-cas-1793016182539
+name: Industrias CAS
+type: dealer
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Mixers
+isPublic: true
+relationships: []
+contact:
+  address: Nicolás Avellaneda 477
+  city: Las Parejas
+  province: Santa Fe
+  country: Argentina
+  phone: +54 9 3471 578321
+  whatsapp: +54 9 3471 578321
+  email: info@industriascas.com.ar
+presence:
+  website: http://www.industriascas.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.696496
+  longitude: -61.5241
+source: {}
+status:
+  imported: false
+  reviewRequired: false

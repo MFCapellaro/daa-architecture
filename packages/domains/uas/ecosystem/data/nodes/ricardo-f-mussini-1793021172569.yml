@@ -1,0 +1,33 @@
+id: ricardo-f-mussini-1793021172569
+name: RICARDO F. MUSSINI
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Independencia 777
+  city: Alcira
+  province: Córdoba
+  country: Argentina
+  phone: +54 358 4029533
+  whatsapp: +54 9 358 6028352
+  email: franco-mussini@hotmail.com
+presence:
+  website: https://www.instagram.com/agropecuariamussini/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.765204
+  longitude: -64.338171
+source: {}
+status:
+  imported: false
+  reviewRequired: false

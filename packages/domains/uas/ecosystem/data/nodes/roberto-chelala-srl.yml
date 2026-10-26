@@ -5,6 +5,7 @@ identity:
   status: active
 layers:
   - dji
+  - xag
 contact:
   address: Dorrego 528
   city: La Banda
@@ -21,7 +22,6 @@ primaryCategory: dji
 categoryLabel: dji
 translatedLayers:
   - dji
-  - Distribuidores y Dealers
 description: ''
 isPublic: true
 status: ACTIVE

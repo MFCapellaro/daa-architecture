@@ -1,0 +1,31 @@
+id: griffa-s-a-las-varillas-1793019147206
+name: Griffa S.A. Las Varillas
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: ernesto-griffa-e-hijos-1793018538262
+    type: child_of
+contact:
+  address: Av. Int. José Irazusta 272
+  city: Las Varillas
+  province: Córdoba
+  country: Argentina
+  phone: +54 3563-669009
+  whatsapp: null
+  email: ventas@griffasa.com.ar
+presence:
+  website: http://griffasa.com.ar
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.86321
+  longitude: -62.714239
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,30 @@
+id: jotas-agroimplementos-1793017838550
+name: Jotas Agroimplementos
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Mixers
+isPublic: true
+relationships: []
+contact:
+  address: null
+  city: Las Varillas
+  province: Córdoba
+  country: Argentina
+  phone: +54 3533 40-5973
+  whatsapp: '+543533405973'
+  email: null
+presence:
+  website: https://www.instagram.com/jotasagroimplementos/
+  websiteMentioned: false
+  websiteMentionsDrones: true
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.872298
+  longitude: -62.721367
+source: {}
+status:
+  imported: false
+  reviewRequired: false

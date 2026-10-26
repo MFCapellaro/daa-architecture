@@ -1,0 +1,33 @@
+id: el-roble-s-r-l-1793039972668
+name: El Roble S.R.L.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Dorrego 577
+  city: Banda del Río Salí
+  province: Tucumán
+  country: Argentina
+  phone: +54 381 5055005
+  whatsapp: +54 381 5272271
+  email: elroblemys@gmail.com
+presence:
+  website: https://www.instagram.com/elroblesrl.tuc/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -26.843192
+  longitude: -65.171394
+source: {}
+status:
+  imported: false
+  reviewRequired: false

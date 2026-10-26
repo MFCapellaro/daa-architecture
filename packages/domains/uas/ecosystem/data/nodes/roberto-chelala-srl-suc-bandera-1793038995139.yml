@@ -1,0 +1,32 @@
+id: roberto-chelala-srl-suc-bandera-1793038995139
+name: Roberto Chelala SRL - Suc. Bandera
+type: dealer
+identity: {}
+layers:
+  - dji
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: roberto-chelala-srl
+    type: child_of
+contact:
+  address: Ruta Nacional 98
+  city: Bandera
+  province: Santiago del Estero
+  country: Argentina
+  phone: '+543853139182'
+  whatsapp: +54 385 5047171
+  email: ventas@robertochelala.com.ar
+presence:
+  website: https://www.robertochelala.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -28.895567
+  longitude: -62.259125
+source: {}
+status:
+  imported: false
+  reviewRequired: false

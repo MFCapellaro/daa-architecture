@@ -1,0 +1,33 @@
+id: comerciagro-1793040985853
+name: COMERCIAGRO
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta 14 kilometro 56
+  city: Gualeguaychú
+  province: Entre Ríos
+  country: Argentina
+  phone: +54 9 3446 617469
+  whatsapp: +54 9 3446372581
+  email: ayuda@comerciagro.com.ar
+presence:
+  website: https://www.comerciagro.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.010612
+  longitude: -58.606248
+source: {}
+status:
+  imported: false
+  reviewRequired: false

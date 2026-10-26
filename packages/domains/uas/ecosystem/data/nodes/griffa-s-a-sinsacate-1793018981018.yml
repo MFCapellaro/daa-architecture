@@ -1,0 +1,31 @@
+id: griffa-s-a-sinsacate-1793018981018
+name: Griffa S.A. Sinsacate
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: ernesto-griffa-e-hijos-1793018538262
+    type: child_of
+contact:
+  address: Ruta N°9
+  city: Sinsacate
+  province: Córdoba
+  country: Argentina
+  phone: +54 3563-669009
+  whatsapp: null
+  email: Ventas@griffasinsacate.com.ar
+presence:
+  website: http://griffasinsacate.com.ar
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: true
+geolocation:
+  latitude: -30.942492155410925
+  longitude: -64.07906037116415
+source: {}
+status:
+  imported: false
+  reviewRequired: false

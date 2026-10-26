@@ -1,0 +1,33 @@
+id: catelli-s-a-1793020531056
+name: CATELLI S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Av. Tte. Gral. Perón 1910
+  city: Monte Maíz
+  province: Córdoba
+  country: Argentina
+  phone: +54 3468 471597
+  whatsapp: null
+  email: info@catelli.com.ar
+presence:
+  website: https://www.catelli.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.208608
+  longitude: -62.601037
+source: {}
+status:
+  imported: false
+  reviewRequired: false

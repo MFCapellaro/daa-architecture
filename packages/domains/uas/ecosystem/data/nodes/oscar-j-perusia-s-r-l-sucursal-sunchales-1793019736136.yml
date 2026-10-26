@@ -1,0 +1,31 @@
+id: oscar-j-perusia-s-r-l-sucursal-sunchales-1793019736136
+name: Oscar J. Perusia S.R.L. Sucursal Sunchales
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: oscar-j-perusia-s-r-l-1793019422837
+    type: child_of
+contact:
+  address: Ruta 34 y Collino
+  city: Sunchales
+  province: Santa Fe
+  country: Argentina
+  phone: +54 3564-565062
+  whatsapp: null
+  email: sunchales@oscarperusia.com.ar
+presence:
+  website: https://oscarperusia.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -30.95868
+  longitude: -61.532585
+source: {}
+status:
+  imported: false
+  reviewRequired: false

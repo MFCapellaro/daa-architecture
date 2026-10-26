@@ -21,7 +21,6 @@ primaryCategory: dji
 categoryLabel: dji
 translatedLayers:
   - dji
-  - Distribuidores y Dealers
 description: ''
 isPublic: true
 status: ACTIVE
@@ -43,5 +42,6 @@ relationships:
     type: represents
   - targetId: dye-s-a-1791917700947
     type: parent_of
-capabilities: []
+capabilities:
+  - Mixers
 source: {}

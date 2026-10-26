@@ -1,0 +1,31 @@
+id: folmer-villaway-1793040745717
+name: Folmer - Villaway
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: folmer
+    type: child_of
+contact:
+  address: Ruta Nacional 18 KM 150 y 1/2
+  city: Villaguay
+  province: Entre Ríos
+  country: Argentina
+  phone: +54 9 3455 454037
+  whatsapp: +54 9 3455 454037
+  email: maquinarias@folmer.com.ar
+presence:
+  website: https://maquinarias.folmer.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.808135
+  longitude: -59.028668
+source: {}
+status:
+  imported: false
+  reviewRequired: false

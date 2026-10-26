@@ -1,0 +1,32 @@
+id: roberto-chelala-srl-suc-concepcion-1793039175615
+name: Roberto Chelala SRL - Suc. Concepción
+type: dealer
+identity: {}
+layers:
+  - dji
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: roberto-chelala-srl
+    type: child_of
+contact:
+  address: Ruta 38 Km. 739
+  city: Concepción
+  province: Tucumán
+  country: Argentina
+  phone: '+543865492777'
+  whatsapp: +54 385 5047171
+  email: ventas@robertochelala.com.ar
+presence:
+  website: https://www.robertochelala.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -27.34954
+  longitude: -65.583504
+source: {}
+status:
+  imported: false
+  reviewRequired: false

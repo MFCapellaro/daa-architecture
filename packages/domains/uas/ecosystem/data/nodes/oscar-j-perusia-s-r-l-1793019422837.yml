@@ -1,0 +1,33 @@
+id: oscar-j-perusia-s-r-l-1793019422837
+name: OSCAR J. PERUSIA S.R.L.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: AVDA. SIMON DANIELE 839
+  city: PORTEÑA
+  province: CORDOBA
+  country: Argentina
+  phone: +54 3564 451386
+  whatsapp: null
+  email: info@oscarperusia.com.ar
+presence:
+  website: https://oscarperusia.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.017074
+  longitude: -62.060987
+source: {}
+status:
+  imported: false
+  reviewRequired: false

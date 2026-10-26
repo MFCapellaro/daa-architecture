@@ -1,0 +1,33 @@
+id: agrobarbero-s-r-l-1793032613848
+name: AGROBARBERO S.R.L.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Nacional 35 Km 529
+  city: Huinca Renanco
+  province: Córdoba
+  country: Argentina
+  phone: +54 2336-493108
+  whatsapp: +54 9 2336-493104
+  email: ventas@agrobarbero.com.ar
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.835303
+  longitude: -64.355427
+source: {}
+status:
+  imported: false
+  reviewRequired: false

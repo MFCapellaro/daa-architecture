@@ -1,0 +1,32 @@
+id: roberto-chelala-srl-suc-catamarca-1793039430038
+name: Roberto Chelala SRL - Suc. Catamarca
+type: dealer
+identity: {}
+layers:
+  - dji
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: roberto-chelala-srl
+    type: child_of
+contact:
+  address: RUTA NACIONAL 38
+  city: VALLE VIEJO
+  province: Catamarca
+  country: Argentina
+  phone: '+543834223113'
+  whatsapp: +54 385 5047171
+  email: ventas@robertochelala.com.ar
+presence:
+  website: https://www.robertochelala.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -28.565602
+  longitude: -65.713401
+source: {}
+status:
+  imported: false
+  reviewRequired: false

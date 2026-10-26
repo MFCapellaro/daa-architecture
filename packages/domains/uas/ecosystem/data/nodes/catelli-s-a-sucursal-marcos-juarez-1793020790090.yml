@@ -1,0 +1,31 @@
+id: catelli-s-a-sucursal-marcos-juarez-1793020790090
+name: CATELLI S.A. Sucursal Marcos Juárez
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: catelli-s-a-1793020531056
+    type: child_of
+contact:
+  address: RN9
+  city: Marcos Juárez
+  province: Córdoba
+  country: Argentina
+  phone: +54 3472428690
+  whatsapp: null
+  email: info@catelli.com.ar
+presence:
+  website: https://www.catelli.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.68953867782506
+  longitude: -62.087114490245185
+source: {}
+status:
+  imported: false
+  reviewRequired: false
