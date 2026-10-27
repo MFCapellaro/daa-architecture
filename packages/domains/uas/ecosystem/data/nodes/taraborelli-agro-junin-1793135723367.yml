@@ -1,0 +1,31 @@
+id: taraborelli-agro-junin-1793135723367
+name: TARABORELLI AGRO - Junin
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: taraborelli-agro-arrecifes-1793135539840
+    type: child_of
+contact:
+  address: Ruta Nac. 7 y Ruta Prov. 65
+  city: Junín
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 9 247 8478213
+  whatsapp: +54 9 247 8478213
+  email: Info@taraborelliagro.com
+presence:
+  website: https://taraborelliagro.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.596072
+  longitude: -60.97542
+source: {}
+status:
+  imported: false
+  reviewRequired: false

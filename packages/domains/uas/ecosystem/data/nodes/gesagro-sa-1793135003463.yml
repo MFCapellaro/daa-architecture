@@ -1,0 +1,33 @@
+id: gesagro-sa-1793135003463
+name: GESAGRO SA
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Nacional 32 Km 2.6
+  city: Pergamino
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2477 443800
+  whatsapp: +54 9 2477 46-6685
+  email: ptorrent@gesagro.com.ar
+presence:
+  website: https://gesagro.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.891283
+  longitude: -60.5746
+source: {}
+status:
+  imported: false
+  reviewRequired: false

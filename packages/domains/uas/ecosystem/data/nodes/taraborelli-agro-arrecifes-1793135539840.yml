@@ -1,0 +1,33 @@
+id: taraborelli-agro-arrecifes-1793135539840
+name: TARABORELLI AGRO - Arrecifes
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Avenida Eva Perón 168, entre Hipólito Yrigoyen y Reconquista
+  city: Arrecifes
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2478 47 8213
+  whatsapp: +54 2478 47 8213
+  email: Info@taraborelliagro.com
+presence:
+  website: https://taraborelliagro.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.060035
+  longitude: -60.096461
+source: {}
+status:
+  imported: false
+  reviewRequired: false

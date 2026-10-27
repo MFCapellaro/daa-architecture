@@ -1,0 +1,33 @@
+id: bugianesi-agro-1793138731961
+name: BUGIANESI AGRO
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Autopista Ruta Nacional 5, Colectora Sur Km 68,500
+  city: Luján
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2323 42-4209
+  whatsapp: +54 9 2323 31-2715
+  email: ventas@bugianesiagro.com.ar
+presence:
+  website: https://bugianesiagro.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.644692
+  longitude: -59.291874
+source: {}
+status:
+  imported: false
+  reviewRequired: false

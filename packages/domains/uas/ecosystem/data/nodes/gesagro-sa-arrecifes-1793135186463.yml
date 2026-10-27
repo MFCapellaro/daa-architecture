@@ -1,0 +1,31 @@
+id: gesagro-sa-arrecifes-1793135186463
+name: GESAGRO SA - Arrecifes
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: gesagro-sa-1793135003463
+    type: child_of
+contact:
+  address: Dr. Vitelmo Carabajal 190, cruce por Ruta Nacional 8 Km 175
+  city: Arrecifes
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 9 2477 46-6685
+  whatsapp: +54 9 2477 60-6626
+  email: ptorrent@gesagro.com.ar
+presence:
+  website: https://gesagro.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.051225
+  longitude: -60.078905
+source: {}
+status:
+  imported: false
+  reviewRequired: false

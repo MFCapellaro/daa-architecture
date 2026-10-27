@@ -1,0 +1,33 @@
+id: minetti-maquinarias-ss-1793137109088
+name: Minetti Maquinarias SS
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Nacional 188 Km 111.5
+  city: Rojas
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 9 2474 67-1330
+  whatsapp: +54 9 2474 66-5179
+  email: minettimauro@hotmail.com
+presence:
+  website: https://minettiss.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.205016
+  longitude: -60.720134
+source: {}
+status:
+  imported: false
+  reviewRequired: false

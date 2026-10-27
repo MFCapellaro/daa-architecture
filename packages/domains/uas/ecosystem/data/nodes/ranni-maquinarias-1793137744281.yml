@@ -1,0 +1,33 @@
+id: ranni-maquinarias-1793137744281
+name: RANNI MAQUINARIAS
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Manuel Ugarte 450
+  city: Coronel Charlone
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 3388 45-9765
+  whatsapp: +54 3388 45-5006
+  email: ventas@rannimaquinarias.com.ar
+presence:
+  website: https://www.instagram.com/rannimaquinarias/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.673567
+  longitude: -63.371711
+source: {}
+status:
+  imported: false
+  reviewRequired: false

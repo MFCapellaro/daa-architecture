@@ -1,0 +1,33 @@
+id: agrogey-s-a-1793139251656
+name: AGROGEY S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Defensa 558
+  city: CABA
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 11 4331-0137
+  whatsapp: null
+  email: administracion@agrogey.com.ar
+presence:
+  website: https://www.agrogey.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.614295
+  longitude: -58.371743
+source: {}
+status:
+  imported: false
+  reviewRequired: false

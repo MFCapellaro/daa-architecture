@@ -1,0 +1,31 @@
+id: pedro-a-di-camillo-s-a-pergamino-1793138361696
+name: PEDRO A. DI CAMILLO S.A. - Pergamino
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: pedro-a-di-camillo-s-a-1793138049665
+    type: child_of
+contact:
+  address: Ruta Nacional 8 Km 226
+  city: Pergamino
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2477 44-5405
+  whatsapp: +54 236 4593857
+  email: null
+presence:
+  website: https://dicamillomaquinarias.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.914422
+  longitude: -60.535201
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,33 @@
+id: ainora-maquinarias-1793137394383
+name: Ainora Maquinarias
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Avenida Italia 64, intersección Av. España / Av. Italia
+  city: Salto
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2474 42-4902
+  whatsapp: +54 2474 42-4902
+  email: ainoramaquinarias@hotmail.com
+presence:
+  website: https://www.instagram.com/ainoramaquinarias/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.297177
+  longitude: -60.239933
+source: {}
+status:
+  imported: false
+  reviewRequired: false

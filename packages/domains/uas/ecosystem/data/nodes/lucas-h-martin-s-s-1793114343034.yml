@@ -1,0 +1,33 @@
+id: lucas-h-martin-s-s-1793114343034
+name: Lucas H. Martín S.S.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Av. Presidente Perón 758
+  city: Rufino
+  province: Santa Fe
+  country: Argentina
+  phone: +54 3382 57-5828
+  whatsapp: +54 3382 57-5828
+  email: lucasmartin@horaciohmartin.com.ar
+presence:
+  website: https://lucashmartin.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.266897
+  longitude: -62.700012
+source: {}
+status:
+  imported: false
+  reviewRequired: false

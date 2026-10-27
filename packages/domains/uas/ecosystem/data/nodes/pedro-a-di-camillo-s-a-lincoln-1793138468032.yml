@@ -1,0 +1,31 @@
+id: pedro-a-di-camillo-s-a-lincoln-1793138468032
+name: PEDRO A. DI CAMILLO S.A. - Lincoln
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: pedro-a-di-camillo-s-a-1793138049665
+    type: child_of
+contact:
+  address: Acceso Hipólito Yrigoyen S/N
+  city: Lincoln
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 236 455-2441
+  whatsapp: null
+  email: lincoln@dicamillomaquinarias.com
+presence:
+  website: https://dicamillomaquinarias.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.851186
+  longitude: -61.510131
+source: {}
+status:
+  imported: false
+  reviewRequired: false

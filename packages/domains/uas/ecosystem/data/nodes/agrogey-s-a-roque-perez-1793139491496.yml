@@ -1,0 +1,31 @@
+id: agrogey-s-a-roque-perez-1793139491496
+name: AGROGEY S.A. - Roque Pérez
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrogey-s-a-1793139251656
+    type: child_of
+contact:
+  address: Ruta Nacional 205, Km 138, y Ruta Provincial 30
+  city: Roque Pérez
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 9 2227 51-7319
+  whatsapp: +54 9 2227 51-7319
+  email: roque_perez@agrogey.com.ar
+presence:
+  website: https://www.agrogey.com.ar
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.401981
+  longitude: -59.334269
+source: {}
+status:
+  imported: false
+  reviewRequired: false

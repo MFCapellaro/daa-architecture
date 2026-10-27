@@ -1,0 +1,33 @@
+id: pedro-a-di-camillo-s-a-1793138049665
+name: PEDRO A. DI CAMILLO S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Nacional 7 Km 259
+  city: Junín
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 236 443-0937
+  whatsapp: +54 236 443-3845
+  email: ricardo@dicamillomaquinarias.com
+presence:
+  website: https://dicamillomaquinarias.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.60642
+  longitude: -60.961826
+source: {}
+status:
+  imported: false
+  reviewRequired: false
