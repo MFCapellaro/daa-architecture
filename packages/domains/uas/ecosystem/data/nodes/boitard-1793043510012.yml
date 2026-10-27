@@ -1,0 +1,33 @@
+id: boitard-1793043510012
+name: BOITARD
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Av. Circunvalación Santiago Marzo Este 1450
+  city: Santa Rosa
+  province: La Pampa
+  country: Argentina
+  phone: +54 2954363146
+  whatsapp: +54 9 2954773711
+  email: carlosm@boitard.com.ar
+presence:
+  website: https://boitard.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -36.631748
+  longitude: -64.272563
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,33 @@
+id: migliazza-maquinarias-srl-1793050088731
+name: MIGLIAZZA MAQUINARIAS SRL
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: 9 DE JULIO 1920
+  city: Firmat
+  province: Santa Fe
+  country: Argentina
+  phone: +54 3465 422599
+  whatsapp: +54 9 3465 52-3266
+  email: ventas@migliazzamaquinarias.com
+presence:
+  website: https://migliazzamaquinarias.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.454387
+  longitude: -61.498647
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,33 @@
+id: san-carlos-maquinarias-1793049082712
+name: SAN CARLOS MAQUINARIAS
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Provincial 6 Km 46
+  city: San Carlos Centro
+  province: Santa Fe
+  country: Argentina
+  phone: +54 3404 420725
+  whatsapp: null
+  email: sancarlosmaquinaria@gmail.com
+presence:
+  website: https://www.instagram.com/sancarlosmaquinaria/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.7344
+  longitude: -61.094774
+source: {}
+status:
+  imported: false
+  reviewRequired: false

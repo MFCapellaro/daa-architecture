@@ -1,0 +1,33 @@
+id: bernardo-carbonell-e-hijo-s-r-l-1793048746724
+name: BERNARDO CARBONELL E HIJO S.R.L.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Avenida Gobernador Iriondo y la Ruta Nacional 11
+  city: San Justo
+  province: Santa Fe
+  country: Argentina
+  phone: +54 3498 442678
+  whatsapp: null
+  email: carbonellehijo@arnetbiz.com.ar
+presence:
+  website: https://www.instagram.com/bernardocarbonellehijo/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -28.993811
+  longitude: -59.583477
+source: {}
+status:
+  imported: false
+  reviewRequired: false

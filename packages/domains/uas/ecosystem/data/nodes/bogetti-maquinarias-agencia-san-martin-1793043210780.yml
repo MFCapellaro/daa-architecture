@@ -1,0 +1,31 @@
+id: bogetti-maquinarias-agencia-san-martin-1793043210780
+name: Bogetti Maquinarias - Agencia San Martín
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: bogetti-maquinarias-1793041237147
+    type: child_of
+contact:
+  address: AVDA. SAN MARTIN S/N
+  city: General Pico
+  province: La Pampa
+  country: Argentina
+  phone: +54 2954 15675115
+  whatsapp: null
+  email: bogettimaqsrl@coopmacachin.com.ar
+presence:
+  website: https://www.bogettimaquinarias.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.659324
+  longitude: -63.757789
+source: {}
+status:
+  imported: false
+  reviewRequired: false

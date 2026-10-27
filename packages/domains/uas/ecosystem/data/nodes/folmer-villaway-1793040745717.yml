@@ -4,6 +4,7 @@ type: dealer
 identity: {}
 layers:
   - xag
+  - dji
 capabilities: []
 isPublic: true
 relationships:
@@ -26,6 +27,18 @@ geolocation:
   latitude: -31.808135
   longitude: -59.028668
 source: {}
-status:
-  imported: false
-  reviewRequired: false
+status: ACTIVE
+typeLabel: Distribuidores y Dealers
+primaryCategory: xag
+categoryLabel: xag
+translatedLayers:
+  - xag
+description: ''
+location:
+  address: Ruta Nacional 18 KM 150 y 1/2
+  city: Villaguay
+  province: Entre Ríos
+  country: Argentina
+  coordinates:
+    latitude: -31.808135
+    longitude: -59.028668

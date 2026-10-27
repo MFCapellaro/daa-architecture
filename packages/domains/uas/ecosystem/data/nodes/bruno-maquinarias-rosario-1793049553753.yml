@@ -1,0 +1,31 @@
+id: bruno-maquinarias-rosario-1793049553753
+name: BRUNO MAQUINARIAS - Rosario
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: bruno-maquinarias-1793049357480
+    type: child_of
+contact:
+  address: José M. Rosa bis 1781 Esq. Av. Central / Fisherton
+  city: Rosario
+  province: Santa Fe
+  country: Argentina
+  phone: +54 341 4520266
+  whatsapp: null
+  email: null
+presence:
+  website: https://www.brunomaquinarias.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.947368
+  longitude: -60.722652
+source: {}
+status:
+  imported: false
+  reviewRequired: false

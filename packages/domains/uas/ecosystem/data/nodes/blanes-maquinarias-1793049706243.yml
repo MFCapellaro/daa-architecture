@@ -1,0 +1,33 @@
+id: blanes-maquinarias-1793049706243
+name: BLANES MAQUINARIAS
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: TUCUMAN 725
+  city: EL TREBOL
+  province: SANTA FE
+  country: Argentina
+  phone: +54 3401 421340
+  whatsapp: null
+  email: null
+presence:
+  website: https://www.instagram.com/blanesmaquinarias/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.212405
+  longitude: -61.703072
+source: {}
+status:
+  imported: false
+  reviewRequired: false
