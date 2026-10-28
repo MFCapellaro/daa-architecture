@@ -1,0 +1,33 @@
+id: rural-repuestos-s-a-1793194459220
+name: Rural Repuestos S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Nacional 5 Km 156
+  city: Chivilcoy
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2346 43-4634
+  whatsapp: null
+  email: rural@rural-repuestos.com.ar
+presence:
+  website: https://rural-repuestos.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: true
+geolocation:
+  latitude: -34.912382
+  longitude: -59.975701
+source: {}
+status:
+  imported: false
+  reviewRequired: false

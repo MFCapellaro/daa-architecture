@@ -1,0 +1,33 @@
+id: zubeldia-maquinarias-s-a-1793195639429
+name: ZUBELDIA MAQUINARIAS S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Acceso Virgen de Luján 709
+  city: Carlos Casares
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2396 543236
+  whatsapp: +54 2396 543236
+  email: zubeldiamaquinarias@gmail.com
+presence:
+  website: https://www.instagram.com/zubeldiamaquinarias
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.638763
+  longitude: -61.361498
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,34 @@
+id: agropecuaria-agromax-s-a-1793199978526
+name: AGROPECUARIA AGROMAX S. A.
+type: dealer
+identity: {}
+layers:
+  - xag
+  - dji
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Olivero Girondo 473
+  city: Bahía Blanca
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 291 6420536
+  whatsapp: null
+  email: h.salgado@agromax.com.ar
+presence:
+  website: https://agromax.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -38.679487
+  longitude: -62.303729
+source: {}
+status:
+  imported: false
+  reviewRequired: false

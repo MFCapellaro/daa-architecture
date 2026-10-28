@@ -1,0 +1,33 @@
+id: tramavi-maquinarias-1793195314287
+name: Tramavi Maquinarias
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Acceso Islas Malvinas y Ruta Nacional 188
+  city: General Villegas
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 9 3388 67-6658
+  whatsapp: +54 9 3388 67-5200
+  email: ventas@tramavi.com.ar
+presence:
+  website: https://www.tramavi.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.041789
+  longitude: -62.994984
+source: {}
+status:
+  imported: false
+  reviewRequired: false

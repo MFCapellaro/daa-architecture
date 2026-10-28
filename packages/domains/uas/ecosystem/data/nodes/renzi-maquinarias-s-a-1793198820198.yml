@@ -1,0 +1,33 @@
+id: renzi-maquinarias-s-a-1793198820198
+name: RENZI MAQUINARIAS S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Av. José de San Martín 3391
+  city: Balcarce
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2266 526210
+  whatsapp: +54 9 2266 534967
+  email: nestor@renzimaquinarias.com.ar
+presence:
+  website: http://renzimaquinarias.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -37.833038
+  longitude: -58.239249
+source: {}
+status:
+  imported: false
+  reviewRequired: false

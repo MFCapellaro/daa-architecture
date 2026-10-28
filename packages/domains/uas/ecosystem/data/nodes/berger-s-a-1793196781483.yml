@@ -1,0 +1,33 @@
+id: berger-s-a-1793196781483
+name: BERGER S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Nacional 33 Km 321,5
+  city: Trenque Lauquen
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2392 639624
+  whatsapp: +54 9 2302 695338
+  email: consultas@bergersa.com.ar
+presence:
+  website: https://bergersa.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -36.000487
+  longitude: -62.759354
+source: {}
+status:
+  imported: false
+  reviewRequired: false

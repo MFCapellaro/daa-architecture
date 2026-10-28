@@ -1,0 +1,33 @@
+id: mendoza-y-sevenie-s-r-l-1793198432294
+name: MENDOZA Y SEVENIE S.R.L.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Av. Avellaneda 340
+  city: Pigüé
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2923 472242
+  whatsapp: +54 9 2923 573244
+  email: mendozaysevenie@gmail.com
+presence:
+  website: https://www.facebook.com/mys.srl/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -37.597668
+  longitude: -62.408783
+source: {}
+status:
+  imported: false
+  reviewRequired: false

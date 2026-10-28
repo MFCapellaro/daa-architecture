@@ -1,0 +1,33 @@
+id: monaco-maquinarias-1793199007862
+name: MÓNACO Maquinarias
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta 227 Km 53.5
+  city: Lobería
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2262 639539
+  whatsapp: +54 9 2262 640543
+  email: monacomaquinarias@yahoo.com.ar
+presence:
+  website: https://www.instagram.com/monaco.maquinarias/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -38.165543
+  longitude: -58.763651
+source: {}
+status:
+  imported: false
+  reviewRequired: false

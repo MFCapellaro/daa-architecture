@@ -1,0 +1,33 @@
+id: agricola-azul-s-a-1793198006845
+name: AGRICOLA AZUL S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Nacional 3 Km 300,5
+  city: Azul
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2281 584563
+  whatsapp: +54 9 2281 555418
+  email: ' agricolaazulsa@gmail.com'
+presence:
+  website: https://agricolaazul.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -36.788007
+  longitude: -59.835669
+source: {}
+status:
+  imported: false
+  reviewRequired: false

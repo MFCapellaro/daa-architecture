@@ -1,0 +1,33 @@
+id: nr-maquinarias-1793195973989
+name: NR Maquinarias
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Ruta Provincial 41 y Calle 65
+  city: General Belgrano
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 9 2241 464375
+  whatsapp: +54 9 2241 585302
+  email: nrmaquinarias@yahoo.com.ar
+presence:
+  website: https://www.instagram.com/nrmaquinarias
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.785785
+  longitude: -58.491236
+source: {}
+status:
+  imported: false
+  reviewRequired: false

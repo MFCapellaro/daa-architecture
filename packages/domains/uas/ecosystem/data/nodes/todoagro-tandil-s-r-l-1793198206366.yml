@@ -1,0 +1,33 @@
+id: todoagro-tandil-s-r-l-1793198206366
+name: TODOAGRO TANDIL S.R.L.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Colectora Macaya 727
+  city: Tandil
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 249 4446399
+  whatsapp: +54 9 249 4500297
+  email: todoagro_tandil@hotmail.com
+presence:
+  website: https://www.instagram.com/todoagro.tandil/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -37.313783
+  longitude: -59.110224
+source: {}
+status:
+  imported: false
+  reviewRequired: false

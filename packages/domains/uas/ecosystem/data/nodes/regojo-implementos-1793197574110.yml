@@ -1,0 +1,33 @@
+id: regojo-implementos-1793197574110
+name: REGOJO IMPLEMENTOS
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Av. San Martín 50
+  city: Salazar
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2393 492122
+  whatsapp: +54 9 2314 531339
+  email: regojoimplemetos@gmail.com
+presence:
+  website: https://www.instagram.com/regojoimplementos/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -36.305457
+  longitude: -62.199996
+source: {}
+status:
+  imported: false
+  reviewRequired: false

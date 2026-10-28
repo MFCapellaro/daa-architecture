@@ -1,0 +1,33 @@
+id: v-sur-agro-s-a-1793199736254
+name: V SUR AGRO S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: AVENIDA FUERTES 192
+  city: Coronel Dorrego
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 292 1496609
+  whatsapp: null
+  email: vsuragrosa@gmail.com
+presence:
+  website: null
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -38.715829
+  longitude: -61.283523
+source: {}
+status:
+  imported: false
+  reviewRequired: false

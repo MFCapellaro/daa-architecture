@@ -1,0 +1,30 @@
+id: nfm-agrosoluciones-1793201246022
+name: NFM AGROSOLUCIONES
+type: dealer
+identity: {}
+layers:
+  - dji
+  - service
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Fleming 745
+  city: San Francisco
+  province: Córdoba
+  country: Argentina
+  phone: +54 3564 565089
+  whatsapp: +54 9 3564 565089
+  email: info@nfm.com.ar
+presence:
+  website: http://www.nfm.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.436211
+  longitude: -62.090733
+source: {}
+status:
+  imported: false
+  reviewRequired: false

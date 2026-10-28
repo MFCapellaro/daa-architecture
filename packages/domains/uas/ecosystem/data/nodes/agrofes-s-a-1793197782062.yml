@@ -1,0 +1,33 @@
+id: agrofes-s-a-1793197782062
+name: AGROFES S.A.
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Acceso Jorge Omar Carle 1445
+  city: Daireaux
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2316 400134
+  whatsapp: +54 9 2316 403940
+  email: mauricio.fernandez@agrofes.com.ar
+presence:
+  website: http://agrofes.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -36.588708
+  longitude: -61.762828
+source: {}
+status:
+  imported: false
+  reviewRequired: false

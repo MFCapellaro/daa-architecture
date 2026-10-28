@@ -1,0 +1,31 @@
+id: alejandro-arnaiz-maquinarias-salliquelo-1793196468469
+name: ALEJANDRO ARNAIZ MAQUINARIAS - Salliqueló
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: alejandro-arnaiz-maquinarias-1793196312406
+    type: child_of
+contact:
+  address: Coronel Mansilla y Levalle
+  city: Salliqueló
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2394 480299
+  whatsapp: +54 2392 538638
+  email: arnaizale@hotmail.com
+presence:
+  website: https://www.instagram.com/alejandro.arnaiz.maquinarias/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -36.742041
+  longitude: -62.960135
+source: {}
+status:
+  imported: false
+  reviewRequired: false

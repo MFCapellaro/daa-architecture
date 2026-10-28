@@ -1,0 +1,31 @@
+id: rural-repuestos-s-a-saladillo-1793194639366
+name: Rural Repuestos S.A. - Saladillo
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: rural-repuestos-s-a-1793194459220
+    type: child_of
+contact:
+  address: Ruta Nacional 205 Km 180,8
+  city: Saladillo
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2344 45-1427
+  whatsapp: null
+  email: repuestos@rural-repuestos.com.ar
+presence:
+  website: https://rural-repuestos.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.62769
+  longitude: -59.780541
+source: {}
+status:
+  imported: false
+  reviewRequired: false

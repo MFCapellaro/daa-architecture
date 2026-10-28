@@ -1,0 +1,33 @@
+id: alejandro-arnaiz-maquinarias-1793196312406
+name: ALEJANDRO ARNAIZ MAQUINARIAS
+type: dealer
+identity: {}
+layers:
+  - xag
+capabilities: []
+isPublic: true
+relationships:
+  - targetId: agrometal-1793018020091
+    type: parent_of
+  - targetId: agrometal-1793018020091
+    type: represents
+contact:
+  address: Avenida García Salinas 2326
+  city: Trenque Lauquen
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2392 490225
+  whatsapp: +54 2392 538638
+  email: arnaizale@hotmail.com
+presence:
+  website: https://www.instagram.com/alejandro.arnaiz.maquinarias/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.98984
+  longitude: -62.72002
+source: {}
+status:
+  imported: false
+  reviewRequired: false
