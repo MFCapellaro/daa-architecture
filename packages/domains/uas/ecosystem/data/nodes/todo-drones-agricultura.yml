@@ -6,13 +6,13 @@ identity:
 layers:
   - dji
 contact:
-  address: Showroom / Avenida Dardo Rocha 2934 Martínez
-  city: Buenos Aires - Punto Agro / Parque Agro Industrial Juan Hipólito Vieytes - San Antonio de Areco
+  address: Parque Agro Industrial Juan Hipólito Vieytes
+  city: San Antonio de Areco
   province: Buenos Aires
   phone: +54 11 52630498
   email: info@tododrones.com.ar
   country: Argentina
-  whatsapp: null
+  whatsapp: +54 9 11 2507‑0076
 geolocation:
   latitude: -34.243801
   longitude: -59.473595
@@ -21,7 +21,6 @@ primaryCategory: dji
 categoryLabel: dji
 translatedLayers:
   - dji
-  - Distribuidores y Dealers
 description: ''
 isPublic: true
 status: ACTIVE
@@ -34,7 +33,7 @@ location:
     latitude: -34.243801
     longitude: -59.473595
 presence:
-  website: null
+  website: https://www.agro.tododrones.com.ar/
   websiteMentioned: false
   websiteMentionsDrones: false
   websiteUnavailable: false

@@ -65,12 +65,22 @@ layers:
     label: Vector AGR
     color: '#00ff88'
     visibleByDefault: true
+  - id: eavision
+    label: EAVision
+    color: '#99ff00'
+    visibleByDefault: true
+  - id: gteex
+    label: GTEEX
+    color: '#66ff7f'
+    visibleByDefault: true
 categoryOrder:
   - dji
   - xag
   - topxgun
   - hylio
   - vector-agr
+  - eavision
+  - gteex
   - dealer
   - academia
   - operators

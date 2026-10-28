@@ -1,0 +1,32 @@
+id: cotrametal-implementos-1793220071123
+name: COTRAMETAL IMPLEMENTOS
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Trailers
+  - BIM
+  - Tanques de agua
+isPublic: true
+relationships: []
+contact:
+  address: Barrio Knape / Yerbal y las Azaleas, Km 260 - El Cruce
+  city: San Vicente
+  province: Misiones
+  country: Argentina
+  phone: +54 9 3755 550500
+  whatsapp: +54 9 3755 504197
+  email: cooptra@hotmail.com
+presence:
+  website: https://www.cotrametal.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -26.99896
+  longitude: -54.49547
+source: {}
+status:
+  imported: false
+  reviewRequired: false

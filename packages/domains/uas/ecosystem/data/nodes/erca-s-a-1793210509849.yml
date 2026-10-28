@@ -1,0 +1,29 @@
+id: erca-s-a-1793210509849
+name: ERCA S.A.
+type: dealer
+identity: {}
+layers:
+  - eavision
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Lote 10 y 11, Área Industrial
+  city: Armstrong
+  province: Santa Fe
+  country: Argentina
+  phone: +54 3471 490460
+  whatsapp: +54 9 3471 624744
+  email: ' info@erca.com.ar'
+presence:
+  website: https://www.erca.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.778146
+  longitude: -61.616032
+source: {}
+status:
+  imported: false
+  reviewRequired: false

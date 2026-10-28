@@ -1,0 +1,30 @@
+id: acoplados-conese-1793212543345
+name: ACOPLADOS CONESE
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Trailers
+isPublic: true
+relationships: []
+contact:
+  address: Ruta Nacional 9 Km 351
+  city: Correa
+  province: Santa Fe
+  country: Argentina
+  phone: +54 3471 440145
+  whatsapp: +54 9 3471 575040
+  email: info@acopladosconese.com.ar
+presence:
+  website: https://conese.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.852658
+  longitude: -61.253042
+source: {}
+status:
+  imported: false
+  reviewRequired: false

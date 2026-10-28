@@ -1,0 +1,30 @@
+id: rubiolo-1793222238949
+name: RUBIOLO
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Trailers
+isPublic: true
+relationships: []
+contact:
+  address: Chaco 115
+  city: General Deheza
+  province: Córdoba
+  country: Argentina
+  phone: +54 358 4907175
+  whatsapp: +54 9 358 4907175
+  email: info@acopladosrubiolo.com.ar
+presence:
+  website: https://acopladosrubiolo.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.761559
+  longitude: -63.781326
+source: {}
+status:
+  imported: false
+  reviewRequired: false

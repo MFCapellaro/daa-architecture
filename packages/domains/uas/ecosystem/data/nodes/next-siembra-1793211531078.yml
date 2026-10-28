@@ -1,0 +1,30 @@
+id: next-siembra-1793211531078
+name: NEXT SIEMBRA
+type: dealer
+identity: {}
+layers:
+  - eavision
+  - dealer
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Av. Uriburu 5080, Área Industrial Uriburu
+  city: Rosario
+  province: Santa Fe
+  country: Argentina
+  phone: +54 9 341 5278953
+  whatsapp: +54 9 341 5278953
+  email: administracion@siembraneumaticasrl.com.ar
+presence:
+  website: https://nextsiembra.com/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.991958
+  longitude: -60.691405
+source: {}
+status:
+  imported: false
+  reviewRequired: false

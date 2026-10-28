@@ -1,0 +1,30 @@
+id: villanueva-drones-1793212098770
+name: VILLANUEVA DRONES
+type: dealer
+identity: {}
+layers:
+  - gteex
+  - dealer
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Av. Presidente Perón 1775
+  city: Villa María
+  province: Córdoba
+  country: Argentina
+  phone: +54 353 4648600
+  whatsapp: null
+  email: drones@grupovillanueva.com.ar
+presence:
+  website: https://grupovillanueva.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.419803
+  longitude: -63.21951
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,30 @@
+id: metalurgica-j-hartwich-1793221360445
+name: METALÚRGICA J. HARTWICH
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Trailers
+isPublic: true
+relationships: []
+contact:
+  address: Ruta 3 km 311
+  city: Young
+  province: Río Negro
+  country: Uruguay
+  phone: +598 4567 2070
+  whatsapp: null
+  email: ventas@jhartwich.com.uy
+presence:
+  website: https://jhartwich.uy/cat/drones/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.704406
+  longitude: -57.632108
+source: {}
+status:
+  imported: false
+  reviewRequired: false

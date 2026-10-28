@@ -1,0 +1,30 @@
+id: moro-implementos-1793221596266
+name: MORO IMPLEMENTOS
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Trailers
+isPublic: true
+relationships: []
+contact:
+  address: ' Calle 10 N° 1407'
+  city: Las Parejas
+  province: Santa Fe
+  country: Argentina
+  phone: +54 9 347 1561281
+  whatsapp: +54 9 347 1561281
+  email: info@moroimplementos.com.ar
+presence:
+  website: https://moroimplementos.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.689783
+  longitude: -61.52213
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,30 @@
+id: mancini-agro-dos-mil-s-a-1793220488087
+name: MANCINI - Agro Dos Mil S.A.
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Trailers
+isPublic: true
+relationships: []
+contact:
+  address: Sarmiento 433
+  city: Gral. Baldissera
+  province: 'Córdoba '
+  country: Argentina
+  phone: +54 3468 434266
+  whatsapp: null
+  email: ventas@manciniweb.com.ar
+presence:
+  website: https://manciniweb.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -33.122763
+  longitude: -62.302398
+source: {}
+status:
+  imported: false
+  reviewRequired: false

@@ -1,0 +1,30 @@
+id: centenario-1793219615549
+name: CENTENARIO
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Trailers
+isPublic: true
+relationships: []
+contact:
+  address: 25 de Mayo 38
+  city: Alicia
+  province: Córdoba
+  country: Argentina
+  phone: +54 3533 436270
+  whatsapp: null
+  email: null
+presence:
+  website: https://www.instagram.com/centenarioimplementos/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -31.943873
+  longitude: -62.464565
+source: {}
+status:
+  imported: false
+  reviewRequired: false

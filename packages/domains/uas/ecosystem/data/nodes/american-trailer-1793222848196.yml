@@ -1,0 +1,30 @@
+id: american-trailer-1793222848196
+name: American Trailer
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Trailers
+isPublic: true
+relationships: []
+contact:
+  address: Parque Industrial Privado San Vicente Ruta 6 km 62
+  city: San Vicente
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 1127934135
+  whatsapp: +54 9 1127934135
+  email: null
+presence:
+  website: https://americantrailer.com.ar/trailer-drone-agricola/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.048494
+  longitude: -58.425633
+source: {}
+status:
+  imported: false
+  reviewRequired: false

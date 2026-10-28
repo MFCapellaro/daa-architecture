@@ -1,0 +1,29 @@
+id: multijacto-s-a-1793211207185
+name: MULTIJACTO S.A.
+type: dealer
+identity: {}
+layers:
+  - dji
+capabilities: []
+isPublic: true
+relationships: []
+contact:
+  address: Ruta Nacional 8 Km 176
+  city: Arrecifes
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2478 450611
+  whatsapp: +54 9 1139899507
+  email: ventas@jacto.com.ar
+presence:
+  website: https://jacto.com.ar
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -34.051225
+  longitude: -60.078905
+source: {}
+status:
+  imported: false
+  reviewRequired: false
