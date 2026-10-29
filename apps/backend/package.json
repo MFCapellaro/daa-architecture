@@ -12,5 +12,10 @@
     "cors": "^2.8.6",
     "pnpm": "^12.4.2",
     "y": "^0.3.2"
+  },
+  "dependencies": {
+    "@vitest/mocker": "^5.0.5",
+    "body-parser": "^2.4.0",
+    "qs": "^6.17.1"
   }
 }
