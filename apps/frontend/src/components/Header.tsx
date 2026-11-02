@@ -14,7 +14,7 @@ interface SystemNotification {
 }
 
 type HeaderIconName = 'book' | 'compass' | 'calendar' | 'pool' | 'directory' | 'users'
-  | 'activity' | 'bell' | 'power' | 'login' | 'user';
+  | 'activity' | 'bell' | 'power' | 'login' | 'user' | 'suppliers';
 
 const HeaderIcon: React.FC<{ name: HeaderIconName }> = ({ name }) => (
   <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -25,6 +25,7 @@ const HeaderIcon: React.FC<{ name: HeaderIconName }> = ({ name }) => (
     {name === 'directory' && <><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="M6 16c.7-2 5.3-2 6 0M14 9h4M14 13h4M14 17h4" /></>}
     {name === 'users' && <><circle cx="9" cy="8" r="3" /><path d="M3 20c0-4 2-6 6-6s6 2 6 6M16 5a3 3 0 0 1 0 6M18 14c2 .5 3 2.5 3 6" /></>}
     {name === 'activity' && <><path d="M4 5h16M4 9h16M4 13h9M4 17h9" /><path d="m17 16 2 2 4-5" /></>}
+    {name === 'suppliers' && <><path d="M3 7h18v13H3z" /><path d="M8 7V4h8v3M7 12h10M7 16h6" /></>}
     {name === 'bell' && <><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></>}
     {name === 'power' && <><path d="M12 2v10" /><path d="M6.2 5.8a8 8 0 1 0 11.6 0" /></>}
     {name === 'login' && <><path d="M10 17l5-5-5-5M15 12H3" /><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6" /></>}
@@ -156,6 +157,9 @@ export const Header: React.FC = () => {
             </Link>
             <Link to="/admin/pools" aria-label="Pools" title="Pools" style={navLinkStyle(isActive('/admin/pools'))}>
               <HeaderIcon name="pool" />
+            </Link>
+            <Link to="/admin/suppliers" aria-label="Suppliers" title="Suppliers" style={navLinkStyle(isActive('/admin/suppliers'))}>
+              <HeaderIcon name="suppliers" />
             </Link>
           </div>
         )}

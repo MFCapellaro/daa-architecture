@@ -21,6 +21,7 @@ import { DealerAgreementPage } from './pages/portal/DealerAgreementPage';
 import { AdminPoolsPage } from './pages/admin/AdminPoolsPage';
 import { PoolsPage } from './pages/PoolsPage';
 import { ActorSubmissionPage } from './pages/portal/ActorSubmissionPage';
+import { AdminSuppliersPage } from './pages/admin/AdminSuppliersPage';
 
 export const AppRoutes = () => {
   const { user, isAuthenticated } = useAuth();
@@ -138,6 +139,14 @@ export function App() {
             element={
               <ProtectedRoute allowedRoles={['admin']}>
                 <AdminPoolsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/suppliers"
+            element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <AdminSuppliersPage />
               </ProtectedRoute>
             }
           />

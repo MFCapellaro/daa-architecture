@@ -13,7 +13,7 @@ import { notifyPoolLifecycle } from "../services/PoolLifecycleNotifications.js";
 const IMAGE_DATA_URL = /^data:image\/jpeg;base64,[A-Za-z0-9+/]+=*$/;
 const IMAGE_LIMIT = 450_000;
 const IMAGE_COUNT = 5;
-const STRING_LIMITS: Record<keyof Omit<PoolInput, "targetQuantity" | "unitPrice" | "discountedUnitPrice" | "images">, number> = {
+const STRING_LIMITS: Record<keyof Omit<PoolInput, "targetQuantity" | "unitPrice" | "discountedUnitPrice" | "priceCurrency" | "priceConditions" | "images">, number> = {
   product: 160,
   brand: 100,
   model: 160,
@@ -50,6 +50,45 @@ function validatePoolInput(value: unknown): PoolInput | string {
     return "Los precios deben ser válidos y el precio por pool no puede superar el precio unitario.";
   }
   if (!Number.isFinite(Date.parse(value.validUntil as string))) return "La fecha de vigencia no es válida.";
+  const priceCurrency = value.priceCurrency ?? "ARS";
+  if (typeof priceCurrency !== "string" || !/^[A-Z]{3}$/i.test(priceCurrency)) {
+    return "La moneda del precio debe ser un código de tres letras.";
+  }
+  let priceConditions: PoolInput["priceConditions"];
+  if (value.priceConditions !== undefined) {
+    const rawPriceConditions = value.priceConditions;
+    if (!isRecord(rawPriceConditions)
+      || !["includesVat", "includesFreight", "includesFinancing", "includesAccessories"]
+        .every((field) => typeof rawPriceConditions[field] === "boolean")) {
+      return "Las condiciones del precio no son válidas.";
+    }
+    const conditions = rawPriceConditions;
+    const conditionAmounts = [
+      [conditions.includesFreight, conditions.freightAmount, "flete"],
+      [conditions.includesFinancing, conditions.financingAmount, "financiación"],
+      [conditions.includesAccessories, conditions.accessoriesAmount, "accesorios"],
+    ] as const;
+    if (conditions.includesVat && (typeof conditions.vatRatePercent !== "number"
+      || !Number.isFinite(conditions.vatRatePercent) || conditions.vatRatePercent < 0
+      || conditions.vatRatePercent >= 100)) {
+      return "Indica una alícuota de IVA válida.";
+    }
+    for (const [included, amount, label] of conditionAmounts) {
+      if (included && (typeof amount !== "number" || !Number.isFinite(amount) || amount < 0)) {
+        return `Indica un monto válido para ${label}.`;
+      }
+    }
+    priceConditions = {
+      includesVat: conditions.includesVat as boolean,
+      ...(typeof conditions.vatRatePercent === "number" ? { vatRatePercent: conditions.vatRatePercent } : {}),
+      includesFreight: conditions.includesFreight as boolean,
+      ...(typeof conditions.freightAmount === "number" ? { freightAmount: conditions.freightAmount } : {}),
+      includesFinancing: conditions.includesFinancing as boolean,
+      ...(typeof conditions.financingAmount === "number" ? { financingAmount: conditions.financingAmount } : {}),
+      includesAccessories: conditions.includesAccessories as boolean,
+      ...(typeof conditions.accessoriesAmount === "number" ? { accessoriesAmount: conditions.accessoriesAmount } : {}),
+    };
+  }
   if (!Array.isArray(value.images) || value.images.length < 1 || value.images.length > IMAGE_COUNT
     || !value.images.every((image) =>
       typeof image === "string" && image.length <= IMAGE_LIMIT && IMAGE_DATA_URL.test(image))
@@ -65,6 +104,8 @@ function validatePoolInput(value: unknown): PoolInput | string {
     targetQuantity: value.targetQuantity as number,
     unitPrice: value.unitPrice as number,
     discountedUnitPrice: value.discountedUnitPrice as number,
+    priceCurrency: priceCurrency.toUpperCase(),
+    ...(priceConditions ? { priceConditions } : {}),
     images: value.images as string[],
   } as PoolInput;
 }

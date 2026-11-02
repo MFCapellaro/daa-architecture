@@ -39,6 +39,8 @@ const toInput = (pool: Pool): PoolInput => ({
   targetQuantity: pool.targetQuantity,
   unitPrice: pool.unitPrice,
   discountedUnitPrice: pool.discountedUnitPrice,
+  priceCurrency: pool.priceCurrency ?? 'ARS',
+  priceConditions: pool.priceConditions,
   city: pool.city,
   province: pool.province,
   paymentConditions: pool.paymentConditions,

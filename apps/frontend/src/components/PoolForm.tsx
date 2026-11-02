@@ -2,7 +2,8 @@ import React, { useState, type ChangeEvent, type FormEvent } from 'react';
 import { EMPTY_POOL, type PoolInput } from '../types/pool';
 
 const inputClass = 'pool-form__input';
-type PoolTextField = Exclude<keyof PoolInput, 'targetQuantity' | 'unitPrice' | 'discountedUnitPrice' | 'images'>;
+type PoolTextField = Exclude<keyof PoolInput, 'targetQuantity' | 'unitPrice' | 'discountedUnitPrice' | 'priceConditions' | 'images'>;
+type PriceCondition = 'vat' | 'freight' | 'financing' | 'accessories';
 
 const toLocalDateTime = (value: string): string => {
   if (!value) return '';
@@ -85,6 +86,12 @@ export const PoolForm: React.FC<PoolFormProps> = ({ initial, saving, onCancel, o
     validUntil: toLocalDateTime(initial?.validUntil ?? ''),
     images: initial?.images ?? [],
   }));
+  const [priceConditionFlags, setPriceConditionFlags] = useState<Record<PriceCondition, '' | 'yes' | 'no'>>(() => ({
+    vat: initial?.priceConditions ? (initial.priceConditions.includesVat ? 'yes' : 'no') : '',
+    freight: initial?.priceConditions ? (initial.priceConditions.includesFreight ? 'yes' : 'no') : '',
+    financing: initial?.priceConditions ? (initial.priceConditions.includesFinancing ? 'yes' : 'no') : '',
+    accessories: initial?.priceConditions ? (initial.priceConditions.includesAccessories ? 'yes' : 'no') : '',
+  }));
   const [formError, setFormError] = useState<string | null>(null);
   const [processingImages, setProcessingImages] = useState(false);
 
@@ -118,7 +125,23 @@ export const PoolForm: React.FC<PoolFormProps> = ({ initial, saving, onCancel, o
       return;
     }
     setFormError(null);
-    void onSave({ ...form, validUntil: validUntil.toISOString() });
+    const allPriceConditionsDeclared = Object.values(priceConditionFlags).every(Boolean);
+    const priceConditions = allPriceConditionsDeclared ? {
+      includesVat: priceConditionFlags.vat === 'yes',
+      ...(priceConditionFlags.vat === 'yes' ? { vatRatePercent: form.priceConditions?.vatRatePercent } : {}),
+      includesFreight: priceConditionFlags.freight === 'yes',
+      ...(priceConditionFlags.freight === 'yes' ? { freightAmount: form.priceConditions?.freightAmount } : {}),
+      includesFinancing: priceConditionFlags.financing === 'yes',
+      ...(priceConditionFlags.financing === 'yes' ? { financingAmount: form.priceConditions?.financingAmount } : {}),
+      includesAccessories: priceConditionFlags.accessories === 'yes',
+      ...(priceConditionFlags.accessories === 'yes' ? { accessoriesAmount: form.priceConditions?.accessoriesAmount } : {}),
+    } : undefined;
+    const { priceConditions: _previousConditions, ...formWithoutPreviousConditions } = form;
+    void onSave({
+      ...formWithoutPreviousConditions,
+      ...(priceConditions ? { priceConditions } : {}),
+      validUntil: validUntil.toISOString(),
+    });
   };
 
   return (
@@ -143,6 +166,10 @@ export const PoolForm: React.FC<PoolFormProps> = ({ initial, saving, onCancel, o
           <input className={inputClass} type="number" min="0" step="0.01" required
             value={form.discountedUnitPrice} onChange={(event) => setField('discountedUnitPrice', Number(event.target.value))} />
         </label>
+        <label className="pool-form__field">Moneda del precio
+          <input className={inputClass} value={form.priceCurrency ?? ''} maxLength={3}
+            onChange={(event) => setField('priceCurrency', event.target.value.toUpperCase())} placeholder="ARS" />
+        </label>
         <label className="pool-form__field">Vigencia
           <input className={inputClass} type="datetime-local" required value={form.validUntil}
             onChange={(event) => setField('validUntil', event.target.value)} />
@@ -158,6 +185,43 @@ export const PoolForm: React.FC<PoolFormProps> = ({ initial, saving, onCancel, o
             onChange={(event) => setField('description', event.target.value)} />
         </label>
       </div>
+      <section className="pool-form__images" aria-label="Condiciones del precio">
+        <div>
+          <h3>Condiciones del precio</h3>
+          <p>Declara cada componente para que el precio del pool pueda normalizarse y compararse. Si no se conoce, déjalo sin indicar; el motor no lo usará como precio validado.</p>
+        </div>
+        {([
+          ['vat', 'Incluye IVA', 'vatRatePercent', 'Alícuota IVA (%)'],
+          ['freight', 'Incluye flete', 'freightAmount', 'Monto del flete'],
+          ['financing', 'Incluye financiación', 'financingAmount', 'Monto de financiación'],
+          ['accessories', 'Incluye accesorios', 'accessoriesAmount', 'Monto de accesorios'],
+        ] as const).map(([key, label, amountKey, amountLabel]) => (
+          <div className="pool-form__grid" key={key}>
+            <label className="pool-form__field">{label}
+              <select className={inputClass} value={priceConditionFlags[key]} onChange={(event) =>
+                setPriceConditionFlags((current) => ({ ...current, [key]: event.target.value as '' | 'yes' | 'no' }))}>
+                <option value="">Sin informar</option>
+                <option value="yes">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </label>
+            {priceConditionFlags[key] === 'yes' && <label className="pool-form__field">{amountLabel}
+              <input className={inputClass} type="number" min="0" step="0.01" required
+                value={form.priceConditions?.[amountKey] ?? ''}
+                onChange={(event) => setForm((current) => ({
+                  ...current,
+                  priceConditions: {
+                    includesVat: current.priceConditions?.includesVat ?? false,
+                    includesFreight: current.priceConditions?.includesFreight ?? false,
+                    includesFinancing: current.priceConditions?.includesFinancing ?? false,
+                    includesAccessories: current.priceConditions?.includesAccessories ?? false,
+                    [amountKey]: event.target.value === '' ? undefined : Number(event.target.value),
+                  },
+                }))} />
+            </label>}
+          </div>
+        ))}
+      </section>
       <section className="pool-form__images" aria-label="Imágenes del producto">
         <div>
           <h3>Imágenes del producto</h3>

@@ -1,0 +1,59 @@
+schema_version: 1.0.0
+id: mixer-grupo-alemor-tanque-respaldo-camioneta
+tipo: tanque_auxiliar
+marca: Grupo Alemor
+modelo: Tanque de Respaldo Camioneta para Drones
+configuracion:
+  nivel: null
+  criterio: Clasificar Básica / Intermedia / Máxima después de verificar equipamiento y prestaciones; no inferir
+    por capacidad.
+precio:
+  moneda: null
+  promedio: null
+  metodo: Promedio aritmético de hasta tres precios unitarios vigentes de dealers independientes; excluir flete,
+    financiación y accesorios salvo que se declaren por separado.
+  cotizaciones: []
+  actualizacion:
+    modo: automatizada
+    fuentes:
+    - web
+    - pools
+    ultima_consulta: null
+  estado: sin_cotizaciones_verificadas
+capacidad_litros: 300
+energia:
+  tipo: no_aplica
+  detalle_publicado: 'No aplica: tanque auxiliar sin sistema mezclador informado'
+bomba:
+  potencia_hp: null
+  detalle: No corresponde / no informada como parte del tanque.
+motobomba:
+  potencia_hp: null
+  detalle: No informado
+motor_agitacion:
+  presente: null
+  potencia_hp: null
+  detalle: Verificar si equipa agitador/rotor independiente.
+mangueras:
+  longitud_metros: null
+  detalle: No publicado
+caudalimetro:
+  tipo: null
+monitoreo_control_remoto: null
+fotos: []
+fuentes:
+- tipo: fabricante
+  url: https://grupoalemor.com/
+estado_datos:
+  nivel: parcial
+  campos_pendientes:
+  - configuracion.nivel
+  - precio.promedio
+  - precio.cotizaciones
+  - energia.tipo
+  - bomba.potencia_hp
+  - motobomba.potencia_hp
+  - caudalimetro.tipo
+  - monitoreo_control_remoto
+  - fotos
+  nota: Producto auxiliar incluido en el listado de mixers, pero técnicamente es un tanque de respaldo, no un mixer.

@@ -8,6 +8,17 @@ export interface PoolInput {
   targetQuantity: number;
   unitPrice: number;
   discountedUnitPrice: number;
+  priceCurrency?: string;
+  priceConditions?: {
+    includesVat: boolean;
+    vatRatePercent?: number;
+    includesFreight: boolean;
+    freightAmount?: number;
+    includesFinancing: boolean;
+    financingAmount?: number;
+    includesAccessories: boolean;
+    accessoriesAmount?: number;
+  };
   city: string;
   province: string;
   paymentConditions: string;
@@ -61,6 +72,7 @@ export const EMPTY_POOL: PoolInput = {
   targetQuantity: 3,
   unitPrice: 0,
   discountedUnitPrice: 0,
+  priceCurrency: 'ARS',
   city: '',
   province: '',
   paymentConditions: '',

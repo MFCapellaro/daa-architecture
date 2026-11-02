@@ -1,0 +1,41 @@
+schema_version: 1.0.0
+tipo: mixer
+enums:
+  configuracion:
+  - basica
+  - intermedia
+  - maxima
+  - null
+  energia:
+  - naftera
+  - electrica
+  - hibrida
+  - no_aplica
+  - null
+  caudalimetro:
+  - mecanico
+  - digital
+  - no_aplica
+  - null
+  monitoreo_control_remoto:
+  - true
+  - false
+  - null
+reglas:
+- No inferir potencia HP a partir de caudal, tensión o tamaño.
+- null significa no informado/no verificado; no equivale a false ni a No.
+- Precio promedio requiere al menos una cotización válida y debe indicar moneda, fecha y fuente.
+- Para publicar precio promedio de tres dealers, exigir tres cotizaciones unitarias vigentes e independientes.
+- Las ofertas de Pools se registran con tipo de origen pool y no se mezclan sin etiqueta con precios de dealer.
+- 'Fotos: máximo cuatro imágenes optimizadas; conservar URL/origen y texto alternativo.'
+- No inferir nivel Básica/Intermedia/Máxima solo por capacidad.
+precio_cotizacion_campos:
+- dealer_id
+- precio_unitario
+- moneda
+- fecha
+- url_fuente
+- origen
+- incluye_iva
+- incluye_flete
+- vigente

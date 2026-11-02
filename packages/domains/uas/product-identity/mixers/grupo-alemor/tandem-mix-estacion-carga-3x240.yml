@@ -1,0 +1,59 @@
+schema_version: 1.0.0
+id: mixer-grupo-alemor-tandem-mix-estacion-carga-3x240
+tipo: mixer
+marca: Grupo Alemor
+modelo: TANDEM MIX ESTACIÓN DE CARGA - 3 x 240 Lt
+configuracion:
+  nivel: null
+  criterio: 'Configuración solicitada: 3 módulos de 240 L. El fabricante publica varias combinaciones modulares;
+    validar que la oferta corresponda a 3 x 240 L.'
+precio:
+  moneda: null
+  promedio: null
+  metodo: Promedio aritmético de hasta tres precios unitarios vigentes de dealers independientes; excluir flete,
+    financiación y accesorios salvo que se declaren por separado.
+  cotizaciones: []
+  actualizacion:
+    modo: automatizada
+    fuentes:
+    - web
+    - pools
+    ultima_consulta: null
+  estado: sin_cotizaciones_verificadas
+capacidad_litros: 720
+energia:
+  tipo: null
+  detalle_publicado: Configuración de 3 módulos de 240 L; accionamiento por verificar
+bomba:
+  potencia_hp: null
+  detalle: null
+motobomba:
+  potencia_hp: null
+  detalle: No informado
+motor_agitacion:
+  presente: null
+  potencia_hp: null
+  detalle: Verificar si equipa agitador/rotor independiente.
+mangueras:
+  longitud_metros: null
+  detalle: No publicado
+caudalimetro:
+  tipo: null
+monitoreo_control_remoto: null
+fotos: []
+fuentes:
+- tipo: fabricante
+  url: https://grupoalemor.com/p/MTZ-52-mezcladores-tandem-mix-estacion-de-carga
+estado_datos:
+  nivel: parcial
+  campos_pendientes:
+  - configuracion.nivel
+  - precio.promedio
+  - precio.cotizaciones
+  - energia.tipo
+  - bomba.potencia_hp
+  - motobomba.potencia_hp
+  - caudalimetro.tipo
+  - monitoreo_control_remoto
+  - fotos
+  nota: Los valores null indican dato no publicado o no verificado; no equivalen a No.

@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { mkdir, readdir, readFile, unlink, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { parse, stringify } from "yaml";
+import type { PriceQuoteConditions } from "../../../../packages/domains/uas/product-identity/mixers/pricing/PriceUpdate.js";
 
 export type PoolStatus = "active" | "complete" | "expired";
 
@@ -13,6 +14,8 @@ export interface PoolInput {
   targetQuantity: number;
   unitPrice: number;
   discountedUnitPrice: number;
+  priceCurrency?: string;
+  priceConditions?: PriceQuoteConditions;
   city: string;
   province: string;
   paymentConditions: string;

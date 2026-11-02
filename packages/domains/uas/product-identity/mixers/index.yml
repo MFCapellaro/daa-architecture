@@ -1,0 +1,116 @@
+schema_version: 1.0.0
+familia: mixers
+descripcion: Catálogo normalizado de mixers y equipos auxiliares para preparación y abastecimiento de caldo.
+grupos:
+  grupo-alemor:
+    marca: Grupo Alemor
+    directorio: grupo-alemor
+    cantidad_modelos: 15
+    modelos:
+    - id: mixer-grupo-alemor-am-mixer-80
+      archivo: grupo-alemor/am-mixer-80.yml
+      modelo: AM MIXER 80
+    - id: mixer-grupo-alemor-am-mixer-140
+      archivo: grupo-alemor/am-mixer-140.yml
+      modelo: AM MIXER 140
+    - id: mixer-grupo-alemor-am-mixer-240
+      archivo: grupo-alemor/am-mixer-240.yml
+      modelo: AM MIXER 240
+    - id: mixer-grupo-alemor-am-mixer-240-con-mezclador-superior
+      archivo: grupo-alemor/am-mixer-240-con-mezclador-superior.yml
+      modelo: AM MIXER 240 CON MEZCLADOR SUPERIOR
+    - id: mixer-grupo-alemor-am-mixer-240-v2
+      archivo: grupo-alemor/am-mixer-240-v2.yml
+      modelo: AM MIXER 240 V2
+    - id: mixer-grupo-alemor-am-mixer-240-v2-con-mezclador-superior
+      archivo: grupo-alemor/am-mixer-240-v2-con-mezclador-superior.yml
+      modelo: AM MIXER 240 V2 CON MEZCLADOR SUPERIOR
+    - id: mixer-grupo-alemor-am-mixer-500
+      archivo: grupo-alemor/am-mixer-500.yml
+      modelo: AM MIXER 500
+    - id: mixer-grupo-alemor-am-mixer-500-hibrido-con-mezclador-superior
+      archivo: grupo-alemor/am-mixer-500-hibrido-con-mezclador-superior.yml
+      modelo: AM MIXER 500 HÍBRIDO CON MEZCLADOR SUPERIOR
+    - id: mixer-grupo-alemor-am-mixer-500-v2
+      archivo: grupo-alemor/am-mixer-500-v2.yml
+      modelo: AM MIXER 500 V2
+    - id: mixer-grupo-alemor-am-mixer-500-v2-con-mezclador-superior
+      archivo: grupo-alemor/am-mixer-500-v2-con-mezclador-superior.yml
+      modelo: AM MIXER 500 V2 CON MEZCLADOR SUPERIOR
+    - id: mixer-grupo-alemor-am-mixer-1000
+      archivo: grupo-alemor/am-mixer-1000.yml
+      modelo: AM MIXER 1000
+    - id: mixer-grupo-alemor-am-mixer-1000-bomba-alto-flujo
+      archivo: grupo-alemor/am-mixer-1000-bomba-alto-flujo.yml
+      modelo: AM MIXER 1000 BOMBA ALTO FLUJO
+    - id: mixer-grupo-alemor-am-mixer-1000-motobomba
+      archivo: grupo-alemor/am-mixer-1000-motobomba.yml
+      modelo: AM MIXER 1000 MOTOBOMBA
+    - id: mixer-grupo-alemor-tandem-mix-estacion-carga-3x240
+      archivo: grupo-alemor/tandem-mix-estacion-carga-3x240.yml
+      modelo: TANDEM MIX ESTACIÓN DE CARGA - 3 x 240 Lt
+    - id: mixer-grupo-alemor-tanque-respaldo-camioneta
+      archivo: grupo-alemor/tanque-respaldo-camioneta.yml
+      modelo: Tanque de Respaldo Camioneta para Drones
+  spraytec:
+    marca: SprayTec
+    directorio: spraytec
+    cantidad_modelos: 7
+    modelos:
+    - id: mixer-spraytec-ecotank-doble-500
+      archivo: spraytec/ecotank-doble-500.yml
+      modelo: Mezclador Ecotank Doble 500L
+    - id: mixer-spraytec-ecotank-200-electrico
+      archivo: spraytec/ecotank-200-electrico.yml
+      modelo: Mezclador Ecotank 200 Eléctrico
+    - id: mixer-spraytec-ecotank-spraytec-200
+      archivo: spraytec/ecotank-spraytec-200.yml
+      modelo: Mezclador Ecotank Spraytec 200 Lt
+    - id: mixer-spraytec-dualtec-10mm-premezclador-2
+      archivo: spraytec/dualtec-10mm-premezclador-2.yml
+      modelo: DUALTEC 10 mm Premezclador 2.0
+    - id: mixer-spraytec-mezclador-smart-3
+      archivo: spraytec/mezclador-smart-3.yml
+      modelo: Mezclador Smart 3.0
+    - id: mixer-spraytec-ecotank-1000
+      archivo: spraytec/ecotank-1000.yml
+      modelo: Ecotank 1000
+    - id: mixer-spraytec-ecotank-1500
+      archivo: spraytec/ecotank-1500.yml
+      modelo: Ecotank 1500
+  aguara:
+    marca: Aguará
+    directorio: aguara
+    cantidad_modelos: 3
+    modelos:
+    - id: mixer-aguara-speedblend-170-220v-1-motor
+      archivo: aguara/speedblend-170-220v-1-motor.yml
+      modelo: Mixer Speedblend 170 litros 220V (1 motor)
+    - id: mixer-aguara-speedblend-300-1-bomba-motor
+      archivo: aguara/speedblend-300-1-bomba-motor.yml
+      modelo: Mixer Speedblend 300 litros (1 bomba + motor)
+    - id: mixer-aguara-speedblend-600-2-motores
+      archivo: aguara/speedblend-600-2-motores.yml
+      modelo: Mixer Speedblend 600 litros (2 motores)
+  jotas-agroimplementos:
+    marca: Jotas Agroimplementos
+    directorio: jotas-agroimplementos
+    cantidad_modelos: 2
+    modelos:
+    - id: mixer-jotas-agroimplementos-caldolab-500
+      archivo: jotas-agroimplementos/caldolab-500.yml
+      modelo: Caldolab 500
+    - id: mixer-jotas-agroimplementos-caldolab-1400
+      archivo: jotas-agroimplementos/caldolab-1400.yml
+      modelo: Caldolab 1400
+  industrias-cas:
+    marca: Industrias CAS
+    directorio: industrias-cas
+    cantidad_modelos: 2
+    modelos:
+    - id: mixer-industrias-cas-premezclador-para-drone
+      archivo: industrias-cas/premezclador-para-drone.yml
+      modelo: Premezclador para drone
+    - id: mixer-industrias-cas-tanque-500l-bomba-220v-1hp
+      archivo: industrias-cas/tanque-500l-bomba-220v-1hp.yml
+      modelo: Tanque 500 L bomba 220 V – 1 HP

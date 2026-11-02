@@ -1,0 +1,19 @@
+{
+  "total_fichas": 29,
+  "por_marca": {
+    "Grupo Alemor": 15,
+    "SprayTec": 7,
+    "Aguará": 3,
+    "Jotas Agroimplementos": 2,
+    "Industrias CAS": 2
+  },
+  "estado": "base inicial investigada; requiere validación comercial y completado de campos",
+  "alertas": [
+    "No hay tres cotizaciones unitarias vigentes por modelo: promedio de precio queda null.",
+    "No se publicaron ni descargaron fotos; fotos queda como lista vacía.",
+    "Los niveles Básica/Intermedia/Máxima requieren una matriz funcional acordada.",
+    "Aguará publica nomenclatura Simple/Duplo que no coincide exactamente con los nombres del listado recibido.",
+    "TANQUE DE RESPALDO es un tanque auxiliar de 300 L, no un mixer.",
+    "TANDEM MIX admite distintas combinaciones; 3 x 240 L se registra como configuración solicitada, pendiente de confirmar."
+  ]
+}
