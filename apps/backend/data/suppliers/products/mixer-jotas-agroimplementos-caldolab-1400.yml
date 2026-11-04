@@ -1,0 +1,37 @@
+id: mixer-jotas-agroimplementos-caldolab-1400
+category: mixers
+subcategory: ""
+name: Caldolab 1400
+brand: Jotas Agroimplementos
+model: Caldolab 1400
+description: ""
+characteristics:
+  configuracion:
+    nivel: null
+    criterio: Clasificar Básica / Intermedia / Máxima después de verificar
+      equipamiento y prestaciones; no inferir por capacidad.
+  capacidad_litros: 1400
+  energia:
+    tipo: null
+    detalle_publicado: No verificado en fuente pública consultada
+  bomba:
+    potencia_hp: null
+    detalle: null
+  motobomba:
+    potencia_hp: null
+    detalle: No informado
+  motor_agitacion:
+    presente: null
+    potencia_hp: null
+    detalle: Verificar si equipa agitador/rotor independiente.
+  mangueras:
+    longitud_metros: null
+    detalle: No publicado
+  caudalimetro:
+    tipo: null
+  monitoreo_control_remoto: null
+images: []
+sources: []
+status: pending-review
+createdAt: 2026-11-04T17:56:47.870Z
+updatedAt: 2026-11-04T17:56:47.870Z

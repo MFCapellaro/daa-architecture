@@ -18,6 +18,7 @@ import { SystemNotificationStore } from "./services/SystemNotificationStore.js";
 import { ActorSubmissionStore } from "./services/ActorSubmissionStore.js";
 import { SupplierStore } from "./services/SupplierStore.js";
 import { createSuppliersRouter } from "./routes/suppliers.js";
+import type { BnaUsdArsExchangeRate } from "./services/BnaExchangeRate.js";
 
 const frontendDirectory = fileURLToPath(new URL("../../frontend", import.meta.url));
 
@@ -29,6 +30,7 @@ export function createApp(
   notificationStore = new SystemNotificationStore(),
   actorSubmissionStore = new ActorSubmissionStore(),
   supplierStore = new SupplierStore(),
+  getExchangeRate?: () => Promise<BnaUsdArsExchangeRate>,
 ) {
   const app = express();
   const directoryRouter = createDirectoryRouter(accountStore);
@@ -42,7 +44,7 @@ export function createApp(
   app.use(createActorSubmissionsRouter(accountStore, actorSubmissionStore, notificationStore));
   app.use(createSystemNotificationsRouter(accountStore, notificationStore, poolStore));
   app.use(createAdminParticipantsRouter(accountStore, notificationStore));
-  app.use(createSuppliersRouter(accountStore, supplierStore, poolStore));
+  app.use(createSuppliersRouter(accountStore, supplierStore, poolStore, getExchangeRate));
 
   // Keep existing directory APIs mounted as before.
   app.use(directoryRouter);

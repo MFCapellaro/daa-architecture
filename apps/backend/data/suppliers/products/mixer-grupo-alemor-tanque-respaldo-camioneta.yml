@@ -1,0 +1,15 @@
+id: mixer-grupo-alemor-tanque-respaldo-camioneta
+category: tanques-agua
+subcategory: ""
+name: Tanque de Respaldo Camioneta para Drones
+brand: Grupo Alemor
+model: Tanque de Respaldo Camioneta para Drones
+description: ""
+characteristics: {}
+images: []
+sources:
+  - type: fabricante
+    url: https://grupoalemor.com/
+status: pending-review
+createdAt: 2026-11-04T17:56:47.713Z
+updatedAt: 2026-11-04T17:56:47.713Z

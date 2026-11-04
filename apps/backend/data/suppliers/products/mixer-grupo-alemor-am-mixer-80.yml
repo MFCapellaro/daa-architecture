@@ -1,0 +1,39 @@
+id: mixer-grupo-alemor-am-mixer-80
+category: mixers
+subcategory: ""
+name: AM MIXER 80
+brand: Grupo Alemor
+model: AM MIXER 80
+description: ""
+characteristics:
+  configuracion:
+    nivel: null
+    criterio: Clasificar Básica / Intermedia / Máxima después de verificar
+      equipamiento y prestaciones; no inferir por capacidad.
+  capacidad_litros: 80
+  energia:
+    tipo: electrica
+    detalle_publicado: Bomba eléctrica 220 V
+  bomba:
+    potencia_hp: null
+    detalle: Bomba eléctrica 220 V, según ficha del fabricante.
+  motobomba:
+    potencia_hp: null
+    detalle: No informado
+  motor_agitacion:
+    presente: null
+    potencia_hp: null
+    detalle: Verificar si equipa agitador/rotor independiente.
+  mangueras:
+    longitud_metros: 15
+    detalle: Manguera surtidora 15 m
+  caudalimetro:
+    tipo: null
+  monitoreo_control_remoto: null
+images: []
+sources:
+  - type: fabricante
+    url: https://grupoalemor.com/p/MTZ-38-mezcladores-am-mixer-80
+status: pending-review
+createdAt: 2026-11-04T17:56:47.455Z
+updatedAt: 2026-11-04T17:56:47.455Z

@@ -54,6 +54,16 @@ export type PriceUpdate = {
   updatedAt: string;
   currency: string;
   price: number | null;
+  equivalentCurrency?: string;
+  equivalentPrice?: number;
+  exchangeRateDetails?: {
+    baseCurrency: string;
+    quoteCurrency: string;
+    rate: number;
+    effectiveDate: string;
+    fetchedAt: string;
+    source: string;
+  };
   method: "active-pool" | "dealer-average" | "manufacturer-reference" | "unavailable";
   quoteIds: string[];
   quoteEvaluations: PriceQuoteEvaluation[];
@@ -64,5 +74,6 @@ export type PriceUpdateOptions = {
   targetCurrency: string;
   asOf: string;
   exchangeRates: Record<string, number>;
+  exchangeRateDetails?: PriceUpdate["exchangeRateDetails"];
   maxQuoteAgeDays?: number;
 };

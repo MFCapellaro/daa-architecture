@@ -1,0 +1,39 @@
+id: mixer-grupo-alemor-am-mixer-1000-bomba-alto-flujo
+category: mixers
+subcategory: ""
+name: AM MIXER 1000 BOMBA ALTO FLUJO
+brand: Grupo Alemor
+model: AM MIXER 1000 BOMBA ALTO FLUJO
+description: ""
+characteristics:
+  configuracion:
+    nivel: null
+    criterio: Clasificar Básica / Intermedia / Máxima después de verificar
+      equipamiento y prestaciones; no inferir por capacidad.
+  capacidad_litros: 1000
+  energia:
+    tipo: electrica
+    detalle_publicado: Bomba centrífuga eléctrica 220 V; potencia HP no publicada
+  bomba:
+    potencia_hp: null
+    detalle: Bomba centrífuga de alto caudal 220 V; potencia no publicada.
+  motobomba:
+    potencia_hp: null
+    detalle: No informado
+  motor_agitacion:
+    presente: null
+    potencia_hp: null
+    detalle: Verificar si equipa agitador/rotor independiente.
+  mangueras:
+    longitud_metros: 12.5
+    detalle: Manguera de dosificación 12,5 m; lanza de succión con manguera de 4 m.
+  caudalimetro:
+    tipo: null
+  monitoreo_control_remoto: true
+images: []
+sources:
+  - type: fabricante
+    url: https://grupoalemor.com/p/MTZ-50-mezcladores-am-mixer-1000-bomba-alto-flujo
+status: pending-review
+createdAt: 2026-11-04T17:56:47.639Z
+updatedAt: 2026-11-04T17:56:47.639Z

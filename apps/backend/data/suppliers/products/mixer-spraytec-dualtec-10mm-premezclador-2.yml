@@ -1,0 +1,39 @@
+id: mixer-spraytec-dualtec-10mm-premezclador-2
+category: mixers
+subcategory: ""
+name: DUALTEC 10 mm Premezclador 2.0
+brand: SprayTec
+model: DUALTEC 10 mm Premezclador 2.0
+description: ""
+characteristics:
+  configuracion:
+    nivel: null
+    criterio: Clasificar Básica / Intermedia / Máxima después de verificar
+      equipamiento y prestaciones; no inferir por capacidad.
+  capacidad_litros: null
+  energia:
+    tipo: null
+    detalle_publicado: Premezclador; no se declara accionamiento en ficha consultada
+  bomba:
+    potencia_hp: null
+    detalle: null
+  motobomba:
+    potencia_hp: null
+    detalle: No informado
+  motor_agitacion:
+    presente: null
+    potencia_hp: null
+    detalle: Verificar si equipa agitador/rotor independiente.
+  mangueras:
+    longitud_metros: null
+    detalle: No aplica / no publicado
+  caudalimetro:
+    tipo: null
+  monitoreo_control_remoto: null
+images: []
+sources:
+  - type: fabricante
+    url: https://spraytec.com.ar/productos/cat/8/mezcladores-de-producto
+status: pending-review
+createdAt: 2026-11-04T17:56:47.770Z
+updatedAt: 2026-11-04T17:56:47.770Z

@@ -214,12 +214,27 @@ export function updatePrice(
     ? null
     : selected.reduce((total, evaluation) => total + (evaluation.normalizedUnitPrice ?? 0), 0) /
       selected.length;
+  const price = average === null ? null : Math.round((average + Number.EPSILON) * 100) / 100;
+  const exchangeRateDetails = options.exchangeRateDetails;
+  const equivalentCurrency = targetCurrency === "ARS" ? "USD" : targetCurrency === "USD" ? "ARS" : undefined;
+  const equivalentAmount = price === null || !exchangeRateDetails || !equivalentCurrency
+    ? undefined
+    : targetCurrency === "ARS"
+      ? price / exchangeRateDetails.rate
+      : price * exchangeRateDetails.rate;
+  const equivalentPrice = equivalentAmount === undefined
+    ? undefined
+    : Math.round((equivalentAmount + Number.EPSILON) * 100) / 100;
 
   return {
     productId: options.productId,
     updatedAt: options.asOf,
     currency: targetCurrency,
-    price: average === null ? null : Math.round((average + Number.EPSILON) * 100) / 100,
+    price,
+    ...(equivalentPrice !== undefined && equivalentCurrency
+      ? { equivalentCurrency, equivalentPrice }
+      : {}),
+    ...(exchangeRateDetails ? { exchangeRateDetails } : {}),
     method,
     quoteIds: selected.map((evaluation) => evaluation.quote.id),
     quoteEvaluations: evaluations

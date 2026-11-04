@@ -1,0 +1,250 @@
+[
+  {
+    "id": "drones",
+    "label": "Drones",
+    "order": 0,
+    "subcategories": [],
+    "attributes": []
+  },
+  {
+    "id": "repuestos",
+    "label": "Repuestos",
+    "order": 1,
+    "subcategories": [
+      "Baterías",
+      "Cargadores",
+      "Controles",
+      "RTK"
+    ],
+    "attributes": []
+  },
+  {
+    "id": "meteorologia",
+    "label": "Meteorología",
+    "order": 2,
+    "subcategories": [],
+    "attributes": []
+  },
+  {
+    "id": "starlink",
+    "label": "Starlink",
+    "order": 3,
+    "subcategories": [],
+    "attributes": []
+  },
+  {
+    "id": "mixers",
+    "label": "Mixers",
+    "order": 4,
+    "subcategories": [],
+    "attributes": [
+      {
+        "key": "configuracion.nivel",
+        "label": "Configuración",
+        "type": "select",
+        "options": [
+          "basica",
+          "intermedia",
+          "maxima"
+        ],
+        "comparable": true
+      },
+      {
+        "key": "configuracion.criterio",
+        "label": "Criterio de configuración",
+        "type": "text",
+        "comparable": false
+      },
+      {
+        "key": "capacidad_litros",
+        "label": "Capacidad",
+        "type": "number",
+        "unit": "L",
+        "comparable": true
+      },
+      {
+        "key": "energia.tipo",
+        "label": "Tipo de energía",
+        "type": "select",
+        "options": [
+          "naftera",
+          "electrica",
+          "hibrida",
+          "no_aplica"
+        ],
+        "comparable": true
+      },
+      {
+        "key": "energia.detalle_publicado",
+        "label": "Detalle de energía",
+        "type": "text",
+        "comparable": false
+      },
+      {
+        "key": "bomba.potencia_hp",
+        "label": "Potencia de bomba",
+        "type": "number",
+        "unit": "HP",
+        "comparable": true
+      },
+      {
+        "key": "bomba.detalle",
+        "label": "Detalle de bomba",
+        "type": "text",
+        "comparable": false
+      },
+      {
+        "key": "motobomba.potencia_hp",
+        "label": "Potencia de motobomba",
+        "type": "number",
+        "unit": "HP",
+        "comparable": true
+      },
+      {
+        "key": "motobomba.detalle",
+        "label": "Detalle de motobomba",
+        "type": "text",
+        "comparable": false
+      },
+      {
+        "key": "motor_agitacion.presente",
+        "label": "Motor de agitación",
+        "type": "boolean",
+        "comparable": true
+      },
+      {
+        "key": "motor_agitacion.potencia_hp",
+        "label": "Potencia de motor de agitación",
+        "type": "number",
+        "unit": "HP",
+        "comparable": true
+      },
+      {
+        "key": "motor_agitacion.detalle",
+        "label": "Detalle de agitación",
+        "type": "text",
+        "comparable": false
+      },
+      {
+        "key": "mangueras.longitud_metros",
+        "label": "Longitud de mangueras",
+        "type": "number",
+        "unit": "m",
+        "comparable": true
+      },
+      {
+        "key": "mangueras.detalle",
+        "label": "Detalle de mangueras",
+        "type": "text",
+        "comparable": false
+      },
+      {
+        "key": "caudalimetro.tipo",
+        "label": "Caudalímetro",
+        "type": "select",
+        "options": [
+          "mecanico",
+          "digital",
+          "no_aplica"
+        ],
+        "comparable": true
+      },
+      {
+        "key": "monitoreo_control_remoto",
+        "label": "Monitoreo / control remoto",
+        "type": "boolean",
+        "comparable": true
+      }
+    ]
+  },
+  {
+    "id": "kits-mezcladores",
+    "label": "Kits de armado de Mezcladores",
+    "order": 5,
+    "subcategories": [
+      "Mangueras",
+      "Surtidores",
+      "Válvulas",
+      "Caudalímetro",
+      "Bomba eléctrica",
+      "Agitador",
+      "Tanque de mezcla",
+      "Filtros",
+      "Acoples"
+    ],
+    "attributes": []
+  },
+  {
+    "id": "trailers",
+    "label": "Trailers",
+    "order": 6,
+    "subcategories": [],
+    "attributes": []
+  },
+  {
+    "id": "generadores",
+    "label": "Generadores",
+    "order": 7,
+    "subcategories": [],
+    "attributes": []
+  },
+  {
+    "id": "kit-mediciones",
+    "label": "Kit Mediciones",
+    "order": 8,
+    "subcategories": [
+      "PH",
+      "Tarjetas hidrosensibles",
+      "Recipientes graduados",
+      "Bandejas",
+      "Veletas"
+    ],
+    "attributes": []
+  },
+  {
+    "id": "software",
+    "label": "Software",
+    "order": 9,
+    "subcategories": [],
+    "attributes": []
+  },
+  {
+    "id": "panel-electrico",
+    "label": "Panel Eléctrico",
+    "order": 10,
+    "subcategories": [],
+    "attributes": []
+  },
+  {
+    "id": "accesorios",
+    "label": "Accesorios",
+    "order": 11,
+    "subcategories": [
+      "3D",
+      "Carros de transporte",
+      "Estructura para caja 4 x 4"
+    ],
+    "attributes": []
+  },
+  {
+    "id": "tanques-agua",
+    "label": "Tanques de agua",
+    "order": 12,
+    "subcategories": [],
+    "attributes": []
+  },
+  {
+    "id": "luces-tripodes",
+    "label": "Luces y Trípodes",
+    "order": 13,
+    "subcategories": [],
+    "attributes": []
+  },
+  {
+    "id": "gazebo-sillas",
+    "label": "Gazebo y sillas",
+    "order": 14,
+    "subcategories": [],
+    "attributes": []
+  }
+]

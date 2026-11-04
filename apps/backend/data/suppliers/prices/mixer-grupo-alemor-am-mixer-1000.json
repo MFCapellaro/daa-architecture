@@ -1,0 +1,273 @@
+[
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-1000",
+    "updatedAt": "2026-11-04T18:32:56.857Z",
+    "currency": "USD",
+    "price": null,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T18:32:58.003Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "unavailable",
+    "quoteIds": [],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-748eb94f-f769-4c0f-85ad-5c3a8e9aea61",
+          "productId": "mixer-grupo-alemor-am-mixer-1000",
+          "supplierId": "A",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 7599,
+          "currency": "USD",
+          "observedAt": "2026-11-04T21:28:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+        },
+        "status": "rejected",
+        "reason": "quote-from-future"
+      }
+    ],
+    "id": "price-update-c6a09606-4da6-4886-92d7-8ba5f171c555"
+  },
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-1000",
+    "updatedAt": "2026-11-04T18:33:33.096Z",
+    "currency": "USD",
+    "price": null,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T18:33:33.924Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "unavailable",
+    "quoteIds": [],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-748eb94f-f769-4c0f-85ad-5c3a8e9aea61",
+          "productId": "mixer-grupo-alemor-am-mixer-1000",
+          "supplierId": "A",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 7599,
+          "currency": "USD",
+          "observedAt": "2026-11-04T21:28:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+        },
+        "status": "rejected",
+        "reason": "quote-from-future"
+      }
+    ],
+    "id": "price-update-925bc471-66b5-40c8-ad97-3319353bcb14"
+  },
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-1000",
+    "updatedAt": "2026-11-04T18:34:17.241Z",
+    "currency": "ARS",
+    "price": null,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T18:34:18.971Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "unavailable",
+    "quoteIds": [],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-748eb94f-f769-4c0f-85ad-5c3a8e9aea61",
+          "productId": "mixer-grupo-alemor-am-mixer-1000",
+          "supplierId": "A",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 7599,
+          "currency": "USD",
+          "observedAt": "2026-11-04T21:28:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+        },
+        "status": "rejected",
+        "reason": "quote-from-future"
+      }
+    ],
+    "id": "price-update-1709dc72-5e9c-478d-b4a0-3f922841c34f"
+  },
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-1000",
+    "updatedAt": "2026-11-04T18:35:06.409Z",
+    "currency": "USD",
+    "price": null,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T18:35:08.131Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "unavailable",
+    "quoteIds": [],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-748eb94f-f769-4c0f-85ad-5c3a8e9aea61",
+          "productId": "mixer-grupo-alemor-am-mixer-1000",
+          "supplierId": "A",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 7599,
+          "currency": "USD",
+          "observedAt": "2026-11-04T21:28:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+        },
+        "status": "rejected",
+        "reason": "quote-from-future"
+      }
+    ],
+    "id": "price-update-9380b90b-6252-4ff7-9e1a-9dd2ec300a9f"
+  },
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-1000",
+    "updatedAt": "2026-11-04T18:44:32.785Z",
+    "currency": "ARS",
+    "price": null,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T18:44:33.578Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "unavailable",
+    "quoteIds": [],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-748eb94f-f769-4c0f-85ad-5c3a8e9aea61",
+          "productId": "mixer-grupo-alemor-am-mixer-1000",
+          "supplierId": "A",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 7599,
+          "currency": "USD",
+          "observedAt": "2026-11-04T21:28:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+        },
+        "status": "rejected",
+        "reason": "quote-from-future"
+      },
+      {
+        "quote": {
+          "id": "quote-b93d13b0-bff9-4258-8861-f07fce22d598",
+          "productId": "mixer-grupo-alemor-am-mixer-1000",
+          "supplierId": "A",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 7599,
+          "currency": "USD",
+          "observedAt": "2026-11-04T21:28:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+        },
+        "status": "rejected",
+        "reason": "quote-from-future"
+      },
+      {
+        "quote": {
+          "id": "quote-ec64952f-0b8b-4422-a3ea-055ce26d7b72",
+          "productId": "mixer-grupo-alemor-am-mixer-1000",
+          "supplierId": "A",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 7599,
+          "currency": "USD",
+          "observedAt": "2026-11-04T21:28:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+        },
+        "status": "rejected",
+        "reason": "quote-from-future"
+      },
+      {
+        "quote": {
+          "id": "quote-a20ce3fc-bbcf-4472-b1a0-15877df0e0f9",
+          "productId": "mixer-grupo-alemor-am-mixer-1000",
+          "supplierId": "G",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 7599,
+          "currency": "USD",
+          "observedAt": "2026-11-04T21:42:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "whatsapp Alemor"
+        },
+        "status": "rejected",
+        "reason": "quote-from-future"
+      }
+    ],
+    "id": "price-update-3d5d1af4-4d9a-4a30-a8a8-cd72c3782214"
+  }
+]

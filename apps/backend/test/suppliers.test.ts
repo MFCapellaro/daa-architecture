@@ -5,6 +5,7 @@ import { createApp } from "../src/app.js";
 import { ParticipantAccountStore } from "../src/services/ParticipantAccountStore.js";
 import { PoolStore, type PoolInput } from "../src/services/PoolStore.js";
 import { SupplierStore } from "../src/services/SupplierStore.js";
+import type { BnaUsdArsExchangeRate } from "../src/services/BnaExchangeRate.js";
 
 describe("admin Suppliers API", () => {
   let directory: string;
@@ -13,8 +14,17 @@ describe("admin Suppliers API", () => {
   let adminToken: string;
   let poolStore: PoolStore;
   let supplierStore: SupplierStore;
+  let supplierDirectory: string;
   let originalAdminEmail: string | undefined;
   let originalAdminPassword: string | undefined;
+  const bnaExchangeRate: BnaUsdArsExchangeRate = {
+    baseCurrency: "USD",
+    quoteCurrency: "ARS",
+    rate: 1570,
+    effectiveDate: "2026-11-04",
+    fetchedAt: "2026-11-04T18:20:00.000Z",
+    source: "https://www.bna.com.ar/Personas",
+  };
 
   const request = async <T,>(path: string, init?: RequestInit): Promise<{ response: Response; body: T }> => {
     const headers = new Headers(init?.headers);
@@ -32,7 +42,8 @@ describe("admin Suppliers API", () => {
     process.env.ADMIN_EMAIL = "suppliers-admin@example.test";
     process.env.ADMIN_PASSWORD = "suppliers-admin-secret";
     poolStore = new PoolStore(join(directory, "pools"));
-    supplierStore = new SupplierStore({ directory: join(directory, "supplier-data"), seedMixers: false });
+    supplierDirectory = join(directory, "supplier-data");
+    supplierStore = new SupplierStore({ directory: supplierDirectory, seedMixers: false });
     const app = createApp(
       new ParticipantAccountStore(join(directory, "accounts")),
       undefined,
@@ -41,6 +52,7 @@ describe("admin Suppliers API", () => {
       undefined,
       undefined,
       supplierStore,
+      async () => bnaExchangeRate,
     );
     server = app.listen(0);
     await new Promise<void>((resolve) => server.once("listening", resolve));
@@ -71,11 +83,17 @@ describe("admin Suppliers API", () => {
     const publicResponse = await fetch(`${baseUrl}/api/admin/suppliers/categories`);
     expect(publicResponse.status).toBe(401);
 
-    const { response, body } = await request<Array<{ label: string }>>("/api/admin/suppliers/categories");
+    const { response, body } = await request<Array<{
+      label: string;
+      attributes: Array<{ key: string; label: string; type: string; unit?: string; comparable: boolean }>;
+    }>>("/api/admin/suppliers/categories");
     expect(response.status).toBe(200);
     expect(body.map(({ label }) => label)).toContain("Mixers");
     expect(body.map(({ label }) => label)).toContain("Kits de armado de Mezcladores");
     expect(body).toHaveLength(15);
+    const mixers = body.find((category) => category.label === "Mixers");
+    expect(mixers).toBeDefined();
+    expect(mixers?.attributes).toContainEqual({ key: "capacidad_litros", label: "Capacidad", type: "number", unit: "L", comparable: true });
   });
 
   it("creates products, records manual quote evidence, recalculates and persists price history separately", async () => {
@@ -128,7 +146,14 @@ describe("admin Suppliers API", () => {
     });
     expect(quote.response.status).toBe(201);
 
-    const recalculate = await request<{ price: number; method: string; quoteIds: string[] }>(
+    const recalculate = await request<{
+      price: number;
+      method: string;
+      quoteIds: string[];
+      equivalentPrice: number;
+      equivalentCurrency: string;
+      exchangeRateDetails: BnaUsdArsExchangeRate;
+    }>(
       `/api/admin/suppliers/${productId}/prices/recalculate`,
       {
         method: "POST",
@@ -140,6 +165,9 @@ describe("admin Suppliers API", () => {
       price: 1_500_000,
       method: "dealer-average",
       quoteIds: [quote.body[0].id],
+      equivalentPrice: 955.41,
+      equivalentCurrency: "USD",
+      exchangeRateDetails: bnaExchangeRate,
     });
 
     const detail = await request<{
@@ -154,6 +182,77 @@ describe("admin Suppliers API", () => {
     expect(detail.body.quotes[0].sourceReference).toContain("INV-12");
     expect(detail.body.prices.map(({ price }) => price)).toEqual([null, 1_500_000]);
     expect(detail.body.prices[1].quoteEvaluations[0].quote.sourceReference).toContain("INV-12");
+  });
+
+  it("converts USD quotes to ARS and supports recalculating the same price in USD", async () => {
+    const product = await supplierStore.create({
+      category: "mixers",
+      subcategory: "",
+      name: "Mixer USD",
+      brand: "Marca Demo",
+      model: "USD-1",
+      description: "",
+      characteristics: {},
+      images: [],
+      sources: [],
+      status: "pending-review",
+    });
+    await request(`/api/admin/suppliers/${product.id}/quotes`, {
+      method: "POST",
+      body: JSON.stringify({
+        sourceType: "manual",
+        supplierType: "dealer",
+        supplierId: "dealer-usd",
+        supplierName: "Dealer USD",
+        unitPrice: 1000,
+        currency: "USD",
+        observedAt: new Date().toISOString(),
+        sourceReference: "Lista vigente en dólares",
+        conditions: {
+          includesVat: false,
+          includesFreight: false,
+          includesFinancing: false,
+          includesAccessories: false,
+        },
+      }),
+    });
+    await request(`/api/admin/suppliers/${product.id}/quotes`, {
+      method: "POST",
+      body: JSON.stringify({
+        sourceType: "manual",
+        supplierType: "dealer",
+        supplierId: "dealer-ars",
+        supplierName: "Dealer ARS",
+        unitPrice: 1_570_000,
+        currency: "ARS",
+        observedAt: new Date().toISOString(),
+        sourceReference: "Lista vigente en pesos",
+        conditions: {
+          includesVat: false,
+          includesFreight: false,
+          includesFinancing: false,
+          includesAccessories: false,
+        },
+      }),
+    });
+
+    const ars = await request<{ price: number; equivalentPrice: number; currency: string }>(
+      `/api/admin/suppliers/${product.id}/prices/recalculate`,
+      {
+        method: "POST",
+        body: JSON.stringify({ targetCurrency: "ARS", asOf: new Date().toISOString() }),
+      },
+    );
+    expect(ars.body).toMatchObject({ price: 1_570_000, equivalentPrice: 1000, currency: "ARS" });
+
+    const usd = await request<{ price: number; equivalentPrice: number; currency: string }>(
+      `/api/admin/suppliers/${product.id}/prices/recalculate`,
+      {
+        method: "POST",
+        body: JSON.stringify({ targetCurrency: "USD", asOf: new Date().toISOString() }),
+      },
+    );
+    expect(usd.body).toMatchObject({ price: 1000, equivalentPrice: 1_570_000, currency: "USD" });
   });
 
   it("uses a visible, active and fully described matching Pool unit price before web quotes", async () => {
@@ -230,5 +329,129 @@ describe("admin Suppliers API", () => {
       status: "pending-review",
     });
     expect(researchedMixer?.characteristics).toHaveProperty("capacidad_litros", 240);
+    expect(researchedMixer?.characteristics).not.toHaveProperty("precio");
+    expect(researchedMixer?.characteristics).not.toHaveProperty("fotos");
+    expect(researchedMixer?.characteristics).toHaveProperty("bomba.potencia_hp", null);
+  });
+
+  it("allows administrators to create, edit, order, and delete unused categories", async () => {
+    const categoryInput = {
+      label: "Instrumentos de prueba",
+      subcategories: ["Medición"],
+      attributes: [{
+        key: "precision",
+        label: "Precisión",
+        type: "number",
+        unit: "m",
+        comparable: true,
+      }],
+    };
+    const created = await request<{ id: string; order: number }>("/api/admin/suppliers/categories", {
+      method: "POST",
+      body: JSON.stringify(categoryInput),
+    });
+    expect(created.response.status).toBe(201);
+    expect(created.body).toMatchObject({ id: "instrumentos-de-prueba", order: 15 });
+
+    const assignedProduct = await request<{ id: string }>("/api/admin/suppliers", {
+      method: "POST",
+      body: JSON.stringify({
+        category: created.body.id,
+        subcategory: "Medición",
+        name: "Instrumento asignado",
+        brand: "",
+        model: "",
+        description: "",
+        characteristics: { precision: 2 },
+        images: [],
+        sources: [],
+        status: "pending-review",
+      }),
+    });
+    expect(assignedProduct.response.status).toBe(201);
+
+    const updated = await request<{ label: string }>("/api/admin/suppliers/categories/instrumentos-de-prueba", {
+      method: "PUT",
+      body: JSON.stringify({ ...categoryInput, label: "Instrumentos de medición" }),
+    });
+    expect(updated.response.status).toBe(200);
+    expect(updated.body.label).toBe("Instrumentos de medición");
+
+    const invalidSubcategoryUpdate = await request("/api/admin/suppliers/categories/instrumentos-de-prueba", {
+      method: "PUT",
+      body: JSON.stringify({ ...categoryInput, label: "Instrumentos de medición", subcategories: [] }),
+    });
+    expect(invalidSubcategoryUpdate.response.status).toBe(409);
+
+    const categories = await request<Array<{ id: string }>>("/api/admin/suppliers/categories");
+    const order = [...categories.body].reverse().map(({ id }) => id);
+    const reordered = await request<Array<{ id: string; order: number }>>("/api/admin/suppliers/categories/order", {
+      method: "PUT",
+      body: JSON.stringify({ categoryIds: order }),
+    });
+    expect(reordered.response.status).toBe(200);
+    expect(reordered.body[0]).toMatchObject({ id: order[0], order: 0 });
+    const persistedCategories = await new SupplierStore({
+      directory: supplierDirectory,
+      seedMixers: false,
+    }).listCategories();
+    expect(persistedCategories.map(({ id }) => id)).toEqual(order);
+
+    const deleted = await request<void>("/api/admin/suppliers/categories/instrumentos-de-prueba", {
+      method: "DELETE",
+    });
+    expect(deleted.response.status).toBe(409);
+    await request(`/api/admin/suppliers/${assignedProduct.body.id}`, { method: "DELETE" });
+    const deletedUnusedCategory = await request<void>("/api/admin/suppliers/categories/instrumentos-de-prueba", {
+      method: "DELETE",
+    });
+    expect(deletedUnusedCategory.response.status).toBe(204);
+  });
+
+  it("allows comparisons only between active products in the same category", async () => {
+    const mixerInput = {
+      category: "mixers",
+      subcategory: "",
+      name: "Mixer comparable",
+      brand: "Marca Demo",
+      model: "M-2",
+      description: "",
+      characteristics: { capacidad_litros: 240, bomba: { potencia_hp: null } },
+      images: [],
+      sources: [],
+      status: "active",
+    };
+    const first = await request<{ id: string }>("/api/admin/suppliers", {
+      method: "POST",
+      body: JSON.stringify(mixerInput),
+    });
+    const second = await request<{ id: string }>("/api/admin/suppliers", {
+      method: "POST",
+      body: JSON.stringify({ ...mixerInput, name: "Mixer comparable 2", model: "M-3" }),
+    });
+    const drone = await request<{ id: string }>("/api/admin/suppliers", {
+      method: "POST",
+      body: JSON.stringify({
+        ...mixerInput,
+        category: "drones",
+        name: "Drone comparable",
+        characteristics: {},
+      }),
+    });
+
+    const mixedCategories = await fetch(
+      `${baseUrl}/api/suppliers/compare?category=mixers&ids=${first.body.id},${drone.body.id}`,
+    );
+    expect(mixedCategories.status).toBe(400);
+
+    const comparison = await fetch(
+      `${baseUrl}/api/suppliers/compare?category=mixers&ids=${first.body.id},${second.body.id}`,
+    );
+    expect(comparison.status).toBe(200);
+    expect(await comparison.json()).toMatchObject({
+      category: { id: "mixers" },
+      products: [{ category: "mixers" }, { category: "mixers" }],
+      comparableAttributes: expect.arrayContaining([expect.objectContaining({ key: "capacidad_litros" })]),
+    });
   });
 });

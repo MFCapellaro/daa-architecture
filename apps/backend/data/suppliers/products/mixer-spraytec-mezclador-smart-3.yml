@@ -1,0 +1,39 @@
+id: mixer-spraytec-mezclador-smart-3
+category: mixers
+subcategory: ""
+name: Mezclador Smart 3.0
+brand: SprayTec
+model: Mezclador Smart 3.0
+description: ""
+characteristics:
+  configuracion:
+    nivel: null
+    criterio: Clasificar Básica / Intermedia / Máxima después de verificar
+      equipamiento y prestaciones; no inferir por capacidad.
+  capacidad_litros: 38
+  energia:
+    tipo: null
+    detalle_publicado: Premezclador de 38 L; accionamiento no informado en ficha
+  bomba:
+    potencia_hp: null
+    detalle: null
+  motobomba:
+    potencia_hp: null
+    detalle: No informado
+  motor_agitacion:
+    presente: null
+    potencia_hp: null
+    detalle: Verificar si equipa agitador/rotor independiente.
+  mangueras:
+    longitud_metros: null
+    detalle: No aplica / no publicado
+  caudalimetro:
+    tipo: null
+  monitoreo_control_remoto: null
+images: []
+sources:
+  - type: fabricante
+    url: https://spraytec.com.ar/productos/cat/8/mezcladores-de-producto
+status: pending-review
+createdAt: 2026-11-04T17:56:47.787Z
+updatedAt: 2026-11-04T17:56:47.787Z

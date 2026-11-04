@@ -1,8 +1,13 @@
 import React, { useEffect, useMemo, useState, type ChangeEvent, type FormEvent } from "react";
+import {
+  SupplierCategoryManager,
+  type SupplierAttribute,
+  type SupplierCategory as Category,
+  type SupplierCategoryInput,
+} from "../../components/SupplierCategoryManager";
 import { useAuth } from "../../context/AuthContext";
 import "./AdminSuppliersPage.css";
 
-type Category = { id: string; label: string; subcategories: string[] };
 type ProductStatus = "pending-review" | "active" | "archived";
 type ProductImage = { url: string; alt: string };
 type Product = {
@@ -55,6 +60,16 @@ type PriceRecord = {
   updatedAt: string;
   currency: string;
   price: number | null;
+  equivalentCurrency?: string;
+  equivalentPrice?: number;
+  exchangeRateDetails?: {
+    baseCurrency: string;
+    quoteCurrency: string;
+    rate: number;
+    effectiveDate: string;
+    fetchedAt: string;
+    source: string;
+  };
   method: "active-pool" | "dealer-average" | "manufacturer-reference" | "unavailable";
   quoteIds: string[];
   quoteEvaluations: QuoteEvaluation[];
@@ -68,20 +83,18 @@ type ProductFormState = {
   brand: string;
   model: string;
   description: string;
-  characteristics: string;
   images: string;
   sources: string;
   status: ProductStatus;
 };
 
 const EMPTY_FORM: ProductFormState = {
-  category: "drones",
+  category: "",
   subcategory: "",
   name: "",
   brand: "",
   model: "",
   description: "",
-  characteristics: "{}",
   images: "",
   sources: "",
   status: "pending-review",
@@ -121,7 +134,6 @@ function toProductForm(product: Product): ProductFormState {
     brand: product.brand,
     model: product.model,
     description: product.description,
-    characteristics: JSON.stringify(product.characteristics, null, 2),
     images: product.images.filter((image) => !image.url.startsWith("data:image/"))
       .map((image) => `${image.url} | ${image.alt}`).join("\n"),
     sources: product.sources.map((source) => `${source.type} | ${source.url}`).join("\n"),
@@ -132,6 +144,62 @@ function toProductForm(product: Product): ProductFormState {
 function parseLines(value: string, separator: string): string[][] {
   return value.split("\n").map((line) => line.split(separator).map((part) => part.trim()))
     .filter((parts) => parts.some(Boolean));
+}
+
+function getPath(source: Record<string, unknown>, path: string): unknown {
+  let current: unknown = source;
+  for (const segment of path.split(".")) {
+    if (current === null || typeof current !== "object" || Array.isArray(current)
+      || !(segment in current)) return undefined;
+    current = (current as Record<string, unknown>)[segment];
+  }
+  return current;
+}
+
+function setPath(target: Record<string, unknown>, path: string, value: unknown): Record<string, unknown> {
+  const result = structuredClone(target);
+  const segments = path.split(".");
+  let current = result;
+  for (const segment of segments.slice(0, -1)) {
+    const child = current[segment];
+    if (child === null || typeof child !== "object" || Array.isArray(child)) current[segment] = {};
+    current = current[segment] as Record<string, unknown>;
+  }
+  current[segments[segments.length - 1]] = value;
+  return result;
+}
+
+function characteristicValue(
+  attribute: SupplierAttribute,
+  value: unknown,
+  onChange: (value: unknown) => void,
+): React.ReactNode {
+  if (attribute.type === "boolean") {
+    return <select value={typeof value === "boolean" ? String(value) : ""} onChange={(event) =>
+      onChange(event.target.value === "" ? null : event.target.value === "true")}>
+      <option value="">Pendiente / no informado</option><option value="true">Sí</option><option value="false">No</option>
+    </select>;
+  }
+  if (attribute.type === "select") {
+    return <select value={typeof value === "string" ? value : ""} onChange={(event) =>
+      onChange(event.target.value || null)}>
+      <option value="">Pendiente / no informado</option>
+      {(attribute.options ?? []).map((option) => <option key={option} value={option}>{option}</option>)}
+    </select>;
+  }
+  return <input
+    type={attribute.type === "number" ? "number" : "text"}
+    step={attribute.type === "number" ? "any" : undefined}
+    value={typeof value === "string" || typeof value === "number" ? value : ""}
+    placeholder="Pendiente / no informado"
+    onChange={(event) => {
+      if (event.target.value === "") onChange(null);
+      else if (attribute.type === "number") {
+        const numeric = Number(event.target.value);
+        onChange(Number.isFinite(numeric) ? numeric : null);
+      } else onChange(event.target.value);
+    }}
+  />;
 }
 
 async function compressSupplierImage(file: File): Promise<ProductImage> {
@@ -186,6 +254,7 @@ export const AdminSuppliersPage: React.FC = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [detail, setDetail] = useState<ProductDetail | null>(null);
   const [form, setForm] = useState<ProductFormState>(EMPTY_FORM);
+  const [characteristics, setCharacteristics] = useState<Record<string, unknown>>({});
   const [imageData, setImageData] = useState<ProductImage[]>([]);
   const [processingImages, setProcessingImages] = useState(false);
   const [editing, setEditing] = useState(false);
@@ -196,6 +265,7 @@ export const AdminSuppliersPage: React.FC = () => {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
+  const [categoryManagerOpen, setCategoryManagerOpen] = useState(false);
   const [quoteForm, setQuoteForm] = useState({
     sourceType: "manual" as "manual" | "web",
     supplierType: "dealer" as "dealer" | "manufacturer",
@@ -216,7 +286,6 @@ export const AdminSuppliersPage: React.FC = () => {
     accessoriesAmount: "",
   });
   const [targetCurrency, setTargetCurrency] = useState("ARS");
-  const [exchangeRates, setExchangeRates] = useState("{}");
   const [maxQuoteAgeDays, setMaxQuoteAgeDays] = useState("30");
 
   const authorizedFetch = async (url: string, init?: RequestInit): Promise<Response> => {
@@ -254,7 +323,6 @@ export const AdminSuppliersPage: React.FC = () => {
     const nextId = preferredId ?? selectedId;
     const nextProduct = productResult.find((product) => product.id === nextId);
     setSelectedId(nextProduct?.id ?? productResult[0]?.id ?? null);
-    if (!creating && !editing) setDetail(null);
   };
 
   const loadDetail = async (productId: string) => {
@@ -267,6 +335,7 @@ export const AdminSuppliersPage: React.FC = () => {
     }
     setDetail(result);
     setImageData(result.product.images.filter((image) => image.url.startsWith("data:image/")));
+    setCharacteristics(result.product.characteristics);
     if (!editing) setForm(toProductForm(result.product));
   };
 
@@ -299,6 +368,7 @@ export const AdminSuppliersPage: React.FC = () => {
 
   const selectedProduct = products.find((product) => product.id === selectedId) ?? null;
   const currentCategory = categories.find((category) => category.id === form.category);
+  const latestPrice = detail?.prices.at(-1) ?? null;
 
   const beginCreate = () => {
     setCreating(true);
@@ -306,6 +376,7 @@ export const AdminSuppliersPage: React.FC = () => {
     setSelectedId(null);
     setDetail(null);
     setForm(EMPTY_FORM);
+    setCharacteristics({});
     setImageData([]);
     setNotice(null);
     setError(null);
@@ -324,10 +395,6 @@ export const AdminSuppliersPage: React.FC = () => {
     setError(null);
     setNotice(null);
     try {
-      const characteristics: unknown = JSON.parse(form.characteristics);
-      if (characteristics === null || typeof characteristics !== "object" || Array.isArray(characteristics)) {
-        throw new Error("Las características deben ser un objeto JSON.");
-      }
       const images = [
         ...parseLines(form.images, "|").map(([url, alt]) => ({ url, alt: alt ?? "" })),
         ...imageData,
@@ -443,12 +510,6 @@ export const AdminSuppliersPage: React.FC = () => {
     setSaving(true);
     setError(null);
     try {
-      let rates: unknown;
-      try {
-        rates = JSON.parse(exchangeRates);
-      } catch {
-        throw new Error("Las tasas de cambio deben tener formato JSON válido.");
-      }
       const response = await authorizedFetch(
         `/api/admin/suppliers/${encodeURIComponent(detail.product.id)}/prices/recalculate`,
         {
@@ -456,7 +517,6 @@ export const AdminSuppliersPage: React.FC = () => {
           body: JSON.stringify({
             targetCurrency,
             asOf: new Date().toISOString(),
-            exchangeRates: rates,
             maxQuoteAgeDays: Number(maxQuoteAgeDays),
           }),
         },
@@ -481,6 +541,46 @@ export const AdminSuppliersPage: React.FC = () => {
 
   const updateForm = <K extends keyof ProductFormState>(key: K, value: ProductFormState[K]) =>
     setForm((current) => ({ ...current, [key]: value }));
+
+  const saveCategory = async (id: string | null, input: SupplierCategoryInput) => {
+    const response = await authorizedFetch(
+      id ? `/api/admin/suppliers/categories/${encodeURIComponent(id)}` : "/api/admin/suppliers/categories",
+      { method: id ? "PUT" : "POST", body: JSON.stringify(input) },
+    );
+    const result = await response.json() as Category | { message?: string };
+    if (!response.ok || !("id" in result)) {
+      throw new Error("message" in result ? result.message || "No se pudo guardar la categoría."
+        : "No se pudo guardar la categoría.");
+    }
+    await loadProducts();
+  };
+
+  const deleteCategory = async (category: Category) => {
+    const response = await authorizedFetch(
+      `/api/admin/suppliers/categories/${encodeURIComponent(category.id)}`,
+      { method: "DELETE" },
+    );
+    if (!response.ok) {
+      const result = await response.json() as { message?: string };
+      throw new Error(result.message || "No se pudo eliminar la categoría.");
+    }
+    await loadProducts();
+    if (categoryFilter === category.id) setCategoryFilter("all");
+  };
+
+  const reorderCategories = async (ids: string[]) => {
+    const response = await authorizedFetch("/api/admin/suppliers/categories/order", {
+      method: "PUT",
+      body: JSON.stringify({ categoryIds: ids }),
+    });
+    const result = await response.json() as Category[] | { message?: string };
+    if (!response.ok || !Array.isArray(result)) {
+      throw new Error(!Array.isArray(result) ? result.message || "No se pudo guardar el orden."
+        : "La respuesta del orden no es válida.");
+    }
+    setCategories(result);
+    await loadProducts();
+  };
 
   const addImages = async (event: ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.currentTarget.files ?? []);
@@ -512,6 +612,9 @@ export const AdminSuppliersPage: React.FC = () => {
         </div>
         <button className="suppliers-button suppliers-button--primary" type="button" onClick={beginCreate}>
           + Nuevo producto
+        </button>
+        <button className="suppliers-button" type="button" onClick={() => setCategoryManagerOpen(true)}>
+          Administrar categorías
         </button>
       </header>
 
@@ -579,7 +682,9 @@ export const AdminSuppliersPage: React.FC = () => {
                 <select value={form.category} onChange={(event) => {
                   updateForm("category", event.target.value);
                   updateForm("subcategory", "");
+                  setCharacteristics({});
                 }} required>
+                  <option value="" disabled>Selecciona una categoría para cargar su estructura</option>
                   {categories.map((category) => <option key={category.id} value={category.id}>{category.label}</option>)}
                 </select>
               </label>
@@ -589,13 +694,29 @@ export const AdminSuppliersPage: React.FC = () => {
                   {currentCategory.subcategories.map((subcategory) => <option key={subcategory} value={subcategory}>{subcategory}</option>)}
                 </select>
               </label> : null}
+              {currentCategory && <fieldset className="suppliers-characteristics">
+                <legend>Estructura y características de {currentCategory.label}</legend>
+                <p>Estos campos definen la estructura de comparación de esta categoría. Un valor pendiente no se interpreta como “No”.</p>
+                {currentCategory.attributes.map((attribute) => (
+                  <label key={attribute.key}>
+                    {attribute.label}{attribute.unit ? ` (${attribute.unit})` : ""}
+                    {characteristicValue(attribute, getPath(characteristics, attribute.key), (value) =>
+                      setCharacteristics((current) => setPath(current, attribute.key, value)))}
+                  </label>
+                ))}
+                {!currentCategory.attributes.length && <div>
+                  <span>Esta categoría aún no tiene campos de estructura.</span>{" "}
+                  <button className="suppliers-button" type="button" onClick={() => setCategoryManagerOpen(true)}>
+                    Definir estructura
+                  </button>
+                </div>}
+              </fieldset>}
               <label>Nombre del producto<input value={form.name} onChange={(event) => updateForm("name", event.target.value)} required maxLength={160} /></label>
               <div className="suppliers-form-grid">
                 <label>Marca<input value={form.brand} onChange={(event) => updateForm("brand", event.target.value)} maxLength={120} /></label>
                 <label>Modelo<input value={form.model} onChange={(event) => updateForm("model", event.target.value)} maxLength={160} /></label>
               </div>
               <label>Descripción<textarea value={form.description} onChange={(event) => updateForm("description", event.target.value)} rows={3} maxLength={5000} /></label>
-              <label>Características (JSON)<textarea className="suppliers-monospace" value={form.characteristics} onChange={(event) => updateForm("characteristics", event.target.value)} rows={6} /></label>
               <label>Imágenes (una por línea: URL | texto alternativo)<textarea value={form.images} onChange={(event) => updateForm("images", event.target.value)} rows={3} placeholder="https://... | Vista del producto" /></label>
               <section className="suppliers-image-upload">
                 <label className="suppliers-button">
@@ -652,8 +773,23 @@ export const AdminSuppliersPage: React.FC = () => {
               <p><strong>Estado:</strong> {STATUS_LABELS[detail.product.status]}</p>
               <section className="suppliers-pricing">
                 <h3>Precio actual</h3>
-                <p className="suppliers-current-price">{priceLabel(detail.prices.at(-1) ?? null)}</p>
-                {detail.prices.at(-1) && <small>{METHOD_LABELS[detail.prices.at(-1)!.method]} · {new Date(detail.prices.at(-1)!.updatedAt).toLocaleString("es-AR")}</small>}
+                <p className="suppliers-current-price">
+                  {priceLabel(latestPrice)}
+                  {latestPrice?.equivalentPrice !== undefined && latestPrice.equivalentCurrency
+                    ? ` · ${new Intl.NumberFormat("es-AR", {
+                        style: "currency",
+                        currency: latestPrice.equivalentCurrency,
+                      }).format(latestPrice.equivalentPrice)}`
+                    : ""}
+                </p>
+                {latestPrice && <small>
+                  {METHOD_LABELS[latestPrice.method]} · {new Date(latestPrice.updatedAt).toLocaleString("es-AR")}
+                  {latestPrice.exchangeRateDetails && ` · Dólar vendedor BNA: ${new Intl.NumberFormat("es-AR", {
+                    style: "currency",
+                    currency: "ARS",
+                  }).format(latestPrice.exchangeRateDetails.rate)} por USD, vigente ${new Date(`${latestPrice.exchangeRateDetails.effectiveDate}T00:00:00`).toLocaleDateString("es-AR")}`}
+                  {latestPrice.exchangeRateDetails && <> · <a href={latestPrice.exchangeRateDetails.source} target="_blank" rel="noreferrer">fuente BNA</a></>}
+                </small>}
               </section>
 
               <section className="suppliers-pricing">
@@ -674,7 +810,12 @@ export const AdminSuppliersPage: React.FC = () => {
                   <label>Nombre del proveedor<input value={quoteForm.supplierName} onChange={(event) => setQuoteForm((current) => ({ ...current, supplierName: event.target.value, supplierId: current.supplierId || event.target.value }))} required /></label>
                   <div className="suppliers-form-grid">
                     <label>Precio unitario<input type="number" min="0.01" step="0.01" value={quoteForm.unitPrice} onChange={(event) => setQuoteForm((current) => ({ ...current, unitPrice: event.target.value }))} required /></label>
-                    <label>Moneda<input value={quoteForm.currency} onChange={(event) => setQuoteForm((current) => ({ ...current, currency: event.target.value.toUpperCase() }))} minLength={3} maxLength={3} required /></label>
+                    <label>Moneda
+                      <select value={quoteForm.currency} onChange={(event) => setQuoteForm((current) => ({ ...current, currency: event.target.value }))}>
+                        <option value="ARS">Pesos argentinos (ARS)</option>
+                        <option value="USD">Dólares estadounidenses (USD)</option>
+                      </select>
+                    </label>
                   </div>
                   <label>Fecha de cotización<input type="datetime-local" value={quoteForm.observedAt} onChange={(event) => setQuoteForm((current) => ({ ...current, observedAt: event.target.value }))} required /></label>
                   {quoteForm.sourceType === "web" ? <label>URL de origen<input type="url" value={quoteForm.sourceUrl} onChange={(event) => setQuoteForm((current) => ({ ...current, sourceUrl: event.target.value }))} required /></label>
@@ -699,20 +840,27 @@ export const AdminSuppliersPage: React.FC = () => {
 
               <section className="suppliers-pricing">
                 <h3>Recalcular precio</h3>
-                <p className="suppliers-detail-copy">Se descartan extras declarados y se normaliza moneda. La tasa debe expresarse en moneda de destino por unidad de moneda origen.</p>
+                <p className="suppliers-detail-copy">Se consulta la cotización vendedor del Banco Nación del día, se normaliza la moneda y se muestra el equivalente en ARS y USD.</p>
                 <div className="suppliers-form-grid">
-                  <label>Moneda destino<input value={targetCurrency} onChange={(event) => setTargetCurrency(event.target.value.toUpperCase())} maxLength={3} /></label>
+                  <label>Moneda principal
+                    <select value={targetCurrency} onChange={(event) => setTargetCurrency(event.target.value)}>
+                      <option value="ARS">Pesos argentinos (ARS)</option>
+                      <option value="USD">Dólares estadounidenses (USD)</option>
+                    </select>
+                  </label>
                   <label>Vigencia máx. (días)<input type="number" min="0" value={maxQuoteAgeDays} onChange={(event) => setMaxQuoteAgeDays(event.target.value)} /></label>
                 </div>
-                <label>Tasas de cambio (JSON)<textarea className="suppliers-monospace" value={exchangeRates} onChange={(event) => setExchangeRates(event.target.value)} rows={2} placeholder='{"USD": 1000}' /></label>
-                <button className="suppliers-button suppliers-button--primary" type="button" disabled={saving} onClick={() => void recalculatePrice()}>Ejecutar motor y guardar actualización</button>
+                <button className="suppliers-button suppliers-button--primary" type="button" disabled={saving} onClick={() => void recalculatePrice()}>{saving ? "Consultando BNA y actualizando…" : "Consultar tasa BNA y actualizar precio"}</button>
               </section>
 
               <section className="suppliers-pricing">
                 <h3>Historial de precios ({detail.prices.length})</h3>
                 {detail.prices.length ? detail.prices.slice().reverse().map((price) => (
                   <details className="suppliers-history" key={price.id}>
-                    <summary>{priceLabel(price)} · {METHOD_LABELS[price.method]} · {new Date(price.updatedAt).toLocaleDateString("es-AR")}</summary>
+                    <summary>{priceLabel(price)}{price.equivalentPrice !== undefined && price.equivalentCurrency ? ` · ${new Intl.NumberFormat("es-AR", { style: "currency", currency: price.equivalentCurrency }).format(price.equivalentPrice)}` : ""} · {METHOD_LABELS[price.method]} · {new Date(price.updatedAt).toLocaleDateString("es-AR")}</summary>
+                    {price.exchangeRateDetails && <p className="suppliers-detail-copy">
+                      Dólar vendedor BNA: {new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS" }).format(price.exchangeRateDetails.rate)} por USD · vigente {new Date(`${price.exchangeRateDetails.effectiveDate}T00:00:00`).toLocaleDateString("es-AR")} · consultado {new Date(price.exchangeRateDetails.fetchedAt).toLocaleString("es-AR")} · <a href={price.exchangeRateDetails.source} target="_blank" rel="noreferrer">fuente BNA</a>
+                    </p>}
                     <ul>{price.quoteEvaluations.map((evaluation) => (
                       <li key={evaluation.quote.id}>
                         <strong>{evaluation.quote.supplierName}</strong> — {evaluation.status}
@@ -742,6 +890,13 @@ export const AdminSuppliersPage: React.FC = () => {
           )}
         </aside>
       </div>
+      {categoryManagerOpen && <SupplierCategoryManager
+        categories={categories}
+        onClose={() => setCategoryManagerOpen(false)}
+        onSave={saveCategory}
+        onDelete={deleteCategory}
+        onReorder={reorderCategories}
+      />}
     </main>
   );
 };

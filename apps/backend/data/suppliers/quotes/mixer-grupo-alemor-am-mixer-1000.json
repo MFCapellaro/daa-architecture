@@ -1,0 +1,74 @@
+[
+  {
+    "id": "quote-748eb94f-f769-4c0f-85ad-5c3a8e9aea61",
+    "productId": "mixer-grupo-alemor-am-mixer-1000",
+    "supplierId": "A",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 7599,
+    "currency": "USD",
+    "observedAt": "2026-11-04T21:28:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+  },
+  {
+    "id": "quote-b93d13b0-bff9-4258-8861-f07fce22d598",
+    "productId": "mixer-grupo-alemor-am-mixer-1000",
+    "supplierId": "A",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 7599,
+    "currency": "USD",
+    "observedAt": "2026-11-04T21:28:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+  },
+  {
+    "id": "quote-ec64952f-0b8b-4422-a3ea-055ce26d7b72",
+    "productId": "mixer-grupo-alemor-am-mixer-1000",
+    "supplierId": "A",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 7599,
+    "currency": "USD",
+    "observedAt": "2026-11-04T21:28:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "+54 9 3471 563105 Grupo Alemor SRL"
+  },
+  {
+    "id": "quote-a20ce3fc-bbcf-4472-b1a0-15877df0e0f9",
+    "productId": "mixer-grupo-alemor-am-mixer-1000",
+    "supplierId": "G",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 7599,
+    "currency": "USD",
+    "observedAt": "2026-11-04T21:42:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "whatsapp Alemor"
+  }
+]

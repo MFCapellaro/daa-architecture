@@ -1,0 +1,41 @@
+id: mixer-aguara-speedblend-300-1-bomba-motor
+category: mixers
+subcategory: ""
+name: Mixer Speedblend 300 litros (1 bomba + motor)
+brand: Aguará
+model: Mixer Speedblend 300 litros (1 bomba + motor)
+description: ""
+characteristics:
+  configuracion:
+    nivel: null
+    criterio: Clasificar Básica / Intermedia / Máxima después de verificar
+      equipamiento y prestaciones; no inferir por capacidad.
+  capacidad_litros: 300
+  energia:
+    tipo: null
+    detalle_publicado: El catálogo actual diferencia Simple (bomba 220 V) y Duplo
+      (bomba + rotor eléctrico); variante exacta por confirmar
+  bomba:
+    potencia_hp: null
+    detalle: El catálogo actual diferencia Simple (bomba 220 V) y Duplo (bomba +
+      rotor eléctrico); variante exacta por confirmar
+  motobomba:
+    potencia_hp: null
+    detalle: No informado
+  motor_agitacion:
+    presente: null
+    potencia_hp: null
+    detalle: Verificar si equipa agitador/rotor independiente.
+  mangueras:
+    longitud_metros: 10
+    detalle: Manguera 10 m
+  caudalimetro:
+    tipo: null
+  monitoreo_control_remoto: null
+images: []
+sources:
+  - type: fabricante
+    url: https://www.aguarasoluciones.com.ar/
+status: pending-review
+createdAt: 2026-11-04T17:56:47.833Z
+updatedAt: 2026-11-04T17:56:47.833Z

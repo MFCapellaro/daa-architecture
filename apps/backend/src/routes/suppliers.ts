@@ -4,15 +4,22 @@ import type { Response } from "express";
 import { createAuthMiddleware } from "../middleware/authMiddleware.js";
 import { requireAuth } from "../middleware/requireAuth.js";
 import {
-  SUPPLIER_CATEGORIES,
   SupplierStore,
+  getPath,
   type SupplierCategoryId,
+  type SupplierAttributeDefinition,
+  type SupplierAttributeType,
+  type SupplierCategory,
   type SupplierProductImage,
   type SupplierProductInput,
   type SupplierProductStatus,
 } from "../services/SupplierStore.js";
 import { ParticipantAccountStore } from "../services/ParticipantAccountStore.js";
 import { PoolStore } from "../services/PoolStore.js";
+import {
+  fetchBnaUsdArsExchangeRate,
+  type BnaUsdArsExchangeRate,
+} from "../services/BnaExchangeRate.js";
 import type {
   ManualPriceQuote,
   PriceQuoteConditions,
@@ -35,9 +42,9 @@ function validImageSource(value: string): boolean {
     (value.length <= 550_000 && /^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/]+=*$/.test(value));
 }
 
-function validateProduct(value: unknown): SupplierProductInput | string {
+function validateProduct(value: unknown, categories: SupplierCategory[]): SupplierProductInput | string {
   if (!isRecord(value)) return "Los datos del producto no son válidos.";
-  const category = SUPPLIER_CATEGORIES.find((entry) => entry.id === value.category);
+  const category = categories.find((entry) => entry.id === value.category);
   if (!category) return "Selecciona una categoría válida.";
   const subcategories: readonly string[] = category.subcategories;
   if (typeof value.subcategory !== "string"
@@ -54,6 +61,22 @@ function validateProduct(value: unknown): SupplierProductInput | string {
   if (typeof description !== "string" || description.length > 5000) return "La descripción no debe superar 5000 caracteres.";
   if (!isRecord(value.characteristics) || JSON.stringify(value.characteristics).length > 30000) {
     return "Las características del producto no son válidas.";
+  }
+  for (const attribute of category.attributes) {
+    const attributeValue = getPath(value.characteristics, attribute.key);
+    if (attributeValue === undefined || attributeValue === null) continue;
+    if (attribute.type === "text" && typeof attributeValue !== "string") {
+      return `La característica ${attribute.label} debe ser texto o quedar pendiente.`;
+    }
+    if (attribute.type === "number" && (typeof attributeValue !== "number" || !Number.isFinite(attributeValue))) {
+      return `La característica ${attribute.label} debe ser numérica o quedar pendiente.`;
+    }
+    if (attribute.type === "boolean" && typeof attributeValue !== "boolean") {
+      return `La característica ${attribute.label} debe ser sí, no o quedar pendiente.`;
+    }
+    if (attribute.type === "select" && (typeof attributeValue !== "string" || !attribute.options?.includes(attributeValue))) {
+      return `Selecciona una opción válida para ${attribute.label}.`;
+    }
   }
   if (!Array.isArray(value.images) || value.images.length > 4
     || !value.images.every((image) =>
@@ -82,6 +105,78 @@ function validateProduct(value: unknown): SupplierProductInput | string {
     images: value.images as SupplierProductImage[],
     sources: value.sources as { type: string; url: string }[],
     status: value.status as SupplierProductStatus,
+  };
+}
+
+function validateCategory(value: unknown): Omit<SupplierCategory, "id" | "order"> | string {
+  if (!isRecord(value) || typeof value.label !== "string" || !value.label.trim() || value.label.length > 120) {
+    return "El nombre de la categoría es obligatorio y no debe superar 120 caracteres.";
+  }
+  if (!Array.isArray(value.subcategories) || value.subcategories.length > 100
+    || !value.subcategories.every((subcategory) =>
+      typeof subcategory === "string" && Boolean(subcategory.trim()) && subcategory.length <= 100)
+    || new Set(value.subcategories.map((subcategory) => String(subcategory).trim().toLocaleLowerCase())).size !== value.subcategories.length) {
+    return "Las subcategorías deben ser nombres únicos de hasta 100 caracteres.";
+  }
+  if (!Array.isArray(value.attributes) || value.attributes.length > 100) {
+    return "Define hasta 100 atributos para la comparación de esta categoría.";
+  }
+  const attributes: SupplierAttributeDefinition[] = [];
+  const keys = new Set<string>();
+  for (const rawAttribute of value.attributes) {
+    if (!isRecord(rawAttribute)
+      || typeof rawAttribute.key !== "string"
+      || !/^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)*$/.test(rawAttribute.key)
+      || typeof rawAttribute.label !== "string" || !rawAttribute.label.trim() || rawAttribute.label.length > 120
+      || !["text", "number", "boolean", "select"].includes(rawAttribute.type as string)
+      || typeof rawAttribute.comparable !== "boolean"
+      || (rawAttribute.unit !== undefined && (typeof rawAttribute.unit !== "string" || rawAttribute.unit.length > 30))) {
+      return "Hay una definición de atributo inválida.";
+    }
+    const key = rawAttribute.key as string;
+    if ([...keys].some((existingKey) => existingKey === key
+      || existingKey.startsWith(`${key}.`)
+      || key.startsWith(`${existingKey}.`))) {
+      return `La clave del atributo "${key}" se repite o entra en conflicto con otra ruta.`;
+    }
+    keys.add(key);
+    const type = rawAttribute.type as SupplierAttributeType;
+    if (type === "select" && (!Array.isArray(rawAttribute.options) || rawAttribute.options.length === 0
+      || rawAttribute.options.length > 50
+      || !rawAttribute.options.every((option) => typeof option === "string" && Boolean(option.trim()) && option.length <= 100))) {
+      return `El atributo "${rawAttribute.label}" requiere opciones válidas.`;
+    }
+    if (type !== "select" && rawAttribute.options !== undefined) {
+      return `Solo los atributos de tipo selección pueden declarar opciones.`;
+    }
+    attributes.push({
+      key: rawAttribute.key,
+      label: rawAttribute.label.trim(),
+      type,
+      comparable: rawAttribute.comparable,
+      ...(typeof rawAttribute.unit === "string" && rawAttribute.unit.trim() ? { unit: rawAttribute.unit.trim() } : {}),
+      ...(type === "select" ? { options: (rawAttribute.options as string[]).map((option) => option.trim()) } : {}),
+    });
+  }
+  return {
+    label: value.label.trim(),
+    subcategories: (value.subcategories as string[]).map((subcategory) => subcategory.trim()),
+    attributes,
+  };
+}
+
+function publicProduct(product: Awaited<ReturnType<SupplierStore["listPublicProducts"]>>[number]) {
+  const { currentPrice, ...publicProductRecord } = product;
+  return {
+    ...publicProductRecord,
+    currentPrice: currentPrice ? {
+      id: currentPrice.id,
+      productId: currentPrice.productId,
+      updatedAt: currentPrice.updatedAt,
+      currency: currentPrice.currency,
+      price: currentPrice.price,
+      method: currentPrice.method,
+    } : null,
   };
 }
 
@@ -155,19 +250,107 @@ export function createSuppliersRouter(
   accountStore = new ParticipantAccountStore(),
   supplierStore = new SupplierStore(),
   poolStore = new PoolStore(),
+  getExchangeRate: () => Promise<BnaUsdArsExchangeRate> = fetchBnaUsdArsExchangeRate,
 ) {
   const router = Router();
   const authenticate = createAuthMiddleware(accountStore);
   const adminOnly = [authenticate, requireAuth(["admin"])] as const;
 
+  router.get("/api/suppliers/categories", async (_req, res: Response) =>
+    res.json(await supplierStore.listCategories()));
+
+  router.get("/api/suppliers", async (req, res: Response) => {
+    const categoryId = typeof req.query.category === "string" ? req.query.category : undefined;
+    if (categoryId && !await supplierStore.getCategory(categoryId)) {
+      return res.status(404).json({ message: "Categoría no encontrada." });
+    }
+    return res.json((await supplierStore.listPublicProducts(categoryId)).map(publicProduct));
+  });
+
+  router.get("/api/suppliers/compare", async (req, res: Response) => {
+    const categoryId = typeof req.query.category === "string" ? req.query.category : "";
+    const ids = typeof req.query.ids === "string"
+      ? [...new Set(req.query.ids.split(",").filter(Boolean))]
+      : [];
+    if (!categoryId || ids.length < 2 || ids.length > 4) {
+      return res.status(400).json({ message: "Selecciona una categoría y entre dos y cuatro productos para comparar." });
+    }
+    const category = await supplierStore.getCategory(categoryId);
+    if (!category) return res.status(404).json({ message: "Categoría no encontrada." });
+    const products = await supplierStore.listPublicProducts(categoryId);
+    const selected = ids.map((id) => products.find((product) => product.id === id));
+    if (selected.some((product) => product === undefined)) {
+      return res.status(400).json({ message: "Todos los productos comparados deben estar activos y pertenecer a la misma categoría." });
+    }
+    const selectedProducts = selected.filter((product) => product !== undefined);
+    return res.json({
+      category,
+      products: selectedProducts.map(publicProduct),
+      comparableAttributes: category.attributes.filter((attribute) => attribute.comparable),
+    });
+  });
+
   router.get("/api/admin/suppliers/categories", ...adminOnly, (_req, res: Response) =>
-    res.json(SUPPLIER_CATEGORIES));
+    supplierStore.listCategories().then((categories) => res.json(categories)));
+
+  router.put("/api/admin/suppliers/categories/order", ...adminOnly, async (req, res: Response) => {
+    const categoryIds = isRecord(req.body) ? req.body.categoryIds : undefined;
+    if (!Array.isArray(categoryIds) || !categoryIds.every((id) => typeof id === "string")) {
+      return res.status(400).json({ message: "El orden debe incluir identificadores de categorías." });
+    }
+    try {
+      return res.json(await supplierStore.reorderCategories(categoryIds));
+    } catch (error) {
+      if (error instanceof Error && error.message.includes("orden debe")) {
+        return res.status(400).json({ message: error.message });
+      }
+      throw error;
+    }
+  });
+
+  router.post("/api/admin/suppliers/categories", ...adminOnly, async (req, res: Response) => {
+    const input = validateCategory(req.body);
+    if (typeof input === "string") return res.status(400).json({ message: input });
+    try {
+      return res.status(201).json(await supplierStore.saveCategory(input));
+    } catch (error) {
+      if (error instanceof Error && error.message.includes("categoría")) {
+        return res.status(error.message.includes("Ya existe") ? 409 : 400).json({ message: error.message });
+      }
+      throw error;
+    }
+  });
+
+  router.put("/api/admin/suppliers/categories/:id", ...adminOnly, async (req, res: Response) => {
+    if (typeof req.params.id !== "string") return res.status(400).json({ message: "ID de categoría inválido." });
+    const input = validateCategory(req.body);
+    if (typeof input === "string") return res.status(400).json({ message: input });
+    try {
+      return res.json(await supplierStore.saveCategory(input, req.params.id));
+    } catch (error) {
+      if (error instanceof Error && error.message === "Categoría no encontrada.") {
+        return res.status(404).json({ message: error.message });
+      }
+      if (error instanceof Error && error.message.includes("subcategoría")) {
+        return res.status(409).json({ message: error.message });
+      }
+      throw error;
+    }
+  });
+
+  router.delete("/api/admin/suppliers/categories/:id", ...adminOnly, async (req, res: Response) => {
+    if (typeof req.params.id !== "string") return res.status(400).json({ message: "ID de categoría inválido." });
+    const result = await supplierStore.deleteCategory(req.params.id);
+    if (result === "not-found") return res.status(404).json({ message: "Categoría no encontrada." });
+    if (result === "in-use") return res.status(409).json({ message: "La categoría tiene productos asignados; reasígnalos o elimínalos antes." });
+    return res.status(204).end();
+  });
 
   router.get("/api/admin/suppliers", ...adminOnly, async (_req, res: Response) =>
     res.json(await supplierStore.listWithPrices()));
 
   router.post("/api/admin/suppliers", ...adminOnly, async (req, res: Response) => {
-    const input = validateProduct(req.body);
+    const input = validateProduct(req.body, await supplierStore.listCategories());
     if (typeof input === "string") return res.status(400).json({ message: input });
     return res.status(201).json(await supplierStore.create(input));
   });
@@ -185,7 +368,7 @@ export function createSuppliersRouter(
 
   router.patch("/api/admin/suppliers/:id", ...adminOnly, async (req, res: Response) => {
     if (typeof req.params.id !== "string") return res.status(400).json({ message: "ID de producto inválido." });
-    const input = validateProduct(req.body);
+    const input = validateProduct(req.body, await supplierStore.listCategories());
     if (typeof input === "string") return res.status(400).json({ message: input });
     const product = await supplierStore.update(req.params.id, input);
     if (!product) return res.status(404).json({ message: "Producto no encontrado." });
@@ -221,18 +404,26 @@ export function createSuppliersRouter(
     if (typeof req.params.id !== "string") return res.status(400).json({ message: "ID de producto inválido." });
     const body = req.body;
     if (!isRecord(body)
-      || typeof body.targetCurrency !== "string" || !/^[A-Z]{3}$/i.test(body.targetCurrency)
+      || typeof body.targetCurrency !== "string" || !["ARS", "USD"].includes(body.targetCurrency.toUpperCase())
       || typeof body.asOf !== "string" || !Number.isFinite(Date.parse(body.asOf))
-      || !isRecord(body.exchangeRates)
       || (body.maxQuoteAgeDays !== undefined
-        && (typeof body.maxQuoteAgeDays !== "number" || !Number.isFinite(body.maxQuoteAgeDays) || body.maxQuoteAgeDays < 0))
-      || !Object.entries(body.exchangeRates).every(([currency, rate]) =>
-        /^[A-Z]{3}$/i.test(currency) && typeof rate === "number" && Number.isFinite(rate) && rate > 0)) {
-      return res.status(400).json({ message: "Indica moneda de destino, fecha y tasas de cambio válidas." });
+        && (typeof body.maxQuoteAgeDays !== "number" || !Number.isFinite(body.maxQuoteAgeDays) || body.maxQuoteAgeDays < 0))) {
+      return res.status(400).json({ message: "Indica ARS o USD como moneda de destino y una fecha válida." });
     }
     try {
       const product = await supplierStore.get(req.params.id);
       if (!product) return res.status(404).json({ message: "Producto no encontrado." });
+      let exchangeRate: BnaUsdArsExchangeRate;
+      try {
+        exchangeRate = await getExchangeRate();
+      } catch (error) {
+        const detail = error instanceof Error ? ` ${error.message}` : "";
+        return res.status(502).json({ message: `No se pudo consultar la cotización vendedor del BNA.${detail}` });
+      }
+      const targetCurrency = body.targetCurrency.toUpperCase();
+      const exchangeRates: Record<string, number> = targetCurrency === "ARS"
+        ? { USD: exchangeRate.rate }
+        : { ARS: 1 / exchangeRate.rate };
       const normalizeMatch = (value: string) => value.normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "").trim().toLocaleLowerCase();
       const pools = (await poolStore.list())
@@ -258,9 +449,10 @@ export function createSuppliersRouter(
         conditions: pool.priceConditions!,
       }));
       const record = await supplierStore.recalculatePrice(req.params.id, {
-        targetCurrency: body.targetCurrency,
+        targetCurrency,
         asOf: body.asOf,
-        exchangeRates: body.exchangeRates as Record<string, number>,
+        exchangeRates,
+        exchangeRateDetails: exchangeRate,
         ...(typeof body.maxQuoteAgeDays === "number" ? { maxQuoteAgeDays: body.maxQuoteAgeDays } : {}),
       }, poolQuotes);
       return res.status(201).json(record);

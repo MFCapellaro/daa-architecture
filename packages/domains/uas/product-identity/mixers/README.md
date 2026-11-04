@@ -33,7 +33,7 @@ Los precios históricos de catálogos no se cargaron como precios vigentes.
 
 ## Motor de actualización de precios
 
-`pricing/updatePrice.ts` recibe cotizaciones recolectadas por las fuentes externas; no realiza scraping ni consulta servicios de cambio. El consumidor entrega la fecha de cálculo, moneda de destino y las tasas de cambio (unidades de moneda de destino por unidad de moneda origen).
+`pricing/updatePrice.ts` recibe cotizaciones recolectadas por las fuentes externas y las tasas de conversión (unidades de moneda de destino por unidad de moneda de origen). El motor es independiente de los proveedores de cambio. El backoffice consulta la cotización vendedor del dólar publicada por el Banco Nación, guarda la fuente, fecha de vigencia y fecha de consulta en el registro, y calcula el equivalente ARS/USD en ambos sentidos.
 
 La normalización calcula el precio unitario sin IVA, flete, financiación ni accesorios. Si una cotización incluye alguno de esos componentes, debe declarar el monto incluido; si incluye IVA, debe declarar la alícuota. Las cotizaciones sin información suficiente, vencidas, futuras, de otro producto, sin conversión disponible o sin fuente verificable se conservan como rechazadas en la trazabilidad y no forman el precio.
 
@@ -52,6 +52,8 @@ const update = updatePrice(quotes, {
 });
 ```
 
-El resultado incluye `updatedAt`, precio y moneda normalizados, método aplicado, IDs de cotizaciones elegidas y evaluación trazable de cada cotización aceptada o rechazada. `price` es `null` y `method` es `unavailable` si no existe ninguna fuente elegible.
+El resultado incluye `updatedAt`, precio y moneda normalizados, método aplicado, IDs de cotizaciones elegidas y evaluación trazable de cada cotización aceptada o rechazada. Cuando se proporciona `exchangeRateDetails`, el resultado incluye también la tasa utilizada y el precio equivalente en la otra moneda. `price` es `null` y `method` es `unavailable` si no existe ninguna fuente elegible.
 
-El backoffice `/admin/suppliers` inicializa los 29 mixers de este paquete como pendientes de revisión y permite mantener productos, imágenes y cotizaciones con referencias manuales o web. El backend guarda los productos, cotizaciones y ejecuciones del motor por separado en `apps/backend/data/suppliers/{products,quotes,prices}`. Las ofertas de Pool visibles y activas se incorporan a la actualización solo si el modelo coincide y están declaradas su moneda y condiciones de precio; la ausencia de esa información no se convierte en un supuesto. Las categorías y subcategorías del backoffice se exponen para consumo futuro de comparativas/configuraciones mediante los endpoints protegidos `/api/admin/suppliers`.
+El backoffice `/admin/suppliers` inicializa los 29 mixers de este paquete como pendientes de revisión y permite mantener productos, imágenes y cotizaciones con referencias manuales o web. El backend guarda categorías, productos, cotizaciones y ejecuciones del motor por separado en `apps/backend/data/suppliers/`. Las categorías son administrables (ABM y orden) y cada una define sus propios atributos tipados; los mixers se normalizan desde los campos técnicos de sus YAML, excluyendo precio, imágenes y fuentes de la estructura de características. `null` representa una característica aún no verificada.
+
+La API de lectura `/api/suppliers/categories` y `/api/suppliers?category=<id>` expone categorías y productos activos para comparativas/configuraciones. `/api/suppliers/compare?category=<id>&ids=<id1>,<id2>` rechaza modelos fuera de la misma categoría y devuelve solo los atributos marcados como comparables para esa categoría. Las rutas administrativas de categorías y productos están bajo `/api/admin/suppliers` y requieren rol de administrador. Las ofertas de Pool visibles y activas se incorporan a la actualización solo si el modelo coincide y están declaradas su moneda y condiciones de precio; la ausencia de esa información no se convierte en un supuesto.

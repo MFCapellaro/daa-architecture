@@ -1,0 +1,39 @@
+id: mixer-grupo-alemor-am-mixer-240-v2
+category: mixers
+subcategory: ""
+name: AM MIXER 240 V2
+brand: Grupo Alemor
+model: AM MIXER 240 V2
+description: ""
+characteristics:
+  configuracion:
+    nivel: null
+    criterio: Clasificar Básica / Intermedia / Máxima después de verificar
+      equipamiento y prestaciones; no inferir por capacidad.
+  capacidad_litros: 240
+  energia:
+    tipo: electrica
+    detalle_publicado: No publicado para esta variante
+  bomba:
+    potencia_hp: null
+    detalle: Bomba eléctrica 220 V, según ficha del fabricante.
+  motobomba:
+    potencia_hp: null
+    detalle: No informado
+  motor_agitacion:
+    presente: null
+    potencia_hp: null
+    detalle: Verificar si equipa agitador/rotor independiente.
+  mangueras:
+    longitud_metros: 15
+    detalle: No publicado
+  caudalimetro:
+    tipo: null
+  monitoreo_control_remoto: null
+images: []
+sources:
+  - type: fabricante
+    url: https://grupoalemor.com/
+status: pending-review
+createdAt: 2026-11-04T17:56:47.519Z
+updatedAt: 2026-11-04T17:56:47.519Z

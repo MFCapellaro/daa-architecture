@@ -1,0 +1,40 @@
+id: mixer-spraytec-ecotank-1000
+category: mixers
+subcategory: ""
+name: Ecotank 1000
+brand: SprayTec
+model: Ecotank 1000
+description: ""
+characteristics:
+  configuracion:
+    nivel: null
+    criterio: Clasificar Básica / Intermedia / Máxima después de verificar
+      equipamiento y prestaciones; no inferir por capacidad.
+  capacidad_litros: 1000
+  energia:
+    tipo: null
+    detalle_publicado: Bomba trasvase Banjo 2 pulgadas; motor/energía según variante
+  bomba:
+    potencia_hp: null
+    detalle: Catálogo 2024 menciona bomba de trasvase Banjo 2 pulgadas y 49.000 L/h
+      para Ecotank 1000; confirmar configuración vigente.
+  motobomba:
+    potencia_hp: null
+    detalle: No informado
+  motor_agitacion:
+    presente: null
+    potencia_hp: null
+    detalle: Verificar si equipa agitador/rotor independiente.
+  mangueras:
+    longitud_metros: null
+    detalle: No publicado
+  caudalimetro:
+    tipo: null
+  monitoreo_control_remoto: null
+images: []
+sources:
+  - type: fabricante
+    url: https://spraytec.com.ar/productos/cat/200/mezcladores-de-producto
+status: pending-review
+createdAt: 2026-11-04T17:56:47.800Z
+updatedAt: 2026-11-04T17:56:47.800Z
