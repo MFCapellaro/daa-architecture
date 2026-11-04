@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-1cd168b2-1df8-4390-8109-e921b43ee9df",
+    "productId": "mixer-grupo-alemor-tanque-respaldo-camioneta",
+    "supplierId": "G",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 399,
+    "currency": "USD",
+    "observedAt": "2026-11-04T20:09:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Alemor"
+  }
+]

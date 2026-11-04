@@ -44,5 +44,74 @@
       }
     ],
     "id": "price-update-ba706f00-3565-404b-99b9-ab083df0ac01"
+  },
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-500-v2",
+    "updatedAt": "2026-11-04T21:38:49.019Z",
+    "currency": "ARS",
+    "price": 5157450,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 3285,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T21:38:50.822Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-11b4e90c-2c10-4556-99e4-421566c28370"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-1779a464-94d6-4c5e-a4cb-a8a72eedb2f6",
+          "productId": "mixer-grupo-alemor-am-mixer-500-v2",
+          "supplierId": "G",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 3285,
+          "currency": "USD",
+          "observedAt": "2026-11-04T19:02:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Grupo Alemor"
+        },
+        "status": "valid",
+        "normalizedUnitPrice": 5157450,
+        "exchangeRate": 1570
+      },
+      {
+        "quote": {
+          "id": "quote-11b4e90c-2c10-4556-99e4-421566c28370",
+          "productId": "mixer-grupo-alemor-am-mixer-500-v2",
+          "supplierId": "G",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 3285,
+          "currency": "USD",
+          "observedAt": "2026-11-04T20:09:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Alemor"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 5157450,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-f3b51cfc-02ff-4245-867d-3d7354a03a23"
   }
 ]

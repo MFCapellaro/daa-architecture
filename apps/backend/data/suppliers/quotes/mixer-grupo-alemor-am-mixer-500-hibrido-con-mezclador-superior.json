@@ -16,5 +16,23 @@
     "sourceType": "manual",
     "supplierType": "manufacturer",
     "sourceReference": "WhatsApp Grupo Alemor"
+  },
+  {
+    "id": "quote-c5f94a9a-3e54-4557-bed2-4d8e7c3947f8",
+    "productId": "mixer-grupo-alemor-am-mixer-500-hibrido-con-mezclador-superior",
+    "supplierId": "G",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 5649,
+    "currency": "USD",
+    "observedAt": "2026-11-04T20:09:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Alemor"
   }
 ]

@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-grupo-alemor-tanque-respaldo-camioneta",
+    "updatedAt": "2026-11-04T21:24:50.490Z",
+    "currency": "ARS",
+    "price": 626430,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 399,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T21:24:51.469Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-1cd168b2-1df8-4390-8109-e921b43ee9df"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-1cd168b2-1df8-4390-8109-e921b43ee9df",
+          "productId": "mixer-grupo-alemor-tanque-respaldo-camioneta",
+          "supplierId": "G",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 399,
+          "currency": "USD",
+          "observedAt": "2026-11-04T20:09:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Alemor"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 626430,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-0c062044-1c7b-4cba-9c08-965d742de3cb"
+  }
+]
