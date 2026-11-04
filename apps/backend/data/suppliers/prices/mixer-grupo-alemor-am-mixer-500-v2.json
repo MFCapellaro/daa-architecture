@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-500-v2",
+    "updatedAt": "2026-11-04T19:26:25.192Z",
+    "currency": "ARS",
+    "price": 5157450,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 3285,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T19:26:27.023Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-1779a464-94d6-4c5e-a4cb-a8a72eedb2f6"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-1779a464-94d6-4c5e-a4cb-a8a72eedb2f6",
+          "productId": "mixer-grupo-alemor-am-mixer-500-v2",
+          "supplierId": "G",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 3285,
+          "currency": "USD",
+          "observedAt": "2026-11-04T19:02:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Grupo Alemor"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 5157450,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-ba706f00-3565-404b-99b9-ab083df0ac01"
+  }
+]

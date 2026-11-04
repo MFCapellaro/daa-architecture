@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-1000-bomba-alto-flujo",
+    "updatedAt": "2026-11-04T19:05:45.633Z",
+    "currency": "ARS",
+    "price": 11302430,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 7199,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T19:05:46.444Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-a184ddc0-e521-487c-aa85-c4e1291fdd39"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-a184ddc0-e521-487c-aa85-c4e1291fdd39",
+          "productId": "mixer-grupo-alemor-am-mixer-1000-bomba-alto-flujo",
+          "supplierId": "G",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 7199,
+          "currency": "USD",
+          "observedAt": "2026-11-04T19:02:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Grupo Alemor"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 11302430,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-5aea441a-0e3c-4f77-b699-89d63b249caf"
+  }
+]

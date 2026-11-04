@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-240-v2-con-mezclador-superior",
+    "updatedAt": "2026-11-04T19:18:09.754Z",
+    "currency": "ARS",
+    "price": 5221820,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 3326,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T19:18:11.354Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-d051ce74-2b8a-4555-9163-70c02d37e143"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-d051ce74-2b8a-4555-9163-70c02d37e143",
+          "productId": "mixer-grupo-alemor-am-mixer-240-v2-con-mezclador-superior",
+          "supplierId": "G",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 3326,
+          "currency": "USD",
+          "observedAt": "2026-11-04T19:02:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Grupo Alemor"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 5221820,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-cea7f8e2-6475-40d0-8100-acfe0de11198"
+  }
+]

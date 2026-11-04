@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-85dd7f8d-5849-40cb-a540-fa63fc284ca0",
+    "productId": "mixer-grupo-alemor-am-mixer-240-con-mezclador-superior",
+    "supplierId": "G",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 4128,
+    "currency": "USD",
+    "observedAt": "2026-11-04T19:02:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Grupo Alemor"
+  }
+]

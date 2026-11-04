@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-1000-motobomba",
+    "updatedAt": "2026-11-04T19:06:52.330Z",
+    "currency": "ARS",
+    "price": 10988430,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 6999,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-04",
+      "fetchedAt": "2026-11-04T19:06:54.700Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-99277285-f48e-4607-bef1-54f453c49c35"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-99277285-f48e-4607-bef1-54f453c49c35",
+          "productId": "mixer-grupo-alemor-am-mixer-1000-motobomba",
+          "supplierId": "G",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 6999,
+          "currency": "USD",
+          "observedAt": "2026-11-04T19:02:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Grupo Alemor"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 10988430,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-c6be49eb-b39d-42fd-bc39-613f3b0855d2"
+  }
+]

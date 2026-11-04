@@ -1,10 +1,10 @@
-id: mixer-grupo-alemor-am-mixer-140
 category: mixers
 subcategory: ""
 name: AM MIXER 140
 brand: Grupo Alemor
 model: AM MIXER 140
-description: ""
+description: Bomba eléctrica de 220 volts. / Pistola surtidora con 15 mtrs. de
+  manguera. Sistema de triple lavado para limpieza de envases.
 characteristics:
   configuracion:
     nivel: null
@@ -35,5 +35,6 @@ sources:
   - type: fabricante
     url: https://grupoalemor.com/index.php/p/MTZ-37-mezcladores-am-mixer-140
 status: pending-review
+id: mixer-grupo-alemor-am-mixer-140
 createdAt: 2026-11-04T17:56:47.483Z
-updatedAt: 2026-11-04T17:56:47.483Z
+updatedAt: 2026-11-04T19:13:44.957Z

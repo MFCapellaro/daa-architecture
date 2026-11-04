@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-1779a464-94d6-4c5e-a4cb-a8a72eedb2f6",
+    "productId": "mixer-grupo-alemor-am-mixer-500-v2",
+    "supplierId": "G",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 3285,
+    "currency": "USD",
+    "observedAt": "2026-11-04T19:02:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Grupo Alemor"
+  }
+]

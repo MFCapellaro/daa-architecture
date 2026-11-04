@@ -6,6 +6,7 @@ import {
   type SupplierCategoryInput,
 } from "../../components/SupplierCategoryManager";
 import { useAuth } from "../../context/AuthContext";
+import { toDateTimeLocalInput } from "./supplierDateTime";
 import "./AdminSuppliersPage.css";
 
 type ProductStatus = "pending-review" | "active" | "archived";
@@ -273,7 +274,7 @@ export const AdminSuppliersPage: React.FC = () => {
     supplierId: "",
     unitPrice: "",
     currency: "ARS",
-    observedAt: new Date().toISOString().slice(0, 16),
+    observedAt: toDateTimeLocalInput(),
     sourceUrl: "",
     sourceReference: "",
     includesVat: false,
@@ -529,8 +530,12 @@ export const AdminSuppliersPage: React.FC = () => {
       }
       await loadProducts(detail.product.id);
       await loadDetail(detail.product.id);
+      const rejectedFutureQuotes = result.quoteEvaluations
+        .filter((evaluation) => evaluation.reason === "quote-from-future");
       setNotice(result.price === null
-        ? "Actualización registrada sin precio: no hay cotizaciones válidas."
+        ? rejectedFutureQuotes.length > 0
+          ? "Sin precio: la fecha u hora de la cotización queda en el futuro. Revisa la hora local y vuelve a registrar la cotización."
+          : "Actualización registrada sin precio: no hay cotizaciones válidas. Revisa el historial para ver el motivo de rechazo."
         : "Actualización de precio registrada con trazabilidad.");
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "No se pudo recalcular el precio.");

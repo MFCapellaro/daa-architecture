@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-a184ddc0-e521-487c-aa85-c4e1291fdd39",
+    "productId": "mixer-grupo-alemor-am-mixer-1000-bomba-alto-flujo",
+    "supplierId": "G",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 7199,
+    "currency": "USD",
+    "observedAt": "2026-11-04T19:02:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Grupo Alemor"
+  }
+]

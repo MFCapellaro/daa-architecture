@@ -1,10 +1,12 @@
-id: mixer-grupo-alemor-am-mixer-1000-motobomba
 category: mixers
 subcategory: ""
 name: AM MIXER 1000 MOTOBOMBA
 brand: Grupo Alemor
 model: AM MIXER 1000 MOTOBOMBA
-description: ""
+description: Motobomba HONDA, 4HP, 4 tiempos. / Circuito succión e impulsión.
+  Pistola de dosificación de alto caudal a 80 lt/min, con 12,5 mtrs. de manguera
+  y lanza de succión de bidones con 4 mtrs. de manguera. Sistema de triple
+  lavado para limpieza de envases.
 characteristics:
   configuracion:
     nivel: null
@@ -35,5 +37,6 @@ sources:
   - type: fabricante
     url: https://grupoalemor.com/
 status: pending-review
+id: mixer-grupo-alemor-am-mixer-1000-motobomba
 createdAt: 2026-11-04T17:56:47.652Z
-updatedAt: 2026-11-04T17:56:47.652Z
+updatedAt: 2026-11-04T19:12:53.048Z

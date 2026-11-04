@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-05a04b1e-7d34-43a7-8467-9a661b0984d9",
+    "productId": "mixer-grupo-alemor-am-mixer-240-v2",
+    "supplierId": "G",
+    "supplierName": "Grupo Alemor",
+    "unitPrice": 2855,
+    "currency": "USD",
+    "observedAt": "2026-11-04T19:02:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Grupo Alemor"
+  }
+]

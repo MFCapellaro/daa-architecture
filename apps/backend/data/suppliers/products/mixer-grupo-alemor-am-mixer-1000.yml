@@ -3,7 +3,10 @@ subcategory: ""
 name: AM MIXER 1000
 brand: Grupo Alemor
 model: AM MIXER 1000
-description: ""
+description: Dos bombas eléctrica de 220 volts. / Circuito de agua limpia y
+  circuito de caldo. Pistola de carga y de riego surtidora con 15 mtrs. de
+  manguera c/u. Sistema de triple lavado para limpieza de envases. Mezclador
+  superior con hélice a motor eléctrico.
 characteristics:
   configuracion:
     nivel: null
@@ -42,4 +45,4 @@ sources:
 status: pending-review
 id: mixer-grupo-alemor-am-mixer-1000
 createdAt: 2026-11-04T17:56:47.622Z
-updatedAt: 2026-11-04T18:37:50.502Z
+updatedAt: 2026-11-04T19:11:05.763Z

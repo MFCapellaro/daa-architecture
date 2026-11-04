@@ -1,10 +1,11 @@
-id: mixer-grupo-alemor-am-mixer-500-hibrido-con-mezclador-superior
 category: mixers
 subcategory: ""
 name: AM MIXER 500 HÍBRIDO CON MEZCLADOR SUPERIOR
 brand: Grupo Alemor
 model: AM MIXER 500 HÍBRIDO CON MEZCLADOR SUPERIOR
-description: ""
+description: Bomba eléctrica de 220 volts. / Pistola surtidora con 15 mtrs. de
+  manguera. Sistema de triple lavado para limpieza de envases. Mezclador
+  superior con hélice a motor eléctrico.
 characteristics:
   configuracion:
     nivel: null
@@ -35,5 +36,6 @@ sources:
   - type: fabricante
     url: https://grupoalemor.com/
 status: pending-review
+id: mixer-grupo-alemor-am-mixer-500-hibrido-con-mezclador-superior
 createdAt: 2026-11-04T17:56:47.586Z
-updatedAt: 2026-11-04T17:56:47.586Z
+updatedAt: 2026-11-04T19:25:17.295Z
