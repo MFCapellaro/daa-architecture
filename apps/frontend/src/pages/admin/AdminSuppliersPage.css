@@ -215,6 +215,14 @@
   border-radius: 5px;
 }
 
+@media (min-width: 1051px) {
+  .suppliers-detail {
+    position: sticky;
+    top: 16px;
+    z-index: 2;
+  }
+}
+
 .suppliers-detail-placeholder {
   min-height: 140px;
   align-content: center;
@@ -463,6 +471,7 @@
   }
 
   .suppliers-detail {
+    position: static;
     max-height: none;
   }
 }

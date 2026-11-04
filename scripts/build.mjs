@@ -19,3 +19,13 @@ execFileSync(process.execPath, [
 await mkdir("dist", { recursive: true });
 await cp("packages/domains/uas/participants/data", "dist/packages/domains/uas/participants/data", { recursive: true });
 await cp("packages/domains/uas/ecosystem/data", "dist/packages/domains/uas/ecosystem/data", { recursive: true });
+await cp(
+  "packages/domains/uas/product-identity/mixers",
+  "dist/packages/domains/uas/product-identity/mixers",
+  { recursive: true },
+);
+await cp(
+  "apps/backend/data/suppliers",
+  "dist/apps/backend/data/suppliers",
+  { recursive: true },
+);
