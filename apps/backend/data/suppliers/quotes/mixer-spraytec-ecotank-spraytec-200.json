@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-3934dc82-5c2d-48ce-a9ff-a34e9cc0f0ca",
+    "productId": "mixer-spraytec-ecotank-spraytec-200",
+    "supplierId": "D",
+    "supplierName": "Dealer SPRAYtec",
+    "unitPrice": 3335,
+    "currency": "USD",
+    "observedAt": "2026-11-05T17:43:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "dealer",
+    "sourceReference": "WhatsApp Alejandro SPRAYtec"
+  }
+]

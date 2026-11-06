@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-c97b48c2-9899-4025-81ca-9891555462a0",
+    "productId": "mixer-spraytec-dualtec-10mm-premezclador-2",
+    "supplierId": "S",
+    "supplierName": "SPRAYtec",
+    "unitPrice": 11266,
+    "currency": "USD",
+    "observedAt": "2026-11-05T18:43:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "dealer",
+    "sourceReference": "WhatsApp Alejandro SPRAYtec"
+  }
+]

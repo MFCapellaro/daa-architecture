@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-19e91e4c-6250-4f03-898c-8c257993a49c",
+    "productId": "mixer-jotas-agroimplementos-caldolab-1400",
+    "supplierId": "TRAXAGRO IMPLEMENTOS",
+    "supplierName": "TRAXAGRO IMPLEMENTOS",
+    "unitPrice": 5350000,
+    "currency": "ARS",
+    "observedAt": "2026-11-06T13:27:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "dealer",
+    "sourceReference": "https://www.agroads.com.ar/detalle.asp?clasi=1085853"
+  }
+]

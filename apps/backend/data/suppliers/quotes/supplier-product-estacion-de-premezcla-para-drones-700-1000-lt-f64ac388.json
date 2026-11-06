@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-2928bb8c-8949-4ea5-975d-796df9412277",
+    "productId": "supplier-product-estacion-de-premezcla-para-drones-700-1000-lt-f64ac388",
+    "supplierId": "S",
+    "supplierName": "SPRAYtec",
+    "unitPrice": 13677,
+    "currency": "USD",
+    "observedAt": "2026-11-05T18:43:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "dealer",
+    "sourceReference": "WhatsApp Alejandro SPRAYtec"
+  }
+]

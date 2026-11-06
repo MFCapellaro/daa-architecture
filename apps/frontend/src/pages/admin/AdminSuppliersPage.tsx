@@ -702,11 +702,19 @@ export const AdminSuppliersPage: React.FC = () => {
               {currentCategory && <fieldset className="suppliers-characteristics">
                 <legend>Estructura y características de {currentCategory.label}</legend>
                 <p>Estos campos definen la estructura de comparación de esta categoría. Un valor pendiente no se interpreta como “No”.</p>
-                {currentCategory.attributes.map((attribute) => (
+                {currentCategory.attributes
+                  .filter((attribute) => attribute.key !== "tanque.capacidad_litros"
+                    || getPath(characteristics, "tanque.presente") === true)
+                  .map((attribute) => (
                   <label key={attribute.key}>
                     {attribute.label}{attribute.unit ? ` (${attribute.unit})` : ""}
                     {characteristicValue(attribute, getPath(characteristics, attribute.key), (value) =>
-                      setCharacteristics((current) => setPath(current, attribute.key, value)))}
+                      setCharacteristics((current) => {
+                        const next = setPath(current, attribute.key, value);
+                        return attribute.key === "tanque.presente" && value === false
+                          ? setPath(next, "tanque.capacidad_litros", null)
+                          : next;
+                      }))}
                   </label>
                 ))}
                 {!currentCategory.attributes.length && <div>
@@ -742,7 +750,8 @@ export const AdminSuppliersPage: React.FC = () => {
                   ))}
                 </div>
               </section>
-              <label>Fuentes del producto (una por línea: tipo | URL)<textarea value={form.sources} onChange={(event) => updateForm("sources", event.target.value)} rows={2} placeholder="fabricante | https://..." /></label>
+              <label>Fuentes del producto (una por línea: tipo | URL)<textarea value={form.sources} onChange={(event) => updateForm("sources", event.target.value)} rows={2} placeholder="precio | https://dealer.com/modelo" /></label>
+              <small>Para actualizar precios web de trailers cada 15 días, carga primero una cotización con la misma URL y agrega aquí una fuente de tipo “precio”.</small>
               <label>Estado
                 <select value={form.status} onChange={(event) => updateForm("status", event.target.value as ProductStatus)}>
                   <option value="pending-review">Pendiente de revisión</option>
@@ -824,7 +833,10 @@ export const AdminSuppliersPage: React.FC = () => {
                   </div>
                   <label>Fecha de cotización<input type="datetime-local" value={quoteForm.observedAt} onChange={(event) => setQuoteForm((current) => ({ ...current, observedAt: event.target.value }))} required /></label>
                   {quoteForm.sourceType === "web" ? <label>URL de origen<input type="url" value={quoteForm.sourceUrl} onChange={(event) => setQuoteForm((current) => ({ ...current, sourceUrl: event.target.value }))} required /></label>
-                    : <label>Referencia (contacto, mensaje o investigación)<textarea value={quoteForm.sourceReference} onChange={(event) => setQuoteForm((current) => ({ ...current, sourceReference: event.target.value }))} required rows={2} /></label>}
+                    : <>
+                      <label>Referencia (contacto, mensaje o investigación)<textarea value={quoteForm.sourceReference} onChange={(event) => setQuoteForm((current) => ({ ...current, sourceReference: event.target.value }))} required rows={2} /></label>
+                      <label>URL de la fuente para actualización automática (opcional)<input type="url" value={quoteForm.sourceUrl} onChange={(event) => setQuoteForm((current) => ({ ...current, sourceUrl: event.target.value }))} /></label>
+                    </>}
                   <fieldset>
                     <legend>Condiciones del precio</legend>
                     {([

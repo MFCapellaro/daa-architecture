@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-spraytec-dualtec-10mm-premezclador-2",
+    "updatedAt": "2026-11-05T20:10:50.567Z",
+    "currency": "ARS",
+    "price": 17687620,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 11266,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-05T20:10:52.894Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "dealer-average",
+    "quoteIds": [
+      "quote-c97b48c2-9899-4025-81ca-9891555462a0"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-c97b48c2-9899-4025-81ca-9891555462a0",
+          "productId": "mixer-spraytec-dualtec-10mm-premezclador-2",
+          "supplierId": "S",
+          "supplierName": "SPRAYtec",
+          "unitPrice": 11266,
+          "currency": "USD",
+          "observedAt": "2026-11-05T18:43:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "dealer",
+          "sourceReference": "WhatsApp Alejandro SPRAYtec"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 17687620,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-27d96d90-b223-4cbd-bfd6-70a7cf15e427"
+  }
+]

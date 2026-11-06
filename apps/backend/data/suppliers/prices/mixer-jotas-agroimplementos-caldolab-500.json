@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-jotas-agroimplementos-caldolab-500",
+    "updatedAt": "2026-11-06T14:04:41.190Z",
+    "currency": "ARS",
+    "price": 5000000,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 3184.71,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-06T14:04:42.187Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "dealer-average",
+    "quoteIds": [
+      "quote-99e4f72d-54c4-44d9-baf9-e89080e748f0"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-99e4f72d-54c4-44d9-baf9-e89080e748f0",
+          "productId": "mixer-jotas-agroimplementos-caldolab-500",
+          "supplierId": "TRAXAGRO IMPLEMENTOS",
+          "supplierName": "TRAXAGRO IMPLEMENTOS",
+          "unitPrice": 5000000,
+          "currency": "ARS",
+          "observedAt": "2026-11-06T13:27:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "dealer",
+          "sourceReference": "https://www.agroads.com.ar/detalle.asp?clasi=1085821"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 5000000,
+        "exchangeRate": 1
+      }
+    ],
+    "id": "price-update-f699d152-d376-4537-a209-e858ce8bf1a6"
+  }
+]

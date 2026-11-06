@@ -213,7 +213,8 @@ export const AdminPoolsPage: React.FC = () => {
                 <p className="pool-card__details">
                   <span>Objetivo: {pool.targetQuantity}</span>
                   <span>Comprometido: {pool.members?.reduce((total, member) => total + member.quantity, 0) ?? 0}</span>
-                  <span>Precio: {new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(pool.discountedUnitPrice)}</span>
+                  <span>Precio público: {new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(pool.unitPrice)}</span>
+                  <span>Oferta del pool: {new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(pool.discountedUnitPrice)}</span>
                   <span>Vigencia: {new Intl.DateTimeFormat('es-AR', { dateStyle: 'medium' }).format(new Date(pool.validUntil))}</span>
                 </p>
                 <PoolImageCarousel images={pool.images} label={`${pool.brand} ${pool.product}`} />

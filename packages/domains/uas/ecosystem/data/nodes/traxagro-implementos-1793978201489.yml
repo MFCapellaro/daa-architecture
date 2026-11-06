@@ -1,0 +1,44 @@
+id: traxagro-implementos-1793978201489
+name: Traxagro Implementos
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Mixers
+isPublic: true
+relationships:
+  - targetId: jotas-agroimplementos-1793017838550
+    type: child_of
+contact:
+  address: null
+  city: Marcos Juárez
+  province: Córdoba
+  country: Argentina
+  phone: +54 9 3472 55-1048
+  whatsapp: +54 9 3472 55-1048
+  email: traxagro@gmail.com
+presence:
+  website: https://www.agroads.com.ar/e/traxagro-implementos/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -32.697856
+  longitude: -62.105798
+source: {}
+status: ACTIVE
+typeLabel: supplier
+primaryCategory: suppliers
+categoryLabel: suppliers
+translatedLayers:
+  - suppliers
+description: ''
+location:
+  address: null
+  city: Marcos Juárez
+  province: Córdoba
+  country: Argentina
+  coordinates:
+    latitude: -32.697856
+    longitude: -62.105798

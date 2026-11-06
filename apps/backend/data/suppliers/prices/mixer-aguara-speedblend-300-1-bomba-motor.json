@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-aguara-speedblend-300-1-bomba-motor",
+    "updatedAt": "2026-11-05T21:56:30.088Z",
+    "currency": "ARS",
+    "price": 4500797.5,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 2866.75,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-05T21:56:31.914Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-74e1089e-aaf6-41af-ae9d-5566f5f93e27"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-74e1089e-aaf6-41af-ae9d-5566f5f93e27",
+          "productId": "mixer-aguara-speedblend-300-1-bomba-motor",
+          "supplierId": "J",
+          "supplierName": "Javier Alonso - Aguará",
+          "unitPrice": 2866.75,
+          "currency": "USD",
+          "observedAt": "2026-11-05T20:32:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Javier Alonso - Aguará"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 4500797.5,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-a7fa0453-1c20-490f-847e-c089e222ff33"
+  }
+]

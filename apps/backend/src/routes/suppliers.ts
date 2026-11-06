@@ -20,6 +20,7 @@ import {
   fetchBnaUsdArsExchangeRate,
   type BnaUsdArsExchangeRate,
 } from "../services/BnaExchangeRate.js";
+import { recalculateSupplierPrice } from "../services/SupplierPriceAutomation.js";
 import type {
   ManualPriceQuote,
   PriceQuoteConditions,
@@ -420,41 +421,15 @@ export function createSuppliersRouter(
         const detail = error instanceof Error ? ` ${error.message}` : "";
         return res.status(502).json({ message: `No se pudo consultar la cotización vendedor del BNA.${detail}` });
       }
-      const targetCurrency = body.targetCurrency.toUpperCase();
-      const exchangeRates: Record<string, number> = targetCurrency === "ARS"
-        ? { USD: exchangeRate.rate }
-        : { ARS: 1 / exchangeRate.rate };
-      const normalizeMatch = (value: string) => value.normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "").trim().toLocaleLowerCase();
-      const pools = (await poolStore.list())
-        .filter((pool) => pool.visible && pool.status === "active"
-          && Date.parse(pool.validUntil) >= Date.parse(body.asOf as string)
-          && normalizeMatch(pool.brand) === normalizeMatch(product.brand)
-          && [product.name, product.model].some((model) =>
-            normalizeMatch(model) === normalizeMatch(pool.model)
-            || (!pool.model.trim() && normalizeMatch(model) === normalizeMatch(pool.product))))
-        .filter((pool) => pool.priceConditions !== undefined);
-      const poolQuotes = pools.map((pool) => ({
-        id: pool.id,
-        productId: product.id,
-        sourceType: "pool" as const,
-        supplierId: pool.dealer.id,
-        supplierName: pool.dealer.name,
-        unitPrice: pool.discountedUnitPrice > 0 ? pool.discountedUnitPrice : pool.unitPrice,
-        currency: pool.priceCurrency ?? "ARS",
-        observedAt: pool.updatedAt,
-        sourceReference: `Pool activo ${pool.id}`,
-        active: true,
-        validUntil: pool.validUntil,
-        conditions: pool.priceConditions!,
-      }));
-      const record = await supplierStore.recalculatePrice(req.params.id, {
-        targetCurrency,
-        asOf: body.asOf,
-        exchangeRates,
-        exchangeRateDetails: exchangeRate,
-        ...(typeof body.maxQuoteAgeDays === "number" ? { maxQuoteAgeDays: body.maxQuoteAgeDays } : {}),
-      }, poolQuotes);
+      const record = await recalculateSupplierPrice(
+        supplierStore,
+        poolStore,
+        req.params.id,
+        body.targetCurrency.toUpperCase(),
+        body.asOf,
+        exchangeRate,
+        typeof body.maxQuoteAgeDays === "number" ? body.maxQuoteAgeDays : undefined,
+      );
       return res.status(201).json(record);
     } catch (error) {
       if (error instanceof Error && error.message === "Producto no encontrado.") {

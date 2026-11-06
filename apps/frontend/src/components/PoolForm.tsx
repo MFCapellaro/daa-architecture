@@ -158,7 +158,7 @@ export const PoolForm: React.FC<PoolFormProps> = ({ initial, saving, onCancel, o
           <input className={inputClass} type="number" min="1" max="100000" step="1" required
             value={form.targetQuantity} onChange={(event) => setField('targetQuantity', Number(event.target.value))} />
         </label>
-        <label className="pool-form__field">Precio unitario
+        <label className="pool-form__field">Precio unitario de venta al público
           <input className={inputClass} type="number" min="0" step="0.01" required
             value={form.unitPrice} onChange={(event) => setField('unitPrice', Number(event.target.value))} />
         </label>

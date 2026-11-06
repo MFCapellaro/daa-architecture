@@ -29,6 +29,8 @@ COMPARATIVAS
 Especificaciones técnicas, capacidades y costos + sugerencias de pools
 	DRONES
 	EQUIPAMIENTO
+		Trailers: marca y modelo, homologación, configuración, ejes, tipo de lanza, capacidad, energía, dimensiones y equipamiento (tanque/litros, mixer, generador y monitoreo remoto). Hasta cuatro fotos optimizadas.
+		Precio de trailers: cotización inicial manual con moneda, condiciones y la URL correspondiente. Una fuente `precio | URL` se actualiza cada 15 días leyendo `Product/Offer` Schema.org; si no se obtiene un precio válido, se conserva la última cotización.
 
 CONFIGURACIONES
 	TRES CONFIGURACIONES
@@ -43,6 +45,7 @@ POOLS
 	NDAs 
 	Lista de acuerdos firmados de los Dealers
 	LISTADO OFERTAS DEALERS
+	Precio de venta al público y oferta por unidad con descuento de pool; ambos se incorporan como referencias al formar el precio.
 	Status de los pools, triger de avisos de compleción
 	Testimonios / Seguimiento
 	Verificación de depósitos de Dealers

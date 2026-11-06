@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-60039dba-b8dd-4c0f-a733-1412eac63ca8",
+    "productId": "supplier-product-mezclador-ecotank-spraytec-200-lt-electrico-f60f2cef",
+    "supplierId": "D",
+    "supplierName": "Dealer SPRAYtec",
+    "unitPrice": 2605,
+    "currency": "USD",
+    "observedAt": "2026-11-05T17:43:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "dealer",
+    "sourceReference": "WhatsApp Alejandro SPRAYtec"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-aguara-speedblend-600-2-motores",
+    "updatedAt": "2026-11-05T21:58:24.296Z",
+    "currency": "ARS",
+    "price": 5758367.5,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 3667.75,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-05T21:58:26.134Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-acf282a3-c6d8-465f-9ebb-ccd604267a7e"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-acf282a3-c6d8-465f-9ebb-ccd604267a7e",
+          "productId": "mixer-aguara-speedblend-600-2-motores",
+          "supplierId": "J",
+          "supplierName": "Javier Alonso - Aguará",
+          "unitPrice": 3667.75,
+          "currency": "USD",
+          "observedAt": "2026-11-05T20:32:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Javier Alonso - Aguará"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 5758367.5,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-6e8b3cd5-b83a-423a-9bb9-0a656f2835b5"
+  }
+]

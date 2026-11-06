@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "supplier-product-mixer-vortex-1200-litros-motobomba-c28b4eff",
+    "updatedAt": "2026-11-06T13:01:12.413Z",
+    "currency": "ARS",
+    "price": 8816727.5,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 5615.75,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-06T13:01:14.130Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-1df06153-a83c-4626-b057-472fe6787101"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-1df06153-a83c-4626-b057-472fe6787101",
+          "productId": "supplier-product-mixer-vortex-1200-litros-motobomba-c28b4eff",
+          "supplierId": "J",
+          "supplierName": "Javier Alonso Aguará",
+          "unitPrice": 5615.75,
+          "currency": "USD",
+          "observedAt": "2026-11-06T12:42:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Javier Alonso Aguará"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 8816727.5,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-993b2dd6-142a-4fa9-bb30-3a26f950f5b6"
+  }
+]

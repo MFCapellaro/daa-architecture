@@ -14,10 +14,10 @@ contact:
   province: Santa Fe
   country: Argentina
   phone: +54 341 4598300
-  whatsapp: null
+  whatsapp: +54 9 341 6634823
   email: ventas@spraytec.com.ar
 presence:
-  website: null
+  website: https://spraytec.com.ar
   websiteMentioned: false
   websiteMentionsDrones: false
   websiteUnavailable: false
@@ -25,6 +25,18 @@ geolocation:
   latitude: -32.97070368034712
   longitude: -60.71201504232831
 source: {}
-status:
-  imported: false
-  reviewRequired: false
+status: ACTIVE
+typeLabel: supplier
+primaryCategory: suppliers
+categoryLabel: suppliers
+translatedLayers:
+  - suppliers
+description: ''
+location:
+  address: Blvd. Seguí 6740
+  city: Rosario
+  province: Santa Fe
+  country: Argentina
+  coordinates:
+    latitude: -32.97070368034712
+    longitude: -60.71201504232831

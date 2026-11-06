@@ -179,7 +179,120 @@
     "label": "Trailers",
     "order": 6,
     "subcategories": [],
-    "attributes": []
+    "attributes": [
+      {
+        "key": "homologacion",
+        "label": "Homologación",
+        "type": "boolean",
+        "comparable": true
+      },
+      {
+        "key": "configuracion.nivel",
+        "label": "Configuración",
+        "type": "select",
+        "options": [
+          "Básica",
+          "Intermedia",
+          "Máxima"
+        ],
+        "comparable": true
+      },
+      {
+        "key": "ejes",
+        "label": "Ejes",
+        "type": "select",
+        "options": [
+          "1",
+          "2"
+        ],
+        "comparable": true
+      },
+      {
+        "key": "tipo_lanza",
+        "label": "Lanza / Cuello de Cisne",
+        "type": "select",
+        "options": [
+          "Lanza",
+          "Cuello de Cisne"
+        ],
+        "comparable": true
+      },
+      {
+        "key": "capacidad_kg",
+        "label": "Capacidad",
+        "type": "number",
+        "unit": "kg",
+        "comparable": true
+      },
+      {
+        "key": "energia",
+        "label": "Energía",
+        "type": "select",
+        "options": [
+          "Panel Eléctrico",
+          "Iluminación"
+        ],
+        "comparable": true
+      },
+      {
+        "key": "largo_metros",
+        "label": "Largo",
+        "type": "number",
+        "unit": "m",
+        "comparable": true
+      },
+      {
+        "key": "ancho_metros",
+        "label": "Ancho",
+        "type": "number",
+        "unit": "m",
+        "comparable": true
+      },
+      {
+        "key": "alto_metros",
+        "label": "Alto",
+        "type": "number",
+        "unit": "m",
+        "comparable": true
+      },
+      {
+        "key": "equipamiento",
+        "label": "Equipamiento",
+        "type": "boolean",
+        "comparable": true
+      },
+      {
+        "key": "tanque.presente",
+        "label": "Tanque",
+        "type": "boolean",
+        "comparable": true
+      },
+      {
+        "key": "tanque.capacidad_litros",
+        "label": "Capacidad del tanque",
+        "type": "number",
+        "unit": "L",
+        "comparable": true
+      },
+      {
+        "key": "mixer",
+        "label": "Mixer",
+        "type": "boolean",
+        "comparable": true
+      },
+      {
+        "key": "generador",
+        "label": "Generador",
+        "type": "boolean",
+        "comparable": true
+      },
+      {
+        "key": "monitoreo_control_distancia",
+        "label": "Sistemas de monitoreo y control a distancia",
+        "type": "boolean",
+        "comparable": true
+      }
+    ]
   },
   {
     "id": "generadores",

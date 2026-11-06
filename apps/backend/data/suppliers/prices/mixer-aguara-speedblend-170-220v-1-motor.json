@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-aguara-speedblend-170-220v-1-motor",
+    "updatedAt": "2026-11-05T21:50:07.225Z",
+    "currency": "ARS",
+    "price": 4174237.5,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 2658.75,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-05T21:50:08.324Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-f94f57fa-f724-4d08-9ae2-a693bcfcc2b7"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-f94f57fa-f724-4d08-9ae2-a693bcfcc2b7",
+          "productId": "mixer-aguara-speedblend-170-220v-1-motor",
+          "supplierId": "J",
+          "supplierName": "Javier Alonso - Aguará",
+          "unitPrice": 2658.75,
+          "currency": "USD",
+          "observedAt": "2026-11-05T20:32:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Javier Alonso - Aguará"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 4174237.5,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-2245f05d-97a7-4578-8217-4227d4c5248a"
+  }
+]

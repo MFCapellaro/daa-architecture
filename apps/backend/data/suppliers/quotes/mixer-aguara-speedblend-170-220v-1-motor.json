@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-f94f57fa-f724-4d08-9ae2-a693bcfcc2b7",
+    "productId": "mixer-aguara-speedblend-170-220v-1-motor",
+    "supplierId": "J",
+    "supplierName": "Javier Alonso - Aguará",
+    "unitPrice": 2658.75,
+    "currency": "USD",
+    "observedAt": "2026-11-05T20:32:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Javier Alonso - Aguará"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "supplier-product-mezclador-ecotank-spraytec-200-lt-electrico-f60f2cef",
+    "updatedAt": "2026-11-05T17:54:55.013Z",
+    "currency": "ARS",
+    "price": 4089850,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 2605,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-05T17:54:57.208Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "dealer-average",
+    "quoteIds": [
+      "quote-60039dba-b8dd-4c0f-a733-1412eac63ca8"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-60039dba-b8dd-4c0f-a733-1412eac63ca8",
+          "productId": "supplier-product-mezclador-ecotank-spraytec-200-lt-electrico-f60f2cef",
+          "supplierId": "D",
+          "supplierName": "Dealer SPRAYtec",
+          "unitPrice": 2605,
+          "currency": "USD",
+          "observedAt": "2026-11-05T17:43:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "dealer",
+          "sourceReference": "WhatsApp Alejandro SPRAYtec"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 4089850,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-f26e8202-d715-44f1-8574-965a10ab34c8"
+  }
+]

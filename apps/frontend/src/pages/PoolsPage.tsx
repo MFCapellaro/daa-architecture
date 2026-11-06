@@ -122,8 +122,8 @@ export const PoolsPage: React.FC = () => {
                   <PoolImageCarousel images={pool.images} label={`${pool.brand} ${pool.product}`} />
                   {pool.description && <p className="pool-card__description">{pool.description}</p>}
                   <p className="pool-card__price">
-                    <del>{currency.format(pool.unitPrice)}</del>{' '}
-                    <strong>{currency.format(pool.discountedUnitPrice)}</strong> por unidad con el pool
+                    <span>Precio al público: <del>{currency.format(pool.unitPrice)}</del></span>{' '}
+                    <span>Oferta del pool: <strong>{currency.format(pool.discountedUnitPrice)}</strong> por unidad</span>
                   </p>
                   <div className="pool-card__details">
                     <span>Objetivo: {pool.targetQuantity} unidades</span>

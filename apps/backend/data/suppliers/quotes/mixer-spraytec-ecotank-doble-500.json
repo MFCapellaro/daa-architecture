@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-d3b3edb0-f834-43a6-a12b-adab8c9f5b79",
+    "productId": "mixer-spraytec-ecotank-doble-500",
+    "supplierId": "D",
+    "supplierName": "Dealer SPRAYtec",
+    "unitPrice": 4339,
+    "currency": "USD",
+    "observedAt": "2026-11-05T17:43:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "dealer",
+    "sourceReference": "WhatsApp Alejandro SPRAYtec"
+  }
+]

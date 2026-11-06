@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "supplier-product-mixer-vortex-300-litros-motobomba-f4fdf01d",
+    "updatedAt": "2026-11-06T12:43:52.876Z",
+    "currency": "ARS",
+    "price": 6230937.5,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 3968.75,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-06T12:43:54.742Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-9fceff3c-e23f-4af1-9617-810692107744"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-9fceff3c-e23f-4af1-9617-810692107744",
+          "productId": "supplier-product-mixer-vortex-300-litros-motobomba-f4fdf01d",
+          "supplierId": "J",
+          "supplierName": "Javier Alonso Aguará",
+          "unitPrice": 3968.75,
+          "currency": "USD",
+          "observedAt": "2026-11-06T12:42:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Javier Alonso Aguará"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 6230937.5,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-3ed690fd-d330-4f78-bb24-21a1ac3790a2"
+  }
+]

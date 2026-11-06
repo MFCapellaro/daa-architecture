@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-spraytec-ecotank-1000",
+    "updatedAt": "2026-11-05T19:45:55.742Z",
+    "currency": "ARS",
+    "price": 8813980,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 5614,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-05T19:45:57.823Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "dealer-average",
+    "quoteIds": [
+      "quote-02923417-e09f-4484-b459-9418f2b9f1de"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-02923417-e09f-4484-b459-9418f2b9f1de",
+          "productId": "mixer-spraytec-ecotank-1000",
+          "supplierId": "S",
+          "supplierName": "SPRAYtec",
+          "unitPrice": 5614,
+          "currency": "USD",
+          "observedAt": "2026-11-05T18:43:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "dealer",
+          "sourceReference": "WhatsApp Alejandro SPRAYtec"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 8813980,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-1ecea967-7b78-464f-9129-b8144ef39a6e"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-9373d0b7-a419-45a8-8a93-560742a03fca",
+    "productId": "mixer-spraytec-mezclador-smart-3",
+    "supplierId": "S",
+    "supplierName": "SPRAYtec",
+    "unitPrice": 1042,
+    "currency": "USD",
+    "observedAt": "2026-11-05T18:43:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "dealer",
+    "sourceReference": "WhatsApp Alejandro SPRAYtec"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "mixer-spraytec-mezclador-smart-3",
+    "updatedAt": "2026-11-05T20:28:15.567Z",
+    "currency": "ARS",
+    "price": 1635940,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 1042,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-05T20:28:17.886Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "dealer-average",
+    "quoteIds": [
+      "quote-9373d0b7-a419-45a8-8a93-560742a03fca"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-9373d0b7-a419-45a8-8a93-560742a03fca",
+          "productId": "mixer-spraytec-mezclador-smart-3",
+          "supplierId": "S",
+          "supplierName": "SPRAYtec",
+          "unitPrice": 1042,
+          "currency": "USD",
+          "observedAt": "2026-11-05T18:43:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "dealer",
+          "sourceReference": "WhatsApp Alejandro SPRAYtec"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 1635940,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-a2596350-e34e-4df7-9a76-de88ec0b565c"
+  }
+]

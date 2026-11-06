@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-acf282a3-c6d8-465f-9ebb-ccd604267a7e",
+    "productId": "mixer-aguara-speedblend-600-2-motores",
+    "supplierId": "J",
+    "supplierName": "Javier Alonso - Aguará",
+    "unitPrice": 3667.75,
+    "currency": "USD",
+    "observedAt": "2026-11-05T20:32:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Javier Alonso - Aguará"
+  }
+]

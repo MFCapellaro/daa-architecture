@@ -4,6 +4,12 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { createApp } from "../src/app.js";
 import { ParticipantAccountStore } from "../src/services/ParticipantAccountStore.js";
 import { PoolStore, type PoolInput } from "../src/services/PoolStore.js";
+import {
+  extractSchemaOrgPrice,
+  scrapeSchemaOrgPrice,
+  SupplierPriceAutomation,
+  SUPPLIER_PRICE_REFRESH_INTERVAL_MS,
+} from "../src/services/SupplierPriceAutomation.js";
 import { SupplierStore } from "../src/services/SupplierStore.js";
 import type { BnaUsdArsExchangeRate } from "../src/services/BnaExchangeRate.js";
 
@@ -85,7 +91,7 @@ describe("admin Suppliers API", () => {
 
     const { response, body } = await request<Array<{
       label: string;
-      attributes: Array<{ key: string; label: string; type: string; unit?: string; comparable: boolean }>;
+      attributes: Array<{ key: string; label: string; type: string; unit?: string; options?: string[]; comparable: boolean }>;
     }>>("/api/admin/suppliers/categories");
     expect(response.status).toBe(200);
     expect(body.map(({ label }) => label)).toContain("Mixers");
@@ -94,6 +100,25 @@ describe("admin Suppliers API", () => {
     const mixers = body.find((category) => category.label === "Mixers");
     expect(mixers).toBeDefined();
     expect(mixers?.attributes).toContainEqual({ key: "capacidad_litros", label: "Capacidad", type: "number", unit: "L", comparable: true });
+
+    const trailers = body.find((category) => category.label === "Trailers");
+    expect(trailers?.attributes).toEqual([
+      { key: "homologacion", label: "Homologación", type: "boolean", comparable: true },
+      { key: "configuracion.nivel", label: "Configuración", type: "select", options: ["Básica", "Intermedia", "Máxima"], comparable: true },
+      { key: "ejes", label: "Ejes", type: "select", options: ["1", "2"], comparable: true },
+      { key: "tipo_lanza", label: "Lanza / Cuello de Cisne", type: "select", options: ["Lanza", "Cuello de Cisne"], comparable: true },
+      { key: "capacidad_kg", label: "Capacidad", type: "number", unit: "kg", comparable: true },
+      { key: "energia", label: "Energía", type: "select", options: ["Panel Eléctrico", "Iluminación"], comparable: true },
+      { key: "largo_metros", label: "Largo", type: "number", unit: "m", comparable: true },
+      { key: "ancho_metros", label: "Ancho", type: "number", unit: "m", comparable: true },
+      { key: "alto_metros", label: "Alto", type: "number", unit: "m", comparable: true },
+      { key: "equipamiento", label: "Equipamiento", type: "boolean", comparable: true },
+      { key: "tanque.presente", label: "Tanque", type: "boolean", comparable: true },
+      { key: "tanque.capacidad_litros", label: "Capacidad del tanque", type: "number", unit: "L", comparable: true },
+      { key: "mixer", label: "Mixer", type: "boolean", comparable: true },
+      { key: "generador", label: "Generador", type: "boolean", comparable: true },
+      { key: "monitoreo_control_distancia", label: "Sistemas de monitoreo y control a distancia", type: "boolean", comparable: true },
+    ]);
   });
 
   it("creates products, records manual quote evidence, recalculates and persists price history separately", async () => {
@@ -255,7 +280,7 @@ describe("admin Suppliers API", () => {
     expect(usd.body).toMatchObject({ price: 1000, equivalentPrice: 1_570_000, currency: "USD" });
   });
 
-  it("uses a visible, active and fully described matching Pool unit price before web quotes", async () => {
+  it("keeps the public retail price as a reference and prefers the active pool offer", async () => {
     const product = await supplierStore.create({
       category: "mixers",
       subcategory: "",
@@ -301,7 +326,12 @@ describe("admin Suppliers API", () => {
     });
     await poolStore.update(pool.id, { visible: true });
 
-    const { response, body } = await request<{ price: number; method: string; quoteIds: string[] }>(
+    const { response, body } = await request<{
+      price: number;
+      method: string;
+      quoteIds: string[];
+      quoteEvaluations: Array<{ quote: { id: string; unitPrice: number }; status: string }>;
+    }>(
       `/api/admin/suppliers/${product.id}/prices/recalculate`,
       {
         method: "POST",
@@ -314,6 +344,95 @@ describe("admin Suppliers API", () => {
       method: "active-pool",
       quoteIds: [pool.id],
     });
+    expect(body.quoteEvaluations).toContainEqual(expect.objectContaining({
+      quote: expect.objectContaining({ id: `${pool.id}-retail`, unitPrice: 1_700_000 }),
+      status: "valid",
+    }));
+  });
+
+  it("extracts structured web prices and refreshes trailer prices only when due", async () => {
+    expect(extractSchemaOrgPrice(`<script type="application/ld+json">
+      {"@type":"Product","offers":{"@type":"Offer","price":"2.500.000","priceCurrency":"ARS"}}
+    </script>`)).toEqual({ price: 2_500_000, currency: "ARS" });
+    expect(extractSchemaOrgPrice(`<script type="application/ld+json">
+      {"@type":"Offer","price":1500}
+    </script>`)).toEqual({ price: 1500 });
+    await expect(scrapeSchemaOrgPrice("http://127.0.0.1/")).rejects.toThrow("direcciones IP públicas");
+
+    const sourceUrl = "https://dealer.example/trailers/td-1";
+    const product = await supplierStore.create({
+      category: "trailers",
+      subcategory: "",
+      name: "Trailer de prueba",
+      brand: "Marca Demo",
+      model: "TD-1",
+      description: "",
+      characteristics: {},
+      images: [],
+      sources: [{ type: "precio", url: sourceUrl }],
+      status: "active",
+    });
+    const observedAt = new Date(Date.now() - SUPPLIER_PRICE_REFRESH_INTERVAL_MS - 1).toISOString();
+    await supplierStore.addQuote(product.id, {
+      id: "initial-manual-price",
+      productId: product.id,
+      sourceType: "manual",
+      supplierType: "dealer",
+      supplierId: "dealer-1",
+      supplierName: "Dealer de prueba",
+      unitPrice: 2_000_000,
+      currency: "ARS",
+      observedAt,
+      sourceUrl,
+      sourceReference: "Precio inicial cargado manualmente",
+      conditions: {
+        includesVat: true,
+        vatRatePercent: 21,
+        includesFreight: false,
+        includesFinancing: false,
+        includesAccessories: false,
+      },
+    });
+    const fetchedUrls: string[] = [];
+    const automation = new SupplierPriceAutomation(
+      supplierStore,
+      poolStore,
+      async () => bnaExchangeRate,
+      async (url) => {
+        fetchedUrls.push(url);
+        return { price: 2_500_000 };
+      },
+      { error: () => undefined, warn: () => undefined },
+    );
+    const now = new Date();
+
+    await automation.refreshDue(now);
+    await automation.refreshDue(new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000));
+
+    expect(fetchedUrls).toEqual([sourceUrl]);
+    const quotes = await supplierStore.listQuotes(product.id);
+    expect(quotes).toContainEqual(expect.objectContaining({
+      sourceType: "web",
+      sourceUrl,
+      unitPrice: 2_500_000,
+      currency: "ARS",
+      conditions: expect.objectContaining({ includesVat: true, vatRatePercent: 21 }),
+    }));
+    expect((await supplierStore.listPrices(product.id)).at(-1)).toMatchObject({
+      price: 2_066_115.7,
+      method: "dealer-average",
+    });
+
+    const failingAutomation = new SupplierPriceAutomation(
+      supplierStore,
+      poolStore,
+      async () => bnaExchangeRate,
+      async () => { throw new Error("No hay precio Schema.org."); },
+      { error: () => undefined, warn: () => undefined },
+    );
+    await failingAutomation.refreshDue(new Date(now.getTime() + 16 * 24 * 60 * 60 * 1000));
+    expect(await supplierStore.listQuotes(product.id)).toHaveLength(quotes.length);
+    expect((await supplierStore.listPrices(product.id)).at(-1)?.price).toBe(2_066_115.7);
   });
 
   it("imports the researched mixer sheets without inventing image or price data", async () => {

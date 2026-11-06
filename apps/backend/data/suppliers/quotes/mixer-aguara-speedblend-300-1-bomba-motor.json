@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-74e1089e-aaf6-41af-ae9d-5566f5f93e27",
+    "productId": "mixer-aguara-speedblend-300-1-bomba-motor",
+    "supplierId": "J",
+    "supplierName": "Javier Alonso - Aguará",
+    "unitPrice": 2866.75,
+    "currency": "USD",
+    "observedAt": "2026-11-05T20:32:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Javier Alonso - Aguará"
+  }
+]
