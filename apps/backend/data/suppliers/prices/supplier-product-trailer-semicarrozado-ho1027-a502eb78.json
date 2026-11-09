@@ -1,0 +1,49 @@
+[
+  {
+    "productId": "supplier-product-trailer-semicarrozado-ho1027-a502eb78",
+    "updatedAt": "2026-11-07T13:44:35.446Z",
+    "currency": "ARS",
+    "price": 24344789,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 15506.24,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-07T13:44:36.489Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-779e103f-7f66-46fa-a0c2-97459b2fac1e"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-779e103f-7f66-46fa-a0c2-97459b2fac1e",
+          "productId": "supplier-product-trailer-semicarrozado-ho1027-a502eb78",
+          "supplierId": "D",
+          "supplierName": "RUBIOLO",
+          "unitPrice": 24344789,
+          "currency": "ARS",
+          "observedAt": "2026-11-07T12:50:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "https://acopladosrubiolo.com.ar/producto/trailer-semicarrozado-homologado-para-drones-agricolas-ho1027/",
+          "sourceUrl": "https://acopladosrubiolo.com.ar/producto/trailer-semicarrozado-homologado-para-drones-agricolas-ho1027/"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 24344789,
+        "exchangeRate": 1
+      }
+    ],
+    "id": "price-update-49d27643-0ae2-45bf-bc27-be1278b44c15"
+  }
+]

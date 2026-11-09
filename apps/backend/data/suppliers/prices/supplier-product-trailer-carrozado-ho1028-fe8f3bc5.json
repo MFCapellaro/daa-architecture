@@ -1,0 +1,49 @@
+[
+  {
+    "productId": "supplier-product-trailer-carrozado-ho1028-fe8f3bc5",
+    "updatedAt": "2026-11-07T14:39:27.566Z",
+    "currency": "ARS",
+    "price": 37648067,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 23979.66,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-07T14:39:28.657Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-08c44436-7ec6-448e-8847-e2cad00ca0fa"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-08c44436-7ec6-448e-8847-e2cad00ca0fa",
+          "productId": "supplier-product-trailer-carrozado-ho1028-fe8f3bc5",
+          "supplierId": "D",
+          "supplierName": "RUBIOLO",
+          "unitPrice": 37648067,
+          "currency": "ARS",
+          "observedAt": "2026-11-07T12:50:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "https://acopladosrubiolo.com.ar/producto/trailer-carrozado-homologado-para-drones-fumigadores-ho1028/",
+          "sourceUrl": "https://acopladosrubiolo.com.ar/producto/trailer-carrozado-homologado-para-drones-fumigadores-ho1028/"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 37648067,
+        "exchangeRate": 1
+      }
+    ],
+    "id": "price-update-7afb8c2e-542a-4753-b4f5-fb96c5d243f1"
+  }
+]

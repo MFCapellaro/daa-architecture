@@ -1,0 +1,40 @@
+[
+  {
+    "id": "quote-a5c1c87c-212e-4b44-87b6-f7b99494fef7",
+    "productId": "supplier-product-trailer-carro-drone-don-osvaldo-2510b3e0",
+    "supplierId": "D",
+    "supplierName": "Don Osvaldo",
+    "unitPrice": 19800,
+    "currency": "USD",
+    "observedAt": "2026-11-07T12:50:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "https://www.agroads.com.ar/detalle.asp?clasi=1012076\nhttps://www.donosvaldo.com.ar/productos/trailer-drones",
+    "sourceUrl": "https://www.agroads.com.ar/detalle.asp?clasi=1012076"
+  },
+  {
+    "id": "quote-1c65852c-439f-470f-a3ad-14bf2f2a2d62",
+    "productId": "supplier-product-trailer-carro-drone-don-osvaldo-2510b3e0",
+    "supplierId": "D",
+    "supplierName": "DON OSVALDO",
+    "unitPrice": 15890,
+    "currency": "USD",
+    "observedAt": "2026-11-07T12:50:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Trailers Don Osvaldo",
+    "sourceUrl": "https://acopladosrubiolo.com.ar/producto/trailer-semicarrozado-homologado-para-drones-agricolas-ho1027/"
+  }
+]

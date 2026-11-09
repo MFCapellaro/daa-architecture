@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quote-6546d1fb-cb81-4fdf-949b-ce3696bcd723",
+    "productId": "supplier-product-taller-rodante-td350b-dfbb85e8",
+    "supplierId": "P",
+    "supplierName": "PARACOL",
+    "unitPrice": 11975500,
+    "currency": "ARS",
+    "observedAt": "2026-11-06T21:30:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Trailers Paracol"
+  }
+]

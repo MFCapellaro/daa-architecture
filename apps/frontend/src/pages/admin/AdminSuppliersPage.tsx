@@ -262,6 +262,9 @@ export const AdminSuppliersPage: React.FC = () => {
   const [creating, setCreating] = useState(false);
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
+  const [priceCurrencyFilter, setPriceCurrencyFilter] = useState("ARS");
+  const [minimumPrice, setMinimumPrice] = useState("");
+  const [maximumPrice, setMaximumPrice] = useState("");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -359,13 +362,22 @@ export const AdminSuppliersPage: React.FC = () => {
 
   const filteredProducts = useMemo(() => {
     const terms = search.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    const minPrice = minimumPrice === "" ? undefined : Number(minimumPrice);
+    const maxPrice = maximumPrice === "" ? undefined : Number(maximumPrice);
+    const hasPriceFilter = minPrice !== undefined || maxPrice !== undefined;
     return products.filter((product) => {
       if (categoryFilter !== "all" && product.category !== categoryFilter) return false;
+      if (hasPriceFilter) {
+        const price = product.currentPrice;
+        if (!price || price.price === null || price.currency !== priceCurrencyFilter) return false;
+        if (minPrice !== undefined && price.price < minPrice) return false;
+        if (maxPrice !== undefined && price.price > maxPrice) return false;
+      }
       const text = [product.name, product.brand, product.model, product.subcategory]
         .join(" ").toLocaleLowerCase();
       return terms.every((term) => text.includes(term));
     });
-  }, [categoryFilter, products, search]);
+  }, [categoryFilter, maximumPrice, minimumPrice, priceCurrencyFilter, products, search]);
 
   const selectedProduct = products.find((product) => product.id === selectedId) ?? null;
   const currentCategory = categories.find((category) => category.id === form.category);
@@ -643,6 +655,23 @@ export const AdminSuppliersPage: React.FC = () => {
                 <option value="all">Todas las categorías</option>
                 {categories.map((category) => <option key={category.id} value={category.id}>{category.label}</option>)}
               </select>
+            </label>
+            <label>
+              <span className="visually-hidden">Moneda para filtrar precios</span>
+              <select value={priceCurrencyFilter} onChange={(event) => setPriceCurrencyFilter(event.target.value)}>
+                <option value="ARS">Precios en ARS</option>
+                <option value="USD">Precios en USD</option>
+              </select>
+            </label>
+            <label>
+              <span className="visually-hidden">Precio mínimo</span>
+              <input aria-label="Precio mínimo" type="number" min="0" step="any" value={minimumPrice}
+                onChange={(event) => setMinimumPrice(event.target.value)} placeholder="Precio desde" />
+            </label>
+            <label>
+              <span className="visually-hidden">Precio máximo</span>
+              <input aria-label="Precio máximo" type="number" min="0" step="any" value={maximumPrice}
+                onChange={(event) => setMaximumPrice(event.target.value)} placeholder="Precio hasta" />
             </label>
           </div>
           <div className="suppliers-table-wrap">

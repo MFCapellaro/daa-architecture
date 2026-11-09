@@ -16,5 +16,24 @@
     "sourceType": "manual",
     "supplierType": "manufacturer",
     "sourceReference": "WhatsApp Grupo Alemor"
+  },
+  {
+    "id": "quote-54478ec2-0f86-471e-9546-6ab0cd680564",
+    "productId": "mixer-grupo-alemor-am-mixer-240-con-mezclador-superior",
+    "supplierId": "D",
+    "supplierName": "RUBIOLO",
+    "unitPrice": 7234725,
+    "currency": "ARS",
+    "observedAt": "2026-11-07T12:50:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "dealer",
+    "sourceReference": "https://acopladosrubiolo.com.ar/producto/trailer-semicarrozado-homologado-para-drones-agricolas-ho1027/",
+    "sourceUrl": "https://acopladosrubiolo.com.ar/producto/trailer-semicarrozado-homologado-para-drones-agricolas-ho1027/"
   }
 ]

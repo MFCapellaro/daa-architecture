@@ -1,0 +1,49 @@
+[
+  {
+    "productId": "supplier-product-acoplado-homologado-ho1036-c67e68ea",
+    "updatedAt": "2026-11-08T14:02:59.402Z",
+    "currency": "ARS",
+    "price": 25374552,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 16162.14,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-08T14:03:02.994Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-0350dc05-a5f3-42e6-b5de-906fe7b0d26f"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-0350dc05-a5f3-42e6-b5de-906fe7b0d26f",
+          "productId": "supplier-product-acoplado-homologado-ho1036-c67e68ea",
+          "supplierId": "R",
+          "supplierName": "RUBIOLO",
+          "unitPrice": 25374552,
+          "currency": "ARS",
+          "observedAt": "2026-11-08T13:46:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "https://acopladosrubiolo.com.ar/producto/acoplado-homologado-para-drones-agricolas-ho1036/",
+          "sourceUrl": "https://acopladosrubiolo.com.ar/producto/acoplado-homologado-para-drones-agricolas-ho1036/"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 25374552,
+        "exchangeRate": 1
+      }
+    ],
+    "id": "price-update-3b8c969e-777c-4125-95dc-8c8d5b3ca12c"
+  }
+]

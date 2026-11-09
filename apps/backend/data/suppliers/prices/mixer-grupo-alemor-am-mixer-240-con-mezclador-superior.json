@@ -44,5 +44,75 @@
       }
     ],
     "id": "price-update-d00ab708-993d-4059-b7c1-614cc761e078"
+  },
+  {
+    "productId": "mixer-grupo-alemor-am-mixer-240-con-mezclador-superior",
+    "updatedAt": "2026-11-07T14:06:03.495Z",
+    "currency": "ARS",
+    "price": 7234725,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 4608.11,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-07T14:06:04.783Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "dealer-average",
+    "quoteIds": [
+      "quote-54478ec2-0f86-471e-9546-6ab0cd680564"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-85dd7f8d-5849-40cb-a540-fa63fc284ca0",
+          "productId": "mixer-grupo-alemor-am-mixer-240-con-mezclador-superior",
+          "supplierId": "G",
+          "supplierName": "Grupo Alemor",
+          "unitPrice": 4128,
+          "currency": "USD",
+          "observedAt": "2026-11-04T19:02:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Grupo Alemor"
+        },
+        "status": "valid",
+        "normalizedUnitPrice": 6480960,
+        "exchangeRate": 1570
+      },
+      {
+        "quote": {
+          "id": "quote-54478ec2-0f86-471e-9546-6ab0cd680564",
+          "productId": "mixer-grupo-alemor-am-mixer-240-con-mezclador-superior",
+          "supplierId": "D",
+          "supplierName": "RUBIOLO",
+          "unitPrice": 7234725,
+          "currency": "ARS",
+          "observedAt": "2026-11-07T12:50:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "dealer",
+          "sourceReference": "https://acopladosrubiolo.com.ar/producto/trailer-semicarrozado-homologado-para-drones-agricolas-ho1027/",
+          "sourceUrl": "https://acopladosrubiolo.com.ar/producto/trailer-semicarrozado-homologado-para-drones-agricolas-ho1027/"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 7234725,
+        "exchangeRate": 1
+      }
+    ],
+    "id": "price-update-2a319409-b72e-4f54-831e-6373a1d6f8d9"
   }
 ]

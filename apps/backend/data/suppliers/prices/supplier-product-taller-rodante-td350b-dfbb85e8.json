@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "supplier-product-taller-rodante-td350b-dfbb85e8",
+    "updatedAt": "2026-11-06T21:32:10.992Z",
+    "currency": "ARS",
+    "price": 11975500,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 7627.71,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-06T21:32:13.154Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-6546d1fb-cb81-4fdf-949b-ce3696bcd723"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-6546d1fb-cb81-4fdf-949b-ce3696bcd723",
+          "productId": "supplier-product-taller-rodante-td350b-dfbb85e8",
+          "supplierId": "P",
+          "supplierName": "PARACOL",
+          "unitPrice": 11975500,
+          "currency": "ARS",
+          "observedAt": "2026-11-06T21:30:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Trailers Paracol"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 11975500,
+        "exchangeRate": 1
+      }
+    ],
+    "id": "price-update-cbeca018-76a8-4f99-bbdf-1c2a4517230a"
+  }
+]

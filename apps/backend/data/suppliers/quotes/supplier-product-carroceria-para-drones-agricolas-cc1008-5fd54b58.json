@@ -1,0 +1,21 @@
+[
+  {
+    "id": "quote-65672c67-52af-4f1d-bb93-c65b9d26a0fb",
+    "productId": "supplier-product-carroceria-para-drones-agricolas-cc1008-5fd54b58",
+    "supplierId": "R",
+    "supplierName": "RUBIOLO",
+    "unitPrice": 8123172,
+    "currency": "ARS",
+    "observedAt": "2026-11-08T13:46:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "https://acopladosrubiolo.com.ar/producto/carroceria-para-drones-agricolas-cc1008/",
+    "sourceUrl": "https://acopladosrubiolo.com.ar/producto/carroceria-para-drones-agricolas-cc1008/"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "quote-5b0e97ea-cbe8-4987-b4d4-05e018e0c5f7",
+    "productId": "supplier-product-semirremolque-carrozado-ho1029-caf91038",
+    "supplierId": "D",
+    "supplierName": "RUBIOLO",
+    "unitPrice": 40878227,
+    "currency": "ARS",
+    "observedAt": "2026-11-07T12:50:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "https://acopladosrubiolo.com.ar/producto/semirremolque-carrozado-homologado-para-drones-fumigadores-ho1029/",
+    "sourceUrl": "https://acopladosrubiolo.com.ar/producto/semirremolque-carrozado-homologado-para-drones-fumigadores-ho1029/"
+  }
+]
