@@ -9,9 +9,8 @@ description: Dos bombas eléctrica de 220 volts. / Circuito de agua limpia y
   superior con hélice a motor eléctrico.
 characteristics:
   configuracion:
-    nivel: null
-    criterio: Clasificar Básica / Intermedia / Máxima después de verificar
-      equipamiento y prestaciones; no inferir por capacidad.
+    nivel: maxima
+    criterio: Máxima
   capacidad_litros: 1000
   energia:
     tipo: electrica
@@ -43,4 +42,4 @@ sources:
 status: pending-review
 id: mixer-grupo-alemor-am-mixer-1000
 createdAt: 2026-11-04T17:56:47.622Z
-updatedAt: 2026-11-04T20:09:57.071Z
+updatedAt: 2026-11-09T16:01:58.546Z

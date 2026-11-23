@@ -7,7 +7,7 @@ description: Bomba eléctrica de 220 volts. / Pistola surtidora con 15 mtrs. de
   manguera. Sistema de triple lavado para limpieza de envases.
 characteristics:
   configuracion:
-    nivel: null
+    nivel: intermedia
     criterio: Clasificar Básica / Intermedia / Máxima después de verificar
       equipamiento y prestaciones; no inferir por capacidad.
   capacidad_litros: 500
@@ -45,4 +45,4 @@ sources:
 status: pending-review
 id: mixer-grupo-alemor-am-mixer-500
 createdAt: 2026-11-04T17:56:47.547Z
-updatedAt: 2026-11-04T20:15:17.589Z
+updatedAt: 2026-11-10T13:37:53.891Z

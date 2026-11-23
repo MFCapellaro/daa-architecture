@@ -9,7 +9,7 @@ description: Motobomba HONDA, 4HP, 4 tiempos. / Circuito succión e impulsión.
   lavado para limpieza de envases.
 characteristics:
   configuracion:
-    nivel: null
+    nivel: maxima
     criterio: Clasificar Básica / Intermedia / Máxima después de verificar
       equipamiento y prestaciones; no inferir por capacidad.
   capacidad_litros: 1000
@@ -41,4 +41,4 @@ sources:
 status: pending-review
 id: mixer-grupo-alemor-am-mixer-1000-motobomba
 createdAt: 2026-11-04T17:56:47.652Z
-updatedAt: 2026-11-04T20:10:40.359Z
+updatedAt: 2026-11-09T16:05:28.156Z

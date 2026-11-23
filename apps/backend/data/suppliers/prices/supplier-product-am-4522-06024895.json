@@ -1,0 +1,71 @@
+[
+  {
+    "productId": "supplier-product-am-4522-06024895",
+    "updatedAt": "2026-11-10T15:10:46.291Z",
+    "currency": "ARS",
+    "price": 20000000,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 12738.85,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-10T15:10:49.588Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-9bd653be-7aff-4be0-8916-ea02a2ba65b2"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-9bd653be-7aff-4be0-8916-ea02a2ba65b2",
+          "productId": "supplier-product-am-4522-06024895",
+          "supplierId": "A",
+          "supplierName": "AGRIN METAL",
+          "unitPrice": 20000000,
+          "currency": "ARS",
+          "observedAt": "2026-11-10T13:36:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Agrin Metal"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 20000000,
+        "exchangeRate": 1
+      },
+      {
+        "quote": {
+          "id": "quote-ad4feb33-48a4-4467-8bad-34e78aa0f60c",
+          "productId": "supplier-product-am-4522-06024895",
+          "supplierId": "A",
+          "supplierName": "AGRIN METAL",
+          "unitPrice": 19900000,
+          "currency": "ARS",
+          "observedAt": "2026-11-10T13:36:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp Agrin Metal"
+        },
+        "status": "valid",
+        "normalizedUnitPrice": 19900000,
+        "exchangeRate": 1
+      }
+    ],
+    "id": "price-update-fb890da1-1163-4405-b395-c8fb65ddd6bc"
+  }
+]

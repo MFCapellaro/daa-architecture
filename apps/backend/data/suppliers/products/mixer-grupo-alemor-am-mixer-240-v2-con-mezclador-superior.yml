@@ -8,7 +8,7 @@ description: Estructura metálica liviana en chapa. Bomba eléctrica de 220 volt
   limpieza de envases. Mezclador superior con hélice a motor eléctrico.
 characteristics:
   configuracion:
-    nivel: null
+    nivel: basica
     criterio: Clasificar Básica / Intermedia / Máxima después de verificar
       equipamiento y prestaciones; no inferir por capacidad.
   capacidad_litros: 240
@@ -46,4 +46,4 @@ sources:
 status: pending-review
 id: mixer-grupo-alemor-am-mixer-240-v2-con-mezclador-superior
 createdAt: 2026-11-04T17:56:47.534Z
-updatedAt: 2026-11-04T20:48:17.608Z
+updatedAt: 2026-11-10T13:40:17.349Z

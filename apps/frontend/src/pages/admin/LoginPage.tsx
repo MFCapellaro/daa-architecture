@@ -1,10 +1,21 @@
 import React, { useState, type FormEvent } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth, type User } from '../../context/AuthContext';
+import { readAuthResponse } from './authResponse';
 
-interface AuthResponse {
-  token: string;
-  user: User;
+function isUser(value: unknown): value is User {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    'id' in value &&
+    typeof value.id === 'string' &&
+    'name' in value &&
+    typeof value.name === 'string' &&
+    'email' in value &&
+    typeof value.email === 'string' &&
+    'role' in value &&
+    (value.role === 'admin' || value.role === 'dealer' || value.role === 'participante')
+  );
 }
 
 export const LoginPage: React.FC = () => {
@@ -29,8 +40,19 @@ export const LoginPage: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(isRegistration ? { name, email, password } : { email, password }),
       });
-      const result = await response.json() as AuthResponse & { message?: string };
-      if (!response.ok) throw new Error(result.message || 'No se pudo completar la solicitud.');
+      const result = await readAuthResponse(response);
+      if (!response.ok) {
+        throw new Error(
+          typeof result.message === 'string'
+            ? result.message
+            : 'No se pudo completar la solicitud.',
+        );
+      }
+
+      if (typeof result.token !== 'string' || !isUser(result.user)) {
+        throw new Error('El servidor de autenticación devolvió datos de sesión incompletos.');
+      }
+
       login(result.token, result.user);
       const returnTo = (location.state as { from?: { pathname?: string } } | null)?.from?.pathname;
       const destination = result.user.role === 'admin'

@@ -6,7 +6,7 @@ model: Mezclador Ecotank Spraytec 200 Lt
 description: ""
 characteristics:
   configuracion:
-    nivel: null
+    nivel: basica
     criterio: Clasificar Básica / Intermedia / Máxima después de verificar
       equipamiento y prestaciones; no inferir por capacidad.
   capacidad_litros: 200
@@ -44,4 +44,4 @@ sources:
 status: pending-review
 id: mixer-spraytec-ecotank-spraytec-200
 createdAt: 2026-11-04T17:56:47.755Z
-updatedAt: 2026-11-05T18:43:54.327Z
+updatedAt: 2026-11-09T16:03:39.958Z

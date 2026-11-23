@@ -1,0 +1,48 @@
+[
+  {
+    "productId": "supplier-product-trailer-para-drones-9ad43061",
+    "updatedAt": "2026-11-10T15:20:33.829Z",
+    "currency": "ARS",
+    "price": 59660000,
+    "equivalentCurrency": "USD",
+    "equivalentPrice": 38000,
+    "exchangeRateDetails": {
+      "baseCurrency": "USD",
+      "quoteCurrency": "ARS",
+      "rate": 1570,
+      "effectiveDate": "2026-11-05",
+      "fetchedAt": "2026-11-10T15:20:36.275Z",
+      "source": "https://www.bna.com.ar/Personas"
+    },
+    "method": "manufacturer-reference",
+    "quoteIds": [
+      "quote-78b7e1ee-18f1-47ff-b50f-4389ee9e5c7d"
+    ],
+    "quoteEvaluations": [
+      {
+        "quote": {
+          "id": "quote-78b7e1ee-18f1-47ff-b50f-4389ee9e5c7d",
+          "productId": "supplier-product-trailer-para-drones-9ad43061",
+          "supplierId": "A",
+          "supplierName": "CONESE",
+          "unitPrice": 38000,
+          "currency": "USD",
+          "observedAt": "2026-11-10T13:36:00.000Z",
+          "conditions": {
+            "includesVat": false,
+            "includesFreight": false,
+            "includesFinancing": false,
+            "includesAccessories": false
+          },
+          "sourceType": "manual",
+          "supplierType": "manufacturer",
+          "sourceReference": "WhatsApp CONESE"
+        },
+        "status": "selected",
+        "normalizedUnitPrice": 59660000,
+        "exchangeRate": 1570
+      }
+    ],
+    "id": "price-update-38759258-3d43-405e-af3a-ca1ac6cd570d"
+  }
+]

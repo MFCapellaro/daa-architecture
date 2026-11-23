@@ -8,7 +8,7 @@ description: Estructura metálica liviana en chapa. Bomba eléctrica de 220 volt
   limpieza de envases.
 characteristics:
   configuracion:
-    nivel: null
+    nivel: intermedia
     criterio: Clasificar Básica / Intermedia / Máxima después de verificar
       equipamiento y prestaciones; no inferir por capacidad.
   capacidad_litros: 500
@@ -44,4 +44,4 @@ sources:
 status: pending-review
 id: mixer-grupo-alemor-am-mixer-500-v2
 createdAt: 2026-11-04T17:56:47.598Z
-updatedAt: 2026-11-04T21:43:08.997Z
+updatedAt: 2026-11-10T13:38:52.391Z

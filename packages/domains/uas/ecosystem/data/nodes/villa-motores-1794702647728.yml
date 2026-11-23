@@ -1,0 +1,30 @@
+id: villa-motores-1794702647728
+name: VILLA Motores
+type: supplier
+identity: {}
+layers:
+  - suppliers
+capabilities:
+  - Generadores
+isPublic: true
+relationships: []
+contact:
+  address: Av. San Martin 1683
+  city: 9 de Julio
+  province: Buenos Aires
+  country: Argentina
+  phone: +54 2317 422645
+  whatsapp: +54 9 2317 449292
+  email: hola@villamotorco.com
+presence:
+  website: https://villa.com.ar/
+  websiteMentioned: false
+  websiteMentionsDrones: false
+  websiteUnavailable: false
+geolocation:
+  latitude: -35.445207
+  longitude: -60.888825
+source: {}
+status:
+  imported: false
+  reviewRequired: false

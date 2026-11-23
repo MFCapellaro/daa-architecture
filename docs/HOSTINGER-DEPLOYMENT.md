@@ -12,6 +12,13 @@ Environment: production
 
 Configure the subdomain `dronsair.3cdesign.com.ar` as the application domain and set the required environment variables in hPanel. Never commit real keys or credentials.
 
+## Administrator login
+
+The backend reads `ADMIN_EMAIL` and either `ADMIN_PASSWORD` or `ADMIN_PASSWORD_HASH`.
+Set them in the backend process environment (or in hPanel for production). When running
+locally, restart the backend after changing environment variables so it picks them up.
+`JWT_SECRET` should also be set to a private, persistent value in production.
+
 ## Google Maps keys
 
 Use two keys:

@@ -170,6 +170,18 @@ function setPath(target: Record<string, unknown>, path: string, value: unknown):
   return result;
 }
 
+function configurationLabel(characteristics: Record<string, unknown>): string {
+  const value = getPath(characteristics, "configuracion.nivel");
+  if (typeof value !== "string" || !value.trim()) return "No informada";
+  const normalized = value.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase();
+  const labels: Record<string, string> = {
+    basica: "Básica",
+    intermedia: "Intermedia",
+    maxima: "Máxima",
+  };
+  return labels[normalized] ?? value.trim();
+}
+
 function characteristicValue(
   attribute: SupplierAttribute,
   value: unknown,
@@ -677,7 +689,7 @@ export const AdminSuppliersPage: React.FC = () => {
           <div className="suppliers-table-wrap">
             {loading ? <p className="suppliers-empty">Cargando catálogo…</p> : (
               <table className="suppliers-table">
-                <thead><tr><th>Producto</th><th>Categoría</th><th>Precio actualizado</th><th>Estado</th><th>Fotos</th></tr></thead>
+                <thead><tr><th>Producto</th><th>Categoría</th><th>Configuración</th><th>Precio actualizado</th><th>Estado</th><th>Fotos</th></tr></thead>
                 <tbody>
                   {filteredProducts.map((product) => (
                     <tr key={product.id} className={selectedId === product.id ? "is-selected" : ""}>
@@ -695,12 +707,13 @@ export const AdminSuppliersPage: React.FC = () => {
                       <td>{categories.find((category) => category.id === product.category)?.label ?? product.category}
                         {product.subcategory && <small className="suppliers-secondary">{product.subcategory}</small>}
                       </td>
+                      <td>{configurationLabel(product.characteristics)}</td>
                       <td>{priceLabel(product.currentPrice)}</td>
                       <td><span className={`suppliers-status suppliers-status--${product.status}`}>{STATUS_LABELS[product.status]}</span></td>
                       <td>{product.images.length}</td>
                     </tr>
                   ))}
-                  {!filteredProducts.length && <tr><td className="suppliers-empty" colSpan={5}>No hay productos para este filtro.</td></tr>}
+                  {!filteredProducts.length && <tr><td className="suppliers-empty" colSpan={6}>No hay productos para este filtro.</td></tr>}
                 </tbody>
               </table>
             )}

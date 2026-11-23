@@ -9,7 +9,7 @@ description: Bomba eléctrica centrífuga de alto caudal 220 volts. / Circuito
   Sistema de triple lavado para limpieza de envases.
 characteristics:
   configuracion:
-    nivel: null
+    nivel: maxima
     criterio: Clasificar Básica / Intermedia / Máxima después de verificar
       equipamiento y prestaciones; no inferir por capacidad.
   capacidad_litros: 1000
@@ -41,4 +41,4 @@ sources:
 status: pending-review
 id: mixer-grupo-alemor-am-mixer-1000-bomba-alto-flujo
 createdAt: 2026-11-04T17:56:47.639Z
-updatedAt: 2026-11-04T20:09:04.123Z
+updatedAt: 2026-11-09T16:04:54.596Z

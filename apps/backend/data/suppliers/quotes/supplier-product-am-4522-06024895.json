@@ -1,0 +1,38 @@
+[
+  {
+    "id": "quote-9bd653be-7aff-4be0-8916-ea02a2ba65b2",
+    "productId": "supplier-product-am-4522-06024895",
+    "supplierId": "A",
+    "supplierName": "AGRIN METAL",
+    "unitPrice": 20000000,
+    "currency": "ARS",
+    "observedAt": "2026-11-10T13:36:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Agrin Metal"
+  },
+  {
+    "id": "quote-ad4feb33-48a4-4467-8bad-34e78aa0f60c",
+    "productId": "supplier-product-am-4522-06024895",
+    "supplierId": "A",
+    "supplierName": "AGRIN METAL",
+    "unitPrice": 19900000,
+    "currency": "ARS",
+    "observedAt": "2026-11-10T13:36:00.000Z",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    },
+    "sourceType": "manual",
+    "supplierType": "manufacturer",
+    "sourceReference": "WhatsApp Agrin Metal"
+  }
+]
