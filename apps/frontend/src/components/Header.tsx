@@ -142,6 +142,9 @@ export const Header: React.FC = () => {
         <Link to="/pools" aria-label="Pools" title="Pools" style={navLinkStyle(isActive('/pools'))}>
           <HeaderIcon name="pool" />
         </Link>
+        <Link to="/suppliers" aria-label="Proveedores" title="Proveedores" style={navLinkStyle(isActive('/suppliers'))}>
+          <HeaderIcon name="suppliers" />
+        </Link>
 
         {/* Backoffice Exclusivo Admin */}
         {isAuthenticated && user?.role === 'admin' && (

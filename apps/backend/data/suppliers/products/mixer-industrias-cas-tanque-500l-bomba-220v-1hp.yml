@@ -47,7 +47,7 @@ images:
 sources:
   - type: fabricante
     url: http://www.industriascas.com.ar/producto.html?id=premezclador-para-drone
-status: pending-review
+status: active
 id: mixer-industrias-cas-tanque-500l-bomba-220v-1hp
 createdAt: 2026-11-04T17:56:47.914Z
-updatedAt: 2026-11-06T13:17:52.977Z
+updatedAt: 2026-11-24T14:55:26.748Z

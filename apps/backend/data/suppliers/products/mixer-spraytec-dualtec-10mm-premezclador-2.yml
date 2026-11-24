@@ -67,7 +67,7 @@ images:
 sources:
   - type: fabricante
     url: https://spraytec.com.ar/productos/cat/8/mezcladores-de-producto
-status: pending-review
+status: active
 id: mixer-spraytec-dualtec-10mm-premezclador-2
 createdAt: 2026-11-04T17:56:47.770Z
-updatedAt: 2026-11-05T20:10:09.216Z
+updatedAt: 2026-11-24T15:01:31.090Z

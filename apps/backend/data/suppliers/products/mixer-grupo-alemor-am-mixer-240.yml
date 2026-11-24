@@ -42,7 +42,7 @@ images:
 sources:
   - type: fabricante
     url: https://grupoalemor.com/p/MTZ-40-mezcladores-am-mixer-240
-status: pending-review
+status: active
 id: mixer-grupo-alemor-am-mixer-240
 createdAt: 2026-11-04T17:56:47.492Z
-updatedAt: 2026-11-10T13:46:02.570Z
+updatedAt: 2026-11-24T15:04:09.993Z

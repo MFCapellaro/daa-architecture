@@ -22,6 +22,7 @@ import { AdminPoolsPage } from './pages/admin/AdminPoolsPage';
 import { PoolsPage } from './pages/PoolsPage';
 import { ActorSubmissionPage } from './pages/portal/ActorSubmissionPage';
 import { AdminSuppliersPage } from './pages/admin/AdminSuppliersPage';
+import { SupplierCatalogPage } from './pages/SupplierCatalogPage';
 
 export const AppRoutes = () => {
   const { user, isAuthenticated } = useAuth();
@@ -53,6 +54,9 @@ export function App() {
           {/* ========================================== */}
           <Route path="/" element={<Navigate to="/map" replace />} />
           <Route path="/directory" element={<DirectoryPage />} />
+          <Route path="/suppliers" element={<SupplierCatalogPage />} />
+          <Route path="/suppliers/:categoryId" element={<SupplierCatalogPage />} />
+          <Route path="/suppliers/:categoryId/:productId" element={<SupplierCatalogPage />} />
           <Route path="/activities" element={<ActivitiesPage />} />
           <Route path="/pools" element={<PoolsPage />} />
           <Route path="/map" element={<MapPage />} />

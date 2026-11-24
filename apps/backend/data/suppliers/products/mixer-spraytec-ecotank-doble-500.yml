@@ -56,7 +56,7 @@ images:
 sources:
   - type: fabricante
     url: https://spraytec.com.ar/productos/cat/8/mezcladores-de-producto
-status: pending-review
+status: active
 id: mixer-spraytec-ecotank-doble-500
 createdAt: 2026-11-04T17:56:47.722Z
-updatedAt: 2026-11-05T18:44:31.265Z
+updatedAt: 2026-11-24T15:00:14.108Z

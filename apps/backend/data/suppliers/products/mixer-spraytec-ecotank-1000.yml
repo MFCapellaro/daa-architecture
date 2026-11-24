@@ -45,7 +45,7 @@ images:
 sources:
   - type: fabricante
     url: https://spraytec.com.ar/productos/cat/200/mezcladores-de-producto
-status: pending-review
+status: active
 id: mixer-spraytec-ecotank-1000
 createdAt: 2026-11-04T17:56:47.800Z
-updatedAt: 2026-11-05T19:46:18.146Z
+updatedAt: 2026-11-24T15:01:48.907Z

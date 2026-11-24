@@ -42,7 +42,7 @@ images:
 sources:
   - type: fabricante
     url: https://grupoalemor.com/index.php/p/MTZ-37-mezcladores-am-mixer-140
-status: pending-review
+status: active
 id: mixer-grupo-alemor-am-mixer-140
 createdAt: 2026-11-04T17:56:47.483Z
-updatedAt: 2026-11-09T16:06:52.151Z
+updatedAt: 2026-11-24T15:03:12.800Z

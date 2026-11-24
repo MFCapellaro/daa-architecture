@@ -17,5 +17,23 @@
     "supplierType": "manufacturer",
     "sourceReference": "https://acopladosrubiolo.com.ar/producto/trailer-homologado-para-drones-agricolas-ho1026/",
     "sourceUrl": "https://acopladosrubiolo.com.ar/producto/trailer-homologado-para-drones-agricolas-ho1026/"
+  },
+  {
+    "id": "scraped-1b3c560a-f842-4a80-852b-20cb0d171288",
+    "productId": "supplier-product-trailer-homologado-ho1026-cf6c07d4",
+    "sourceType": "web",
+    "supplierType": "manufacturer",
+    "supplierId": "R",
+    "supplierName": "RUBIOLO",
+    "unitPrice": 21355437,
+    "currency": "ARS",
+    "observedAt": "2026-11-23T14:39:53.776Z",
+    "sourceUrl": "https://acopladosrubiolo.com.ar/producto/trailer-homologado-para-drones-agricolas-ho1026/",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    }
   }
 ]

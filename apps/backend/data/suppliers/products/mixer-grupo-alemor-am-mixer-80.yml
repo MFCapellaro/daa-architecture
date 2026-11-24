@@ -42,7 +42,7 @@ images:
 sources:
   - type: fabricante
     url: https://grupoalemor.com/p/MTZ-38-mezcladores-am-mixer-80
-status: pending-review
+status: active
 id: mixer-grupo-alemor-am-mixer-80
 createdAt: 2026-11-04T17:56:47.455Z
-updatedAt: 2026-11-09T16:08:16.382Z
+updatedAt: 2026-11-24T15:02:56.362Z

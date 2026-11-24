@@ -43,7 +43,7 @@ images:
 sources:
   - type: fabricante
     url: https://grupoalemor.com/p/MTZ-48-mezcladores-am-mixer-240-v2-con-mezclador-superior
-status: pending-review
+status: active
 id: mixer-grupo-alemor-am-mixer-240-v2-con-mezclador-superior
 createdAt: 2026-11-04T17:56:47.534Z
-updatedAt: 2026-11-10T13:40:17.349Z
+updatedAt: 2026-11-24T15:05:21.562Z

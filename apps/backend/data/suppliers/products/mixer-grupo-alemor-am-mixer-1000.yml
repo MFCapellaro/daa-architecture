@@ -39,7 +39,7 @@ images:
 sources:
   - type: fabricante
     url: https://grupoalemor.com/index.php/p/MTZ-44-mezcladores-am-mixer-1000
-status: pending-review
+status: active
 id: mixer-grupo-alemor-am-mixer-1000
 createdAt: 2026-11-04T17:56:47.622Z
-updatedAt: 2026-11-09T16:01:58.546Z
+updatedAt: 2026-11-24T14:43:29.116Z

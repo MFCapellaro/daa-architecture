@@ -38,7 +38,7 @@ images:
 sources:
   - type: fabricante
     url: https://grupoalemor.com/
-status: pending-review
+status: active
 id: mixer-grupo-alemor-am-mixer-1000-motobomba
 createdAt: 2026-11-04T17:56:47.652Z
-updatedAt: 2026-11-09T16:05:28.156Z
+updatedAt: 2026-11-24T14:45:17.088Z

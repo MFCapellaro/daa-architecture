@@ -45,7 +45,7 @@ images:
 sources:
   - type: fabricante
     url: http://www.industriascas.com.ar/producto.html?id=premezclador-para-dron-con-incorporador-de-producto
-status: pending-review
+status: active
 id: mixer-industrias-cas-premezclador-para-drone
 createdAt: 2026-11-04T17:56:47.900Z
-updatedAt: 2026-11-06T13:24:28.035Z
+updatedAt: 2026-11-24T14:55:57.018Z

@@ -17,5 +17,23 @@
     "supplierType": "manufacturer",
     "sourceReference": "https://acopladosrubiolo.com.ar/producto/semirremolque-abierto-homologado-para-drones-agricolas-ho1030/",
     "sourceUrl": "https://acopladosrubiolo.com.ar/producto/semirremolque-abierto-homologado-para-drones-agricolas-ho1030/"
+  },
+  {
+    "id": "scraped-b65dc1b0-8757-49f4-bc0d-37f912b17afe",
+    "productId": "supplier-product-semirremolque-abierto-ho1030-0f1f8fc1",
+    "sourceType": "web",
+    "supplierType": "manufacturer",
+    "supplierId": "D",
+    "supplierName": "RUBIOLO",
+    "unitPrice": 34558162,
+    "currency": "ARS",
+    "observedAt": "2026-11-23T14:39:53.776Z",
+    "sourceUrl": "https://acopladosrubiolo.com.ar/producto/semirremolque-abierto-homologado-para-drones-agricolas-ho1030/",
+    "conditions": {
+      "includesVat": false,
+      "includesFreight": false,
+      "includesFinancing": false,
+      "includesAccessories": false
+    }
   }
 ]
